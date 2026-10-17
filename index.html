@@ -50,11 +50,14 @@ a:focus-visible, button:focus-visible{ outline:2px solid var(--ink); outline-off
 .nav{ display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:12px 24px; font-size:14px; font-weight:600; line-height:20px; }
 .brand{ display:inline-flex; align-items:center; gap:12px; color:#fff; text-decoration:none; font:800 20px/1 var(--display); letter-spacing:-.01em; }
 .logo{ display:inline-flex; align-items:center; justify-content:center; width:40px; height:40px; border-radius:10px; background:var(--primary); color:var(--ink); font:800 14px/1 var(--display); letter-spacing:-.02em; }
-.nav-links{ display:flex; flex-wrap:wrap; gap:4px; }
+.nav-links{ display:flex; flex-wrap:wrap; align-items:center; gap:4px; }
 .nav-links a{ color:var(--canvas-soft); text-decoration:none; padding:10px 14px; border-radius:var(--r-pill); }
 .nav-links a:hover{ background:rgba(255,255,255,.08); }
 .nav-links a[aria-current="page"]{ background:rgba(255,255,255,.12); color:#fff; }
-.hero a:focus-visible{ outline-color:var(--primary); }
+.hero a:focus-visible, .hero button:focus-visible{ outline-color:var(--primary); }
+.lang{ margin-left:6px; min-height:40px; padding:0 16px; border:0; border-radius:var(--r-pill); background:transparent;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.3); color:var(--canvas-soft); font:inherit; cursor:pointer; }
+.lang:hover{ background:rgba(255,255,255,.08); }
 .hero .eyebrow{ font-size:14px; font-weight:600; line-height:20px; color:var(--primary-active); }
 .hero h1{ margin:0; font:800 clamp(40px,5vw,64px)/.9 var(--display); letter-spacing:-.02em; max-width:14ch; }
 .hero p{ margin:0; max-width:640px; font-size:20px; line-height:30px; color:var(--canvas-soft); }
@@ -129,36 +132,37 @@ h2.section{ margin:0; font:800 clamp(28px,3.2vw,40px)/1 var(--display); letter-s
 <div class="page">
 
   <header class="hero">
-    <nav class="nav" aria-label="Hovedmenu">
+    <nav class="nav" aria-label="Hovedmenu" data-en-aria="Main menu">
       <a class="brand" href="/"><span class="logo" aria-hidden="true">7NT</span>Kontraktbridge</a>
       <div class="nav-links">
-        <a href="#traenere" aria-current="page">Trænere</a>
-        <a href="#om-mig">Om mig og kontakt</a>
+        <a href="#traenere" aria-current="page" data-en="Trainers">Trænere</a>
+        <a href="#om-mig" data-en="About me and contact">Om mig og kontakt</a>
+        <button class="lang" id="langBtn" type="button" lang="en">English</button>
       </div>
     </nav>
     <div class="hero-body">
-      <span class="eyebrow">Gratis bridgetræning</span>
-      <h1 id="titel">Træn bridge lidt hver dag</h1>
-      <p>Trænere til meldinger, fordelinger, pointregnskab, spilføring og håndvurdering. De kører i browseren, også på mobilen, og kræver intet login.</p>
-      <a class="btn" href="#traenere">Se trænerne</a>
+      <span class="eyebrow" data-en="Free bridge training">Gratis bridgetræning</span>
+      <h1 id="titel" data-en="Practise bridge a little every day">Træn bridge lidt hver dag</h1>
+      <p data-en="Trainers for bidding, distributions, point counting, declarer play and hand evaluation. They run in the browser, also on your phone, and need no login.">Trænere til meldinger, fordelinger, pointregnskab, spilføring og håndvurdering. De kører i browseren, også på mobilen, og kræver intet login.</p>
+      <a class="btn" href="#traenere" data-en="See the trainers">Se trænerne</a>
     </div>
   </header>
 
   <section id="traenere" aria-labelledby="h-traenere">
-    <h2 class="section" id="h-traenere">Trænerne</h2>
-    <p class="lead">Vælg en træner, og gå i gang. Hver træner har sin egen daglige træning.</p>
+    <h2 class="section" id="h-traenere" data-en="The trainers">Trænerne</h2>
+    <p class="lead" data-en="Choose a trainer and get started. Each trainer has its own daily practice.">Vælg en træner, og gå i gang. Hver træner har sin egen daglige træning.</p>
     <div class="cards">
 
       <a class="card" href="/konventionstraener/">
         <div class="art" aria-hidden="true">
-          <span class="bc">1NT</span><span class="bc">2<span class="su su-s">♣</span></span><span class="bc pas">pas</span><span class="bc ask">?</span>
+          <span class="bc">1NT</span><span class="bc">2<span class="su su-s">♣</span></span><span class="bc pas" data-en="pass">pas</span><span class="bc ask">?</span>
         </div>
         <div>
-          <span class="kicker">Meldinger</span>
-          <h3>Konventionstræner</h3>
-          <p>Træn konventionerne med 8 tilfældige meldeforløb ad gangen – som åbner, svarer eller indmelder.</p>
+          <span class="kicker" data-en="Bidding">Meldinger</span>
+          <h3 data-en="Convention trainer">Konventionstræner</h3>
+          <p data-en="Practise the conventions with 8 random auctions at a time – as opener, responder or overcaller.">Træn konventionerne med 8 tilfældige meldeforløb ad gangen – som åbner, svarer eller indmelder.</p>
         </div>
-        <div class="meta"><span>45 konventioner</span><span>Åbn træneren →</span></div>
+        <div class="meta"><span data-en="45 conventions">45 konventioner</span><span data-en="Open the trainer →">Åbn træneren →</span></div>
       </a>
 
       <a class="card" href="/fordelingstraeneren/">
@@ -166,72 +170,72 @@ h2.section{ margin:0; font:800 clamp(28px,3.2vw,40px)/1 var(--display); letter-s
           <span class="sky"><span>4<i style="height:56px"></i></span><span>4<i style="height:56px"></i></span><span>3<i style="height:42px"></i></span><span>2<i style="height:28px"></i></span></span>
         </div>
         <div>
-          <span class="kicker">Optælling</span>
-          <h3>Fordeling</h3>
-          <p>Lær de 39 mønstre og deres hyppighed, og tæl hænderne ud hurtigere. Fem minutter om dagen.</p>
+          <span class="kicker" data-en="Counting">Optælling</span>
+          <h3 data-en="Distribution">Fordeling</h3>
+          <p data-en="Learn the 39 patterns and how often they occur, and count out hands faster. Five minutes a day.">Lær de 39 mønstre og deres hyppighed, og tæl hænderne ud hurtigere. Fem minutter om dagen.</p>
         </div>
-        <div class="meta"><span>I Fordelingstræneren</span><span>Åbn træneren →</span></div>
+        <div class="meta"><span data-en="In Fordelingstræneren">I Fordelingstræneren</span><span data-en="Open the trainer →">Åbn træneren →</span></div>
       </a>
 
       <a class="card" href="/fordelingstraeneren/">
         <div class="art" aria-hidden="true">
-          <span class="chip">E</span><span class="chip">K</span><span class="chip on">D</span><span class="chip">B</span><span class="big" style="margin-left:6px">= 10</span>
+          <span class="chip" data-en="A">E</span><span class="chip">K</span><span class="chip on" data-en="Q">D</span><span class="chip" data-en="J">B</span><span class="big" style="margin-left:6px">= 10</span>
         </div>
         <div>
-          <span class="kicker">Optælling</span>
-          <h3>Pointregnskab</h3>
-          <p>Tæl honnørpoint under spillet: hvem har vist hvad, og hvor sidder de manglende honnører?</p>
+          <span class="kicker" data-en="Counting">Optælling</span>
+          <h3 data-en="Point count">Pointregnskab</h3>
+          <p data-en="Count high-card points during play: who has shown what, and where are the missing honours?">Tæl honnørpoint under spillet: hvem har vist hvad, og hvor sidder de manglende honnører?</p>
         </div>
-        <div class="meta"><span>I Fordelingstræneren</span><span>Åbn træneren →</span></div>
+        <div class="meta"><span data-en="In Fordelingstræneren">I Fordelingstræneren</span><span data-en="Open the trainer →">Åbn træneren →</span></div>
       </a>
 
       <a class="card" href="/fordelingstraeneren/">
         <div class="art diagram" aria-hidden="true">
-          <span><span class="su su-s">♠</span> B 4 3 2</span>
+          <span data-en="&lt;span class=&quot;su su-s&quot;&gt;♠&lt;/span&gt; J 4 3 2"><span class="su su-s">♠</span> B 4 3 2</span>
           <span class="compass">N · S</span>
-          <span><span class="su su-s">♠</span> E 10 6 5</span>
+          <span data-en="&lt;span class=&quot;su su-s&quot;&gt;♠&lt;/span&gt; A 10 6 5"><span class="su su-s">♠</span> E 10 6 5</span>
         </div>
         <div>
-          <span class="kicker">Spilføring</span>
-          <h3>Farvebehandling</h3>
-          <p>Find den linje i én farve, der giver størst chance for de stik, du skal bruge. 657 kombinationer.</p>
+          <span class="kicker" data-en="Declarer play">Spilføring</span>
+          <h3 data-en="Suit combinations">Farvebehandling</h3>
+          <p data-en="Find the line in one suit that gives the best chance of the tricks you need. 657 combinations.">Find den linje i én farve, der giver størst chance for de stik, du skal bruge. 657 kombinationer.</p>
         </div>
-        <div class="meta"><span>I Fordelingstræneren</span><span>Åbn træneren →</span></div>
+        <div class="meta"><span data-en="In Fordelingstræneren">I Fordelingstræneren</span><span data-en="Open the trainer →">Åbn træneren →</span></div>
       </a>
 
       <a class="card" href="/fordelingstraeneren/">
         <div class="art" aria-hidden="true" style="gap:14px">
-          <span class="big" style="font-size:44px">P 26</span><span class="pill-dark">Udgang</span>
+          <span class="big" style="font-size:44px">P 26</span><span class="pill-dark" data-en="Game">Udgang</span>
         </div>
         <div>
-          <span class="kicker">Vurdering</span>
-          <h3>Håndevaluering</h3>
-          <p>Vurdér din og makkers hånd med P-modellen, og vælg mellem delkontrakt, udgang og slem.</p>
+          <span class="kicker" data-en="Hand evaluation">Vurdering</span>
+          <h3 data-en="Hand evaluation">Håndevaluering</h3>
+          <p data-en="Value your own and partner&#x27;s hand with the P-model, and choose between part-score, game and slam.">Vurdér din og makkers hånd med P-modellen, og vælg mellem delkontrakt, udgang og slem.</p>
         </div>
-        <div class="meta"><span>I Fordelingstræneren</span><span>Åbn træneren →</span></div>
+        <div class="meta"><span data-en="In Fordelingstræneren">I Fordelingstræneren</span><span data-en="Open the trainer →">Åbn træneren →</span></div>
       </a>
 
     </div>
   </section>
 
   <section class="band" aria-labelledby="h-saadan">
-    <h2 id="h-saadan">Sådan virker det</h2>
-    <p>Trænerne er små, selvstændige programmer, der kører i din browser.</p>
+    <h2 id="h-saadan" data-en="How it works">Sådan virker det</h2>
+    <p data-en="The trainers are small, self-contained programs that run in your browser.">Trænerne er små, selvstændige programmer, der kører i din browser.</p>
     <div class="facts">
       <div>
         <span class="icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><path d="M10 17l5-5-5-5"/><path d="M15 12H3"/></svg></span>
-        <h3>Gratis og uden login</h3>
-        <p>Åbn en træner, og gå i gang. Der er ingen konto at oprette.</p>
+        <h3 data-en="Free and no login">Gratis og uden login</h3>
+        <p data-en="Open a trainer and get started. There is no account to create.">Åbn en træner, og gå i gang. Der er ingen konto at oprette.</p>
       </div>
       <div>
         <span class="icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 18h2"/></svg></span>
-        <h3>Lavet til mobilen</h3>
-        <p>Trænerne virker på telefonen, og Fordelingstræneren kan installeres som en app.</p>
+        <h3 data-en="Made for your phone">Lavet til mobilen</h3>
+        <p data-en="The trainers work on your phone, and Fordelingstræneren can be installed as an app.">Trænerne virker på telefonen, og Fordelingstræneren kan installeres som en app.</p>
       </div>
       <div>
         <span class="icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></span>
-        <h3>Dine data bliver hos dig</h3>
-        <p>Fremskridt og indstillinger gemmes kun i din browser, ikke på en server.</p>
+        <h3 data-en="Your data stays with you">Dine data bliver hos dig</h3>
+        <p data-en="Progress and settings are saved only in your browser, not on a server.">Fremskridt og indstillinger gemmes kun i din browser, ikke på en server.</p>
       </div>
     </div>
   </section>
@@ -240,21 +244,21 @@ h2.section{ margin:0; font:800 clamp(28px,3.2vw,40px)/1 var(--display); letter-s
     <div class="footer-top">
       <div class="footer-about">
         <span class="footer-name" style="display:inline-flex; align-items:center; gap:10px;"><span class="logo" aria-hidden="true" style="width:36px; height:36px; font-size:13px;">7NT</span>Kontraktbridge</span>
-        <h2>Om mig</h2>
-        <p>Jeg er bridgeentusiast med forkærlighed for spillets kognitive udfordringer og det gode fællesskab omkring bordet. Jeg elsker at skabe og forbedre ting – og med AI som ny medspiller har jeg bygget et digitalt bridge-univers, der kombinerer logik, læring og spilleglæde.</p>
+        <h2 data-en="About me">Om mig</h2>
+        <p data-en="I am a bridge enthusiast with a soft spot for the cognitive challenges of the game and the good company around the table. I love creating and improving things – and with AI as a new partner, I have built a digital bridge universe that brings together logic, learning and the joy of playing.">Jeg er bridgeentusiast med forkærlighed for spillets kognitive udfordringer og det gode fællesskab omkring bordet. Jeg elsker at skabe og forbedre ting – og med AI som ny medspiller har jeg bygget et digitalt bridge-univers, der kombinerer logik, læring og spilleglæde.</p>
       </div>
       <div class="footer-cols">
         <div class="footer-col">
-          <b>Trænere</b>
-          <a href="/konventionstraener/">Konventionstræner</a>
-          <a href="/fordelingstraeneren/">Fordeling</a>
-          <a href="/fordelingstraeneren/">Pointregnskab</a>
-          <a href="/fordelingstraeneren/">Farvebehandling</a>
-          <a href="/fordelingstraeneren/">Håndevaluering</a>
+          <b data-en="Trainers">Trænere</b>
+          <a href="/konventionstraener/" data-en="Convention trainer">Konventionstræner</a>
+          <a href="/fordelingstraeneren/" data-en="Distribution">Fordeling</a>
+          <a href="/fordelingstraeneren/" data-en="Point count">Pointregnskab</a>
+          <a href="/fordelingstraeneren/" data-en="Suit combinations">Farvebehandling</a>
+          <a href="/fordelingstraeneren/" data-en="Hand evaluation">Håndevaluering</a>
         </div>
         <div class="footer-col">
-          <b>Kontakt</b>
-          <span>Har du fundet en fejl, eller har du en idé til en ny træner? Skriv til mig.</span>
+          <b data-en="Contact">Kontakt</b>
+          <span data-en="Have you found a mistake, or do you have an idea for a new trainer? Write to me.">Har du fundet en fejl, eller har du en idé til en ny træner? Skriv til mig.</span>
           <a class="mail" href="mailto:frank.steen.pedersen@gmail.com">frank.steen.pedersen@gmail.com</a>
         </div>
       </div>
@@ -263,5 +267,31 @@ h2.section{ margin:0; font:800 clamp(28px,3.2vw,40px)/1 var(--display); letter-s
   </footer>
 
 </div>
+<script>
+/* Sprog: dansk som standard, engelsk med knappen i menuen. Valget gemmes under 'lang' som i Konventionstræneren
+   (samme domæne), og ?lang=en eller ?lang=da i adressen virker også. Elementer med data-en får den engelske tekst. */
+(function () {
+  var lang = 'da';
+  try { if (localStorage.getItem('lang') === 'en') lang = 'en'; } catch (e) {}
+  var q = new URLSearchParams(location.search).get('lang');
+  if (q === 'en' || q === 'da') { lang = q; try { localStorage.setItem('lang', q); } catch (e) {} }
+  var EN = lang === 'en';
+  document.documentElement.lang = lang;
+  if (EN) {
+    document.title = 'Kontraktbridge – free bridge training';
+    document.querySelectorAll('[data-en]').forEach(function (el) { el.innerHTML = el.getAttribute('data-en'); });
+    document.querySelectorAll('[data-en-aria]').forEach(function (el) { el.setAttribute('aria-label', el.getAttribute('data-en-aria')); });
+  }
+  var btn = document.getElementById('langBtn');
+  btn.textContent = EN ? 'Dansk' : 'English';
+  btn.setAttribute('lang', EN ? 'da' : 'en');
+  btn.addEventListener('click', function () {
+    var u = new URL(location.href);
+    u.searchParams.delete('lang');
+    try { localStorage.setItem('lang', EN ? 'da' : 'en'); } catch (e) { u.searchParams.set('lang', EN ? 'da' : 'en'); }
+    location.href = u.toString();
+  });
+})();
+</script>
 </body>
 </html>

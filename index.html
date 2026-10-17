@@ -5,8 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Kontraktbridge – gratis bridgetræning</title>
 <meta name="description" content="Gratis bridgetrænere til meldinger, fordelinger, pointregnskab, spilføring og håndvurdering. De kører i browseren, også på mobilen, og kræver intet login.">
-<meta name="theme-color" content="#f2f3f4">
+<meta name="theme-color" content="#1a1a1a">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="canonical" href="https://www.kontraktbridge.dk/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="da_DK">
+<meta property="og:site_name" content="Kontraktbridge">
+<meta property="og:title" content="Kontraktbridge – gratis bridgetræning">
+<meta property="og:description" content="Træn konventioner, fordelinger, pointregnskab, farvebehandling og håndvurdering – lidt hver dag, gratis og uden login.">
+<meta property="og:url" content="https://www.kontraktbridge.dk/">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","name":"Kontraktbridge","url":"https://www.kontraktbridge.dk/","inLanguage":"da","author":{"@type":"Person","name":"Frank Pedersen"}}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Manrope:wght@800&display=swap">
@@ -34,17 +44,17 @@ a:focus-visible, button:focus-visible{ outline:2px solid var(--ink); outline-off
 
 .page{ max-width:1200px; margin:0 auto; padding:24px clamp(16px,3vw,40px) 48px; display:flex; flex-direction:column; gap:48px; }
 
-/* topmenu */
-.nav{ display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:12px 24px; padding:12px 24px; background:var(--canvas); border-radius:var(--r-xl); font-size:14px; font-weight:600; line-height:20px; }
-.brand{ display:inline-flex; align-items:center; gap:12px; text-decoration:none; font:800 18px/1 var(--display); }
-.brand-mark{ width:28px; height:28px; border-radius:50%; background:var(--primary); }
+/* topbånd med menu og logo (meldekortet 7NT) */
+.hero{ display:flex; flex-direction:column; gap:56px; padding:20px 24px 56px; background:var(--ink); color:var(--primary); border-radius:var(--r-xl); }
+.hero-body{ display:flex; flex-direction:column; align-items:flex-start; gap:24px; }
+.nav{ display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:12px 24px; font-size:14px; font-weight:600; line-height:20px; }
+.brand{ display:inline-flex; align-items:center; gap:12px; color:#fff; text-decoration:none; font:800 20px/1 var(--display); letter-spacing:-.01em; }
+.logo{ display:inline-flex; align-items:center; justify-content:center; width:40px; height:40px; border-radius:10px; background:var(--primary); color:var(--ink); font:800 14px/1 var(--display); letter-spacing:-.02em; }
 .nav-links{ display:flex; flex-wrap:wrap; gap:4px; }
-.nav-links a{ text-decoration:none; padding:8px 12px; border-radius:var(--r-pill); }
-.nav-links a:hover{ background:var(--canvas-soft); }
-.nav-links a[aria-current="page"]{ background:var(--primary-pale); }
-
-/* topbånd */
-.hero{ display:flex; flex-direction:column; align-items:flex-start; gap:24px; padding:48px 24px; background:var(--ink); color:var(--primary); border-radius:var(--r-xl); }
+.nav-links a{ color:var(--canvas-soft); text-decoration:none; padding:10px 14px; border-radius:var(--r-pill); }
+.nav-links a:hover{ background:rgba(255,255,255,.08); }
+.nav-links a[aria-current="page"]{ background:rgba(255,255,255,.12); color:#fff; }
+.hero a:focus-visible{ outline-color:var(--primary); }
 .hero .eyebrow{ font-size:14px; font-weight:600; line-height:20px; color:var(--primary-active); }
 .hero h1{ margin:0; font:800 clamp(40px,5vw,64px)/.9 var(--display); letter-spacing:-.02em; max-width:14ch; }
 .hero p{ margin:0; max-width:640px; font-size:20px; line-height:30px; color:var(--canvas-soft); }
@@ -108,7 +118,7 @@ h2.section{ margin:0; font:800 clamp(28px,3.2vw,40px)/1 var(--display); letter-s
 
 @media (max-width:600px){
   .page{ gap:32px; padding-top:16px; }
-  .hero{ padding:32px 20px; }
+  .hero{ padding:14px 16px 36px; gap:36px; }
   .hero p{ font-size:17px; line-height:26px; }
   .band, .footer{ padding:32px 20px; }
   .band h2{ font-size:32px; line-height:1; }
@@ -118,22 +128,21 @@ h2.section{ margin:0; font:800 clamp(28px,3.2vw,40px)/1 var(--display); letter-s
 <body>
 <div class="page">
 
-  <div style="display:flex; flex-direction:column; gap:24px;">
+  <header class="hero">
     <nav class="nav" aria-label="Hovedmenu">
-      <a class="brand" href="/"><span class="brand-mark" aria-hidden="true"></span>Kontraktbridge</a>
+      <a class="brand" href="/"><span class="logo" aria-hidden="true">7NT</span>Kontraktbridge</a>
       <div class="nav-links">
         <a href="#traenere" aria-current="page">Trænere</a>
         <a href="#om-mig">Om mig og kontakt</a>
       </div>
     </nav>
-
-    <section class="hero" aria-labelledby="titel">
+    <div class="hero-body">
       <span class="eyebrow">Gratis bridgetræning</span>
       <h1 id="titel">Træn bridge lidt hver dag</h1>
       <p>Trænere til meldinger, fordelinger, pointregnskab, spilføring og håndvurdering. De kører i browseren, også på mobilen, og kræver intet login.</p>
       <a class="btn" href="#traenere">Se trænerne</a>
-    </section>
-  </div>
+    </div>
+  </header>
 
   <section id="traenere" aria-labelledby="h-traenere">
     <h2 class="section" id="h-traenere">Trænerne</h2>
@@ -230,7 +239,7 @@ h2.section{ margin:0; font:800 clamp(28px,3.2vw,40px)/1 var(--display); letter-s
   <footer class="footer" id="om-mig">
     <div class="footer-top">
       <div class="footer-about">
-        <span class="footer-name">Kontraktbridge</span>
+        <span class="footer-name" style="display:inline-flex; align-items:center; gap:10px;"><span class="logo" aria-hidden="true" style="width:36px; height:36px; font-size:13px;">7NT</span>Kontraktbridge</span>
         <h2>Om mig</h2>
         <p>Jeg er bridgeentusiast med forkærlighed for spillets kognitive udfordringer og det gode fællesskab omkring bordet. Jeg elsker at skabe og forbedre ting – og med AI som ny medspiller har jeg bygget et digitalt bridge-univers, der kombinerer logik, læring og spilleglæde.</p>
       </div>

@@ -1,0 +1,3 @@
+# Lokale filer, som ikke skal på hjemmesiden
+.claude/
+SPEC-*.md

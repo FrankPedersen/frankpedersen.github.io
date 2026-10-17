@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="da">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kontraktbridge – gratis bridgetræning</title>
+<meta name="description" content="Gratis bridgetrænere til meldinger, fordelinger, pointregnskab, spilføring og håndvurdering. De kører i browseren, også på mobilen, og kræver intet login.">
+<meta name="theme-color" content="#f2f3f4">
+<link rel="canonical" href="https://www.kontraktbridge.dk/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Manrope:wght@800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Symbols+2&text=%E2%99%A0%E2%99%A5%E2%99%A6%E2%99%A3&display=swap">
+<style>
+/* Subtle Gradient – farver, skrift, afstande og hjørner (samme værdier som konventionstrænerens assets/subtle-gradient.css) */
+:root{
+  color-scheme: light;
+  --primary:#ff9f4a; --on-primary:#1a1a1a; --primary-active:#ffc48f; --primary-pale:#fff1e3;
+  --ink:#1a1a1a; --body:#4a4a4a; --canvas:#ffffff; --canvas-soft:#f2f3f4;
+  --positive-deep:#054d28; --suit-red:#c62828; --suit-black:#1a1a1a; --table:#1f5c4a; --table-text:#ffffff;
+  --hairline:rgba(26,26,26,.12);
+  --display:Manrope, Inter, system-ui, sans-serif;
+  --sans:Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --sym:"Noto Sans Symbols 2", "Segoe UI Symbol", "Apple Symbols", "DejaVu Sans", sans-serif;
+  --r-md:12px; --r-lg:16px; --r-xl:24px; --r-pill:9999px;
+}
+*,*::before,*::after{ box-sizing:border-box; }
+html{ -webkit-text-size-adjust:100%; scroll-behavior:smooth; }
+body{ margin:0; background:var(--canvas-soft); color:var(--ink); font:16px/1.5 var(--sans); }
+a{ color:var(--ink); }
+a:focus-visible, button:focus-visible{ outline:2px solid var(--ink); outline-offset:3px; border-radius:var(--r-md); }
+.su{ font-family:var(--sym); font-weight:400; }
+.su-s{ color:var(--suit-black); } .su-h{ color:var(--suit-red); }
+
+.page{ max-width:1200px; margin:0 auto; padding:24px clamp(16px,3vw,40px) 48px; display:flex; flex-direction:column; gap:48px; }
+
+/* topmenu */
+.nav{ display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:12px 24px; padding:12px 24px; background:var(--canvas); border-radius:var(--r-xl); font-size:14px; font-weight:600; line-height:20px; }
+.brand{ display:inline-flex; align-items:center; gap:12px; text-decoration:none; font:800 18px/1 var(--display); }
+.brand-mark{ width:28px; height:28px; border-radius:50%; background:var(--primary); }
+.nav-links{ display:flex; flex-wrap:wrap; gap:4px; }
+.nav-links a{ text-decoration:none; padding:8px 12px; border-radius:var(--r-pill); }
+.nav-links a:hover{ background:var(--canvas-soft); }
+.nav-links a[aria-current="page"]{ background:var(--primary-pale); }
+
+/* topbånd */
+.hero{ display:flex; flex-direction:column; align-items:flex-start; gap:24px; padding:48px 24px; background:var(--ink); color:var(--primary); border-radius:var(--r-xl); }
+.hero .eyebrow{ font-size:14px; font-weight:600; line-height:20px; color:var(--primary-active); }
+.hero h1{ margin:0; font:800 clamp(40px,5vw,64px)/.9 var(--display); letter-spacing:-.02em; max-width:14ch; }
+.hero p{ margin:0; max-width:640px; font-size:20px; line-height:30px; color:var(--canvas-soft); }
+.btn{ display:inline-flex; align-items:center; min-height:48px; padding:12px 24px; border-radius:var(--r-xl); background:var(--primary); color:var(--on-primary); font-weight:600; text-decoration:none; }
+.btn:hover{ background:var(--primary-active); }
+
+/* afsnit */
+h2.section{ margin:0; font:800 clamp(28px,3.2vw,40px)/1 var(--display); letter-spacing:-.015em; }
+.lead{ margin:8px 0 0; max-width:640px; color:var(--body); }
+
+/* trænerkort */
+.cards{ display:grid; grid-template-columns:repeat(auto-fill, minmax(min(100%,340px),1fr)); gap:24px; margin-top:24px; }
+.card{ display:flex; flex-direction:column; gap:16px; padding:24px; background:var(--canvas); border-radius:var(--r-xl); text-decoration:none; color:var(--ink); box-shadow:inset 0 0 0 1px transparent; transition:box-shadow .12s ease; }
+.card:hover{ box-shadow:inset 0 0 0 1px var(--ink); }
+.art{ display:flex; align-items:center; justify-content:center; gap:10px; height:120px; border-radius:var(--r-lg); background:var(--canvas-soft); }
+.kicker{ font-size:12px; line-height:16px; color:var(--body); }
+.card h3{ margin:4px 0 8px; font-size:24px; line-height:31px; font-weight:600; letter-spacing:-.48px; }
+.card p{ margin:0; color:var(--body); }
+.card .meta{ display:flex; justify-content:space-between; gap:12px; margin-top:auto; padding-top:4px; font-size:14px; line-height:20px; }
+.card .meta span:first-child{ color:var(--body); }
+.card .meta span:last-child{ font-weight:600; white-space:nowrap; }
+
+/* illustrationer */
+.bc{ display:inline-flex; align-items:center; justify-content:center; min-width:56px; height:66px; padding:0 10px; border:1px solid var(--hairline); border-radius:var(--r-md); background:var(--canvas); font-size:23px; font-weight:600; line-height:1; }
+.bc.pas{ background:var(--positive-deep); color:#fff; border-color:transparent; }
+.bc.ask{ color:var(--body); }
+.sky{ display:flex; align-items:flex-end; gap:6px; }
+.sky span{ display:flex; flex-direction:column; align-items:center; gap:4px; font-size:14px; font-weight:600; }
+.sky i{ display:block; width:22px; border-radius:3px 3px 0 0; background:var(--ink); }
+.chip{ display:inline-flex; align-items:center; justify-content:center; width:44px; height:44px; border-radius:50%; background:var(--canvas); box-shadow:inset 0 0 0 1px var(--hairline); font-size:18px; font-weight:600; }
+.chip.on{ background:var(--primary-pale); box-shadow:inset 0 0 0 2px var(--ink); }
+.big{ font:800 28px/1 var(--display); }
+.diagram{ flex-direction:column; gap:6px; font-size:22px; font-weight:600; line-height:1.1; }
+.compass{ display:inline-flex; align-items:center; justify-content:center; width:40px; height:22px; border-radius:6px; background:var(--table); color:var(--table-text); font-size:12px; }
+.pill-dark{ padding:6px 12px; border-radius:var(--r-pill); background:var(--ink); color:var(--primary); font-size:14px; font-weight:600; }
+
+/* sådan virker det */
+.band{ display:flex; flex-direction:column; gap:24px; padding:48px 24px; background:var(--canvas); border-radius:var(--r-xl); }
+.band h2{ margin:0; font:800 40px/34px var(--display); }
+.band > p{ margin:0; max-width:640px; color:var(--body); }
+.facts{ display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%,240px),1fr)); gap:24px; }
+.facts h3{ margin:8px 0; font-size:18px; line-height:24px; font-weight:600; }
+.facts p{ margin:0; color:var(--body); }
+.icon{ display:inline-flex; align-items:center; justify-content:center; width:40px; height:40px; border-radius:50%; background:var(--primary-pale); }
+
+/* sidefod */
+.footer{ display:flex; flex-direction:column; gap:32px; padding:48px 24px; background:var(--ink); color:var(--canvas-soft); border-radius:var(--r-xl); font-size:14px; line-height:20px; }
+.footer-top{ display:flex; flex-wrap:wrap; justify-content:space-between; gap:32px; }
+.footer-about{ display:flex; flex-direction:column; gap:12px; max-width:460px; }
+.footer-name{ font:800 24px/28px var(--display); color:var(--primary); }
+.footer h2{ margin:8px 0 0; font-size:18px; line-height:24px; font-weight:600; }
+.footer-about p{ margin:0; font-size:16px; line-height:24px; }
+.footer-cols{ display:flex; flex-wrap:wrap; gap:48px; }
+.footer-col{ display:flex; flex-direction:column; gap:8px; max-width:260px; }
+.footer-col b{ font-weight:600; }
+.footer a{ color:var(--canvas-soft); text-decoration:none; }
+.footer a:hover{ color:var(--primary-active); text-decoration:underline; }
+.footer a.mail{ color:var(--primary); font-weight:600; }
+.footer a:focus-visible{ outline-color:var(--primary); }
+.legal{ padding-top:24px; border-top:1px solid var(--body); font-size:12px; line-height:16px; }
+
+@media (max-width:600px){
+  .page{ gap:32px; padding-top:16px; }
+  .hero{ padding:32px 20px; }
+  .hero p{ font-size:17px; line-height:26px; }
+  .band, .footer{ padding:32px 20px; }
+  .band h2{ font-size:32px; line-height:1; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div style="display:flex; flex-direction:column; gap:24px;">
+    <nav class="nav" aria-label="Hovedmenu">
+      <a class="brand" href="/"><span class="brand-mark" aria-hidden="true"></span>Kontraktbridge</a>
+      <div class="nav-links">
+        <a href="#traenere" aria-current="page">Trænere</a>
+        <a href="#om-mig">Om mig og kontakt</a>
+      </div>
+    </nav>
+
+    <section class="hero" aria-labelledby="titel">
+      <span class="eyebrow">Gratis bridgetræning</span>
+      <h1 id="titel">Træn bridge lidt hver dag</h1>
+      <p>Trænere til meldinger, fordelinger, pointregnskab, spilføring og håndvurdering. De kører i browseren, også på mobilen, og kræver intet login.</p>
+      <a class="btn" href="#traenere">Se trænerne</a>
+    </section>
+  </div>
+
+  <section id="traenere" aria-labelledby="h-traenere">
+    <h2 class="section" id="h-traenere">Trænerne</h2>
+    <p class="lead">Vælg en træner, og gå i gang. Hver træner har sin egen daglige træning.</p>
+    <div class="cards">
+
+      <a class="card" href="/konventionstraener/">
+        <div class="art" aria-hidden="true">
+          <span class="bc">1NT</span><span class="bc">2<span class="su su-s">♣</span></span><span class="bc pas">pas</span><span class="bc ask">?</span>
+        </div>
+        <div>
+          <span class="kicker">Meldinger</span>
+          <h3>Konventionstræner</h3>
+          <p>Træn konventionerne med 8 tilfældige meldeforløb ad gangen – som åbner, svarer eller indmelder.</p>
+        </div>
+        <div class="meta"><span>45 konventioner</span><span>Åbn træneren →</span></div>
+      </a>
+
+      <a class="card" href="/fordelingstraeneren/">
+        <div class="art" aria-hidden="true">
+          <span class="sky"><span>4<i style="height:56px"></i></span><span>4<i style="height:56px"></i></span><span>3<i style="height:42px"></i></span><span>2<i style="height:28px"></i></span></span>
+        </div>
+        <div>
+          <span class="kicker">Optælling</span>
+          <h3>Fordeling</h3>
+          <p>Lær de 39 mønstre og deres hyppighed, og tæl hænderne ud hurtigere. Fem minutter om dagen.</p>
+        </div>
+        <div class="meta"><span>I Fordelingstræneren</span><span>Åbn træneren →</span></div>
+      </a>
+
+      <a class="card" href="/fordelingstraeneren/">
+        <div class="art" aria-hidden="true">
+          <span class="chip">E</span><span class="chip">K</span><span class="chip on">D</span><span class="chip">B</span><span class="big" style="margin-left:6px">= 10</span>
+        </div>
+        <div>
+          <span class="kicker">Optælling</span>
+          <h3>Pointregnskab</h3>
+          <p>Tæl honnørpoint under spillet: hvem har vist hvad, og hvor sidder de manglende honnører?</p>
+        </div>
+        <div class="meta"><span>I Fordelingstræneren</span><span>Åbn træneren →</span></div>
+      </a>
+
+      <a class="card" href="/fordelingstraeneren/">
+        <div class="art diagram" aria-hidden="true">
+          <span><span class="su su-s">♠</span> B 4 3 2</span>
+          <span class="compass">N · S</span>
+          <span><span class="su su-s">♠</span> E 10 6 5</span>
+        </div>
+        <div>
+          <span class="kicker">Spilføring</span>
+          <h3>Farvebehandling</h3>
+          <p>Find den linje i én farve, der giver størst chance for de stik, du skal bruge. 657 kombinationer.</p>
+        </div>
+        <div class="meta"><span>I Fordelingstræneren</span><span>Åbn træneren →</span></div>
+      </a>
+
+      <a class="card" href="/fordelingstraeneren/">
+        <div class="art" aria-hidden="true" style="gap:14px">
+          <span class="big" style="font-size:44px">P 26</span><span class="pill-dark">Udgang</span>
+        </div>
+        <div>
+          <span class="kicker">Vurdering</span>
+          <h3>Håndevaluering</h3>
+          <p>Vurdér din og makkers hånd med P-modellen, og vælg mellem delkontrakt, udgang og slem.</p>
+        </div>
+        <div class="meta"><span>I Fordelingstræneren</span><span>Åbn træneren →</span></div>
+      </a>
+
+    </div>
+  </section>
+
+  <section class="band" aria-labelledby="h-saadan">
+    <h2 id="h-saadan">Sådan virker det</h2>
+    <p>Trænerne er små, selvstændige programmer, der kører i din browser.</p>
+    <div class="facts">
+      <div>
+        <span class="icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><path d="M10 17l5-5-5-5"/><path d="M15 12H3"/></svg></span>
+        <h3>Gratis og uden login</h3>
+        <p>Åbn en træner, og gå i gang. Der er ingen konto at oprette.</p>
+      </div>
+      <div>
+        <span class="icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 18h2"/></svg></span>
+        <h3>Lavet til mobilen</h3>
+        <p>Trænerne virker på telefonen, og Fordelingstræneren kan installeres som en app.</p>
+      </div>
+      <div>
+        <span class="icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></span>
+        <h3>Dine data bliver hos dig</h3>
+        <p>Fremskridt og indstillinger gemmes kun i din browser, ikke på en server.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer" id="om-mig">
+    <div class="footer-top">
+      <div class="footer-about">
+        <span class="footer-name">Kontraktbridge</span>
+        <h2>Om mig</h2>
+        <p>Jeg er bridgeentusiast med forkærlighed for spillets kognitive udfordringer og det gode fællesskab omkring bordet. Jeg elsker at skabe og forbedre ting – og med AI som ny medspiller har jeg bygget et digitalt bridge-univers, der kombinerer logik, læring og spilleglæde.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <b>Trænere</b>
+          <a href="/konventionstraener/">Konventionstræner</a>
+          <a href="/fordelingstraeneren/">Fordeling</a>
+          <a href="/fordelingstraeneren/">Pointregnskab</a>
+          <a href="/fordelingstraeneren/">Farvebehandling</a>
+          <a href="/fordelingstraeneren/">Håndevaluering</a>
+        </div>
+        <div class="footer-col">
+          <b>Kontakt</b>
+          <span>Har du fundet en fejl, eller har du en idé til en ny træner? Skriv til mig.</span>
+          <a class="mail" href="mailto:frank.steen.pedersen@gmail.com">frank.steen.pedersen@gmail.com</a>
+        </div>
+      </div>
+    </div>
+    <div class="legal">© 2026 Frank Pedersen</div>
+  </footer>
+
+</div>
+</body>
+</html>

@@ -103,21 +103,23 @@ h2.section{ margin:0; font:800 clamp(28px,3.2vw,40px)/1 var(--display); letter-s
 .facts p{ margin:0; color:var(--body); }
 .icon{ display:inline-flex; align-items:center; justify-content:center; width:40px; height:40px; border-radius:50%; background:var(--primary-pale); }
 
-/* sidefod */
-.footer{ display:flex; flex-direction:column; gap:32px; padding:48px 24px; background:var(--ink); color:var(--canvas-soft); border-radius:var(--r-xl); font-size:14px; line-height:20px; }
-.footer-top{ display:flex; flex-wrap:wrap; justify-content:space-between; gap:32px; }
-.footer-about{ display:flex; flex-direction:column; gap:12px; max-width:460px; }
-.footer-name{ font:800 24px/28px var(--display); color:var(--primary); }
-.footer h2{ margin:8px 0 0; font-size:18px; line-height:24px; font-weight:600; }
-.footer-about p{ margin:0; font-size:16px; line-height:24px; }
-.footer-cols{ display:flex; flex-wrap:wrap; gap:48px; }
-.footer-col{ display:flex; flex-direction:column; gap:8px; max-width:260px; }
-.footer-col b{ font-weight:600; }
-.footer a{ color:var(--canvas-soft); text-decoration:none; }
-.footer a:hover{ color:var(--primary-active); text-decoration:underline; }
-.footer a.mail{ color:var(--primary); font-weight:600; }
+/* sidefod som på alle sider (SPEC-om-mig.md): logo, én linje, knappen til Om mig og kontakt og kolonnen Trænere;
+   overskrifter i små grå versaler, links hvide og understregede */
+.footer{ display:flex; flex-direction:column; gap:28px; padding:40px 32px; background:var(--ink); color:var(--canvas-soft); border-radius:var(--r-xl); font-size:15px; line-height:22px; }
+.footer-top{ display:flex; flex-wrap:wrap; justify-content:space-between; gap:32px 56px; }
+.footer-about{ display:flex; flex-direction:column; align-items:flex-start; gap:12px; max-width:340px; }
+.footer-about p{ margin:0; color:#c9cdd2; }
+.footer-col{ display:flex; flex-direction:column; gap:10px; min-width:150px; }
+.footer-title{ margin:0 0 2px; font-size:12px; line-height:16px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:#9aa0a6; }
+.footer-col ul{ display:flex; flex-direction:column; gap:10px; margin:0; padding:0; list-style:none; }
+.footer a{ color:#fff; text-decoration:underline; text-decoration-color:rgba(255,255,255,.35); text-underline-offset:4px; }
+.footer a:hover{ color:var(--primary-active); text-decoration-color:currentColor; }
+.footer a.brand{ text-decoration:none; }
+.footer a.footer-cta{ display:inline-flex; align-items:center; gap:8px; min-height:44px; padding:0 18px; border-radius:var(--r-pill);
+  background:var(--primary); color:var(--on-primary); font-weight:600; text-decoration:none; }
+.footer a.footer-cta:hover{ background:#ffb46e; color:var(--on-primary); }
 .footer a:focus-visible{ outline-color:var(--primary); }
-.legal{ padding-top:24px; border-top:1px solid var(--body); font-size:12px; line-height:16px; }
+.legal{ padding-top:20px; border-top:1px solid var(--body); font-size:12px; line-height:16px; color:#9aa0a6; }
 
 @media (max-width:600px){
   .page{ gap:32px; padding-top:16px; }
@@ -136,7 +138,7 @@ h2.section{ margin:0; font:800 clamp(28px,3.2vw,40px)/1 var(--display); letter-s
       <a class="brand" href="/"><span class="logo" aria-hidden="true">7NT</span>Kontraktbridge</a>
       <div class="nav-links">
         <a href="#traenere" aria-current="page" data-en="Trainers">Trænere</a>
-        <a href="#om-mig" data-en="About me and contact">Om mig og kontakt</a>
+        <a href="/om-mig/" data-en="About me and contact">Om mig og kontakt</a>
         <button class="lang" id="langBtn" type="button" lang="en">English</button>
       </div>
     </nav>
@@ -240,28 +242,23 @@ h2.section{ margin:0; font:800 clamp(28px,3.2vw,40px)/1 var(--display); letter-s
     </div>
   </section>
 
-  <footer class="footer" id="om-mig">
+  <footer class="footer">
     <div class="footer-top">
       <div class="footer-about">
-        <span class="footer-name" style="display:inline-flex; align-items:center; gap:10px;"><span class="logo" aria-hidden="true" style="width:36px; height:36px; font-size:13px;">7NT</span>Kontraktbridge</span>
-        <h2 data-en="About me">Om mig</h2>
-        <p data-en="I am a bridge enthusiast with a soft spot for the cognitive challenges of the game and the good company around the table. I love creating and improving things – and with AI as a new partner, I have built a digital bridge universe that brings together logic, learning and the joy of playing.">Jeg er bridgeentusiast med forkærlighed for spillets kognitive udfordringer og det gode fællesskab omkring bordet. Jeg elsker at skabe og forbedre ting – og med AI som ny medspiller har jeg bygget et digitalt bridge-univers, der kombinerer logik, læring og spilleglæde.</p>
+        <a class="brand" href="/"><span class="logo" aria-hidden="true">7NT</span>Kontraktbridge</a>
+        <p data-en="Free bridge training in the browser. Made by Frank Pedersen.">Gratis bridgetræning i browseren. Lavet af Frank Pedersen.</p>
+        <a class="footer-cta" href="/om-mig/" data-en="About me and contact &lt;span aria-hidden=&quot;true&quot;&gt;→&lt;/span&gt;">Om mig og kontakt <span aria-hidden="true">→</span></a>
       </div>
-      <div class="footer-cols">
-        <div class="footer-col">
-          <b data-en="Trainers">Trænere</b>
-          <a href="/konventionstraener/" data-en="Convention trainer">Konventionstræner</a>
-          <a href="/fordelingstraeneren/" data-en="Distribution">Fordeling</a>
-          <a href="/fordelingstraeneren/" data-en="Point count">Pointregnskab</a>
-          <a href="/fordelingstraeneren/" data-en="Suit combinations">Farvebehandling</a>
-          <a href="/fordelingstraeneren/" data-en="Hand evaluation">Håndevaluering</a>
-        </div>
-        <div class="footer-col">
-          <b data-en="Contact">Kontakt</b>
-          <span data-en="Have you found a mistake, or do you have an idea for a new trainer? Write to me.">Har du fundet en fejl, eller har du en idé til en ny træner? Skriv til mig.</span>
-          <a class="mail" href="mailto:frank.steen.pedersen@gmail.com">frank.steen.pedersen@gmail.com</a>
-        </div>
-      </div>
+      <nav class="footer-col" aria-labelledby="footer-traenere">
+        <h2 class="footer-title" id="footer-traenere" data-en="Trainers">Trænere</h2>
+        <ul>
+          <li><a href="/konventionstraener/" data-en="Convention trainer">Konventionstræner</a></li>
+          <li><a href="/fordelingstraeneren/" data-en="Distribution">Fordeling</a></li>
+          <li><a href="/fordelingstraeneren/" data-en="Point count">Pointregnskab</a></li>
+          <li><a href="/fordelingstraeneren/" data-en="Suit combinations">Farvebehandling</a></li>
+          <li><a href="/fordelingstraeneren/" data-en="Hand evaluation">Håndevaluering</a></li>
+        </ul>
+      </nav>
     </div>
     <div class="legal">© 2026 Frank Pedersen</div>
   </footer>

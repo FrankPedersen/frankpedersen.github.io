@@ -20,14 +20,18 @@ IKKE_ORD = [
     (re.compile(r'\bblindemand\w*', re.I), 'bordet'),
     (re.compile(r'\bden blinde\b', re.I), 'bordet'),
     (re.compile(r'\bbroer(?:ne)?\b', re.I), 'forbindelser, indgang'),
+    # T1–T3 (Franks svar 22. oktober 2026): hp, doubleton og fittet i dansk tekst
+    (re.compile(r'\bdobbeltton\w*', re.I), 'doubleton'),
+    (re.compile(r'\bfitten\b', re.I), 'fittet'),
 ]
+HCP = (re.compile(r'\bHCP\b'), 'hp')
 I_SNIT = re.compile(r'\bi\s+$', re.I)
 
 
-def fund(tekst):
-    """Alle "Ikke"-ord i teksten som (ordet, husets ord)."""
+def fund(tekst, hcp=True):
+    """Alle "Ikke"-ord i teksten som (ordet, husets ord). HCP tjekkes ikke i ordbogens markdown (se dansk_tekst)."""
     ud = []
-    for mønster, husets in IKKE_ORD:
+    for mønster, husets in IKKE_ORD + ([HCP] if hcp else []):
         for m in mønster.finditer(tekst):
             if m.group(0).lower() == 'snit' and I_SNIT.search(tekst[max(0, m.start() - 3):m.start()]):
                 continue
@@ -54,8 +58,16 @@ def dansk_tekst():
 
 class Fagord(unittest.TestCase):
     def test_sidens_danske_tekster_bruger_husets_ord(self):
+        # Ordbogens markdown rettes kun af Frank; dens "HCP + fordeling" (Pointvurdering) er sendt som forslag.
         for navn, tekst in dansk_tekst():
-            self.assertEqual(fund(tekst), [], navn)
+            self.assertEqual(fund(tekst, hcp=not navn.endswith('.md')), [], navn)
+
+    def test_husets_ord_t1_til_t3(self):
+        self.assertEqual(fund('12 HCP'), [('HCP', 'hp')])
+        self.assertEqual(fund('dobbeltton i klør'), [('dobbeltton', 'doubleton')])
+        self.assertEqual(fund('når fitten er fundet'), [('fitten', 'fittet')])
+        self.assertEqual(fund('12 hp, doubleton i klør, og fittet er fundet'), [])
+        self.assertEqual(fund('<td data-en="10+ HCP">10+ hp</td>'.replace(' data-en="10+ HCP"', '')), [])
 
     def test_fejler_hvis_man_skriver_knibning(self):
         self.assertEqual(fund('Spil en knibning mod damen.'), [('knibning', 'kipning, kippe')])

@@ -6,12 +6,19 @@ const MAX_RATE_LIMIT_ENTRIES = 5000
 
 const contactAttempts = new Map()
 
+// Azure Functions sender adressen som "ip:port" (IPv6 som "[ip]:port"), og porten skifter med hver forbindelse.
+function withoutPort(address) {
+  const bracketed = /^\[([^\]]+)\](?::\d+)?$/.exec(address)
+  if (bracketed) return bracketed[1]
+  return /^[\d.]+:\d+$/.test(address) ? address.slice(0, address.lastIndexOf(':')) : address
+}
+
 export function getClientIp(request) {
   const forwardedFor = request.headers.get('x-forwarded-for')
   const clientIp = forwardedFor?.split(',')[0]?.trim()
     || request.headers.get('x-client-ip')?.trim()
 
-  return clientIp || null
+  return clientIp ? withoutPort(clientIp) : null
 }
 
 export function checkRateLimit(clientIp, now = Date.now()) {

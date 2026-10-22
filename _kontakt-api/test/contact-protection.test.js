@@ -46,6 +46,14 @@ test('extracts the client address from the forwarded-for header', () => {
   assert.equal(getClientIp(request), '203.0.113.5')
 })
 
+test('strips the port that Azure adds to the forwarded-for address', () => {
+  const ip = (forwardedFor) => getClientIp(new Request('https://example.test/api/contact', { headers: { 'x-forwarded-for': forwardedFor } }))
+  assert.equal(ip('203.0.113.5:51234'), '203.0.113.5')
+  assert.equal(ip('203.0.113.5:51234, 10.0.0.1:443'), '203.0.113.5')
+  assert.equal(ip('[2001:db8::1]:443'), '2001:db8::1')
+  assert.equal(ip('2001:db8::1'), '2001:db8::1')
+})
+
 test('allows three requests per IP in a 15-minute window and then blocks', () => {
   const ip = `rate-limit-test-${crypto.randomUUID()}`
   const start = 1_000_000

@@ -48,9 +48,10 @@ func start        # kræver Azure Functions Core Tools og en local.settings.json
 Uden Functions Core Tools, med zip og fjernbygning:
 
 ```bash
-npm ci --omit=dev
-zip -r kontakt.zip host.json package.json package-lock.json src   # eller Compress-Archive i PowerShell
+python -c "import zipfile,pathlib; z=zipfile.ZipFile('kontakt.zip','w',zipfile.ZIP_DEFLATED); [z.write(p,p) for p in ['host.json','package.json','package-lock.json',*map(lambda f: f.as_posix(), pathlib.Path('src').rglob('*.js'))]]; z.close()"
 az functionapp deployment source config-zip -g Kontraktbridge -n kontraktbridge-kontakt --src kontakt.zip --build-remote true
 ```
+
+Zip-filen skal have stier med `/`. Windows PowerShells `Compress-Archive` skriver `\`, og så finder Azure (Linux) ingen funktioner ("Found zero files matching src/functions/*.js"). I Git Bash skal `MSYS_NO_PATHCONV=1` sættes, når az får ressource-id'er.
 
 Med Core Tools: `func azure functionapp publish kontraktbridge-kontakt`.

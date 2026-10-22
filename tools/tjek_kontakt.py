@@ -69,7 +69,8 @@ class Kontaktformularen(unittest.TestCase):
     def test_e_mailadressen_staar_ikke_paa_siden(self):
         self.assertNotIn('frank.steen.pedersen', self.html)
         self.assertNotIn('mailto:', self.html)
-        self.assertNotRegex(self.html, r'[\w.+-]+@[\w-]+\.(?:com|dk|net)')
+        # Den eneste adresse er pladsholderen i e-mailfeltet.
+        self.assertEqual(set(re.findall(r'[\w.+-]+@[\w-]+\.(?:com|dk|net)', self.html)) - {'din@email.dk'}, set())
 
     def test_boksen_beholder_overskriften_og_har_den_nye_indledning(self):
         tekst = re.sub(r'\s+', ' ', ' '.join(self.f.tekst))

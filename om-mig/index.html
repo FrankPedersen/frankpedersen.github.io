@@ -57,10 +57,24 @@ a:focus-visible, button:focus-visible{ outline:2px solid var(--ink); outline-off
 .om-kontakt{ display:flex; flex-direction:column; gap:14px; padding:28px; border-radius:var(--r-xl); background:var(--ink); color:var(--canvas-soft); }
 .om-kontakt h2{ color:var(--primary); font-size:26px; }
 .om-kontakt p{ margin:0; color:var(--soft-text); }
-.om-mail{ display:inline-flex; align-items:center; justify-content:center; min-height:48px; padding:8px 20px; border-radius:var(--r-pill);
-  background:var(--primary); color:var(--on-primary); font-weight:600; text-decoration:none; text-align:center; overflow-wrap:anywhere; }
-.om-mail:hover{ background:var(--primary-active); }
 .om-kontakt a:focus-visible{ outline-color:var(--primary); }
+
+/* kontaktformularen i den mørke boks (SPEC-kontaktformular.md): sidens farver, lys tekst og --primary på knap og fokus */
+.om-form{ display:flex; flex-direction:column; gap:14px; }
+.om-felt{ display:flex; flex-direction:column; gap:6px; }
+.om-felt label{ font-size:14px; line-height:20px; font-weight:600; color:var(--canvas-soft); }
+.om-felt input, .om-felt textarea{ width:100%; min-height:48px; padding:10px 14px; border:0; border-radius:var(--r-md);
+  background:rgba(255,255,255,.08); box-shadow:inset 0 0 0 1px rgba(255,255,255,.3); color:var(--canvas-soft); font:16px/1.5 var(--sans); }
+.om-felt textarea{ resize:vertical; }
+.om-felt input::placeholder, .om-felt textarea::placeholder{ color:var(--grey); }
+.om-felt input:focus-visible, .om-felt textarea:focus-visible{ outline:2px solid var(--primary); outline-offset:2px; }
+.om-felt-skjult{ position:absolute; left:-10000px; width:1px; height:1px; overflow:hidden; }
+.om-send{ align-self:flex-start; min-height:48px; padding:8px 22px; border:0; border-radius:var(--r-pill);
+  background:var(--primary); color:var(--on-primary); font:600 16px/1.5 var(--sans); cursor:pointer; }
+.om-send:hover{ background:var(--primary-active); }
+.om-send:disabled{ opacity:.7; cursor:wait; }
+.om-send:focus-visible{ outline:2px solid var(--primary); outline-offset:3px; }
+.om-svar:empty{ display:none; }
 
 /* projekterne */
 .om-section{ display:flex; flex-direction:column; gap:20px; }
@@ -98,7 +112,6 @@ a.om-card:hover{ box-shadow:inset 0 0 0 1px var(--ink); }
   .om-intro, .om-grid{ grid-template-columns:1fr; }
   .om-lead{ font-size:17px; line-height:27px; }
   .om-kontakt{ padding:24px 20px; }
-  .om-mail{ padding:8px 14px; font-size:15px; }
   .foot{ padding:28px 20px; }
 }
 </style>
@@ -122,8 +135,28 @@ a.om-card:hover{ box-shadow:inset 0 0 0 1px var(--ink); }
     </div>
     <aside class="om-kontakt" id="kontakt" aria-labelledby="om-kontakt-h">
       <h2 id="om-kontakt-h">Kontakt</h2>
-      <p>Har du fundet en fejl, eller har du en idé til en ny træner? Skriv til mig. Jeg læser alle mails.</p>
-      <a class="om-mail" href="mailto:frank.steen.pedersen@gmail.com">frank.steen.pedersen@gmail.com</a>
+      <p>Har du fundet en fejl, eller har du en idé til en ny træner? Skriv til mig her. Jeg læser alle beskeder.</p>
+      <form class="om-form" id="kontaktform" hidden>
+        <div class="om-felt">
+          <label for="kontakt-navn">Navn</label>
+          <input id="kontakt-navn" name="name" type="text" autocomplete="name" required maxlength="120" placeholder="Hvad skal jeg kalde dig?">
+        </div>
+        <div class="om-felt">
+          <label for="kontakt-email">E-mail</label>
+          <input id="kontakt-email" name="email" type="email" autocomplete="email" required maxlength="254" placeholder="din@email.dk">
+        </div>
+        <div class="om-felt">
+          <label for="kontakt-besked">Besked</label>
+          <textarea id="kontakt-besked" name="message" rows="5" required maxlength="5000" placeholder="Fx en fejl, du har fundet, eller en idé til en ny træner"></textarea>
+        </div>
+        <div class="om-felt-skjult" aria-hidden="true">
+          <label for="kontakt-website">Lad dette felt stå tomt</label>
+          <input id="kontakt-website" name="website" type="text" tabindex="-1" autocomplete="off">
+        </div>
+        <button class="om-send" type="submit">Send besked</button>
+        <p class="om-svar" id="kontakt-svar" aria-live="polite"></p>
+      </form>
+      <noscript><p class="om-svar">Formularen kræver JavaScript.</p></noscript>
     </aside>
   </section>
 
@@ -185,6 +218,62 @@ var PROJEKTER = [
     foot.textContent = p.href ? (p.link || 'Åbn →') : 'Link kommer';
     card.append(tag, h, t, foot);
     grid.appendChild(card);
+  });
+})();
+</script>
+<script>
+/* Kontaktformularen (SPEC-kontaktformular.md, del 2) sender til Azure Function App'en kontraktbridge-kontakt
+   (repoets _kontakt-api). Tiden regnes fra første fokus i formularen; API'et afviser beskeder sendt inden 2 sekunder. */
+const KONTAKT_API = 'https://kontraktbridge-kontakt.azurewebsites.net/api/contact';
+(function () {
+  var form = document.getElementById('kontaktform');
+  var knap = form.querySelector('button[type=submit]');
+  var svar = document.getElementById('kontakt-svar');
+  var start = null;
+  form.hidden = false;
+  form.addEventListener('focusin', function () { if (start === null) start = Date.now(); });
+
+  function vis(tekst, rolle) {
+    svar.setAttribute('role', rolle);
+    svar.textContent = tekst;
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var data = new FormData(form);
+    knap.disabled = true;
+    knap.textContent = 'Sender …';
+    svar.removeAttribute('role');
+    svar.textContent = '';
+    fetch(KONTAKT_API, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        name: data.get('name'),
+        email: data.get('email'),
+        message: data.get('message'),
+        website: data.get('website') || '',
+        elapsedMilliseconds: start === null ? 0 : Date.now() - start,
+      }),
+    })
+      .then(function (r) {
+        return r.json().catch(function () { return {}; }).then(function (body) { return { ok: r.ok, body: body }; });
+      })
+      .then(function (res) {
+        if (res.ok) {
+          vis(res.body.message || 'Tak for din besked. Den er sendt.', 'status');
+          form.reset();
+          start = null;
+        } else {
+          vis(res.body.error || 'Beskeden kunne ikke sendes. Prøv igen senere.', 'alert');
+        }
+      }, function () {
+        vis('Beskeden kunne ikke sendes. Prøv igen senere.', 'alert');
+      })
+      .then(function () {
+        knap.disabled = false;
+        knap.textContent = 'Send besked';
+      });
   });
 })();
 </script>

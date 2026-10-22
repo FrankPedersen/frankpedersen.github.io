@@ -83,9 +83,9 @@ class Ordbogssiden(unittest.TestCase):
         bygger = hent_bygger()
         self.assertEqual(bygger.byg(KILDE.read_text(encoding='utf-8')), self.html)
 
-    def test_403_opslag_og_tallet_i_underteksten(self):
-        self.assertEqual(len(self.side.opslag), 403)
-        self.assertIn('403 bridgeord på dansk med engelsk oversættelse.', self.html)
+    def test_387_opslag_og_tallet_i_underteksten(self):
+        self.assertEqual(len(self.side.opslag), 387)
+        self.assertIn('387 bridgeord på dansk med engelsk oversættelse.', self.html)
 
     def test_finesse_knibning_og_kipning_finder_kipning(self):
         for q in ('finesse', 'knibning', 'kipning', 'Knibning'):

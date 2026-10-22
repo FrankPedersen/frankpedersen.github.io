@@ -50,8 +50,11 @@ def dansk_html(html):
 def dansk_tekst():
     """(navn, tekst) for al dansk tekst på siden."""
     ud = [(sti, dansk_html((ROD / sti).read_text(encoding='utf-8'))) for sti in ('index.html', 'om-mig/index.html')]
+    # Opslagene, indekset og den strukturerede data bygges fra markdown, som tjekkes for sig nedenfor.
     ordbog = (ROD / 'ordbog' / 'index.html').read_text(encoding='utf-8')
-    ud.append(('ordbog/index.html', dansk_html(re.sub(r'<!-- opslag -->.*?<!-- /opslag -->', ' ', ordbog, flags=re.S))))
+    ordbog = re.sub(r'<!-- opslag -->.*?<!-- /opslag -->', ' ', ordbog, flags=re.S)
+    ordbog = re.sub(r'<script type="application/ld\+json">.*?</script>', ' ', ordbog, flags=re.S)
+    ud.append(('ordbog/index.html', dansk_html(ordbog)))
     # Ordbogens markdown uden de alternative termer og det engelske (Engelsk-feltet og indekslinjerne).
     markdown = (ROD / 'ordbog' / 'Dansk_bridgeordbog.md').read_text(encoding='utf-8')
     ud.append(('ordbog/Dansk_bridgeordbog.md',

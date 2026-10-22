@@ -6,6 +6,7 @@ index.html rettes aldrig i hånden. Scriptet stopper med en fejl ved døde henvi
 opslagsord, der er et af husets "Ikke"-ord. Siden bruger ingen eksterne biblioteker i browseren.
 """
 import html
+import json
 import pathlib
 import re
 import sys
@@ -167,6 +168,40 @@ def knapper(navn, værdier, antal):
     return '\n'.join(ud)
 
 
+ADRESSE = 'https://www.kontraktbridge.dk/ordbog/'
+
+
+def struktureret_data(opslag, ekstra):
+    """schema.org DefinedTermSet med et DefinedTerm pr. opslag (JSON-LD i sidens head)."""
+    def andre_navne(o):
+        navne = [o['engelsk'], *ekstra.get(o['id'], []), *o['alternative'], o.get('forkortelse', '')]
+        return [x for i, x in enumerate(navne) if x and x != o['ord'] and x not in navne[:i]]
+
+    data = {
+        '@context': 'https://schema.org',
+        '@type': 'DefinedTermSet',
+        '@id': ADRESSE + '#ordbog',
+        'name': 'Bridgeordbog',
+        'description': f'{len(opslag)} bridgeord på dansk med engelsk oversættelse.',
+        'url': ADRESSE,
+        'inLanguage': 'da',
+        'hasDefinedTerm': [
+            {
+                '@type': 'DefinedTerm',
+                '@id': ADRESSE + '#' + o['id'],
+                'name': o['ord'],
+                'description': o['definition'],
+                'url': ADRESSE + '#' + o['id'],
+                'inDefinedTermSet': ADRESSE + '#ordbog',
+                **({'alternateName': andre_navne(o)} if andre_navne(o) else {}),
+            }
+            for o in opslag
+        ],
+    }
+    tekst = json.dumps(data, ensure_ascii=False, separators=(',', ':')).replace('</', '<\\/')
+    return f'<script type="application/ld+json">{tekst}</script>'
+
+
 def render(ordbog):
     opslag = sorted(ordbog['opslag'], key=lambda o: sorteringsnøgle(o['ord']))
     ord_for_id = {o['id']: o['ord'] for o in opslag}
@@ -210,7 +245,8 @@ def render(ordbog):
             .replace('{{KATEGORIER}}', knapper('kategori', kategorier, antal))
             .replace('{{NIVEAUER}}', knapper('niveau', niveauer, antal))
             .replace('{{OPSLAG}}', '\n'.join(afsnit))
-            .replace('{{INDEKS}}', indeks))
+            .replace('{{INDEKS}}', indeks)
+            .replace('{{STRUKTUR}}', struktureret_data(opslag, ekstra)))
 
 
 def byg(tekst):
@@ -246,6 +282,7 @@ SKABELON = '''<!doctype html>
 <meta property="og:title" content="Bridgeordbog – Kontraktbridge">
 <meta property="og:description" content="{{ANTAL}} bridgeord på dansk med engelsk oversættelse.">
 <meta property="og:url" content="https://www.kontraktbridge.dk/ordbog/">
+{{STRUKTUR}}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Manrope:wght@800&display=swap">

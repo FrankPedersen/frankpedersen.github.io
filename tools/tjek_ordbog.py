@@ -5,6 +5,7 @@
 Bredden ved 390 px tjekkes i en rigtig browser med `node tools/tjek_bredde.mjs`.
 """
 import importlib.util
+import json
 import pathlib
 import re
 import unittest
@@ -129,6 +130,27 @@ class Ordbogssiden(unittest.TestCase):
 
     def test_ingen_eksterne_scripts(self):
         self.assertNotRegex(self.html, r'<script[^>]+src=')
+
+    def test_struktureret_data_definedtermset_med_et_definedterm_pr_opslag(self):
+        blokke = re.findall(r'<script type="application/ld\+json">(.*?)</script>', self.html, re.S)
+        self.assertEqual(len(blokke), 1)
+        data = json.loads(blokke[0])
+        self.assertEqual(data['@context'], 'https://schema.org')
+        self.assertEqual(data['@type'], 'DefinedTermSet')
+        self.assertEqual(data['url'], 'https://www.kontraktbridge.dk/ordbog/')
+        self.assertEqual(data['inLanguage'], 'da')
+        termer = data['hasDefinedTerm']
+        self.assertEqual(len(termer), len(self.side.opslag))
+        self.assertEqual([t['url'].split('#')[1] for t in termer], [o['id'] for o in self.side.opslag])
+        for t in termer:
+            self.assertEqual(t['@type'], 'DefinedTerm')
+            self.assertEqual(t['inDefinedTermSet'], data['@id'])
+            self.assertTrue(t['name'] and t['description'], t['url'])
+        kipning = next(t for t in termer if t['name'] == 'Kipning')
+        self.assertEqual(kipning['url'], 'https://www.kontraktbridge.dk/ordbog/#kipning')
+        self.assertTrue(kipning['description'].startswith('At spille mod en honnør'))
+        for navn in ('Finesse', 'Knibning', 'snit'):
+            self.assertIn(navn, kipning['alternateName'])
 
 
 class Bygningen(unittest.TestCase):

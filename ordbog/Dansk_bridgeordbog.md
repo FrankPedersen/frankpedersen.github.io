@@ -2017,9 +2017,9 @@ _Version 1.1. Ordbogen indeholder 403 kanoniske opslag._
 **Alternative termer:** Points
 **Niveau:** begynder
 **Kategori:** Grundlæggende begreber
-**Kort definition:** Samlet vurdering af håndens styrke (HCP + fordeling).
+**Kort definition:** Samlet vurdering af håndens styrke (hp + fordeling).
 
-**Forklaring:** Samlet vurdering af håndens styrke (HCP + fordeling).
+**Forklaring:** Samlet vurdering af håndens styrke (hp + fordeling).
 
 ### Preference / Correct
 **ID:** `preference-correct`

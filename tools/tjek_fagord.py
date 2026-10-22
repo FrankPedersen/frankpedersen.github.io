@@ -22,16 +22,18 @@ IKKE_ORD = [
     (re.compile(r'\bbroer(?:ne)?\b', re.I), 'forbindelser, indgang'),
     # T1–T3 (Franks svar 22. oktober 2026): hp, doubleton og fittet i dansk tekst
     (re.compile(r'\bdobbeltton\w*', re.I), 'doubleton'),
-    (re.compile(r'\bfitten\b', re.I), 'fittet'),
+    (re.compile(r'\bfittens?\b', re.I), 'fittet'),
+    (re.compile(r'\bHCP\b'), 'hp'),
+    # Et fit, som passer med fittet (Franks valg 22. oktober 2026): en fit, en major-fit, en 8+ major-fit …
+    (re.compile(r'\ben\s+(?:\S+\s+)?(?:[0-9a-zæøå+]+-)*fit\b', re.I), 'et fit'),
 ]
-HCP = (re.compile(r'\bHCP\b'), 'hp')
 I_SNIT = re.compile(r'\bi\s+$', re.I)
 
 
-def fund(tekst, hcp=True):
-    """Alle "Ikke"-ord i teksten som (ordet, husets ord). HCP tjekkes ikke i ordbogens markdown (se dansk_tekst)."""
+def fund(tekst):
+    """Alle "Ikke"-ord i teksten som (ordet, husets ord)."""
     ud = []
-    for mønster, husets in IKKE_ORD + ([HCP] if hcp else []):
+    for mønster, husets in IKKE_ORD:
         for m in mønster.finditer(tekst):
             if m.group(0).lower() == 'snit' and I_SNIT.search(tekst[max(0, m.start() - 3):m.start()]):
                 continue
@@ -50,23 +52,27 @@ def dansk_tekst():
     ud = [(sti, dansk_html((ROD / sti).read_text(encoding='utf-8'))) for sti in ('index.html', 'om-mig/index.html')]
     ordbog = (ROD / 'ordbog' / 'index.html').read_text(encoding='utf-8')
     ud.append(('ordbog/index.html', dansk_html(re.sub(r'<!-- opslag -->.*?<!-- /opslag -->', ' ', ordbog, flags=re.S))))
+    # Ordbogens markdown uden de alternative termer og det engelske (Engelsk-feltet og indekslinjerne).
     markdown = (ROD / 'ordbog' / 'Dansk_bridgeordbog.md').read_text(encoding='utf-8')
     ud.append(('ordbog/Dansk_bridgeordbog.md',
-               '\n'.join(linje for linje in markdown.splitlines() if not linje.startswith('**Alternative termer:**'))))
+               '\n'.join(linje for linje in markdown.splitlines()
+                         if not linje.startswith(('**Alternative termer:**', '**Engelsk:**')) and ' → ' not in linje)))
     return ud
 
 
 class Fagord(unittest.TestCase):
     def test_sidens_danske_tekster_bruger_husets_ord(self):
-        # Ordbogens markdown rettes kun af Frank; dens "HCP + fordeling" (Pointvurdering) er sendt som forslag.
         for navn, tekst in dansk_tekst():
-            self.assertEqual(fund(tekst, hcp=not navn.endswith('.md')), [], navn)
+            self.assertEqual(fund(tekst), [], navn)
 
     def test_husets_ord_t1_til_t3(self):
         self.assertEqual(fund('12 HCP'), [('HCP', 'hp')])
         self.assertEqual(fund('dobbeltton i klør'), [('dobbeltton', 'doubleton')])
         self.assertEqual(fund('når fitten er fundet'), [('fitten', 'fittet')])
-        self.assertEqual(fund('12 hp, doubleton i klør, og fittet er fundet'), [])
+        self.assertEqual(fund('ikke det samme som en fit'), [('en fit', 'et fit')])
+        self.assertEqual(fund('med en 8+ major-fit'), [('en 8+ major-fit', 'et fit')])
+        self.assertEqual(fund('fittens farve'), [('fittens', 'fittet')])
+        self.assertEqual(fund('12 hp, doubleton i klør, og fittet er fundet; et 4-3-fit'), [])
         self.assertEqual(fund('<td data-en="10+ HCP">10+ hp</td>'.replace(' data-en="10+ HCP"', '')), [])
 
     def test_fejler_hvis_man_skriver_knibning(self):

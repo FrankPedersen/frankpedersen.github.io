@@ -2,3 +2,6 @@
 .claude/
 SPEC-*.md
 __pycache__/
+
+# Systemdokumentationen er privat og ligger kun lokalt (Franks valg 25. oktober 2026)
+docs/SYSTEM.md

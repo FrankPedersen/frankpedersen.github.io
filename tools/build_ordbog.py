@@ -458,6 +458,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, summary:focus-visibl
         <h2 class="footer-title" id="footer-opslag" data-en="Reference">Opslag</h2>
         <ul>
           <li><a href="/ordbog/" data-en="Bridge dictionary">Bridgeordbog</a></li>
+          <li><a href="/scoring/" data-en="Scoring in bridge">Scoring i bridge</a></li>
         </ul>
       </nav>
     </div>

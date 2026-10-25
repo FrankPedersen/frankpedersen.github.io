@@ -14,9 +14,7 @@
 <meta property="og:title" content="Om mig og kontakt – Kontraktbridge">
 <meta property="og:description" content="Hvem står bag Kontraktbridge, mine AI-projekter, og hvordan du kontakter mig.">
 <meta property="og:url" content="https://www.kontraktbridge.dk/om-mig/">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Manrope:wght@800&display=swap">
+<link rel="stylesheet" href="../fonts/tekst.css">
 <style>
 /* Samme farver, skrift og logo som forsiden (index.html); opbygningen følger tegnefladen "Ny struktur for trænerne",
    skærmene "Om mig og kontakt (computer)" og "(mobil)". */
@@ -44,7 +42,10 @@ a:focus-visible, button:focus-visible{ outline:2px solid var(--ink); outline-off
 .nav-links a{ color:var(--canvas-soft); text-decoration:none; padding:10px 14px; border-radius:var(--r-pill); }
 .nav-links a:hover{ background:rgba(255,255,255,.08); }
 .nav-links a[aria-current="page"]{ background:rgba(255,255,255,.12); color:#fff; }
-.bar a:focus-visible{ outline-color:var(--primary); }
+.bar a:focus-visible, .bar button:focus-visible{ outline-color:var(--primary); }
+.lang{ margin-left:6px; min-height:40px; padding:0 16px; border:0; border-radius:var(--r-pill); background:transparent;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.3); color:var(--canvas-soft); font:inherit; cursor:pointer; }
+.lang:hover{ background:rgba(255,255,255,.08); }
 
 .om{ max-width:1200px; margin:0 auto; padding:56px clamp(16px,3vw,40px) 48px; display:flex; flex-direction:column; gap:56px; }
 
@@ -75,6 +76,7 @@ a:focus-visible, button:focus-visible{ outline:2px solid var(--ink); outline-off
 .om-send:disabled{ opacity:.7; cursor:wait; }
 .om-send:focus-visible{ outline:2px solid var(--primary); outline-offset:3px; }
 .om-svar:empty{ display:none; }
+.om-privat{ font-size:14px; line-height:20px; }
 
 /* projekterne */
 .om-section{ display:flex; flex-direction:column; gap:20px; }
@@ -118,51 +120,53 @@ a.om-card:hover{ box-shadow:inset 0 0 0 1px var(--ink); }
 </head>
 <body>
 
-<nav class="bar" aria-label="Hovedmenu">
+<nav class="bar" aria-label="Hovedmenu" data-en-aria="Main menu">
   <a class="brand" href="/"><span class="logo" aria-hidden="true">7NT</span>Kontraktbridge</a>
   <div class="nav-links">
-    <a href="/#traenere">Trænere</a>
-    <a href="/om-mig/" aria-current="page">Om mig og kontakt</a>
+    <a href="/#traenere" data-en="Trainers">Trænere</a>
+    <a href="/om-mig/" aria-current="page" data-en="About me and contact">Om mig og kontakt</a>
+    <button class="lang" id="langBtn" type="button" lang="en">English</button>
   </div>
 </nav>
 
 <main class="om">
   <section class="om-intro" aria-labelledby="om-h1">
     <div>
-      <span class="om-eyebrow">Om mig</span>
-      <h1 id="om-h1">Hej, jeg hedder Frank</h1>
-      <p class="om-lead">Jeg er bridgeentusiast med forkærlighed for spillets kognitive udfordringer og det gode fællesskab omkring bordet. Jeg elsker at skabe og forbedre ting – og med AI som ny medspiller har jeg bygget et digitalt bridge-univers, der kombinerer logik, læring og spilleglæde.</p>
+      <span class="om-eyebrow" data-en="About me">Om mig</span>
+      <h1 id="om-h1" data-en="Hi, I&#39;m Frank">Hej, jeg hedder Frank</h1>
+      <p class="om-lead" data-en="I&#x27;m a bridge enthusiast with a soft spot for the game&#x27;s mental challenges and the good company around the table. I love making and improving things – and with AI as a new partner, I have built a digital bridge universe that combines logic, learning and the joy of playing.">Jeg er bridgeentusiast med forkærlighed for spillets kognitive udfordringer og det gode fællesskab omkring bordet. Jeg elsker at skabe og forbedre ting – og med AI som ny medspiller har jeg bygget et digitalt bridge-univers, der kombinerer logik, læring og spilleglæde.</p>
     </div>
     <aside class="om-kontakt" id="kontakt" aria-labelledby="om-kontakt-h">
-      <h2 id="om-kontakt-h">Kontakt</h2>
-      <p>Har du fundet en fejl, eller har du en idé til en ny træner? Skriv til mig her. Jeg læser alle beskeder.</p>
+      <h2 id="om-kontakt-h" data-en="Contact">Kontakt</h2>
+      <p data-en="Have you found a mistake, or do you have an idea for a new trainer? Write to me here. I read every message.">Har du fundet en fejl, eller har du en idé til en ny træner? Skriv til mig her. Jeg læser alle beskeder.</p>
       <form class="om-form" id="kontaktform" hidden>
         <div class="om-felt">
-          <label for="kontakt-navn">Navn</label>
-          <input id="kontakt-navn" name="name" type="text" autocomplete="name" required maxlength="120" placeholder="Hvad skal jeg kalde dig?">
+          <label for="kontakt-navn" data-en="Name">Navn</label>
+          <input id="kontakt-navn" name="name" type="text" autocomplete="name" required maxlength="120" placeholder="Hvad skal jeg kalde dig?" data-en-placeholder="What should I call you?">
         </div>
         <div class="om-felt">
-          <label for="kontakt-email">E-mail</label>
-          <input id="kontakt-email" name="email" type="email" autocomplete="email" required maxlength="254" placeholder="din@email.dk">
+          <label for="kontakt-email" data-en="E-mail">E-mail</label>
+          <input id="kontakt-email" name="email" type="email" autocomplete="email" required maxlength="254" placeholder="din@email.dk" data-en-placeholder="your@email.com">
         </div>
         <div class="om-felt">
-          <label for="kontakt-besked">Besked</label>
-          <textarea id="kontakt-besked" name="message" rows="5" required maxlength="5000" placeholder="Fx en fejl, du har fundet, eller en idé til en ny træner"></textarea>
+          <label for="kontakt-besked" data-en="Message">Besked</label>
+          <textarea id="kontakt-besked" name="message" rows="5" required maxlength="5000" placeholder="Fx en fejl, du har fundet, eller en idé til en ny træner" data-en-placeholder="E.g. a mistake you have found, or an idea for a new trainer"></textarea>
         </div>
         <div class="om-felt-skjult" aria-hidden="true">
-          <label for="kontakt-website">Lad dette felt stå tomt</label>
+          <label for="kontakt-website" data-en="Leave this field empty">Lad dette felt stå tomt</label>
           <input id="kontakt-website" name="website" type="text" tabindex="-1" autocomplete="off">
         </div>
-        <button class="om-send" type="submit">Send besked</button>
+        <button class="om-send" type="submit" data-en="Send message">Send besked</button>
         <p class="om-svar" id="kontakt-svar" aria-live="polite"></p>
       </form>
       <noscript><p class="om-svar">Formularen kræver JavaScript.</p></noscript>
+      <p class="om-privat" data-en="&lt;strong&gt;About your information.&lt;/strong&gt; When you send a message, your name, e-mail and message go through Microsoft Azure to my e-mail so I can reply. The site does not store the message. I delete messages from the form and my replies no later than 14 days after I receive them. Your IP address is used for up to 15 minutes only to stop spam and is not stored. Azure logs the time of each request and an approximate country and city for 30 days, but not your message. If you want to know what I hold about you, or want it deleted sooner, write to me here. Data controller: Frank Pedersen."><strong>Om dine oplysninger.</strong> Når du sender en besked, går dit navn, din e-mail og din besked gennem Microsoft Azure til min e-mail, så jeg kan svare dig. Siden gemmer ikke beskeden. Jeg sletter beskeder fra formularen og mine svar senest 14 dage efter, at jeg har modtaget dem. Din IP-adresse bruges kun i op til 15 minutter til at stoppe spam og gemmes ikke. Azure logger tidspunktet for hvert kald og et omtrentligt land og en by i 30 dage, men ikke din besked. Vil du vide, hvad jeg har om dig, eller have det slettet før, så skriv det her. Dataansvarlig: Frank Pedersen.</p>
     </aside>
   </section>
 
   <section class="om-section" aria-labelledby="om-proj-h">
-    <h2 id="om-proj-h">Mine AI-projekter</h2>
-    <p>Alt her er bygget sammen med AI. Bridgetrænerne er det største projekt, men der er også et par kortspil.</p>
+    <h2 id="om-proj-h" data-en="My AI projects">Mine AI-projekter</h2>
+    <p data-en="Everything here is built together with AI. The bridge trainers are the biggest project, but there are also a couple of card games.">Alt her er bygget sammen med AI. Bridgetrænerne er det største projekt, men der er også et par kortspil.</p>
     <div class="om-grid" id="projekter"></div>
   </section>
 
@@ -170,24 +174,24 @@ a.om-card:hover{ box-shadow:inset 0 0 0 1px var(--ink); }
     <div class="foot-top">
       <div class="foot-about">
         <a class="brand" href="/"><span class="logo" aria-hidden="true">7NT</span>Kontraktbridge</a>
-        <p>Gratis bridgetræning i browseren. Lavet af Frank Pedersen.</p>
-        <a class="foot-cta" href="/om-mig/">Om mig og kontakt <span aria-hidden="true">→</span></a>
+        <p data-en="Free bridge training in the browser. Made by Frank Pedersen.">Gratis bridgetræning i browseren. Lavet af Frank Pedersen.</p>
+        <a class="foot-cta" href="/om-mig/" data-en="About me and contact &lt;span aria-hidden=&quot;true&quot;&gt;→&lt;/span&gt;">Om mig og kontakt <span aria-hidden="true">→</span></a>
       </div>
       <nav class="foot-col" aria-labelledby="foot-traenere">
-        <h2 class="foot-title" id="foot-traenere">Trænere</h2>
+        <h2 class="foot-title" id="foot-traenere" data-en="Trainers">Trænere</h2>
         <ul>
-          <li><a href="/konventionstraener/">Konventionstræner</a></li>
-          <li><a href="/fordelingstraeneren/">Fordeling</a></li>
-          <li><a href="/fordelingstraeneren/">Pointregnskab</a></li>
-          <li><a href="/fordelingstraeneren/">Farvebehandling</a></li>
-          <li><a href="/fordelingstraeneren/">Håndevaluering</a></li>
-          <li><a href="/fordelingstraeneren/#analyse">Analyse</a></li>
+          <li><a href="/konventionstraener/" data-en="Convention trainer">Konventionstræner</a></li>
+          <li><a href="/fordelingstraeneren/" data-en="Distribution">Fordeling</a></li>
+          <li><a href="/fordelingstraeneren/" data-en="Point count">Pointregnskab</a></li>
+          <li><a href="/fordelingstraeneren/" data-en="Suit combinations">Farvebehandling</a></li>
+          <li><a href="/fordelingstraeneren/" data-en="Hand evaluation">Håndevaluering</a></li>
+          <li><a href="/fordelingstraeneren/#analyse" data-en="Analysis">Analyse</a></li>
         </ul>
       </nav>
       <nav class="foot-col" aria-labelledby="foot-opslag">
-        <h2 class="foot-title" id="foot-opslag">Opslag</h2>
+        <h2 class="foot-title" id="foot-opslag" data-en="Reference">Opslag</h2>
         <ul>
-          <li><a href="/ordbog/">Bridgeordbog</a></li>
+          <li><a href="/ordbog/" data-en="Bridge dictionary">Bridgeordbog</a></li>
         </ul>
       </nav>
     </div>
@@ -196,26 +200,59 @@ a.om-card:hover{ box-shadow:inset 0 0 0 1px var(--ink); }
 </main>
 
 <script>
+/* Sprog som på forsiden og i ordbogen: dansk som standard, engelsk med knappen i topbjælken. Valget gemmes under 'lang'
+   (samme domæne), så det følger med mellem siderne, og ?lang=en eller ?lang=da i adressen virker også. Elementer med
+   data-en, data-en-aria og data-en-placeholder får den engelske tekst; scriptene nedenfor læser sproget i <html lang>. */
+(function () {
+  var lang = 'da';
+  try { if (localStorage.getItem('lang') === 'en') lang = 'en'; } catch (e) {}
+  var q = new URLSearchParams(location.search).get('lang');
+  if (q === 'en' || q === 'da') { lang = q; try { localStorage.setItem('lang', q); } catch (e) {} }
+  var EN = lang === 'en';
+  document.documentElement.lang = lang;
+  if (EN) {
+    document.title = 'About me and contact – Kontraktbridge';
+    document.querySelectorAll('[data-en]').forEach(function (el) { el.innerHTML = el.getAttribute('data-en'); });
+    document.querySelectorAll('[data-en-aria]').forEach(function (el) { el.setAttribute('aria-label', el.getAttribute('data-en-aria')); });
+    document.querySelectorAll('[data-en-placeholder]').forEach(function (el) { el.setAttribute('placeholder', el.getAttribute('data-en-placeholder')); });
+  }
+  var btn = document.getElementById('langBtn');
+  btn.textContent = EN ? 'Dansk' : 'English';
+  btn.setAttribute('lang', EN ? 'da' : 'en');
+  btn.addEventListener('click', function () {
+    var u = new URL(location.href);
+    u.searchParams.delete('lang');
+    try { localStorage.setItem('lang', EN ? 'da' : 'en'); } catch (e) { u.searchParams.set('lang', EN ? 'da' : 'en'); }
+    location.href = u.toString();
+  });
+})();
+</script>
+<script>
 /* Mine AI-projekter: et nyt projekt kræver kun én linje mere. Uden link (href: null) står der "Link kommer";
-   med link bliver hele kortet et link. */
+   med link bliver hele kortet et link. Navnene er de samme på engelsk; resten står i en. */
 var PROJEKTER = [
-  { navn: 'Kontraktbridge', maerke: 'Bridge', tekst: 'Konventionstræneren og Fordelingstræneren med fordeling, pointregnskab, farvebehandling og håndevaluering.', href: '/', link: 'Se trænerne →' },
-  { navn: 'Kasino', maerke: 'Kortspil', tekst: 'Det klassiske danske kortspil i browseren. Spil mod computeren eller mod andre ved et grønt spillebord.', href: null },
-  { navn: 'Es-makker whist', maerke: 'Kortspil', tekst: 'Whist, hvor melderen kalder et es, og den, der har esset, bliver makker.', href: null },
+  { navn: 'Kontraktbridge', maerke: 'Bridge', tekst: 'Konventionstræneren og Fordelingstræneren med fordeling, pointregnskab, farvebehandling og håndevaluering.', href: '/', link: 'Se trænerne →',
+    en: { maerke: 'Bridge', tekst: 'The convention trainer and Fordelingstræneren with distribution, point count, suit combinations and hand evaluation.', link: 'See the trainers →' } },
+  { navn: 'Kasino', maerke: 'Kortspil', tekst: 'Det klassiske danske kortspil i browseren. Spil mod computeren eller mod andre ved et grønt spillebord.', href: null,
+    en: { maerke: 'Card game', tekst: 'The classic Danish card game in the browser. Play against the computer or against others at a green card table.' } },
+  { navn: 'Es-makker whist', maerke: 'Kortspil', tekst: 'Whist, hvor melderen kalder et es, og den, der har esset, bliver makker.', href: null,
+    en: { maerke: 'Card game', tekst: 'Whist where the bidder calls an ace, and whoever holds that ace becomes the partner.' } },
 ];
 
 (function () {
+  var EN = document.documentElement.lang === 'en';
   var grid = document.getElementById('projekter');
   PROJEKTER.forEach(function (p) {
+    var x = EN ? p.en : p;
     var card = document.createElement(p.href ? 'a' : 'div');
     card.className = 'om-card';
     if (p.href) card.href = p.href;
-    var tag = document.createElement('span'); tag.className = 'om-tag'; tag.textContent = p.maerke;
+    var tag = document.createElement('span'); tag.className = 'om-tag'; tag.textContent = x.maerke;
     var h = document.createElement('h3'); h.textContent = p.navn;
-    var t = document.createElement('p'); t.textContent = p.tekst;
+    var t = document.createElement('p'); t.textContent = x.tekst;
     var foot = document.createElement('span');
     foot.className = 'om-card-foot' + (p.href ? '' : ' muted');
-    foot.textContent = p.href ? (p.link || 'Åbn →') : 'Link kommer';
+    foot.textContent = p.href ? (x.link || (EN ? 'Open →' : 'Åbn →')) : (EN ? 'Link coming' : 'Link kommer');
     card.append(tag, h, t, foot);
     grid.appendChild(card);
   });
@@ -223,9 +260,28 @@ var PROJEKTER = [
 </script>
 <script>
 /* Kontaktformularen (SPEC-kontaktformular.md, del 2) sender til Azure Function App'en kontraktbridge-kontakt
-   (repoets _kontakt-api). Tiden regnes fra første fokus i formularen; API'et afviser beskeder sendt inden 2 sekunder. */
+   (repoets _kontakt-api). Tiden regnes fra første fokus i formularen; API'et afviser beskeder sendt inden 2 sekunder.
+   API'ets svar er på dansk; på engelsk viser siden dem oversat og ellers en engelsk standardbesked. */
 const KONTAKT_API = 'https://kontraktbridge-kontakt.azurewebsites.net/api/contact';
 (function () {
+  var EN = document.documentElement.lang === 'en';
+  var T = function (da, en) { return EN ? en : da; };
+  var API_EN = {
+    'Tak for din besked. Den er sendt.': 'Thank you for your message. It has been sent.',
+    'Ugyldige data. Send navn, e-mail og besked.': 'Invalid data. Send your name, e-mail and message.',
+    'Udfyld navn, e-mail og besked.': 'Fill in your name, e-mail and message.',
+    'Vent et øjeblik, og prøv at sende beskeden igen.': 'Wait a moment, and try sending the message again.',
+    'Et eller flere felter overskrider den tilladte længde.': 'One or more fields are longer than allowed.',
+    'Indtast en gyldig e-mailadresse.': 'Enter a valid e-mail address.',
+    'Anmodningen skal sendes som JSON.': 'The request must be sent as JSON.',
+    'Beskeden er for stor.': 'The message is too long.',
+    'Anmodningen indeholder ugyldig JSON.': 'The request contains invalid JSON.',
+    'Kontaktformularen er ikke konfigureret endnu. Prøv igen senere.': 'The contact form is not set up yet. Please try again later.',
+    'Du har sendt flere beskeder på kort tid. Vent lidt, før du prøver igen.': 'You have sent several messages in a short time. Wait a little before you try again.',
+    'Beskeden kunne ikke afleveres. Prøv igen senere.': 'The message could not be delivered. Please try again later.',
+  };
+  var IKKE_SENDT = T('Beskeden kunne ikke sendes. Prøv igen senere.', 'The message could not be sent. Please try again later.');
+  var fraApi = function (tekst, standard) { return !tekst ? standard : EN ? (API_EN[tekst] || standard) : tekst; };
   var form = document.getElementById('kontaktform');
   var knap = form.querySelector('button[type=submit]');
   var svar = document.getElementById('kontakt-svar');
@@ -242,7 +298,7 @@ const KONTAKT_API = 'https://kontraktbridge-kontakt.azurewebsites.net/api/contac
     e.preventDefault();
     var data = new FormData(form);
     knap.disabled = true;
-    knap.textContent = 'Sender …';
+    knap.textContent = T('Sender …', 'Sending …');
     svar.removeAttribute('role');
     svar.textContent = '';
     fetch(KONTAKT_API, {
@@ -261,18 +317,18 @@ const KONTAKT_API = 'https://kontraktbridge-kontakt.azurewebsites.net/api/contac
       })
       .then(function (res) {
         if (res.ok) {
-          vis(res.body.message || 'Tak for din besked. Den er sendt.', 'status');
+          vis(fraApi(res.body.message, T('Tak for din besked. Den er sendt.', 'Thank you for your message. It has been sent.')), 'status');
           form.reset();
           start = null;
         } else {
-          vis(res.body.error || 'Beskeden kunne ikke sendes. Prøv igen senere.', 'alert');
+          vis(fraApi(res.body.error, IKKE_SENDT), 'alert');
         }
       }, function () {
-        vis('Beskeden kunne ikke sendes. Prøv igen senere.', 'alert');
+        vis(IKKE_SENDT, 'alert');
       })
       .then(function () {
         knap.disabled = false;
-        knap.textContent = 'Send besked';
+        knap.textContent = T('Send besked', 'Send message');
       });
   });
 })();

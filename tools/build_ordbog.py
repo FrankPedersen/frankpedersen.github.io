@@ -283,10 +283,8 @@ SKABELON = '''<!doctype html>
 <meta property="og:description" content="{{ANTAL}} bridgeord på dansk med engelsk oversættelse.">
 <meta property="og:url" content="https://www.kontraktbridge.dk/ordbog/">
 {{STRUKTUR}}
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Manrope:wght@800&display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Symbols+2&text=%E2%99%A0%E2%99%A5%E2%99%A6%E2%99%A3&display=swap">
+<link rel="stylesheet" href="../fonts/tekst.css">
+<link rel="stylesheet" href="../fonts/symboler.css">
 <style>
 /* Bygget af tools/build_ordbog.py fra ordbog/Dansk_bridgeordbog.md; ret aldrig i hånden.
    Samme farver, skrift, topbjælke og sidefod som forsiden og Om mig (Subtle Gradient). */

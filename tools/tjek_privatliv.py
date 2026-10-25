@@ -20,12 +20,14 @@ FOER = 'v-foer-privatliv'
 DANSK = ('Om dine oplysninger. Når du sender en besked, går dit navn, din e-mail og din besked gennem Microsoft Azure '
          'til min e-mail, så jeg kan svare dig. Siden gemmer ikke beskeden. Jeg sletter beskeder fra formularen og mine '
          'svar senest 14 dage efter, at jeg har modtaget dem. Din IP-adresse bruges kun i op til 15 minutter til at stoppe '
-         'spam og gemmes ikke. Vil du vide, hvad jeg har om dig, eller have det slettet før, så skriv det her. '
+         'spam og gemmes ikke. Azure logger tidspunktet for hvert kald og et omtrentligt land og en by i 30 dage, men ikke '
+         'din besked. Vil du vide, hvad jeg har om dig, eller have det slettet før, så skriv det her. '
          'Dataansvarlig: Frank Pedersen.')
 ENGELSK = ('About your information. When you send a message, your name, e-mail and message go through Microsoft Azure to '
            'my e-mail so I can reply. The site does not store the message. I delete messages from the form and my replies '
            'no later than 14 days after I receive them. Your IP address is used for up to 15 minutes only to stop spam and '
-           'is not stored. If you want to know what I hold about you, or want it deleted sooner, write to me here. '
+           'is not stored. Azure logs the time of each request and an approximate country and city for 30 days, but not '
+           'your message. If you want to know what I hold about you, or want it deleted sooner, write to me here. '
            'Data controller: Frank Pedersen.')
 
 # Reglen i CLAUDE.md (specen, med Franks valg 25. oktober 2026: filen er privat og ligger kun lokalt)
@@ -71,9 +73,9 @@ class Teksten(unittest.TestCase):
         self.assertTrue(en.startswith('<strong>About your information.</strong>'))
 
     def test_14_dage_15_minutter_og_den_dataansvarlige(self):
-        for del_ in ('14 dage', '15 minutter', 'Dataansvarlig: Frank Pedersen.'):
+        for del_ in ('14 dage', '15 minutter', '30 dage', 'Dataansvarlig: Frank Pedersen.'):
             self.assertIn(del_, ren(self.indhold))
-        for del_ in ('14 days', '15 minutes', 'Data controller: Frank Pedersen.'):
+        for del_ in ('14 days', '15 minutes', '30 days', 'Data controller: Frank Pedersen.'):
             self.assertIn(del_, ENGELSK)
 
     def test_lille_tekst_med_eksisterende_vaerdier(self):
@@ -87,11 +89,22 @@ class Teksten(unittest.TestCase):
         for værdi in re.findall(r':\s*([^;]+)', stil):
             self.assertIn(værdi.strip(), før, værdi)
 
-    def test_formularen_scriptet_og_resten_af_siden_er_uaendrede(self):
+    def test_formularens_felter_og_afsendelse_er_uaendrede(self):
+        # Siden har fået engelsk (Franks udvidelse); formularens felter, adressen og det, der sendes, er de samme.
         før = git('show', f'{FOER}:om-mig/index.html').stdout
         self.assertTrue(før, f'tagget {FOER} mangler')
-        uden = lambda s: re.sub(r'\n\.om-privat\s*\{[^}]*\}', '', re.sub(r'\s*<p class="om-privat".*?</p>', '', s, flags=re.S))
-        self.assertEqual(uden(self.side), før)
+
+        def felter(s):
+            form = s[s.index('<form'):s.index('</form>')]
+            return [re.sub(r'\s(?:data-en[\w-]*|placeholder)="[^"]*"', '', m)
+                    for m in re.findall(r'<(?:input|textarea|button|form)\b[^>]*>', form)]
+
+        def krop(s):
+            return re.search(r'body: JSON\.stringify\(\{(.*?)\}\),', s, re.S).group(1)
+
+        self.assertEqual(felter(self.side), felter(før))
+        self.assertEqual(krop(self.side), krop(før))
+        self.assertIn("const KONTAKT_API = 'https://kontraktbridge-kontakt.azurewebsites.net/api/contact';", self.side)
 
 
 class Systemdokumentationen(unittest.TestCase):

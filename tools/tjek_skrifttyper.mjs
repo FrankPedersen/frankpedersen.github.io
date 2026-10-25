@@ -1,8 +1,8 @@
 // Accepttest i en rigtig browser (SPEC-privatlivstekst.md, Franks udvidelse 25. oktober 2026): skrifttyperne ligger på
 // sitet selv, og siderne ser ud som før. Den udgivne udgave (tagget v-foer-privatliv, som henter fra Google Fonts) og den
 // nye vises fra hver sin lokale webserver. For forsiden, Om mig og ordbogen sammenlignes de skrifttyper, Chrome faktisk
-// tegner med; forsiden og ordbogen, som ellers er uændrede, sammenlignes også pixel for pixel ved 390 og 1280 px. Den
-// nye udgave må ikke hente noget fra Google. Kræver Node 22+, git, tar og Chrome eller Edge.
+// tegner med; forsiden og ordbogen sammenlignes også pixel for pixel ved 390 og 1280 px over sidefoden (sidefoden har
+// siden fået linket Scoring i bridge). Den nye udgave må ikke hente noget fra Google. Kræver Node 22+, git og Chrome eller Edge.
 //
 //   node tools/tjek_skrifttyper.mjs
 import { spawn, spawnSync } from 'node:child_process';
@@ -105,7 +105,11 @@ async function fane() {
       return (f.result?.fonts ?? []).map((x) => `${x.familyName}${x.isCustomFont ? '' : ' (system)'}:${x.glyphCount}`).sort().join(', ');
     },
     async billede() {
-      const r = await send('Page.captureScreenshot', { format: 'png', captureBeyondViewport: true });
+      // alt over sidefoden; sidefodens links er ændret siden udgaven før
+      const m = await send('Runtime.evaluate', { returnByValue: true,
+        expression: `({ w: document.documentElement.scrollWidth, h: Math.floor((document.querySelector('.footer') || document.body).getBoundingClientRect().top + scrollY) })` });
+      const { w, h } = m.result.result.value;
+      const r = await send('Page.captureScreenshot', { format: 'png', captureBeyondViewport: true, clip: { x: 0, y: 0, width: w, height: h, scale: 1 } });
       return r.result.data;
     },
     luk: async () => { ws.close(); await json(`/json/close/${f.id}`).catch(() => {}); },
@@ -148,7 +152,7 @@ try {
       selectors.forEach((s, i) => tjek(fGammel[i] && fGammel[i] === fNu[i], `${sti} ${bredde} px: "${s}" tegnes med ${fNu[i]}`, `før: ${fGammel[i]}`));
       if (pixel) {
         const d = await forskel(t, bGammel, await t.billede());
-        tjek(d.n === 0, `${sti} ${bredde} px: siden er pixel for pixel som før`, JSON.stringify(d));
+        tjek(d.n === 0, `${sti} ${bredde} px: siden er pixel for pixel som før over sidefoden`, JSON.stringify(d));
       }
     }
   }

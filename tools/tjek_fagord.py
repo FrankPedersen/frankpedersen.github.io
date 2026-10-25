@@ -49,7 +49,9 @@ def dansk_html(html):
 
 def dansk_tekst():
     """(navn, tekst) for al dansk tekst på siden."""
-    ud = [(sti, dansk_html((ROD / sti).read_text(encoding='utf-8'))) for sti in ('index.html', 'om-mig/index.html')]
+    ud = [(sti, dansk_html((ROD / sti).read_text(encoding='utf-8'))) for sti in ('index.html', 'om-mig/index.html', 'scoring/index.html')]
+    # Scoring i bridge: kilden er Franks markdown (SPEC-scoring.md)
+    ud.append(('scoring/Scoring_i_bridge.md', (ROD / 'scoring' / 'Scoring_i_bridge.md').read_text(encoding='utf-8')))
     # Opslagene, indekset og den strukturerede data bygges fra markdown, som tjekkes for sig nedenfor.
     ordbog = (ROD / 'ordbog' / 'index.html').read_text(encoding='utf-8')
     ordbog = re.sub(r'<!-- opslag -->.*?<!-- /opslag -->', ' ', ordbog, flags=re.S)

@@ -158,5 +158,250 @@ for (const spil of [4, 16, 40, 128]) {
 tjek(B.tal(13.44, 2, 'da') === '13,44' && B.tal(13.44, 2, 'en') === '13.44', 'decimalkomma på dansk, punktum på engelsk');
 tjek(B.tal(-0.9, 2, 'da') === '−0,90' && B.tal(0.5, 2, 'da', true) === '+0,50', 'minus med tankestreg og valgfrit plus');
 
+// --- Siden (SPEC-scoring.md, Accepttest › Siden) -----------------------------------------------------------------
+import { spawn, spawnSync } from 'node:child_process';
+import { existsSync, mkdtempSync, rmSync, statSync } from 'node:fs';
+import { createServer } from 'node:http';
+import { tmpdir } from 'node:os';
+import { extname, join, normalize } from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const ROD = fileURLToPath(new URL('..', import.meta.url));
+const læsFil = (sti) => readFileSync(join(ROD, sti), 'utf8').replace(/\r\n/g, '\n');
+const MD = læsFil('scoring/Scoring_i_bridge.md');
+const SIDE = læsFil('scoring/index.html');
+const python = process.env.PYTHON || 'python';
+const byg = (md) => spawnSync(python, ['-I', '-X', 'utf8', 'tools/build_scoring.py', '--kilde', '-', '--ud', '-'], { cwd: ROD, input: md, encoding: 'utf8', env: { ...process.env, PYTHONIOENCODING: 'utf-8' } });
+
+{
+  const r = byg(MD);
+  tjek(r.status === 0 && r.stdout.replace(/\r\n/g, '\n') === SIDE, 'scoring/index.html er bygget af build_scoring.py og ikke rettet i hånden', r.stderr);
+  const fejler = (md, ord_, navn) => {
+    const x = byg(md);
+    tjek(x.status === 1 && x.stderr.includes(ord_), `build_scoring.py fejler ved ${navn}`, `${x.status} ${x.stderr}`);
+  };
+  fejler(MD.replace('<!-- beregner: imp -->', '<!-- beregner: imp -->\n\n<!-- beregner: imp -->'), 'Dobbelt id', 'dobbelte id\'er');
+  fejler(MD + '\n## 8 Taktik\n\nIgen.\n', 'Dobbelt id', 'to afsnit med samme id');
+  fejler(MD.replace('<!-- beregner: imp -->', '<!-- beregner: kp -->'), 'Ukendt beregnermarkør', 'en ukendt beregnermarkør');
+  fejler(MD.replace('<!-- /fold -->', ''), 'slutmarkør', 'en fold uden slutmarkør');
+}
+{
+  const h2 = [...SIDE.matchAll(/<h2 id="([^"]+)"><span class="nr">(\d)<\/span>/g)].map((m) => `${m[2]}:${m[1]}`);
+  tjek(h2.join() === '1:scoren-for-et-spil,2:parturnering,3:parturnering-i-imp,4:holdturnering,5:taktik,6:handicap', 'afsnit 1–6, og afsnit 7 vises ikke', h2.join());
+  tjek(!SIDE.includes('Beregnere på siden') && SIDE.includes('<section class="kilder"'), 'afsnit 7 er beregnerlinjen, og kilderne står nederst');
+  const kort = [...SIDE.matchAll(/<a class="indgang" href="#([^"]+)">/g)].map((m) => m[1]);
+  tjek(kort.join() === 'beregner-score,parturnering,holdturnering,handicap', 'de fire indgangskort', kort.join());
+  const linje = SIDE.slice(SIDE.indexOf('class="beregnerlinje"'), SIDE.indexOf('</p>', SIDE.indexOf('class="beregnerlinje"')));
+  tjek(['score', 'matchpoint', 'imp', 'handicap'].every((b) => linje.includes(`href="#beregner-${b}"`)), 'beregnerlinjen linker til de fire beregnere');
+  const pos = (id) => SIDE.indexOf(` id="${id}"`);
+  for (const [b, efter, før] of [['score', 'eksempler', 'parturnering'], ['matchpoint', 'et-eksempel', 'procent'],
+    ['imp', 'kamppoint', 'board-a-match'], ['handicap', 'handicap-et-eksempel', 'matematikken']]) {
+    tjek(pos(efter) > 0 && pos(efter) < pos(`beregner-${b}`) && pos(`beregner-${b}`) < pos(før), `beregneren ${b} står efter #${efter} og før #${før}`);
+  }
+  const folds = [...SIDE.matchAll(/<details class="fold"([^>]*)>/g)];
+  tjek(folds.length === 4 && folds.every((m) => !/open/.test(m[1])), 'fire foldbokse, lukkede som standard', String(folds.length));
+  const ids = [...SIDE.matchAll(/\sid="([^"$]+)"/g)].map((m) => m[1]);
+  tjek(ids.length === new Set(ids).size, 'ingen dobbelte id\'er på siden');
+  for (const id of ['matchpoint', 'butler', 'cross-imp', 'imp-skalaen', 'kamppoint', 'taktik', 'handicap', 'parturnering', 'holdturnering']) {
+    tjek(ids.includes(id), `ankeret #${id} findes`);
+  }
+  tjek([...SIDE.matchAll(/href="#([^"]+)"/g)].every((m) => ids.includes(m[1])), 'alle interne links peger på et id');
+  tjek(/\[id\]\{ scroll-margin-top:\d+px; \}/.test(SIDE), 'ankrene har scroll-margin-top');
+  const ressourcer = [...SIDE.matchAll(/<(?:script|img|iframe)[^>]+src="([^"]+)"|<link(?![^>]*rel="canonical")[^>]+href="([^"]+)"|url\(([^)]+)\)|import [^'"]*['"]([^'"]+)['"]/g)]
+    .map((m) => m[1] || m[2] || m[3] || m[4]);
+  tjek(ressourcer.length > 0 && ressourcer.every((u) => !/^(https?:)?\/\//.test(u)), 'siden henter intet uden for sitet', ressourcer.filter((u) => /^(https?:)?\/\//.test(u)).join(' '));
+  tjek(SIDE.includes("import * as B from './beregn.js';"), 'beregnerne bruger scoring/beregn.js');
+  tjek((SIDE.match(/aria-live="polite"/g) || []).length >= 5, 'svarene er aria-live="polite"');
+  for (const sti of ['index.html', 'om-mig/index.html', 'ordbog/index.html', 'scoring/index.html']) {
+    const s = læsFil(sti);
+    const start = s.search(/id="foot(?:er)?-opslag"/);
+    const opslag = s.slice(start, s.indexOf('</nav>', start));
+    tjek(/<a href="\/ordbog\/"[^>]*>Bridgeordbog<\/a><\/li>\s*<li><a href="\/scoring\/" data-en="Scoring in bridge">Scoring i bridge<\/a>/.test(opslag),
+      `sidefoden på ${sti} har Scoring i bridge under Opslag, på dansk og engelsk`);
+  }
+  tjek(læsFil('sitemap.xml').includes('<loc>https://www.kontraktbridge.dk/scoring/</loc>'), '/scoring/ står i sitemap');
+}
+
+// Siden i en rigtig browser (Chrome eller Edge via DevTools-protokollen); springes over, hvis ingen browser findes
+const browser = [process.env.CHROME, 'C:/Program Files/Google/Chrome/Application/chrome.exe', 'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe',
+  '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome', '/usr/bin/google-chrome', '/usr/bin/chromium'].filter(Boolean).find((p) => existsSync(p));
+if (!browser) {
+  console.log('Advarsel: fandt hverken Chrome eller Edge; sidens tjek i browseren er sprunget over (sæt CHROME til stien).');
+} else {
+  const TYPER = { '.html': 'text/html; charset=utf-8', '.css': 'text/css', '.js': 'text/javascript', '.woff2': 'font/woff2', '.svg': 'image/svg+xml' };
+  const server = createServer((req, res) => {
+    let sti = normalize(join(ROD, decodeURIComponent(new URL(req.url, 'http://x').pathname)));
+    if (!sti.startsWith(normalize(ROD))) { res.writeHead(403).end(); return; }
+    if (existsSync(sti) && statSync(sti).isDirectory()) sti = join(sti, 'index.html');
+    if (!existsSync(sti)) { res.writeHead(404).end(); return; }
+    res.writeHead(200, { 'Content-Type': TYPER[extname(sti)] || 'application/octet-stream' }).end(readFileSync(sti));
+  });
+  await new Promise((r) => server.listen(0, '127.0.0.1', r));
+  const SITE = `http://127.0.0.1:${server.address().port}`;
+  const port = 9350 + Math.floor(Math.random() * 90);
+  const profil = mkdtempSync(join(tmpdir(), 'tjek-scoring-'));
+  const proces = spawn(browser, ['--headless=new', `--remote-debugging-port=${port}`, `--user-data-dir=${profil}`, '--no-first-run', '--hide-scrollbars', 'about:blank'], { stdio: 'ignore' });
+  const vent = (ms) => new Promise((r) => setTimeout(r, ms));
+  const json = async (sti, metode = 'GET') => {
+    for (let i = 0; i < 50; i++) {
+      try { const s = await fetch(`http://127.0.0.1:${port}${sti}`, { method: metode }); if (s.ok) return await s.json(); } catch {}
+      await vent(200);
+    }
+    throw new Error('Browseren svarer ikke');
+  };
+  try {
+    await json('/json/version');
+    const f = await json('/json/new?about:blank', 'PUT');
+    const ws = new WebSocket(f.webSocketDebuggerUrl);
+    await new Promise((r, x) => { ws.onopen = r; ws.onerror = x; });
+    let id = 0, indlæst = 0;
+    const ventende = new Map(), kald = [], konsol = [];
+    ws.onmessage = (m) => {
+      const d = JSON.parse(m.data);
+      if (d.id && ventende.has(d.id)) { ventende.get(d.id)(d); ventende.delete(d.id); }
+      else if (d.method === 'Page.loadEventFired') indlæst++;
+      else if (d.method === 'Network.requestWillBeSent') kald.push(d.params.request.url);
+      else if (d.method === 'Runtime.exceptionThrown') konsol.push(d.params.exceptionDetails.exception?.description || d.params.exceptionDetails.text);
+    };
+    const send = (method, params = {}) => new Promise((r) => { const n = ++id; ventende.set(n, r); ws.send(JSON.stringify({ id: n, method, params })); });
+    const kør = async (kode) => {
+      const r = await send('Runtime.evaluate', { expression: `(async () => { ${kode} })()`, awaitPromise: true, returnByValue: true });
+      if (r.result.exceptionDetails) throw new Error(r.result.exceptionDetails.exception?.description ?? 'fejl i siden');
+      return r.result.result.value;
+    };
+    const tast = async (key, code = key, keyCode = 0) => {
+      await send('Input.dispatchKeyEvent', { type: 'keyDown', key, code, windowsVirtualKeyCode: keyCode, ...(key === 'Enter' ? { text: '\r' } : {}) });
+      await send('Input.dispatchKeyEvent', { type: 'keyUp', key, code, windowsVirtualKeyCode: keyCode });
+      await vent(80);
+    };
+    await send('Page.enable'); await send('Network.enable'); await send('Runtime.enable');
+    const åbn = async (sti, bredde) => {
+      await send('Emulation.setDeviceMetricsOverride', { width: bredde, height: bredde < 600 ? 844 : 900, deviceScaleFactor: 1, mobile: bredde < 600 });
+      const n = indlæst;
+      await send('Page.navigate', { url: 'about:blank' });
+      await send('Page.navigate', { url: SITE + sti });
+      for (let i = 0; i < 100 && indlæst <= n; i++) await vent(100);
+      // Vent på skrifttyperne og på, at en blød rulning til et anker er faldet til ro
+      await kør(`await document.fonts.ready; let y = -1, ens = 0;
+        for (let i = 0; i < 60 && ens < 4; i++) { await new Promise((r) => setTimeout(r, 100)); ens = scrollY === y ? ens + 1 : 0; y = scrollY; }
+        document.documentElement.style.scrollBehavior = 'auto';`);
+    };
+
+    // Fra 1000 px: indholdsfortegnelsen står fast til venstre og fremhæver det afsnit, man læser
+    await åbn('/scoring/?lang=da', 1280);
+    let t = await kør(`const toc = document.querySelector('.toc'); const s = getComputedStyle(toc);
+      return { position: s.position, knap: getComputedStyle(toc.querySelector('.toc-knap')).display, liste: getComputedStyle(toc.querySelector('.toc-liste')).display,
+               venstre: toc.getBoundingClientRect().left < document.querySelector('.tekst').getBoundingClientRect().left };`);
+    tjek(t.position === 'sticky' && t.knap === 'none' && t.liste !== 'none' && t.venstre, 'fra 1000 px står indholdsfortegnelsen fast til venstre', JSON.stringify(t));
+    t = await kør(`document.getElementById('cross-imp').scrollIntoView(); await new Promise((r) => setTimeout(r, 300));
+      const a = document.querySelector('.toc a[aria-current="true"]'); const top = document.querySelector('.toc').getBoundingClientRect().top;
+      return { aktiv: a && a.getAttribute('href'), top };`);
+    tjek(t.aktiv === '#cross-imp' && t.top >= 0 && t.top < 40, 'fortegnelsen fremhæver det afsnit, man læser, og bliver stående', JSON.stringify(t));
+
+    // Ankre åbner siden ved afsnittet, også under bjælken
+    for (const bredde of [1280, 390]) {
+      for (const anker of ['kamppoint', 'butler']) {
+        await åbn(`/scoring/?lang=da#${anker}`, bredde);
+        t = await kør(`const h = document.getElementById('${anker}').getBoundingClientRect(); const bar = document.querySelector('.toc').getBoundingClientRect();
+          return { h: Math.round(h.top), bund: Math.round(${bredde < 1000} ? bar.bottom : 0) };`);
+        tjek(t.h >= t.bund && t.h < 200, `/scoring/#${anker} åbner ved afsnittet ved ${bredde} px`, JSON.stringify(t));
+      }
+    }
+
+    // Under 1000 px: "Indhold ▾" folder listen ud og lukker ved valg, Escape og tryk udenfor
+    await åbn('/scoring/?lang=da', 390);
+    const listeVist = () => kør(`return getComputedStyle(document.querySelector('.toc-liste')).display !== 'none';`);
+    tjek(!(await listeVist()), 'under 1000 px er listen lukket');
+    await kør(`document.querySelector('.toc-knap').click();`);
+    tjek(await listeVist() && (await kør(`return document.querySelector('.toc-knap').getAttribute('aria-expanded')`)) === 'true', '"Indhold ▾" åbner listen');
+    await kør(`document.querySelector('.toc-liste a[href="#butler"]').click(); await new Promise((r) => setTimeout(r, 300));`);
+    t = await kør(`const h = document.getElementById('butler').getBoundingClientRect(); return { hash: location.hash, top: Math.round(h.top), bar: Math.round(document.querySelector('.toc').getBoundingClientRect().bottom) };`);
+    tjek(!(await listeVist()) && t.hash === '#butler' && t.top >= t.bar, 'et valg lukker listen og springer til afsnittet under bjælken', JSON.stringify(t));
+    await kør(`document.querySelector('.toc-knap').click();`);
+    await tast('Escape', 'Escape', 27);
+    tjek(!(await listeVist()), 'Escape lukker listen');
+    await kør(`document.querySelector('.toc-knap').click(); document.querySelector('.afsnit p').click();`);
+    tjek(!(await listeVist()), 'tryk uden for listen lukker den');
+    t = await kør(`const d = document.documentElement; const tabeller = [...document.querySelectorAll('.tekst .tabel')];
+      return { side: d.scrollWidth - d.clientWidth, ruller: tabeller.filter((x) => x.scrollWidth > x.clientWidth).length, ialt: tabeller.length };`);
+    tjek(t.side <= 0 && t.ruller > 0, `ved 390 px ruller siden ikke vandret; ${t.ruller} af ${t.ialt} tabeller ruller i deres egen boks`, JSON.stringify(t));
+
+    // Foldboksene er lukkede og kan åbnes med tastatur
+    tjek((await kør(`return [...document.querySelectorAll('details.fold')].every((d) => !d.open)`)), 'foldboksene er lukkede, når siden åbnes');
+    await kør(`document.querySelector('details.fold summary').focus();`);
+    await tast('Enter', 'Enter', 13);
+    tjek(await kør(`return document.querySelector('details.fold').open`), 'en foldboks åbner med Enter');
+
+    // Trykflader på mindst 44 px og etiketter på alle felter
+    t = await kør(`const små = [];
+      for (const el of document.querySelectorAll('.beregner button, .beregner select, .beregner input:not([type=radio]):not([type=checkbox]), .beregner textarea, .valg > span, .felt-flueben, summary, .toc-knap, .toc-liste a, .afslut a, .beregnerlinje a, .indgang')) {
+        const r = el.getBoundingClientRect(); if (r.width && r.height < 43.5) små.push((el.className || el.tagName) + ':' + Math.round(r.height));
+      }
+      const uden = [...document.querySelectorAll('.beregner input, .beregner select, .beregner textarea')].filter((el) => !(el.labels && el.labels.length) && !el.getAttribute('aria-label')).map((el) => el.name || el.id);
+      const live = [...document.querySelectorAll('[data-svar]')].every((el) => el.getAttribute('aria-live') === 'polite');
+      return { små, uden, live };`);
+    tjek(t.små.length === 0, 'trykfladerne er mindst 44 px', t.små.slice(0, 8).join(' '));
+    tjek(t.uden.length === 0, 'alle felter i beregnerne har en etiket', t.uden.join(' '));
+    tjek(t.live, 'beregnernes svar læses op (aria-live="polite")');
+
+    // Beregnerne på dansk: standardværdierne og et skift med tastaturet
+    const svar = (navn) => kør(`return document.querySelector('[data-svar="${navn}"]').innerText.replace(/\\s+/g, ' ').trim();`);
+    tjek((await svar('score')).startsWith('+420 4♠ med 10 stik, uden for zonen'), 'scoreberegneren: 4♠ med 10 stik giver +420', await svar('score'));
+    await kør(`document.querySelector('[name="dobling"][value="0"]').focus();`);
+    await tast('ArrowRight', 'ArrowRight', 39);
+    tjek((await svar('score')).startsWith('+590 4♠ doblet med 10 stik'), 'piletasten skifter til doblet: +590', await svar('score'));
+    await kør(`const f = document.querySelector('[data-beregner="score"]'); f.elements.trin.value = '2'; f.elements.stik.value = '9';
+      f.querySelector('[name="farve"][value="H"]').checked = true; f.dispatchEvent(new Event('input', { bubbles: true }));`);
+    t = await svar('score');
+    tjek(t.startsWith('+570') && t.includes('Stikpoint (2 × 30 × 2) 120') && t.includes('Udgang 300') && t.includes('Doblet kontrakt hjemme 50') && t.includes('1 overstik × 100 100'),
+      'scoreberegneren: 2♥X med 9 stik er 570 med regnestykket', t);
+    t = await kør(`return [...document.querySelectorAll('[data-svar="matchpoint"] tbody tr')].map((r) => r.cells[4].innerText + '/' + r.cells[6].innerText).join(' ');`);
+    tjek(t === '12/+6 9/+3 9/+3 6/0 4/−2 2/−4 0/−6', 'matchpointregneren: 2/1/0 og +1/0/−1 for eksemplet', t);
+    tjek((await svar('matchpoint')).includes('Summen af +1/0/−1 er 0.'), 'matchpointregneren viser kontrollen');
+    await kør(`document.querySelector('[data-række="1"]').click();`);
+    tjek((await svar('matchpoint')).includes('Slår 4, lige 1, taber for 1: 4 × 2 + 1 = 9 point; 4 − 1 = +3'), 'et tryk på en række viser regnestykket', await svar('matchpoint'));
+    await kør(`const f = document.querySelector('[data-beregner="matchpoint"]'); f.elements.borde.value = '9'; f.dispatchEvent(new Event('input', { bubbles: true }));`);
+    tjek((await svar('matchpoint')).includes('Omregnet til 9 borde med Neubergs formel.'), 'med flere borde omregnes efter Neubergs formel', await svar('matchpoint'));
+    tjek((await svar('imp')).startsWith('+10 imp'), 'impomregneren: 620 mod 170 giver 10 imp', await svar('imp'));
+    tjek((await svar('kp')).startsWith('13,44 – 6,56'), 'kamppoint: 20 imp i 40 spil giver 13,44 – 6,56', await svar('kp'));
+    t = await svar('handicap');
+    tjek(t.includes('Parhandicap 25,00') && t.includes('Forventet score 48,34 %') && t.includes('Regulering for hver spiller −0,90') && t.includes('Nye handicap 21,10 og 27,10'),
+      'handicapberegneren: faktaarkets eksempel', t);
+    await kør(`const f = document.querySelector('[data-beregner="handicap"]'); f.elements.par.value = 'x'; f.dispatchEvent(new Event('input', { bubbles: true }));`);
+    tjek((await svar('handicap')).length > 0 && (await kør(`return document.querySelector('[data-beregner="handicap"] [name="par"]').getAttribute('aria-invalid')`)) === 'true',
+      'et ugyldigt felt markeres og får en kort besked', await svar('handicap'));
+
+    // Engelsk: beregnerne og navigationen på engelsk, teksten på dansk med linjen øverst
+    await åbn('/scoring/?lang=en', 390);
+    t = await kør(`return { snart: !document.getElementById('snart').hidden && document.getElementById('snart').innerText.trim(), knap: document.querySelector('.toc-knap').innerText.trim(),
+      h: [...document.querySelectorAll('.beregner-h')].map((h) => h.innerText).join(' | '), lang: document.documentElement.lang };`);
+    tjek(t.snart === 'English version coming soon.' && t.knap.startsWith('Contents') && t.lang === 'en', 'engelsk: linjen "English version coming soon." og "Contents"', JSON.stringify(t));
+    tjek(t.h === 'Score calculator | Matchpoint calculator | Imp and VP converter | Handicap calculator', 'engelsk: beregnernes navne', t.h);
+    tjek((await svar('kp')).startsWith('13.44 – 6.56') && (await svar('score')).includes('Trick score (4 × 30) 120'), 'engelsk: decimalpunktum og regnestykket på engelsk',
+      (await svar('kp')) + ' / ' + (await svar('score')));
+    await kør(`document.querySelector('[data-række="1"]').click();`);
+    tjek((await svar('matchpoint')).includes('Beats 4, ties 1, loses to 1: 4 × 2 + 1 = 9 points; 4 − 1 = +3'), 'engelsk: regnestykket for en række');
+    tjek(await kør(`return [...document.querySelectorAll('.afslut')].every((n) => n.innerText.includes('Back to top') && (n === document.querySelectorAll('.afslut')[5] || n.innerText.includes('Next:')))`),
+      'engelsk: "Next:" og "Back to top" under afsnittene');
+    t = await kør(`const tekst = [...document.querySelectorAll('.beregner, .indgange, .beregnerlinje, .toc-knap, .footer')].map((el) => el.innerText).join(' ')
+      + ' ' + [...document.querySelectorAll('.beregner [placeholder], .beregner [aria-label]')].map((el) => el.getAttribute('placeholder') || el.getAttribute('aria-label')).join(' ');
+      return (tekst.match(/[^\\s.,:;()]*[æøåÆØÅ][^\\s.,:;()]*|\\b(og|med|stik|bet|spil|zonen|scorer|beregner|spiller|gennemsnit|antal|opnået|valgfrit|regulering|omregnet|Næste|Til toppen|Indhold)\\b/g) || []);`);
+    const tilladt = ['Næste:', 'Fordelingstræneren', 'Øst', 'ØV'];
+    const rester = t.filter((x) => !tilladt.includes(x));
+    tjek(rester.length === 0, 'engelsk: ingen dansk i beregnerne, indgangene og navigationen', [...new Set(rester)].join(' '));
+
+    // Intet hentes uden for sitet, og ingen fejl i konsollen
+    const ude = kald.filter((u) => !u.startsWith(SITE) && !u.startsWith('about:') && !u.startsWith('data:'));
+    tjek(ude.length === 0, 'siden henter intet uden for sitet', ude.join(' '));
+    tjek(konsol.length === 0, 'ingen fejl i konsollen', konsol.join(' | '));
+    ws.close();
+  } finally {
+    proces.kill();
+    server.close();
+    await vent(300);
+    try { rmSync(profil, { recursive: true, force: true }); } catch {}
+  }
+}
+
 console.log(`${ok} ok, ${fejl} fejl`);
 process.exit(fejl ? 1 : 0);

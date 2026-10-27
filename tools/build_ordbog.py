@@ -4,6 +4,10 @@
 
 index.html rettes aldrig i hånden. Scriptet stopper med en fejl ved døde henvisninger, dobbelte id'er og et
 opslagsord, der er et af husets "Ikke"-ord. Siden bruger ingen eksterne biblioteker i browseren.
+
+Opslagene i tools/data/ordbog-scoring.json får et link til Scoring i bridge (SPEC-scoring.md, leverancetrin 5);
+linkets tekst er overskriften ved ankeret på scoring/index.html. Byg derfor scoringssiden før ordbogen, når en
+overskrift dér ændres. Et ukendt opslag eller anker i tabellen stopper scriptet.
 """
 import html
 import json
@@ -15,6 +19,8 @@ import unicodedata
 ROD = pathlib.Path(__file__).resolve().parent.parent
 KILDE = ROD / 'ordbog' / 'Dansk_bridgeordbog.md'
 SIDE = ROD / 'ordbog' / 'index.html'
+SCORING_TABEL = ROD / 'tools' / 'data' / 'ordbog-scoring.json'
+SCORING_SIDE = ROD / 'scoring' / 'index.html'
 
 # Husets "Ikke"-ord (SPEC-sprog-og-ordbog.md, Husets fagord); de må kun stå som alternative termer.
 FORBUDTE_OPSLAGSORD = {'blindemand', 'den blinde', 'knibning', 'snit', 'dobbeltknibning', 'broer'}
@@ -134,7 +140,24 @@ def label(da, en):
     return f'<span data-en="{e(en)}">{e(da)}</span>'
 
 
-def opslag_html(o, ord_for_id, ekstra):
+def scoring_for_opslag(links, ids, scoring_html):
+    """{opslagets id: (anker, overskrift)} ud fra tabellen; overskriften er den, der står ved ankeret på scoringssiden."""
+    ud = {}
+    for række in links:
+        opslag, anker = række['opslag'], række['anker']
+        if opslag not in ids:
+            raise OrdbogFejl(f'tools/data/ordbog-scoring.json: opslaget "{opslag}" findes ikke i ordbogen')
+        m = re.search(rf'\sid="{re.escape(anker)}"', scoring_html)
+        if not m:
+            raise OrdbogFejl(f'tools/data/ordbog-scoring.json: ankeret "#{anker}" findes ikke på scoring/index.html')
+        # Overskriften ved ankeret: elementet selv, eller den overskrift, der følger lige efter (afsnittenes ekstra ankre)
+        h = re.compile(r'<h[23][^>]*>(.*?)</h[23]>', re.S).search(scoring_html, scoring_html.rfind('<', 0, m.start()))
+        tekst = re.sub(r'<span class="nr">.*?</span>', '', h.group(1))
+        ud[opslag] = (anker, html.unescape(re.sub(r'<[^>]+>', '', tekst)).strip())
+    return ud
+
+
+def opslag_html(o, ord_for_id, ekstra, scoring=None):
     meta = [f'{label("Engelsk", "English")}: <span lang="en">{e(o["engelsk"])}</span>']
     if o['alternative']:
         meta.append(f'{label("Alternative termer", "Alternative terms")}: {e(", ".join(o["alternative"]))}')
@@ -156,6 +179,10 @@ def opslag_html(o, ord_for_id, ekstra):
     if o['relaterede']:
         links = ', '.join(f'<a href="#{e(m)}">{e(ord_for_id[m])}</a>' for m in o['relaterede'])
         linjer.append(f'<p class="rel">{label("Relaterede begreber", "Related terms")}: {links}</p>')
+    if scoring:
+        anker, titel = scoring
+        linjer.append(f'<p class="scoring">{label("I Scoring i bridge", "In Scoring in bridge")}: '
+                      f'<a href="/scoring/#{e(anker)}">{e(titel)}</a></p>')
     linjer.append('</article>')
     return '\n'.join(linjer)
 
@@ -202,7 +229,7 @@ def struktureret_data(opslag, ekstra):
     return f'<script type="application/ld+json">{tekst}</script>'
 
 
-def render(ordbog):
+def render(ordbog, scoring):
     opslag = sorted(ordbog['opslag'], key=lambda o: sorteringsnøgle(o['ord']))
     ord_for_id = {o['id']: o['ord'] for o in opslag}
     ekstra = {}
@@ -234,7 +261,7 @@ def render(ordbog):
             continue
         overskrift = '1–9' if b == 'tal' else b.upper()
         afsnit.append(f'<section class="letter" id="bogstav-{b}" aria-label="{overskrift}">\n<h2>{overskrift}</h2>\n'
-                      + '\n'.join(opslag_html(o, ord_for_id, ekstra.get(o['id'], [])) for o in grupper[b])
+                      + '\n'.join(opslag_html(o, ord_for_id, ekstra.get(o['id'], []), scoring.get(o['id'])) for o in grupper[b])
                       + '\n</section>')
     indeks = '\n'.join(f'<li><span lang="en">{e(r["engelsk"])}</span> → <a href="#{e(r["id"])}">{e(r["dansk"])}</a></li>'
                        for r in ordbog['indeks'])
@@ -249,10 +276,16 @@ def render(ordbog):
             .replace('{{STRUKTUR}}', struktureret_data(opslag, ekstra)))
 
 
-def byg(tekst):
+def byg(tekst, scoringslinks=None, scoringsside=None):
+    """Siden fra kilden. scoringslinks og scoringsside er tabellen og scoring/index.html; uden dem læses filerne."""
     ordbog = parse(tekst)
     valider(ordbog)
-    return render(ordbog)
+    if scoringslinks is None:
+        scoringslinks = json.loads(SCORING_TABEL.read_text(encoding='utf-8'))['links']
+    if scoringsside is None:
+        scoringsside = SCORING_SIDE.read_text(encoding='utf-8')
+    scoring = scoring_for_opslag(scoringslinks, {o['id'] for o in ordbog['opslag']}, scoringsside)
+    return render(ordbog, scoring)
 
 
 def main():
@@ -352,7 +385,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, summary:focus-visibl
 .entry .meta span[data-en]{ font-weight:600; }
 .entry .def{ color:var(--ink); }
 .entry .expl{ color:var(--body); }
-.entry .rel{ font-size:14px; color:var(--body); }
+.entry .rel, .entry .scoring{ font-size:14px; color:var(--body); }
 .empty{ margin:0; padding:24px; border-radius:var(--r-xl); background:var(--canvas); font-weight:600; }
 
 /* indekset */

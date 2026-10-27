@@ -1,0 +1,14 @@
+{
+ "note": "Links fra ordbogens opslag til Scoring i bridge (SPEC-scoring.md, leverancetrin 5). tools/build_ordbog.py læser tabellen, så ordbogens markdown ikke ændres. opslag er opslagets ID i ordbogen, anker er et id på www.kontraktbridge.dk/scoring/; linkets tekst er overskriften ved ankeret. Bygningen fejler, hvis et opslag eller et anker ikke findes.",
+ "links": [
+  {"opslag": "matchpoint", "anker": "matchpoint"},
+  {"opslag": "imp", "anker": "imp-skalaen"},
+  {"opslag": "kamppoint", "anker": "kamppoint"},
+  {"opslag": "butler-beregning", "anker": "butler"},
+  {"opslag": "zonestilling", "anker": "bonus"},
+  {"opslag": "udgang", "anker": "bonus"},
+  {"opslag": "slem", "anker": "bonus"},
+  {"opslag": "dobling", "anker": "doblet-og-redoblet-kontrakt-hjemme"},
+  {"opslag": "handicap", "anker": "handicap"}
+ ]
+}

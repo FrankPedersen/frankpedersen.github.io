@@ -153,6 +153,42 @@ class Ordbogssiden(unittest.TestCase):
             self.assertIn(navn, kipning['alternateName'])
 
 
+class LinksTilScoring(unittest.TestCase):
+    """Leverancetrin 5 i SPEC-scoring.md: opslagene linker til Scoring i bridge via tools/data/ordbog-scoring.json."""
+
+    TABEL = ROD / 'tools' / 'data' / 'ordbog-scoring.json'
+    FORVENTET = {'matchpoint': 'matchpoint', 'imp': 'imp-skalaen', 'kamppoint': 'kamppoint', 'butler-beregning': 'butler',
+                 'zonestilling': 'bonus', 'udgang': 'bonus', 'slem': 'bonus', 'dobling': 'doblet-og-redoblet-kontrakt-hjemme',
+                 'handicap': 'handicap'}
+
+    @classmethod
+    def setUpClass(cls):
+        cls.html = SIDE.read_text(encoding='utf-8')
+        cls.scoring = (ROD / 'scoring' / 'index.html').read_text(encoding='utf-8')
+        cls.opslag = {m.group(1): m.group(0) for m in re.finditer(r'<article class="entry" id="([^"]+)".*?</article>', cls.html, re.S)}
+
+    def test_tabellen_har_de_ni_emner_fra_specen(self):
+        links = json.loads(self.TABEL.read_text(encoding='utf-8'))['links']
+        self.assertEqual({x['opslag']: x['anker'] for x in links}, self.FORVENTET)
+
+    def test_opslagene_linker_til_ankrene_paa_scoringssiden(self):
+        for opslag, anker in self.FORVENTET.items():
+            self.assertIn(f' id="{anker}"', self.scoring, anker)
+            m = re.search(r'<p class="scoring">(.*?)</p>', self.opslag[opslag], re.S)
+            self.assertIsNotNone(m, opslag)
+            self.assertIn(f'<a href="/scoring/#{anker}">', m.group(1), opslag)
+            self.assertIn('<span data-en="In Scoring in bridge">I Scoring i bridge</span>', m.group(1), opslag)
+
+    def test_kun_de_ni_opslag_har_linket(self):
+        med = sorted(i for i, a in self.opslag.items() if '/scoring/#' in a)
+        self.assertEqual(med, sorted(self.FORVENTET))
+
+    def test_linkteksten_er_overskriften_ved_ankeret(self):
+        for opslag, tekst in (('kamppoint', 'Kamppoint'), ('matchpoint', 'Parturnering: matchpoint'), ('handicap', 'Handicap'),
+                              ('dobling', 'Doblet og redoblet kontrakt hjemme'), ('imp', 'Imp-skalaen'), ('butler-beregning', 'Butler')):
+            self.assertRegex(self.opslag[opslag], rf'<a href="/scoring/#[^"]+">{re.escape(tekst)}</a>', opslag)
+
+
 class Bygningen(unittest.TestCase):
     def setUp(self):
         self.bygger = hent_bygger()
@@ -169,6 +205,11 @@ class Bygningen(unittest.TestCase):
                                     '**Relaterede begreber:** slutspil, findes-ikke, gaffel', 1)
         with self.assertRaises(self.bygger.OrdbogFejl):
             self.bygger.byg(ændret)
+
+    def test_fejler_ved_ukendt_opslag_eller_anker_i_scoringstabellen(self):
+        for links in ([{'opslag': 'findes-ikke', 'anker': 'kamppoint'}], [{'opslag': 'kamppoint', 'anker': 'findes-ikke'}]):
+            with self.assertRaises(self.bygger.OrdbogFejl, msg=str(links)):
+                self.bygger.byg(self.tekst, scoringslinks=links)
 
     def test_fejler_ved_dobbelte_id(self):
         ændret = self.tekst.replace('**ID:** `afkast`', '**ID:** `afblokering`', 1)

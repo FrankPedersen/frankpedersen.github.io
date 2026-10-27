@@ -160,7 +160,7 @@ tjek(B.tal(-0.9, 2, 'da') === '−0,90' && B.tal(0.5, 2, 'da', true) === '+0,50'
 
 // --- Siden (SPEC-scoring.md, Accepttest › Siden) -----------------------------------------------------------------
 import { spawn, spawnSync } from 'node:child_process';
-import { existsSync, mkdtempSync, rmSync, statSync } from 'node:fs';
+import { existsSync, mkdtempSync, rmSync, statSync, writeFileSync } from 'node:fs';
 import { createServer } from 'node:http';
 import { tmpdir } from 'node:os';
 import { extname, join, normalize } from 'node:path';
@@ -169,43 +169,75 @@ import { fileURLToPath } from 'node:url';
 const ROD = fileURLToPath(new URL('..', import.meta.url));
 const læsFil = (sti) => readFileSync(join(ROD, sti), 'utf8').replace(/\r\n/g, '\n');
 const MD = læsFil('scoring/Scoring_i_bridge.md');
+const MD_EN = læsFil('scoring/Scoring_i_bridge.en.md');
 const SIDE = læsFil('scoring/index.html');
+// Siden på dansk er alt uden for <template>; den engelske tekst og indholdsfortegnelse står i hver sin <template>
+const DOK = SIDE.replace(/<template[\s\S]*?<\/template>/g, '');
+const skabelon = (id) => (SIDE.match(new RegExp(`<template id="${id}">([\\s\\S]*?)</template>`)) || [])[1] ?? '';
 const python = process.env.PYTHON || 'python';
-const byg = (md) => spawnSync(python, ['-I', '-X', 'utf8', 'tools/build_scoring.py', '--kilde', '-', '--ud', '-'], { cwd: ROD, input: md, encoding: 'utf8', env: { ...process.env, PYTHONIOENCODING: 'utf-8' } });
+const midl = mkdtempSync(join(tmpdir(), 'tjek-scoring-md-'));
+const byg = (md, en = MD_EN) => {
+  const sti = join(midl, 'en.md');
+  writeFileSync(sti, en, 'utf8');
+  return spawnSync(python, ['-I', '-X', 'utf8', 'tools/build_scoring.py', '--kilde', '-', '--en', sti, '--ud', '-'],
+    { cwd: ROD, input: md, encoding: 'utf8' });
+};
 
 {
   const r = byg(MD);
   tjek(r.status === 0 && r.stdout.replace(/\r\n/g, '\n') === SIDE, 'scoring/index.html er bygget af build_scoring.py og ikke rettet i hånden', r.stderr);
-  const fejler = (md, ord_, navn) => {
-    const x = byg(md);
+  const fejler = (md, ord_, navn, en = MD_EN) => {
+    const x = byg(md, en);
     tjek(x.status === 1 && x.stderr.includes(ord_), `build_scoring.py fejler ved ${navn}`, `${x.status} ${x.stderr}`);
   };
   fejler(MD.replace('<!-- beregner: imp -->', '<!-- beregner: imp -->\n\n<!-- beregner: imp -->'), 'Dobbelt id', 'dobbelte id\'er');
   fejler(MD + '\n## 8 Taktik\n\nIgen.\n', 'Dobbelt id', 'to afsnit med samme id');
   fejler(MD.replace('<!-- beregner: imp -->', '<!-- beregner: kp -->'), 'Ukendt beregnermarkør', 'en ukendt beregnermarkør');
   fejler(MD.replace('<!-- /fold -->', ''), 'slutmarkør', 'en fold uden slutmarkør');
+  // Den engelske fil skal have samme overskrifter og markører som den danske (SPEC-scoring.md, leverancetrin 3)
+  fejler(MD, 'overskrifter', 'en engelsk fil med en underoverskrift mindre', MD_EN.replace('### Total points\n', ''));
+  fejler(MD, 'overskrifter', 'en engelsk fil med et afsnit mindre', MD_EN.replace('## 3 Pairs scored in IMPs\n', ''));
+  fejler(MD, 'markører', 'en engelsk fil med markørerne i en anden rækkefølge',
+    MD_EN.replace('<!-- beregner: score -->', '<!-- X -->').replace('<!-- beregner: matchpoint -->', '<!-- beregner: score -->').replace('<!-- X -->', '<!-- beregner: matchpoint -->'));
+  fejler(MD, 'markører', 'en engelsk fil uden en foldboks', MD_EN.replace('<!-- fold: The formulas -->\n', '').replace(/<!-- \/fold -->\n(?![\s\S]*<!-- \/fold -->)/, ''));
+  fejler(MD, 'Afsnit 7', 'et ukendt beregnernavn i det engelske afsnit 7', MD_EN.replace('**Score calculator**', '**Score machine**'));
+  fejler(MD, 'Ukendt afsnit', 'et engelsk kildeafsnit, der ikke hedder Sources', MD_EN.replace('## Sources', '## Kilder'));
 }
 {
-  const h2 = [...SIDE.matchAll(/<h2 id="([^"]+)"><span class="nr">(\d)<\/span>/g)].map((m) => `${m[2]}:${m[1]}`);
+  tjek(skabelon('tekst-en') && skabelon('toc-en'), 'den engelske tekst og indholdsfortegnelse står i hver sin <template>');
+  tjek(!SIDE.includes('English version coming soon'), 'linjen "English version coming soon." er fjernet');
+  const overskrifter = (html) => [...html.matchAll(/<h([23]) id="([^"]+)"/g)].map((m) => `${m[1]}:${m[2]}`);
+  const daH = overskrifter(DOK.slice(DOK.indexOf('<div class="tekst"'))), enH = overskrifter(skabelon('tekst-en'));
+  tjek(daH.length > 40 && daH.join() === enH.join(), 'de engelske overskrifter har de danske id\'er i samme rækkefølge', `${daH.length}/${enH.length}`);
+  tjek(skabelon('tekst-en').includes('<h3 id="kamppoint">Victory points</h3>') && skabelon('tekst-en').includes('<h3 id="butler">Butler</h3>'),
+    'på engelsk står #kamppoint ved "Victory points" og #butler ved "Butler"');
+  const enIds = [...skabelon('tekst-en').matchAll(/\sid="([^"$]+)"/g)].map((m) => m[1]);
+  tjek(enIds.length === new Set(enIds).size, 'ingen dobbelte id\'er i den engelske tekst');
+  const h2 = [...DOK.matchAll(/<h2 id="([^"]+)"><span class="nr">(\d)<\/span>/g)].map((m) => `${m[2]}:${m[1]}`);
   tjek(h2.join() === '1:scoren-for-et-spil,2:parturnering,3:parturnering-i-imp,4:holdturnering,5:taktik,6:handicap', 'afsnit 1–6, og afsnit 7 vises ikke', h2.join());
-  tjek(!SIDE.includes('Beregnere på siden') && SIDE.includes('<section class="kilder"'), 'afsnit 7 er beregnerlinjen, og kilderne står nederst');
-  const kort = [...SIDE.matchAll(/<a class="indgang" href="#([^"]+)">/g)].map((m) => m[1]);
+  tjek(!SIDE.includes('Beregnere på siden') && !SIDE.includes('Calculators on the page') && DOK.includes('<section class="kilder"'),
+    'afsnit 7 er beregnerlinjen, og kilderne står nederst');
+  const kort = [...DOK.matchAll(/<a class="indgang" href="#([^"]+)">/g)].map((m) => m[1]);
   tjek(kort.join() === 'beregner-score,parturnering,holdturnering,handicap', 'de fire indgangskort', kort.join());
-  const linje = SIDE.slice(SIDE.indexOf('class="beregnerlinje"'), SIDE.indexOf('</p>', SIDE.indexOf('class="beregnerlinje"')));
+  const linje = DOK.slice(DOK.indexOf('class="beregnerlinje"'), DOK.indexOf('</p>', DOK.indexOf('class="beregnerlinje"')));
   tjek(['score', 'matchpoint', 'imp', 'handicap'].every((b) => linje.includes(`href="#beregner-${b}"`)), 'beregnerlinjen linker til de fire beregnere');
-  const pos = (id) => SIDE.indexOf(` id="${id}"`);
+  const pos = (id) => DOK.indexOf(` id="${id}"`);
   for (const [b, efter, før] of [['score', 'eksempler', 'parturnering'], ['matchpoint', 'et-eksempel', 'procent'],
     ['imp', 'kamppoint', 'board-a-match'], ['handicap', 'handicap-et-eksempel', 'matematikken']]) {
     tjek(pos(efter) > 0 && pos(efter) < pos(`beregner-${b}`) && pos(`beregner-${b}`) < pos(før), `beregneren ${b} står efter #${efter} og før #${før}`);
   }
-  const folds = [...SIDE.matchAll(/<details class="fold"([^>]*)>/g)];
-  tjek(folds.length === 4 && folds.every((m) => !/open/.test(m[1])), 'fire foldbokse, lukkede som standard', String(folds.length));
-  const ids = [...SIDE.matchAll(/\sid="([^"$]+)"/g)].map((m) => m[1]);
+  for (const [navn, html] of [['dansk', DOK], ['engelsk', skabelon('tekst-en')]]) {
+    const folds = [...html.matchAll(/<details class="fold"([^>]*)>/g)];
+    tjek(folds.length === 4 && folds.every((m) => !/open/.test(m[1])), `fire foldbokse, lukkede som standard (${navn})`, String(folds.length));
+  }
+  const ids = [...DOK.matchAll(/\sid="([^"$]+)"/g)].map((m) => m[1]);
   tjek(ids.length === new Set(ids).size, 'ingen dobbelte id\'er på siden');
   for (const id of ['matchpoint', 'butler', 'cross-imp', 'imp-skalaen', 'kamppoint', 'taktik', 'handicap', 'parturnering', 'holdturnering']) {
-    tjek(ids.includes(id), `ankeret #${id} findes`);
+    tjek(ids.includes(id) && enIds.includes(id), `ankeret #${id} findes på begge sprog`);
   }
-  tjek([...SIDE.matchAll(/href="#([^"]+)"/g)].every((m) => ids.includes(m[1])), 'alle interne links peger på et id');
+  tjek([...DOK.matchAll(/href="#([^"]+)"/g)].every((m) => ids.includes(m[1])), 'alle interne links peger på et id');
+  tjek([...skabelon('tekst-en').matchAll(/href="#([^"]+)"/g), ...skabelon('toc-en').matchAll(/href="#([^"]+)"/g)]
+    .every((m) => enIds.includes(m[1]) || ids.includes(m[1])), 'alle interne links i den engelske tekst peger på et id');
   tjek(/\[id\]\{ scroll-margin-top:\d+px; \}/.test(SIDE), 'ankrene har scroll-margin-top');
   const ressourcer = [...SIDE.matchAll(/<(?:script|img|iframe)[^>]+src="([^"]+)"|<link(?![^>]*rel="canonical")[^>]+href="([^"]+)"|url\(([^)]+)\)|import [^'"]*['"]([^'"]+)['"]/g)]
     .map((m) => m[1] || m[2] || m[3] || m[4]);
@@ -371,13 +403,33 @@ if (!browser) {
     tjek((await svar('handicap')).length > 0 && (await kør(`return document.querySelector('[data-beregner="handicap"] [name="par"]').getAttribute('aria-invalid')`)) === 'true',
       'et ugyldigt felt markeres og får en kort besked', await svar('handicap'));
 
-    // Engelsk: beregnerne og navigationen på engelsk, teksten på dansk med linjen øverst
+    // Den danske teksts længere tekstbidder (uden kilderne), så den engelske side kan tjekkes for rester af dansk
+    const danskeTekster = await kør(`return [...document.querySelectorAll('.tekst *')].filter((el) => !el.closest('.kilder') && !el.children.length)
+      .map((el) => el.textContent.replace(/\\s+/g, ' ').trim()).filter((x) => x.length > 25 && /[a-zæøå]{3}/i.test(x));`);
+
+    // Engelsk: hele siden på engelsk (SPEC-scoring.md, leverancetrin 3)
     await åbn('/scoring/?lang=en', 390);
-    t = await kør(`return { snart: !document.getElementById('snart').hidden && document.getElementById('snart').innerText.trim(), knap: document.querySelector('.toc-knap').innerText.trim(),
+    t = await kør(`return { snart: document.body.innerText.includes('English version coming soon'), knap: document.querySelector('.toc-knap').innerText.trim(),
+      h1: document.querySelector('h1').innerText.trim(), h2: document.querySelector('.tekst h2').innerText.replace(/\\s+/g, ' ').trim(),
+      toc: document.querySelector('.toc-liste a').innerText.replace(/\\s+/g, ' ').trim(), kilder: document.getElementById('kilder').innerText.trim(),
+      lead: document.querySelector('.sc-lead').innerText.slice(0, 40),
       h: [...document.querySelectorAll('.beregner-h')].map((h) => h.innerText).join(' | '), lang: document.documentElement.lang };`);
-    tjek(t.snart === 'English version coming soon.' && t.knap.startsWith('Contents') && t.lang === 'en', 'engelsk: linjen "English version coming soon." og "Contents"', JSON.stringify(t));
-    tjek(t.h === 'Score calculator | Matchpoint calculator | Imp and VP converter | Handicap calculator', 'engelsk: beregnernes navne', t.h);
-    tjek((await svar('kp')).startsWith('13.44 – 6.56') && (await svar('score')).includes('Trick score (4 × 30) 120'), 'engelsk: decimalpunktum og regnestykket på engelsk',
+    tjek(!t.snart && t.knap.startsWith('Contents') && t.lang === 'en', 'engelsk: "Contents", og linjen "English version coming soon." er væk', JSON.stringify(t));
+    tjek(t.h1 === 'Scoring in bridge' && t.h2 === '1 The score for a board' && t.toc === '1 The score for a board' && t.kilder === 'Sources'
+      && t.lead.startsWith('This page is about duplicate bridge'), 'engelsk: overskriften, teksten, indholdsfortegnelsen og Sources', JSON.stringify(t));
+    tjek(t.h === 'Score calculator | Matchpoint calculator | IMP and VP converter | Handicap calculator', 'engelsk: beregnernes navne', t.h);
+    t = await kør(`const tekster = [...document.querySelectorAll('.tekst *')].filter((el) => !el.closest('.kilder') && !el.children.length)
+      .map((el) => el.textContent.replace(/\\s+/g, ' ').trim());
+      return tekster.filter((x) => ${JSON.stringify(danskeTekster)}.includes(x));`);
+    tjek(t.length === 0, 'engelsk: ingen af den danske teksts afsnit, tabelceller og punkter står tilbage', t.slice(0, 5).join(' | '));
+    t = await kør(`const tekst = [...document.querySelectorAll('body *')].filter((el) => !el.closest('.kilder, script, style, template') && el.offsetParent !== null || el.tagName === 'TITLE')
+      .flatMap((el) => [...el.childNodes].filter((n) => n.nodeType === 3).map((n) => n.textContent)).join(' ') + ' ' + document.title;
+      return (tekst.match(/[^\\s.,:;()–]*[æøåÆØÅ][^\\s.,:;()–]*|\\b(og|med|stik|bet|spil|zonen|scorer|beregner|spiller|gennemsnit|antal|opnået|valgfrit|regulering|omregnet|Næste|Til toppen|Indhold|ikke|eller|hvis|af|på|til|det|der|som|skal|har|ved)\\b/g) || []);`);
+    const tilladt = ['Jørgen', 'Fordelingstræneren'];
+    const ord = t.filter((x) => !tilladt.includes(x));
+    tjek(ord.length === 0, 'engelsk: ingen danske ord uden for kildetitlerne (kun navnet Jørgen og appens navn)', [...new Set(ord)].join(' '));
+    tjek((await svar('kp')).startsWith('13.44 – 6.56') && (await svar('kp')).includes('the winner gets 13.44 VP, the loser 6.56 VP')
+      && (await svar('imp')).startsWith('+10 IMPs') && (await svar('score')).includes('Trick score (4 × 30) 120'), 'engelsk: decimalpunktum, IMPs, VP og regnestykket på engelsk',
       (await svar('kp')) + ' / ' + (await svar('score')));
     await kør(`document.querySelector('[data-række="1"]').click();`);
     tjek((await svar('matchpoint')).includes('Beats 4, ties 1, loses to 1: 4 × 2 + 1 = 9 points; 4 − 1 = +3'), 'engelsk: regnestykket for en række');
@@ -386,9 +438,38 @@ if (!browser) {
     t = await kør(`const tekst = [...document.querySelectorAll('.beregner, .indgange, .beregnerlinje, .toc-knap, .footer')].map((el) => el.innerText).join(' ')
       + ' ' + [...document.querySelectorAll('.beregner [placeholder], .beregner [aria-label]')].map((el) => el.getAttribute('placeholder') || el.getAttribute('aria-label')).join(' ');
       return (tekst.match(/[^\\s.,:;()]*[æøåÆØÅ][^\\s.,:;()]*|\\b(og|med|stik|bet|spil|zonen|scorer|beregner|spiller|gennemsnit|antal|opnået|valgfrit|regulering|omregnet|Næste|Til toppen|Indhold)\\b/g) || []);`);
-    const tilladt = ['Næste:', 'Fordelingstræneren', 'Øst', 'ØV'];
-    const rester = t.filter((x) => !tilladt.includes(x));
+    const rester = t.filter((x) => !['Fordelingstræneren'].includes(x));
     tjek(rester.length === 0, 'engelsk: ingen dansk i beregnerne, indgangene og navigationen', [...new Set(rester)].join(' '));
+
+    // Ankrene virker på engelsk og står ved de engelske overskrifter
+    for (const bredde of [1280, 390]) {
+      for (const [anker, titel] of [['kamppoint', 'Victory points'], ['butler', 'Butler']]) {
+        await åbn(`/scoring/?lang=en#${anker}`, bredde);
+        t = await kør(`const el = document.getElementById('${anker}'); const h = el.getBoundingClientRect(); const bar = document.querySelector('.toc').getBoundingClientRect();
+          return { tekst: el.innerText.trim(), h: Math.round(h.top), bund: Math.round(${bredde < 1000} ? bar.bottom : 0) };`);
+        tjek(t.tekst === titel && t.h >= t.bund && t.h < 200, `engelsk: /scoring/#${anker} åbner ved "${titel}" ved ${bredde} px`, JSON.stringify(t));
+      }
+    }
+
+    // Sprogvalget huskes mellem siderne: dansk → knappen → engelsk på ordbogen, forsiden og tilbage på scoringssiden
+    await åbn('/scoring/?lang=da', 1280);
+    await kør(`document.getElementById('langBtn').click();`);
+    for (let i = 0; i < 50 && (await kør('return document.documentElement.lang').catch(() => '')) !== 'en'; i++) await vent(100);
+    await åbn('/scoring/', 1280);
+    tjek((await kør('return document.documentElement.lang')) === 'en', 'sprogknappen skifter scoringssiden til engelsk, og valget huskes');
+    for (const sti of ['/ordbog/', '/', '/scoring/#kamppoint']) {
+      await åbn(sti, 1280);
+      t = await kør(`return { lang: document.documentElement.lang, knap: document.getElementById('langBtn').textContent.trim() };`);
+      tjek(t.lang === 'en' && t.knap === 'Dansk', `engelsk huskes på ${sti}`, JSON.stringify(t));
+    }
+    // Ordbogens link fra Kamppoint fører til den engelske overskrift
+    await åbn('/ordbog/', 1280);
+    await kør(`document.querySelector('#kamppoint a[href="/scoring/#kamppoint"]').click();`);
+    await vent(1500);
+    await kør(`let y = -1, ens = 0; for (let i = 0; i < 60 && ens < 4; i++) { await new Promise((r) => setTimeout(r, 100)); ens = scrollY === y ? ens + 1 : 0; y = scrollY; }`);
+    t = await kør(`const el = document.getElementById('kamppoint'); return { sti: location.pathname + location.hash, tekst: el.innerText.trim(), top: Math.round(el.getBoundingClientRect().top) };`);
+    tjek(t.sti === '/scoring/#kamppoint' && t.tekst === 'Victory points' && t.top >= 0 && t.top < 200, 'ordbogens link fra Kamppoint åbner "Victory points" på engelsk', JSON.stringify(t));
+    await åbn('/scoring/?lang=da', 1280);
 
     // Intet hentes uden for sitet, og ingen fejl i konsollen
     const ude = kald.filter((u) => !u.startsWith(SITE) && !u.startsWith('about:') && !u.startsWith('data:'));
@@ -399,7 +480,7 @@ if (!browser) {
     proces.kill();
     server.close();
     await vent(300);
-    try { rmSync(profil, { recursive: true, force: true }); } catch {}
+    for (const m of [profil, midl]) { try { rmSync(m, { recursive: true, force: true }); } catch {} }
   }
 }
 

@@ -5,3 +5,6 @@ __pycache__/
 
 # Systemdokumentationen er privat og ligger kun lokalt (Franks valg 25. oktober 2026)
 docs/SYSTEM.md
+
+# Afsluttede specer er også private og ligger kun lokalt (Franks valg 27. oktober 2026)
+docs/specs/

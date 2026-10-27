@@ -42,15 +42,17 @@ def fund(tekst):
 
 
 def dansk_html(html):
-    """Sidens danske tekst: uden stilark og uden de engelske udgaver i data-en-attributterne."""
+    """Sidens danske tekst: uden stilark, uden de engelske udgaver i data-en-attributterne og uden den engelske tekst i
+    <template> (Scoring i bridge)."""
     html = re.sub(r'<style>.*?</style>', ' ', html, flags=re.S)
+    html = re.sub(r'<template\b.*?</template>', ' ', html, flags=re.S)
     return re.sub(r'\sdata-en(?:-[a-z]+)?="[^"]*"', ' ', html)
 
 
 def dansk_tekst():
     """(navn, tekst) for al dansk tekst på siden."""
     ud = [(sti, dansk_html((ROD / sti).read_text(encoding='utf-8'))) for sti in ('index.html', 'om-mig/index.html', 'scoring/index.html')]
-    # Scoring i bridge: kilden er Franks markdown (SPEC-scoring.md)
+    # Scoring i bridge: kilden er Franks markdown (SPEC-scoring.md); kun den danske fil, ikke Scoring_i_bridge.en.md
     ud.append(('scoring/Scoring_i_bridge.md', (ROD / 'scoring' / 'Scoring_i_bridge.md').read_text(encoding='utf-8')))
     # Opslagene, indekset og den strukturerede data bygges fra markdown, som tjekkes for sig nedenfor.
     ordbog = (ROD / 'ordbog' / 'index.html').read_text(encoding='utf-8')

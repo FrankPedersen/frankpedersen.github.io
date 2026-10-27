@@ -1,13 +1,20 @@
-"""Bygger siden Scoring i bridge, scoring/index.html, fra scoring/Scoring_i_bridge.md (SPEC-scoring.md).
+"""Bygger siden Scoring i bridge, scoring/index.html, fra scoring/Scoring_i_bridge.md og den engelske udgave
+scoring/Scoring_i_bridge.en.md (SPEC-scoring.md).
 
-    python tools/build_scoring.py                    # skriver scoring/index.html
-    python tools/build_scoring.py --kilde - --ud -   # markdown fra stdin, siden til stdout (bruges af testene)
+    python tools/build_scoring.py                                # skriver scoring/index.html
+    python tools/build_scoring.py --kilde - --en STI --ud -      # dansk fra stdin, siden til stdout (bruges af testene)
 
-index.html rettes aldrig i hånden. Markdownfilen er Franks tekst; scriptet kender to markører i den:
+index.html rettes aldrig i hånden. Markdownfilerne er Franks tekst; scriptet kender to markører i dem:
 <!-- beregner: score|matchpoint|imp|handicap --> indsætter en beregner, og <!-- fold: Titel --> … <!-- /fold --> gør
 indholdet til en foldbar boks. Scriptet stopper med en fejl ved dobbelte id'er, en ukendt markør og en foldboks uden
-slutmarkør. Afsnit 7 (Beregnere på siden) vises ikke; det giver beregnerlinjen øverst. Beregnerne regner med
-scoring/beregn.js; siden henter intet uden for sitet.
+slutmarkør. Afsnit 7 vises ikke; det giver beregnerlinjen øverst. Beregnerne regner med scoring/beregn.js; siden henter
+intet uden for sitet.
+
+Den danske tekst står i siden; den engelske tekst og indholdsfortegnelse står i hver sin <template>, som sprogscriptet
+sætter ind, når sproget er engelsk (leverancetrin 3). Ankrene er de samme på begge sprog: de engelske overskrifter får
+den danske fils id'er, overskrift for overskrift i samme rækkefølge. Derfor stopper scriptet, hvis de to filer ikke har
+samme afsnit, samme antal underoverskrifter i hvert afsnit og de samme markører i samme rækkefølge. Kildeafsnittet
+hedder Kilder på dansk og Sources på engelsk, og det engelske afsnit 7 bruger beregnernes engelske navne fra BEREGNERE.
 """
 import html
 import pathlib
@@ -16,6 +23,7 @@ import sys
 
 ROD = pathlib.Path(__file__).resolve().parent.parent
 KILDE = ROD / 'scoring' / 'Scoring_i_bridge.md'
+KILDE_EN = ROD / 'scoring' / 'Scoring_i_bridge.en.md'
 SIDE = ROD / 'scoring' / 'index.html'
 
 
@@ -26,8 +34,14 @@ class ScoringFejl(Exception):
 BEREGNERE = {
     'score': ('Scoreberegner', 'Score calculator'),
     'matchpoint': ('Matchpointregner', 'Matchpoint calculator'),
-    'imp': ('Imp- og kamppointomregner', 'Imp and VP converter'),
+    'imp': ('Imp- og kamppointomregner', 'IMP and VP converter'),
     'handicap': ('Handicapberegner', 'Handicap calculator'),
+}
+
+# Tekster i afsnittene, som ikke står i markdownfilerne
+ORD = {
+    'da': {'kilder': 'kilder', 'nysgerrige': 'For de nysgerrige', 'videre': 'Videre', 'næste': 'Næste:', 'top': 'Til toppen', 'navn': 0},
+    'en': {'kilder': 'sources', 'nysgerrige': 'For the curious', 'videre': 'Next', 'næste': 'Next:', 'top': 'Back to top', 'navn': 1},
 }
 
 
@@ -75,8 +89,9 @@ def tabel(rækker):
     return f'<div class="tabel"><table><thead><tr>{th}</tr></thead><tbody>{tr}</tbody></table></div>'
 
 
-def indhold(linjer, afsnit, ids, beregnere):
-    """HTML for et afsnits linjer og listen over dets underpunkter [(id, titel)]."""
+def indhold(linjer, afsnit, ids, beregnere, sprog, faste=None):
+    """HTML for et afsnits linjer og listen over dets underpunkter [(id, titel)]. Med faste (de danske id'er) får
+    underoverskrifterne dem i rækkefølge i stedet for nye."""
     ud, punkter, i, fold = [], [], 0, None
     while i < len(linjer):
         ln = linjer[i]
@@ -97,7 +112,7 @@ def indhold(linjer, afsnit, ids, beregnere):
                 if fold:
                     raise ScoringFejl(f'Foldboksen "{fold}" mangler sin slutmarkør, før "{f.group(1)}" begynder')
                 fold = f.group(1)
-                ud.append(f'<details class="fold"><summary><span class="fold-k" data-en="For the curious">For de nysgerrige</span> '
+                ud.append(f'<details class="fold"><summary><span class="fold-k">{ORD[sprog]["nysgerrige"]}</span> '
                           f'{inline(fold)}</summary><div class="fold-indhold">')
             elif re.fullmatch(r'<!--\s*/fold\s*-->', s):
                 if not fold:
@@ -110,7 +125,7 @@ def indhold(linjer, afsnit, ids, beregnere):
             continue
         if ln.startswith('### '):
             titel = ln[4:].strip()
-            id_ = ids.underpunkt(titel, afsnit)
+            id_ = ids.tag(faste.pop(0), titel) if faste is not None else ids.underpunkt(titel, afsnit)
             punkter.append((id_, titel))
             ud.append(f'<h3 id="{id_}">{inline(titel)}</h3>')
             i += 1
@@ -142,7 +157,7 @@ def indhold(linjer, afsnit, ids, beregnere):
     return '\n'.join(ud), punkter
 
 
-def læs(md):
+def læs(md, sprog='da'):
     """(titel, indledning, afsnit [(nummer, titel, linjer)], afsnit 7's linjer, kildernes linjer)."""
     titel, indledning, afsnit, nu = None, [], [], None
     for ln in md.replace('\r\n', '\n').split('\n'):
@@ -161,40 +176,77 @@ def læs(md):
     if not titel:
         raise ScoringFejl('Kilden mangler en titel (# …)')
     syv = next((a for a in afsnit if a[0] == 7), None)
-    kilder = next((a for a in afsnit if a[0] is None and a[1].lower() == 'kilder'), None)
+    kilder = next((a for a in afsnit if a[0] is None and a[1].lower() == ORD[sprog]['kilder']), None)
     andre = [a for a in afsnit if a[0] is None and a is not kilder]
     if andre:
         raise ScoringFejl(f'Ukendt afsnit uden nummer: {andre[0][1]}')
     return titel, indledning, [a for a in afsnit if a[0] is not None and a[0] != 7], syv, kilder
 
 
-def byg(md):
-    titel, indledning, afsnit, syv, kilder = læs(md)
+def struktur(md, sprog):
+    """Afsnittenes numre, antallet af underoverskrifter i hvert afsnit og markørerne i rækkefølge."""
+    _, _, afsnit, _, _ = læs(md, sprog)
+    markører = []
+    for nr, _, linjer in afsnit:
+        for ln in linjer:
+            s = ln.strip()
+            m = re.fullmatch(r'<!--\s*(beregner:\s*[\w-]+|fold|/fold)(?::.*?)?\s*-->', s)
+            if m:
+                markører.append(re.sub(r'\s+', ' ', m.group(1)))
+    return [nr for nr, _, _ in afsnit], [sum(ln.startswith('### ') for ln in linjer) for _, _, linjer in afsnit], markører
+
+
+def sammenlign(md_da, md_en):
+    """Stopper, hvis den engelske fil ikke har samme opbygning som den danske."""
+    da, en = struktur(md_da, 'da'), struktur(md_en, 'en')
+    if da[0] != en[0]:
+        raise ScoringFejl(f'De to filer har ikke de samme overskrifter: afsnittene {da[0]} på dansk og {en[0]} på engelsk')
+    for nr, a, b in zip(da[0], da[1], en[1]):
+        if a != b:
+            raise ScoringFejl(f'De to filer har ikke de samme overskrifter: afsnit {nr} har {a} underoverskrifter på dansk og {b} på engelsk')
+    if da[2] != en[2]:
+        første = next((i for i, (a, b) in enumerate(zip(da[2], en[2])) if a != b), min(len(da[2]), len(en[2])))
+        raise ScoringFejl(f'De to filer har ikke de samme markører i samme rækkefølge: nr. {første + 1} er '
+                          f'"{(da[2] + ["ingen"])[første]}" på dansk og "{(en[2] + ["ingen"])[første]}" på engelsk')
+
+
+def tekst(md, sprog, plan=None):
+    """En sprogudgave af sidens tekst: titel, indledning, indholdsfortegnelse, afsnit med kilder, beregnernes navne i
+    afsnit 7 og planen (afsnittenes og underoverskrifternes id'er), som den engelske udgave bruger."""
+    o = ORD[sprog]
+    titel, indledning, afsnit, syv, kilder = læs(md, sprog)
     ids = Id()
     ids.tag('top', 'toppen')
     ids.tag('indhold', 'indholdsfortegnelsen')
     beregnere = []
     # Indledningen: linjen med dato og version står kun i kilden; resten er sidens indledning.
-    tekst = [ln for ln in indledning if ln.strip() and ln.strip() != '---']
-    lead = ' '.join(ln.strip() for ln in tekst if '·' not in ln)
+    linjer = [ln for ln in indledning if ln.strip() and ln.strip() != '---']
+    lead = ' '.join(ln.strip() for ln in linjer if '·' not in ln)
 
-    sektioner, toc = [], []
-    for nr, overskrift, linjer in afsnit:
-        id_ = ids.tag(slug(overskrift), overskrift)
-        alias = ''
-        if ':' in overskrift:
-            a = slug(overskrift.split(':', 1)[1])
-            if a and a not in ids.brugt:
-                ids.tag(a, overskrift)
-                alias = f'<span id="{a}" class="alias"></span>'
-        krop, punkter = indhold(linjer, id_, ids, beregnere)
-        sektioner.append([nr, id_, overskrift, alias, krop])
+    ny_plan, sektioner, toc = [], [], []
+    for k, (nr, overskrift, linjer_) in enumerate(afsnit):
+        if plan is None:
+            id_ = ids.tag(slug(overskrift), overskrift)
+            alias = None
+            if ':' in overskrift:
+                a = slug(overskrift.split(':', 1)[1])
+                if a and a not in ids.brugt:
+                    alias = ids.tag(a, overskrift)
+            krop, punkter = indhold(linjer_, id_, ids, beregnere, sprog)
+            ny_plan.append((id_, alias, [p for p, _ in punkter]))
+        else:
+            id_, alias, faste = plan[k]
+            ids.tag(id_, overskrift)
+            if alias:
+                ids.tag(alias, overskrift)
+            krop, punkter = indhold(linjer_, id_, ids, beregnere, sprog, list(faste))
+        sektioner.append([nr, id_, overskrift, f'<span id="{alias}" class="alias"></span>' if alias else '', krop])
         toc.append((nr, id_, overskrift, punkter))
     for k, (nr, id_, overskrift, alias, krop) in enumerate(sektioner):
         næste = sektioner[k + 1] if k + 1 < len(sektioner) else None
-        nav = ('<nav class="afslut" aria-label="Videre" data-en-aria="Next">'
-               + (f'<a href="#{næste[1]}"><span data-en="Next:">Næste:</span> {inline(næste[2])}</a>' if næste else '')
-               + '<a href="#top" data-en="Back to top">Til toppen</a></nav>')
+        nav = (f'<nav class="afslut" aria-label="{o["videre"]}">'
+               + (f'<a href="#{næste[1]}"><span>{o["næste"]}</span> {inline(næste[2])}</a>' if næste else '')
+               + f'<a href="#top">{o["top"]}</a></nav>')
         sektioner[k] = (f'<section class="afsnit" aria-labelledby="{id_}">{alias}\n<h2 id="{id_}"><span class="nr">{nr}</span> '
                         f'{inline(overskrift)}</h2>\n{krop}\n{nav}\n</section>')
     mangler = [b for b in BEREGNERE if b not in beregnere]
@@ -205,40 +257,64 @@ def byg(md):
         f'<li><a href="#{id_}"><span class="nr">{nr}</span> {inline(t)}</a>'
         + ('<ul>' + ''.join(f'<li><a href="#{p}">{inline(pt)}</a></li>' for p, pt in punkter) + '</ul>' if punkter else '')
         + '</li>' for nr, id_, t, punkter in toc)
-    # Beregnerlinjen fra afsnit 7: navnene i den rækkefølge, de står der
+    # Beregnerne i afsnit 7: navnene i den rækkefølge, de står der, på sprogets navne fra BEREGNERE
     navne = re.findall(r'^- \*\*(.+?)\*\*', '\n'.join(syv[2]) if syv else '', re.M)
-    linje = []
+    nøgler = []
     for navn in navne:
-        nøgle = next((k for k, (da, _) in BEREGNERE.items() if da.lower() == navn.lower()), None)
+        nøgle = next((k for k, v in BEREGNERE.items() if v[o['navn']] == navn), None)
         if not nøgle:
-            raise ScoringFejl(f'Afsnit 7 nævner en ukendt beregner: {navn}')
-        linje.append(f'<a href="#beregner-{nøgle}" data-en="{e(BEREGNERE[nøgle][1])}">{e(navn)}</a>')
+            raise ScoringFejl(f'Afsnit 7 nævner en ukendt beregner: "{navn}" (navnene står i BEREGNERE)')
+        nøgler.append(nøgle)
     kilder_html = ''
     if kilder:
         punkter = [re.sub(r'^- ', '', ln.strip()) for ln in kilder[2] if ln.strip().startswith('- ')]
-        ids.tag('kilder', 'Kilder')
-        kilder_html = ('<section class="kilder" aria-labelledby="kilder"><h2 id="kilder" data-en="Sources">Kilder</h2><ul>'
+        ids.tag('kilder', kilder[1])
+        kilder_html = (f'<section class="kilder" aria-labelledby="kilder"><h2 id="kilder">{e(kilder[1])}</h2><ul>'
                        + ''.join(f'<li>{inline(p)}</li>' for p in punkter) + '</ul></section>')
-    side = (SKABELON.replace('{{TITEL}}', e(titel)).replace('{{LEAD}}', inline(lead))
-            .replace('{{TOC}}', toc_html).replace('{{AFSNIT}}', '\n'.join(sektioner))
-            .replace('{{BEREGNERLINJE}}', '\n'.join(linje)).replace('{{KILDER}}', kilder_html))
-    # Ingen id må stå to gange, og alle interne links skal pege på et id
+    return {'titel': titel, 'lead': inline(lead), 'toc': toc_html, 'tekst': '\n'.join(sektioner) + '\n' + kilder_html,
+            'beregnere': nøgler, 'plan': ny_plan if plan is None else plan}
+
+
+def tjek_id(side, sprog):
+    """Ingen id må stå to gange, og alle interne links skal pege på et id."""
     alle = re.findall(r'\sid="([^"]+)"', side)
     dobbelt = sorted({x for x in alle if alle.count(x) > 1})
     if dobbelt:
-        raise ScoringFejl(f'Dobbelt id på siden: {", ".join(dobbelt)}')
+        raise ScoringFejl(f'Dobbelt id på siden ({sprog}): {", ".join(dobbelt)}')
     for mål in re.findall(r'href="#([^"]+)"', side):
         if mål not in alle:
-            raise ScoringFejl(f'Link til et id, der ikke findes: #{mål}')
-    return side
+            raise ScoringFejl(f'Link til et id, der ikke findes ({sprog}): #{mål}')
+
+
+def byg(md, md_en):
+    da = tekst(md, 'da')
+    sammenlign(md, md_en)
+    en = tekst(md_en, 'en', da['plan'])
+    if en['beregnere'] != da['beregnere']:
+        raise ScoringFejl('Afsnit 7 nævner ikke de samme beregnere i samme rækkefølge på dansk og engelsk')
+    linje = '\n'.join(f'<a href="#beregner-{k}" data-en="{e(BEREGNERE[k][1])}">{e(BEREGNERE[k][0])}</a>' for k in da['beregnere'])
+
+    def side(hoved, skabeloner):
+        return (SKABELON.replace('{{TITEL}}', e(da['titel'])).replace('{{TITEL_EN}}', e(en['titel']))
+                .replace('{{LEAD}}', da['lead']).replace('{{LEAD_EN}}', e(en['lead']))
+                .replace('{{TOC}}', hoved['toc']).replace('{{TEKST}}', hoved['tekst'])
+                .replace('{{BEREGNERLINJE}}', linje)
+                .replace('{{TOC_EN}}', en['toc'] if skabeloner else '').replace('{{TEKST_EN}}', en['tekst'] if skabeloner else ''))
+
+    # Siden, som den ser ud på hvert sprog, efter at sprogscriptet har sat den engelske tekst ind
+    tjek_id(side(da, False), 'dansk')
+    tjek_id(side(en, False), 'engelsk')
+    return side(da, True)
 
 
 def main(args):
     kilde = args[args.index('--kilde') + 1] if '--kilde' in args else None
+    kilde_en = args[args.index('--en') + 1] if '--en' in args else None
     ud = args[args.index('--ud') + 1] if '--ud' in args else None
     md = sys.stdin.buffer.read().decode('utf-8') if kilde == '-' else (pathlib.Path(kilde) if kilde else KILDE).read_text(encoding='utf-8')
+    md_en = (pathlib.Path(kilde_en) if kilde_en else KILDE_EN).read_text(encoding='utf-8')
     try:
-        side = byg(md)
+        side = byg(md, md_en)
     except ScoringFejl as fejl:
         print(f'Fejl i kilden: {fejl}', file=sys.stderr)
         return 1
@@ -247,7 +323,7 @@ def main(args):
     else:
         mål = pathlib.Path(ud) if ud else SIDE
         mål.write_text(side, encoding='utf-8', newline='\n')
-        print(f'{mål.relative_to(ROD) if mål.is_relative_to(ROD) else mål}: {side.count("<section class=\"afsnit\"")} afsnit')
+        print(f'{mål.relative_to(ROD) if mål.is_relative_to(ROD) else mål}: {side.count("<section class=\"afsnit\"") // 2} afsnit på hvert sprog')
     return 0
 
 
@@ -287,13 +363,13 @@ BEREGNER_HTML = {
         '<label class="felt-flueben"><input type="checkbox" name="oev"><span data-en="Show for EW">Vis for ØV</span></label>'
         '</form><div class="svar" aria-live="polite" data-svar="matchpoint"></div>'),
     'imp': kort('imp', '<form class="felter" data-beregner="imp" novalidate>'
-        '<fieldset class="felt-gruppe"><legend data-en="Imps">Imp</legend>'
+        '<fieldset class="felt-gruppe"><legend data-en="IMPs">Imp</legend>'
         '<label class="felt"><span data-en="Score 1">Score 1</span><input name="s1" inputmode="numeric" autocomplete="off" value="620"></label>'
         '<label class="felt"><span data-en="Score 2 (or leave empty and enter a difference in score 1)">Score 2 (eller tom, så er score 1 forskellen)</span>'
         '<input name="s2" inputmode="numeric" autocomplete="off" value="170"></label></fieldset>'
         '<div class="svar" aria-live="polite" data-svar="imp"></div>'
         '<fieldset class="felt-gruppe"><legend data-en="Victory points">Kamppoint</legend>'
-        '<label class="felt"><span data-en="Imp difference in the match">Kampens imp-forskel</span><input name="kimp" inputmode="decimal" autocomplete="off" value="20"></label>'
+        '<label class="felt"><span data-en="IMP difference in the match">Kampens imp-forskel</span><input name="kimp" inputmode="decimal" autocomplete="off" value="20"></label>'
         '<label class="felt"><span data-en="Boards (4–128)">Antal spil (4–128)</span><input name="spil" inputmode="numeric" autocomplete="off" value="40"></label></fieldset>'
         '</form><div class="svar" aria-live="polite" data-svar="kp"></div>'),
     'handicap': kort('handicap', '<form class="felter" data-beregner="handicap" novalidate>'
@@ -304,9 +380,9 @@ BEREGNER_HTML = {
         '<textarea name="alle" rows="2" autocomplete="off"></textarea></label>'
         '<label class="felt"><span data-en="Pairs">Antal par</span><input name="par" inputmode="numeric" autocomplete="off" value="6"></label>'
         '<label class="felt"><span data-en="Boards">Antal spil</span><input name="spil" inputmode="numeric" autocomplete="off" value="30"></label>'
-        + valg('opg', 'Opgørelse', 'Scoring', [('matchpoint', 'Matchpoint', ''), ('imp', 'Imp', '')], 'matchpoint')
+        + valg('opg', 'Opgørelse', 'Scoring', [('matchpoint', 'Matchpoint', 'Matchpoints'), ('imp', 'Imp', 'IMPs')], 'matchpoint')
         + '<label class="felt-flueben"><input type="checkbox" name="butler"><span data-en="Datum scoring (Butler)">Datumscore (Butler)</span></label>'
-        '<label class="felt"><span data-en="Result achieved (per cent, or imps per board) – optional">Opnået (procent eller imp pr. spil) – valgfrit</span>'
+        '<label class="felt"><span data-en="Result achieved (per cent, or IMPs per board) – optional">Opnået (procent eller imp pr. spil) – valgfrit</span>'
         '<input name="opnaaet" inputmode="decimal" autocomplete="off" value="64,17"></label>'
         '</form><div class="svar" aria-live="polite" data-svar="handicap"></div>'),
 }
@@ -368,7 +444,6 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .sc-eyebrow{ font-size:14px; line-height:20px; font-weight:600; color:var(--eyebrow); }
 .sc h1{ margin:10px 0 18px; font:800 clamp(40px,6vw,64px)/.95 var(--display); letter-spacing:-.02em; }
 .sc-lead{ margin:0; max-width:680px; font-size:19px; line-height:30px; color:#3a3a3a; }
-.snart{ margin:16px 0 0; padding:12px 16px; border-radius:var(--r-md); background:var(--primary-pale); font-weight:600; }
 
 /* indgangskortene og beregnerlinjen */
 .indgange{ display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:16px; margin-top:28px; }
@@ -512,13 +587,12 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 <main class="sc">
   <header id="top">
     <span class="sc-eyebrow" data-en="Reference">Opslag</span>
-    <h1 data-en="Scoring in bridge">{{TITEL}}</h1>
-    <p class="sc-lead">{{LEAD}}</p>
-    <p class="snart" id="snart" hidden lang="en">English version coming soon.</p>
+    <h1 data-en="{{TITEL_EN}}">{{TITEL}}</h1>
+    <p class="sc-lead" data-en="{{LEAD_EN}}">{{LEAD}}</p>
     <nav class="indgange" aria-label="Indgange" data-en-aria="Start here">
       <a class="indgang" href="#beregner-score"><strong data-en="Work out a score">Regn en score</strong><span data-en="Trick score, bonuses, overtricks and undertricks">Stikpoint, bonus, overstik og bet</span></a>
-      <a class="indgang" href="#parturnering"><strong data-en="Pairs">Parturnering</strong><span data-en="Matchpoints, Butler and cross-imps">Matchpoint, Butler og cross-imp</span></a>
-      <a class="indgang" href="#holdturnering"><strong data-en="Teams">Holdturnering</strong><span data-en="Imps, victory points and board-a-match">Imp, kamppoint og board-a-match</span></a>
+      <a class="indgang" href="#parturnering"><strong data-en="Pairs">Parturnering</strong><span data-en="Matchpoints, Butler and cross-IMPs">Matchpoint, Butler og cross-imp</span></a>
+      <a class="indgang" href="#holdturnering"><strong data-en="Teams">Holdturnering</strong><span data-en="IMPs, victory points and board-a-match">Imp, kamppoint og board-a-match</span></a>
       <a class="indgang" href="#handicap"><strong data-en="Handicap">Handicap</strong><span data-en="The Danish federation's handicap system">DBf's handicapsystem</span></a>
     </nav>
     <p class="beregnerlinje"><span data-en="Calculators:">Beregnere:</span>
@@ -533,11 +607,17 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 {{TOC}}
       </ul>
     </nav>
-    <div class="tekst">
-{{AFSNIT}}
-{{KILDER}}
+    <div class="tekst" id="tekst">
+{{TEKST}}
     </div>
   </div>
+  <!-- Den engelske udgave (scoring/Scoring_i_bridge.en.md); sprogscriptet sætter den ind, når sproget er engelsk -->
+  <template id="toc-en">
+{{TOC_EN}}
+  </template>
+  <template id="tekst-en">
+{{TEKST_EN}}
+  </template>
 
   <footer class="footer">
     <div class="footer-top">
@@ -571,8 +651,9 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 
 <script>
 /* Sprog som på forsiden, Om mig og ordbogen: dansk som standard, engelsk med knappen; valget gemmes under 'lang', og
-   ?lang=en eller ?lang=da virker også. Indtil Frank leverer den engelske tekst, er beregnerne og navigationen på
-   engelsk og teksten på dansk med en linje øverst (SPEC-scoring.md, Sprog). */
+   ?lang=en eller ?lang=da virker også. På engelsk sættes den engelske tekst og indholdsfortegnelse ind fra deres
+   <template> (SPEC-scoring.md, leverancetrin 3), før data-en-teksterne skiftes, og før beregnerne og indholdsfortegnelsen
+   kobles til. Overskrifterne har de samme id'er på begge sprog, så et anker i adressen virker på begge. */
 (function () {
   var lang = 'da';
   try { if (localStorage.getItem('lang') === 'en') lang = 'en'; } catch (e) {}
@@ -581,11 +662,11 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   var EN = lang === 'en';
   document.documentElement.lang = lang;
   if (EN) {
+    document.getElementById('toc-liste').replaceChildren(document.getElementById('toc-en').content.cloneNode(true));
+    document.getElementById('tekst').replaceChildren(document.getElementById('tekst-en').content.cloneNode(true));
     document.title = 'Scoring in bridge – Kontraktbridge';
     document.querySelectorAll('[data-en]').forEach(function (el) { el.innerHTML = el.getAttribute('data-en'); });
     document.querySelectorAll('[data-en-aria]').forEach(function (el) { el.setAttribute('aria-label', el.getAttribute('data-en-aria')); });
-    document.getElementById('snart').hidden = false;
-    document.querySelectorAll('.tekst .afsnit, .tekst .kilder, .sc-lead').forEach(function (el) { el.setAttribute('lang', 'da'); });
   }
   var btn = document.getElementById('langBtn');
   btn.textContent = EN ? 'Dansk' : 'English';
@@ -621,6 +702,11 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
     maal.forEach(function (el) { if (el) io.observe(el); });
   }
   window.addEventListener('scroll', marker, { passive: true });
+  // Den engelske tekst er sat ind efter den danske; gå til ankeret i adressen igen, så det er den engelske overskrift
+  if (EN && location.hash) {
+    var anker = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+    if (anker) anker.scrollIntoView({ behavior: 'instant', block: 'start' });
+  }
   marker();
 })();
 </script>
@@ -727,17 +813,18 @@ function regnImp() {
   if (s1 === null || Number.isNaN(s1) || Number.isNaN(s2)) { svar('imp').innerHTML = fejl(T('Skriv to scorer eller én forskel.', 'Enter two scores or one difference.')); return; }
   const forskel = s2 === null ? s1 : s1 - s2;
   const imp = B.imp(forskel);
-  svar('imp').innerHTML = `<p class="svar-tal">${tal(imp, 0, true)} imp</p><p class="svar-tekst">`
+  const impOrd = T('imp', Math.abs(imp) === 1 ? 'IMP' : 'IMPs');
+  svar('imp').innerHTML = `<p class="svar-tal">${tal(imp, 0, true)} ${impOrd}</p><p class="svar-tekst">`
     + (s2 === null ? T(`Forskellen ${tal(forskel, 0, true)}`, `A difference of ${tal(forskel, 0, true)}`)
       : `${tal(s1, 0, true)} − ${s2 < 0 ? '(' + tal(s2) + ')' : tal(s2, 0, true)} = ${tal(forskel, 0, true)}`)
-    + T(' giver ', ' gives ') + `${tal(imp, 0, true)} imp.</p>`;
+    + T(' giver ', ' gives ') + `${tal(imp, 0, true)} ${impOrd}.</p>`;
 }
 function regnKp() {
   const f = form('imp');
   const m = tilTal(f.elements.kimp.value), spil = tilTal(f.elements.spil.value);
   markér(f.elements.kimp, m !== null && Number.isFinite(m));
   markér(f.elements.spil, Number.isInteger(spil) && spil >= 4 && spil <= 128);
-  if (m === null || Number.isNaN(m)) { svar('kp').innerHTML = fejl(T('Skriv kampens imp-forskel.', 'Enter the imp difference of the match.')); return; }
+  if (m === null || Number.isNaN(m)) { svar('kp').innerHTML = fejl(T('Skriv kampens imp-forskel.', 'Enter the IMP difference of the match.')); return; }
   const r = B.kp(m, spil, lang);
   if (r.fejl) { svar('kp').innerHTML = fejl(r.fejl); return; }
   const a = Math.abs(r.imp);
@@ -748,9 +835,9 @@ function regnKp() {
     rækker.push(`<tr${x === a ? ' aria-current="true"' : ''}><td>${x}</td><td>${tal(k.vinder, 2)}</td><td>${tal(k.taber, 2)}</td></tr>`);
   }
   svar('kp').innerHTML = `<p class="svar-tal">${tal(r.vinder, 2)} – ${tal(r.taber, 2)}</p>`
-    + `<p class="svar-tekst">${a} imp ${T('i', 'in')} ${spil} ${T('spil', 'boards')}${m !== r.imp ? T(` (${tal(m, 1)} afrundet til ${r.imp})`, ` (${tal(m, 1)} rounded to ${r.imp})`) : ''}: `
-    + `${T('vinderen får', 'the winner gets')} ${tal(r.vinder, 2)} KP, ${T('taberen', 'the loser')} ${tal(r.taber, 2)} KP.</p>`
-    + `<div class="tabel"><table><thead><tr><th scope="col">${T('Imp-forskel', 'Imp difference')}</th><th scope="col">${T('Vinder', 'Winner')}</th><th scope="col">${T('Taber', 'Loser')}</th></tr></thead><tbody>${rækker.join('')}</tbody></table></div>`;
+    + `<p class="svar-tekst">${a} ${T('imp', a === 1 ? 'IMP' : 'IMPs')} ${T('i', 'in')} ${spil} ${T('spil', 'boards')}${m !== r.imp ? T(` (${tal(m, 1)} afrundet til ${r.imp})`, ` (${tal(m, 1)} rounded to ${r.imp})`) : ''}: `
+    + `${T('vinderen får', 'the winner gets')} ${tal(r.vinder, 2)} ${T('KP', 'VP')}, ${T('taberen', 'the loser')} ${tal(r.taber, 2)} ${T('KP', 'VP')}.</p>`
+    + `<div class="tabel"><table><thead><tr><th scope="col">${T('Imp-forskel', 'IMP difference')}</th><th scope="col">${T('Vinder', 'Winner')}</th><th scope="col">${T('Taber', 'Loser')}</th></tr></thead><tbody>${rækker.join('')}</tbody></table></div>`;
 }
 
 // Handicapberegner
@@ -773,7 +860,7 @@ function regnHandicap() {
   const r = B.handicap({ h1, h2, gennemsnit: alle ? undefined : gennemsnitHc, alle: alle || undefined, par, spil, opgørelse: imp ? 'imp' : 'matchpoint',
     opnået: opnået === null ? undefined : opnået, butler: imp && f.elements.butler.checked }, lang);
   if (r.fejl) { svar('handicap').innerHTML = fejl(r.fejl); return; }
-  const enhed = imp ? T(' imp pr. spil', ' imps per board') : ' %';
+  const enhed = imp ? T(' imp pr. spil', ' IMPs per board') : ' %';
   let html = `<ul><li><span>${T('Gennemsnitshandicap', 'Average handicap')}</span><span>${tal(r.gennemsnit, 2)}</span></li>`
     + `<li><span>${T('Parhandicap', 'Pair handicap')}</span><span>${tal(r.parhandicap, 2)}</span></li>`
     + `<li><span>${T('Forventet score', 'Expected score')}</span><span>${tal(r.forventet, 2)}${enhed}</span></li>`;

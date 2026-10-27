@@ -54,7 +54,6 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .sc-eyebrow{ font-size:14px; line-height:20px; font-weight:600; color:var(--eyebrow); }
 .sc h1{ margin:10px 0 18px; font:800 clamp(40px,6vw,64px)/.95 var(--display); letter-spacing:-.02em; }
 .sc-lead{ margin:0; max-width:680px; font-size:19px; line-height:30px; color:#3a3a3a; }
-.snart{ margin:16px 0 0; padding:12px 16px; border-radius:var(--r-md); background:var(--primary-pale); font-weight:600; }
 
 /* indgangskortene og beregnerlinjen */
 .indgange{ display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:16px; margin-top:28px; }
@@ -199,18 +198,17 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   <header id="top">
     <span class="sc-eyebrow" data-en="Reference">Opslag</span>
     <h1 data-en="Scoring in bridge">Scoring i bridge</h1>
-    <p class="sc-lead">Siden handler om turneringsbridge, hvor alle par spiller de samme spil. Først hvordan et enkelt spil scores, derefter hvordan resultaterne sammenlignes i parturnering og holdturnering, og til sidst hvad det betyder for taktikken. Honnørbonus findes kun i rubberbridge og er ikke med.</p>
-    <p class="snart" id="snart" hidden lang="en">English version coming soon.</p>
+    <p class="sc-lead" data-en="This page is about duplicate bridge, where every pair plays the same boards. First how a single board is scored, then how results are compared in pairs and teams events, and finally what that means for tactics. Honour bonuses exist only in rubber bridge and are not included.">Siden handler om turneringsbridge, hvor alle par spiller de samme spil. Først hvordan et enkelt spil scores, derefter hvordan resultaterne sammenlignes i parturnering og holdturnering, og til sidst hvad det betyder for taktikken. Honnørbonus findes kun i rubberbridge og er ikke med.</p>
     <nav class="indgange" aria-label="Indgange" data-en-aria="Start here">
       <a class="indgang" href="#beregner-score"><strong data-en="Work out a score">Regn en score</strong><span data-en="Trick score, bonuses, overtricks and undertricks">Stikpoint, bonus, overstik og bet</span></a>
-      <a class="indgang" href="#parturnering"><strong data-en="Pairs">Parturnering</strong><span data-en="Matchpoints, Butler and cross-imps">Matchpoint, Butler og cross-imp</span></a>
-      <a class="indgang" href="#holdturnering"><strong data-en="Teams">Holdturnering</strong><span data-en="Imps, victory points and board-a-match">Imp, kamppoint og board-a-match</span></a>
+      <a class="indgang" href="#parturnering"><strong data-en="Pairs">Parturnering</strong><span data-en="Matchpoints, Butler and cross-IMPs">Matchpoint, Butler og cross-imp</span></a>
+      <a class="indgang" href="#holdturnering"><strong data-en="Teams">Holdturnering</strong><span data-en="IMPs, victory points and board-a-match">Imp, kamppoint og board-a-match</span></a>
       <a class="indgang" href="#handicap"><strong data-en="Handicap">Handicap</strong><span data-en="The Danish federation's handicap system">DBf's handicapsystem</span></a>
     </nav>
     <p class="beregnerlinje"><span data-en="Calculators:">Beregnere:</span>
 <a href="#beregner-score" data-en="Score calculator">Scoreberegner</a>
 <a href="#beregner-matchpoint" data-en="Matchpoint calculator">Matchpointregner</a>
-<a href="#beregner-imp" data-en="Imp and VP converter">Imp- og kamppointomregner</a>
+<a href="#beregner-imp" data-en="IMP and VP converter">Imp- og kamppointomregner</a>
 <a href="#beregner-handicap" data-en="Handicap calculator">Handicapberegner</a>
     </p>
   </header>
@@ -227,7 +225,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 <li><a href="#handicap"><span class="nr">6</span> Handicap</a><ul><li><a href="#dbf-s-handicapsystem">DBf's handicapsystem</a></li><li><a href="#handicap-parturnering">Parturnering</a></li><li><a href="#handicap-et-eksempel">Et eksempel</a></li><li><a href="#matematikken">Matematikken</a></li><li><a href="#handicapturnering">Handicapturnering</a></li><li><a href="#handicap-holdturnering">Holdturnering</a></li></ul></li>
       </ul>
     </nav>
-    <div class="tekst">
+    <div class="tekst" id="tekst">
 <section class="afsnit" aria-labelledby="scoren-for-et-spil">
 <h2 id="scoren-for-et-spil"><span class="nr">1</span> Scoren for et spil</h2>
 <p>Et spil giver point til det par, der vinder det. Spilførerens par får point for en kontrakt, der går hjem; modspillerne får point for hver bet. Passer alle fire, får begge sider 0.</p>
@@ -257,7 +255,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 <h3 class="beregner-h" id="beregner-score-h" data-en="Score calculator">Scoreberegner</h3>
 <form class="felter" data-beregner="score" novalidate><label class="felt"><span data-en="Level">Trin</span><select name="trin"><option>1</option><option>2</option><option>3</option><option selected>4</option><option>5</option><option>6</option><option>7</option></select></label><fieldset class="felt-valg"><legend data-en="Strain">Farve</legend><div class="valg-raekke"><label class="valg"><input type="radio" name="farve" value="C"><span>♣</span></label><label class="valg"><input type="radio" name="farve" value="D"><span><span class="r">♦</span></span></label><label class="valg"><input type="radio" name="farve" value="H"><span><span class="r">♥</span></span></label><label class="valg"><input type="radio" name="farve" value="S" checked><span>♠</span></label><label class="valg"><input type="radio" name="farve" value="NT"><span data-en="NT">Sans</span></label></div></fieldset><fieldset class="felt-valg"><legend data-en="Double">Dobling</legend><div class="valg-raekke"><label class="valg"><input type="radio" name="dobling" value="0" checked><span data-en="Undoubled">Udoblet</span></label><label class="valg"><input type="radio" name="dobling" value="1"><span data-en="Doubled">Doblet</span></label><label class="valg"><input type="radio" name="dobling" value="2"><span data-en="Redoubled">Redoblet</span></label></div></fieldset><fieldset class="felt-valg"><legend data-en="Vulnerability">Zone</legend><div class="valg-raekke"><label class="valg"><input type="radio" name="zone" value="0" checked><span data-en="Not vulnerable">Uden for zonen</span></label><label class="valg"><input type="radio" name="zone" value="1"><span data-en="Vulnerable">I zonen</span></label></div></fieldset><label class="felt"><span data-en="Tricks taken">Stik</span><select name="stik"><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option selected>10</option><option>11</option><option>12</option><option>13</option></select></label></form><div class="svar" aria-live="polite" data-svar="score"></div>
 </div>
-<nav class="afslut" aria-label="Videre" data-en-aria="Next"><a href="#parturnering"><span data-en="Next:">Næste:</span> Parturnering: matchpoint</a><a href="#top" data-en="Back to top">Til toppen</a></nav>
+<nav class="afslut" aria-label="Videre"><a href="#parturnering"><span>Næste:</span> Parturnering: matchpoint</a><a href="#top">Til toppen</a></nav>
 </section>
 <section class="afsnit" aria-labelledby="parturnering"><span id="matchpoint" class="alias"></span>
 <h2 id="parturnering"><span class="nr">2</span> Parturnering: matchpoint</h2>
@@ -297,14 +295,14 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 <p>Kan et spil ikke spilles færdigt, giver turneringslederen en kunstig score (§ 12C2): middel plus (mindst 60 %) til den, der er uden skyld, middel (50 %) til den, der er delvist skyld, og middel minus (højst 40 %) til den, der er skyld. Scorer et par uden skyld mere end 60 % i resten af sektionen, får det sin egen procent i stedet; scorer et par med skyld under 40 %, får det også sin egen.</p>
 <p>Mangler et resultat, eller er der givet kunstig score, sammenlignes de andre resultater kun med hinanden. Pointene omregnes derefter til det fulde antal borde (DBf's turneringsbestemmelser § X78B):</p>
 <div class="tabel"><table><thead><tr><th scope="col">Resultater i gruppen</th><th scope="col">Point</th></tr></thead><tbody><tr><td>1</td><td>60 %</td></tr><tr><td>2 (mindst 6 borde i alt)</td><td>65 % og 55 % (ens resultater: 60 % til begge)</td></tr><tr><td>3 (mindst 9 borde i alt)</td><td>70 %, 60 % og 50 %</td></tr><tr><td>ellers</td><td>Neubergs formel</td></tr></tbody></table></div>
-<details class="fold"><summary><span class="fold-k" data-en="For the curious">For de nysgerrige</span> Neubergs formel</summary><div class="fold-indhold">
+<details class="fold"><summary><span class="fold-k">For de nysgerrige</span> Neubergs formel</summary><div class="fold-indhold">
 <p><strong>Neubergs formel:</strong> <em>P'</em> = <em>A</em> / <em>G</em> × (<em>P</em> + 1) − 1, hvor <em>P</em> er parrets point i 2/1/0 inden for gruppen, <em>G</em> antallet af resultater i gruppen og <em>A</em> det fulde antal borde. Ved 5 af 6 resultater bliver toppen (8 + 1) × 6 / 5 − 1 = 9,8 af 10, og bunden (0 + 1) × 6 / 5 − 1 = 0,2.</p>
 </div></details>
 <p>Et par, der sidder over, får ingen score på spillet. Den samlede score opgøres i procent.</p>
-<details class="fold"><summary><span class="fold-k" data-en="For the curious">For de nysgerrige</span> Den gamle håndregel</summary><div class="fold-indhold">
+<details class="fold"><summary><span class="fold-k">For de nysgerrige</span> Den gamle håndregel</summary><div class="fold-indhold">
 <p><strong>Den gamle håndregel</strong> (Ruder Es, 1992) gav i stedet alle resultater middelscore for den manglende sammenligning: i 2/1/0 sænkes toppen og hæves bunden med 1 for hvert manglende resultat (top 9 og bund 1 ved 5 af 6), og i +1/0/−1 regnes rækken bare som færre borde. Den er nem i hånden, men Neubergs formel er den, der gælder i dag.</p>
 </div></details>
-<nav class="afslut" aria-label="Videre" data-en-aria="Next"><a href="#parturnering-i-imp"><span data-en="Next:">Næste:</span> Parturnering i imp</a><a href="#top" data-en="Back to top">Til toppen</a></nav>
+<nav class="afslut" aria-label="Videre"><a href="#parturnering-i-imp"><span>Næste:</span> Parturnering i imp</a><a href="#top">Til toppen</a></nav>
 </section>
 <section class="afsnit" aria-labelledby="parturnering-i-imp">
 <h2 id="parturnering-i-imp"><span class="nr">3</span> Parturnering i imp</h2>
@@ -323,7 +321,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 <p>Cross-imp er mere retfærdig end Butler, fordi én vild score ikke flytter datum, men den er tungere at regne i hånden.</p>
 <h3 id="multiholdberegning">Multiholdberegning</h3>
 <p>Hvert par gøres op mod alle andre borde, der har spillet de samme spil, som en lille holdkamp efter kamppointskalaen for rundens spil (afsnit 4). Parrets score er gennemsnittet af de kamppoint (§ 205). I holdturnering er det et vejledende tal for hvert par; det kan også bruges som parturneringsform.</p>
-<nav class="afslut" aria-label="Videre" data-en-aria="Next"><a href="#holdturnering"><span data-en="Next:">Næste:</span> Holdturnering: imp og kamppoint</a><a href="#top" data-en="Back to top">Til toppen</a></nav>
+<nav class="afslut" aria-label="Videre"><a href="#holdturnering"><span>Næste:</span> Holdturnering: imp og kamppoint</a><a href="#top">Til toppen</a></nav>
 </section>
 <section class="afsnit" aria-labelledby="holdturnering"><span id="imp-og-kamppoint" class="alias"></span>
 <h2 id="holdturnering"><span class="nr">4</span> Holdturnering: imp og kamppoint</h2>
@@ -335,7 +333,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 <p>Skalaen er aftagende: de første 400 point giver 9 imp, de næste 1600 kun 10 mere. En misset udgang i zonen koster typisk 10 imp, et overstik 1.</p>
 <h3 id="kamppoint">Kamppoint</h3>
 <p>Kampens imp-forskel omregnes til kamppoint (KP), så en kamp altid giver 20 point i alt. Uafgjort er 10–10. DBf bruger WBF's skala fra 2013 med to decimaler i alle holdturneringer undtagen cupkampe (§ 201–202). Har spillene brøkdele af imp, afrundes kampens imp-forskel først til helt tal (halve væk fra 0). For et antal spil uden offentliggjort tabel konstrueres skalaen efter WBF's formel:</p>
-<details class="fold"><summary><span class="fold-k" data-en="For the curious">For de nysgerrige</span> Kamppointformlen</summary><div class="fold-indhold">
+<details class="fold"><summary><span class="fold-k">For de nysgerrige</span> Kamppointformlen</summary><div class="fold-indhold">
 <p>KP = 10 + 10 × (1 − τ^(3<em>m</em>/<em>B</em>)) / (1 − τ³)</p>
 <p>hvor <em>m</em> er imp-forskellen, τ = (√5 − 1) / 2 ≈ 0,618 og <em>B</em> = 15 × √(antal spil). Fra <em>B</em> imp får vinderen 20,00. Tallene afrundes til to decimaler og justeres, så et imp ekstra aldrig er mere værd end det foregående.</p>
 </div></details>
@@ -347,8 +345,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 <p><strong>Særlige kampe</strong> (§ 202): et hold, der sidder over, får 12 KP. Møder man et hold, der udebliver, får man mindst 13 KP. Må alle spil i en kamp udgå, fordi begge hold er skyld i det (fx har siddet forkert), får begge 8 KP.</p>
 <div class="beregner" id="beregner-imp" role="group" aria-labelledby="beregner-imp-h">
 <p class="beregner-k" data-en="Try it yourself">Prøv selv</p>
-<h3 class="beregner-h" id="beregner-imp-h" data-en="Imp and VP converter">Imp- og kamppointomregner</h3>
-<form class="felter" data-beregner="imp" novalidate><fieldset class="felt-gruppe"><legend data-en="Imps">Imp</legend><label class="felt"><span data-en="Score 1">Score 1</span><input name="s1" inputmode="numeric" autocomplete="off" value="620"></label><label class="felt"><span data-en="Score 2 (or leave empty and enter a difference in score 1)">Score 2 (eller tom, så er score 1 forskellen)</span><input name="s2" inputmode="numeric" autocomplete="off" value="170"></label></fieldset><div class="svar" aria-live="polite" data-svar="imp"></div><fieldset class="felt-gruppe"><legend data-en="Victory points">Kamppoint</legend><label class="felt"><span data-en="Imp difference in the match">Kampens imp-forskel</span><input name="kimp" inputmode="decimal" autocomplete="off" value="20"></label><label class="felt"><span data-en="Boards (4–128)">Antal spil (4–128)</span><input name="spil" inputmode="numeric" autocomplete="off" value="40"></label></fieldset></form><div class="svar" aria-live="polite" data-svar="kp"></div>
+<h3 class="beregner-h" id="beregner-imp-h" data-en="IMP and VP converter">Imp- og kamppointomregner</h3>
+<form class="felter" data-beregner="imp" novalidate><fieldset class="felt-gruppe"><legend data-en="IMPs">Imp</legend><label class="felt"><span data-en="Score 1">Score 1</span><input name="s1" inputmode="numeric" autocomplete="off" value="620"></label><label class="felt"><span data-en="Score 2 (or leave empty and enter a difference in score 1)">Score 2 (eller tom, så er score 1 forskellen)</span><input name="s2" inputmode="numeric" autocomplete="off" value="170"></label></fieldset><div class="svar" aria-live="polite" data-svar="imp"></div><fieldset class="felt-gruppe"><legend data-en="Victory points">Kamppoint</legend><label class="felt"><span data-en="IMP difference in the match">Kampens imp-forskel</span><input name="kimp" inputmode="decimal" autocomplete="off" value="20"></label><label class="felt"><span data-en="Boards (4–128)">Antal spil (4–128)</span><input name="spil" inputmode="numeric" autocomplete="off" value="40"></label></fieldset></form><div class="svar" aria-live="polite" data-svar="kp"></div>
 </div>
 <h3 id="board-a-match">Board-a-match</h3>
 <p>I board-a-match giver hvert spil 2–0, 1–1 eller 0–2 til det hold, der fik flest point på spillet (§ 206). Størrelsen er ligegyldig, ligesom i matchpoint, så taktikken er parturneringens.</p>
@@ -356,7 +354,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 <p>En enkeltkamp (cupkamp) afgøres direkte i imp uden kamppoint. Ender den uafgjort, vinder det hold, der sluttede højest i en forudgående kvalifikation; ellers det hold med flest spilpoint i alt, og står de stadig lige, spilles 4 spil ekstra (§ 222).</p>
 <h3 id="ved-pointlighed">Ved pointlighed</h3>
 <ul><li><strong>Parturnering</strong> (§ 223): flest point i de indbyrdes opgør, så flest runder over middel, og så færrest bunde.</li><li><strong>Holdturnering, alle mod alle</strong> (§ 221): flest KP i de indbyrdes kampe, så bedste kvotient mellem vundne og tabte imp i de indbyrdes kampe, og så i alle kampe.</li></ul>
-<nav class="afslut" aria-label="Videre" data-en-aria="Next"><a href="#taktik"><span data-en="Next:">Næste:</span> Taktik</a><a href="#top" data-en="Back to top">Til toppen</a></nav>
+<nav class="afslut" aria-label="Videre"><a href="#taktik"><span>Næste:</span> Taktik</a><a href="#top">Til toppen</a></nav>
 </section>
 <section class="afsnit" aria-labelledby="taktik">
 <h2 id="taktik"><span class="nr">5</span> Taktik</h2>
@@ -368,7 +366,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 <ul><li><strong>Kontrakten først.</strong> Sikkerhedsspil, der koster et overstik (1 imp) men redder kontrakten (10–12 imp), er altid rigtige.</li><li><strong>Meld udgangene.</strong> Uden for zonen vinder en udgang 6 imp, når den går hjem, og taber 5, når den går bet (+420 mod +170 og −50 mod +140); den skal derfor holde i ca. 45 %. I zonen er det +10 mod −6 imp, så 37 % er nok.</li><li><strong>Slem.</strong> Lilleslem kræver ca. 50 % i begge zoner. Storeslem kræver 56–57 %, fordi man risikerer en sikker lilleslem.</li><li><strong>Delkontrakter er små.</strong> En delkontrakt mere eller mindre er 2–5 imp. Kæmp, men ikke for enhver pris.</li><li><strong>Doble ikke til udgang.</strong> 2<span class="r">♥</span> doblet hjemme uden for zonen er 470 i stedet for 110, og det koster 8 imp. Doble delkontrakter, når du er sikker på bet.</li><li><strong>Ofring.</strong> 5<span class="r">♦</span> doblet to bet uden for zonen (−300) mod deres 4♠ i zonen (−620) vinder 8 imp. Går den tre bet (−500), vinder den kun 3. Og kunne 4♠ være gået bet, taber ofringen 12 imp. Ofr kun, når du er sikker på, at de vinder deres kontrakt.</li><li><strong>Butler og cross-imp:</strong> taktikken er den samme, men du sammenlignes med feltets gennemsnit. Normale kontrakter, der går hjem, giver jævne plusser.</li></ul>
 <h3 id="taktik-kamppoint">Kamppoint</h3>
 <ul><li><strong>Skalaen er aftagende.</strong> De første imp er mest værd. En sejr på 20 imp i en kamp på 40 spil giver 13,44 KP; at tredoble den til 60 imp giver kun 4,40 KP mere (17,84).</li><li><strong>Foran sidst i kampen:</strong> spil normalt og sikkert. Meld de udgange og slemmer, feltet melder, og undgå ofringer og frække doblinger.</li><li><strong>Bagud sidst i kampen:</strong> tag chancer. Meld de tynde udgange og slemmer, og prøv det usædvanlige udspil eller den modige dobling; der skal swing til.</li><li><strong>I en lang turnering</strong> tæller de samlede kamppoint. Undgå de store tab, så kommer resultaterne.</li></ul>
-<nav class="afslut" aria-label="Videre" data-en-aria="Next"><a href="#handicap"><span data-en="Next:">Næste:</span> Handicap</a><a href="#top" data-en="Back to top">Til toppen</a></nav>
+<nav class="afslut" aria-label="Videre"><a href="#handicap"><span>Næste:</span> Handicap</a><a href="#top">Til toppen</a></nav>
 </section>
 <section class="afsnit" aria-labelledby="handicap">
 <h2 id="handicap"><span class="nr">6</span> Handicap</h2>
@@ -384,10 +382,10 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 <div class="beregner" id="beregner-handicap" role="group" aria-labelledby="beregner-handicap-h">
 <p class="beregner-k" data-en="Try it yourself">Prøv selv</p>
 <h3 class="beregner-h" id="beregner-handicap-h" data-en="Handicap calculator">Handicapberegner</h3>
-<form class="felter" data-beregner="handicap" novalidate><label class="felt"><span data-en="Handicap, player 1">Handicap, spiller 1</span><input name="h1" inputmode="decimal" autocomplete="off" value="22,00"></label><label class="felt"><span data-en="Handicap, player 2">Handicap, spiller 2</span><input name="h2" inputmode="decimal" autocomplete="off" value="28,00"></label><label class="felt"><span data-en="Average handicap of the event">Turneringens gennemsnitshandicap</span><input name="gennemsnit" inputmode="decimal" autocomplete="off" value="22,23"></label><label class="felt"><span data-en="Or every player's handicap (replaces the average)">Eller alle spilleres handicap (erstatter gennemsnittet)</span><textarea name="alle" rows="2" autocomplete="off"></textarea></label><label class="felt"><span data-en="Pairs">Antal par</span><input name="par" inputmode="numeric" autocomplete="off" value="6"></label><label class="felt"><span data-en="Boards">Antal spil</span><input name="spil" inputmode="numeric" autocomplete="off" value="30"></label><fieldset class="felt-valg"><legend data-en="Scoring">Opgørelse</legend><div class="valg-raekke"><label class="valg"><input type="radio" name="opg" value="matchpoint" checked><span>Matchpoint</span></label><label class="valg"><input type="radio" name="opg" value="imp"><span>Imp</span></label></div></fieldset><label class="felt-flueben"><input type="checkbox" name="butler"><span data-en="Datum scoring (Butler)">Datumscore (Butler)</span></label><label class="felt"><span data-en="Result achieved (per cent, or imps per board) – optional">Opnået (procent eller imp pr. spil) – valgfrit</span><input name="opnaaet" inputmode="decimal" autocomplete="off" value="64,17"></label></form><div class="svar" aria-live="polite" data-svar="handicap"></div>
+<form class="felter" data-beregner="handicap" novalidate><label class="felt"><span data-en="Handicap, player 1">Handicap, spiller 1</span><input name="h1" inputmode="decimal" autocomplete="off" value="22,00"></label><label class="felt"><span data-en="Handicap, player 2">Handicap, spiller 2</span><input name="h2" inputmode="decimal" autocomplete="off" value="28,00"></label><label class="felt"><span data-en="Average handicap of the event">Turneringens gennemsnitshandicap</span><input name="gennemsnit" inputmode="decimal" autocomplete="off" value="22,23"></label><label class="felt"><span data-en="Or every player's handicap (replaces the average)">Eller alle spilleres handicap (erstatter gennemsnittet)</span><textarea name="alle" rows="2" autocomplete="off"></textarea></label><label class="felt"><span data-en="Pairs">Antal par</span><input name="par" inputmode="numeric" autocomplete="off" value="6"></label><label class="felt"><span data-en="Boards">Antal spil</span><input name="spil" inputmode="numeric" autocomplete="off" value="30"></label><fieldset class="felt-valg"><legend data-en="Scoring">Opgørelse</legend><div class="valg-raekke"><label class="valg"><input type="radio" name="opg" value="matchpoint" checked><span data-en="Matchpoints">Matchpoint</span></label><label class="valg"><input type="radio" name="opg" value="imp"><span data-en="IMPs">Imp</span></label></div></fieldset><label class="felt-flueben"><input type="checkbox" name="butler"><span data-en="Datum scoring (Butler)">Datumscore (Butler)</span></label><label class="felt"><span data-en="Result achieved (per cent, or IMPs per board) – optional">Opnået (procent eller imp pr. spil) – valgfrit</span><input name="opnaaet" inputmode="decimal" autocomplete="off" value="64,17"></label></form><div class="svar" aria-live="polite" data-svar="handicap"></div>
 </div>
 <h3 id="matematikken">Matematikken</h3>
-<details class="fold"><summary><span class="fold-k" data-en="For the curious">For de nysgerrige</span> Formlerne</summary><div class="fold-indhold">
+<details class="fold"><summary><span class="fold-k">For de nysgerrige</span> Formlerne</summary><div class="fold-indhold">
 <p>DBf's handicapreglement (2017, afsnit 5) bygger på det svenske forbunds system. For en parturnering med <em>N</em>ₚ par, <em>N</em>_B borde og <em>N</em>_G spil:</p>
 <p><strong>Forventet score</strong> i procent:</p>
 <p>r̂ = 50 + (gennemsnitligt parhandicap − parhandicap) / (<em>C</em>ᵤ × <em>C</em>ₖ × <em>C</em>_b)</p>
@@ -402,11 +400,199 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 <ul><li><strong>Med multiberegning</strong> får hvert par på holdet et parhandicap, og reguleringen sker efter hver halvleg ud fra eget parhandicap og modstanderparrets.</li><li><strong>Uden multiberegning</strong> får holdet et holdhandicap (gennemsnittet af de fire spillere), og holdet med det laveste forventes at vinde. Reguleringen sker efter kampen.</li></ul>
 <p>Cupkampe, Monrad, hjemmelavede skifteplaner og enkeltmandsturneringer regulerer ikke handicap. Rettelser inden for 14 dage efter indlæsning i BridgeCentral regnes automatisk igen.</p>
 <p>Resultaterne og ens handicap kan følges under fanebladet Handicap på klubbens hjemmeside.</p>
-<nav class="afslut" aria-label="Videre" data-en-aria="Next"><a href="#top" data-en="Back to top">Til toppen</a></nav>
+<nav class="afslut" aria-label="Videre"><a href="#top">Til toppen</a></nav>
 </section>
-<section class="kilder" aria-labelledby="kilder"><h2 id="kilder" data-en="Sources">Kilder</h2><ul><li>Bilag D og E i "2 over 1 – Moderne majorstøtte" (Frank og Makker 2).</li><li>"Beregning af score i en parturnering", Nyt fra Ruder Es nr. 50, maj 1992.</li><li>Danmarks Bridgeforbund: Kamppoint for 40 spil, bridge.dk/4000/Kamppointskala.html.</li><li>Danmarks Bridgeforbund: DBf's handicapsystem, faktaark november 2017, og Handicapreglement, 2. januar 2017.</li><li>Danmarks Bridgeforbund: DBf's turneringsbestemmelser – håndbog for turneringsledere, gyldig fra 1. september 2025 (§ X78, § 201–206, § 211, § 221–223).</li><li>Danmarks Bridgeforbund: Lovene for turneringsbridge 2017 (dansk udgave, gældende fra 1. september 2017), § 12C2, § 77 og § 78.</li><li>WBF: Laws of Duplicate Bridge 2017 (scoringstabellen, lov 77) og WBF's kamppointskala (2013).</li></ul></section>
+<section class="kilder" aria-labelledby="kilder"><h2 id="kilder">Kilder</h2><ul><li>Bilag D og E i "2 over 1 – Moderne majorstøtte" (Frank og Makker 2).</li><li>"Beregning af score i en parturnering", Nyt fra Ruder Es nr. 50, maj 1992.</li><li>Danmarks Bridgeforbund: Kamppoint for 40 spil, bridge.dk/4000/Kamppointskala.html.</li><li>Danmarks Bridgeforbund: DBf's handicapsystem, faktaark november 2017, og Handicapreglement, 2. januar 2017.</li><li>Danmarks Bridgeforbund: DBf's turneringsbestemmelser – håndbog for turneringsledere, gyldig fra 1. september 2025 (§ X78, § 201–206, § 211, § 221–223).</li><li>Danmarks Bridgeforbund: Lovene for turneringsbridge 2017 (dansk udgave, gældende fra 1. september 2017), § 12C2, § 77 og § 78.</li><li>WBF: Laws of Duplicate Bridge 2017 (scoringstabellen, lov 77) og WBF's kamppointskala (2013).</li></ul></section>
     </div>
   </div>
+  <!-- Den engelske udgave (scoring/Scoring_i_bridge.en.md); sprogscriptet sætter den ind, når sproget er engelsk -->
+  <template id="toc-en">
+<li><a href="#scoren-for-et-spil"><span class="nr">1</span> The score for a board</a><ul><li><a href="#stikpoint">Trick score</a></li><li><a href="#bonus">Bonus</a></li><li><a href="#doblet-og-redoblet-kontrakt-hjemme">Doubled and redoubled contracts made</a></li><li><a href="#overstik">Overtricks</a></li><li><a href="#bet">Undertricks</a></li><li><a href="#eksempler">Examples</a></li></ul></li>
+<li><a href="#parturnering"><span class="nr">2</span> Pairs: matchpoints</a><ul><li><a href="#resultater-er-relative">Results are relative</a></li><li><a href="#2-1-0">2/1/0</a></li><li><a href="#et-eksempel">An example</a></li><li><a href="#procent">Percentages</a></li><li><a href="#middelscoremetoden">The average method: +1/0/−1</a></li><li><a href="#ns-og-oev-haenger-sammen">NS and EW belong together</a></li><li><a href="#afstemning">Checking the totals</a></li><li><a href="#resultatlisten">The results list</a></li><li><a href="#manglende-resultater-og-kunstig-score">Missing results and artificial scores</a></li></ul></li>
+<li><a href="#parturnering-i-imp"><span class="nr">3</span> Pairs scored in IMPs</a><ul><li><a href="#butler">Butler</a></li><li><a href="#totalpoint">Total points</a></li><li><a href="#cross-imp">Cross-IMPs (IMPs across the field)</a></li><li><a href="#multiholdberegning">Multi-team scoring</a></li></ul></li>
+<li><a href="#holdturnering"><span class="nr">4</span> Teams: IMPs and victory points</a><ul><li><a href="#hvordan-en-kamp-spilles">How a match is played</a></li><li><a href="#imp-skalaen">The IMP scale</a></li><li><a href="#kamppoint">Victory points</a></li><li><a href="#board-a-match">Board-a-match</a></li><li><a href="#cupkampe">Knockout matches</a></li><li><a href="#ved-pointlighed">Ties</a></li></ul></li>
+<li><a href="#taktik"><span class="nr">5</span> Tactics</a><ul><li><a href="#kort-fortalt">In short</a></li><li><a href="#taktik-parturnering">Pairs (matchpoints)</a></li><li><a href="#taktik-holdturnering">Teams (IMPs)</a></li><li><a href="#taktik-kamppoint">Victory points</a></li></ul></li>
+<li><a href="#handicap"><span class="nr">6</span> Handicap</a><ul><li><a href="#dbf-s-handicapsystem">DBf's handicap system</a></li><li><a href="#handicap-parturnering">Pairs</a></li><li><a href="#handicap-et-eksempel">An example</a></li><li><a href="#matematikken">The mathematics</a></li><li><a href="#handicapturnering">Handicap events</a></li><li><a href="#handicap-holdturnering">Teams</a></li></ul></li>
+  </template>
+  <template id="tekst-en">
+<section class="afsnit" aria-labelledby="scoren-for-et-spil">
+<h2 id="scoren-for-et-spil"><span class="nr">1</span> The score for a board</h2>
+<p>A board gives points to the side that wins it. Declarer's side scores for a contract that makes; the defenders score for each undertrick. If all four players pass, both sides score 0.</p>
+<p>This page uses the words players use at the table. The Laws (Law 77) use the formal terms: total points for the score, trick score for the points per contract trick, and overtricks and undertricks.</p>
+<h3 id="stikpoint">Trick score</h3>
+<p>Trick score counts only the tricks you have contracted for, beyond the first six (the book).</p>
+<div class="tabel"><table><thead><tr><th scope="col">Strain</th><th scope="col">Per trick</th></tr></thead><tbody><tr><td>♣ and <span class="r">♦</span> (minors)</td><td>20</td></tr><tr><td><span class="r">♥</span> and ♠ (majors)</td><td>30</td></tr><tr><td>Notrump</td><td>40 for the first trick, 30 for each after that</td></tr></tbody></table></div>
+<p>Doubled, the trick score is multiplied by 2; redoubled, by 4.</p>
+<h3 id="bonus">Bonus</h3>
+<div class="tabel"><table><thead><tr><th scope="col">Bonus</th><th scope="col">Not vulnerable</th><th scope="col">Vulnerable</th></tr></thead><tbody><tr><td>Part-score (trick score below 100)</td><td>50</td><td>50</td></tr><tr><td>Game (trick score 100 or more)</td><td>300</td><td>500</td></tr><tr><td>Small slam (6-level), on top of game</td><td>500</td><td>750</td></tr><tr><td>Grand slam (7-level), on top of game</td><td>1000</td><td>1500</td></tr><tr><td>Doubled contract made</td><td>50</td><td>50</td></tr><tr><td>Redoubled contract made</td><td>100</td><td>100</td></tr></tbody></table></div>
+<p>Game is 3NT, 4<span class="r">♥</span>, 4♠, 5♣ and 5<span class="r">♦</span>. Only contracted tricks count towards the 100; overtricks never make a game.</p>
+<h3 id="doblet-og-redoblet-kontrakt-hjemme">Doubled and redoubled contracts made</h3>
+<p>When a doubled or redoubled contract makes, three things happen at once:</p>
+<ol><li><strong>The trick score is multiplied</strong> by 2 (doubled) or 4 (redoubled). If that brings it to 100 or more, the contract is a game even if it was bid at the 1- or 2-level, and declarer gets the game bonus instead of the part-score bonus.</li><li><strong>The bonus for a doubled or redoubled contract made</strong> (50 or 100) is added on top, whatever the vulnerability. It is also called the bonus "for the insult", because the defenders doubled a contract that made.</li><li><strong>Overtricks</strong> are scored at their own rates (100 or 200 per trick doubled, twice that redoubled) and have nothing to do with the trick value of the suit.</li></ol>
+<div class="tabel"><table><thead><tr><th scope="col">Contract</th><th scope="col">Tricks</th><th scope="col">Vul.</th><th scope="col">Calculation</th><th scope="col">Score</th></tr></thead><tbody><tr><td>1♣ doubled</td><td>7</td><td>no</td><td>40 + 50 part-score + 50</td><td>140</td></tr><tr><td>1♣ redoubled</td><td>7</td><td>no</td><td>80 + 50 part-score + 100</td><td>230</td></tr><tr><td>1♠ doubled</td><td>7</td><td>no</td><td>60 + 50 part-score + 50</td><td>160</td></tr><tr><td>1♠ redoubled</td><td>7</td><td>no</td><td>120 + 300 game + 100</td><td>520</td></tr><tr><td>2<span class="r">♥</span> doubled</td><td>8</td><td>no / yes</td><td>120 + 300 / 500 game + 50</td><td>470 / 670</td></tr><tr><td>2<span class="r">♥</span> redoubled</td><td>8</td><td>no</td><td>240 + 300 game + 100</td><td>640</td></tr><tr><td>4♠ doubled</td><td>10 / 11</td><td>yes</td><td>240 + 500 + 50 (+ 200 for the overtrick)</td><td>790 / 990</td></tr><tr><td>4♠ redoubled</td><td>10</td><td>yes</td><td>480 + 500 + 100</td><td>1080</td></tr></tbody></table></div>
+<p>That is why it is expensive to double a part-score that makes: 2<span class="r">♥</span> doubled and made, not vulnerable, scores 470 instead of 110. And that is why a redouble can be a weapon: 1♠ redoubled and made is a game.</p>
+<h3 id="overstik">Overtricks</h3>
+<div class="tabel"><table><thead><tr><th scope="col"></th><th scope="col">Not vulnerable</th><th scope="col">Vulnerable</th></tr></thead><tbody><tr><td>Undoubled</td><td>the trick value (20 or 30)</td><td>the trick value</td></tr><tr><td>Doubled</td><td>100 per overtrick</td><td>200 per overtrick</td></tr><tr><td>Redoubled</td><td>200 per overtrick</td><td>400 per overtrick</td></tr></tbody></table></div>
+<h3 id="bet">Undertricks</h3>
+<div class="tabel"><table><thead><tr><th scope="col">Undertricks</th><th scope="col">Undoubled, not vul.</th><th scope="col">Undoubled, vul.</th><th scope="col">Doubled, not vul.</th><th scope="col">Doubled, vul.</th></tr></thead><tbody><tr><td>1</td><td>50</td><td>100</td><td>100</td><td>200</td></tr><tr><td>2</td><td>100</td><td>200</td><td>300</td><td>500</td></tr><tr><td>3</td><td>150</td><td>300</td><td>500</td><td>800</td></tr><tr><td>4</td><td>200</td><td>400</td><td>800</td><td>1100</td></tr><tr><td>each extra</td><td>+50</td><td>+100</td><td>+300</td><td>+300</td></tr></tbody></table></div>
+<p>Redoubled is twice the doubled penalty.</p>
+<h3 id="eksempler">Examples</h3>
+<div class="tabel"><table><thead><tr><th scope="col">Contract</th><th scope="col">Tricks</th><th scope="col">Vul.</th><th scope="col">Score</th></tr></thead><tbody><tr><td>1NT</td><td>7</td><td>no</td><td>40 + 50 = 90</td></tr><tr><td>2♠</td><td>8</td><td>no</td><td>60 + 50 = 110</td></tr><tr><td>3<span class="r">♥</span></td><td>10</td><td>no</td><td>90 + 30 + 50 = 170</td></tr><tr><td>3NT</td><td>9</td><td>no / yes</td><td>100 + 300 = 400 / 600</td></tr><tr><td>4♠</td><td>10</td><td>no / yes</td><td>120 + 300 = 420 / 620</td></tr><tr><td>5<span class="r">♦</span></td><td>11</td><td>no</td><td>100 + 300 = 400</td></tr><tr><td>6♠</td><td>12</td><td>no / yes</td><td>180 + 300 + 500 = 980 / 1430</td></tr><tr><td>7♠</td><td>13</td><td>no / yes</td><td>210 + 300 + 1000 = 1510 / 2210</td></tr><tr><td>2<span class="r">♥</span> doubled</td><td>9</td><td>no</td><td>120 + 300 + 50 + 100 = 570</td></tr><tr><td>1NT doubled</td><td>9</td><td>no</td><td>80 + 50 + 50 + 200 = 380</td></tr><tr><td>4♠ doubled</td><td>7</td><td>no</td><td>−500</td></tr><tr><td>2<span class="r">♥</span> doubled</td><td>7</td><td>yes</td><td>−200</td></tr></tbody></table></div>
+<p>Note the two doubled examples: 2<span class="r">♥</span> doubled with an overtrick costs 570, not 110. 1NT doubled with two overtricks scores only 380, because 80 trick points is not a game.</p>
+<div class="beregner" id="beregner-score" role="group" aria-labelledby="beregner-score-h">
+<p class="beregner-k" data-en="Try it yourself">Prøv selv</p>
+<h3 class="beregner-h" id="beregner-score-h" data-en="Score calculator">Scoreberegner</h3>
+<form class="felter" data-beregner="score" novalidate><label class="felt"><span data-en="Level">Trin</span><select name="trin"><option>1</option><option>2</option><option>3</option><option selected>4</option><option>5</option><option>6</option><option>7</option></select></label><fieldset class="felt-valg"><legend data-en="Strain">Farve</legend><div class="valg-raekke"><label class="valg"><input type="radio" name="farve" value="C"><span>♣</span></label><label class="valg"><input type="radio" name="farve" value="D"><span><span class="r">♦</span></span></label><label class="valg"><input type="radio" name="farve" value="H"><span><span class="r">♥</span></span></label><label class="valg"><input type="radio" name="farve" value="S" checked><span>♠</span></label><label class="valg"><input type="radio" name="farve" value="NT"><span data-en="NT">Sans</span></label></div></fieldset><fieldset class="felt-valg"><legend data-en="Double">Dobling</legend><div class="valg-raekke"><label class="valg"><input type="radio" name="dobling" value="0" checked><span data-en="Undoubled">Udoblet</span></label><label class="valg"><input type="radio" name="dobling" value="1"><span data-en="Doubled">Doblet</span></label><label class="valg"><input type="radio" name="dobling" value="2"><span data-en="Redoubled">Redoblet</span></label></div></fieldset><fieldset class="felt-valg"><legend data-en="Vulnerability">Zone</legend><div class="valg-raekke"><label class="valg"><input type="radio" name="zone" value="0" checked><span data-en="Not vulnerable">Uden for zonen</span></label><label class="valg"><input type="radio" name="zone" value="1"><span data-en="Vulnerable">I zonen</span></label></div></fieldset><label class="felt"><span data-en="Tricks taken">Stik</span><select name="stik"><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option selected>10</option><option>11</option><option>12</option><option>13</option></select></label></form><div class="svar" aria-live="polite" data-svar="score"></div>
+</div>
+<nav class="afslut" aria-label="Next"><a href="#parturnering"><span>Next:</span> Pairs: matchpoints</a><a href="#top">Back to top</a></nav>
+</section>
+<section class="afsnit" aria-labelledby="parturnering"><span id="matchpoint" class="alias"></span>
+<h2 id="parturnering"><span class="nr">2</span> Pairs: matchpoints</h2>
+<h3 id="resultater-er-relative">Results are relative</h3>
+<p>In a pairs event your result is compared only with the pairs who held the same cards and sat in the same direction: all NS pairs among themselves and all EW pairs among themselves. You are not competing against the whole room, only against those who played the same hands.</p>
+<p>So what counts is not the size of your score but how many pairs you beat. +620 against +590 counts just as much as +1430 against −100.</p>
+<h3 id="2-1-0">2/1/0</h3>
+<p>Each result is compared with every other result on the same board:</p>
+<div class="tabel"><table><thead><tr><th scope="col">Against each other pair</th><th scope="col">Points</th></tr></thead><tbody><tr><td>You beat them</td><td>2</td></tr><tr><td>Same score</td><td>1</td></tr><tr><td>They beat you</td><td>0</td></tr></tbody></table></div>
+<p>If the board was played at <em>n</em> tables, the top is 2 × (<em>n</em> − 1) and average is <em>n</em> − 1. With 7 tables the top is 12, and the scale from top to bottom is 12 – 10 – 8 – 6 – 4 – 2 – 0.</p>
+<p>If several pairs have the same score, they share the points for the places they occupy together. The Laws call this matchpoint scoring (Law 78A).</p>
+<h3 id="et-eksempel">An example</h3>
+<p>Seven NS pairs have played the same board, neither side vulnerable. Most bid 4<span class="r">♥</span>. Each pair is compared with the six others:</p>
+<div class="tabel"><table><thead><tr><th scope="col">NS score</th><th scope="col">Contract</th><th scope="col">Beats</th><th scope="col">Ties</th><th scope="col">Loses to</th><th scope="col">2/1/0</th><th scope="col">Percent</th><th scope="col">+1/0/−1</th></tr></thead><tbody><tr><td>+450</td><td>4<span class="r">♥</span> with an overtrick</td><td>6</td><td>0</td><td>0</td><td>12</td><td>100 %</td><td>+6</td></tr><tr><td>+420</td><td>4<span class="r">♥</span> made</td><td>4</td><td>1</td><td>1</td><td>9</td><td>75 %</td><td>+3</td></tr><tr><td>+420</td><td>4<span class="r">♥</span> made</td><td>4</td><td>1</td><td>1</td><td>9</td><td>75 %</td><td>+3</td></tr><tr><td>+170</td><td>3<span class="r">♥</span> with an overtrick</td><td>3</td><td>0</td><td>3</td><td>6</td><td>50 %</td><td>0</td></tr><tr><td>+140</td><td>3<span class="r">♥</span> made</td><td>2</td><td>0</td><td>4</td><td>4</td><td>33 %</td><td>−2</td></tr><tr><td>−50</td><td>4<span class="r">♥</span> one down</td><td>1</td><td>0</td><td>5</td><td>2</td><td>17 %</td><td>−4</td></tr><tr><td>−100</td><td>4<span class="r">♥</span> two down</td><td>0</td><td>0</td><td>6</td><td>0</td><td>0 %</td><td>−6</td></tr></tbody></table></div>
+<p><strong>How to read the row for +420:</strong> the pair beats four pairs (+170, +140, −50 and −100), ties with the other pair on +420 and loses to +450.</p>
+<ul><li><strong>2/1/0:</strong> 4 × 2 + 1 × 1 + 1 × 0 = 9 points.</li><li><strong>+1/0/−1:</strong> 4 × (+1) + 1 × 0 + 1 × (−1) = +3.</li></ul>
+<p><strong>Why do some pairs get a minus?</strong> In +1/0/−1, a minus does not mean the pair had a bad score at the table, but that it lost more comparisons than it won. +140 is a decent plus score, but four pairs got more out of the cards and only two got less: 2 − 4 = −2. The pair is below average, and 2/1/0 says the same: 4 points where average is 6. The number in +1/0/−1 is the distance from average: +170 beats as many pairs as it loses to and gets 0, exactly average.</p>
+<p>A minus in +1/0/−1 and a minus in the NS score are two different things. −50 is a minus score at the table, but it still beats −100 and gets 2 points in 2/1/0.</p>
+<p>The two pairs on +420 share places 2 and 3: (10 + 8) / 2 = 9 each. The 2/1/0 points add up to 42 = 7 × 6, which is average for every pair, and the +1/0/−1 points add up to 0. The overtrick gave +450 a full 3 points more than +420. That is as much as 4<span class="r">♥</span> made (+420) gained over 3<span class="r">♥</span> with an overtrick (+170).</p>
+<div class="beregner" id="beregner-matchpoint" role="group" aria-labelledby="beregner-matchpoint-h">
+<p class="beregner-k" data-en="Try it yourself">Prøv selv</p>
+<h3 class="beregner-h" id="beregner-matchpoint-h" data-en="Matchpoint calculator">Matchpointregner</h3>
+<form class="felter" data-beregner="matchpoint" novalidate><fieldset class="felt-scorer"><legend data-en="NS scores on the board">NS-scorerne på spillet</legend><div class="scorer" data-scorer></div><button type="button" class="knap" data-tilfoej data-en="Add a score">Tilføj score</button></fieldset><label class="felt"><span data-en="Tables in all (if results are missing)">Borde i alt (hvis der mangler resultater)</span><input name="borde" inputmode="numeric" autocomplete="off"></label><label class="felt-flueben"><input type="checkbox" name="oev"><span data-en="Show for EW">Vis for ØV</span></label></form><div class="svar" aria-live="polite" data-svar="matchpoint"></div>
+</div>
+<h3 id="procent">Percentages</h3>
+<p>The points are converted to a percentage of the top, so that every board carries the same weight whatever the number of tables. 50 % is average; an event is typically won with 60–65 %.</p>
+<h3 id="middelscoremetoden">The average method: +1/0/−1</h3>
+<p>For practical scoring you instead count +1 for each comparison you win, 0 for a tie and −1 for each you lose. With 7 tables the scale becomes +6, +4, +2, 0, −2, −4, −6, and with 6 tables +5, +3, +1, −1, −3, −5. The gap between two places is still 2.</p>
+<p>The numbers show the distance from average. That makes the scores easier to add up and to check.</p>
+<h3 id="ns-og-oev-haenger-sammen">NS and EW belong together</h3>
+<p>Once the NS pairs have their points, each EW pair gets the same number as its opponents with the opposite sign. The NS pair that got +6 had an EW pair against it that gets −6.</p>
+<h3 id="afstemning">Checking the totals</h3>
+<ol><li><strong>The NS points on each board must add up to 0.</strong> If they do not, there is a calculation error. Check this before EW get their numbers; otherwise the error is repeated with the opposite sign and hidden.</li><li><strong>When all rounds are added up,</strong> the sum of all positive and negative numbers must again be 0.</li><li><strong>Exceptions:</strong> adjusted scores, for example procedural penalties (the negative sum becomes larger) and compensation (the positive sum becomes larger). A standard penalty is 10 % of the difference between top and bottom in pairs and ½ VP in a team match of at least 13 boards (DBf regulation § 211).</li></ol>
+<h3 id="resultatlisten">The results list</h3>
+<p>With the average method the list shows the deviation from average. With 6 tables and 28 boards the average is 28 × 5 = 140 in 2/1/0 points. +12 means the pair has 140 + 12 = 152; −5 means 135. The list should have a heading such as "Average 140 +".</p>
+<h3 id="manglende-resultater-og-kunstig-score">Missing results and artificial scores</h3>
+<p>If a board cannot be completed, the director awards an artificial score (Law 12C2): average plus (at least 60 %) to a side not at fault, average (50 %) to a side partly at fault, and average minus (at most 40 %) to a side at fault. If a non-offending pair scores more than 60 % on the rest of the session, it gets its own percentage instead; if an offending pair scores below 40 %, it also gets its own.</p>
+<p>If a result is missing, or an artificial score has been given, the other results are compared only with each other. The points are then converted to the full number of tables (DBf regulation § X78B):</p>
+<div class="tabel"><table><thead><tr><th scope="col">Results in the group</th><th scope="col">Points</th></tr></thead><tbody><tr><td>1</td><td>60 %</td></tr><tr><td>2 (at least 6 tables in all)</td><td>65 % and 55 % (equal results: 60 % to both)</td></tr><tr><td>3 (at least 9 tables in all)</td><td>70 %, 60 % and 50 %</td></tr><tr><td>otherwise</td><td>Neuberg's formula</td></tr></tbody></table></div>
+<details class="fold"><summary><span class="fold-k">For the curious</span> Neuberg's formula</summary><div class="fold-indhold">
+<p><strong>Neuberg's formula:</strong> <em>P'</em> = <em>A</em> / <em>G</em> × (<em>P</em> + 1) − 1, where <em>P</em> is the pair's 2/1/0 points within the group, <em>G</em> the number of results in the group and <em>A</em> the full number of tables. With 5 of 6 results the top becomes (8 + 1) × 6 / 5 − 1 = 9.8 out of 10, and the bottom (0 + 1) × 6 / 5 − 1 = 0.2.</p>
+</div></details>
+<p>A pair sitting out gets no score on the board. The total score is given as a percentage.</p>
+<details class="fold"><summary><span class="fold-k">For the curious</span> The old rule of thumb</summary><div class="fold-indhold">
+<p><strong>The old rule of thumb</strong> (Ruder Es, 1992) instead gave every result an average for the missing comparison: in 2/1/0 the top drops and the bottom rises by 1 for each missing result (top 9 and bottom 1 with 5 of 6), and in +1/0/−1 the scale is simply worked out as fewer tables. It is easy by hand, but Neuberg's formula is the rule today.</p>
+</div></details>
+<nav class="afslut" aria-label="Next"><a href="#parturnering-i-imp"><span>Next:</span> Pairs scored in IMPs</a><a href="#top">Back to top</a></nav>
+</section>
+<section class="afsnit" aria-labelledby="parturnering-i-imp">
+<h2 id="parturnering-i-imp"><span class="nr">3</span> Pairs scored in IMPs</h2>
+<p>Some pairs events are scored in IMPs instead of matchpoints (the IMP scale is in section 4). Then the size of the gain counts, and the tactics are those of teams.</p>
+<h3 id="butler">Butler</h3>
+<p>Under DBf regulation § 204:</p>
+<ol><li><strong>Datum:</strong> the highest and the lowest score are removed (the organiser may decide to remove, say, the two highest and lowest), and the datum is the average of the rest.</li><li><strong>The difference</strong> between the pair's score and the datum is rounded to the nearest 10 (a difference ending in 5 is rounded away from 0).</li><li><strong>The rounded difference</strong> is converted to IMPs.</li></ol>
+<p>Example, NS vulnerable: +620, +620, +600, +170, +170, +140, −100, −100. Without one +620 and one −100 the datum is (620 + 600 + 170 + 170 + 140 − 100) / 6 = 266.67. A pair on +620 is 353.33 above, rounded to 350 → 8 IMPs; a pair on +170 is 96.67 below, rounded to −100 → −3 IMPs.</p>
+<p>Average plus gives +2 IMPs and average minus −2 IMPs.</p>
+<h3 id="totalpoint">Total points</h3>
+<p>With total-point scoring (Law 78C) the score is the sum of the points on all boards. It is rarely used, because one big board can decide everything.</p>
+<h3 id="cross-imp">Cross-IMPs (IMPs across the field)</h3>
+<p>Your result is compared with every other result on the board, and each difference is converted to IMPs. DBf adds them up (§ 203); in some places the sum is divided by the number of comparisons, so the figure looks like a team match.</p>
+<p>Same example, +620: against +620 0, against +600 1, against +170 10, against +170 10, against +140 10, against −100 12, against −100 12. 55 IMPs in all (7.86 per comparison).</p>
+<p>Average plus gives +2 IMPs and average minus −2 IMPs for each comparison.</p>
+<p>Cross-IMPs are fairer than Butler, because one wild score does not move the datum, but they are harder to work out by hand.</p>
+<h3 id="multiholdberegning">Multi-team scoring</h3>
+<p>Each pair is scored against every other table that played the same boards, as a small team match on the victory-point scale for the round's boards (section 4). The pair's score is the average of those victory points (§ 205). In a teams event it is an indicative figure for each pair; it can also be used as a pairs format.</p>
+<nav class="afslut" aria-label="Next"><a href="#holdturnering"><span>Next:</span> Teams: IMPs and victory points</a><a href="#top">Back to top</a></nav>
+</section>
+<section class="afsnit" aria-labelledby="holdturnering"><span id="imp-og-kamppoint" class="alias"></span>
+<h2 id="holdturnering"><span class="nr">4</span> Teams: IMPs and victory points</h2>
+<h3 id="hvordan-en-kamp-spilles">How a match is played</h3>
+<p>A team has four players (or more). One pair sits NS at one table, the other pair EW at the other, and the boards are moved between the tables. So every board is played twice, once by the team's NS pair and once by its EW pair. The team's two scores are added together, and the difference is converted to IMPs.</p>
+<p>Example, vulnerable: our NS bid 4♠ and make it, +620. At the other table the opponents' NS stop in 3♠ and take 10 tricks, so our EW score −170. Net +450, which is 10 IMPs.</p>
+<h3 id="imp-skalaen">The IMP scale</h3>
+<div class="tabel"><table><thead><tr><th scope="col">Difference</th><th scope="col">IMPs</th><th scope="col">Difference</th><th scope="col">IMPs</th><th scope="col">Difference</th><th scope="col">IMPs</th></tr></thead><tbody><tr><td>0–10</td><td>0</td><td>370–420</td><td>9</td><td>1500–1740</td><td>17</td></tr><tr><td>20–40</td><td>1</td><td>430–490</td><td>10</td><td>1750–1990</td><td>18</td></tr><tr><td>50–80</td><td>2</td><td>500–590</td><td>11</td><td>2000–2240</td><td>19</td></tr><tr><td>90–120</td><td>3</td><td>600–740</td><td>12</td><td>2250–2490</td><td>20</td></tr><tr><td>130–160</td><td>4</td><td>750–890</td><td>13</td><td>2500–2990</td><td>21</td></tr><tr><td>170–210</td><td>5</td><td>900–1090</td><td>14</td><td>3000–3490</td><td>22</td></tr><tr><td>220–260</td><td>6</td><td>1100–1290</td><td>15</td><td>3500–3990</td><td>23</td></tr><tr><td>270–310</td><td>7</td><td>1300–1490</td><td>16</td><td>4000 and more</td><td>24</td></tr><tr><td>320–360</td><td>8</td><td></td><td></td><td></td><td></td></tr></tbody></table></div>
+<p>The scale tapers off: the first 400 points give 9 IMPs, the next 1600 only 10 more. A missed vulnerable game typically costs 10 IMPs, an overtrick 1.</p>
+<h3 id="kamppoint">Victory points</h3>
+<p>The match's IMP difference is converted to victory points (VP; in Danish <em>kamppoint</em>), so that a match always gives 20 points in all. A draw is 10–10. DBf uses the WBF scale from 2013 with two decimals in all team events except knockout matches (§ 201–202). If boards carry fractions of IMPs, the match's IMP difference is first rounded to a whole number (halves away from 0). For a number of boards with no published table, the scale is built with the WBF formula:</p>
+<details class="fold"><summary><span class="fold-k">For the curious</span> The victory-point formula</summary><div class="fold-indhold">
+<p>VP = 10 + 10 × (1 − τ^(3<em>m</em>/<em>B</em>)) / (1 − τ³)</p>
+<p>where <em>m</em> is the IMP difference, τ = (√5 − 1) / 2 ≈ 0.618 and <em>B</em> = 15 × √(number of boards). From <em>B</em> IMPs the winner gets 20.00. The figures are rounded to two decimals and adjusted so that an extra IMP is never worth more than the one before.</p>
+</div></details>
+<div class="tabel"><table><thead><tr><th scope="col">Boards in the match</th><th scope="col">20.00 VP from</th></tr></thead><tbody><tr><td>16</td><td>60 IMPs</td></tr><tr><td>24</td><td>74 IMPs</td></tr><tr><td>32</td><td>85 IMPs</td></tr><tr><td>40</td><td>95 IMPs</td></tr></tbody></table></div>
+<p>Extract for 40 boards (DBf's table):</p>
+<div class="tabel"><table><thead><tr><th scope="col">IMP difference</th><th scope="col">Winner</th><th scope="col">Loser</th></tr></thead><tbody><tr><td>0</td><td>10.00</td><td>10.00</td></tr><tr><td>5</td><td>10.96</td><td>9.04</td></tr><tr><td>10</td><td>11.85</td><td>8.15</td></tr><tr><td>20</td><td>13.44</td><td>6.56</td></tr><tr><td>30</td><td>14.80</td><td>5.20</td></tr><tr><td>50</td><td>16.98</td><td>3.02</td></tr><tr><td>70</td><td>18.58</td><td>1.42</td></tr><tr><td>95</td><td>20.00</td><td>0.00</td></tr></tbody></table></div>
+<p>The first 10 IMPs give 1.85 VP, IMPs 60–70 only 0.74. The full scale for 40 boards is on bridge.dk.</p>
+<p><strong>Artificial scores in a team match:</strong> average plus is +3 IMPs and average minus −3 IMPs (Law 12C2b), on at most 3 boards each way per match; further cancelled boards are dropped, and the scale for fewer boards is used.</p>
+<p><strong>Special matches</strong> (§ 202): a team with a bye gets 12 VP. A team whose opponents fail to turn up gets at least 13 VP. If every board in a match has to be cancelled because both teams were at fault (for example, sat the wrong way), both get 8 VP.</p>
+<div class="beregner" id="beregner-imp" role="group" aria-labelledby="beregner-imp-h">
+<p class="beregner-k" data-en="Try it yourself">Prøv selv</p>
+<h3 class="beregner-h" id="beregner-imp-h" data-en="IMP and VP converter">Imp- og kamppointomregner</h3>
+<form class="felter" data-beregner="imp" novalidate><fieldset class="felt-gruppe"><legend data-en="IMPs">Imp</legend><label class="felt"><span data-en="Score 1">Score 1</span><input name="s1" inputmode="numeric" autocomplete="off" value="620"></label><label class="felt"><span data-en="Score 2 (or leave empty and enter a difference in score 1)">Score 2 (eller tom, så er score 1 forskellen)</span><input name="s2" inputmode="numeric" autocomplete="off" value="170"></label></fieldset><div class="svar" aria-live="polite" data-svar="imp"></div><fieldset class="felt-gruppe"><legend data-en="Victory points">Kamppoint</legend><label class="felt"><span data-en="IMP difference in the match">Kampens imp-forskel</span><input name="kimp" inputmode="decimal" autocomplete="off" value="20"></label><label class="felt"><span data-en="Boards (4–128)">Antal spil (4–128)</span><input name="spil" inputmode="numeric" autocomplete="off" value="40"></label></fieldset></form><div class="svar" aria-live="polite" data-svar="kp"></div>
+</div>
+<h3 id="board-a-match">Board-a-match</h3>
+<p>In board-a-match each board gives 2–0, 1–1 or 0–2 to the team with more points on it (§ 206). The size does not matter, as in matchpoints, so the tactics are those of pairs.</p>
+<h3 id="cupkampe">Knockout matches</h3>
+<p>A single match (knockout) is decided directly in IMPs without victory points. If it ends in a tie, the team that finished higher in a preceding qualifying stage wins; otherwise the team with more total points, and if they are still level, 4 extra boards are played (§ 222).</p>
+<h3 id="ved-pointlighed">Ties</h3>
+<ul><li><strong>Pairs</strong> (§ 223): most points in the head-to-head comparisons, then most rounds above average, then fewest bottoms.</li><li><strong>Teams, round robin</strong> (§ 221): most VP in the matches between the tied teams, then the best quotient of IMPs won to IMPs lost in those matches, and then in all matches.</li></ul>
+<nav class="afslut" aria-label="Next"><a href="#taktik"><span>Next:</span> Tactics</a><a href="#top">Back to top</a></nav>
+</section>
+<section class="afsnit" aria-labelledby="taktik">
+<h2 id="taktik"><span class="nr">5</span> Tactics</h2>
+<h3 id="kort-fortalt">In short</h3>
+<div class="tabel"><table><thead><tr><th scope="col">Situation</th><th scope="col">Matchpoints (pairs)</th><th scope="col">IMPs (teams, Butler, cross-IMPs)</th></tr></thead><tbody><tr><td>What counts</td><td>how often you do better than the others</td><td>how much you win or lose</td></tr><tr><td>One overtrick</td><td>can move you from 50 % to 100 %</td><td>1 IMP, almost nothing</td></tr><tr><td>A disaster</td><td>costs one board, at most 0 %</td><td>can cost 12–17 IMPs and the match</td></tr><tr><td>Game</td><td>bid it at about 50 %</td><td>bid it at 45 % not vulnerable and 37 % vulnerable</td></tr><tr><td>Small slam</td><td>about 50 %</td><td>50 %</td></tr><tr><td>Grand slam</td><td>over 50 %</td><td>56–57 %</td></tr><tr><td>Safety play</td><td>rarely; it costs overtricks</td><td>yes; the contract comes first</td></tr><tr><td>Sacrifice</td><td>often right when cheaper than their game</td><td>only when clearly cheaper</td></tr><tr><td>Doubling a part-score</td><td>yes, when +200 beats your own score</td><td>rarely; doubled and made can be a game</td></tr></tbody></table></div>
+<h3 id="taktik-parturnering">Pairs (matchpoints)</h3>
+<ul><li><strong>Every board carries the same weight.</strong> A top and a bottom average 50 %; lots of small plus scores win events.</li><li><strong>Overtricks count.</strong> If most of the field is in the same contract, declarer plays for the most tricks, even at some risk to the contract, when that gives the best chance of the overtrick. Defenders do the opposite: save an overtrick before going all out to beat the contract.</li><li><strong>Notrump or major.</strong> 3NT with an overtrick (430) beats 4♠ (420), and 1NT with 8 tricks (120) beats 2<span class="r">♥</span> with 8 tricks (110). Play notrump when the tricks are the same; play the major when trumps give an extra trick.</li><li><strong>Minor-suit games are rare.</strong> 5<span class="r">♦</span> (400) loses to 3NT (400 + overtricks) and to 4<span class="r">♥</span>/4♠. Try 3NT first.</li><li><strong>Fight for the part-scores.</strong> Do not let the opponents play at the 2-level with a fit; reopen and compete to 3 over their 2 when you have a fit. Part-score battles decide most pairs events.</li><li><strong>The 200 points.</strong> The opponents' part-score gives them +110 or +140. Going one down doubled vulnerable (−200) is almost always a bottom. Conversely, if you can double them one down vulnerable (+200), that beats any part-score you could have played yourselves.</li><li><strong>Sacrifices.</strong> Not vulnerable against vulnerable opponents, three down doubled (−500) is cheaper than their game (−620). But check that they really make their game and that the rest of the field bids it.</li><li><strong>Normal contract.</strong> In a good contract the field has not reached, play safe. In the same contract as the field, play for the most tricks.</li></ul>
+<h3 id="taktik-holdturnering">Teams (IMPs)</h3>
+<ul><li><strong>The contract first.</strong> Safety plays that cost an overtrick (1 IMP) but save the contract (10–12 IMPs) are always right.</li><li><strong>Bid your games.</strong> Not vulnerable, a game gains 6 IMPs when it makes and loses 5 when it fails (+420 against +170 and −50 against +140), so it needs to make about 45 % of the time. Vulnerable it is +10 against −6 IMPs, so 37 % is enough.</li><li><strong>Slams.</strong> A small slam needs about 50 % at either vulnerability. A grand slam needs 56–57 %, because you risk a certain small slam.</li><li><strong>Part-scores are small.</strong> One part-score more or less is 2–5 IMPs. Compete, but not at any price.</li><li><strong>Do not double them into game.</strong> 2<span class="r">♥</span> doubled and made, not vulnerable, scores 470 instead of 110, and that costs 8 IMPs. Double part-scores when you are sure they are going down.</li><li><strong>Sacrifices.</strong> 5<span class="r">♦</span> doubled two down not vulnerable (−300) against their vulnerable 4♠ (−620) gains 8 IMPs. If it goes three down (−500), it gains only 3. And if 4♠ could have been beaten, the sacrifice loses 12 IMPs. Sacrifice only when you are sure they will make their contract.</li><li><strong>Butler and cross-IMPs:</strong> the tactics are the same, but you are compared with the field's average. Normal contracts that make give steady plus scores.</li></ul>
+<h3 id="taktik-kamppoint">Victory points</h3>
+<ul><li><strong>The scale tapers off.</strong> The first IMPs are worth the most. A 20-IMP win in a 40-board match gives 13.44 VP; tripling it to 60 IMPs gives only 4.40 VP more (17.84).</li><li><strong>Ahead late in the match:</strong> play normally and safely. Bid the games and slams the field bids, and avoid sacrifices and speculative doubles.</li><li><strong>Behind late in the match:</strong> take chances. Bid the thin games and slams, and try the unusual lead or the brave double; you need swings.</li><li><strong>In a long event</strong> the total victory points count. Avoid the big losses, and the results will follow.</li></ul>
+<nav class="afslut" aria-label="Next"><a href="#handicap"><span>Next:</span> Handicap</a><a href="#top">Back to top</a></nav>
+</section>
+<section class="afsnit" aria-labelledby="handicap">
+<h2 id="handicap"><span class="nr">6</span> Handicap</h2>
+<h3 id="dbf-s-handicapsystem">DBf's handicap system</h3>
+<ul><li><strong>Every member of the Danish Bridge Federation (DBf) has a handicap,</strong> and the lower it is, the better you have done. The maximum is 52, and new members normally start there (a player who is not a beginner can be given a different starting handicap).</li><li><strong>The handicap is adjusted after every event,</strong> up or down depending on how you did compared with what was expected. All events adjust it except knockout matches such as the Danish Cup.</li><li><strong>The system is relative:</strong> when some players go down, others go up.</li></ul>
+<h3 id="handicap-parturnering">Pairs</h3>
+<ol><li><strong>The event's average handicap</strong> is the average of all players' handicaps.</li><li><strong>The pair handicap</strong> is the average of the two players' handicaps.</li><li><strong>Expected score:</strong> a pair with a lower handicap than the event average is expected to score above 50 %, a pair with a higher one below. One handicap unit corresponds to about ½ percentage point; a ten-unit difference gives about 5 percentage points.</li><li><strong>Adjustment:</strong> if the pair scores better than expected, both players go down by the same amount; if worse, they go up. Over 24 boards, 10 percentage points better than expected means about one handicap unit down.</li></ol>
+<p>The number of pairs, tables and boards matters: a small event is more random, so it moves the handicap less per board.</p>
+<h3 id="handicap-et-eksempel">An example</h3>
+<p>From DBf's fact sheet: six pairs, average handicap 22.23.</p>
+<div class="tabel"><table><thead><tr><th scope="col">Pair</th><th scope="col">Pair handicap</th><th scope="col">Expected</th><th scope="col">Achieved</th><th scope="col">Adjustment</th></tr></thead><tbody><tr><td>Ole – Bente (22.00 and 28.00)</td><td>25.00</td><td>48.34 %</td><td>64.17 %</td><td>−0.90</td></tr><tr><td>Birthe – Else (26.61 and 43.69)</td><td>35.15</td><td>42.25 %</td><td>62.50 %</td><td>−1.15</td></tr><tr><td>Lene – Jytte (17.03 and 45.03)</td><td>31.03</td><td>44.72 %</td><td>47.50 %</td><td>−0.16</td></tr><tr><td>Ole – Jette (13.00 and 13.00)</td><td>13.00</td><td>55.54 %</td><td>46.67 %</td><td>+0.50</td></tr><tr><td>Henrik – Tove (16.11 and 6.64)</td><td>11.37</td><td>56.51 %</td><td>44.17 %</td><td>+0.70</td></tr><tr><td>Inga – Jørgen (17.50 and 18.17)</td><td>17.84</td><td>52.64 %</td><td>35.00 %</td><td>+1.00</td></tr></tbody></table></div>
+<p>The event has 3 tables and 30 boards. Lene and Jytte scored below average (47.50 %), but better than the 44.72 % they were expected to score, so they go down 0.16. Ole and Bente go from 22.00 and 28.00 to 21.10 and 27.10. (The fact sheet gives 56.61 % for Henrik and Tove; the formula gives 56.51 %.)</p>
+<div class="beregner" id="beregner-handicap" role="group" aria-labelledby="beregner-handicap-h">
+<p class="beregner-k" data-en="Try it yourself">Prøv selv</p>
+<h3 class="beregner-h" id="beregner-handicap-h" data-en="Handicap calculator">Handicapberegner</h3>
+<form class="felter" data-beregner="handicap" novalidate><label class="felt"><span data-en="Handicap, player 1">Handicap, spiller 1</span><input name="h1" inputmode="decimal" autocomplete="off" value="22,00"></label><label class="felt"><span data-en="Handicap, player 2">Handicap, spiller 2</span><input name="h2" inputmode="decimal" autocomplete="off" value="28,00"></label><label class="felt"><span data-en="Average handicap of the event">Turneringens gennemsnitshandicap</span><input name="gennemsnit" inputmode="decimal" autocomplete="off" value="22,23"></label><label class="felt"><span data-en="Or every player's handicap (replaces the average)">Eller alle spilleres handicap (erstatter gennemsnittet)</span><textarea name="alle" rows="2" autocomplete="off"></textarea></label><label class="felt"><span data-en="Pairs">Antal par</span><input name="par" inputmode="numeric" autocomplete="off" value="6"></label><label class="felt"><span data-en="Boards">Antal spil</span><input name="spil" inputmode="numeric" autocomplete="off" value="30"></label><fieldset class="felt-valg"><legend data-en="Scoring">Opgørelse</legend><div class="valg-raekke"><label class="valg"><input type="radio" name="opg" value="matchpoint" checked><span data-en="Matchpoints">Matchpoint</span></label><label class="valg"><input type="radio" name="opg" value="imp"><span data-en="IMPs">Imp</span></label></div></fieldset><label class="felt-flueben"><input type="checkbox" name="butler"><span data-en="Datum scoring (Butler)">Datumscore (Butler)</span></label><label class="felt"><span data-en="Result achieved (per cent, or IMPs per board) – optional">Opnået (procent eller imp pr. spil) – valgfrit</span><input name="opnaaet" inputmode="decimal" autocomplete="off" value="64,17"></label></form><div class="svar" aria-live="polite" data-svar="handicap"></div>
+</div>
+<h3 id="matematikken">The mathematics</h3>
+<details class="fold"><summary><span class="fold-k">For the curious</span> The formulas</summary><div class="fold-indhold">
+<p>DBf's handicap regulations (2017, section 5) are based on the Swedish federation's system. For a pairs event with <em>N</em>ₚ pairs, <em>N</em>_B tables and <em>N</em>_G boards:</p>
+<p><strong>Expected score</strong> in percent:</p>
+<p>r̂ = 50 + (average pair handicap − pair handicap) / (<em>C</em>ᵤ × <em>C</em>ₖ × <em>C</em>_b)</p>
+<p><strong>Adjustment</strong> for each of the two players:</p>
+<p>Δh = [(1 − 1/480 × (<em>N</em>_B − 1) / (<em>N</em>_B + <em>S</em>))^<em>N</em>_G − 1] × <em>C</em>ᵤ × <em>C</em>ₖ × <em>C</em>_b × (r − r̂)</p>
+<div class="tabel"><table><thead><tr><th scope="col">Factor</th><th scope="col">Pairs, matchpoints</th><th scope="col">Events scored in IMPs</th></tr></thead><tbody><tr><td><em>S</em> (spread)</td><td>0.6</td><td>0.1</td></tr><tr><td><em>C</em>_b (percent or IMPs per handicap unit)</td><td>2</td><td>12</td></tr><tr><td><em>C</em>ᵤ (dilution)</td><td>(<em>N</em>ₚ − 1) / <em>N</em>ₚ; 1 with datum scoring</td><td>same</td></tr><tr><td><em>C</em>ₖ (ownership of the result)</td><td>1 for pairs, ½ for teams, 2 for individuals</td><td>same</td></tr></tbody></table></div>
+<p>In IMPs, r and r̂ are measured in IMPs per board and per comparison. The formula gives exactly the fact sheet's figures. With 1/480, old results are phased out slowly: after 480 boards (about 20 club evenings) around a third of the handicap still comes from older results. The handicap cannot go above 52, so the changes only add up to 0 when nobody hits the ceiling.</p>
+</div></details>
+<h3 id="handicapturnering">Handicap events</h3>
+<p>The event is played as normal, but the prizes go to the pairs who did best relative to their handicap, that is, lowered it the most. Master points (bronze points) are still awarded on the normal ranking.</p>
+<h3 id="handicap-holdturnering">Teams</h3>
+<ul><li><strong>With multi-team scoring</strong> each pair in the team gets a pair handicap, and the adjustment is made after each half based on the pair's own handicap and that of the opposing pair.</li><li><strong>Without multi-team scoring</strong> the team gets a team handicap (the average of the four players), and the team with the lower one is expected to win. The adjustment is made after the match.</li></ul>
+<p>Knockout matches, Monrad events, home-made movements and individual events do not adjust handicaps. Corrections made within 14 days of the results being entered in BridgeCentral are recalculated automatically.</p>
+<p>Results and your own handicap can be followed under the Handicap tab on your club's website.</p>
+<nav class="afslut" aria-label="Next"><a href="#top">Back to top</a></nav>
+</section>
+<section class="kilder" aria-labelledby="kilder"><h2 id="kilder">Sources</h2><ul><li>Appendices D and E of "2 over 1 – Moderne majorstøtte" (Frank and Makker 2).</li><li>"Beregning af score i en parturnering", Nyt fra Ruder Es no. 50, May 1992.</li><li>Danish Bridge Federation: Kamppoint for 40 spil (victory points for 40 boards), bridge.dk/4000/Kamppointskala.html.</li><li>Danish Bridge Federation: DBf's handicapsystem, fact sheet November 2017, and Handicapreglement (handicap regulations), 2 January 2017.</li><li>Danish Bridge Federation: DBf's turneringsbestemmelser – håndbog for turneringsledere (tournament regulations, directors' handbook), valid from 1 September 2025 (§ X78, § 201–206, § 211, § 221–223).</li><li>Danish Bridge Federation: Lovene for turneringsbridge 2017 (Danish edition of the Laws, in force from 1 September 2017), Laws 12C2, 77 and 78.</li><li>WBF: Laws of Duplicate Bridge 2017 (scoring table, Law 77) and the WBF Victory Point Scales (2013).</li></ul></section>
+  </template>
 
   <footer class="footer">
     <div class="footer-top">
@@ -440,8 +626,9 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 
 <script>
 /* Sprog som på forsiden, Om mig og ordbogen: dansk som standard, engelsk med knappen; valget gemmes under 'lang', og
-   ?lang=en eller ?lang=da virker også. Indtil Frank leverer den engelske tekst, er beregnerne og navigationen på
-   engelsk og teksten på dansk med en linje øverst (SPEC-scoring.md, Sprog). */
+   ?lang=en eller ?lang=da virker også. På engelsk sættes den engelske tekst og indholdsfortegnelse ind fra deres
+   <template> (SPEC-scoring.md, leverancetrin 3), før data-en-teksterne skiftes, og før beregnerne og indholdsfortegnelsen
+   kobles til. Overskrifterne har de samme id'er på begge sprog, så et anker i adressen virker på begge. */
 (function () {
   var lang = 'da';
   try { if (localStorage.getItem('lang') === 'en') lang = 'en'; } catch (e) {}
@@ -450,11 +637,11 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   var EN = lang === 'en';
   document.documentElement.lang = lang;
   if (EN) {
+    document.getElementById('toc-liste').replaceChildren(document.getElementById('toc-en').content.cloneNode(true));
+    document.getElementById('tekst').replaceChildren(document.getElementById('tekst-en').content.cloneNode(true));
     document.title = 'Scoring in bridge – Kontraktbridge';
     document.querySelectorAll('[data-en]').forEach(function (el) { el.innerHTML = el.getAttribute('data-en'); });
     document.querySelectorAll('[data-en-aria]').forEach(function (el) { el.setAttribute('aria-label', el.getAttribute('data-en-aria')); });
-    document.getElementById('snart').hidden = false;
-    document.querySelectorAll('.tekst .afsnit, .tekst .kilder, .sc-lead').forEach(function (el) { el.setAttribute('lang', 'da'); });
   }
   var btn = document.getElementById('langBtn');
   btn.textContent = EN ? 'Dansk' : 'English';
@@ -490,6 +677,11 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
     maal.forEach(function (el) { if (el) io.observe(el); });
   }
   window.addEventListener('scroll', marker, { passive: true });
+  // Den engelske tekst er sat ind efter den danske; gå til ankeret i adressen igen, så det er den engelske overskrift
+  if (EN && location.hash) {
+    var anker = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+    if (anker) anker.scrollIntoView({ behavior: 'instant', block: 'start' });
+  }
   marker();
 })();
 </script>
@@ -596,17 +788,18 @@ function regnImp() {
   if (s1 === null || Number.isNaN(s1) || Number.isNaN(s2)) { svar('imp').innerHTML = fejl(T('Skriv to scorer eller én forskel.', 'Enter two scores or one difference.')); return; }
   const forskel = s2 === null ? s1 : s1 - s2;
   const imp = B.imp(forskel);
-  svar('imp').innerHTML = `<p class="svar-tal">${tal(imp, 0, true)} imp</p><p class="svar-tekst">`
+  const impOrd = T('imp', Math.abs(imp) === 1 ? 'IMP' : 'IMPs');
+  svar('imp').innerHTML = `<p class="svar-tal">${tal(imp, 0, true)} ${impOrd}</p><p class="svar-tekst">`
     + (s2 === null ? T(`Forskellen ${tal(forskel, 0, true)}`, `A difference of ${tal(forskel, 0, true)}`)
       : `${tal(s1, 0, true)} − ${s2 < 0 ? '(' + tal(s2) + ')' : tal(s2, 0, true)} = ${tal(forskel, 0, true)}`)
-    + T(' giver ', ' gives ') + `${tal(imp, 0, true)} imp.</p>`;
+    + T(' giver ', ' gives ') + `${tal(imp, 0, true)} ${impOrd}.</p>`;
 }
 function regnKp() {
   const f = form('imp');
   const m = tilTal(f.elements.kimp.value), spil = tilTal(f.elements.spil.value);
   markér(f.elements.kimp, m !== null && Number.isFinite(m));
   markér(f.elements.spil, Number.isInteger(spil) && spil >= 4 && spil <= 128);
-  if (m === null || Number.isNaN(m)) { svar('kp').innerHTML = fejl(T('Skriv kampens imp-forskel.', 'Enter the imp difference of the match.')); return; }
+  if (m === null || Number.isNaN(m)) { svar('kp').innerHTML = fejl(T('Skriv kampens imp-forskel.', 'Enter the IMP difference of the match.')); return; }
   const r = B.kp(m, spil, lang);
   if (r.fejl) { svar('kp').innerHTML = fejl(r.fejl); return; }
   const a = Math.abs(r.imp);
@@ -617,9 +810,9 @@ function regnKp() {
     rækker.push(`<tr${x === a ? ' aria-current="true"' : ''}><td>${x}</td><td>${tal(k.vinder, 2)}</td><td>${tal(k.taber, 2)}</td></tr>`);
   }
   svar('kp').innerHTML = `<p class="svar-tal">${tal(r.vinder, 2)} – ${tal(r.taber, 2)}</p>`
-    + `<p class="svar-tekst">${a} imp ${T('i', 'in')} ${spil} ${T('spil', 'boards')}${m !== r.imp ? T(` (${tal(m, 1)} afrundet til ${r.imp})`, ` (${tal(m, 1)} rounded to ${r.imp})`) : ''}: `
-    + `${T('vinderen får', 'the winner gets')} ${tal(r.vinder, 2)} KP, ${T('taberen', 'the loser')} ${tal(r.taber, 2)} KP.</p>`
-    + `<div class="tabel"><table><thead><tr><th scope="col">${T('Imp-forskel', 'Imp difference')}</th><th scope="col">${T('Vinder', 'Winner')}</th><th scope="col">${T('Taber', 'Loser')}</th></tr></thead><tbody>${rækker.join('')}</tbody></table></div>`;
+    + `<p class="svar-tekst">${a} ${T('imp', a === 1 ? 'IMP' : 'IMPs')} ${T('i', 'in')} ${spil} ${T('spil', 'boards')}${m !== r.imp ? T(` (${tal(m, 1)} afrundet til ${r.imp})`, ` (${tal(m, 1)} rounded to ${r.imp})`) : ''}: `
+    + `${T('vinderen får', 'the winner gets')} ${tal(r.vinder, 2)} ${T('KP', 'VP')}, ${T('taberen', 'the loser')} ${tal(r.taber, 2)} ${T('KP', 'VP')}.</p>`
+    + `<div class="tabel"><table><thead><tr><th scope="col">${T('Imp-forskel', 'IMP difference')}</th><th scope="col">${T('Vinder', 'Winner')}</th><th scope="col">${T('Taber', 'Loser')}</th></tr></thead><tbody>${rækker.join('')}</tbody></table></div>`;
 }
 
 // Handicapberegner
@@ -642,7 +835,7 @@ function regnHandicap() {
   const r = B.handicap({ h1, h2, gennemsnit: alle ? undefined : gennemsnitHc, alle: alle || undefined, par, spil, opgørelse: imp ? 'imp' : 'matchpoint',
     opnået: opnået === null ? undefined : opnået, butler: imp && f.elements.butler.checked }, lang);
   if (r.fejl) { svar('handicap').innerHTML = fejl(r.fejl); return; }
-  const enhed = imp ? T(' imp pr. spil', ' imps per board') : ' %';
+  const enhed = imp ? T(' imp pr. spil', ' IMPs per board') : ' %';
   let html = `<ul><li><span>${T('Gennemsnitshandicap', 'Average handicap')}</span><span>${tal(r.gennemsnit, 2)}</span></li>`
     + `<li><span>${T('Parhandicap', 'Pair handicap')}</span><span>${tal(r.parhandicap, 2)}</span></li>`
     + `<li><span>${T('Forventet score', 'Expected score')}</span><span>${tal(r.forventet, 2)}${enhed}</span></li>`;

@@ -157,9 +157,20 @@ class LinksTilScoring(unittest.TestCase):
     """Leverancetrin 5 i SPEC-scoring.md: opslagene linker til Scoring i bridge via tools/data/ordbog-scoring.json."""
 
     TABEL = ROD / 'tools' / 'data' / 'ordbog-scoring.json'
-    FORVENTET = {'matchpoint': 'matchpoint', 'imp': 'imp-skalaen', 'kamppoint': 'kamppoint', 'butler-beregning': 'butler',
-                 'zonestilling': 'bonus', 'udgang': 'bonus', 'slem': 'bonus', 'dobling': 'doblet-og-redoblet-kontrakt-hjemme',
-                 'handicap': 'handicap'}
+    # Franks tabel (27. oktober 2026): specens ni emner med hans rettelser og tilføjelser. Dobling og Redobling linker ikke.
+    FORVENTET = {
+        'matchpoint': 'matchpoint', 'imp': 'imp-skalaen', 'international-matchpoints': 'imp-skalaen', 'kamppoint': 'kamppoint',
+        'vp-skala': 'kamppoint', 'butler-beregning': 'butler', 'datum': 'butler', 'cross-imp': 'cross-imp',
+        'board-a-match-bam': 'board-a-match', 'handicap': 'handicap',
+        'zonestilling': 'scoren-for-et-spil', 'i-zonen': 'scoren-for-et-spil', 'uden-for-zonen': 'scoren-for-et-spil',
+        'alle-i-zonen': 'scoren-for-et-spil',
+        'udgang': 'bonus', 'slem': 'bonus', 'delkontrakt': 'bonus', 'bonuspoint': 'bonus', 'lilleslem': 'bonus', 'storeslem': 'bonus',
+        'doblet-kontrakt': 'doblet-og-redoblet-kontrakt-hjemme', 'redoblet-kontrakt': 'doblet-og-redoblet-kontrakt-hjemme',
+        'stikpoint': 'stikpoint', 'overstik': 'overstik', 'overstikspoint': 'overstik',
+        'middelscore': 'middelscoremetoden', 'middelscore-plus': 'manglende-resultater-og-kunstig-score',
+        'middelscore-minus': 'manglende-resultater-og-kunstig-score', 'korrigeret-score': 'manglende-resultater-og-kunstig-score',
+        'top': '2-1-0', 'bund': '2-1-0', 'procentscore': 'procent',
+    }
 
     @classmethod
     def setUpClass(cls):
@@ -167,9 +178,12 @@ class LinksTilScoring(unittest.TestCase):
         cls.scoring = (ROD / 'scoring' / 'index.html').read_text(encoding='utf-8')
         cls.opslag = {m.group(1): m.group(0) for m in re.finditer(r'<article class="entry" id="([^"]+)".*?</article>', cls.html, re.S)}
 
-    def test_tabellen_har_de_ni_emner_fra_specen(self):
+    def test_tabellen_er_franks(self):
         links = json.loads(self.TABEL.read_text(encoding='utf-8'))['links']
+        self.assertEqual(len(links), len(self.FORVENTET))
         self.assertEqual({x['opslag']: x['anker'] for x in links}, self.FORVENTET)
+        self.assertNotIn('dobling', self.FORVENTET)
+        self.assertNotIn('redobling', self.FORVENTET)
 
     def test_opslagene_linker_til_ankrene_paa_scoringssiden(self):
         for opslag, anker in self.FORVENTET.items():
@@ -179,13 +193,15 @@ class LinksTilScoring(unittest.TestCase):
             self.assertIn(f'<a href="/scoring/#{anker}">', m.group(1), opslag)
             self.assertIn('<span data-en="In Scoring in bridge">I Scoring i bridge</span>', m.group(1), opslag)
 
-    def test_kun_de_ni_opslag_har_linket(self):
+    def test_kun_tabellens_opslag_har_linket(self):
         med = sorted(i for i, a in self.opslag.items() if '/scoring/#' in a)
         self.assertEqual(med, sorted(self.FORVENTET))
 
     def test_linkteksten_er_overskriften_ved_ankeret(self):
         for opslag, tekst in (('kamppoint', 'Kamppoint'), ('matchpoint', 'Parturnering: matchpoint'), ('handicap', 'Handicap'),
-                              ('dobling', 'Doblet og redoblet kontrakt hjemme'), ('imp', 'Imp-skalaen'), ('butler-beregning', 'Butler')):
+                              ('doblet-kontrakt', 'Doblet og redoblet kontrakt hjemme'), ('imp', 'Imp-skalaen'), ('butler-beregning', 'Butler'),
+                              ('top', '2/1/0'), ('zonestilling', 'Scoren for et spil'), ('middelscore', 'Middelscoremetoden: +1/0/−1'),
+                              ('korrigeret-score', 'Manglende resultater og kunstig score'), ('cross-imp', 'Cross-imp (imps across the field)')):
             self.assertRegex(self.opslag[opslag], rf'<a href="/scoring/#[^"]+">{re.escape(tekst)}</a>', opslag)
 
 

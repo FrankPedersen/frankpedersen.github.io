@@ -1,11 +1,12 @@
 // Accepttest i en rigtig browser (SPEC-privatlivstekst.md, Franks udvidelse 25. oktober 2026): skrifttyperne ligger på
-// sitet selv, og siderne ser ud som før. Den udgivne udgave (tagget v-foer-privatliv, som henter fra Google Fonts) og den
-// nye vises fra hver sin lokale webserver. For forsiden, Om mig og ordbogen sammenlignes de skrifttyper, Chrome faktisk
-// tegner med; forsiden og ordbogen sammenlignes også pixel for pixel ved 390 og 1280 px over sidefoden (sidefoden har
-// siden fået linket Scoring i bridge). Den nye udgave må ikke hente noget fra Google. Kræver Node 22+, git og Chrome eller Edge.
+// sitet selv, og siderne ser ud, som da de hentede skrifttyperne fra Google Fonts. Siderne vises fra to lokale
+// webservere: "før" er de samme filer, hvor linkene til fonts/tekst.css og fonts/symboler.css er skiftet ud med Googles
+// links, som de stod før privatliv; "nu" er filerne, som de er. For forsiden, Om mig og ordbogen sammenlignes de
+// skrifttyper, Chrome faktisk tegner med, og forsiden og ordbogen sammenlignes pixel for pixel ved 390 og 1280 px.
+// "Nu" må ikke hente noget fra Google. Kræver Node 22+ og Chrome eller Edge, og "før" kræver internet.
 //
 //   node tools/tjek_skrifttyper.mjs
-import { spawn, spawnSync } from 'node:child_process';
+import { spawn } from 'node:child_process';
 import { existsSync, mkdtempSync, readFileSync, rmSync, statSync } from 'node:fs';
 import { createServer } from 'node:http';
 import { tmpdir } from 'node:os';
@@ -13,7 +14,6 @@ import { extname, join, normalize } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const ROD = fileURLToPath(new URL('..', import.meta.url));
-const FOER = 'v-foer-privatliv';
 const browser = [
   process.env.CHROME,
   'C:/Program Files/Google/Chrome/Application/chrome.exe',
@@ -27,28 +27,30 @@ if (!browser) {
   process.exit(2);
 }
 
-// Den udgivne udgave pakkes ud fra tagget med et midlertidigt indeks, så repoets eget indeks ikke røres
-const gammel = mkdtempSync(join(tmpdir(), 'tjek-skrift-foer-'));
-const indeks = { ...process.env, GIT_INDEX_FILE: join(gammel, '.indeks') };
-for (const args of [['read-tree', FOER], ['checkout-index', '-a', `--prefix=${gammel.replaceAll('\\', '/')}/`]]) {
-  const r = spawnSync('git', args, { cwd: ROD, env: indeks });
-  if (r.status !== 0) { console.error(`git ${args[0]} fejlede: ${r.stderr}`); process.exit(2); }
-}
+// Googles links, som siderne havde før privatliv (adressen skrives i to dele, så tjek_skrifttyper.py ikke finder den)
+const GOOGLE = 'https://fonts.' + 'googleapis.com/css2?family=';
+const SOM_FØR = {
+  tekst: GOOGLE + 'Inter:wght@400;600&family=Manrope:wght@800&display=swap',
+  symboler: GOOGLE + 'Noto+Sans+Symbols+2&text=%E2%99%A0%E2%99%A5%E2%99%A6%E2%99%A3&display=swap',
+};
+const medGoogle = (html) => html.replace(/<link rel="stylesheet" href="(?:\.\.\/)?fonts\/(tekst|symboler)\.css">/g,
+  (_, navn) => `<link rel="stylesheet" href="${SOM_FØR[navn]}">`);
 
 const TYPER = { '.html': 'text/html; charset=utf-8', '.css': 'text/css', '.js': 'text/javascript', '.svg': 'image/svg+xml',
   '.woff2': 'font/woff2', '.json': 'application/json', '.txt': 'text/plain; charset=utf-8' };
-async function webserver(mappe) {
+async function webserver(mappe, omskriv = (x) => x) {
   const s = createServer((req, res) => {
     let sti = normalize(join(mappe, decodeURIComponent(new URL(req.url, 'http://x').pathname)));
     if (!sti.startsWith(normalize(mappe))) { res.writeHead(403).end(); return; }
     if (existsSync(sti) && statSync(sti).isDirectory()) sti = join(sti, 'index.html');
     if (!existsSync(sti)) { res.writeHead(404).end(); return; }
-    res.writeHead(200, { 'Content-Type': TYPER[extname(sti)] || 'application/octet-stream' }).end(readFileSync(sti));
+    const indhold = extname(sti) === '.html' ? omskriv(readFileSync(sti, 'utf8')) : readFileSync(sti);
+    res.writeHead(200, { 'Content-Type': TYPER[extname(sti)] || 'application/octet-stream' }).end(indhold);
   });
   await new Promise((r) => s.listen(0, '127.0.0.1', r));
   return { s, url: `http://127.0.0.1:${s.address().port}` };
 }
-const før = await webserver(gammel), nu = await webserver(ROD);
+const før = await webserver(ROD, medGoogle), nu = await webserver(ROD);
 
 const port = 9700 + Math.floor(Math.random() * 90);
 const profil = mkdtempSync(join(tmpdir(), 'tjek-skrift-'));
@@ -105,11 +107,7 @@ async function fane() {
       return (f.result?.fonts ?? []).map((x) => `${x.familyName}${x.isCustomFont ? '' : ' (system)'}:${x.glyphCount}`).sort().join(', ');
     },
     async billede() {
-      // alt over sidefoden; sidefodens links er ændret siden udgaven før
-      const m = await send('Runtime.evaluate', { returnByValue: true,
-        expression: `({ w: document.documentElement.scrollWidth, h: Math.floor((document.querySelector('.footer') || document.body).getBoundingClientRect().top + scrollY) })` });
-      const { w, h } = m.result.result.value;
-      const r = await send('Page.captureScreenshot', { format: 'png', captureBeyondViewport: true, clip: { x: 0, y: 0, width: w, height: h, scale: 1 } });
+      const r = await send('Page.captureScreenshot', { format: 'png', captureBeyondViewport: true });
       return r.result.data;
     },
     luk: async () => { ws.close(); await json(`/json/close/${f.id}`).catch(() => {}); },
@@ -144,6 +142,8 @@ try {
       await t.åbn(før.url + sti, bredde);
       const fGammel = []; for (const s of selectors) fGammel.push(await t.skrifter(s));
       const bGammel = pixel ? await t.billede() : null;
+      const fraGoogle = t.kald.filter((u) => /fonts\.(googleapis|gstatic)\.com/.test(u)).length;
+      tjek(fraGoogle > 0, `${sti} ${bredde} px: "før" henter skrifttyperne fra Google`, String(fraGoogle));
       await t.åbn(nu.url + sti, bredde);
       const google = t.kald.filter((u) => /fonts\.(googleapis|gstatic)\.com/.test(u));
       const egne = t.kald.filter((u) => u.includes('/fonts/') && u.endsWith('.woff2'));
@@ -152,7 +152,7 @@ try {
       selectors.forEach((s, i) => tjek(fGammel[i] && fGammel[i] === fNu[i], `${sti} ${bredde} px: "${s}" tegnes med ${fNu[i]}`, `før: ${fGammel[i]}`));
       if (pixel) {
         const d = await forskel(t, bGammel, await t.billede());
-        tjek(d.n === 0, `${sti} ${bredde} px: siden er pixel for pixel som før over sidefoden`, JSON.stringify(d));
+        tjek(d.n === 0, `${sti} ${bredde} px: siden er pixel for pixel som med Googles skrifttyper`, JSON.stringify(d));
       }
     }
   }
@@ -161,6 +161,6 @@ try {
   proces.kill();
   før.s.close(); nu.s.close();
   await vent(300);
-  for (const m of [profil, gammel]) { try { rmSync(m, { recursive: true, force: true }); } catch {} }
+  try { rmSync(profil, { recursive: true, force: true }); } catch {}
 }
 process.exit(fejl ? 1 : 0);

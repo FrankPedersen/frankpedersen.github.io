@@ -430,7 +430,7 @@ Results and your own handicap can be followed under the Handicap tab on your clu
 
 ---
 
-## 7 Beregnere på siden
+## 7 Calculators on this page
 
 Each calculator sits in the section it belongs to and is also listed under Calculators at the top of the page.
 

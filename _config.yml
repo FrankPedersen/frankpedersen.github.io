@@ -1,0 +1,11 @@
+# GitHub Pages (Jekyll): kun siderne og det, de bruger, udgives på www.kontraktbridge.dk (SPEC-kun-siden.md, Franks
+# valg 28. oktober 2026). Udviklerfilerne, specerne og markdownkilderne til ordbogen og Scoring i bridge ligger på
+# GitHub, men ikke på hjemmesiden. Filer og mapper, der begynder med _ eller . (fx _kontakt-api/), udgives ikke i forvejen.
+exclude:
+  - CLAUDE.md
+  - tools
+  - docs
+  - SPEC-*.md
+  - .claude
+  - ordbog/*.md
+  - scoring/*.md

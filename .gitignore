@@ -3,7 +3,7 @@
 SPEC-*.md
 __pycache__/
 
-# Systemdokumentationen er privat og ligger kun lokalt (Franks valg 25. oktober 2026)
+# Systemdokumentationen er privat (Franks valg 25. oktober 2026). Den ligger nu i ../SYSTEM.md uden for repoet; linjen bliver, så en kopi her aldrig kommer på GitHub
 docs/SYSTEM.md
 
 # Afsluttede specer er også private og ligger kun lokalt (Franks valg 27. oktober 2026)

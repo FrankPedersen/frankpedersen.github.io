@@ -1,5 +1,6 @@
 """Accepttest for privatlivsteksten på Om mig, den private systemdokumentation og reglen i CLAUDE.md
-(SPEC-privatlivstekst.md).
+(SPEC-privatlivstekst.md). Fra 28. oktober 2026 ligger systemdokumentationen og reglen i mappen Kontraktbridge uden
+for repoerne (../SYSTEM.md og ../CLAUDE.md), og repoernes CLAUDE.md henviser dertil.
 
     python tools/tjek_privatliv.py
 
@@ -14,7 +15,7 @@ import unittest
 
 ROD = pathlib.Path(__file__).resolve().parent.parent
 SIDE = ROD / 'om-mig' / 'index.html'
-SYSTEM = ROD / 'docs' / 'SYSTEM.md'
+SYSTEM = ROD.parent / 'SYSTEM.md'
 FOER = 'v-foer-privatliv'
 
 DANSK = ('Om dine oplysninger. Når du sender en besked, går dit navn, din e-mail og din besked gennem Microsoft Azure '
@@ -30,9 +31,10 @@ ENGELSK = ('About your information. When you send a message, your name, e-mail a
            'your message. If you want to know what I hold about you, or want it deleted sooner, write to me here. '
            'Data controller: Frank Pedersen.')
 
-# Reglen i CLAUDE.md (specen, med Franks valg 25. oktober 2026: filen er privat og ligger kun lokalt)
-REGEL = ['**Systemdokumentation:**', 'docs/SYSTEM.md', 'beslutningsloggen og datoen øverst',
+# Reglen i den fælles CLAUDE.md (specen, med Franks valg 25. oktober 2026: filen er privat og ligger kun lokalt)
+REGEL = ['**Systemdokumentation:**', '`SYSTEM.md`', 'beslutningsloggen og datoen øverst',
          'Hemmeligheder skrives aldrig i filen.']
+HENVISNING = '`../CLAUDE.md`'
 
 
 def ren(tekst):
@@ -108,12 +110,15 @@ class Teksten(unittest.TestCase):
 
 
 class Systemdokumentationen(unittest.TestCase):
-    def test_docs_system_md_findes(self):
+    def test_system_md_findes(self):
         self.assertTrue(SYSTEM.is_file())
 
     def test_den_er_privat_og_kommer_ikke_paa_github(self):
+        # Mappen Kontraktbridge er ikke et git-repo, så SYSTEM.md kan ikke committes
+        uden_for = subprocess.run(['git', 'rev-parse', '--git-dir'], cwd=SYSTEM.parent, capture_output=True)
+        self.assertNotEqual(uden_for.returncode, 0, f'{SYSTEM.parent} er et git-repo')
+        self.assertFalse((ROD / 'docs' / 'SYSTEM.md').exists(), 'docs/SYSTEM.md ligger stadig i repoet')
         self.assertEqual(git('check-ignore', '-q', 'docs/SYSTEM.md').returncode, 0, 'docs/SYSTEM.md står ikke i .gitignore')
-        self.assertEqual(git('ls-files', 'docs/SYSTEM.md').stdout.strip(), '')
         self.assertEqual(git('ls-files', '--cached', 'docs').stdout.strip(), '')
 
     def test_ingen_hemmeligheder(self):
@@ -124,10 +129,14 @@ class Systemdokumentationen(unittest.TestCase):
 
 
 class Reglen(unittest.TestCase):
-    def test_claude_md_i_dette_repo(self):
-        tekst = (ROD / 'CLAUDE.md').read_text(encoding='utf-8')
+    def test_den_faelles_claude_md(self):
+        tekst = (ROD.parent / 'CLAUDE.md').read_text(encoding='utf-8')
         for del_ in REGEL:
             self.assertIn(del_, tekst)
+
+    def test_claude_md_i_dette_repo(self):
+        tekst = (ROD / 'CLAUDE.md').read_text(encoding='utf-8')
+        self.assertIn(HENVISNING, tekst)
         # CLAUDE.md committes (Franks valg): den må ikke stå i .gitignore
         self.assertNotEqual(git('check-ignore', '-q', 'CLAUDE.md').returncode, 0, 'CLAUDE.md står i .gitignore')
 
@@ -136,10 +145,7 @@ class Reglen(unittest.TestCase):
             sti = ROD.parent / repo / 'CLAUDE.md'
             if not sti.exists():
                 self.skipTest(f'{repo} ligger ikke ved siden af dette repo')
-            tekst = sti.read_text(encoding='utf-8')
-            for del_ in REGEL:
-                self.assertIn(del_, tekst, repo)
-            self.assertIn('githubUpload', tekst, repo)
+            self.assertIn(HENVISNING, sti.read_text(encoding='utf-8'), repo)
 
 
 if __name__ == '__main__':

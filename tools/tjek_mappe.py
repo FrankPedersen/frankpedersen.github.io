@@ -41,6 +41,10 @@ def claude_md(repo):
     return (MAPPE / repo / 'CLAUDE.md').read_text(encoding='utf-8')
 
 
+def linjer_med(tekst, del_):
+    return [nr for nr, linje in enumerate(tekst.splitlines(), 1) if del_ in linje]
+
+
 class GamleStier(unittest.TestCase):
     def test_ingen_fil_henviser_til_de_gamle_mapper(self):
         fund = []
@@ -51,9 +55,9 @@ class GamleStier(unittest.TestCase):
         self.assertEqual(fund, [])
 
     def test_ingen_claude_md_naevner_githubupload(self):
-        self.assertNotIn('githubUpload', (MAPPE / 'CLAUDE.md').read_text(encoding='utf-8'))
+        self.assertEqual(linjer_med((MAPPE / 'CLAUDE.md').read_text(encoding='utf-8'), 'githubUpload'), [])
         for repo in REPOER:
-            self.assertNotIn('githubUpload', claude_md(repo), repo)
+            self.assertEqual(linjer_med(claude_md(repo), 'githubUpload'), [], repo)
 
 
 class DenFaellesClaudeMd(unittest.TestCase):
@@ -92,19 +96,19 @@ class RepoernesClaudeMd(unittest.TestCase):
 
     def test_henviser_til_den_faelles(self):
         for repo in REPOER:
-            self.assertIn('`../CLAUDE.md`', claude_md(repo), repo)
+            self.assertTrue(linjer_med(claude_md(repo), '`../CLAUDE.md`'), repo)
 
     def test_gentager_ikke_det_faelles(self):
         for repo in REPOER:
             tekst = claude_md(repo)
             for del_ in self.GENTAGELSER:
-                self.assertNotIn(del_, tekst, repo)
+                self.assertEqual(linjer_med(tekst, del_), [], f'{repo}: {del_}')
 
     def test_det_repospecifikke_bliver(self):
         for repo, dele in self.REPOSPECIFIKT.items():
             tekst = claude_md(repo)
             for del_ in dele:
-                self.assertIn(del_, tekst, repo)
+                self.assertTrue(linjer_med(tekst, del_), f'{repo}: {del_}')
 
 
 class Workspace(unittest.TestCase):

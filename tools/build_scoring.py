@@ -797,7 +797,7 @@ function regnMatchpoint() {
     + `<th scope="col">+1/0/−1</th></tr></thead><tbody>${rækker}</tbody></table></div>`
     + `<p class="kontrol">${T(`Summen af +1/0/−1 er ${tal(r.sumPlusminus)}.`, `The sum of +1/0/−1 is ${tal(r.sumPlusminus)}.`)}${metode ? ' ' + esc(metode) : ''}</p>`
     + (valgt ? `<p class="forklaring">${esc(B.matchpointForklaring(valgt, lang))}${f.elements.oev.checked ? esc(T(' (ØV får det modsatte fortegn.)', ' (EW get the opposite sign.)')) : ''}</p>`
-      : `<p class="svar-tekst">${T('Tryk på en score for at se regnestykket.', 'Tap a score to see the working.')}</p>`);
+      : `<p class="svar-tekst">${T('Et tryk på en score viser regnestykket.', 'Tapping a score shows the working.')}</p>`);
   svar('matchpoint').querySelectorAll('[data-række]').forEach((b) => b.addEventListener('click', () => {
     valgtRække = Number(b.dataset.række); regnMatchpoint();
     svar('matchpoint').querySelector(`[data-række="${valgtRække}"]`).focus();

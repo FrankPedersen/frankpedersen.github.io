@@ -166,7 +166,7 @@ Once the NS pairs have their points, each EW pair gets the same number as its op
 
 ### Checking the totals
 
-1. **The NS points on each board must add up to 0.** If they do not, there is a calculation error. Check this before EW get their numbers; otherwise the error is repeated with the opposite sign and hidden.
+1. **The NS points on each board must add up to 0.** If they do not, there is a calculation error. This must be checked before EW get their numbers; otherwise the error is repeated with the opposite sign and hidden.
 2. **When all rounds are added up,** the sum of all positive and negative numbers must again be 0.
 3. **Exceptions:** adjusted scores, for example procedural penalties (the negative sum becomes larger) and compensation (the positive sum becomes larger). A standard penalty is 10 % of the difference between top and bottom in pairs and ½ VP in a team match of at least 13 boards (DBf regulation § 211).
 
@@ -331,12 +331,12 @@ A single match (knockout) is decided directly in IMPs without victory points. If
 ### Pairs (matchpoints)
 
 - **Every board carries the same weight.** A top and a bottom average 50 %; lots of small plus scores win events.
-- **Overtricks count.** If most of the field is in the same contract, declarer plays for the most tricks, even at some risk to the contract, when that gives the best chance of the overtrick. Defenders do the opposite: save an overtrick before going all out to beat the contract.
+- **Overtricks count.** If most of the field is in the same contract, declarer plays for the most tricks, even at some risk to the contract, when that gives the best chance of the overtrick. Defenders do the opposite: they save an overtrick before going all out to beat the contract.
 - **Notrump or major.** 3NT with an overtrick (430) beats 4♠ (420), and 1NT with 8 tricks (120) beats 2♥ with 8 tricks (110). Notrump is best when the tricks are the same; the major is best when trumps give an extra trick.
 - **Minor-suit games are rare.** 5♦ (400) loses to 3NT (400 + overtricks) and to 4♥/4♠. 3NT is the first choice.
-- **Fight for the part-scores.** Do not let the opponents play at the 2-level with a fit; reopen and compete to 3 over their 2 when you have a fit. Part-score battles decide most pairs events.
+- **Part-scores are worth fighting for.** The opponents should not play at the 2-level with a fit; you reopen and compete to 3 over their 2 when you have a fit. Part-score battles decide most pairs events.
 - **The 200 points.** The opponents' part-score gives them +110 or +140. Going one down doubled vulnerable (−200) is almost always a bottom. Conversely, if you can double them one down vulnerable (+200), that beats any part-score you could have played yourselves.
-- **Sacrifices.** Not vulnerable against vulnerable opponents, three down doubled (−500) is cheaper than their game (−620). But check that they really make their game and that the rest of the field bids it.
+- **Sacrifices.** Not vulnerable against vulnerable opponents, three down doubled (−500) is cheaper than their game (−620). But first it must be certain that they make their game and that the rest of the field bids it.
 - **Normal contract.** In a good contract the field has not reached, play safe. In the same contract as the field, play for the most tricks.
 
 ### Teams (IMPs)
@@ -344,9 +344,9 @@ A single match (knockout) is decided directly in IMPs without victory points. If
 - **The contract first.** Safety plays that cost an overtrick (1 IMP) but save the contract (10–12 IMPs) are always right.
 - **Games should be bid.** Not vulnerable, a game gains 6 IMPs when it makes and loses 5 when it fails (+420 against +170 and −50 against +140), so it needs to make about 45 % of the time. Vulnerable it is +10 against −6 IMPs, so 37 % is enough.
 - **Slams.** A small slam needs about 50 % at either vulnerability. A grand slam needs 56–57 %, because you risk a certain small slam.
-- **Part-scores are small.** One part-score more or less is 2–5 IMPs. Compete, but not at any price.
-- **Do not double them into game.** 2♥ doubled and made, not vulnerable, scores 470 instead of 110, and that costs 8 IMPs. Double part-scores when you are sure they are going down.
-- **Sacrifices.** 5♦ doubled two down not vulnerable (−300) against their vulnerable 4♠ (−620) gains 8 IMPs. If it goes three down (−500), it gains only 3. And if 4♠ could have been beaten, the sacrifice loses 12 IMPs. Sacrifice only when you are sure they will make their contract.
+- **Part-scores are small.** One part-score more or less is 2–5 IMPs. It pays to compete, but not at any price.
+- **A double must not turn their part-score into game.** 2♥ doubled and made, not vulnerable, scores 470 instead of 110, and that costs 8 IMPs. Part-scores should only be doubled when you are sure they are going down.
+- **Sacrifices.** 5♦ doubled two down not vulnerable (−300) against their vulnerable 4♠ (−620) gains 8 IMPs. If it goes three down (−500), it gains only 3. And if 4♠ could have been beaten, the sacrifice loses 12 IMPs. A sacrifice is only right when you are sure they will make their contract.
 - **Butler and cross-IMPs:** the tactics are the same, but you are compared with the field's average. Normal contracts that make give steady plus scores.
 
 ### Victory points

@@ -26,7 +26,7 @@ gå gæt hent hold husk importér indsæt kig kip klik kom kopiér kryds lad luk
 nulstil opdatér overskriv prøv regn ret ryd sammenlign se send sikr skift skriv slet slå spil spring start stop svar sæt
 tag tast tjek træk tryk tæl tænk udfyld udled undgå vent vis vælg vurdér øv åbn
 træn søg filtrér skjul lær spørg indtast bekræft tilføj vend afslut overvej meld byd dobl doble genmeld genåbn kæmp ofr
-kontrollér vær bliv gør glem sørg
+kontrollér vær bliv gør glem sørg gennemgå lån sælg udskriv
 '''.split())
 
 # Knapper, links og navne, der bliver i bydeform (gruppe 1 og 2 i docs/specs/beskrivende-form.md). Et regulært udtryk

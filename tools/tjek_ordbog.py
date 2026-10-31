@@ -83,9 +83,10 @@ class Ordbogssiden(unittest.TestCase):
         bygger = hent_bygger()
         self.assertEqual(bygger.byg(KILDE.read_text(encoding='utf-8')), self.html)
 
-    def test_387_opslag_og_tallet_i_underteksten(self):
-        self.assertEqual(len(self.side.opslag), 387)
-        self.assertIn('387 bridgeord på dansk med engelsk oversættelse.', self.html)
+    def test_437_opslag_og_tallet_i_underteksten(self):
+        # Version 1.3 (SPEC-ordbog-kategorier): 387 − 1 sammenlagt + 51 nye
+        self.assertEqual(len(self.side.opslag), 437)
+        self.assertIn('437 bridgeord på dansk med engelsk oversættelse.', self.html)
 
     def test_finesse_knibning_og_kipning_finder_kipning(self):
         for q in ('finesse', 'knibning', 'kipning', 'Knibning'):
@@ -151,6 +152,129 @@ class Ordbogssiden(unittest.TestCase):
         self.assertTrue(kipning['description'].startswith('At spille mod en honnør'))
         for navn in ('Finesse', 'Knibning', 'snit'):
             self.assertIn(navn, kipning['alternateName'])
+
+
+def opslag_i_kilden():
+    """{overskrift: felter} for kildens opslag, med det afsnit (##), opslaget står under."""
+    ud, afsnit, nu = {}, None, None
+    for linje in KILDE.read_text(encoding='utf-8').splitlines():
+        if linje.startswith('## '):
+            afsnit, nu = linje[3:].strip(), None
+        elif linje.startswith('### '):
+            nu = ud.setdefault(linje[4:].strip(), {'afsnit': afsnit, 'antal': 0})
+            nu['antal'] += 1
+        elif nu is not None:
+            m = re.match(r'\*\*(.+?):\*\*(?: (.*))?$', linje)
+            if m:
+                nu[m.group(1)] = (m.group(2) or '').strip()
+    return ud
+
+
+class KategorierOgNiveauer(unittest.TestCase):
+    """Accepttest for SPEC-ordbog-kategorier.md: Franks godkendte forslag (docs/specs/ordbog-forslag.md), version 1.3."""
+
+    KATEGORIER = ['Grundlæggende begreber', 'Meldinger og meldeforløb', 'Meldesystemer og konventioner', 'Konkurrencemeldinger',
+                  'Spilføring', 'Modspil, udspil og signaler', 'Score og beregning', 'Turnering og organisering',
+                  'Love, etik og procedure', 'Onlinebridge og digitale turneringer', 'Avancerede teknikker',
+                  'Talemåder og bridgeslang']
+    # Forslagets tal for de 387 opslag, uden Princippet om begrænset valg og med de 51 nye
+    PR_KATEGORI = {'Grundlæggende begreber': 98, 'Meldinger og meldeforløb': 60, 'Meldesystemer og konventioner': 42,
+                   'Konkurrencemeldinger': 33, 'Spilføring': 44, 'Modspil, udspil og signaler': 28, 'Score og beregning': 29,
+                   'Turnering og organisering': 43, 'Love, etik og procedure': 36, 'Onlinebridge og digitale turneringer': 3,
+                   'Avancerede teknikker': 12, 'Talemåder og bridgeslang': 9}
+    PR_NIVEAU = {'begynder': 190, 'let øvet': 135, 'øvet': 94, 'avanceret': 18}
+    NYE = ['Baghånd', 'Forhånd', 'Honnørsekvens', 'Lavhonnør', 'Mellemhånd', 'Mellemkort', 'Nabohonnører',
+           'Selvspillende farve', 'Spillestærk hånd', 'Toptaber', '3-trinsraketten', 'Åbningsfarve', 'Bogmelding',
+           'Dobbeltspring', 'Enkeltstøtte', 'Melderunde', 'Misfit', 'Nødmelding / nødsans', 'Overmelding', 'Rundekrav',
+           'Springgenmelding', 'Umeldt farve', '26-33-37', '1NT-åbning', '2NT-åbning', 'Defensiven', 'Forhåndsoffermelding',
+           'Meldenød', 'Offensiven', 'Viderespærring', 'Badekup (Bath Coup)', '"Eight ever, nine never"', 'Farvebehandling',
+           'Fordelingssandsynlighed', 'Forbindelser', 'Spilleplan', 'Højt i tredje hånd', 'Honnør på honnør',
+           'Lavt i anden hånd', 'Stik ikke automatisk', 'Tilspil', 'Regnskab', 'Byttehandel', 'Fanget på det gale ben',
+           'Kort tredje / honnør anden', 'Melde i den blå luft', 'Pointrytter', 'Pokeransigt', 'Sælge ud',
+           'Unoder ved bordet', 'Urent trav']
+
+    @classmethod
+    def setUpClass(cls):
+        cls.kilde = KILDE.read_text(encoding='utf-8')
+        cls.opslag = opslag_i_kilden()
+        cls.side = læs_side()
+        cls.html = SIDE.read_text(encoding='utf-8')
+
+    def test_version_13_med_437_opslag(self):
+        self.assertIn('_Version 1.3. Ordbogen indeholder 437 kanoniske opslag._', self.kilde)
+        self.assertEqual(len(self.opslag), 437)
+
+    def test_tolv_kategorier_og_talemaader_i_filteret(self):
+        self.assertEqual([k for k in hent_bygger().parse(self.kilde)['kategorier']], self.KATEGORIER)
+        for k in self.KATEGORIER:
+            self.assertIn(f'data-filter="kategori" data-value="{k}"', self.html.replace('&#x27;', "'"), k)
+
+    def test_alle_opslag_har_kategori_og_niveau_og_staar_under_deres_afsnit(self):
+        for navn, o in self.opslag.items():
+            self.assertIn(o.get('Kategori'), self.KATEGORIER, navn)
+            self.assertIn(o.get('Niveau'), self.PR_NIVEAU, navn)
+            self.assertEqual(o['afsnit'], o['Kategori'], navn)
+
+    def test_antal_pr_kategori_og_niveau_som_i_forslaget(self):
+        for felt, forventet in (('Kategori', self.PR_KATEGORI), ('Niveau', self.PR_NIVEAU)):
+            antal = {}
+            for o in self.opslag.values():
+                antal[o[felt]] = antal.get(o[felt], 0) + 1
+            self.assertEqual(antal, forventet, felt)
+
+    def test_ingen_overskrifter_gaar_igen(self):
+        overskrifter = re.findall(r'^### (.+)$', self.kilde, re.M)
+        små = [o.lower() for o in overskrifter]
+        self.assertEqual(sorted({o for o in små if små.count(o) > 1}), [])
+
+    def test_de_51_nye_opslag(self):
+        self.assertEqual(len(self.NYE), 51)
+        for navn in self.NYE:
+            self.assertIn(navn, self.opslag, navn)
+            o = self.opslag[navn]
+            self.assertTrue(o['Kort definition'], navn)
+            self.assertEqual(o['Forklaring'], o['Kort definition'], navn)
+        self.assertEqual((self.opslag['Pokeransigt']['Kategori'], self.opslag['Pokeransigt']['Niveau']),
+                         ('Talemåder og bridgeslang', 'øvet'))
+        self.assertEqual(self.opslag['Pokeransigt']['Engelsk'], 'Poker face')
+        self.assertEqual(self.opslag['Urent trav']['Engelsk'], '')
+
+    def test_tomt_engelsk_felt_vises_ikke(self):
+        artikel = re.search(r'<article class="entry" id="urent-trav".*?</article>', self.html, re.S).group(0)
+        self.assertNotIn('data-en="English"', artikel)
+        artikel = re.search(r'<article class="entry" id="pokeransigt".*?</article>', self.html, re.S).group(0)
+        self.assertIn('<span lang="en">Poker face</span>', artikel)
+
+    def test_soegeordene_finder_opslagene(self):
+        for q, mål in (('bonde', 'knaegt'), ('aktivt udspil', 'neutralt-udspil'), ('passivt udspil', 'neutralt-udspil'),
+                       ('princippet om begrænset valg', 'begraenset-valg'), ('espørgemelding', 'blackwood'),
+                       ('balanceret fordeling', 'jaevn-haand'), ('trækværdi', 'stikpoint'), ('frafald', 'hold-up'),
+                       ('udoblet', 'doblet-kontrakt'), ('2-over-1', '2-over-1')):
+            self.assertIn(mål, søg(self.side, q), q)
+
+    def test_forklaringerne_fra_forslaget(self):
+        for navn, tekst in (('Doubleton', 'To kort i en farve.'), ('Kipning', 'At spille op mod en gaffel i håb om, at det manglende kort sidder i plads.'),
+                            ('Turneringsleder', 'Dommeren ved en bridgeturnering. Kan justere scoren ved regelbrud.'),
+                            ('Tilpasning', 'De to hænder har mindst otte fælles kort i en farve.')):
+            self.assertEqual(self.opslag[navn]['Forklaring'], tekst, navn)
+
+    def test_rettelserne(self):
+        self.assertNotIn('Princippet om begrænset valg', self.opslag)
+        self.assertIn('Princippet om begrænset valg', self.opslag['Begrænset valg']['Alternative termer'])
+        self.assertEqual(self.opslag['Handicap']['Kort definition'],
+                         'Et tal for spillerens aktuelle styrke (0–52, lavt er godt), som reguleres efter hver turnering.')
+        self.assertEqual(self.opslag['Slutmelding']['Kort definition'], 'En melding, der beder makker passe; kontrakten er fundet.')
+        self.assertEqual((self.opslag['Indspil']['Kategori'], self.opslag['Indspil']['afsnit']), ('Avancerede teknikker',) * 2)
+        self.assertEqual(self.opslag['Stopkort']['Kort definition'], 'Et kort, der tidligere blev brugt til at markere en springmelding.')
+        self.assertEqual(self.opslag['Stopkort']['Forklaring'], 'Et kort, der tidligere blev brugt til at markere en springmelding. '
+                                                             'Den konkrete procedure afhænger af de gældende turneringsbestemmelser.')
+
+    def test_husets_ord_i_ordbogens_tekst(self):
+        # Kipning, knægt, hp, NT eller sans og bordet; de andre ord står kun som søgeord (og engelsk/indeks).
+        tekst = '\n'.join(l for l in self.kilde[:self.kilde.index('## Engelsk-dansk indeks')].splitlines()
+                          if not l.startswith(('**Alternative termer:**', '**Engelsk:**')))
+        for mønster in (r'\bbonde\b', r'\bknib\w*', r'\bsnit\b', r'\bUT\b', r'\bHCP\b', r'\bblindemand\w*'):
+            self.assertIsNone(re.search(mønster, tekst, re.I if mønster not in (r'\bUT\b', r'\bHCP\b') else 0), mønster)
 
 
 class LinksTilScoring(unittest.TestCase):

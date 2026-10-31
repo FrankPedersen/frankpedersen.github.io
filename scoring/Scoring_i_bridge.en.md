@@ -336,7 +336,7 @@ A single match (knockout) is decided directly in IMPs without victory points. If
 - **Minor-suit games are rare.** 5♦ (400) loses to 3NT (400 + overtricks) and to 4♥/4♠. 3NT is the first choice.
 - **Part-scores are worth fighting for.** The opponents should not play at the 2-level with a fit; you reopen and compete to 3 over their 2 when you have a fit. Part-score battles decide most pairs events.
 - **The 200 points.** The opponents' part-score gives them +110 or +140. Going one down doubled vulnerable (−200) is almost always a bottom. Conversely, if you can double them one down vulnerable (+200), that beats any part-score you could have played yourselves.
-- **Sacrifices.** Not vulnerable against vulnerable opponents, three down doubled (−500) is cheaper than their game (−620). But first it must be certain that they make their game and that the rest of the field bids it.
+- **Sacrifices.** Not vulnerable against vulnerable opponents, three down doubled (−500) is cheaper than their game (−620). But first it has to be clear that they make their game, and that the rest of the field bids it.
 - **Normal contract.** In a good contract the field has not reached, play safe. In the same contract as the field, play for the most tricks.
 
 ### Teams (IMPs)

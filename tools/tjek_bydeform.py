@@ -169,7 +169,7 @@ class Bydeform(unittest.TestCase):
                       scoring[''])
         self.assertIn('Defenders do the opposite: they save an overtrick before going all out to beat the contract.',
                       scoring['.en'])
-        self.assertIn('But first it must be certain that they make their game and that the rest of the field bids it.',
+        self.assertIn('But first it has to be clear that they make their game, and that the rest of the field bids it.',
                       scoring['.en'])
 
     def test_fejler_ved_bydeform_også_efter_kolon_og_semikolon(self):

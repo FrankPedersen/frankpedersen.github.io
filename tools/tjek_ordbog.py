@@ -252,6 +252,18 @@ class KategorierOgNiveauer(unittest.TestCase):
                        ('udoblet', 'doblet-kontrakt'), ('2-over-1', '2-over-1')):
             self.assertIn(mål, søg(self.side, q), q)
 
+    def test_kipning_toppe_og_frafald_som_soegeord(self):
+        # SPEC-sprog-kipning-toppe (Franks valg 31. oktober 2026)
+        for q in ('kip', 'kippe', 'knibe'):
+            self.assertIn('kipning', søg(self.side, q), q)
+        for q in ('toppe', 'toppe farven'):
+            self.assertIn('fald', søg(self.side, q), q)
+        for q in ('frafald', 'falde fra'):
+            self.assertIn('hold-up', søg(self.side, q), q)
+            self.assertNotIn('dyk', søg(self.side, q), q)
+        self.assertEqual(self.opslag['"Eight ever, nine never"']['Kort definition'],
+                         'Huskeregel: Med otte kort i alt og manglende dame tages kipningen. Med ni toppes farven.')
+
     def test_forklaringerne_fra_forslaget(self):
         for navn, tekst in (('Doubleton', 'To kort i en farve.'), ('Kipning', 'At spille op mod en gaffel i håb om, at det manglende kort sidder i plads.'),
                             ('Turneringsleder', 'Dommeren ved en bridgeturnering. Kan justere scoren ved regelbrud.'),

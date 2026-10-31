@@ -15,7 +15,10 @@ ROD = pathlib.Path(__file__).resolve().parent.parent
 # Husets "Ikke"-ord og det ord, der skal stå i stedet. "i snit" (gennemsnit) er tilladt.
 IKKE_ORD = [
     (re.compile(r'\bdobbeltknib\w*', re.I), 'dobbelt kipning'),
-    (re.compile(r'\bknib\w*', re.I), 'kipning, kippe'),
+    (re.compile(r'\bknib\w*', re.I), 'kipning'),
+    # Kipning altid som navneord, og toppe farven i stedet for fald (Franks valg 31. oktober 2026)
+    (re.compile(r'\bkip(?:pe|per|pes|pet)?\b', re.I), 'kipning (som navneord)'),
+    (re.compile(r'\bfald\s+eller\b|\bpå\s+fald\b|\bfald\s*=', re.I), 'toppe farven'),
     (re.compile(r'\bsnit(?:tet|ter|tene)?\b', re.I), 'kipning'),
     (re.compile(r'\bblindemand\w*', re.I), 'bordet'),
     (re.compile(r'\bden blinde\b', re.I), 'bordet'),
@@ -83,13 +86,21 @@ class Fagord(unittest.TestCase):
         self.assertEqual(fund('<td data-en="10+ HCP">10+ hp</td>'.replace(' data-en="10+ HCP"', '')), [])
 
     def test_fejler_hvis_man_skriver_knibning(self):
-        self.assertEqual(fund('Spil en knibning mod damen.'), [('knibning', 'kipning, kippe')])
+        self.assertEqual(fund('Spil en knibning mod damen.'), [('knibning', 'kipning')])
         self.assertTrue(fund('Han kniber mod kongen.'))
         self.assertTrue(fund('En dobbeltknibning'))
         self.assertTrue(fund('Læg kortene på blindemand.'))
         self.assertTrue(fund('Den blinde lægger lavt.'))
         self.assertTrue(fund('Der er ingen broer til bordet.'))
         self.assertTrue(fund('Et snit mod damen.'))
+
+    def test_kipning_som_navneord_og_toppe(self):
+        # Franks valg 31. oktober 2026 (SPEC-sprog-kipning-toppe.md)
+        for ord_ in ('kip', 'kippe', 'kipper', 'kippes', 'kippet', 'Kip'):
+            self.assertEqual(fund(f'Man skal {ord_} mod damen.'), [(ord_, 'kipning (som navneord)')], ord_)
+        for tekst in ('Fald eller kipning', 'Med 9 kort spil på fald.', 'fald = 53,1 %'):
+            self.assertEqual([h for _, h in fund(tekst)], ['toppe farven'], tekst)
+        self.assertEqual(fund('Kipning, kipningen og kipninger; toppe og toppes; damen falder; i givet fald.'), [])
 
     def test_i_snit_er_tilladt(self):
         self.assertEqual(fund('I snit giver linjen 9 stik.'), [])

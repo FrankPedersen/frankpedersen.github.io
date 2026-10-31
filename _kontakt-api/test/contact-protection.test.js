@@ -30,9 +30,11 @@ test('accepts a valid contact and trims its fields', () => {
 })
 
 test('rejects invalid fields and submissions that are too fast', () => {
-  assert.equal(validateContact(validContact({ email: 'not-an-email' })).error, 'Indtast en gyldig e-mailadresse.')
-  assert.equal(validateContact(validContact({ elapsedMilliseconds: 1999 })).error, 'Vent et øjeblik, og prøv at sende beskeden igen.')
-  assert.equal(validateContact(validContact({ message: 'x'.repeat(5001) })).error, 'Et eller flere felter overskrider den tilladte længde.')
+  assert.deepEqual(validateContact(validContact({ email: 'not-an-email' })).error, { da: 'E-mailadressen er ikke gyldig.', en: 'The e-mail address is not valid.' })
+  assert.equal(validateContact(validContact({ elapsedMilliseconds: 1999 })).error.da, 'Beskeden kan sendes igen om et øjeblik.')
+  assert.equal(validateContact(validContact({ message: 'x'.repeat(5001) })).error.da, 'Et eller flere felter overskrider den tilladte længde.')
+  assert.equal(validateContact(validContact({ name: ' ' })).error.da, 'Navn, e-mail og besked skal udfyldes.')
+  assert.equal(validateContact([]).error.da, 'Ugyldige data: navn, e-mail og besked mangler.')
 })
 
 test('marks a filled honeypot as spam', () => {

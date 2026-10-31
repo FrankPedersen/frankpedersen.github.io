@@ -11,6 +11,7 @@ import { createServer } from 'node:http';
 import { tmpdir } from 'node:os';
 import { extname, join, normalize } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { MESSAGES, errorBody, messageBody } from '../_kontakt-api/src/contact-messages.js';
 
 const ROD = fileURLToPath(new URL('..', import.meta.url));
 const browser = [
@@ -31,20 +32,11 @@ const NAVNE = ['Kontraktbridge', 'Frank Pedersen', 'Fordelingstræneren', 'Kasin
   '© 2026 Frank Pedersen', 'English', 'Dansk', '→'];
 // Danske småord, som ikke findes på engelsk
 const DANSKE_ORD = /\b(og|jeg|du|din|dit|dine|mig|til|med|ikke|eller|har|af|på|kan|vil|skal|alle|fra|om|hvad|besked|beskeder|navn|kontakt|trænere|sendt|sender)\b/i;
-// Svarene fra kontakt-API'et (_kontakt-api) er på dansk; siden skal vise dem på engelsk.
+// Svarene fra kontakt-API'et står på dansk og engelsk i _kontakt-api/src/contact-messages.js; siden skal vise de engelske.
+// Et svar uden engelsk (en ukendt fejl fra serveren) giver sidens egen engelske standardbesked.
+const STATUS = { sent: 200, notJson: 415, tooLarge: 413, notConfigured: 503, rateLimited: 429, notDelivered: 502 };
 const API_SVAR = [
-  [200, { message: 'Tak for din besked. Den er sendt.' }],
-  [400, { error: 'Ugyldige data. Send navn, e-mail og besked.' }],
-  [400, { error: 'Udfyld navn, e-mail og besked.' }],
-  [400, { error: 'Vent et øjeblik, og prøv at sende beskeden igen.' }],
-  [400, { error: 'Et eller flere felter overskrider den tilladte længde.' }],
-  [400, { error: 'Indtast en gyldig e-mailadresse.' }],
-  [415, { error: 'Anmodningen skal sendes som JSON.' }],
-  [413, { error: 'Beskeden er for stor.' }],
-  [400, { error: 'Anmodningen indeholder ugyldig JSON.' }],
-  [503, { error: 'Kontaktformularen er ikke konfigureret endnu. Prøv igen senere.' }],
-  [429, { error: 'Du har sendt flere beskeder på kort tid. Vent lidt, før du prøver igen.' }],
-  [502, { error: 'Beskeden kunne ikke afleveres. Prøv igen senere.' }],
+  ...Object.entries(MESSAGES).map(([nøgle, m]) => (nøgle === 'sent' ? [200, messageBody(m)] : [STATUS[nøgle] || 400, errorBody(m)])),
   [500, { error: 'En ukendt fejl fra serveren.' }],
   ['net', null],
 ];

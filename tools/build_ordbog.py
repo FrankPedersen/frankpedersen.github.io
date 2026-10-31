@@ -37,7 +37,9 @@ FELTER = {
     'Forklaring': 'forklaring',
     'Relaterede begreber': 'relaterede',
 }
-KRÆVEDE = ('id', 'engelsk', 'niveau', 'kategori', 'definition', 'forklaring')
+KRÆVEDE = ('id', 'niveau', 'kategori', 'definition', 'forklaring')
+# Feltet Engelsk skal stå, men må være tomt, hvor der ikke findes en almindelig engelsk term (SPEC-ordbog-kategorier)
+SKAL_STÅ = ('engelsk',)
 NIVEAUER = ['begynder', 'let øvet', 'øvet', 'avanceret']
 INDEKS_EN = 'Engelsk-dansk indeks'
 INDEKS_DA = 'Dansk-engelsk indeks'
@@ -74,15 +76,18 @@ def parse(tekst):
             nu = {'ord': linje[4:].strip(), 'linje': nr}
             opslag.append(nu)
             continue
-        m = re.match(r'\*\*(.+?):\*\* (.*)$', linje)
+        m = re.match(r'\*\*(.+?):\*\*(?: (.*))?$', linje)
         if m and nu is not None:
             if m.group(1) not in FELTER:
                 raise OrdbogFejl(f'Linje {nr}: ukendt felt "{m.group(1)}"')
-            nu[FELTER[m.group(1)]] = m.group(2).strip()
+            nu[FELTER[m.group(1)]] = (m.group(2) or '').strip()
     for o in opslag:
         for felt in KRÆVEDE:
             if not o.get(felt):
                 raise OrdbogFejl(f'Linje {o["linje"]}: opslaget "{o["ord"]}" mangler {felt}')
+        for felt in SKAL_STÅ:
+            if felt not in o:
+                raise OrdbogFejl(f'Linje {o["linje"]}: opslaget "{o["ord"]}" mangler feltet {felt}')
         o['id'] = o['id'].strip('`')
         o['alternative'] = [t.strip() for t in o.get('alternative', '').split(',') if t.strip()]
         o['relaterede'] = [t.strip() for t in o.get('relaterede', '').split(',') if t.strip()]
@@ -158,7 +163,7 @@ def scoring_for_opslag(links, ids, scoring_html):
 
 
 def opslag_html(o, ord_for_id, ekstra, scoring=None):
-    meta = [f'{label("Engelsk", "English")}: <span lang="en">{e(o["engelsk"])}</span>']
+    meta = [f'{label("Engelsk", "English")}: <span lang="en">{e(o["engelsk"])}</span>'] if o['engelsk'] else []
     if o['alternative']:
         meta.append(f'{label("Alternative termer", "Alternative terms")}: {e(", ".join(o["alternative"]))}')
     if o.get('forkortelse'):

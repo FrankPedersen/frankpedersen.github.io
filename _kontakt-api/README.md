@@ -10,7 +10,7 @@ Mappen ligger i repoet `frankpedersen.github.io`, men starter med `_`, så GitHu
 
 - Mailen har emnet "Ny besked fra Kontraktbridge", går til modtageren og har afsenderens adresse som svar-til.
 - Spambeskyttelse som i Proteinkøkken: udfyldt honeypot giver et falsk "sendt", formularen skal have været åben i mindst 2 sekunder, højst 3 beskeder pr. IP pr. 15 minutter og højst 10 kB.
-- Svarene er på dansk: `{ "message": "Tak for din besked. Den er sendt." }` ved succes, ellers `{ "error": "…" }` med status 400, 413, 415, 429, 502 eller 503.
+- Svarene er på dansk og engelsk: `{ "message": "Tak for din besked. Den er sendt.", "messageEn": "Thank you for your message. It has been sent." }` ved succes, ellers `{ "error": "…", "errorEn": "…" }` med status 400, 413, 415, 429, 502 eller 503. Ordlyden står kun i `src/contact-messages.js`; Om mig viser det sprog, siden står på (SPEC-beskrivende-form, A2).
 
 ## App-indstillinger
 

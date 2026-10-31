@@ -1,6 +1,7 @@
 import { EmailClient } from '@azure/communication-email'
 import { app } from '@azure/functions'
 import { buildContactEmail } from '../contact-email.js'
+import { MESSAGES, errorBody, messageBody } from '../contact-messages.js'
 import {
   checkRateLimit,
   getClientIp,
@@ -25,32 +26,32 @@ app.http('contact', {
   handler: async (request, context) => {
     const contentType = request.headers.get('content-type') || ''
     if (!contentType.toLowerCase().includes('application/json')) {
-      return jsonResponse(415, { error: 'Anmodningen skal sendes som JSON.' })
+      return jsonResponse(415, errorBody(MESSAGES.notJson))
     }
 
     const contentLength = Number(request.headers.get('content-length') || 0)
     if (Number.isFinite(contentLength) && contentLength > 10_000) {
-      return jsonResponse(413, { error: 'Beskeden er for stor.' })
+      return jsonResponse(413, errorBody(MESSAGES.tooLarge))
     }
 
     let body
     try {
       const rawBody = await request.text()
       if (new TextEncoder().encode(rawBody).byteLength > 10_000) {
-        return jsonResponse(413, { error: 'Beskeden er for stor.' })
+        return jsonResponse(413, errorBody(MESSAGES.tooLarge))
       }
       body = JSON.parse(rawBody)
     } catch {
-      return jsonResponse(400, { error: 'Anmodningen indeholder ugyldig JSON.' })
+      return jsonResponse(400, errorBody(MESSAGES.invalidJson))
     }
 
     const contact = validateContact(body)
     if ('error' in contact) {
-      return jsonResponse(400, { error: contact.error })
+      return jsonResponse(400, errorBody(contact.error))
     }
 
     if (contact.spam) {
-      return jsonResponse(200, { message: 'Tak for din besked. Den er sendt.' })
+      return jsonResponse(200, messageBody(MESSAGES.sent))
     }
 
     const connectionString = process.env.COMMUNICATION_SERVICES_CONNECTION_STRING
@@ -59,16 +60,12 @@ app.http('contact', {
 
     if (!connectionString || !senderAddress || !recipientAddress) {
       context.error('Contact API is missing required Azure Communication Services settings.')
-      return jsonResponse(503, {
-        error: 'Kontaktformularen er ikke konfigureret endnu. Prøv igen senere.',
-      })
+      return jsonResponse(503, errorBody(MESSAGES.notConfigured))
     }
 
     const rateLimit = checkRateLimit(getClientIp(request))
     if (!rateLimit.allowed) {
-      const response = jsonResponse(429, {
-        error: 'Du har sendt flere beskeder på kort tid. Vent lidt, før du prøver igen.',
-      })
+      const response = jsonResponse(429, errorBody(MESSAGES.rateLimited))
       response.headers['Retry-After'] = String(rateLimit.retryAfterSeconds)
       return response
     }
@@ -80,20 +77,16 @@ app.http('contact', {
 
       if (result.status !== 'Succeeded') {
         context.error(`Contact email delivery returned status: ${result.status}.`)
-        return jsonResponse(502, {
-          error: 'Beskeden kunne ikke afleveres. Prøv igen senere.',
-        })
+        return jsonResponse(502, errorBody(MESSAGES.notDelivered))
       }
 
-      return jsonResponse(200, { message: 'Tak for din besked. Den er sendt.' })
+      return jsonResponse(200, messageBody(MESSAGES.sent))
     } catch (error) {
       context.error(
         'Contact email delivery failed.',
         error instanceof Error ? error.message : 'Unknown error',
       )
-      return jsonResponse(502, {
-        error: 'Beskeden kunne ikke afleveres. Prøv igen senere.',
-      })
+      return jsonResponse(502, errorBody(MESSAGES.notDelivered))
     }
   },
 })

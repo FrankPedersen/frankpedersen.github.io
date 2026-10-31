@@ -305,7 +305,7 @@ SKABELON = '''<!doctype html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Bridgeordbog – Kontraktbridge</title>
-<meta name="description" content="{{ANTAL}} bridgeord på dansk med engelsk oversættelse, kort definition og alternative termer. Søg på dansk eller engelsk.">
+<meta name="description" content="{{ANTAL}} bridgeord på dansk med engelsk oversættelse, kort definition og alternative termer. Søgningen virker på dansk og engelsk.">
 <meta name="theme-color" content="#1a1a1a">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="canonical" href="https://www.kontraktbridge.dk/ordbog/">
@@ -439,7 +439,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, summary:focus-visibl
   </header>
 
   <section class="tools" aria-label="Søg og filtrér" data-en-aria="Search and filter">
-    <label class="search"><span data-en="Search in Danish or English">Søg på dansk eller engelsk</span>
+    <label class="search"><span data-en="Search in Danish or English">Søgning på dansk eller engelsk</span>
       <input id="q" type="search" autocomplete="off" spellcheck="false" placeholder="Fx kipning, finesse eller bordet" data-en-placeholder="E.g. finesse, kipning or dummy">
     </label>
     <div class="filters">

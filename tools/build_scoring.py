@@ -781,7 +781,7 @@ function regnMatchpoint() {
   const bordeTekst = f.elements.borde.value;
   const borde = tilTal(bordeTekst);
   markér(f.elements.borde, borde === null || (Number.isInteger(borde) && borde >= scorer.length));
-  if (ugyldig) { svar('matchpoint').innerHTML = fejl(T('Skriv scorerne som hele tal, fx 420 eller −50.', 'Enter the scores as whole numbers, e.g. 420 or −50.')); return; }
+  if (ugyldig) { svar('matchpoint').innerHTML = fejl(T('Scorerne skrives som hele tal, fx 420 eller −50.', 'The scores are whole numbers, e.g. 420 or −50.')); return; }
   const r = B.matchpoint(scorer, { borde: borde === null ? undefined : borde, øv: f.elements.oev.checked }, lang);
   if (r.fejl) { svar('matchpoint').innerHTML = fejl(r.fejl); return; }
   const omregnet = borde !== null && borde > scorer.length;
@@ -810,7 +810,7 @@ function regnImp() {
   const s1 = tilTal(f.elements.s1.value), s2 = tilTal(f.elements.s2.value);
   markér(f.elements.s1, s1 !== null && Number.isFinite(s1));
   markér(f.elements.s2, s2 === null || Number.isFinite(s2));
-  if (s1 === null || Number.isNaN(s1) || Number.isNaN(s2)) { svar('imp').innerHTML = fejl(T('Skriv to scorer eller én forskel.', 'Enter two scores or one difference.')); return; }
+  if (s1 === null || Number.isNaN(s1) || Number.isNaN(s2)) { svar('imp').innerHTML = fejl(T('Beregningen kræver to scorer eller én forskel.', 'The calculation needs two scores or one difference.')); return; }
   const forskel = s2 === null ? s1 : s1 - s2;
   const imp = B.imp(forskel);
   const impOrd = T('imp', Math.abs(imp) === 1 ? 'IMP' : 'IMPs');
@@ -824,7 +824,7 @@ function regnKp() {
   const m = tilTal(f.elements.kimp.value), spil = tilTal(f.elements.spil.value);
   markér(f.elements.kimp, m !== null && Number.isFinite(m));
   markér(f.elements.spil, Number.isInteger(spil) && spil >= 4 && spil <= 128);
-  if (m === null || Number.isNaN(m)) { svar('kp').innerHTML = fejl(T('Skriv kampens imp-forskel.', 'Enter the IMP difference of the match.')); return; }
+  if (m === null || Number.isNaN(m)) { svar('kp').innerHTML = fejl(T('Kampens imp-forskel mangler.', 'The IMP difference of the match is missing.')); return; }
   const r = B.kp(m, spil, lang);
   if (r.fejl) { svar('kp').innerHTML = fejl(r.fejl); return; }
   const a = Math.abs(r.imp);
@@ -853,9 +853,9 @@ function regnHandicap() {
   markér(f.elements.gennemsnit, alle || (gennemsnitHc !== null && Number.isFinite(gennemsnitHc)));
   markér(f.elements.alle, !alle || alle.every(Number.isFinite));
   markér(f.elements.opnaaet, opnået === null || Number.isFinite(opnået));
-  if (alle && !alle.every(Number.isFinite)) { svar('handicap').innerHTML = fejl(T('Skriv alle handicap som tal adskilt af mellemrum.', 'Enter every handicap as numbers separated by spaces.')); return; }
+  if (alle && !alle.every(Number.isFinite)) { svar('handicap').innerHTML = fejl(T('Handicappene skrives som tal adskilt af mellemrum.', 'The handicaps are numbers separated by spaces.')); return; }
   if ([h1, h2, par, spil].some((x) => x === null || Number.isNaN(x)) || (!alle && (gennemsnitHc === null || Number.isNaN(gennemsnitHc))) || Number.isNaN(opnået)) {
-    svar('handicap').innerHTML = fejl(T('Udfyld handicap, gennemsnit, antal par og antal spil med tal.', 'Fill in the handicaps, the average, the pairs and the boards as numbers.')); return;
+    svar('handicap').innerHTML = fejl(T('Handicap, gennemsnit, antal par og antal spil skal være tal.', 'The handicaps, the average, the pairs and the boards must be numbers.')); return;
   }
   const r = B.handicap({ h1, h2, gennemsnit: alle ? undefined : gennemsnitHc, alle: alle || undefined, par, spil, opgørelse: imp ? 'imp' : 'matchpoint',
     opnået: opnået === null ? undefined : opnået, butler: imp && f.elements.butler.checked }, lang);

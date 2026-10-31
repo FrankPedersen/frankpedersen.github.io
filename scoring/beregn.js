@@ -121,7 +121,7 @@ export function kpTabel(spil) {
 /** Kamppoint for en kamp: { imp (afrundet), vinder, taber } eller { fejl }. Forskellens fortegn er ligegyldigt. */
 export function kp(impForskel, spil, lang = 'da') {
   if (!Number.isInteger(spil) || spil < 4 || spil > 128) return { fejl: T(lang, 'Antal spil skal være 4–128.', 'The number of boards must be 4–128.') };
-  if (!Number.isFinite(impForskel)) return { fejl: T(lang, 'Skriv kampens imp-forskel.', 'Enter the IMP difference of the match.') };
+  if (!Number.isFinite(impForskel)) return { fejl: T(lang, 'Kampens imp-forskel mangler.', 'The IMP difference of the match is missing.') };
   const m = Math.abs(afrundImp(impForskel));
   const tabel = kpTabel(spil);
   const vinder = m < tabel.length ? tabel[m] : 20;

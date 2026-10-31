@@ -95,7 +95,7 @@ Redoblet er det dobbelte af doblet.
 | 4♠ doblet | 7 | uden | −500 |
 | 2♥ doblet | 7 | i | −200 |
 
-Læg mærke til de to doblede eksempler: 2♥ doblet med et overstik koster 570, ikke 110. 1 sans doblet med to overstik giver kun 380, fordi 80 stikpoint ikke er udgang.
+De to doblede eksempler er værd at lægge mærke til: 2♥ doblet med et overstik koster 570, ikke 110. 1 sans doblet med to overstik giver kun 380, fordi 80 stikpoint ikke er udgang.
 
 <!-- beregner: score -->
 
@@ -166,7 +166,7 @@ Når NS-parrene har fået deres point, får hvert ØV-par det samme tal som sine
 
 ### Afstemning
 
-1. **Summen af NS-pointene på hvert spil skal være 0.** Er den ikke det, er der en regnefejl. Kontrollér det, før ØV får deres tal; ellers bliver fejlen gentaget med modsat fortegn og skjult.
+1. **Summen af NS-pointene på hvert spil skal være 0.** Er den ikke det, er der en regnefejl. Det skal kontrolleres, før ØV får deres tal; ellers bliver fejlen gentaget med modsat fortegn og skjult.
 2. **Når alle runder er lagt sammen,** skal summen af alle positive og negative tal igen være 0.
 3. **Undtagelser:** justerede scorer, fx strafpoint (summen af de negative bliver størst) og erstatningspoint (summen af de positive bliver størst). Et standardfradrag i strafpoint er 10 % af forskellen mellem top og bund i parturnering og ½ KP i en holdkamp på mindst 13 spil (§ 211).
 
@@ -321,7 +321,7 @@ En enkeltkamp (cupkamp) afgøres direkte i imp uden kamppoint. Ender den uafgjor
 | Hvad tæller | hvor ofte du er bedre end de andre | hvor meget du vinder eller taber |
 | Et overstik | kan flytte dig fra 50 % til 100 % | 1 imp, næsten ingenting |
 | En katastrofe | koster ét spil, højst 0 % | kan koste 12–17 imp og kampen |
-| Udgang | meld den ved ca. 50 % | meld den ved 45 % uden for zone og 37 % i zone |
+| Udgang | meldes ved ca. 50 % | meldes ved 45 % uden for zone og 37 % i zone |
 | Lilleslem | ca. 50 % | 50 % |
 | Storeslem | over 50 % | 56–57 % |
 | Sikkerhedsspil | sjældent; det koster overstik | ja; kontrakten først |
@@ -331,30 +331,30 @@ En enkeltkamp (cupkamp) afgøres direkte i imp uden kamppoint. Ender den uafgjor
 ### Parturnering (matchpoint)
 
 - **Hvert spil vejer det samme.** En top og en bund er 50 % i snit; mange små plusser vinder turneringer.
-- **Overstik tæller.** Er de fleste i samme kontrakt, spiller spilføreren for flest stik, også med lidt risiko for kontrakten, når chancen for overstikket er størst. Modspillerne gør omvendt: spar et overstik, før du går efter at bete kontrakten.
-- **Sans og major.** 3 sans med et overstik (430) slår 4♠ (420), og 1 sans med 8 stik (120) slår 2♥ med 8 stik (110). Spil sans, når stikkene er de samme; spil major, når trumfen giver et stik mere.
-- **Minorudgang er sjælden.** 5♦ (400) taber til 3 sans (400 + overstik) og til 4♥/4♠. Prøv 3 sans først.
-- **Kæmp om delkontrakterne.** Lad ikke modstanderne spille på 2-trinnet med et fit; genåbn og byd 3 over deres 2, når I har et fit. Delkontraktspil afgør de fleste parturneringer.
+- **Overstik tæller.** Er de fleste i samme kontrakt, spiller spilføreren for flest stik, også med lidt risiko for kontrakten, når chancen for overstikket er størst. Modspillerne gør omvendt: de sparer et overstik, før de går efter at bete kontrakten.
+- **Sans og major.** 3 sans med et overstik (430) slår 4♠ (420), og 1 sans med 8 stik (120) slår 2♥ med 8 stik (110). Sans er bedst, når stikkene er de samme; major er bedst, når trumfen giver et stik mere.
+- **Minorudgang er sjælden.** 5♦ (400) taber til 3 sans (400 + overstik) og til 4♥/4♠. 3 sans er det første valg.
+- **Delkontrakterne er værd at kæmpe om.** Modstanderne skal ikke spille på 2-trinnet med et fit; I genåbner og byder 3 over deres 2, når I har et fit. Delkontraktspil afgør de fleste parturneringer.
 - **De 200 point.** Modstandernes delkontrakt giver dem +110 eller +140. Går du én bet doblet i zonen (−200), er det næsten altid en bund. Omvendt: kan du doble dem én bet i zonen (+200), slår det enhver delkontrakt, du selv kunne have spillet.
-- **Ofring.** Uden for zonen mod modstandere i zonen er tre bet doblet (−500) billigere end deres udgang (−620). Men tjek, at de faktisk vinder udgangen, og at resten af feltet melder den.
+- **Ofring.** Uden for zonen mod modstandere i zonen er tre bet doblet (−500) billigere end deres udgang (−620). Men først skal det være sikkert, at de vinder udgangen, og at resten af feltet melder den.
 - **Normal kontrakt.** I en god kontrakt, som feltet ikke har meldt, spiller du sikkert. I samme kontrakt som feltet spiller du for flest stik.
 
 ### Holdturnering (imp)
 
 - **Kontrakten først.** Sikkerhedsspil, der koster et overstik (1 imp) men redder kontrakten (10–12 imp), er altid rigtige.
-- **Meld udgangene.** Uden for zonen vinder en udgang 6 imp, når den går hjem, og taber 5, når den går bet (+420 mod +170 og −50 mod +140); den skal derfor holde i ca. 45 %. I zonen er det +10 mod −6 imp, så 37 % er nok.
+- **Udgangene skal meldes.** Uden for zonen vinder en udgang 6 imp, når den går hjem, og taber 5, når den går bet (+420 mod +170 og −50 mod +140); den skal derfor holde i ca. 45 %. I zonen er det +10 mod −6 imp, så 37 % er nok.
 - **Slem.** Lilleslem kræver ca. 50 % i begge zoner. Storeslem kræver 56–57 %, fordi man risikerer en sikker lilleslem.
-- **Delkontrakter er små.** En delkontrakt mere eller mindre er 2–5 imp. Kæmp, men ikke for enhver pris.
-- **Doble ikke til udgang.** 2♥ doblet hjemme uden for zonen er 470 i stedet for 110, og det koster 8 imp. Doble delkontrakter, når du er sikker på bet.
-- **Ofring.** 5♦ doblet to bet uden for zonen (−300) mod deres 4♠ i zonen (−620) vinder 8 imp. Går den tre bet (−500), vinder den kun 3. Og kunne 4♠ være gået bet, taber ofringen 12 imp. Ofr kun, når du er sikker på, at de vinder deres kontrakt.
+- **Delkontrakter er små.** En delkontrakt mere eller mindre er 2–5 imp. Der skal kæmpes, men ikke for enhver pris.
+- **En dobling må ikke gøre deres delkontrakt til udgang.** 2♥ doblet hjemme uden for zonen er 470 i stedet for 110, og det koster 8 imp. Delkontrakter skal kun dobles, når du er sikker på bet.
+- **Ofring.** 5♦ doblet to bet uden for zonen (−300) mod deres 4♠ i zonen (−620) vinder 8 imp. Går den tre bet (−500), vinder den kun 3. Og kunne 4♠ være gået bet, taber ofringen 12 imp. En ofring er kun rigtig, når du er sikker på, at de vinder deres kontrakt.
 - **Butler og cross-imp:** taktikken er den samme, men du sammenlignes med feltets gennemsnit. Normale kontrakter, der går hjem, giver jævne plusser.
 
 ### Kamppoint
 
 - **Skalaen er aftagende.** De første imp er mest værd. En sejr på 20 imp i en kamp på 40 spil giver 13,44 KP; at tredoble den til 60 imp giver kun 4,40 KP mere (17,84).
-- **Foran sidst i kampen:** spil normalt og sikkert. Meld de udgange og slemmer, feltet melder, og undgå ofringer og frække doblinger.
-- **Bagud sidst i kampen:** tag chancer. Meld de tynde udgange og slemmer, og prøv det usædvanlige udspil eller den modige dobling; der skal swing til.
-- **I en lang turnering** tæller de samlede kamppoint. Undgå de store tab, så kommer resultaterne.
+- **Foran sidst i kampen:** du spiller normalt og sikkert, melder de udgange og slemmer, feltet melder, og undgår ofringer og frække doblinger.
+- **Bagud sidst i kampen:** du tager chancer, melder de tynde udgange og slemmer og prøver det usædvanlige udspil eller den modige dobling; der skal swing til.
+- **I en lang turnering** tæller de samlede kamppoint. Uden de store tab kommer resultaterne.
 
 ---
 

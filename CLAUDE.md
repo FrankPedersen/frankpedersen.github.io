@@ -6,4 +6,6 @@ Det, der gælder alle repoer – arbejdsgangen, husets ord, hemmeligheder og sys
 
 **Fagord:** kør `python tools/tjek_fagord.py` efter tekstændringer; den læser forsiden, Om mig og ordbogen.
 
+**Beskrivende form:** `python tools/tjek_bydeform.py` læser de samme sider, regnemaskinerne i `scoring/beregn.js` og kontakt-API'ets beskeder og fejler, hvis en dansk instruktion eller forklaring begynder med et udsagnsord i bydeform (specen og listen ligger i `docs/specs/`). Knapper, links og navne står på testens `UNDTAGELSER`; en ny knap i bydeform kommer på listen.
+
 **Hjemmesiden:** `_config.yml` udelukker udviklerfilerne (`CLAUDE.md`, `tools/`), specerne og markdownkilderne (`ordbog/*.md`, `scoring/*.md`), så kun siderne og det, de bruger, udgives (Franks valg 28. oktober 2026). `node tools/tjek_kun_siden.mjs` tjekker det og viser siderne fra en mappe med kun de udgivne filer; efter en udgivelse tjekker `--live` www.kontraktbridge.dk. En ny fil, som en side skal bruge, kommer på listen `UDGIVET` i testen.

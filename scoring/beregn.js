@@ -28,8 +28,8 @@ function betDoblet(antal, zone) {
  */
 export function score({ trin, farve, dobling = 0, zone = false, stik }, lang = 'da') {
   if (!Number.isInteger(trin) || trin < 1 || trin > 7) return { fejl: T(lang, 'Trinnet skal være 1–7.', 'The level must be 1–7.'), linjer: [] };
-  if (!(farve in STIKVÆRDI)) return { fejl: T(lang, 'Vælg en farve eller sans.', 'Choose a suit or notrump.'), linjer: [] };
-  if (![0, 1, 2].includes(dobling)) return { fejl: T(lang, 'Vælg udoblet, doblet eller redoblet.', 'Choose undoubled, doubled or redoubled.'), linjer: [] };
+  if (!(farve in STIKVÆRDI)) return { fejl: T(lang, 'Farven eller sans mangler.', 'The suit or notrump is missing.'), linjer: [] };
+  if (![0, 1, 2].includes(dobling)) return { fejl: T(lang, 'Udoblet, doblet eller redoblet mangler.', 'Undoubled, doubled or redoubled is missing.'), linjer: [] };
   if (!Number.isInteger(stik) || stik < 0 || stik > 13) return { fejl: T(lang, 'Antal stik skal være 0–13.', 'The number of tricks must be 0–13.'), linjer: [] };
 
   const gang = [1, 2, 4][dobling];
@@ -121,7 +121,7 @@ export function kpTabel(spil) {
 /** Kamppoint for en kamp: { imp (afrundet), vinder, taber } eller { fejl }. Forskellens fortegn er ligegyldigt. */
 export function kp(impForskel, spil, lang = 'da') {
   if (!Number.isInteger(spil) || spil < 4 || spil > 128) return { fejl: T(lang, 'Antal spil skal være 4–128.', 'The number of boards must be 4–128.') };
-  if (!Number.isFinite(impForskel)) return { fejl: T(lang, 'Skriv kampens imp-forskel.', 'Enter the IMP difference of the match.') };
+  if (!Number.isFinite(impForskel)) return { fejl: T(lang, 'Kampens imp-forskel mangler.', 'The IMP difference of the match is missing.') };
   const m = Math.abs(afrundImp(impForskel));
   const tabel = kpTabel(spil);
   const vinder = m < tabel.length ? tabel[m] : 20;
@@ -139,7 +139,7 @@ export function matchpoint(scorer, { borde, øv = false } = {}, lang = 'da') {
   const G = scorer.length;
   const A = borde ?? G;
   if (!scorer.every(Number.isFinite)) return { fejl: T(lang, 'Alle scorer skal være tal.', 'All scores must be numbers.') };
-  if (G < 1 || G > 20 || (borde === undefined && G < 2)) return { fejl: T(lang, 'Skriv 2–20 scorer.', 'Enter 2–20 scores.') };
+  if (G < 1 || G > 20 || (borde === undefined && G < 2)) return { fejl: T(lang, 'Der skal være 2–20 scorer.', 'There must be 2–20 scores.') };
   if (!Number.isInteger(A) || A < G || A > 40) return { fejl: T(lang, 'Antal borde skal være mindst antallet af scorer.', 'The number of tables must be at least the number of scores.') };
   const fortegn = øv ? -1 : 1;
   const top = 2 * (A - 1);
@@ -223,7 +223,7 @@ export function handicap({ h1, h2, gennemsnit, alle, par, spil, opgørelse = 'ma
   if (!Number.isInteger(par) || par < 2) return { fejl: T(lang, 'Antal par skal være mindst 2.', 'The number of pairs must be at least 2.') };
   if (!Number.isInteger(spil) || spil < 1) return { fejl: T(lang, 'Antal spil skal være mindst 1.', 'The number of boards must be at least 1.') };
   const g = gennemsnit ?? (alle?.length ? alle.reduce((s, x) => s + x, 0) / alle.length : NaN);
-  if (!Number.isFinite(g)) return { fejl: T(lang, 'Skriv gennemsnitshandicappet eller alle spilleres handicap.', 'Enter the average handicap or every player\'s handicap.') };
+  if (!Number.isFinite(g)) return { fejl: T(lang, 'Gennemsnitshandicappet eller alle spilleres handicap mangler.', 'The average handicap or every player\'s handicap is missing.') };
   const mp = opgørelse !== 'imp';
   const S = mp ? 0.6 : 0.1;
   const Cb = mp ? 2 : 12;

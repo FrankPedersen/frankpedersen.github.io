@@ -3,8 +3,8 @@
     python tools/tjek_skrifttyper.py
 
 Ingen fil i repoet henviser til Google Fonts, siderne henter fonts/tekst.css (og fonts/symboler.css, hvor de brugte
-Noto Sans Symbols 2 før), og hver skrifttype, CSS'en nævner, findes i fonts/. At siderne ser ud som før, tjekkes i
-Chrome med `node tools/tjek_skrifttyper.mjs`.
+Noto Sans Symbols 2 før), og hver skrifttype, CSS'en nævner, findes i fonts/. At Chrome tegner siderne med
+skrifttyperne fra sitet, tjekkes med `node tools/tjek_skrifttyper.mjs`.
 """
 import pathlib
 import re

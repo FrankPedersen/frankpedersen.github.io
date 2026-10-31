@@ -75,7 +75,7 @@ class Kontaktformularen(unittest.TestCase):
     def test_boksen_beholder_overskriften_og_har_den_nye_indledning(self):
         tekst = re.sub(r'\s+', ' ', ' '.join(self.f.tekst))
         self.assertIn('Kontakt', tekst)
-        self.assertIn('Har du fundet en fejl, eller har du en idé til en ny træner? Skriv til mig her. Jeg læser alle beskeder.', tekst)
+        self.assertIn('Har du fundet en fejl, eller har du en idé til en ny træner? Så hører jeg gerne fra dig. Jeg læser alle beskeder.', tekst)
 
     def test_felterne_med_etiketter_pladsholdere_og_krav(self):
         navn, email, besked = self.felter['name'], self.felter['email'], self.felter['message']
@@ -96,7 +96,7 @@ class Kontaktformularen(unittest.TestCase):
         tag, a = self.felter['website']
         self.assertEqual(a.get('tabindex'), '-1')
         self.assertEqual(a.get('autocomplete'), 'off')
-        self.assertEqual(self.f.labels.get(a.get('id')), 'Lad dette felt stå tomt')
+        self.assertEqual(self.f.labels.get(a.get('id')), 'Dette felt skal være tomt')
         indpakning = [b for t, b in self.f.elementer if 'om-felt-skjult' in b.get('class', '').split()]
         self.assertTrue(indpakning, 'honeypot-feltet skal stå i et skjult element')
         self.assertEqual(indpakning[0].get('aria-hidden'), 'true')

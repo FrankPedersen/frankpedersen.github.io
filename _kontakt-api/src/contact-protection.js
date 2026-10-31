@@ -1,3 +1,5 @@
+import { MESSAGES } from './contact-messages.js'
+
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 const RATE_LIMIT_WINDOW_MS = 15 * 60 * 1000
 const RATE_LIMIT_MAX_REQUESTS = 3
@@ -56,7 +58,7 @@ export function checkRateLimit(clientIp, now = Date.now()) {
 
 export function validateContact(body) {
   if (!body || typeof body !== 'object' || Array.isArray(body)) {
-    return { error: 'Ugyldige data. Send navn, e-mail og besked.' }
+    return { error: MESSAGES.invalidData }
   }
 
   const name = typeof body.name === 'string' ? body.name.trim() : ''
@@ -66,7 +68,7 @@ export function validateContact(body) {
   const elapsedMilliseconds = body.elapsedMilliseconds
 
   if (!name || !email || !message) {
-    return { error: 'Udfyld navn, e-mail og besked.' }
+    return { error: MESSAGES.missingFields }
   }
 
   if (website) return { name, email, message, spam: true }
@@ -76,15 +78,15 @@ export function validateContact(body) {
     || elapsedMilliseconds < MINIMUM_FORM_TIME_MS
     || elapsedMilliseconds > 24 * 60 * 60 * 1000
   ) {
-    return { error: 'Vent et øjeblik, og prøv at sende beskeden igen.' }
+    return { error: MESSAGES.tooFast }
   }
 
   if (name.length > 120 || email.length > 254 || message.length > 5000) {
-    return { error: 'Et eller flere felter overskrider den tilladte længde.' }
+    return { error: MESSAGES.tooLong }
   }
 
   if (!EMAIL_PATTERN.test(email)) {
-    return { error: 'Indtast en gyldig e-mailadresse.' }
+    return { error: MESSAGES.invalidEmail }
   }
 
   return { name, email, message, spam: false }

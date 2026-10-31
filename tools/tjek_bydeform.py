@@ -55,6 +55,9 @@ UNDTAGELSER = [
 # Sætninger, der begynder med et af ordene, men ikke er bydeform.
 FALSKE_TRÆF = [
     re.compile(r'^Spil i kampen\b'),  # scoringens tabel: antal spil
+    # Ordbogens forklaringer på Overføring og Redobling (Franks tekst, SPEC-ordbog-kategorier): "svar" er navneord
+    re.compile(r'^Svar på 1NT eller 2NT, hvor man melder\b'),
+    re.compile(r'^Svar på en dobling, som fordobler\b'),
 ]
 
 PREFIX = re.compile(r'^[\s"\'“„«(\[▶→←↓↑✓✗·•–—#*>-]*')
@@ -189,6 +192,8 @@ class Bydeform(unittest.TestCase):
         self.assertEqual(bydeform('pr. spil. Det giver ca. 2 stik.'), [])
         self.assertEqual(bydeform('hold'), [])
         self.assertEqual(bydeform('(Med fortegn: ØV får det modsatte fortegn.)'), [])
+        self.assertEqual(bydeform('Svar på en dobling, som fordobler scoren igen.'), [])
+        self.assertEqual(bydeform('Svar på doblingen.'), ['Svar på doblingen.'])
 
 
 if __name__ == '__main__':

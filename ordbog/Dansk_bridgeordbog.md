@@ -1,149 +1,17 @@
 # Dansk bridgeordbog
 
-_Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
+_Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 
 ## Grundlæggende begreber
 
-### 1430 (Fourteen‑Thirty)
-**ID:** `1430-fourteenthirty`
-**Engelsk:** 1430 (Fourteen‑Thirty)
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Systemafhængig:** Ja
-**Kort definition:** En variant af Roman Key Card Blackwood hvor 5♣ viser 1 eller 4 nøglekort.
-
-**Forklaring:** En variant af Roman Key Card Blackwood hvor 5♣ viser 1 eller 4 nøglekort.
-
-### 2 over 1
-**ID:** `2-over-1`
-**Engelsk:** Two‑over‑one (2/1)
-**Forkortelse:** 2/1
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Systemafhængig:** Ja
-**Kort definition:** Et meldesystem hvor 2‑over‑1 i ny farve er udgangskrav.
-
-**Forklaring:** Et meldesystem hvor 2‑over‑1 i ny farve er udgangskrav.
-
-### Afblokering
-**ID:** `afblokering`
-**Engelsk:** Unblock
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** At afblokere en farve ved at spille høje kort i den rigtige rækkefølge.
-
-**Forklaring:** At afblokere en farve ved at spille høje kort i den rigtige rækkefølge.
-
-### Afdeling
-**ID:** `afdeling`
-**Engelsk:** Session
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** En del af en turnering, typisk 24–32 spil.
-
-**Forklaring:** En del af en turnering, typisk 24–32 spil.
-
-### Afgivelse af stik
-**ID:** `afgivelse-af-stik`
-**Engelsk:** Concession
-**Alternative termer:** Concede
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** En afgivelse er en erklæring om, at en eller flere af de resterende stik tilfalder modparten.
-
-**Forklaring:** En afgivelse er en erklæring om, at en eller flere af de resterende stik tilfalder modparten.
-
-### Afkast
-**ID:** `afkast`
-**Engelsk:** Discard
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** At smide af i en farve man ikke kan bekende.
-
-**Forklaring:** At smide af i en farve man ikke kan bekende.
-
-### Afslå
-**ID:** `afslaa`
-**Engelsk:** Reject
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** At afvise en invit eller en foreslået farve.
-
-**Forklaring:** At afvise en invit eller en foreslået farve.
-
-### Alertering
-**ID:** `alertering`
-**Engelsk:** Alert (! / *)
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** Et signal til modstanderne om, at en melding er kunstig eller har særlig betydning.
-
-**Forklaring:** Et signal til modstanderne om, at en melding er kunstig eller har særlig betydning.
-
-**Relaterede begreber:** kunstig-melding, makkeraftale
-
-### Alertkort
-**ID:** `alertkort`
-**Engelsk:** Alert card
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** Et fysisk kort brugt til at markere, at en melding skal alerteres.
-
-**Forklaring:** Et fysisk kort brugt til at markere, at en melding skal alerteres.
-
-### Alle i zonen
-**ID:** `alle-i-zonen`
-**Engelsk:** Game all
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** En zonestilling, hvor begge sider er i zonen.
-
-**Forklaring:** En zonestilling, hvor begge sider er i zonen.
-
-### Alle mod alle
-**ID:** `alle-mod-alle`
-**Engelsk:** Round robin
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** En turneringsform hvor alle par eller hold møder hinanden.
-
-**Forklaring:** En turneringsform hvor alle par eller hold møder hinanden.
-
-### Andenrundekontrol
-**ID:** `andenrundekontrol`
-**Engelsk:** Second round-control
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** En kontrol, der forhindrer modparten i at tage de to første stik i farven.
-
-**Forklaring:** En kontrol, der forhindrer modparten i at tage de to første stik i farven. Det kan være en konge eller en singleton.
-
-### Appel
-**ID:** `appel`
-**Engelsk:** Appeal
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** En anmodning om at få en afgørelse fra turneringslederen prøvet af en appelkomité.
-
-**Forklaring:** En anmodning om at få en afgørelse fra turneringslederen prøvet af en appelkomité.
-
-### Begrænset melding
-**ID:** `begraenset-melding`
-**Engelsk:** Limit
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** En melding der viser begrænset styrke, typisk invit.
-
-**Forklaring:** En melding der viser begrænset styrke, typisk invit.
-
-### Begrænset valg
-**ID:** `begraenset-valg`
-**Engelsk:** Restricted choice
+### Baghånd
+**ID:** `baghaand`
+**Engelsk:**
 **Niveau:** øvet
 **Kategori:** Grundlæggende begreber
-**Kort definition:** En sandsynlighedsregel der siger, at modspillerens valg af kort begrænser sandsynlige fordelinger.
+**Kort definition:** Den plads, der spiller sidst i et stik, eller som melder efter en bestemt spiller.
 
-**Forklaring:** En sandsynlighedsregel der siger, at modspillerens valg af kort begrænser sandsynlige fordelinger.
+**Forklaring:** Den plads, der spiller sidst i et stik, eller som melder efter en bestemt spiller.
 
 ### Bekende
 **ID:** `bekende`
@@ -152,55 +20,7 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 **Kategori:** Grundlæggende begreber
 **Kort definition:** At bekende i den farve der er spillet.
 
-**Forklaring:** At bekende i den farve der er spillet.
-
-### Benægte
-**ID:** `benaegte`
-**Engelsk:** Deny
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** At benægte en egenskab, fx støtte eller kontrol.
-
-**Forklaring:** At benægte en egenskab, fx støtte eller kontrol.
-
-### Benævnelse
-**ID:** `benaevnelse`
-**Engelsk:** Denomination
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** Den meldte farve eller sans.
-
-**Forklaring:** Den meldte farve eller sans.
-
-### Beregning
-**ID:** `beregning`
-**Engelsk:** Scoring
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** Den metode der bruges til at beregne resultater i en turnering.
-
-**Forklaring:** Den metode der bruges til at beregne resultater i en turnering.
-
-### Bergen-støtter
-**ID:** `bergen-stoetter`
-**Engelsk:** Bergen raises
-**Alternative termer:** Bergen Raises
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Systemafhængig:** Ja
-**Kort definition:** En konvention der viser præcis støtte og styrke efter makkers 1‑major åbning.
-
-**Forklaring:** En konvention der viser præcis støtte og styrke efter makkers 1‑major åbning.
-
-### Berigtigelse
-**ID:** `berigtigelse`
-**Engelsk:** Rectification; correction
-**Alternative termer:** Correction
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** En berigtigelse er den lovbestemte håndtering af en uregelmæssighed.
-
-**Forklaring:** En berigtigelse er den lovbestemte håndtering af en uregelmæssighed. Formålet er normalt at genoprette et rimeligt resultat, ikke at straffe.
+**Forklaring:** At spille et kort i den farve, der er spillet ud.
 
 ### Billedkort
 **ID:** `billedkort`
@@ -211,18 +31,6 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 **Kort definition:** Billedkortene: konge, dame og knægt.
 
 **Forklaring:** Billedkortene: konge, dame og knægt.
-
-### Blackwood
-**ID:** `blackwood`
-**Engelsk:** Blackwood
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Systemafhængig:** Ja
-**Kort definition:** Blackwood undersøger antallet af esser.
-
-**Forklaring:** Blackwood undersøger antallet af esser. Varianter som Roman Key Card Blackwood undersøger i stedet nøglekort.
-
-**Relaterede begreber:** roman-key-card-blackwood-rkcb
 
 ### Blande
 **ID:** `blande`
@@ -242,25 +50,6 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 
 **Forklaring:** En honnør, der er det eneste kort i farven, fx blank konge. En blank honnør kan ikke beskyttes og falder, hvis farven spilles fra toppen.
 
-### Blokering
-**ID:** `blokering`
-**Engelsk:** Block
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** At forhindre en farve i at løbe ved at have høje kort i den forkerte hånd.
-
-**Forklaring:** At forhindre en farve i at løbe ved at have høje kort i den forkerte hånd.
-
-### Board-a-Match (BAM)
-**ID:** `board-a-match-bam`
-**Engelsk:** Board-a-Match (BAM)
-**Forkortelse:** BAM
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** En scoringsform hvor hvert spil er enten vundet, tabt eller uafgjort.
-
-**Forklaring:** En scoringsform hvor hvert spil er enten vundet, tabt eller uafgjort.
-
 ### Bogstik
 **ID:** `bogstik`
 **Engelsk:** Book
@@ -269,15 +58,6 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 **Kort definition:** De første seks stik i en kontrakt.
 
 **Forklaring:** De første seks stik i en kontrakt. Kontraktens trin angiver, hvor mange stik der skal vindes ud over bogstikket.
-
-### Bonuspoint
-**ID:** `bonuspoint`
-**Engelsk:** Premium points
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** Bonuspoint for udgang, slem eller overstik.
-
-**Forklaring:** Bonuspoint for udgang, slem eller overstik.
 
 ### Bordet
 **ID:** `bordet`
@@ -288,69 +68,6 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 **Kort definition:** Spilførerens makker, hvis kort lægges åbent på bordet efter åbningsudspillet.
 
 **Forklaring:** Bordet er spilførerens makker. Efter åbningsudspillet lægges bordets kort åbent, og spilføreren vælger kortene både fra bordet og fra hånden.
-
-### Bridgeetik
-**ID:** `bridgeetik`
-**Engelsk:** Etiquette
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** De uskrevne regler for god opførsel ved bridgebordet.
-
-**Forklaring:** De uskrevne regler for god opførsel ved bridgebordet.
-
-### Brænde
-**ID:** `braende`
-**Engelsk:** Miss
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** At brænde et stik eller en mulighed; bruges især i spilføring.
-
-**Forklaring:** At brænde et stik eller en mulighed; bruges især i spilføring.
-
-### Bud
-**ID:** `bud`
-**Engelsk:** Bid
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** En melding der angiver et niveau og en farve eller sans.
-
-**Forklaring:** En melding der angiver et niveau og en farve eller sans.
-
-### Bund
-**ID:** `bund`
-**Engelsk:** Bottom
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** Den laveste score på et spil i parturnering.
-
-**Forklaring:** Den laveste score på et spil i parturnering.
-
-### Butler-beregning
-**ID:** `butler-beregning`
-**Engelsk:** Butler scoring
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** En holdscoringsmetode baseret på IMP mod et gennemsnitligt resultat.
-
-**Forklaring:** En holdscoringsmetode baseret på IMP mod et gennemsnitligt resultat.
-
-### Cross-IMP
-**ID:** `cross-imp`
-**Engelsk:** Cross-IMP
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** En scoringsmetode hvor alle resultater sammenlignes IMP‑mæssigt mod hinanden.
-
-**Forklaring:** En scoringsmetode hvor alle resultater sammenlignes IMP‑mæssigt mod hinanden.
-
-### Cue-bid
-**ID:** `cue-bid`
-**Engelsk:** Cuebid
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** En melding i modstandernes farve, der viser styrke eller en specifik håndtype.
-
-**Forklaring:** En melding i modstandernes farve, der viser styrke eller en specifik håndtype.
 
 ### Dame
 **ID:** `dame`
@@ -363,15 +80,6 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 
 **Forklaring:** Damen; et honnørkort med betydelig styrke.
 
-### Datum
-**ID:** `datum`
-**Engelsk:** Datum score
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** Et gennemsnitsresultat brugt som reference i Butler‑scoring.
-
-**Forklaring:** Et gennemsnitsresultat brugt som reference i Butler‑scoring.
-
 ### Delkontrakt
 **ID:** `delkontrakt`
 **Engelsk:** Part-score
@@ -379,35 +87,7 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 **Kategori:** Grundlæggende begreber
 **Kort definition:** En kontrakt under udgangsniveau (fx 2♥, 2♠, 2NT).
 
-**Forklaring:** En kontrakt under udgangsniveau (fx 2♥, 2♠, 2NT).
-
-### Deltager
-**ID:** `deltager`
-**Engelsk:** Contestant(s)
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** Deltager(e) i en turnering.
-
-**Forklaring:** Deltager(e) i en turnering.
-
-### Dobbelt kipning
-**ID:** `dobbelt-kipning`
-**Engelsk:** Double finesse
-**Alternative termer:** Dobbeltknibning, dobbeltknibe
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** To kipninger i samme farve for at fange to af modpartens honnører.
-
-**Forklaring:** To kipninger i samme farve for at fange to af modpartens honnører.
-
-### Dobling
-**ID:** `dobling`
-**Engelsk:** Double
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** En melding der viser styrke, straf eller oplysning afhængigt af kontekst.
-
-**Forklaring:** En melding der viser styrke, straf eller oplysning afhængigt af kontekst.
+**Forklaring:** En kontrakt under udgang.
 
 ### Doubleton
 **ID:** `doubleton`
@@ -417,37 +97,7 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 **Kategori:** Grundlæggende begreber
 **Kort definition:** En farve med præcis to kort; kan give mulighed for trumfning.
 
-**Forklaring:** En farve med præcis to kort; kan give mulighed for trumfning.
-
-### Drury
-**ID:** `drury`
-**Engelsk:** Drury
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Systemafhængig:** Ja
-**Kort definition:** En konvention hvor svarer viser en invitstyrke med støtte til makkers major i passet hånd.
-
-**Forklaring:** En konvention hvor svarer viser en invitstyrke med støtte til makkers major i passet hånd.
-
-### Dyk
-**ID:** `dyk`
-**Engelsk:** Duck
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** At lade et stik gå med vilje for at afbryde modspillernes kommunikation.
-
-**Forklaring:** At lade et stik gå med vilje for at afbryde modspillernes kommunikation.
-
-### Eliminering
-**ID:** `eliminering`
-**Engelsk:** Elimination
-**Niveau:** øvet
-**Kategori:** Grundlæggende begreber
-**Kort definition:** At fjerne modspillernes sikre udspilsfarver før et slutspil.
-
-**Forklaring:** At fjerne modspillernes sikre udspilsfarver før et slutspil.
-
-**Relaterede begreber:** slutspil
+**Forklaring:** To kort i en farve.
 
 ### Es
 **ID:** `es`
@@ -459,26 +109,6 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 **Kort definition:** Esset; det højeste kort i farven og ofte et kontrolkort i meldinger og spilføring.
 
 **Forklaring:** Esset; det højeste kort i farven og ofte et kontrolkort i meldinger og spilføring.
-
-### Etablering
-**ID:** `etablering`
-**Engelsk:** Establish; develop
-**Alternative termer:** Establish / Develop
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** At spille en farve god ved at tvinge modstandernes honnører ud.
-
-**Forklaring:** At spille en farve god ved at tvinge modstandernes honnører ud.
-
-### Fald
-**ID:** `fald`
-**Engelsk:** Drop
-**Alternative termer:** Play for the drop
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** Når en manglende honnør falder, fordi farven toppes eller fordi den ikke længere kan holdes.
-
-**Forklaring:** Når en manglende honnør falder, fordi farven toppes eller fordi den ikke længere kan holdes.
 
 ### Farve
 **ID:** `farve`
@@ -508,24 +138,6 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 **Kort definition:** Kulørsymbolerne ♠ ♥ ♦ ♣.
 
 **Forklaring:** Kulørsymbolerne ♠ ♥ ♦ ♣.
-
-### Fast par
-**ID:** `fast-par`
-**Engelsk:** Stationary
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** Et par der sidder fast ved bordet og ikke flytter sig.
-
-**Forklaring:** Et par der sidder fast ved bordet og ikke flytter sig.
-
-### Feltet
-**ID:** `feltet`
-**Engelsk:** Field
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** Deltagerfeltet i en turnering.
-
-**Forklaring:** Deltagerfeltet i en turnering.
 
 ### Femkortfarve
 **ID:** `femkortfarve`
@@ -565,38 +177,6 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 
 **Forklaring:** Et kort med værdien fire; standardlængde i mange meldinger.
 
-### Fitvisende spring
-**ID:** `fitvisende-spring`
-**Engelsk:** Fit-showing jump
-**Alternative termer:** Fit‑showing jump
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Systemafhængig:** Ja
-**Kort definition:** Et spring i ny farve der viser både en god farve og støtte til makkers farve.
-
-**Forklaring:** Et spring i ny farve der viser både en god farve og støtte til makkers farve.
-
-### Fjerde farve krav
-**ID:** `fjerde-farve-krav`
-**Engelsk:** Fourth suit forcing
-**Alternative termer:** Fourth Suit Forcing (FSF)
-**Forkortelse:** FSF
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Systemafhængig:** Ja
-**Kort definition:** Når svarer melder den fjerde umeldte farve som et kunstigt krav.
-
-**Forklaring:** Når svarer melder den fjerde umeldte farve som et kunstigt krav.
-
-### Forbindelse
-**ID:** `forbindelse`
-**Engelsk:** Communication
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** Forbindelsen mellem hænderne via indgange; afgørende for etablering af farver.
-
-**Forklaring:** Forbindelsen mellem hænderne via indgange; afgørende for etablering af farver.
-
 ### Fordeling
 **ID:** `fordeling`
 **Engelsk:** Distribution
@@ -604,7 +184,7 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 **Kategori:** Grundlæggende begreber
 **Kort definition:** Fordelingen af kort i farverne; afgørende for både meldinger og spilføring.
 
-**Forklaring:** Fordelingen af kort i farverne; afgørende for både meldinger og spilføring.
+**Forklaring:** Hvordan håndens 13 kort fordeler sig på de fire farver.
 
 ### Fordelingspoint
 **ID:** `fordelingspoint`
@@ -613,82 +193,16 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 **Kategori:** Grundlæggende begreber
 **Kort definition:** Point for korthed (singleton/renonce) eller længde.
 
-**Forklaring:** Point for korthed (singleton/renonce) eller længde.
+**Forklaring:** Ekstra point for korte farver (eller lange farver), når man har fundet en trumffarve.
 
-### Forkert oplysning
-**ID:** `forkert-oplysning`
-**Engelsk:** Misinformation; incorrect explanation
-**Alternative termer:** Misinformation / Incorrect explanation
+### Forhånd
+**ID:** `forhaand`
+**Engelsk:**
 **Niveau:** begynder
 **Kategori:** Grundlæggende begreber
-**Kort definition:** Forkert forklaring af makkers melding; modstanderne kan få kompensation.
+**Kort definition:** Den plads, der spiller eller melder før en bestemt spiller.
 
-**Forklaring:** Forkert forklaring af makkers melding; modstanderne kan få kompensation.
-
-### Gaffel
-**ID:** `gaffel`
-**Engelsk:** Tenace
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** En gaffel, fx A‑D over modstanderen.
-
-**Forklaring:** En gaffel, fx A‑D over modstanderen.
-
-### Gambling 3NT
-**ID:** `gambling-3nt`
-**Engelsk:** Gambling 3NT
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Systemafhængig:** Ja
-**Kort definition:** En 3NT‑åbning der viser en gående minorfarve og ingen sidehonnører.
-
-**Forklaring:** En 3NT‑åbning der viser en gående minorfarve og ingen sidehonnører.
-
-### Genmelding
-**ID:** `genmelding`
-**Engelsk:** Rebid
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** At melde igen i sin egen farve eller sans.
-
-**Forklaring:** At melde igen i sin egen farve eller sans.
-
-### Gennembrud
-**ID:** `gennembrud`
-**Engelsk:** Leading through
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** At spille en farve igennem modstanderne for at tvinge honnører ud.
-
-**Forklaring:** At spille en farve igennem modstanderne for at tvinge honnører ud.
-
-### Genoverføring
-**ID:** `genoverfoering`
-**Engelsk:** Retransfer
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** En genoverførsel i sanskontrakter.
-
-**Forklaring:** En genoverførsel i sanskontrakter.
-
-### Genåbning
-**ID:** `genaabning`
-**Engelsk:** Balancing
-**Alternative termer:** Reopen
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** At genåbne meldingerne efter modstanderne har vist svaghed, for at forhindre passpil.
-
-**Forklaring:** At genåbne meldingerne efter modstanderne har vist svaghed, for at forhindre passpil.
-
-### Genåbningsposition
-**ID:** `genaabningsposition`
-**Engelsk:** Balancing position
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** Den position hvor en spiller kan genåbne efter tre pas.
-
-**Forklaring:** Den position hvor en spiller kan genåbne efter tre pas.
+**Forklaring:** Den plads, der spiller eller melder før en bestemt spiller.
 
 ### Giver
 **ID:** `giver`
@@ -709,34 +223,6 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 
 **Forklaring:** Når kontrakten går ned og spilfører mister stik.
 
-### Gående farve
-**ID:** `gaaende-farve`
-**Engelsk:** Solid suit
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** En farve hvor alle topkortene sidder hos én spiller; ofte gående.
-
-**Forklaring:** En farve hvor alle topkortene sidder hos én spiller; ofte gående.
-
-### Halvkrav 1NT
-**ID:** `halvkrav-1nt`
-**Engelsk:** Semi‑forcing notrump
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Systemafhængig:** Ja
-**Kort definition:** Et 1NT‑svar der er krav i én runde, men åbner må passe med minimum og 5‑kort major.
-
-**Forklaring:** Et 1NT‑svar der er krav i én runde, men åbner må passe med minimum og 5‑kort major.
-
-### Handicap
-**ID:** `handicap`
-**Engelsk:** Handicap
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** En turneringsform hvor svagere spillere får pointfordele.
-
-**Forklaring:** En turneringsform hvor svagere spillere får pointfordele.
-
 ### Hjerter
 **ID:** `hjerter`
 **Engelsk:** Heart
@@ -747,47 +233,10 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 
 **Forklaring:** Hjerterfarven. En majorfarve, ofte vigtig i konkurrencemeldinger.
 
-### Hold (spillere)
-**ID:** `hold-spillere`
-**Engelsk:** Team
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** Et hold bestående af flere spillere.
-
-**Forklaring:** Et hold bestående af flere spillere.
-
-### Hold (stopper)
-**ID:** `hold-stopper`
-**Engelsk:** Stopper
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** Et kort der kan stoppe modstandernes farve i sanskontrakter.
-
-**Forklaring:** Et kort der kan stoppe modstandernes farve i sanskontrakter.
-
-### Hold-up
-**ID:** `hold-up`
-**Engelsk:** Hold-up play
-**Niveau:** øvet
-**Kategori:** Grundlæggende begreber
-**Kort definition:** At lade modspillet vinde stik for at afskære forbindelser.
-
-**Forklaring:** At lade modspillet vinde stik for at afskære forbindelser.
-
-### Holdturnering
-**ID:** `holdturnering`
-**Engelsk:** Teams event
-**Alternative termer:** Teams
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** En holdturnering.
-
-**Forklaring:** En holdturnering.
-
 ### Honnør
 **ID:** `honnoer`
 **Engelsk:** Honour; honor
-**Alternative termer:** Honour
+**Alternative termer:** Honour, Honnører
 **Niveau:** begynder
 **Kategori:** Grundlæggende begreber
 **Kort definition:** Et honnørkort: es, konge, dame, knægt eller ti.
@@ -803,16 +252,16 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 **Kategori:** Grundlæggende begreber
 **Kort definition:** Honnørpoint: A=4, K=3, D=2, B=1.
 
-**Forklaring:** Honnørpoint: A=4, K=3, D=2, B=1.
+**Forklaring:** Pointtælling: es 4, konge 3, dame 2, knægt 1. 40 hp i alt.
 
-### Howell-skifte
-**ID:** `howell-skifte`
-**Engelsk:** Howell movement
+### Honnørsekvens
+**ID:** `honnoersekvens`
+**Engelsk:** Honour sequence
 **Niveau:** begynder
 **Kategori:** Grundlæggende begreber
-**Kort definition:** En bevægelsesform hvor alle par spiller mod hinanden i en sektion.
+**Kort definition:** Tre eller flere sammenhængende honnører, fx K-D-B.
 
-**Forklaring:** En bevægelsesform hvor alle par spiller mod hinanden i en sektion.
+**Forklaring:** Tre eller flere sammenhængende honnører, fx K-D-B.
 
 ### Højre modstander
 **ID:** `hoejre-modstander`
@@ -823,16 +272,6 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 **Kort definition:** Modstanderen til højre for en given spiller.
 
 **Forklaring:** Modstanderen til højre for en given spiller.
-
-### Højt fra intet
-**ID:** `hoejt-fra-intet`
-**Engelsk:** Top of nothing
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Systemafhængig:** Ja
-**Kort definition:** Udspil af et højt lavt kort (fx 9) fra en svag farve.
-
-**Forklaring:** Udspil af et højt lavt kort (fx 9) fra en svag farve.
 
 ### Højt kort
 **ID:** `hoejt-kort`
@@ -862,200 +301,15 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 
 **Forklaring:** Den samlede værdi af en hånd; vurderes via honnørpoint og fordeling.
 
-### I zonen
-**ID:** `i-zonen`
-**Engelsk:** Vulnerable
-**Alternative termer:** Vulnerable / Game in
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** I zonen; giver højere bonus og højere straf.
-
-**Forklaring:** I zonen; giver højere bonus og højere straf.
-
-### Igangværende stik
-**ID:** `igangvaerende-stik`
-**Engelsk:** Current trick
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** Det stik der er i gang med at blive spillet.
-
-**Forklaring:** Det stik der er i gang med at blive spillet.
-
-### Ikke-krav
-**ID:** `ikke-krav`
-**Engelsk:** Non-forcing
-**Alternative termer:** Nonforcing
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** En melding der må passes.
-
-**Forklaring:** En melding der må passes.
-
-### Indblanding
-**ID:** `indblanding`
-**Engelsk:** Interference
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** Modstandernes indblanding i meldeforløbet.
-
-**Forklaring:** Modstandernes indblanding i meldeforløbet.
-
-### Indgang
-**ID:** `indgang`
-**Engelsk:** Entry
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** En indgang til en hånd, der giver adgang til etablerede stik.
-
-**Forklaring:** En indgang til en hånd, der giver adgang til etablerede stik.
-
-### Indkassere
-**ID:** `indkassere`
-**Engelsk:** Cash
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** At indkassere et sikkert stik ved at spille et højt kort.
-
-**Forklaring:** At indkassere et sikkert stik ved at spille et højt kort.
-
-### Indmelderens makker
-**ID:** `indmelderens-makker`
-**Engelsk:** Advancer
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** Indmelderens makker; den spiller der svarer efter en indmelding.
-
-**Forklaring:** Indmelderens makker; den spiller der svarer efter en indmelding.
-
-### Indre sekvens
-**ID:** `indre-sekvens`
-**Engelsk:** Interior sequence
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** En indre sekvens er to eller flere sammenhængende honnører under et højere, ikke-sammenhængende kort, fx K-B-10-x.
-
-**Forklaring:** En indre sekvens er to eller flere sammenhængende honnører under et højere, ikke-sammenhængende kort, fx K-B-10-x.
-
-### Indspil
-**ID:** `indspil`
-**Engelsk:** Throw-in
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** En form for slutspil, hvor spilføreren sætter en modspiller ind, så han må spille ud til spilførerens fordel, fx ind i en gaffel.
-
-**Forklaring:** En form for slutspil, hvor spilføreren sætter en modspiller ind, så han må spille ud til spilførerens fordel, fx ind i en gaffel.
-
-**Relaterede begreber:** slutspil, eliminering, gaffel
-
-### International Matchpoints
-**ID:** `international-matchpoints`
-**Engelsk:** International Match Points
-**Alternative termer:** International match points (IMP)
-**Forkortelse:** IMP
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** En scoringsform hvor forskellen i score omregnes til IMP.
-
-**Forklaring:** En scoringsform hvor forskellen i score omregnes til IMP.
-
-### Invitation
-**ID:** `invitation`
-**Engelsk:** Invitation
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** En invitation viser ekstra styrke og beder makker vurdere, om parret skal fortsætte til udgang eller slem.
-
-**Forklaring:** En invitation viser ekstra styrke og beder makker vurdere, om parret skal fortsætte til udgang eller slem. Pointintervallet afhænger af meldesystem og sekvens.
-
-### Invitstøtte
-**ID:** `invitstoette`
-**Engelsk:** Limit raise
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Systemafhængig:** Ja
-**Kort definition:** En invitstyrke med støtte til makkers farve.
-
-**Forklaring:** En invitstyrke med støtte til makkers farve.
-
-### Jacoby 2NT
-**ID:** `jacoby-2nt`
-**Engelsk:** Jacoby 2NT
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Systemafhængig:** Ja
-**Kort definition:** En kunstig 2NT‑melding over makkers 1‑major, der viser stærk støtte og udgangskrav.
-
-**Forklaring:** En kunstig 2NT‑melding over makkers 1‑major, der viser stærk støtte og udgangskrav.
-
-### Jacoby-transfer
-**ID:** `jacoby-transfer`
-**Engelsk:** Jacoby transfer
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Systemafhængig:** Ja
-**Kort definition:** En kunstig svarmelding efter en sansåbning, som beder åbneren melde den næste farve.
-
-**Forklaring:** En kunstig svarmelding efter en sansåbning, som beder åbneren melde den næste farve. Overføringen placerer ofte spilføringen hos sansåbneren.
-
 ### Jævn hånd
 **ID:** `jaevn-haand`
 **Engelsk:** Balanced hand
-**Alternative termer:** Balanced hand (Bal)
+**Alternative termer:** Balanced hand (Bal), Balanceret fordeling, Jævn fordeling
 **Niveau:** begynder
 **Kategori:** Grundlæggende begreber
 **Kort definition:** En jævn hånd, typisk 4‑3‑3‑3, 4‑4‑3‑2 eller 5‑3‑3‑2.
 
 **Forklaring:** En jævn hånd, typisk 4‑3‑3‑3, 4‑4‑3‑2 eller 5‑3‑3‑2.
-
-### Kamp
-**ID:** `kamp`
-**Engelsk:** Match
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** En kamp mellem to hold eller par.
-
-**Forklaring:** En kamp mellem to hold eller par.
-
-### Kamppoint
-**ID:** `kamppoint`
-**Engelsk:** Victory Points
-**Alternative termer:** Victory Points (VP)
-**Forkortelse:** VP
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** Kamppoint brugt i holdturneringer baseret på IMP‑forskel.
-
-**Forklaring:** Kamppoint brugt i holdturneringer baseret på IMP‑forskel.
-
-### Kaptajn
-**ID:** `kaptajn`
-**Engelsk:** Captain
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** Den spiller der styrer meldingerne i slemforløb og tager de endelige beslutninger.
-
-**Forklaring:** Den spiller der styrer meldingerne i slemforløb og tager de endelige beslutninger.
-
-### Kendelse
-**ID:** `kendelse`
-**Engelsk:** Ruling
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** En afgørelse fra turneringslederen om en uregelmæssighed.
-
-**Forklaring:** En afgørelse fra turneringslederen om en uregelmæssighed.
-
-### Kipning
-**ID:** `kipning`
-**Engelsk:** Finesse
-**Alternative termer:** Knibning, snit
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** At spille mod en honnør i håb om, at modpartens højere kort sidder foran den, fx lille mod damen med esset og damen, når kongen mangler.
-
-**Forklaring:** At spille mod en honnør i håb om, at modpartens højere kort sidder foran den, fx lille mod damen med esset og damen, når kongen mangler.
-
-**Relaterede begreber:** gaffel, dobbelt-kipning
 
 ### Klør
 **ID:** `kloer`
@@ -1070,7 +324,7 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 ### Knægt
 **ID:** `knaegt`
 **Engelsk:** Jack
-**Alternative termer:** Jack (J)
+**Alternative termer:** Jack (J), Bonde
 **Forkortelse:** J
 **Niveau:** begynder
 **Kategori:** Grundlæggende begreber
@@ -1089,15 +343,6 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 
 **Forklaring:** Kongen; et vigtigt honnørkort.
 
-### Konkurrencemelding
-**ID:** `konkurrencemelding`
-**Engelsk:** Competitive bid
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** En melding afgivet i konkurrence med modstanderne.
-
-**Forklaring:** En melding afgivet i konkurrence med modstanderne.
-
 ### Kontrakt
 **ID:** `kontrakt`
 **Engelsk:** Contract
@@ -1115,34 +360,6 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 **Kort definition:** Et stik ud over bogstikket.
 
 **Forklaring:** Et stik ud over bogstikket. En kontrakt på 4-trinnet kræver derfor ti stik.
-
-### Kontrol
-**ID:** `kontrol`
-**Engelsk:** Control
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** Et es eller konge i en farve, vigtigt i slemundersøgelser.
-
-**Forklaring:** Et es eller konge i en farve, vigtigt i slemundersøgelser.
-
-### Kontrolmelding
-**ID:** `kontrolmelding`
-**Engelsk:** Control bid
-**Alternative termer:** Control-bid
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** En melding der viser kontrol i en farve, typisk i slemforløb.
-
-**Forklaring:** En melding der viser kontrol i en farve, typisk i slemforløb.
-
-### Konvention
-**ID:** `konvention`
-**Engelsk:** Convention
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** En aftalt kunstig melding eller sekvens.
-
-**Forklaring:** En aftalt kunstig melding eller sekvens.
 
 ### Kort
 **ID:** `kort`
@@ -1183,138 +400,34 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 
 **Forklaring:** Et komplet sæt på 52 kort.
 
-### Krav
-**ID:** `krav`
-**Engelsk:** Claim
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** Et krav er en erklæring om, hvor mange af de resterende stik en spiller forventer at vinde.
-
-**Forklaring:** Et krav er en erklæring om, hvor mange af de resterende stik en spiller forventer at vinde. Spillet standses, og spilleren angiver sin spilleplan.
-
-### Kravmelding
-**ID:** `kravmelding`
-**Engelsk:** Forcing call
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** En melding der ikke må passes.
-
-**Forklaring:** En melding der ikke må passes.
-
-### Kravpas
-**ID:** `kravpas`
-**Engelsk:** Forcing pass
-**Alternative termer:** Forcing pass (FP)
-**Forkortelse:** FP
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** Et pas der viser styrke og kræver handling fra makker.
-
-**Forklaring:** Et pas der viser styrke og kræver handling fra makker.
-
-### Kravsans
-**ID:** `kravsans`
-**Engelsk:** Forcing notrump
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Systemafhængig:** Ja
-**Kort definition:** 1NT‑svar der lover mindst én runde krav efter makkers major‑åbning.
-
-**Forklaring:** 1NT‑svar der lover mindst én runde krav efter makkers major‑åbning.
-
-### Krydstrumfning
-**ID:** `krydstrumfning`
-**Engelsk:** Cross-ruff
-**Alternative termer:** Krydstrumfning (Cross-ruff)
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** At trumfe skiftevis i begge hænder for at udvikle mange trumfstik.
-
-**Forklaring:** At trumfe skiftevis i begge hænder for at udvikle mange trumfstik.
-
-### Kulørsvigt
-**ID:** `kuloersvigt`
-**Engelsk:** Revoke
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** Kulørsvigt opstår, når en spiller undlader at bekende, selv om spilleren har et kort i den udspillede farve.
-
-**Forklaring:** Kulørsvigt opstår, når en spiller undlader at bekende, selv om spilleren har et kort i den udspillede farve.
-
-### Kunstig melding
-**ID:** `kunstig-melding`
-**Engelsk:** Artificial call
-**Alternative termer:** Artificial
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** En melding der ikke viser den meldte farve, men har en konventionel betydning.
-
-**Forklaring:** En melding der ikke viser den meldte farve, men har en konventionel betydning.
-
-### Kvalifikation
-**ID:** `kvalifikation`
-**Engelsk:** Qualification
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** En fase hvor spillere eller hold forsøger at kvalificere sig til finalerunden.
-
-**Forklaring:** En fase hvor spillere eller hold forsøger at kvalificere sig til finalerunden.
-
-### Kvantitativ melding
-**ID:** `kvantitativ-melding`
-**Engelsk:** Quantitative
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** En melding der viser styrke og spørger makker om at vurdere udgang/slem.
-
-**Forklaring:** En melding der viser styrke og spørger makker om at vurdere udgang/slem.
-
 ### Lang farve
 **ID:** `lang-farve`
 **Engelsk:** Long suit
+**Alternative termer:** Langfarve
 **Niveau:** begynder
 **Kategori:** Grundlæggende begreber
 **Kort definition:** En farve med mange kort, ofte 6+.
 
 **Forklaring:** En farve med mange kort, ofte 6+.
 
-### Lang tænkepause
-**ID:** `lang-taenkepause`
-**Engelsk:** Huddle
+### Lavhonnør
+**ID:** `lavhonnoer`
+**Engelsk:**
 **Niveau:** begynder
 **Kategori:** Grundlæggende begreber
-**Kort definition:** En meget lang tænkepause, ofte mistænkelig i konkurrencemeldinger.
+**Kort definition:** Dame eller knægt, som er mindre sikre stikvindere end es og konge.
 
-**Forklaring:** En meget lang tænkepause, ofte mistænkelig i konkurrencemeldinger.
+**Forklaring:** Dame eller knægt, som er mindre sikre stikvindere end es og konge.
 
 ### Lavt kort
 **ID:** `lavt-kort`
 **Engelsk:** Low card
-**Alternative termer:** Low
+**Alternative termer:** Low, Småkort
 **Niveau:** begynder
 **Kategori:** Grundlæggende begreber
 **Kort definition:** Et lavt kort (typisk 2–6); bruges i signaler og tekniske spil.
 
 **Forklaring:** Et lavt kort (typisk 2–6); bruges i signaler og tekniske spil.
-
-### Lebensohl
-**ID:** `lebensohl`
-**Engelsk:** Lebensohl
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Systemafhængig:** Ja
-**Kort definition:** En konvention der håndterer indblanding over 1NT og viser forskellige styrker via 2NT‑relay.
-
-**Forklaring:** En konvention der håndterer indblanding over 1NT og viser forskellige styrker via 2NT‑relay.
-
-### Lige antal
-**ID:** `lige-antal`
-**Engelsk:** Even
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** En lige antal kort i en farve (fx 2, 4, 6).
-
-**Forklaring:** En lige antal kort i en farve (fx 2, 4, 6).
 
 ### Lilleslem
 **ID:** `lilleslem`
@@ -1325,45 +438,10 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 
 **Forklaring:** En kontrakt på 6‑trinnet, hvor 12 stik skal vindes.
 
-### Lovbrud
-**ID:** `lovbrud`
-**Engelsk:** Infraction
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** Et regelbrud, som kan medføre justeret score eller straf.
-
-**Forklaring:** Et regelbrud, som kan medføre justeret score eller straf.
-
-### Lovlig
-**ID:** `lovlig`
-**Engelsk:** Legal
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** En handling eller melding, der er tilladt efter reglerne.
-
-**Forklaring:** En handling eller melding, der er tilladt efter reglerne.
-
-### Lukket hånd
-**ID:** `lukket-haand`
-**Engelsk:** Closed hand
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** Spilførers hånd, som kun spilføreren kan se.
-
-**Forklaring:** Spilførers hånd, som kun spilføreren kan se.
-
-### Lukket rum
-**ID:** `lukket-rum`
-**Engelsk:** Closed room
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** Et rum i holdkampe hvor spillerne ikke kan se eller høre resultater fra det andet bord.
-
-**Forklaring:** Et rum i holdkampe hvor spillerne ikke kan se eller høre resultater fra det andet bord.
-
 ### Majorfarve
 **ID:** `majorfarve`
 **Engelsk:** Major
+**Alternative termer:** Majorfarver
 **Niveau:** begynder
 **Kategori:** Grundlæggende begreber
 **Kort definition:** Spar og hjerter er majorfarver.
@@ -1379,16 +457,6 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 
 **Forklaring:** Din makker; den spiller du samarbejder med.
 
-### Makkeraftale
-**ID:** `makkeraftale`
-**Engelsk:** Agreement
-**Alternative termer:** Partnership understanding
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** En aftale mellem makkerne om betydningen af bestemte meldinger.
-
-**Forklaring:** En aftale mellem makkerne om betydningen af bestemte meldinger.
-
 ### Makkerpar
 **ID:** `makkerpar`
 **Engelsk:** Partnership
@@ -1397,53 +465,6 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 **Kort definition:** Makkerskabet mellem to spillere.
 
 **Forklaring:** Makkerskabet mellem to spillere.
-
-### Maksimum
-**ID:** `maksimum`
-**Engelsk:** Maximum (max)
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** Den øvre grænse af en hånds styrke i en given sekvens.
-
-**Forklaring:** Den øvre grænse af en hånds styrke i en given sekvens.
-
-### Manglende alert
-**ID:** `manglende-alert`
-**Engelsk:** Failure to alert
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** Når en spiller undlader at alertere en kunstig melding, som makker burde have informeret om.
-
-**Forklaring:** Når en spiller undlader at alertere en kunstig melding, som makker burde have informeret om.
-
-### Matchpoint
-**ID:** `matchpoint`
-**Engelsk:** Matchpoints
-**Alternative termer:** Matchpoints (MP)
-**Forkortelse:** MP
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** Scoring i parturnering, hvor hvert spil sammenlignes med alle andre par.
-
-**Forklaring:** Scoring i parturnering, hvor hvert spil sammenlignes med alle andre par.
-
-### Med bagsiden opad
-**ID:** `med-bagsiden-opad`
-**Engelsk:** Face down
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** Et kort spillet med bagsiden opad, typisk ved uregelmæssigheder.
-
-**Forklaring:** Et kort spillet med bagsiden opad, typisk ved uregelmæssigheder.
-
-### Med forsiden opad
-**ID:** `med-forsiden-opad`
-**Engelsk:** Face up / Faced card
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** Et kort spillet med forsiden opad.
-
-**Forklaring:** Et kort spillet med forsiden opad.
 
 ### Med uret
 **ID:** `med-uret`
@@ -1454,210 +475,43 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 
 **Forklaring:** Meldinger afgives med uret rundt om bordet.
 
-### Mekanisk fejl
-**ID:** `mekanisk-fejl`
-**Engelsk:** Mechanical error
-**Niveau:** begynder
+### Mellemhånd
+**ID:** `mellemhaand`
+**Engelsk:**
+**Niveau:** let øvet
 **Kategori:** Grundlæggende begreber
-**Kort definition:** Et fysisk fejlgreb, fx at spille det forkerte kort ved et uheld.
+**Kort definition:** At sidde i klemme mellem to modstandere, så man skal lægge kort til, før den anden har valgt.
 
-**Forklaring:** Et fysisk fejlgreb, fx at spille det forkerte kort ved et uheld.
+**Forklaring:** At sidde i klemme mellem to modstandere, så man skal lægge kort til, før den anden har valgt.
 
-### Meldeforløb
-**ID:** `meldeforloeb`
-**Engelsk:** Auction
-**Niveau:** begynder
+### Mellemkort
+**ID:** `mellemkort`
+**Engelsk:** Intermediates
+**Niveau:** let øvet
 **Kategori:** Grundlæggende begreber
-**Kort definition:** Hele meldeforløbet fra første melding til kontrakten er fastlagt.
+**Kort definition:** 10, 9 og 8, der kan få betydning for stik.
 
-**Forklaring:** Hele meldeforløbet fra første melding til kontrakten er fastlagt.
-
-### Meldekasse
-**ID:** `meldekasse`
-**Engelsk:** Bidding boxes
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** Meldekasser med kort, der bruges til at afgive meldinger i turneringsbridge.
-
-**Forklaring:** Meldekasser med kort, der bruges til at afgive meldinger i turneringsbridge.
-
-### Meldeperiode
-**ID:** `meldeperiode`
-**Engelsk:** Auction period
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** Den fase af spillet hvor spillerne afgiver meldinger.
-
-**Forklaring:** Den fase af spillet hvor spillerne afgiver meldinger.
-
-### Meldeplads
-**ID:** `meldeplads`
-**Engelsk:** Space
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** Den tilgængelige plads i meldeforløbet.
-
-**Forklaring:** Den tilgængelige plads i meldeforløbet.
-
-### Melder
-**ID:** `melder`
-**Engelsk:** Bidder
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** Den spiller der afgiver en melding i meldeforløbet.
-
-**Forklaring:** Den spiller der afgiver en melding i meldeforløbet.
-
-### Meldesekvens
-**ID:** `meldesekvens`
-**Engelsk:** Bidding sequence
-**Alternative termer:** Bid sequence
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** Rækkefølgen af meldinger i et meldeforløb.
-
-**Forklaring:** Rækkefølgen af meldinger i et meldeforløb.
-
-### Meldesystem
-**ID:** `meldesystem`
-**Engelsk:** Bidding system
-**Alternative termer:** System / Bidding system
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** Det aftalte meldesystem mellem makkerne.
-
-**Forklaring:** Det aftalte meldesystem mellem makkerne.
-
-### Melding
-**ID:** `melding`
-**Engelsk:** Call
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** Enhver melding: bud, pas, dobling eller redobling.
-
-**Forklaring:** Enhver melding: bud, pas, dobling eller redobling.
-
-### Melding uden for tur
-**ID:** `melding-uden-for-tur`
-**Engelsk:** Call out of turn
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** En melding afgivet af en spiller, der ikke er i tur; kan medføre rettelser eller straf.
-
-**Forklaring:** En melding afgivet af en spiller, der ikke er i tur; kan medføre rettelser eller straf.
-
-### Meldt og vundet
-**ID:** `meldt-og-vundet`
-**Engelsk:** Bid and made
-**Alternative termer:** Makes
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** Når den meldte kontrakt bliver vundet.
-
-**Forklaring:** Når den meldte kontrakt bliver vundet.
-
-### Mesterpoint
-**ID:** `mesterpoint`
-**Engelsk:** Masterpoint / Master point (MP)
-**Forkortelse:** MP
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** Point der gives for placering i turneringer; bruges til ranglister.
-
-**Forklaring:** Point der gives for placering i turneringer; bruges til ranglister.
-
-### Mesterskab
-**ID:** `mesterskab`
-**Engelsk:** Championship
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** Et mesterskab, typisk på nationalt eller internationalt niveau.
-
-**Forklaring:** Et mesterskab, typisk på nationalt eller internationalt niveau.
-
-### Middelscore
-**ID:** `middelscore`
-**Engelsk:** Average
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** Den score, et par får, når et spil ikke kan spilles eller ikke kan gennemføres korrekt; i parturnering typisk 50 % af toppen.
-
-**Forklaring:** Den score, et par får, når et spil ikke kan spilles eller ikke kan gennemføres korrekt; i parturnering typisk 50 % af toppen.
-
-### Middelscore minus
-**ID:** `middelscore-minus`
-**Engelsk:** Average minus
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** En lavere middelscore, typisk når en spiller har delvist ansvar for en fejl.
-
-**Forklaring:** En lavere middelscore, typisk når en spiller har delvist ansvar for en fejl.
-
-### Middelscore plus
-**ID:** `middelscore-plus`
-**Engelsk:** Average plus
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** En højere middelscore, typisk når en spiller ikke har ansvar for en fejl.
-
-**Forklaring:** En højere middelscore, typisk når en spiller ikke har ansvar for en fejl.
-
-### Minimum
-**ID:** `minimum`
-**Engelsk:** Minimum (min)
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** Den nedre grænse af en hånds styrke.
-
-**Forklaring:** Den nedre grænse af en hånds styrke.
+**Forklaring:** 10, 9 og 8, der kan få betydning for stik.
 
 ### Minorfarve
 **ID:** `minorfarve`
 **Engelsk:** Minor
+**Alternative termer:** Minorfarver
 **Niveau:** begynder
 **Kategori:** Grundlæggende begreber
 **Kort definition:** Klør og ruder er minorfarver.
 
 **Forklaring:** Klør og ruder er minorfarver. En kontrakt i minor giver 20 stikpoint for hvert kontraktstik over bogstikket.
 
-### Mitchell-skifte
-**ID:** `mitchell-skifte`
-**Engelsk:** Mitchell movement
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** En bevægelsesform hvor Nord‑Syd sidder fast, og Øst‑Vest bevæger sig.
-
-**Forklaring:** En bevægelsesform hvor Nord‑Syd sidder fast, og Øst‑Vest bevæger sig.
-
-### Modspil
-**ID:** `modspil`
-**Engelsk:** Defence; defense
-**Alternative termer:** Defence / Defensive play
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** Modspillets strategi og teknik.
-
-**Forklaring:** Modspillets strategi og teknik.
-
 ### Modspillere
 **ID:** `modspillere`
 **Engelsk:** Defenders
-**Alternative termer:** Defender(s)
+**Alternative termer:** Defender(s), Modspiller
 **Niveau:** begynder
 **Kategori:** Grundlæggende begreber
 **Kort definition:** Modspillerne; de to spillere der spiller mod spilføreren.
 
 **Forklaring:** Modspillerne; de to spillere der spiller mod spilføreren.
-
-### Modspilssignal
-**ID:** `modspilssignal`
-**Engelsk:** Signal; carding
-**Alternative termer:** Signal / Carding
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** Modspilssignaler der viser attitude, længde eller præference.
-
-**Forklaring:** Modspilssignaler der viser attitude, længde eller præference.
 
 ### Modstandere
 **ID:** `modstandere`
@@ -1669,45 +523,14 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 
 **Forklaring:** Modstanderne; de to spillere der ikke er i makkerskab med dig.
 
-### Morton's Fork
-**ID:** `morton-s-fork`
-**Engelsk:** Morton's Fork
-**Niveau:** avanceret
-**Kategori:** Grundlæggende begreber
-**Kort definition:** Et slutspil hvor modspiller uanset valg giver spilfører fordel.
-
-**Forklaring:** Et slutspil hvor modspiller uanset valg giver spilfører fordel.
-
-**Relaterede begreber:** slutspil
-
-### Multi
-**ID:** `multi`
-**Engelsk:** Multi
+### Nabohonnører
+**ID:** `nabohonnoerer`
+**Engelsk:** Touching honours
 **Niveau:** begynder
 **Kategori:** Grundlæggende begreber
-**Systemafhængig:** Ja
-**Kort definition:** En kunstig 2♦‑åbning der viser flere mulige håndtyper (typisk svag 2 i major).
+**Kort definition:** Honnører, der ligger lige op ad hinanden i rangfølgen.
 
-**Forklaring:** En kunstig 2♦‑åbning der viser flere mulige håndtyper (typisk svag 2 i major).
-
-### Naturlig melding
-**ID:** `naturlig-melding`
-**Engelsk:** Natural call
-**Alternative termer:** Natural
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** En melding der viser den meldte farve.
-
-**Forklaring:** En melding der viser den meldte farve.
-
-### Neutralt udspil
-**ID:** `neutralt-udspil`
-**Engelsk:** Neutral lead
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** Et udspil der ikke giver spilfører fordel; ofte i sanskontrakter.
-
-**Forklaring:** Et udspil der ikke giver spilfører fordel; ofte i sanskontrakter.
+**Forklaring:** Honnører, der ligger lige op ad hinanden i rangfølgen.
 
 ### Nier (9)
 **ID:** `nier-9`
@@ -1729,51 +552,6 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 
 **Forklaring:** Spilleren der sidder i nord.
 
-### Ny farve
-**ID:** `ny-farve`
-**Engelsk:** New suit
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** En melding i en ny farve.
-
-**Forklaring:** En melding i en ny farve. Om meldingen er krav, afhænger af meldesystemet og den konkrete sekvens.
-
-### Nøglekort
-**ID:** `noeglekort`
-**Engelsk:** Key card
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** I Roman Key Card Blackwood er de fire esser og trumfkongen nøglekort.
-
-**Forklaring:** I Roman Key Card Blackwood er de fire esser og trumfkongen nøglekort. Trumfdamen er ikke et nøglekort, men undersøges ofte særskilt.
-
-### Omvendte minorstøtter
-**ID:** `omvendte-minorstoetter`
-**Engelsk:** Inverted
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** En aftale, hvor støtte til makkers minoråbning byttes om: en enkelt hævning (fx 1♣–2♣) er stærk og krav, mens et spring (1♣–3♣) er svagt og spærrende.
-
-**Forklaring:** En aftale, hvor støtte til makkers minoråbning byttes om: en enkelt hævning (fx 1♣–2♣) er stærk og krav, mens et spring (1♣–3♣) er svagt og spærrende.
-
-### Oplagt kontrakt
-**ID:** `oplagt-kontrakt`
-**Engelsk:** Laydown
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** En kontrakt der er trivielt vundet uanset modspil.
-
-**Forklaring:** En kontrakt der er trivielt vundet uanset modspil.
-
-### Optimal kontrakt
-**ID:** `optimal-kontrakt`
-**Engelsk:** Optimum contract
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** Den bedste kontrakt baseret på hænderne.
-
-**Forklaring:** Den bedste kontrakt baseret på hænderne.
-
 ### Otter (8)
 **ID:** `otter-8`
 **Engelsk:** Eight (8)
@@ -1784,34 +562,6 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 
 **Forklaring:** Et kort med værdien otte; bruges i længdeangivelser og tælling.
 
-### Overføring
-**ID:** `overfoering`
-**Engelsk:** Transfer
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Systemafhængig:** Ja
-**Kort definition:** En overførsel i sanskontrakter der flytter spilføringen til åbneren.
-
-**Forklaring:** En overførsel i sanskontrakter der flytter spilføringen til åbneren.
-
-### Overførte point
-**ID:** `overfoerte-point`
-**Engelsk:** Carry-over
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** Point der overføres fra en tidligere runde eller session.
-
-**Forklaring:** Point der overføres fra en tidligere runde eller session.
-
-### Oversidder
-**ID:** `oversidder`
-**Engelsk:** Sitout
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** Når et par sidder over i en runde, typisk ved ulige antal par.
-
-**Forklaring:** Når et par sidder over i en runde, typisk ved ulige antal par.
-
 ### Overstik
 **ID:** `overstik`
 **Engelsk:** Overtrick
@@ -1819,90 +569,7 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 **Kategori:** Grundlæggende begreber
 **Kort definition:** Et stik ud over kontrakten.
 
-**Forklaring:** Et stik ud over kontrakten.
-
-### Overstikspoint
-**ID:** `overstikspoint`
-**Engelsk:** Overtrick points
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** Point for stik ud over kontrakten.
-
-**Forklaring:** Point for stik ud over kontrakten.
-
-### Overtrumf
-**ID:** `overtrumf`
-**Engelsk:** Overruff
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** At trumfe over modstanderen.
-
-**Forklaring:** At trumfe over modstanderen.
-
-### Par
-**ID:** `par`
-**Engelsk:** Pair
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** Et makkerpar i en turnering.
-
-**Forklaring:** Et makkerpar i en turnering.
-
-### Parturnering
-**ID:** `parturnering`
-**Engelsk:** Pair game
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** En parturnering hvor to spillere danner et par.
-
-**Forklaring:** En parturnering hvor to spillere danner et par.
-
-### Pas
-**ID:** `pas`
-**Engelsk:** Pass
-**Alternative termer:** Pass / No bid
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** At afstå fra at melde.
-
-**Forklaring:** At afstå fra at melde.
-
-### Pas eller ret
-**ID:** `pas-eller-ret`
-**Engelsk:** Pass or correct
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Systemafhængig:** Ja
-**Kort definition:** En melding der beder makker om at vælge den bedste af to farver.
-
-**Forklaring:** En melding der beder makker om at vælge den bedste af to farver.
-
-### Passet hånd
-**ID:** `passet-haand`
-**Engelsk:** Passed hand
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** En spiller der har passet i første melderunde og dermed har begrænset styrke.
-
-**Forklaring:** En spiller der har passet i første melderunde og dermed har begrænset styrke.
-
-### Pivot
-**ID:** `pivot`
-**Engelsk:** Pivot
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** At vende retning eller placering i en bevægelsesplan.
-
-**Forklaring:** At vende retning eller placering i en bevægelsesplan.
-
-### Pivotbord
-**ID:** `pivotbord`
-**Engelsk:** Pivot table
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** Bordet hvor par skifter retning i en Howell‑bevægelse.
-
-**Forklaring:** Bordet hvor par skifter retning i en Howell‑bevægelse.
+**Forklaring:** Stik ud over det, kontrakten kræver.
 
 ### Plads
 **ID:** `plads`
@@ -1923,53 +590,6 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 
 **Forklaring:** Samlet vurdering af håndens styrke (hp + fordeling).
 
-### Privat regnskabskort
-**ID:** `privat-regnskabskort`
-**Engelsk:** Personal score sheet
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** Privat regnskab hvor spillere noterer deres resultater.
-
-**Forklaring:** Privat regnskab hvor spillere noterer deres resultater.
-
-### Procentscore
-**ID:** `procentscore`
-**Engelsk:** Percentage score
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** Procentscore i parturnering baseret på matchpoints.
-
-**Forklaring:** Procentscore i parturnering baseret på matchpoints.
-
-### Præference
-**ID:** `praeference`
-**Engelsk:** Preference / Correct
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** En melding der viser hvilken farve man foretrækker.
-
-**Forklaring:** En melding der viser hvilken farve man foretrækker.
-
-### Psykisk melding
-**ID:** `psykisk-melding`
-**Engelsk:** Psychic call
-**Alternative termer:** Psych
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** En lovlig, bevidst og væsentligt afvigende melding i forhold til håndens honnørstyrke eller farvelængde.
-
-**Forklaring:** En lovlig, bevidst og væsentligt afvigende melding i forhold til håndens honnørstyrke eller farvelængde. Gentagne eller aftalte psykiske meldinger kan være reguleret.
-
-### Puppet Stayman
-**ID:** `puppet-stayman`
-**Engelsk:** Puppet Stayman
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Systemafhængig:** Ja
-**Kort definition:** En Stayman-variant, der undersøger både fire- og femkorts major hos sansåbneren.
-
-**Forklaring:** En Stayman-variant, der undersøger både fire- og femkorts major hos sansåbneren. Den præcise sekvens afhænger af makkerskabets system.
-
 ### Rang
 **ID:** `rang`
 **Engelsk:** Rank
@@ -1979,55 +599,6 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 
 **Forklaring:** Kortets rang i farven (A højst, 2 lavest).
 
-### Redningsmelding
-**ID:** `redningsmelding`
-**Engelsk:** Escape
-**Alternative termer:** Rescue
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** En melding der forsøger at undgå en strafdoblet kontrakt.
-
-**Forklaring:** En melding der forsøger at undgå en strafdoblet kontrakt.
-
-### Redobling
-**ID:** `redobling`
-**Engelsk:** Redouble
-**Alternative termer:** Redouble (XX)
-**Forkortelse:** XX
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** En melding der viser ekstra styrke eller specifik håndtype.
-
-**Forklaring:** En melding der viser ekstra styrke eller specifik håndtype.
-
-### Regnskabskort
-**ID:** `regnskabskort`
-**Engelsk:** Score sheet
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** Regnskabskort hvor resultater noteres.
-
-**Forklaring:** Regnskabskort hvor resultater noteres.
-
-### Rejseregnskab
-**ID:** `rejseregnskab`
-**Engelsk:** Travelling scoresheet
-**Alternative termer:** Traveling scoreslip
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** Et vandrende regnskabskort der følger spillet rundt i turneringen.
-
-**Forklaring:** Et vandrende regnskabskort der følger spillet rundt i turneringen.
-
-### Relæmelding
-**ID:** `relaemelding`
-**Engelsk:** Relay
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** En kunstig melding der beder makker beskrive sin hånd.
-
-**Forklaring:** En kunstig melding der beder makker beskrive sin hånd.
-
 ### Renonce
 **ID:** `renonce`
 **Engelsk:** Void
@@ -2035,16 +606,7 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 **Kategori:** Grundlæggende begreber
 **Kort definition:** Renonce; ingen kort i en farve, meget stærkt i trumfkontrakter.
 
-**Forklaring:** Renonce; ingen kort i en farve, meget stærkt i trumfkontrakter.
-
-### Reserve
-**ID:** `reserve`
-**Engelsk:** Substitute
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** En spiller der erstatter en anden i en turnering.
-
-**Forklaring:** En spiller der erstatter en anden i en turnering.
+**Forklaring:** Ingen kort i en farve.
 
 ### Retning
 **ID:** `retning`
@@ -2054,36 +616,6 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 **Kort definition:** Et led ved bordet: Nord, Syd, Øst eller Vest.
 
 **Forklaring:** Et led ved bordet: Nord, Syd, Øst eller Vest.
-
-### Rettelsesfrist
-**ID:** `rettelsesfrist`
-**Engelsk:** Correction period
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** Den tidsperiode hvor fejl i regnskab eller resultater kan rettes.
-
-**Forklaring:** Den tidsperiode hvor fejl i regnskab eller resultater kan rettes.
-
-### Reversmelding
-**ID:** `reversmelding`
-**Engelsk:** Reverse
-**Alternative termer:** Reverse / Reversmelding
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** En melding der viser ekstra styrke, fordi den tvinger makker til at melde på et højere niveau.
-
-**Forklaring:** En melding der viser ekstra styrke, fordi den tvinger makker til at melde på et højere niveau.
-
-### Roman Key Card Blackwood (RKCB)
-**ID:** `roman-key-card-blackwood-rkcb`
-**Engelsk:** Roman Key Card Blackwood (RKCB)
-**Forkortelse:** RKCB
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Systemafhængig:** Ja
-**Kort definition:** En udvidet Blackwood der spørger efter nøglekort (esser + trumfkonge).
-
-**Forklaring:** En udvidet Blackwood der spørger efter nøglekort (esser + trumfkonge).
 
 ### Ruder
 **ID:** `ruder`
@@ -2095,34 +627,6 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 
 **Forklaring:** Ruderfarven. Den næstlaveste farve i rang.
 
-### Runde
-**ID:** `runde`
-**Engelsk:** Round
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** En sektion af en turnering, typisk bestående af et antal spil.
-
-**Forklaring:** En sektion af en turnering, typisk bestående af et antal spil.
-
-### Rundpas
-**ID:** `rundpas`
-**Engelsk:** Passed out
-**Alternative termer:** Passed out / Pass out
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** Når alle fire spillere passer, og spillet annulleres.
-
-**Forklaring:** Når alle fire spillere passer, og spillet annulleres.
-
-### Række
-**ID:** `raekke`
-**Engelsk:** Section
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** En gruppe af par i en turnering, typisk i større arrangementer.
-
-**Forklaring:** En gruppe af par i en turnering, typisk i større arrangementer.
-
 ### Røde farver
 **ID:** `roede-farver`
 **Engelsk:** Red suits
@@ -2131,15 +635,6 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 **Kort definition:** De røde farver: hjerter (♥) og ruder (♦).
 
 **Forklaring:** De røde farver: hjerter (♥) og ruder (♦).
-
-### Sammenlignelig melding
-**ID:** `sammenlignelig-melding`
-**Engelsk:** Comparable call
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** En melding der kan erstatte en ulovlig melding uden at give modstanderne fordel.
-
-**Forklaring:** En melding der kan erstatte en ulovlig melding uden at give modstanderne fordel.
 
 ### Sans
 **ID:** `sans`
@@ -2152,24 +647,6 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 
 **Forklaring:** Sanskontrakt uden trumf. Spilføring afhænger af hold i alle farver.
 
-### Schweizerturnering
-**ID:** `schweizerturnering`
-**Engelsk:** Swiss teams
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** En holdturnering hvor hold møder modstandere med samme pointscore.
-
-**Forklaring:** En holdturnering hvor hold møder modstandere med samme pointscore.
-
-### Seedning
-**ID:** `seedning`
-**Engelsk:** Seeding / Stratification
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** Indplacering af spillere i grupper baseret på styrke.
-
-**Forklaring:** Indplacering af spillere i grupper baseret på styrke.
-
 ### Sekser (6)
 **ID:** `sekser-6`
 **Engelsk:** Six (6)
@@ -2180,25 +657,14 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 
 **Forklaring:** Et kort med værdien seks.
 
-### Sidder forkert
-**ID:** `sidder-forkert`
-**Engelsk:** Offside
-**Alternative termer:** Offside
-**Niveau:** begynder
+### Selvspillende farve
+**ID:** `selvspillende-farve`
+**Engelsk:** Self-sufficient suit
+**Niveau:** let øvet
 **Kategori:** Grundlæggende begreber
-**Kort definition:** Når en honnør sidder “forkert” i forhold til en kipning.
+**Kort definition:** En farve, der med stor sikkerhed kan spilles med højst én taber, uanset makkers kort.
 
-**Forklaring:** Når en honnør sidder “forkert” i forhold til en kipning.
-
-### Sidder rigtigt
-**ID:** `sidder-rigtigt`
-**Engelsk:** Onside
-**Alternative termer:** Onside
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** Når en honnør sidder “rigtigt” i forhold til en kipning.
-
-**Forklaring:** Når en honnør sidder “rigtigt” i forhold til en kipning.
+**Forklaring:** En farve, der med stor sikkerhed kan spilles med højst én taber, uanset makkers kort.
 
 ### Side (Nord–Syd eller Øst–Vest)
 **ID:** `side-nord-syd-eller-oest-vest`
@@ -2218,15 +684,6 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 
 **Forklaring:** En farve der ikke er trumf og ikke er hovedfarven i meldingerne. Bruges ofte til at udvikle ekstra stik.
 
-### Sikkerhedsspil
-**ID:** `sikkerhedsspil`
-**Engelsk:** Safety play
-**Niveau:** øvet
-**Kategori:** Grundlæggende begreber
-**Kort definition:** Et spil der sikrer kontrakten, selv hvis det reducerer chancen for overstik.
-
-**Forklaring:** Et spil der sikrer kontrakten, selv hvis det reducerer chancen for overstik.
-
 ### Singleton
 **ID:** `singleton`
 **Engelsk:** Singleton
@@ -2234,34 +691,12 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 **Kategori:** Grundlæggende begreber
 **Kort definition:** En farve med præcis ét kort; meget værdifuld i trumfkontrakter.
 
-**Forklaring:** En farve med præcis ét kort; meget værdifuld i trumfkontrakter.
-
-### Skifteplan
-**ID:** `skifteplan`
-**Engelsk:** Movement
-**Alternative termer:** Guide card, Movement card
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** Den måde par og spil flyttes rundt i turneringen.
-
-**Forklaring:** Den måde par og spil flyttes rundt i turneringen.
-
-### Skvis
-**ID:** `skvis`
-**Engelsk:** Squeeze
-**Alternative termer:** Squeeze / Skvis
-**Niveau:** øvet
-**Kategori:** Grundlæggende begreber
-**Kort definition:** At presse en modspiller til at kaste et kort, der gør dine farver gode.
-
-**Forklaring:** At presse en modspiller til at kaste et kort, der gør dine farver gode.
-
-**Relaterede begreber:** slutspil
+**Forklaring:** Ét kort i en farve.
 
 ### Skæv hånd
 **ID:** `skaev-haand`
 **Engelsk:** Unbalanced hand
-**Alternative termer:** Unbalanced hand (Unb)
+**Alternative termer:** Unbalanced hand (Unb), Skæv fordeling
 **Niveau:** begynder
 **Kategori:** Grundlæggende begreber
 **Kort definition:** En skæv hånd med korthed i én eller flere farver.
@@ -2275,45 +710,7 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 **Kategori:** Grundlæggende begreber
 **Kort definition:** En kontrakt på 6‑trinnet (lilleslem) eller 7‑trinnet (storeslem).
 
-**Forklaring:** En kontrakt på 6‑trinnet (lilleslem) eller 7‑trinnet (storeslem).
-
-### Slemforsøg
-**ID:** `slemforsoeg`
-**Engelsk:** Slam-try
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** En melding der undersøger muligheden for slem.
-
-**Forklaring:** En melding der undersøger muligheden for slem.
-
-### Slutmelding
-**ID:** `slutmelding`
-**Engelsk:** Sign-off
-**Alternative termer:** Signoff
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** En melding der afslutter meldeforløbet og viser ingen interesse i udgang.
-
-**Forklaring:** En melding der afslutter meldeforløbet og viser ingen interesse i udgang.
-
-### Slæde
-**ID:** `slaede`
-**Engelsk:** Tray
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** Slæden der bruges ved skærmspil til at sende meldinger mellem spillerne.
-
-**Forklaring:** Slæden der bruges ved skærmspil til at sende meldinger mellem spillerne.
-
-### Smolen
-**ID:** `smolen`
-**Engelsk:** Smolen
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Systemafhængig:** Ja
-**Kort definition:** En konvention efter en sansåbning og Stayman, hvor svarer viser fem kort i den ene major og fire i den anden ved at springe i firekortsfarven.
-
-**Forklaring:** En konvention efter en sansåbning og Stayman, hvor svarer viser fem kort i den ene major og fire i den anden ved at springe i firekortsfarven.
+**Forklaring:** Kontrakt på 6-trinnet (lilleslem) eller 7-trinnet (storeslem).
 
 ### Sorte farver
 **ID:** `sorte-farver`
@@ -2334,15 +731,6 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 
 **Forklaring:** Sparfarven. Den højeste farve i rang og en majorfarve.
 
-### Spil af kortene
-**ID:** `spil-af-kortene`
-**Engelsk:** Card play
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** Selve processen med at spille kortene i en kontrakt.
-
-**Forklaring:** Selve processen med at spille kortene i en kontrakt.
-
 ### Spilfører
 **ID:** `spilfoerer`
 **Engelsk:** Declarer
@@ -2350,25 +738,7 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 **Kategori:** Grundlæggende begreber
 **Kort definition:** Spilføreren er den spiller på den side, der vandt kontrakten, som først meldte kontraktens benævnelse.
 
-**Forklaring:** Spilføreren er den spiller på den side, der vandt kontrakten, som først meldte kontraktens benævnelse.
-
-### Spille mod
-**ID:** `spille-mod`
-**Engelsk:** Play to
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** At spille til et bestemt kort eller en bestemt hånd.
-
-**Forklaring:** At spille til et bestemt kort eller en bestemt hånd.
-
-### Spille under en honnør
-**ID:** `spille-under-en-honnoer`
-**Engelsk:** Underlead
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** At spille et lavere kort end forventet, typisk under en honnør.
-
-**Forklaring:** At spille et lavere kort end forventet, typisk under en honnør.
+**Forklaring:** Den spiller i det par, der vinder kontrakten, som først meldte kontraktens farve eller sans.
 
 ### Spillebord
 **ID:** `spillebord`
@@ -2379,15 +749,6 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 
 **Forklaring:** Møblet, som de fire spillere sidder ved under spillet. Ikke at forveksle med bordet, som er spilførerens makker.
 
-### Spilleperiode
-**ID:** `spilleperiode`
-**Engelsk:** Play period
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** Den tid hvor spillere aktivt spiller spil.
-
-**Forklaring:** Den tid hvor spillere aktivt spiller spil.
-
 ### Spiller
 **ID:** `spiller`
 **Engelsk:** Player(s)
@@ -2397,82 +758,14 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 
 **Forklaring:** De personer der deltager i spillet.
 
-### Spilmappe
-**ID:** `spilmappe`
-**Engelsk:** Board
-**Niveau:** begynder
+### Spillestærk hånd
+**ID:** `spillestaerk-haand`
+**Engelsk:**
+**Niveau:** let øvet
 **Kategori:** Grundlæggende begreber
-**Kort definition:** En mappe eller et fysisk spil med fire hænder, brugt i turneringsbridge.
+**Kort definition:** En hånd, der kan tage mange stik, selv med få point.
 
-**Forklaring:** En mappe eller et fysisk spil med fire hænder, brugt i turneringsbridge.
-
-### Splinter
-**ID:** `splinter`
-**Engelsk:** Splinter
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Systemafhængig:** Ja
-**Kort definition:** Et usædvanligt spring i en ny farve, der viser korthed, normalt singleton eller renonce, samt stærk støtte til makkers farve.
-
-**Forklaring:** Et usædvanligt spring i en ny farve, der viser korthed, normalt singleton eller renonce, samt stærk støtte til makkers farve.
-
-### Spring i ny farve
-**ID:** `spring-i-ny-farve`
-**Engelsk:** Jump shift
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** Et spring i ny farve, der viser enten spær eller styrke.
-
-**Forklaring:** Et spring i ny farve, der viser enten spær eller styrke.
-
-### Springmelding
-**ID:** `springmelding`
-**Engelsk:** Jump
-**Alternative termer:** Skip-bid
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** Et spring i niveau, der viser enten spær eller styrke afhængigt af kontekst.
-
-**Forklaring:** Et spring i niveau, der viser enten spær eller styrke afhængigt af kontekst.
-
-### Springstøtte
-**ID:** `springstoette`
-**Engelsk:** Jump support
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** Et spring der viser støtte til makkers farve.
-
-**Forklaring:** Et spring der viser støtte til makkers farve.
-
-### Spærrestøtte
-**ID:** `spaerrestoette`
-**Engelsk:** Preemptive raise
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** En spærrestøtte der hæver makkers farve højt for at presse modstanderne.
-
-**Forklaring:** En spærrestøtte der hæver makkers farve højt for at presse modstanderne.
-
-### Spørgemelding
-**ID:** `spoergemelding`
-**Engelsk:** Asking bid
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** En melding der spørger makker om specifik information, fx kontrol eller antal esser.
-
-**Forklaring:** En melding der spørger makker om specifik information, fx kontrol eller antal esser.
-
-### Stayman
-**ID:** `stayman`
-**Engelsk:** Stayman
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Systemafhængig:** Ja
-**Kort definition:** En konvention der spørger efter 4‑kort major efter 1NT.
-
-**Forklaring:** En konvention der spørger efter 4‑kort major efter 1NT.
-
-**Relaterede begreber:** jacoby-transfer, puppet-stayman
+**Forklaring:** En hånd, der kan tage mange stik, selv med få point.
 
 ### Stik
 **ID:** `stik`
@@ -2481,35 +774,7 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 **Kategori:** Grundlæggende begreber
 **Kort definition:** Et stik; fire kort spillet i en runde.
 
-**Forklaring:** Et stik; fire kort spillet i en runde.
-
-### Stikke over
-**ID:** `stikke-over`
-**Engelsk:** Overtake
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** At stikke over makkers kort for at bevare tempo eller skifte farve.
-
-**Forklaring:** At stikke over makkers kort for at bevare tempo eller skifte farve.
-
-### Stikpoint
-**ID:** `stikpoint`
-**Engelsk:** Score points
-**Alternative termer:** Trick points
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** De point der gives for stik i kontrakten.
-
-**Forklaring:** De point der gives for stik i kontrakten.
-
-### Stopkort
-**ID:** `stopkort`
-**Engelsk:** Stop card
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** Et kort, der tidligere blev brugt til at markere en springmelding.
-
-**Forklaring:** Et kort, der tidligere blev brugt til at markere en springmelding. Den konkrete procedure afhænger af de gældende turneringsbestemmelser.
+**Forklaring:** De fire kort, der spilles i én runde. Den højeste vinder.
 
 ### Storeslem
 **ID:** `storeslem`
@@ -2519,160 +784,6 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 **Kort definition:** En kontrakt på 7‑trinnet, hvor alle 13 stik skal vindes.
 
 **Forklaring:** En kontrakt på 7‑trinnet, hvor alle 13 stik skal vindes.
-
-### Straf
-**ID:** `straf`
-**Engelsk:** Penalty
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** Point til modparten, når en kontrakt går ned.
-
-**Forklaring:** Point til modparten, når en kontrakt går ned. Zonestilling, dobling og antal understik bestemmer størrelsen.
-
-### Strafkort
-**ID:** `strafkort`
-**Engelsk:** Penalty card
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** Et kort der skal ligge åbent på bordet som straf for en fejl i udspil eller afkast.
-
-**Forklaring:** Et kort der skal ligge åbent på bordet som straf for en fejl i udspil eller afkast.
-
-### Strip-squeeze
-**ID:** `strip-squeeze`
-**Engelsk:** Strip-squeeze
-**Niveau:** avanceret
-**Kategori:** Grundlæggende begreber
-**Kort definition:** Kombination af eliminering og skvis.
-
-**Forklaring:** Kombination af eliminering og skvis.
-
-### Stærk 2♣-åbning
-**ID:** `staerk-2-aabning`
-**Engelsk:** Strong 2 clubs
-**Alternative termer:** Strong 2♣
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Systemafhængig:** Ja
-**Kort definition:** En kunstig åbning der viser en stærk hånd (typisk 22+ HP eller stærk farve).
-
-**Forklaring:** En kunstig åbning der viser en stærk hånd (typisk 22+ HP eller stærk farve).
-
-### Stærk melding
-**ID:** `staerk-melding`
-**Engelsk:** Strong
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** En melding der viser betydelig styrke.
-
-**Forklaring:** En melding der viser betydelig styrke.
-
-### Støtte
-**ID:** `stoette`
-**Engelsk:** Support
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** At hæve makkers farve for at vise længde og styrke.
-
-**Forklaring:** At hæve makkers farve for at vise længde og styrke.
-
-### Støttedobling
-**ID:** `støttedobling`
-**Engelsk:** Support double
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Systemafhængig:** Ja
-**Kort definition:** En dobling der viser præcis 3‑kort støtte til makkers farve.
-
-**Forklaring:** En dobling der viser præcis 3‑kort støtte til makkers farve.
-
-### Støttemelding
-**ID:** `stoettemelding`
-**Engelsk:** Raise
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** At hæve makkers farve.
-
-**Forklaring:** At hæve makkers farve.
-
-### Støtteredobling
-**ID:** `støtteredobling`
-**Engelsk:** Support redouble
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Systemafhængig:** Ja
-**Kort definition:** En redobling der viser 3‑kort støtte efter modstandernes dobling.
-
-**Forklaring:** En redobling der viser 3‑kort støtte efter modstandernes dobling.
-
-### Svag 2-åbning
-**ID:** `svag-2-aabning`
-**Engelsk:** Weak two
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Systemafhængig:** Ja
-**Kort definition:** En svag 2‑åbning der viser en 6‑farve og begrænset styrke.
-
-**Forklaring:** En svag 2‑åbning der viser en 6‑farve og begrænset styrke.
-
-### Svag melding
-**ID:** `svag-melding`
-**Engelsk:** Weak
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** En melding der viser svag hånd eller spærrestyrke.
-
-**Forklaring:** En melding der viser svag hånd eller spærrestyrke.
-
-### Svag springstøtte
-**ID:** `svag-springstoette`
-**Engelsk:** Weak jump raise
-**Alternative termer:** Weak jump support
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Systemafhængig:** Ja
-**Kort definition:** En svag springstøtte der viser længde og spærrestyrke.
-
-**Forklaring:** En svag springstøtte der viser længde og spærrestyrke.
-
-### Svagt spring i ny farve
-**ID:** `svagt-spring-i-ny-farve`
-**Engelsk:** Weak jump shift
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Systemafhængig:** Ja
-**Kort definition:** Et svagt spring i ny farve der viser en spærrehånd.
-
-**Forklaring:** Et svagt spring i ny farve der viser en spærrehånd.
-
-### Svarer
-**ID:** `svarer`
-**Engelsk:** Responder
-**Alternative termer:** Responder (Resp)
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** Svareren; makker til åbneren, som melder efter åbningen.
-
-**Forklaring:** Svareren; makker til åbneren, som melder efter åbningen.
-
-### Svarers genmelding
-**ID:** `svarers-genmelding`
-**Engelsk:** Responder's rebid
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** Svarers anden melding, der beskriver håndens styrke og fordeling.
-
-**Forklaring:** Svarers anden melding, der beskriver håndens styrke og fordeling.
-
-### Svarmelding
-**ID:** `svarmelding`
-**Engelsk:** Response
-**Alternative termer:** Respond
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** At melde efter makkers åbning.
-
-**Forklaring:** At melde efter makkers åbning.
 
 ### Syd (S)
 **ID:** `syd-s`
@@ -2684,15 +795,6 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 
 **Forklaring:** Spilleren der sidder i syd.
 
-### Systemkort
-**ID:** `systemkort`
-**Engelsk:** Convention card
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** Systemkort der beskriver makkerskabets meldesystem og aftaler.
-
-**Forklaring:** Systemkort der beskriver makkerskabets meldesystem og aftaler.
-
 ### Syver (7)
 **ID:** `syver-7`
 **Engelsk:** Seven (7)
@@ -2702,42 +804,6 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 **Kort definition:** Et kort med værdien syv; bruges i længdeangivelser.
 
 **Forklaring:** Et kort med værdien syv; bruges i længdeangivelser.
-
-### Taber
-**ID:** `taber`
-**Engelsk:** Loser
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** Et kort der forventes at tabe et stik.
-
-**Forklaring:** Et kort der forventes at tabe et stik.
-
-### Taber på taber
-**ID:** `taber-paa-taber`
-**Engelsk:** Loser on loser
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** At smide en taber på en taber for at undgå større tab.
-
-**Forklaring:** At smide en taber på en taber for at undgå større tab.
-
-### Tempobrud
-**ID:** `tempobrud`
-**Engelsk:** Break in tempo
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** En tydelig pause eller tøven i meldinger eller spil, som kan give ubeføjede oplysninger.
-
-**Forklaring:** En tydelig pause eller tøven i meldinger eller spil, som kan give ubeføjede oplysninger.
-
-### Tie-break
-**ID:** `tie-break`
-**Engelsk:** Tie-break
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** En metode til at afgøre placering ved lige score.
-
-**Forklaring:** En metode til at afgøre placering ved lige score.
 
 ### Tier
 **ID:** `tier`
@@ -2749,25 +815,6 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 **Kort definition:** Tieren; et vigtigt kort i sekvenser og kipninger.
 
 **Forklaring:** Tieren; et vigtigt kort i sekvenser og kipninger.
-
-### Tilpasning
-**ID:** `tilpasning`
-**Engelsk:** Fit
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** God længde i begge hænder i samme farve.
-
-**Forklaring:** God længde i begge hænder i samme farve.
-
-### Tilskuer
-**ID:** `tilskuer`
-**Engelsk:** Kibitzer
-**Alternative termer:** Kibitzer
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** En tilskuer der ser på spillet uden at deltage.
-
-**Forklaring:** En tilskuer der ser på spillet uden at deltage.
 
 ### Toer (2)
 **ID:** `toer-2`
@@ -2782,20 +829,20 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 ### Tofarvet hånd
 **ID:** `tofarvet-haand`
 **Engelsk:** Two-suiter
-**Niveau:** begynder
+**Niveau:** let øvet
 **Kategori:** Grundlæggende begreber
 **Kort definition:** En hånd med to lange farver (fx 5‑5 eller 6‑5).
 
 **Forklaring:** En hånd med to lange farver (fx 5‑5 eller 6‑5). Giver offensive meldingsmuligheder.
 
-### Top
-**ID:** `top`
-**Engelsk:** Top
+### Toptaber
+**ID:** `toptaber`
+**Engelsk:** Top loser
 **Niveau:** begynder
 **Kategori:** Grundlæggende begreber
-**Kort definition:** Den højeste score på et spil i parturnering.
+**Kort definition:** Et stik, modparten er sikker på at tage, fordi de har esset eller kongen.
 
-**Forklaring:** Den højeste score på et spil i parturnering.
+**Forklaring:** Et stik, modparten er sikker på at tage, fordi de har esset eller kongen.
 
 ### Treer (3)
 **ID:** `treer-3`
@@ -2810,20 +857,11 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 ### Trefarvet hånd
 **ID:** `trefarvet-haand`
 **Engelsk:** Three-suiter
-**Niveau:** begynder
+**Niveau:** let øvet
 **Kategori:** Grundlæggende begreber
 **Kort definition:** En hånd med tre farver (fx 4‑4‑4‑1).
 
 **Forklaring:** En hånd med tre farver (fx 4‑4‑4‑1). Har ofte specielle meldingsvalg.
-
-### Trin
-**ID:** `trin`
-**Engelsk:** Level
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** Det trin (1–7) en melding afgives på.
-
-**Forklaring:** Det trin (1–7) en melding afgives på.
 
 ### Tripleton
 **ID:** `tripleton`
@@ -2837,57 +875,12 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 ### Trumf
 **ID:** `trumf`
 **Engelsk:** Trump
+**Alternative termer:** Trumffarve
 **Niveau:** begynder
 **Kategori:** Grundlæggende begreber
 **Kort definition:** Den farve der slår alle andre.
 
 **Forklaring:** Den farve der slår alle andre. Trumfkontrol er afgørende i spilføring.
-
-### Trumfbehandling
-**ID:** `trumfbehandling`
-**Engelsk:** Trump management
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** At styre hvornår man trækker trumfer og hvornår man trumfer tabere.
-
-**Forklaring:** At styre hvornår man trækker trumfer og hvornår man trumfer tabere.
-
-### Trumfkontrol
-**ID:** `trumfkontrol`
-**Engelsk:** Trump control
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** Evnen til at styre trumferne og forhindre modspillets trumfning.
-
-**Forklaring:** Evnen til at styre trumferne og forhindre modspillets trumfning.
-
-### Trumfning
-**ID:** `trumfning`
-**Engelsk:** Ruff
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** At trumfe et stik.
-
-**Forklaring:** At trumfe et stik.
-
-### Trumfpres på spilfører
-**ID:** `trumfpres-paa-spilfoerer`
-**Engelsk:** Force declarer
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** At tvinge spilfører til at trumfe eller til at spille en uønsket farve.
-
-**Forklaring:** At tvinge spilfører til at trumfe eller til at spille en uønsket farve.
-
-### Trumftræk
-**ID:** `trumftraek`
-**Engelsk:** Draw trumps
-**Alternative termer:** Draw
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** At fjerne modstandernes trumfer.
-
-**Forklaring:** At fjerne modstandernes trumfer.
 
 ### Tur
 **ID:** `tur`
@@ -2898,90 +891,6 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 
 **Forklaring:** Den spiller der er i tur til at melde eller spille.
 
-### Turnering
-**ID:** `turnering`
-**Engelsk:** Tournament
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** En organiseret bridgekonkurrence.
-
-**Forklaring:** En organiseret bridgekonkurrence.
-
-### Turneringsbridge
-**ID:** `turneringsbridge`
-**Engelsk:** Duplicate bridge
-**Alternative termer:** Tournament bridge
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** Turneringsbridge hvor samme spil spilles af flere par for at sammenligne resultater.
-
-**Forklaring:** Turneringsbridge hvor samme spil spilles af flere par for at sammenligne resultater.
-
-### Turneringsleder
-**ID:** `turneringsleder`
-**Engelsk:** Tournament director
-**Alternative termer:** Tournament director (TD)
-**Forkortelse:** TD
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** Turneringslederen der håndterer regler, uregelmæssigheder og scoring.
-
-**Forklaring:** Turneringslederen der håndterer regler, uregelmæssigheder og scoring.
-
-### Tælling
-**ID:** `taelling`
-**Engelsk:** Count
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** At tælle fordeling, honnører eller stikmuligheder.
-
-**Forklaring:** At tælle fordeling, honnører eller stikmuligheder.
-
-### Tøven
-**ID:** `toeven`
-**Engelsk:** Hesitation
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** En længere tænkepause, der kan give makker ubeføjede oplysninger.
-
-**Forklaring:** En længere tænkepause, der kan give makker ubeføjede oplysninger.
-
-### Ubeføjede oplysninger
-**ID:** `ubefoejede-oplysninger`
-**Engelsk:** Unauthorized information
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** Oplysninger, som makker ikke må bruge (fx tøven, tonefald, kropssprog).
-
-**Forklaring:** Oplysninger, som makker ikke må bruge (fx tøven, tonefald, kropssprog).
-
-### Ubegrænset melding
-**ID:** `ubegraenset-melding`
-**Engelsk:** Unlimited
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** En melding der ikke begrænser håndens styrke.
-
-**Forklaring:** En melding der ikke begrænser håndens styrke.
-
-### Uden for zonen
-**ID:** `uden-for-zonen`
-**Engelsk:** Non-vulnerable
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** Uden for zonen; giver lavere bonus og lavere straf.
-
-**Forklaring:** Uden for zonen; giver lavere bonus og lavere straf.
-
-### Udestående kort
-**ID:** `udestaaende-kort`
-**Engelsk:** Outstanding card(s)
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** Kort i en farve der endnu ikke er spillet.
-
-**Forklaring:** Kort i en farve der endnu ikke er spillet.
-
 ### Udgang
 **ID:** `udgang`
 **Engelsk:** Game
@@ -2990,121 +899,6 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 **Kort definition:** En kontrakt, der giver mindst 100 stikpoint: 3NT, 4♥, 4♠, 5♣ eller 5♦ uden dobling.
 
 **Forklaring:** En kontrakt, der giver mindst 100 stikpoint: 3NT, 4♥, 4♠, 5♣ eller 5♦ uden dobling. Lavere kontrakter kan også give udgang efter dobling.
-
-### Udgangsforsøg
-**ID:** `udgangsforsoeg`
-**Engelsk:** Game try; trial bid
-**Alternative termer:** Game try / Trial bid
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Systemafhængig:** Ja
-**Kort definition:** En melding der undersøger om makker har tilstrækkelig styrke til udgang.
-
-**Forklaring:** En melding der undersøger om makker har tilstrækkelig styrke til udgang.
-
-### Udgangskrav
-**ID:** `udgangskrav`
-**Engelsk:** Game forcing
-**Alternative termer:** Game-forcing
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** En melding der lover udgangsstyrke og ikke kan stoppes under udgang.
-
-**Forklaring:** En melding der lover udgangsstyrke og ikke kan stoppes under udgang.
-
-### Udspil uden for tur
-**ID:** `udspil-uden-for-tur`
-**Engelsk:** Lead out of turn
-**Alternative termer:** Lead out of turn (LOOT)
-**Forkortelse:** LOOT
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** Udspil fra den forkerte hånd; modstanderne får valgmuligheder for rettelse.
-
-**Forklaring:** Udspil fra den forkerte hånd; modstanderne får valgmuligheder for rettelse.
-
-### Udspilsdirigerende dobling
-**ID:** `udspilsdirigerende-dobling`
-**Engelsk:** Lead-directing
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** En dobling (eller melding), der beder makker om et bestemt udspil.
-
-**Forklaring:** En dobling (eller melding), der beder makker om et bestemt udspil.
-
-### Udstyr
-**ID:** `udstyr`
-**Engelsk:** Equipment / Paraphernalia
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** Alt udstyr brugt i turneringen, fx meldekasser, kort, mapper og skifteplaner.
-
-**Forklaring:** Alt udstyr brugt i turneringen, fx meldekasser, kort, mapper og skifteplaner.
-
-### Ulige antal
-**ID:** `ulige-antal`
-**Engelsk:** Odd
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** Ulige antal kort i en farve (fx 1, 3, 5).
-
-**Forklaring:** Ulige antal kort i en farve (fx 1, 3, 5).
-
-### Ulovlig
-**ID:** `ulovlig`
-**Engelsk:** Illegal
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** En handling eller melding, der strider mod reglerne.
-
-**Forklaring:** En handling eller melding, der strider mod reglerne.
-
-### Understik
-**ID:** `understik`
-**Engelsk:** Undertrick
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** Et tabt stik i forhold til kontrakten.
-
-**Forklaring:** Et tabt stik i forhold til kontrakten.
-
-### Undertrumf
-**ID:** `undertrumf`
-**Engelsk:** Underruff
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** At trumfe lavere for at bevare trumfer.
-
-**Forklaring:** At trumfe lavere for at bevare trumfer.
-
-### Uregelmæssighed
-**ID:** `uregelmaessighed`
-**Engelsk:** Irregularity
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** Enhver uregelmæssighed i meldinger eller spil, som direktøren skal håndtere.
-
-**Forklaring:** Enhver uregelmæssighed i meldinger eller spil, som direktøren skal håndtere.
-
-### Usædvanlig melding
-**ID:** `usaedvanlig-melding`
-**Engelsk:** Unusual
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** En kunstig melding der viser tofarvet hånd.
-
-**Forklaring:** En kunstig melding der viser tofarvet hånd.
-
-### Utilstrækkeligt bud
-**ID:** `utilstraekkeligt-bud`
-**Engelsk:** Insufficient bid
-**Alternative termer:** Insufficient bid (IB)
-**Forkortelse:** IB
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** En melding på et lavere niveau end tilladt; kan accepteres eller kræve rettelse.
-
-**Forklaring:** En melding på et lavere niveau end tilladt; kan accepteres eller kræve rettelse.
 
 ### Venstre modstander
 **ID:** `venstre-modstander`
@@ -3126,53 +920,14 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 
 **Forklaring:** Spilleren der sidder i vest.
 
-### Vienna Coup
-**ID:** `vienna-coup`
-**Engelsk:** Vienna Coup
-**Niveau:** avanceret
-**Kategori:** Grundlæggende begreber
-**Kort definition:** En skvismanøvre der kræver korrekt rækkefølge af stik.
-
-**Forklaring:** En skvismanøvre der kræver korrekt rækkefølge af stik.
-
-### Vinderkort
-**ID:** `vinderkort`
-**Engelsk:** Winner
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** Et kort der med sikkerhed vinder et stik.
-
-**Forklaring:** Et kort der med sikkerhed vinder et stik.
-
-### VP-skala
-**ID:** `vp-skala`
-**Engelsk:** VP scale
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** Tabellen der omregner IMP‑forskel til VP.
-
-**Forklaring:** Tabellen der omregner IMP‑forskel til VP.
-
 ### Værdi
 **ID:** `vaerdi`
 **Engelsk:** Value
-**Niveau:** begynder
+**Niveau:** let øvet
 **Kategori:** Grundlæggende begreber
 **Kort definition:** Den vurderede styrke af en hånd eller farve.
 
 **Forklaring:** Den vurderede styrke af en hånd eller farve.
-
-### Zonestilling
-**ID:** `zonestilling`
-**Engelsk:** Vulnerability
-**Alternative termer:** Vulnerability / Colors
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** Zonestillingen angiver, om ingen, én eller begge sider er i zonen.
-
-**Forklaring:** Zonestillingen angiver, om ingen, én eller begge sider er i zonen. Den påvirker udgangs- og slembonus samt straf for understik.
-
-**Relaterede begreber:** i-zonen, uden-for-zonen
 
 ### Øst (Ø)
 **ID:** `oest-oe`
@@ -3184,55 +939,227 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 
 **Forklaring:** Spilleren der sidder i øst.
 
-### Øverst fra sekvens
-**ID:** `oeverst-fra-sekvens`
-**Engelsk:** Top of sequence
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Systemafhængig:** Ja
-**Kort definition:** Udspil af det højeste kort i en sekvens (fx D fra D‑B‑10).
-
-**Forklaring:** Udspil af det højeste kort i en sekvens (fx D fra D‑B‑10).
-
-### Åbent rum
-**ID:** `aabent-rum`
-**Engelsk:** Open room
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** Det rum i holdkampe hvor tilskuere kan følge spillet.
-
-**Forklaring:** Det rum i holdkampe hvor tilskuere kan følge spillet.
-
-### Åbne kort
-**ID:** `aabne-kort`
-**Engelsk:** Double-dummy
-**Niveau:** avanceret
-**Kategori:** Grundlæggende begreber
-**Kort definition:** Analyse hvor alle fire hænder er kendt; bruges til at beregne optimale linjer.
-
-**Forklaring:** Analyse hvor alle fire hænder er kendt; bruges til at beregne optimale linjer.
-
-### Åbner
-**ID:** `aabner`
-**Engelsk:** Opener
-**Alternative termer:** Opener (OP)
-**Forkortelse:** OP
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** Den spiller der åbner meldingerne med første bud.
-
-**Forklaring:** Den spiller der åbner meldingerne med første bud.
-
-### Åbning
-**ID:** `aabning`
-**Engelsk:** Open
-**Niveau:** begynder
-**Kategori:** Grundlæggende begreber
-**Kort definition:** At åbne meldingerne med første bud.
-
-**Forklaring:** At åbne meldingerne med første bud.
-
 ## Meldinger og meldeforløb
+
+### 26-33-37
+**ID:** `26-33-37`
+**Engelsk:**
+**Niveau:** begynder
+**Kategori:** Meldinger og meldeforløb
+**Kort definition:** De tre pointgrænser for udgang, lilleslem og storeslem.
+
+**Forklaring:** De tre pointgrænser for udgang, lilleslem og storeslem.
+
+### 3-trinsraketten
+**ID:** `3-trinsraketten`
+**Engelsk:**
+**Niveau:** let øvet
+**Kategori:** Meldinger og meldeforløb
+**Kort definition:** Huskeregel for svarhåndens styrke: 6–9 (minimum), 10–12 (invit) og 13+ (udgangskrav).
+
+**Forklaring:** Huskeregel for svarhåndens styrke: 6–9 (minimum), 10–12 (invit) og 13+ (udgangskrav).
+
+### Afslå
+**ID:** `afslaa`
+**Engelsk:** Reject
+**Niveau:** let øvet
+**Kategori:** Meldinger og meldeforløb
+**Kort definition:** At afvise en invit eller en foreslået farve.
+
+**Forklaring:** At afvise en invit eller en foreslået farve.
+
+### Begrænset melding
+**ID:** `begraenset-melding`
+**Engelsk:** Limit
+**Niveau:** let øvet
+**Kategori:** Meldinger og meldeforløb
+**Kort definition:** En melding der viser begrænset styrke, typisk invit.
+
+**Forklaring:** En melding der viser begrænset styrke, typisk invit.
+
+### Benægte
+**ID:** `benaegte`
+**Engelsk:** Deny
+**Niveau:** let øvet
+**Kategori:** Meldinger og meldeforløb
+**Kort definition:** At benægte en egenskab, fx støtte eller kontrol.
+
+**Forklaring:** At benægte en egenskab, fx støtte eller kontrol.
+
+### Benævnelse
+**ID:** `benaevnelse`
+**Engelsk:** Denomination
+**Niveau:** begynder
+**Kategori:** Meldinger og meldeforløb
+**Kort definition:** Den meldte farve eller sans.
+
+**Forklaring:** Den meldte farve eller sans.
+
+### Bogmelding
+**ID:** `bogmelding`
+**Engelsk:** Book bid
+**Niveau:** let øvet
+**Kategori:** Meldinger og meldeforløb
+**Kort definition:** Den melding, lærebøgerne anbefaler i en bestemt situation.
+
+**Forklaring:** Den melding, lærebøgerne anbefaler i en bestemt situation.
+
+### Bud
+**ID:** `bud`
+**Engelsk:** Bid
+**Niveau:** begynder
+**Kategori:** Meldinger og meldeforløb
+**Kort definition:** En melding der angiver et niveau og en farve eller sans.
+
+**Forklaring:** En melding, der nævner et antal stik og en farve eller sans.
+
+### Dobbeltspring
+**ID:** `dobbeltspring`
+**Engelsk:** Double jump
+**Niveau:** let øvet
+**Kategori:** Meldinger og meldeforløb
+**Kort definition:** En melding, der springer to trin over det nødvendige.
+
+**Forklaring:** En melding, der springer to trin over det nødvendige.
+
+### Enkeltstøtte
+**ID:** `enkeltstoette`
+**Engelsk:** Single raise
+**Niveau:** begynder
+**Kategori:** Meldinger og meldeforløb
+**Kort definition:** Støtte til makkers farve på laveste trin.
+
+**Forklaring:** Støtte til makkers farve på laveste trin.
+
+### Genmelding
+**ID:** `genmelding`
+**Engelsk:** Rebid
+**Niveau:** let øvet
+**Kategori:** Meldinger og meldeforløb
+**Kort definition:** At melde igen i sin egen farve eller sans.
+
+**Forklaring:** En spillers anden melding. Bruges især om åbners anden melding.
+
+### Hold (stopper)
+**ID:** `hold-stopper`
+**Engelsk:** Stopper
+**Niveau:** begynder
+**Kategori:** Meldinger og meldeforløb
+**Kort definition:** Et kort der kan stoppe modstandernes farve i sanskontrakter.
+
+**Forklaring:** Et kort, der forhindrer modparten i at tage alle stik i en farve, fx esset eller K-x.
+
+### Ikke-krav
+**ID:** `ikke-krav`
+**Engelsk:** Non-forcing
+**Alternative termer:** Nonforcing
+**Niveau:** let øvet
+**Kategori:** Meldinger og meldeforløb
+**Kort definition:** En melding der må passes.
+
+**Forklaring:** En melding der må passes.
+
+### Invitation
+**ID:** `invitation`
+**Engelsk:** Invitation
+**Alternative termer:** Invit, Inviterende melding
+**Niveau:** let øvet
+**Kategori:** Meldinger og meldeforløb
+**Kort definition:** En invitation viser ekstra styrke og beder makker vurdere, om parret skal fortsætte til udgang eller slem.
+
+**Forklaring:** En invitation viser ekstra styrke og beder makker vurdere, om parret skal fortsætte til udgang eller slem. Pointintervallet afhænger af meldesystem og sekvens.
+
+### Invitstøtte
+**ID:** `invitstoette`
+**Engelsk:** Limit raise
+**Niveau:** let øvet
+**Kategori:** Meldinger og meldeforløb
+**Systemafhængig:** Ja
+**Kort definition:** En invitstyrke med støtte til makkers farve.
+
+**Forklaring:** En invitstyrke med støtte til makkers farve.
+
+### Kaptajn
+**ID:** `kaptajn`
+**Engelsk:** Captain
+**Niveau:** øvet
+**Kategori:** Meldinger og meldeforløb
+**Kort definition:** Den spiller der styrer meldingerne i slemforløb og tager de endelige beslutninger.
+
+**Forklaring:** Den spiller der styrer meldingerne i slemforløb og tager de endelige beslutninger.
+
+### Kravmelding
+**ID:** `kravmelding`
+**Engelsk:** Forcing call
+**Niveau:** begynder
+**Kategori:** Meldinger og meldeforløb
+**Kort definition:** En melding der ikke må passes.
+
+**Forklaring:** En melding, som makker ikke må passe.
+
+### Maksimum
+**ID:** `maksimum`
+**Engelsk:** Maximum (max)
+**Niveau:** let øvet
+**Kategori:** Meldinger og meldeforløb
+**Kort definition:** Den øvre grænse af en hånds styrke i en given sekvens.
+
+**Forklaring:** Styrkeinddeling af åbners hånd: ca. 12–15, 16–18 og 19+ point.
+
+### Meldeforløb
+**ID:** `meldeforloeb`
+**Engelsk:** Auction
+**Niveau:** begynder
+**Kategori:** Meldinger og meldeforløb
+**Kort definition:** Hele meldeforløbet fra første melding til kontrakten er fastlagt.
+
+**Forklaring:** Hele rækken af meldinger i et spil.
+
+### Meldeplads
+**ID:** `meldeplads`
+**Engelsk:** Space
+**Niveau:** let øvet
+**Kategori:** Meldinger og meldeforløb
+**Kort definition:** Den tilgængelige plads i meldeforløbet.
+
+**Forklaring:** Den tilgængelige plads i meldeforløbet.
+
+### Melder
+**ID:** `melder`
+**Engelsk:** Bidder
+**Niveau:** begynder
+**Kategori:** Meldinger og meldeforløb
+**Kort definition:** Den spiller der afgiver en melding i meldeforløbet.
+
+**Forklaring:** Den spiller der afgiver en melding i meldeforløbet.
+
+### Melderunde
+**ID:** `melderunde`
+**Engelsk:** Round of bidding
+**Niveau:** begynder
+**Kategori:** Meldinger og meldeforløb
+**Kort definition:** Én melding fra hver af de fire spillere.
+
+**Forklaring:** Én melding fra hver af de fire spillere.
+
+### Meldesekvens
+**ID:** `meldesekvens`
+**Engelsk:** Bidding sequence
+**Alternative termer:** Bid sequence
+**Niveau:** begynder
+**Kategori:** Meldinger og meldeforløb
+**Kort definition:** Rækkefølgen af meldinger i et meldeforløb.
+
+**Forklaring:** Rækkefølgen af meldinger i et meldeforløb.
+
+### Melding
+**ID:** `melding`
+**Engelsk:** Call
+**Niveau:** begynder
+**Kategori:** Meldinger og meldeforløb
+**Kort definition:** Enhver melding: bud, pas, dobling eller redobling.
+
+**Forklaring:** Enhver melding: bud, pas, dobling eller redobling.
 
 ### Meldingskort
 **ID:** `meldingskort`
@@ -3242,6 +1169,325 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 **Kort definition:** Et kort i meldekassen, der viser et bud, pas, dobling, redobling eller en proceduremarkering.
 
 **Forklaring:** Et kort i meldekassen, der viser et bud, pas, dobling, redobling eller en proceduremarkering.
+
+### Minimum
+**ID:** `minimum`
+**Engelsk:** Minimum (min)
+**Niveau:** let øvet
+**Kategori:** Meldinger og meldeforløb
+**Kort definition:** Den nedre grænse af en hånds styrke.
+
+**Forklaring:** Den nedre grænse af en hånds styrke.
+
+### Misfit
+**ID:** `misfit`
+**Engelsk:** Misfit
+**Niveau:** let øvet
+**Kategori:** Meldinger og meldeforløb
+**Kort definition:** De to hænder passer dårligt sammen og har ingen fælles trumffarve.
+
+**Forklaring:** De to hænder passer dårligt sammen og har ingen fælles trumffarve.
+
+### Naturlig melding
+**ID:** `naturlig-melding`
+**Engelsk:** Natural call
+**Alternative termer:** Natural
+**Niveau:** begynder
+**Kategori:** Meldinger og meldeforløb
+**Kort definition:** En melding der viser den meldte farve.
+
+**Forklaring:** En melding der viser den meldte farve.
+
+### Ny farve
+**ID:** `ny-farve`
+**Engelsk:** New suit
+**Niveau:** begynder
+**Kategori:** Meldinger og meldeforløb
+**Kort definition:** En melding i en ny farve.
+
+**Forklaring:** En melding i en ny farve. Om meldingen er krav, afhænger af meldesystemet og den konkrete sekvens.
+
+### Nødmelding / nødsans
+**ID:** `noedmelding-noedsans`
+**Engelsk:**
+**Niveau:** begynder
+**Kategori:** Meldinger og meldeforløb
+**Kort definition:** En melding, man må bruge, fordi intet andet passer, fx 1NT som svar med en svag hånd.
+
+**Forklaring:** En melding, man må bruge, fordi intet andet passer, fx 1NT som svar med en svag hånd.
+
+### Overmelding
+**ID:** `overmelding`
+**Engelsk:**
+**Niveau:** begynder
+**Kategori:** Meldinger og meldeforløb
+**Kort definition:** En melding, der er højere end den forrige.
+
+**Forklaring:** En melding, der er højere end den forrige.
+
+### Pas
+**ID:** `pas`
+**Engelsk:** Pass
+**Alternative termer:** Pass / No bid
+**Niveau:** begynder
+**Kategori:** Meldinger og meldeforløb
+**Kort definition:** At afstå fra at melde.
+
+**Forklaring:** At afstå fra at melde.
+
+### Passet hånd
+**ID:** `passet-haand`
+**Engelsk:** Passed hand
+**Niveau:** let øvet
+**Kategori:** Meldinger og meldeforløb
+**Kort definition:** En spiller der har passet i første melderunde og dermed har begrænset styrke.
+
+**Forklaring:** En spiller der har passet i første melderunde og dermed har begrænset styrke.
+
+### Præference
+**ID:** `praeference`
+**Engelsk:** Preference / Correct
+**Niveau:** let øvet
+**Kategori:** Meldinger og meldeforløb
+**Kort definition:** En melding der viser hvilken farve man foretrækker.
+
+**Forklaring:** Valg mellem to af makkers farver, ofte på laveste trin.
+
+### Reversmelding
+**ID:** `reversmelding`
+**Engelsk:** Reverse
+**Alternative termer:** Reverse / Reversmelding
+**Niveau:** øvet
+**Kategori:** Meldinger og meldeforløb
+**Kort definition:** En melding der viser ekstra styrke, fordi den tvinger makker til at melde på et højere niveau.
+
+**Forklaring:** En melding der viser ekstra styrke, fordi den tvinger makker til at melde på et højere niveau.
+
+### Rundekrav
+**ID:** `rundekrav`
+**Engelsk:** One-round force
+**Niveau:** begynder
+**Kategori:** Meldinger og meldeforløb
+**Kort definition:** En melding, der forpligter makker til at melde mindst én gang mere.
+
+**Forklaring:** En melding, der forpligter makker til at melde mindst én gang mere.
+
+### Slemforsøg
+**ID:** `slemforsoeg`
+**Engelsk:** Slam-try
+**Niveau:** øvet
+**Kategori:** Meldinger og meldeforløb
+**Kort definition:** En melding der undersøger muligheden for slem.
+
+**Forklaring:** En melding der undersøger muligheden for slem.
+
+### Slutmelding
+**ID:** `slutmelding`
+**Engelsk:** Sign-off
+**Alternative termer:** Signoff, Afmelding, Stopmelding
+**Niveau:** let øvet
+**Kategori:** Meldinger og meldeforløb
+**Kort definition:** En melding, der beder makker passe; kontrakten er fundet.
+
+**Forklaring:** En melding, der beder makker passe; kontrakten er fundet.
+
+### Spring i ny farve
+**ID:** `spring-i-ny-farve`
+**Engelsk:** Jump shift
+**Niveau:** let øvet
+**Kategori:** Meldinger og meldeforløb
+**Kort definition:** Et spring i ny farve, der viser enten spær eller styrke.
+
+**Forklaring:** Et spring i ny farve, der viser enten spær eller styrke.
+
+### Springgenmelding
+**ID:** `springgenmelding`
+**Engelsk:** Jump rebid
+**Niveau:** let øvet
+**Kategori:** Meldinger og meldeforløb
+**Kort definition:** Åbners genmelding med spring i sin egen farve.
+
+**Forklaring:** Åbners genmelding med spring i sin egen farve.
+
+### Springmelding
+**ID:** `springmelding`
+**Engelsk:** Jump
+**Alternative termer:** Skip-bid
+**Niveau:** let øvet
+**Kategori:** Meldinger og meldeforløb
+**Kort definition:** Et spring i niveau, der viser enten spær eller styrke afhængigt af kontekst.
+
+**Forklaring:** En melding, der er et trin højere end nødvendigt, og som viser ekstra styrke eller længde.
+
+### Springstøtte
+**ID:** `springstoette`
+**Engelsk:** Jump support
+**Niveau:** begynder
+**Kategori:** Meldinger og meldeforløb
+**Kort definition:** Et spring der viser støtte til makkers farve.
+
+**Forklaring:** Støtte til makkers farve med spring. Viser ekstra styrke.
+
+### Stærk melding
+**ID:** `staerk-melding`
+**Engelsk:** Strong
+**Niveau:** let øvet
+**Kategori:** Meldinger og meldeforløb
+**Kort definition:** En melding der viser betydelig styrke.
+
+**Forklaring:** En melding der viser betydelig styrke.
+
+### Støtte
+**ID:** `stoette`
+**Engelsk:** Support
+**Niveau:** begynder
+**Kategori:** Meldinger og meldeforløb
+**Kort definition:** At hæve makkers farve for at vise længde og styrke.
+
+**Forklaring:** At hæve makkers farve for at vise længde og styrke.
+
+### Støttemelding
+**ID:** `stoettemelding`
+**Engelsk:** Raise
+**Niveau:** begynder
+**Kategori:** Meldinger og meldeforløb
+**Kort definition:** At hæve makkers farve.
+
+**Forklaring:** At hæve makkers farve.
+
+### Svag 2-åbning
+**ID:** `svag-2-aabning`
+**Engelsk:** Weak two
+**Niveau:** let øvet
+**Kategori:** Meldinger og meldeforløb
+**Systemafhængig:** Ja
+**Kort definition:** En svag 2‑åbning der viser en 6‑farve og begrænset styrke.
+
+**Forklaring:** En svag 2‑åbning der viser en 6‑farve og begrænset styrke.
+
+### Svag melding
+**ID:** `svag-melding`
+**Engelsk:** Weak
+**Niveau:** let øvet
+**Kategori:** Meldinger og meldeforløb
+**Kort definition:** En melding der viser svag hånd eller spærrestyrke.
+
+**Forklaring:** En melding der viser svag hånd eller spærrestyrke.
+
+### Svarer
+**ID:** `svarer`
+**Engelsk:** Responder
+**Alternative termer:** Responder (Resp)
+**Niveau:** begynder
+**Kategori:** Meldinger og meldeforløb
+**Kort definition:** Svareren; makker til åbneren, som melder efter åbningen.
+
+**Forklaring:** Åbners makker.
+
+### Svarers genmelding
+**ID:** `svarers-genmelding`
+**Engelsk:** Responder's rebid
+**Niveau:** let øvet
+**Kategori:** Meldinger og meldeforløb
+**Kort definition:** Svarers anden melding, der beskriver håndens styrke og fordeling.
+
+**Forklaring:** Svarers anden melding, der beskriver håndens styrke og fordeling.
+
+### Svarmelding
+**ID:** `svarmelding`
+**Engelsk:** Response
+**Alternative termer:** Respond
+**Niveau:** begynder
+**Kategori:** Meldinger og meldeforløb
+**Kort definition:** At melde efter makkers åbning.
+
+**Forklaring:** At melde efter makkers åbning.
+
+### Tilpasning
+**ID:** `tilpasning`
+**Engelsk:** Fit
+**Niveau:** let øvet
+**Kategori:** Meldinger og meldeforløb
+**Kort definition:** God længde i begge hænder i samme farve.
+
+**Forklaring:** De to hænder har mindst otte fælles kort i en farve.
+
+### Trin
+**ID:** `trin`
+**Engelsk:** Level
+**Niveau:** begynder
+**Kategori:** Meldinger og meldeforløb
+**Kort definition:** Det trin (1–7) en melding afgives på.
+
+**Forklaring:** Antal stik over seks, som meldingen lover. 1-trinnet betyder syv stik.
+
+### Ubegrænset melding
+**ID:** `ubegraenset-melding`
+**Engelsk:** Unlimited
+**Niveau:** let øvet
+**Kategori:** Meldinger og meldeforløb
+**Kort definition:** En melding der ikke begrænser håndens styrke.
+
+**Forklaring:** En melding der ikke begrænser håndens styrke.
+
+### Udgangsforsøg
+**ID:** `udgangsforsoeg`
+**Engelsk:** Game try; trial bid
+**Alternative termer:** Game try / Trial bid
+**Niveau:** let øvet
+**Kategori:** Meldinger og meldeforløb
+**Systemafhængig:** Ja
+**Kort definition:** En melding der undersøger om makker har tilstrækkelig styrke til udgang.
+
+**Forklaring:** En melding der undersøger om makker har tilstrækkelig styrke til udgang.
+
+### Udgangskrav
+**ID:** `udgangskrav`
+**Engelsk:** Game forcing
+**Alternative termer:** Game-forcing
+**Niveau:** let øvet
+**Kategori:** Meldinger og meldeforløb
+**Kort definition:** En melding der lover udgangsstyrke og ikke kan stoppes under udgang.
+
+**Forklaring:** En melding, der forpligter parret til at melde mindst udgang.
+
+### Umeldt farve
+**ID:** `umeldt-farve`
+**Engelsk:** Unbid suit
+**Niveau:** let øvet
+**Kategori:** Meldinger og meldeforløb
+**Kort definition:** En farve, ingen har meldt endnu.
+
+**Forklaring:** En farve, ingen har meldt endnu.
+
+### Åbner
+**ID:** `aabner`
+**Engelsk:** Opener
+**Alternative termer:** Opener (OP)
+**Forkortelse:** OP
+**Niveau:** begynder
+**Kategori:** Meldinger og meldeforløb
+**Kort definition:** Den spiller der åbner meldingerne med første bud.
+
+**Forklaring:** Spilleren, der åbnede meldingerne.
+
+### Åbning
+**ID:** `aabning`
+**Engelsk:** Open
+**Niveau:** begynder
+**Kategori:** Meldinger og meldeforløb
+**Kort definition:** At åbne meldingerne med første bud.
+
+**Forklaring:** Den første melding i et meldeforløb, som ikke er pas.
+
+### Åbningsfarve
+**ID:** `aabningsfarve`
+**Engelsk:** Opener's suit
+**Niveau:** begynder
+**Kategori:** Meldinger og meldeforløb
+**Kort definition:** Den farve, åbner har meldt først.
+
+**Forklaring:** Den farve, åbner har meldt først.
 
 ### Åbningshånd
 **ID:** `aabnerhaand`
@@ -3254,29 +1500,422 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 
 ## Meldesystemer og konventioner
 
+### 1430 (Fourteen‑Thirty)
+**ID:** `1430-fourteenthirty`
+**Engelsk:** 1430 (Fourteen‑Thirty)
+**Niveau:** øvet
+**Kategori:** Meldesystemer og konventioner
+**Systemafhængig:** Ja
+**Kort definition:** En variant af Roman Key Card Blackwood hvor 5♣ viser 1 eller 4 nøglekort.
+
+**Forklaring:** En variant af Roman Key Card Blackwood hvor 5♣ viser 1 eller 4 nøglekort.
+
+### 1NT-åbning
+**ID:** `1nt-aabning`
+**Engelsk:** 1NT opening
+**Niveau:** begynder
+**Kategori:** Meldesystemer og konventioner
+**Kort definition:** Åbning med jævn fordeling og 15–17 hp.
+
+**Forklaring:** Åbning med jævn fordeling og 15–17 hp.
+
+### 2 over 1
+**ID:** `2-over-1`
+**Engelsk:** Two‑over‑one (2/1)
+**Alternative termer:** 2-over-1
+**Forkortelse:** 2/1
+**Niveau:** let øvet
+**Kategori:** Meldesystemer og konventioner
+**Systemafhængig:** Ja
+**Kort definition:** Et meldesystem hvor 2‑over‑1 i ny farve er udgangskrav.
+
+**Forklaring:** Et meldesystem hvor 2‑over‑1 i ny farve er udgangskrav. I nogle lærebøger bruges 2-over-1 også om ethvert svar i ny farve på 2-trinnet, uanset system.
+
+### 2NT-åbning
+**ID:** `2nt-aabning`
+**Engelsk:** 2NT opening
+**Niveau:** begynder
+**Kategori:** Meldesystemer og konventioner
+**Kort definition:** Åbning med jævn fordeling og 20–21 hp.
+
+**Forklaring:** Åbning med jævn fordeling og 20–21 hp.
+
+### Andenrundekontrol
+**ID:** `andenrundekontrol`
+**Engelsk:** Second round-control
+**Niveau:** øvet
+**Kategori:** Meldesystemer og konventioner
+**Kort definition:** En kontrol, der forhindrer modparten i at tage de to første stik i farven.
+
+**Forklaring:** En kontrol, der forhindrer modparten i at tage de to første stik i farven. Det kan være en konge eller en singleton.
+
+### Bergen-støtter
+**ID:** `bergen-stoetter`
+**Engelsk:** Bergen raises
+**Alternative termer:** Bergen Raises
+**Niveau:** øvet
+**Kategori:** Meldesystemer og konventioner
+**Systemafhængig:** Ja
+**Kort definition:** En konvention der viser præcis støtte og styrke efter makkers 1‑major åbning.
+
+**Forklaring:** En konvention der viser præcis støtte og styrke efter makkers 1‑major åbning.
+
+### Blackwood
+**ID:** `blackwood`
+**Engelsk:** Blackwood
+**Alternative termer:** Espørgemelding, Blackwood-Morrow (BWM)
+**Niveau:** let øvet
+**Kategori:** Meldesystemer og konventioner
+**Systemafhængig:** Ja
+**Kort definition:** Blackwood undersøger antallet af esser.
+
+**Forklaring:** Blackwood undersøger antallet af esser. Varianter som Roman Key Card Blackwood undersøger i stedet nøglekort.
+
+**Relaterede begreber:** roman-key-card-blackwood-rkcb
+
+### Drury
+**ID:** `drury`
+**Engelsk:** Drury
+**Niveau:** øvet
+**Kategori:** Meldesystemer og konventioner
+**Systemafhængig:** Ja
+**Kort definition:** En konvention hvor svarer viser en invitstyrke med støtte til makkers major i passet hånd.
+
+**Forklaring:** En konvention hvor svarer viser en invitstyrke med støtte til makkers major i passet hånd.
+
+### Fitvisende spring
+**ID:** `fitvisende-spring`
+**Engelsk:** Fit-showing jump
+**Alternative termer:** Fit‑showing jump
+**Niveau:** øvet
+**Kategori:** Meldesystemer og konventioner
+**Systemafhængig:** Ja
+**Kort definition:** Et spring i ny farve der viser både en god farve og støtte til makkers farve.
+
+**Forklaring:** Et spring i ny farve der viser både en god farve og støtte til makkers farve.
+
+### Fjerde farve krav
+**ID:** `fjerde-farve-krav`
+**Engelsk:** Fourth suit forcing
+**Alternative termer:** Fourth Suit Forcing (FSF)
+**Forkortelse:** FSF
+**Niveau:** let øvet
+**Kategori:** Meldesystemer og konventioner
+**Systemafhængig:** Ja
+**Kort definition:** Når svarer melder den fjerde umeldte farve som et kunstigt krav.
+
+**Forklaring:** Når svarer melder den fjerde umeldte farve som et kunstigt krav.
+
 ### Førsterundekontrol
 **ID:** `førsterundekontrol`
 **Engelsk:** First-round control
-**Niveau:** let øvet
+**Niveau:** øvet
 **Kategori:** Meldesystemer og konventioner
 **Kort definition:** Et es eller en renonce, som forhindrer modparten i at tage første stik i farven.
 
 **Forklaring:** Et es eller en renonce, som forhindrer modparten i at tage første stik i farven.
 
+### Gambling 3NT
+**ID:** `gambling-3nt`
+**Engelsk:** Gambling 3NT
+**Niveau:** øvet
+**Kategori:** Meldesystemer og konventioner
+**Systemafhængig:** Ja
+**Kort definition:** En 3NT‑åbning der viser en gående minorfarve og ingen sidehonnører.
+
+**Forklaring:** En 3NT‑åbning der viser en gående minorfarve og ingen sidehonnører.
+
+### Genoverføring
+**ID:** `genoverfoering`
+**Engelsk:** Retransfer
+**Niveau:** øvet
+**Kategori:** Meldesystemer og konventioner
+**Kort definition:** En genoverførsel i sanskontrakter.
+
+**Forklaring:** En genoverførsel i sanskontrakter.
+
 ### Gerber
 **ID:** `gerber`
 **Engelsk:** Gerber
-**Niveau:** let øvet
+**Alternative termer:** Espørgemelding
+**Niveau:** øvet
 **Kategori:** Meldesystemer og konventioner
 **Systemafhængig:** Ja
 **Kort definition:** En konvention, hvor 4♣ i bestemte sanssekvenser spørger efter esser.
 
 **Forklaring:** En konvention, hvor 4♣ i bestemte sanssekvenser spørger efter esser. Den præcise anvendelse afhænger af makkerskabets aftaler.
 
+### Halvkrav 1NT
+**ID:** `halvkrav-1nt`
+**Engelsk:** Semi‑forcing notrump
+**Niveau:** let øvet
+**Kategori:** Meldesystemer og konventioner
+**Systemafhængig:** Ja
+**Kort definition:** Et 1NT‑svar der er krav i én runde, men åbner må passe med minimum og 5‑kort major.
+
+**Forklaring:** Et 1NT‑svar der er krav i én runde, men åbner må passe med minimum og 5‑kort major.
+
+### Jacoby 2NT
+**ID:** `jacoby-2nt`
+**Engelsk:** Jacoby 2NT
+**Niveau:** øvet
+**Kategori:** Meldesystemer og konventioner
+**Systemafhængig:** Ja
+**Kort definition:** En kunstig 2NT‑melding over makkers 1‑major, der viser stærk støtte og udgangskrav.
+
+**Forklaring:** En kunstig 2NT‑melding over makkers 1‑major, der viser stærk støtte og udgangskrav.
+
+### Jacoby-transfer
+**ID:** `jacoby-transfer`
+**Engelsk:** Jacoby transfer
+**Niveau:** let øvet
+**Kategori:** Meldesystemer og konventioner
+**Systemafhængig:** Ja
+**Kort definition:** En kunstig svarmelding efter en sansåbning, som beder åbneren melde den næste farve.
+
+**Forklaring:** En kunstig svarmelding efter en sansåbning, som beder åbneren melde den næste farve. Overføringen placerer ofte spilføringen hos sansåbneren.
+
+### Kontrol
+**ID:** `kontrol`
+**Engelsk:** Control
+**Niveau:** øvet
+**Kategori:** Meldesystemer og konventioner
+**Kort definition:** Et es eller konge i en farve, vigtigt i slemundersøgelser.
+
+**Forklaring:** Et es eller konge i en farve, vigtigt i slemundersøgelser.
+
+### Kontrolmelding
+**ID:** `kontrolmelding`
+**Engelsk:** Control bid
+**Alternative termer:** Control-bid
+**Niveau:** øvet
+**Kategori:** Meldesystemer og konventioner
+**Kort definition:** En melding der viser kontrol i en farve, typisk i slemforløb.
+
+**Forklaring:** En melding der viser kontrol i en farve, typisk i slemforløb.
+
+### Konvention
+**ID:** `konvention`
+**Engelsk:** Convention
+**Niveau:** let øvet
+**Kategori:** Meldesystemer og konventioner
+**Kort definition:** En aftalt kunstig melding eller sekvens.
+
+**Forklaring:** En aftalt melding med en kunstig betydning, som ikke handler om den nævnte farve.
+
+### Kravsans
+**ID:** `kravsans`
+**Engelsk:** Forcing notrump
+**Niveau:** let øvet
+**Kategori:** Meldesystemer og konventioner
+**Systemafhængig:** Ja
+**Kort definition:** 1NT‑svar der lover mindst én runde krav efter makkers major‑åbning.
+
+**Forklaring:** 1NT‑svar der lover mindst én runde krav efter makkers major‑åbning.
+
+### Kunstig melding
+**ID:** `kunstig-melding`
+**Engelsk:** Artificial call
+**Alternative termer:** Artificial
+**Niveau:** let øvet
+**Kategori:** Meldesystemer og konventioner
+**Kort definition:** En melding der ikke viser den meldte farve, men har en konventionel betydning.
+
+**Forklaring:** En melding der ikke viser den meldte farve, men har en konventionel betydning.
+
+### Kvantitativ melding
+**ID:** `kvantitativ-melding`
+**Engelsk:** Quantitative
+**Niveau:** øvet
+**Kategori:** Meldesystemer og konventioner
+**Kort definition:** En melding der viser styrke og spørger makker om at vurdere udgang/slem.
+
+**Forklaring:** En melding der viser styrke og spørger makker om at vurdere udgang/slem.
+
+### Lebensohl
+**ID:** `lebensohl`
+**Engelsk:** Lebensohl
+**Niveau:** øvet
+**Kategori:** Meldesystemer og konventioner
+**Systemafhængig:** Ja
+**Kort definition:** En konvention der håndterer indblanding over 1NT og viser forskellige styrker via 2NT‑relay.
+
+**Forklaring:** En konvention der håndterer indblanding over 1NT og viser forskellige styrker via 2NT‑relay.
+
+### Makkeraftale
+**ID:** `makkeraftale`
+**Engelsk:** Agreement
+**Alternative termer:** Partnership understanding
+**Niveau:** let øvet
+**Kategori:** Meldesystemer og konventioner
+**Kort definition:** En aftale mellem makkerne om betydningen af bestemte meldinger.
+
+**Forklaring:** En aftale mellem makkerne om betydningen af bestemte meldinger.
+
+### Meldesystem
+**ID:** `meldesystem`
+**Engelsk:** Bidding system
+**Alternative termer:** System / Bidding system
+**Niveau:** let øvet
+**Kategori:** Meldesystemer og konventioner
+**Kort definition:** Det aftalte meldesystem mellem makkerne.
+
+**Forklaring:** Det aftalte meldesystem mellem makkerne.
+
+### Multi
+**ID:** `multi`
+**Engelsk:** Multi
+**Niveau:** øvet
+**Kategori:** Meldesystemer og konventioner
+**Systemafhængig:** Ja
+**Kort definition:** En kunstig 2♦‑åbning der viser flere mulige håndtyper (typisk svag 2 i major).
+
+**Forklaring:** En kunstig 2♦‑åbning der viser flere mulige håndtyper (typisk svag 2 i major).
+
+### Nøglekort
+**ID:** `noeglekort`
+**Engelsk:** Key card
+**Niveau:** øvet
+**Kategori:** Meldesystemer og konventioner
+**Kort definition:** I Roman Key Card Blackwood er de fire esser og trumfkongen nøglekort.
+
+**Forklaring:** I Roman Key Card Blackwood er de fire esser og trumfkongen nøglekort. Trumfdamen er ikke et nøglekort, men undersøges ofte særskilt.
+
+### Omvendte minorstøtter
+**ID:** `omvendte-minorstoetter`
+**Engelsk:** Inverted
+**Niveau:** øvet
+**Kategori:** Meldesystemer og konventioner
+**Kort definition:** En aftale, hvor støtte til makkers minoråbning byttes om: en enkelt hævning (fx 1♣–2♣) er stærk og krav, mens et spring (1♣–3♣) er svagt og spærrende.
+
+**Forklaring:** En aftale, hvor støtte til makkers minoråbning byttes om: en enkelt hævning (fx 1♣–2♣) er stærk og krav, mens et spring (1♣–3♣) er svagt og spærrende.
+
+### Overføring
+**ID:** `overfoering`
+**Engelsk:** Transfer
+**Alternative termer:** 2♠-transfer
+**Niveau:** let øvet
+**Kategori:** Meldesystemer og konventioner
+**Systemafhængig:** Ja
+**Kort definition:** En overførsel i sanskontrakter der flytter spilføringen til åbneren.
+
+**Forklaring:** Svar på 1NT eller 2NT, hvor man melder farven under sin egen, så åbner skal melde den: 2♦ viser hjerter og 2♥ viser spar.
+
+### Pas eller ret
+**ID:** `pas-eller-ret`
+**Engelsk:** Pass or correct
+**Niveau:** øvet
+**Kategori:** Meldesystemer og konventioner
+**Systemafhængig:** Ja
+**Kort definition:** En melding der beder makker om at vælge den bedste af to farver.
+
+**Forklaring:** En melding der beder makker om at vælge den bedste af to farver.
+
+### Puppet Stayman
+**ID:** `puppet-stayman`
+**Engelsk:** Puppet Stayman
+**Niveau:** avanceret
+**Kategori:** Meldesystemer og konventioner
+**Systemafhængig:** Ja
+**Kort definition:** En Stayman-variant, der undersøger både fire- og femkorts major hos sansåbneren.
+
+**Forklaring:** En Stayman-variant, der undersøger både fire- og femkorts major hos sansåbneren. Den præcise sekvens afhænger af makkerskabets system.
+
+### Relæmelding
+**ID:** `relaemelding`
+**Engelsk:** Relay
+**Niveau:** avanceret
+**Kategori:** Meldesystemer og konventioner
+**Kort definition:** En kunstig melding der beder makker beskrive sin hånd.
+
+**Forklaring:** En kunstig melding der beder makker beskrive sin hånd.
+
+### Roman Key Card Blackwood (RKCB)
+**ID:** `roman-key-card-blackwood-rkcb`
+**Engelsk:** Roman Key Card Blackwood (RKCB)
+**Forkortelse:** RKCB
+**Niveau:** øvet
+**Kategori:** Meldesystemer og konventioner
+**Systemafhængig:** Ja
+**Kort definition:** En udvidet Blackwood der spørger efter nøglekort (esser + trumfkonge).
+
+**Forklaring:** En udvidet Blackwood der spørger efter nøglekort (esser + trumfkonge).
+
+### Smolen
+**ID:** `smolen`
+**Engelsk:** Smolen
+**Niveau:** avanceret
+**Kategori:** Meldesystemer og konventioner
+**Systemafhængig:** Ja
+**Kort definition:** En konvention efter en sansåbning og Stayman, hvor svarer viser fem kort i den ene major og fire i den anden ved at springe i firekortsfarven.
+
+**Forklaring:** En konvention efter en sansåbning og Stayman, hvor svarer viser fem kort i den ene major og fire i den anden ved at springe i firekortsfarven.
+
+### Splinter
+**ID:** `splinter`
+**Engelsk:** Splinter
+**Niveau:** øvet
+**Kategori:** Meldesystemer og konventioner
+**Systemafhængig:** Ja
+**Kort definition:** Et usædvanligt spring i en ny farve, der viser korthed, normalt singleton eller renonce, samt stærk støtte til makkers farve.
+
+**Forklaring:** Et usædvanligt spring i en ny farve, der viser korthed, normalt singleton eller renonce, samt stærk støtte til makkers farve.
+
+### Spørgemelding
+**ID:** `spoergemelding`
+**Engelsk:** Asking bid
+**Niveau:** let øvet
+**Kategori:** Meldesystemer og konventioner
+**Kort definition:** En melding der spørger makker om specifik information, fx kontrol eller antal esser.
+
+**Forklaring:** En melding, der beder makker beskrive en bestemt del af hånden.
+
+### Stayman
+**ID:** `stayman`
+**Engelsk:** Stayman
+**Niveau:** let øvet
+**Kategori:** Meldesystemer og konventioner
+**Systemafhængig:** Ja
+**Kort definition:** En konvention der spørger efter 4‑kort major efter 1NT.
+
+**Forklaring:** 2♣ som svar på 1NT (eller 3♣ på 2NT), som spørger efter en 4-farve i major.
+
+**Relaterede begreber:** jacoby-transfer, puppet-stayman
+
+### Stærk 2♣-åbning
+**ID:** `staerk-2-aabning`
+**Engelsk:** Strong 2 clubs
+**Alternative termer:** Strong 2♣, Kravåbning 2♣
+**Niveau:** let øvet
+**Kategori:** Meldesystemer og konventioner
+**Systemafhængig:** Ja
+**Kort definition:** En kunstig åbning der viser en stærk hånd (typisk 22+ HP eller stærk farve).
+
+**Forklaring:** En kunstig åbning der viser en stærk hånd (typisk 22+ HP eller stærk farve).
+
+### Svagt spring i ny farve
+**ID:** `svagt-spring-i-ny-farve`
+**Engelsk:** Weak jump shift
+**Niveau:** øvet
+**Kategori:** Meldesystemer og konventioner
+**Systemafhængig:** Ja
+**Kort definition:** Et svagt spring i ny farve der viser en spærrehånd.
+
+**Forklaring:** Et svagt spring i ny farve der viser en spærrehånd.
+
+### Systemkort
+**ID:** `systemkort`
+**Engelsk:** Convention card
+**Niveau:** let øvet
+**Kategori:** Meldesystemer og konventioner
+**Kort definition:** Systemkort der beskriver makkerskabets meldesystem og aftaler.
+
+**Forklaring:** Systemkort der beskriver makkerskabets meldesystem og aftaler.
+
 ### Trumfdame
 **ID:** `trumfdame`
 **Engelsk:** Trump queen
-**Niveau:** let øvet
+**Niveau:** øvet
 **Kategori:** Meldesystemer og konventioner
 **Kort definition:** Damen i den aftalte trumffarve.
 
@@ -3284,38 +1923,141 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 
 ## Konkurrencemeldinger
 
+### Cue-bid
+**ID:** `cue-bid`
+**Engelsk:** Cuebid
+**Niveau:** øvet
+**Kategori:** Konkurrencemeldinger
+**Kort definition:** En melding i modstandernes farve, der viser styrke eller en specifik håndtype.
+
+**Forklaring:** At melde en farve, modparten har meldt. Viser som regel stærk støtte eller et krav, ikke længde.
+
+### Defensiven
+**ID:** `defensiven`
+**Engelsk:** Defending side
+**Niveau:** let øvet
+**Kategori:** Konkurrencemeldinger
+**Kort definition:** Det par, der ikke åbnede meldingerne.
+
+**Forklaring:** Det par, der ikke åbnede meldingerne.
+
+### Dobling
+**ID:** `dobling`
+**Engelsk:** Double
+**Niveau:** begynder
+**Kategori:** Konkurrencemeldinger
+**Kort definition:** En melding der viser styrke, straf eller oplysning afhængigt af kontekst.
+
+**Forklaring:** En melding, der fordobler scoren for en kontrakt. Kan være oplysende eller straf.
+
+### Forhåndsoffermelding
+**ID:** `forhaandsoffermelding`
+**Engelsk:** Advance sacrifice
+**Niveau:** øvet
+**Kategori:** Konkurrencemeldinger
+**Kort definition:** En offermelding, der meldes med det samme, før modparten har nået sin kontrakt.
+
+**Forklaring:** En offermelding, der meldes med det samme, før modparten har nået sin kontrakt.
+
+### Genåbning
+**ID:** `genaabning`
+**Engelsk:** Balancing
+**Alternative termer:** Reopen
+**Niveau:** øvet
+**Kategori:** Konkurrencemeldinger
+**Kort definition:** At genåbne meldingerne efter modstanderne har vist svaghed, for at forhindre passpil.
+
+**Forklaring:** En melding i sidste position, hvor et pas ville afslutte meldingerne.
+
 ### Genåbningsdobling
 **ID:** `genaabningsdobling`
 **Engelsk:** Balancing double
-**Niveau:** begynder
+**Niveau:** øvet
 **Kategori:** Konkurrencemeldinger
 **Kort definition:** En genåbningsdobling efter modstanderne har vist svaghed; bruges for at holde meldingerne i gang.
 
-**Forklaring:** En genåbningsdobling efter modstanderne har vist svaghed; bruges for at holde meldingerne i gang.
+**Forklaring:** Oplysningsdobling i genåbningsposition. Kræver mindre styrke end en direkte dobling.
+
+### Genåbningsposition
+**ID:** `genaabningsposition`
+**Engelsk:** Balancing position
+**Niveau:** øvet
+**Kategori:** Konkurrencemeldinger
+**Kort definition:** Den position hvor en spiller kan genåbne efter tre pas.
+
+**Forklaring:** Den position hvor en spiller kan genåbne efter tre pas.
+
+### Indblanding
+**ID:** `indblanding`
+**Engelsk:** Interference
+**Niveau:** let øvet
+**Kategori:** Konkurrencemeldinger
+**Kort definition:** Modstandernes indblanding i meldeforløbet.
+
+**Forklaring:** Modstandernes indblanding i meldeforløbet.
+
+### Indmelderens makker
+**ID:** `indmelderens-makker`
+**Engelsk:** Advancer
+**Niveau:** let øvet
+**Kategori:** Konkurrencemeldinger
+**Kort definition:** Indmelderens makker; den spiller der svarer efter en indmelding.
+
+**Forklaring:** Indmelderens makker; den spiller der svarer efter en indmelding.
 
 ### Indmelding
 **ID:** `indmelding`
 **Engelsk:** Overcall
-**Niveau:** begynder
+**Alternative termer:** 1NT-indmelding
+**Niveau:** let øvet
 **Kategori:** Konkurrencemeldinger
 **Kort definition:** En indmelding der viser en god farve og tilstrækkelig styrke til at konkurrere.
 
-**Forklaring:** En indmelding der viser en god farve og tilstrækkelig styrke til at konkurrere.
+**Forklaring:** En melding fra defensiven, efter at modparten har åbnet.
+
+### Konkurrencemelding
+**ID:** `konkurrencemelding`
+**Engelsk:** Competitive bid
+**Niveau:** let øvet
+**Kategori:** Konkurrencemeldinger
+**Kort definition:** En melding afgivet i konkurrence med modstanderne.
+
+**Forklaring:** En melding afgivet i konkurrence med modstanderne.
+
+### Kravpas
+**ID:** `kravpas`
+**Engelsk:** Forcing pass
+**Alternative termer:** Forcing pass (FP)
+**Forkortelse:** FP
+**Niveau:** avanceret
+**Kategori:** Konkurrencemeldinger
+**Kort definition:** Et pas der viser styrke og kræver handling fra makker.
+
+**Forklaring:** Et pas der viser styrke og kræver handling fra makker.
 
 ### Maksimaldobling
 **ID:** `maksimal-dobling`
 **Engelsk:** Maximal double
-**Niveau:** øvet
+**Niveau:** avanceret
 **Kategori:** Konkurrencemeldinger
 **Systemafhængig:** Ja
 **Kort definition:** En konventionel dobling i en konkurrencesekvens, som viser udgangsinteresse, når en direkte farvemelding ville være konkurrerende.
 
 **Forklaring:** En konventionel dobling i en konkurrencesekvens, som viser udgangsinteresse, når en direkte farvemelding ville være konkurrerende.
 
+### Meldenød
+**ID:** `meldenoed`
+**Engelsk:**
+**Niveau:** øvet
+**Kategori:** Konkurrencemeldinger
+**Kort definition:** Situationen, hvor ingen melding passer helt, fordi modparten har taget meldepladsen.
+
+**Forklaring:** Situationen, hvor ingen melding passer helt, fordi modparten har taget meldepladsen.
+
 ### Michaels cuebid
 **ID:** `michaels-cuebid`
 **Engelsk:** Michaels cuebid
-**Niveau:** begynder
+**Niveau:** øvet
 **Kategori:** Konkurrencemeldinger
 **Systemafhængig:** Ja
 **Kort definition:** En indmelding der viser tofarvede hænder (major/major eller major/minor).
@@ -3325,18 +2067,27 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 ### Negativ dobling
 **ID:** `negativ-dobling`
 **Engelsk:** Negative double
-**Niveau:** begynder
+**Niveau:** let øvet
 **Kategori:** Konkurrencemeldinger
 **Systemafhængig:** Ja
 **Kort definition:** En dobling der viser ubesluttede farver og typisk 4‑kort i umeldt major.
 
 **Forklaring:** En dobling der viser ubesluttede farver og typisk 4‑kort i umeldt major.
 
+### Offensiven
+**ID:** `offensiven`
+**Engelsk:** Opening side
+**Niveau:** let øvet
+**Kategori:** Konkurrencemeldinger
+**Kort definition:** Det par, der åbnede meldingerne.
+
+**Forklaring:** Det par, der åbnede meldingerne.
+
 ### Offer
 **ID:** `offer`
 **Engelsk:** Sacrifice bid
-**Alternative termer:** Sacrifice / Insurance bid
-**Niveau:** begynder
+**Alternative termer:** Sacrifice / Insurance bid, Offermelding
+**Niveau:** øvet
 **Kategori:** Konkurrencemeldinger
 **Kort definition:** En melding der går ned med vilje for at undgå modstandernes udgang/slem.
 
@@ -3346,16 +2097,37 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 **ID:** `oplysningsdobling`
 **Engelsk:** Takeout double
 **Alternative termer:** Take-out double
-**Niveau:** begynder
+**Niveau:** let øvet
 **Kategori:** Konkurrencemeldinger
 **Kort definition:** En oplysningsdobling der viser støtte til umeldte farver.
 
-**Forklaring:** En oplysningsdobling der viser støtte til umeldte farver.
+**Forklaring:** Dobling, der beder makker melde sin bedste farve. Viser typisk åbningsstyrke og støtte til de umeldte farver.
+
+### Redningsmelding
+**ID:** `redningsmelding`
+**Engelsk:** Escape
+**Alternative termer:** Rescue
+**Niveau:** øvet
+**Kategori:** Konkurrencemeldinger
+**Kort definition:** En melding der forsøger at undgå en strafdoblet kontrakt.
+
+**Forklaring:** En melding der forsøger at undgå en strafdoblet kontrakt.
+
+### Redobling
+**ID:** `redobling`
+**Engelsk:** Redouble
+**Alternative termer:** Redouble (XX)
+**Forkortelse:** XX
+**Niveau:** begynder
+**Kategori:** Konkurrencemeldinger
+**Kort definition:** En melding der viser ekstra styrke eller specifik håndtype.
+
+**Forklaring:** Svar på en dobling, som fordobler scoren igen.
 
 ### Responsiv dobling
 **ID:** `responsiv-dobling`
 **Engelsk:** Responsive double
-**Niveau:** øvet
+**Niveau:** avanceret
 **Kategori:** Konkurrencemeldinger
 **Systemafhængig:** Ja
 **Kort definition:** En kunstig dobling efter makkers oplysningsdobling og modpartens støtte, som normalt viser værdier og interesse for de umeldte farver.
@@ -3365,56 +2137,370 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 ### Spærremelding
 **ID:** `spaerremelding`
 **Engelsk:** Preempt; barrage
-**Alternative termer:** Preempt / Barrage
-**Niveau:** begynder
+**Alternative termer:** Preempt / Barrage, Spærreåbning
+**Niveau:** let øvet
 **Kategori:** Konkurrencemeldinger
 **Kort definition:** En spærremelding der hæver niveauet for at presse modstanderne.
 
-**Forklaring:** En spærremelding der hæver niveauet for at presse modstanderne.
+**Forklaring:** En høj melding med lang farve og få point, der skal tage meldeplads fra modparten.
+
+### Spærrestøtte
+**ID:** `spaerrestoette`
+**Engelsk:** Preemptive raise
+**Niveau:** øvet
+**Kategori:** Konkurrencemeldinger
+**Kort definition:** En spærrestøtte der hæver makkers farve højt for at presse modstanderne.
+
+**Forklaring:** En spærrestøtte der hæver makkers farve højt for at presse modstanderne.
 
 ### Strafdobling
 **ID:** `strafdobling`
 **Engelsk:** Penalty double
-**Niveau:** begynder
+**Niveau:** let øvet
 **Kategori:** Konkurrencemeldinger
 **Kort definition:** En dobling der viser strafstyrke.
 
-**Forklaring:** En dobling der viser strafstyrke.
+**Forklaring:** Dobling, der skal øge modpartens straf, fordi man tror, de går ned.
 
 ### Strafpas
 **ID:** `straffepas`
 **Engelsk:** Penalty pass
-**Niveau:** let øvet
+**Niveau:** øvet
 **Kategori:** Konkurrencemeldinger
 **Kort definition:** Et pas af en oplysningsdobling, som omdanner doblingen til straf, fordi svarer forventer, at den doblede kontrakt går ned.
 
-**Forklaring:** Et pas af en oplysningsdobling, som omdanner doblingen til straf, fordi svarer forventer, at den doblede kontrakt går ned.
+**Forklaring:** At passe makkers oplysningsdobling, så den bliver til straf. Kræver gode trumfer.
+
+### Støttedobling
+**ID:** `støttedobling`
+**Engelsk:** Support double
+**Niveau:** øvet
+**Kategori:** Konkurrencemeldinger
+**Systemafhængig:** Ja
+**Kort definition:** En dobling der viser præcis 3‑kort støtte til makkers farve.
+
+**Forklaring:** En dobling der viser præcis 3‑kort støtte til makkers farve.
+
+### Støtteredobling
+**ID:** `støtteredobling`
+**Engelsk:** Support redouble
+**Niveau:** øvet
+**Kategori:** Konkurrencemeldinger
+**Systemafhængig:** Ja
+**Kort definition:** En redobling der viser 3‑kort støtte efter modstandernes dobling.
+
+**Forklaring:** En redobling der viser 3‑kort støtte efter modstandernes dobling.
+
+### Svag springstøtte
+**ID:** `svag-springstoette`
+**Engelsk:** Weak jump raise
+**Alternative termer:** Weak jump support
+**Niveau:** let øvet
+**Kategori:** Konkurrencemeldinger
+**Systemafhængig:** Ja
+**Kort definition:** En svag springstøtte der viser længde og spærrestyrke.
+
+**Forklaring:** En svag springstøtte der viser længde og spærrestyrke.
+
+### Udspilsdirigerende dobling
+**ID:** `udspilsdirigerende-dobling`
+**Engelsk:** Lead-directing
+**Alternative termer:** Udspilsdirigerende melding
+**Niveau:** øvet
+**Kategori:** Konkurrencemeldinger
+**Kort definition:** En dobling (eller melding), der beder makker om et bestemt udspil.
+
+**Forklaring:** En dobling (eller melding), der beder makker om et bestemt udspil.
 
 ### Usædvanlig 2NT
 **ID:** `usaedvanlig-2nt`
 **Engelsk:** Unusual 2NT
-**Niveau:** begynder
+**Niveau:** øvet
 **Kategori:** Konkurrencemeldinger
 **Systemafhængig:** Ja
 **Kort definition:** En kunstig 2NT‑melding der viser to lavere umeldte farver.
 
 **Forklaring:** En kunstig 2NT‑melding der viser to lavere umeldte farver.
 
+### Usædvanlig melding
+**ID:** `usaedvanlig-melding`
+**Engelsk:** Unusual
+**Niveau:** øvet
+**Kategori:** Konkurrencemeldinger
+**Kort definition:** En kunstig melding der viser tofarvet hånd.
+
+**Forklaring:** En kunstig melding der viser tofarvet hånd.
+
+### Viderespærring
+**ID:** `viderespaerring`
+**Engelsk:**
+**Niveau:** øvet
+**Kategori:** Konkurrencemeldinger
+**Kort definition:** At støtte makkers spærremelding endnu højere for at presse modparten.
+
+**Forklaring:** At støtte makkers spærremelding endnu højere for at presse modparten.
+
 ## Spilføring
+
+### Afblokering
+**ID:** `afblokering`
+**Engelsk:** Unblock
+**Niveau:** øvet
+**Kategori:** Spilføring
+**Kort definition:** At afblokere en farve ved at spille høje kort i den rigtige rækkefølge.
+
+**Forklaring:** At afblokere en farve ved at spille høje kort i den rigtige rækkefølge.
+
+### Badekup (Bath Coup)
+**ID:** `badekup-bath-coup`
+**Engelsk:** Bath coup
+**Niveau:** øvet
+**Kategori:** Spilføring
+**Kort definition:** Spilfører har fx E-B-x og lader modpartens konge-udspil vinde, så modspilleren ikke kan fortsætte farven uden at give et stik.
+
+**Forklaring:** Spilfører har fx E-B-x og lader modpartens konge-udspil vinde, så modspilleren ikke kan fortsætte farven uden at give et stik.
+
+### Blokering
+**ID:** `blokering`
+**Engelsk:** Block
+**Niveau:** let øvet
+**Kategori:** Spilføring
+**Kort definition:** At forhindre en farve i at løbe ved at have høje kort i den forkerte hånd.
+
+**Forklaring:** At forhindre en farve i at løbe ved at have høje kort i den forkerte hånd.
+
+### Brænde
+**ID:** `braende`
+**Engelsk:** Miss
+**Niveau:** let øvet
+**Kategori:** Spilføring
+**Kort definition:** At brænde et stik eller en mulighed; bruges især i spilføring.
+
+**Forklaring:** At brænde et stik eller en mulighed; bruges især i spilføring.
+
+### Dobbelt kipning
+**ID:** `dobbelt-kipning`
+**Engelsk:** Double finesse
+**Alternative termer:** Dobbeltknibning, dobbeltknibe
+**Niveau:** let øvet
+**Kategori:** Spilføring
+**Kort definition:** To kipninger i samme farve for at fange to af modpartens honnører.
+
+**Forklaring:** En kipning mod to manglende honnører, fx med E-D-10 mod K og B.
+
+### Dyk
+**ID:** `dyk`
+**Engelsk:** Duck
+**Alternative termer:** Dykke, Falde fra
+**Niveau:** øvet
+**Kategori:** Spilføring
+**Kort definition:** At lade et stik gå med vilje for at afbryde modspillernes kommunikation.
+
+**Forklaring:** At lade et stik gå med vilje for at afbryde modspillernes kommunikation.
+
+### "Eight ever, nine never"
+**ID:** `eight-ever-nine-never`
+**Engelsk:** Eight ever, nine never
+**Niveau:** let øvet
+**Kategori:** Spilføring
+**Kort definition:** Huskeregel: Med otte kort i alt og manglende dame skal man kippe. Med ni skal man slå fra toppen.
+
+**Forklaring:** Huskeregel: Med otte kort i alt og manglende dame skal man kippe. Med ni skal man slå fra toppen.
+
+### Etablering
+**ID:** `etablering`
+**Engelsk:** Establish; develop
+**Alternative termer:** Establish / Develop, Rejse stik
+**Niveau:** let øvet
+**Kategori:** Spilføring
+**Kort definition:** At spille en farve god ved at tvinge modstandernes honnører ud.
+
+**Forklaring:** At spille en farve god ved at tvinge modstandernes honnører ud.
+
+### Fald
+**ID:** `fald`
+**Engelsk:** Drop
+**Alternative termer:** Play for the drop
+**Niveau:** let øvet
+**Kategori:** Spilføring
+**Kort definition:** Når en manglende honnør falder, fordi farven toppes eller fordi den ikke længere kan holdes.
+
+**Forklaring:** Når en manglende honnør falder, fordi farven toppes eller fordi den ikke længere kan holdes.
 
 ### Farehånd
 **ID:** `farehånd`
 **Engelsk:** Danger hand
-**Niveau:** let øvet
+**Niveau:** øvet
 **Kategori:** Spilføring
 **Kort definition:** Den modspiller, som ikke bør komme ind, fordi et gennembrud eller en farvefortsættelse kan true kontrakten.
 
 **Forklaring:** Den modspiller, som ikke bør komme ind, fordi et gennembrud eller en farvefortsættelse kan true kontrakten.
 
+### Farvebehandling
+**ID:** `farvebehandling`
+**Engelsk:** Suit combination
+**Niveau:** let øvet
+**Kategori:** Spilføring
+**Kort definition:** Den bedste måde at spille en bestemt farvekombination på.
+
+**Forklaring:** Den bedste måde at spille en bestemt farvekombination på.
+
+### Forbindelse
+**ID:** `forbindelse`
+**Engelsk:** Communication
+**Niveau:** begynder
+**Kategori:** Spilføring
+**Kort definition:** Forbindelsen mellem hænderne via indgange; afgørende for etablering af farver.
+
+**Forklaring:** Forbindelsen mellem hænderne via indgange; afgørende for etablering af farver.
+
+### Forbindelser
+**ID:** `forbindelser`
+**Engelsk:** Communications
+**Niveau:** begynder
+**Kategori:** Spilføring
+**Kort definition:** Muligheden for at komme ind på hånden eller bordet, når man har brug for det.
+
+**Forklaring:** Muligheden for at komme ind på hånden eller bordet, når man har brug for det.
+
+### Fordelingssandsynlighed
+**ID:** `fordelingssandsynlighed`
+**Engelsk:**
+**Niveau:** let øvet
+**Kategori:** Spilføring
+**Kort definition:** Sandsynligheden for, hvordan modpartens kort i en farve sidder.
+
+**Forklaring:** Sandsynligheden for, hvordan modpartens kort i en farve sidder.
+
+### Gaffel
+**ID:** `gaffel`
+**Engelsk:** Tenace
+**Niveau:** begynder
+**Kategori:** Spilføring
+**Kort definition:** En gaffel, fx A‑D over modstanderen.
+
+**Forklaring:** To honnører med et hul imellem, fx E-D eller K-B. Skal helst spilles op mod.
+
+### Gående farve
+**ID:** `gaaende-farve`
+**Engelsk:** Solid suit
+**Niveau:** let øvet
+**Kategori:** Spilføring
+**Kort definition:** En farve hvor alle topkortene sidder hos én spiller; ofte gående.
+
+**Forklaring:** En farve hvor alle topkortene sidder hos én spiller; ofte gående.
+
+### Hold-up
+**ID:** `hold-up`
+**Engelsk:** Hold-up play
+**Alternative termer:** Frafald (hold up)
+**Niveau:** øvet
+**Kategori:** Spilføring
+**Kort definition:** At lade modspillet vinde stik for at afskære forbindelser.
+
+**Forklaring:** At lade modspillet vinde stik for at afskære forbindelser.
+
+### Indgang
+**ID:** `indgang`
+**Engelsk:** Entry
+**Niveau:** let øvet
+**Kategori:** Spilføring
+**Kort definition:** En indgang til en hånd, der giver adgang til etablerede stik.
+
+**Forklaring:** En indgang til en hånd, der giver adgang til etablerede stik.
+
+### Indkassere
+**ID:** `indkassere`
+**Engelsk:** Cash
+**Niveau:** begynder
+**Kategori:** Spilføring
+**Kort definition:** At indkassere et sikkert stik ved at spille et højt kort.
+
+**Forklaring:** At indkassere et sikkert stik ved at spille et højt kort.
+
+### Kipning
+**ID:** `kipning`
+**Engelsk:** Finesse
+**Alternative termer:** Knibning, snit
+**Niveau:** begynder
+**Kategori:** Spilføring
+**Kort definition:** At spille mod en honnør i håb om, at modpartens højere kort sidder foran den, fx lille mod damen med esset og damen, når kongen mangler.
+
+**Forklaring:** At spille op mod en gaffel i håb om, at det manglende kort sidder i plads.
+
+**Relaterede begreber:** gaffel, dobbelt-kipning
+
+### Krydstrumfning
+**ID:** `krydstrumfning`
+**Engelsk:** Cross-ruff
+**Alternative termer:** Krydstrumfning (Cross-ruff)
+**Niveau:** begynder
+**Kategori:** Spilføring
+**Kort definition:** At trumfe skiftevis i begge hænder for at udvikle mange trumfstik.
+
+**Forklaring:** At trumfe skiftevis på hånden og på bordet.
+
+### Lukket hånd
+**ID:** `lukket-haand`
+**Engelsk:** Closed hand
+**Niveau:** begynder
+**Kategori:** Spilføring
+**Kort definition:** Spilførers hånd, som kun spilføreren kan se.
+
+**Forklaring:** Spilførers hånd, som kun spilføreren kan se.
+
+### Oplagt kontrakt
+**ID:** `oplagt-kontrakt`
+**Engelsk:** Laydown
+**Niveau:** let øvet
+**Kategori:** Spilføring
+**Kort definition:** En kontrakt der er trivielt vundet uanset modspil.
+
+**Forklaring:** En kontrakt der er trivielt vundet uanset modspil.
+
+### Overtrumf
+**ID:** `overtrumf`
+**Engelsk:** Overruff
+**Niveau:** begynder
+**Kategori:** Spilføring
+**Kort definition:** At trumfe over modstanderen.
+
+**Forklaring:** At trumfe over modstanderen.
+
+### Sidder forkert
+**ID:** `sidder-forkert`
+**Engelsk:** Offside
+**Alternative termer:** Offside
+**Niveau:** begynder
+**Kategori:** Spilføring
+**Kort definition:** Når en honnør sidder “forkert” i forhold til en kipning.
+
+**Forklaring:** Når en honnør sidder “forkert” i forhold til en kipning.
+
+### Sidder rigtigt
+**ID:** `sidder-rigtigt`
+**Engelsk:** Onside
+**Alternative termer:** Onside, I plads, Sidde i plads, Ude af plads
+**Niveau:** begynder
+**Kategori:** Spilføring
+**Kort definition:** Når en honnør sidder “rigtigt” i forhold til en kipning.
+
+**Forklaring:** Når en honnør sidder “rigtigt” i forhold til en kipning.
+
+### Sikkerhedsspil
+**ID:** `sikkerhedsspil`
+**Engelsk:** Safety play
+**Alternative termer:** Safespil
+**Niveau:** øvet
+**Kategori:** Spilføring
+**Kort definition:** Et spil der sikrer kontrakten, selv hvis det reducerer chancen for overstik.
+
+**Forklaring:** Et spil der sikrer kontrakten, selv hvis det reducerer chancen for overstik.
+
 ### Slutspil
 **ID:** `slutspil`
 **Engelsk:** Endplay
-**Niveau:** let øvet
+**Niveau:** avanceret
 **Kategori:** Spilføring
 **Kort definition:** Spilføring sent i spillet, hvor en modspiller tvinges til at give spilføreren et stik, han ikke kunne få selv.
 
@@ -3422,10 +2508,56 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 
 **Relaterede begreber:** indspil, skvis, eliminering, morton-s-fork
 
+### Spil af kortene
+**ID:** `spil-af-kortene`
+**Engelsk:** Card play
+**Niveau:** begynder
+**Kategori:** Spilføring
+**Kort definition:** Selve processen med at spille kortene i en kontrakt.
+
+**Forklaring:** Selve processen med at spille kortene i en kontrakt.
+
+### Spille mod
+**ID:** `spille-mod`
+**Engelsk:** Play to
+**Alternative termer:** Opspil
+**Niveau:** begynder
+**Kategori:** Spilføring
+**Kort definition:** At spille til et bestemt kort eller en bestemt hånd.
+
+**Forklaring:** At spille til et bestemt kort eller en bestemt hånd.
+
+### Spilleplan
+**ID:** `spilleplan`
+**Engelsk:** Plan of play
+**Niveau:** begynder
+**Kategori:** Spilføring
+**Kort definition:** Spilførers plan, som lægges, før det første kort fra bordet spilles.
+
+**Forklaring:** Spilførers plan, som lægges, før det første kort fra bordet spilles.
+
+### Stikke over
+**ID:** `stikke-over`
+**Engelsk:** Overtake
+**Niveau:** let øvet
+**Kategori:** Spilføring
+**Kort definition:** At stikke over makkers kort for at bevare tempo eller skifte farve.
+
+**Forklaring:** At stikke over makkers kort for at bevare tempo eller skifte farve.
+
+### Taber
+**ID:** `taber`
+**Engelsk:** Loser
+**Niveau:** begynder
+**Kategori:** Spilføring
+**Kort definition:** Et kort der forventes at tabe et stik.
+
+**Forklaring:** Et kort, der ikke kan vinde et stik.
+
 ### Tabertælling
 **ID:** `tabertælling`
 **Engelsk:** Loser count
-**Niveau:** begynder
+**Niveau:** let øvet
 **Kategori:** Spilføring
 **Kort definition:** En planlægningsmetode i trumfkontrakter, hvor spilføreren tæller forventede tabere og undersøger, hvordan de kan fjernes.
 
@@ -3440,9 +2572,85 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 
 **Forklaring:** Et stik eller en spilleomgang, der bruges til at udvikle en farve, fjerne en indgang eller bevare initiativet.
 
+### Trumfbehandling
+**ID:** `trumfbehandling`
+**Engelsk:** Trump management
+**Niveau:** let øvet
+**Kategori:** Spilføring
+**Kort definition:** At styre hvornår man trækker trumfer og hvornår man trumfer tabere.
+
+**Forklaring:** At styre hvornår man trækker trumfer og hvornår man trumfer tabere.
+
+### Trumfkontrol
+**ID:** `trumfkontrol`
+**Engelsk:** Trump control
+**Niveau:** øvet
+**Kategori:** Spilføring
+**Kort definition:** Evnen til at styre trumferne og forhindre modspillets trumfning.
+
+**Forklaring:** Evnen til at styre trumferne og forhindre modspillets trumfning.
+
+### Trumfning
+**ID:** `trumfning`
+**Engelsk:** Ruff
+**Alternative termer:** Trumfe
+**Niveau:** begynder
+**Kategori:** Spilføring
+**Kort definition:** At trumfe et stik.
+
+**Forklaring:** At trumfe et stik.
+
+### Trumftræk
+**ID:** `trumftraek`
+**Engelsk:** Draw trumps
+**Alternative termer:** Draw, Trumftrækning
+**Niveau:** begynder
+**Kategori:** Spilføring
+**Kort definition:** At fjerne modstandernes trumfer.
+
+**Forklaring:** At fjerne modstandernes trumfer.
+
+### Tælling
+**ID:** `taelling`
+**Engelsk:** Count
+**Niveau:** let øvet
+**Kategori:** Spilføring
+**Kort definition:** At tælle fordeling, honnører eller stikmuligheder.
+
+**Forklaring:** At tælle fordeling, honnører eller stikmuligheder.
+
+### Udestående kort
+**ID:** `udestaaende-kort`
+**Engelsk:** Outstanding card(s)
+**Niveau:** let øvet
+**Kategori:** Spilføring
+**Kort definition:** Kort i en farve der endnu ikke er spillet.
+
+**Forklaring:** Kort i en farve der endnu ikke er spillet.
+
+### Undertrumf
+**ID:** `undertrumf`
+**Engelsk:** Underruff
+**Niveau:** øvet
+**Kategori:** Spilføring
+**Kort definition:** At trumfe lavere for at bevare trumfer.
+
+**Forklaring:** At trumfe lavere for at bevare trumfer.
+
+### Vinderkort
+**ID:** `vinderkort`
+**Engelsk:** Winner
+**Alternative termer:** Topstik
+**Niveau:** begynder
+**Kategori:** Spilføring
+**Kort definition:** Et kort der med sikkerhed vinder et stik.
+
+**Forklaring:** Et kort der med sikkerhed vinder et stik.
+
 ### Vindertælling
 **ID:** `vindertælling`
 **Engelsk:** Winner count
+**Alternative termer:** Topstik tælles
 **Niveau:** begynder
 **Kategori:** Spilføring
 **Kort definition:** En planlægningsmetode i sanskontrakter, hvor spilføreren tæller sikre stik og identificerer muligheder for at udvikle flere.
@@ -3451,11 +2659,20 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 
 ## Modspil, udspil og signaler
 
+### Afkast
+**ID:** `afkast`
+**Engelsk:** Discard
+**Niveau:** begynder
+**Kategori:** Modspil, udspil og signaler
+**Kort definition:** At smide af i en farve man ikke kan bekende.
+
+**Forklaring:** At smide af i en farve man ikke kan bekende.
+
 ### Farvepræferencesignal
 **ID:** `farvepraeferencesignal`
 **Engelsk:** Suit-preference signal
 **Alternative termer:** Suit preference signal
-**Niveau:** begynder
+**Niveau:** øvet
 **Kategori:** Modspil, udspil og signaler
 **Systemafhængig:** Ja
 **Kort definition:** Et signal der viser, hvilken farve makker ønsker spillet.
@@ -3470,21 +2687,67 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 **Systemafhængig:** Ja
 **Kort definition:** Udspil af fjerdehøjeste kort i en farve; standard i sanskontrakter.
 
-**Forklaring:** Udspil af fjerdehøjeste kort i en farve; standard i sanskontrakter.
+**Forklaring:** Udspil af det fjerdehøjeste kort i en lang farve.
 
 ### Fordelingssignal
 **ID:** `fordelingssignal`
 **Engelsk:** Count signal
-**Niveau:** begynder
+**Niveau:** let øvet
 **Kategori:** Modspil, udspil og signaler
 **Kort definition:** Et signal der viser længde (lige/ulige antal kort).
 
 **Forklaring:** Et signal der viser længde (lige/ulige antal kort).
 
+### Gennembrud
+**ID:** `gennembrud`
+**Engelsk:** Leading through
+**Niveau:** let øvet
+**Kategori:** Modspil, udspil og signaler
+**Kort definition:** At spille en farve igennem modstanderne for at tvinge honnører ud.
+
+**Forklaring:** At spille en farve igennem modstanderne for at tvinge honnører ud.
+
+### Honnør på honnør
+**ID:** `honnoer-paa-honnoer`
+**Engelsk:** Cover an honour with an honour
+**Niveau:** begynder
+**Kategori:** Modspil, udspil og signaler
+**Kort definition:** At lægge en honnør på spilførers honnør, så et af ens egne kort eller makkers kort bliver højt.
+
+**Forklaring:** At lægge en honnør på spilførers honnør, så et af ens egne kort eller makkers kort bliver højt.
+
+### Højt fra intet
+**ID:** `hoejt-fra-intet`
+**Engelsk:** Top of nothing
+**Niveau:** let øvet
+**Kategori:** Modspil, udspil og signaler
+**Systemafhængig:** Ja
+**Kort definition:** Udspil af et højt lavt kort (fx 9) fra en svag farve.
+
+**Forklaring:** Udspil af et højt lavt kort (fx 9) fra en svag farve.
+
+### Højt i tredje hånd
+**ID:** `hoejt-i-tredje-haand`
+**Engelsk:** Third hand high
+**Niveau:** begynder
+**Kategori:** Modspil, udspil og signaler
+**Kort definition:** Tredje hånd lægger normalt sit højeste kort, når makker har spillet ud.
+
+**Forklaring:** Tredje hånd lægger normalt sit højeste kort, når makker har spillet ud.
+
+### Indre sekvens
+**ID:** `indre-sekvens`
+**Engelsk:** Interior sequence
+**Niveau:** øvet
+**Kategori:** Modspil, udspil og signaler
+**Kort definition:** En indre sekvens er to eller flere sammenhængende honnører under et højere, ikke-sammenhængende kort, fx K-B-10-x.
+
+**Forklaring:** En indre sekvens er to eller flere sammenhængende honnører under et højere, ikke-sammenhængende kort, fx K-B-10-x.
+
 ### Kald-afvisning
 **ID:** `kald-afvisning`
 **Engelsk:** Attitude signal
-**Alternative termer:** Attitude, Discourage, Encourage
+**Alternative termer:** Attitude, Discourage, Encourage, Kald og afvisning
 **Niveau:** begynder
 **Kategori:** Modspil, udspil og signaler
 **Kort definition:** Et signal der viser, om man ønsker farven fortsat spillet (positiv) eller stoppet (negativ).
@@ -3494,7 +2757,7 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 ### Laveste lige kort
 **ID:** `laveste-lige-kort`
 **Engelsk:** Low from even
-**Niveau:** let øvet
+**Niveau:** øvet
 **Kategori:** Modspil, udspil og signaler
 **Systemafhængig:** Ja
 **Kort definition:** En udspils- eller signalmetode, hvor et lavt kort kan vise et lige antal kort.
@@ -3504,27 +2767,75 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 ### Lavinthal-signal
 **ID:** `lavinthal-signal`
 **Engelsk:** Lavinthal
-**Niveau:** begynder
+**Niveau:** øvet
 **Kategori:** Modspil, udspil og signaler
 **Systemafhængig:** Ja
 **Kort definition:** Et afkast der viser farvepræference.
 
 **Forklaring:** Et afkast der viser farvepræference.
 
+### Lavt i anden hånd
+**ID:** `lavt-i-anden-haand`
+**Engelsk:** Second hand low
+**Niveau:** begynder
+**Kategori:** Modspil, udspil og signaler
+**Kort definition:** Anden hånd lægger normalt et lille kort.
+
+**Forklaring:** Anden hånd lægger normalt et lille kort.
+
+### Lige antal
+**ID:** `lige-antal`
+**Engelsk:** Even
+**Niveau:** let øvet
+**Kategori:** Modspil, udspil og signaler
+**Kort definition:** En lige antal kort i en farve (fx 2, 4, 6).
+
+**Forklaring:** En lige antal kort i en farve (fx 2, 4, 6).
+
 ### Marmic
 **ID:** `marmic`
 **Engelsk:** MUD
-**Niveau:** øvet
+**Niveau:** avanceret
 **Kategori:** Modspil, udspil og signaler
 **Systemafhængig:** Ja
 **Kort definition:** Udspil af det midterste kort fra tre små kort, efterfulgt af det højeste.
 
 **Forklaring:** Udspil af det midterste kort fra tre små kort, efterfulgt af det højeste. Metoden er systemafhængig.
 
+### Modspil
+**ID:** `modspil`
+**Engelsk:** Defence; defense
+**Alternative termer:** Defence / Defensive play
+**Niveau:** begynder
+**Kategori:** Modspil, udspil og signaler
+**Kort definition:** Modspillets strategi og teknik.
+
+**Forklaring:** Forsvaret mod spilførers kontrakt.
+
+### Modspilssignal
+**ID:** `modspilssignal`
+**Engelsk:** Signal; carding
+**Alternative termer:** Signal / Carding
+**Niveau:** let øvet
+**Kategori:** Modspil, udspil og signaler
+**Kort definition:** Modspilssignaler der viser attitude, længde eller præference.
+
+**Forklaring:** Modspilssignaler der viser attitude, længde eller præference.
+
+### Neutralt udspil
+**ID:** `neutralt-udspil`
+**Engelsk:** Neutral lead
+**Alternative termer:** Aktivt udspil, Passivt udspil
+**Niveau:** let øvet
+**Kategori:** Modspil, udspil og signaler
+**Kort definition:** Et udspil der ikke giver spilfører fordel; ofte i sanskontrakter.
+
+**Forklaring:** Et udspil der ikke giver spilfører fordel; ofte i sanskontrakter.
+
 ### Norsk fordeling
 **ID:** `norsk-fordeling`
 **Engelsk:** Norwegian count
-**Niveau:** let øvet
+**Niveau:** øvet
 **Kategori:** Modspil, udspil og signaler
 **Systemafhængig:** Ja
 **Kort definition:** En signalmetode, hvor højt-lavt normalt viser ulige antal og lavt-højt lige antal.
@@ -3540,6 +2851,43 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 
 **Forklaring:** En beregningsregel ved udspil af fjerdehøjeste: elleve minus udspilskortets værdi angiver antallet af højere kort uden for udspillerens hånd.
 
+### Spille under en honnør
+**ID:** `spille-under-en-honnoer`
+**Engelsk:** Underlead
+**Alternative termer:** Underspilning
+**Niveau:** øvet
+**Kategori:** Modspil, udspil og signaler
+**Kort definition:** At spille et lavere kort end forventet, typisk under en honnør.
+
+**Forklaring:** At spille et lavere kort end forventet, typisk under en honnør.
+
+### Stik ikke automatisk
+**ID:** `stik-ikke-automatisk`
+**Engelsk:**
+**Niveau:** øvet
+**Kategori:** Modspil, udspil og signaler
+**Kort definition:** Man skal ikke altid vinde et stik bare fordi man kan.
+
+**Forklaring:** Man skal ikke altid vinde et stik bare fordi man kan.
+
+### Tilspil
+**ID:** `tilspil`
+**Engelsk:**
+**Niveau:** begynder
+**Kategori:** Modspil, udspil og signaler
+**Kort definition:** Det kort, tredje hånd lægger til efter makkers udspil.
+
+**Forklaring:** Det kort, tredje hånd lægger til efter makkers udspil.
+
+### Trumfpres på spilfører
+**ID:** `trumfpres-paa-spilfoerer`
+**Engelsk:** Force declarer
+**Niveau:** øvet
+**Kategori:** Modspil, udspil og signaler
+**Kort definition:** At tvinge spilfører til at trumfe eller til at spille en uønsket farve.
+
+**Forklaring:** At tvinge spilfører til at trumfe eller til at spille en uønsket farve.
+
 ### Udspil
 **ID:** `udspil`
 **Engelsk:** Lead
@@ -3547,7 +2895,26 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 **Kategori:** Modspil, udspil og signaler
 **Kort definition:** Udspillet til første stik.
 
-**Forklaring:** Udspillet til første stik.
+**Forklaring:** Det første kort i spillet, som spilles af spilleren til venstre for spilfører.
+
+### Ulige antal
+**ID:** `ulige-antal`
+**Engelsk:** Odd
+**Niveau:** let øvet
+**Kategori:** Modspil, udspil og signaler
+**Kort definition:** Ulige antal kort i en farve (fx 1, 3, 5).
+
+**Forklaring:** Ulige antal kort i en farve (fx 1, 3, 5).
+
+### Øverst fra sekvens
+**ID:** `oeverst-fra-sekvens`
+**Engelsk:** Top of sequence
+**Niveau:** begynder
+**Kategori:** Modspil, udspil og signaler
+**Systemafhængig:** Ja
+**Kort definition:** Udspil af det højeste kort i en sekvens (fx D fra D‑B‑10).
+
+**Forklaring:** Udspil af det højeste kort i en sekvens (fx D fra D‑B‑10).
 
 ### Åbningsudspil
 **ID:** `aabningsudspil`
@@ -3560,34 +2927,303 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 
 ## Score og beregning
 
+### Alle i zonen
+**ID:** `alle-i-zonen`
+**Engelsk:** Game all
+**Niveau:** begynder
+**Kategori:** Score og beregning
+**Kort definition:** En zonestilling, hvor begge sider er i zonen.
+
+**Forklaring:** En zonestilling, hvor begge sider er i zonen.
+
+### Beregning
+**ID:** `beregning`
+**Engelsk:** Scoring
+**Niveau:** let øvet
+**Kategori:** Score og beregning
+**Kort definition:** Den metode der bruges til at beregne resultater i en turnering.
+
+**Forklaring:** Den metode der bruges til at beregne resultater i en turnering.
+
+### Board-a-Match (BAM)
+**ID:** `board-a-match-bam`
+**Engelsk:** Board-a-Match (BAM)
+**Forkortelse:** BAM
+**Niveau:** øvet
+**Kategori:** Score og beregning
+**Kort definition:** En scoringsform hvor hvert spil er enten vundet, tabt eller uafgjort.
+
+**Forklaring:** En scoringsform hvor hvert spil er enten vundet, tabt eller uafgjort.
+
+### Bonuspoint
+**ID:** `bonuspoint`
+**Engelsk:** Premium points
+**Alternative termer:** Udgangsbonus, Bonus
+**Niveau:** begynder
+**Kategori:** Score og beregning
+**Kort definition:** Bonuspoint for udgang, slem eller overstik.
+
+**Forklaring:** Bonuspoint for udgang, slem eller overstik.
+
+### Bund
+**ID:** `bund`
+**Engelsk:** Bottom
+**Niveau:** let øvet
+**Kategori:** Score og beregning
+**Kort definition:** Den laveste score på et spil i parturnering.
+
+**Forklaring:** Den laveste score på et spil i parturnering.
+
+### Butler-beregning
+**ID:** `butler-beregning`
+**Engelsk:** Butler scoring
+**Niveau:** øvet
+**Kategori:** Score og beregning
+**Kort definition:** En holdscoringsmetode baseret på IMP mod et gennemsnitligt resultat.
+
+**Forklaring:** En holdscoringsmetode baseret på IMP mod et gennemsnitligt resultat.
+
+### Cross-IMP
+**ID:** `cross-imp`
+**Engelsk:** Cross-IMP
+**Niveau:** øvet
+**Kategori:** Score og beregning
+**Kort definition:** En scoringsmetode hvor alle resultater sammenlignes IMP‑mæssigt mod hinanden.
+
+**Forklaring:** En scoringsmetode hvor alle resultater sammenlignes IMP‑mæssigt mod hinanden.
+
+### Datum
+**ID:** `datum`
+**Engelsk:** Datum score
+**Niveau:** øvet
+**Kategori:** Score og beregning
+**Kort definition:** Et gennemsnitsresultat brugt som reference i Butler‑scoring.
+
+**Forklaring:** Et gennemsnitsresultat brugt som reference i Butler‑scoring.
+
 ### Doblet kontrakt
 **ID:** `doblet-kontrakt`
 **Engelsk:** Doubled contract
-**Niveau:** begynder
+**Alternative termer:** Udoblet, Doblet, Redoblet
+**Niveau:** let øvet
 **Kategori:** Score og beregning
 **Kort definition:** En kontrakt, hvor en dobling øger stikpoint, bonus og straf.
 
 **Forklaring:** En kontrakt, hvor en dobling øger stikpoint, bonus og straf.
 
+### I zonen
+**ID:** `i-zonen`
+**Engelsk:** Vulnerable
+**Alternative termer:** Vulnerable / Game in
+**Niveau:** begynder
+**Kategori:** Score og beregning
+**Kort definition:** I zonen; giver højere bonus og højere straf.
+
+**Forklaring:** Zonestilling, hvor bonusser og straffe er højere.
+
 ### IMP
 **ID:** `imp`
 **Engelsk:** International Match Point
-**Niveau:** begynder
+**Niveau:** let øvet
 **Kategori:** Score og beregning
 **Kort definition:** En enhed i holdbridge, hvor forskellen mellem to scorer omregnes efter en international skala.
 
-**Forklaring:** En enhed i holdbridge, hvor forskellen mellem to scorer omregnes efter en international skala.
+**Forklaring:** International Match Points. Pointskala, der bruges i holdturnering.
+
+### International Matchpoints
+**ID:** `international-matchpoints`
+**Engelsk:** International Match Points
+**Alternative termer:** International match points (IMP)
+**Forkortelse:** IMP
+**Niveau:** let øvet
+**Kategori:** Score og beregning
+**Kort definition:** En scoringsform hvor forskellen i score omregnes til IMP.
+
+**Forklaring:** En scoringsform hvor forskellen i score omregnes til IMP.
+
+### Kamppoint
+**ID:** `kamppoint`
+**Engelsk:** Victory Points
+**Alternative termer:** Victory Points (VP)
+**Forkortelse:** VP
+**Niveau:** øvet
+**Kategori:** Score og beregning
+**Kort definition:** Kamppoint brugt i holdturneringer baseret på IMP‑forskel.
+
+**Forklaring:** Kamppoint brugt i holdturneringer baseret på IMP‑forskel.
+
+### Matchpoint
+**ID:** `matchpoint`
+**Engelsk:** Matchpoints
+**Alternative termer:** Matchpoints (MP)
+**Forkortelse:** MP
+**Niveau:** let øvet
+**Kategori:** Score og beregning
+**Kort definition:** Scoring i parturnering, hvor hvert spil sammenlignes med alle andre par.
+
+**Forklaring:** Scoring i parturnering, hvor hvert spil sammenlignes med alle andre par.
+
+### Meldt og vundet
+**ID:** `meldt-og-vundet`
+**Engelsk:** Bid and made
+**Alternative termer:** Makes
+**Niveau:** begynder
+**Kategori:** Score og beregning
+**Kort definition:** Når den meldte kontrakt bliver vundet.
+
+**Forklaring:** Når den meldte kontrakt bliver vundet.
+
+### Middelscore
+**ID:** `middelscore`
+**Engelsk:** Average
+**Niveau:** let øvet
+**Kategori:** Score og beregning
+**Kort definition:** Den score, et par får, når et spil ikke kan spilles eller ikke kan gennemføres korrekt; i parturnering typisk 50 % af toppen.
+
+**Forklaring:** Den score, et par får, når et spil ikke kan spilles eller ikke kan gennemføres korrekt; i parturnering typisk 50 % af toppen.
+
+### Middelscore minus
+**ID:** `middelscore-minus`
+**Engelsk:** Average minus
+**Niveau:** øvet
+**Kategori:** Score og beregning
+**Kort definition:** En lavere middelscore, typisk når en spiller har delvist ansvar for en fejl.
+
+**Forklaring:** En lavere middelscore, typisk når en spiller har delvist ansvar for en fejl.
+
+### Middelscore plus
+**ID:** `middelscore-plus`
+**Engelsk:** Average plus
+**Niveau:** øvet
+**Kategori:** Score og beregning
+**Kort definition:** En højere middelscore, typisk når en spiller ikke har ansvar for en fejl.
+
+**Forklaring:** En højere middelscore, typisk når en spiller ikke har ansvar for en fejl.
+
+### Overstikspoint
+**ID:** `overstikspoint`
+**Engelsk:** Overtrick points
+**Niveau:** begynder
+**Kategori:** Score og beregning
+**Kort definition:** Point for stik ud over kontrakten.
+
+**Forklaring:** Point for stik ud over kontrakten.
+
+### Procentscore
+**ID:** `procentscore`
+**Engelsk:** Percentage score
+**Niveau:** let øvet
+**Kategori:** Score og beregning
+**Kort definition:** Procentscore i parturnering baseret på matchpoints.
+
+**Forklaring:** Procentscore i parturnering baseret på matchpoints.
 
 ### Redoblet kontrakt
 **ID:** `redoblet-kontrakt`
 **Engelsk:** Redoubled contract
-**Niveau:** begynder
+**Niveau:** let øvet
 **Kategori:** Score og beregning
 **Kort definition:** En kontrakt, hvor en redobling fordobler virkningen af den forudgående dobling.
 
 **Forklaring:** En kontrakt, hvor en redobling fordobler virkningen af den forudgående dobling.
 
+### Regnskab
+**ID:** `regnskab`
+**Engelsk:**
+**Niveau:** begynder
+**Kategori:** Score og beregning
+**Kort definition:** Udregning af scoren for et spil.
+
+**Forklaring:** Udregning af scoren for et spil.
+
+### Stikpoint
+**ID:** `stikpoint`
+**Engelsk:** Score points
+**Alternative termer:** Trick points, Trækværdi
+**Niveau:** begynder
+**Kategori:** Score og beregning
+**Kort definition:** De point der gives for stik i kontrakten.
+
+**Forklaring:** De point der gives for stik i kontrakten.
+
+### Straf
+**ID:** `straf`
+**Engelsk:** Penalty
+**Niveau:** begynder
+**Kategori:** Score og beregning
+**Kort definition:** Point til modparten, når en kontrakt går ned.
+
+**Forklaring:** Point til modparten, når en kontrakt går ned. Zonestilling, dobling og antal understik bestemmer størrelsen.
+
+### Top
+**ID:** `top`
+**Engelsk:** Top
+**Niveau:** let øvet
+**Kategori:** Score og beregning
+**Kort definition:** Den højeste score på et spil i parturnering.
+
+**Forklaring:** Den højeste score på et spil i parturnering.
+
+### Uden for zonen
+**ID:** `uden-for-zonen`
+**Engelsk:** Non-vulnerable
+**Alternative termer:** Udenfor zonen
+**Niveau:** begynder
+**Kategori:** Score og beregning
+**Kort definition:** Uden for zonen; giver lavere bonus og lavere straf.
+
+**Forklaring:** Uden for zonen; giver lavere bonus og lavere straf.
+
+### Understik
+**ID:** `understik`
+**Engelsk:** Undertrick
+**Alternative termer:** Undertræk
+**Niveau:** begynder
+**Kategori:** Score og beregning
+**Kort definition:** Et tabt stik i forhold til kontrakten.
+
+**Forklaring:** Et tabt stik i forhold til kontrakten.
+
+### VP-skala
+**ID:** `vp-skala`
+**Engelsk:** VP scale
+**Niveau:** øvet
+**Kategori:** Score og beregning
+**Kort definition:** Tabellen der omregner IMP‑forskel til VP.
+
+**Forklaring:** Tabellen der omregner IMP‑forskel til VP.
+
+### Zonestilling
+**ID:** `zonestilling`
+**Engelsk:** Vulnerability
+**Alternative termer:** Vulnerability / Colors
+**Niveau:** begynder
+**Kategori:** Score og beregning
+**Kort definition:** Zonestillingen angiver, om ingen, én eller begge sider er i zonen.
+
+**Forklaring:** Zonestillingen angiver, om ingen, én eller begge sider er i zonen. Den påvirker udgangs- og slembonus samt straf for understik.
+
+**Relaterede begreber:** i-zonen, uden-for-zonen
+
 ## Turnering og organisering
+
+### Afdeling
+**ID:** `afdeling`
+**Engelsk:** Session
+**Niveau:** begynder
+**Kategori:** Turnering og organisering
+**Kort definition:** En del af en turnering, typisk 24–32 spil.
+
+**Forklaring:** En del af en turnering, typisk 24–32 spil.
+
+### Alle mod alle
+**ID:** `alle-mod-alle`
+**Engelsk:** Round robin
+**Niveau:** let øvet
+**Kategori:** Turnering og organisering
+**Kort definition:** En turneringsform hvor alle par eller hold møder hinanden.
+
+**Forklaring:** En turneringsform hvor alle par eller hold møder hinanden.
 
 ### Barometerturnering
 **ID:** `barometerturnering`
@@ -3608,35 +3244,702 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 
 **Forklaring:** En elektronisk enhed ved bordet til registrering og godkendelse af resultater.
 
+### Deltager
+**ID:** `deltager`
+**Engelsk:** Contestant(s)
+**Niveau:** begynder
+**Kategori:** Turnering og organisering
+**Kort definition:** Deltager(e) i en turnering.
+
+**Forklaring:** Deltager(e) i en turnering.
+
+### Fast par
+**ID:** `fast-par`
+**Engelsk:** Stationary
+**Niveau:** let øvet
+**Kategori:** Turnering og organisering
+**Kort definition:** Et par der sidder fast ved bordet og ikke flytter sig.
+
+**Forklaring:** Et par der sidder fast ved bordet og ikke flytter sig.
+
+### Feltet
+**ID:** `feltet`
+**Engelsk:** Field
+**Niveau:** let øvet
+**Kategori:** Turnering og organisering
+**Kort definition:** Deltagerfeltet i en turnering.
+
+**Forklaring:** Deltagerfeltet i en turnering.
+
+### Handicap
+**ID:** `handicap`
+**Engelsk:** Handicap
+**Niveau:** let øvet
+**Kategori:** Turnering og organisering
+**Kort definition:** Et tal for spillerens aktuelle styrke (0–52, lavt er godt), som reguleres efter hver turnering.
+
+**Forklaring:** Et tal for spillerens aktuelle styrke (0–52, lavt er godt), som reguleres efter hver turnering.
+
+### Hold (spillere)
+**ID:** `hold-spillere`
+**Engelsk:** Team
+**Niveau:** begynder
+**Kategori:** Turnering og organisering
+**Kort definition:** Et hold bestående af flere spillere.
+
+**Forklaring:** Et hold bestående af flere spillere.
+
+### Holdturnering
+**ID:** `holdturnering`
+**Engelsk:** Teams event
+**Alternative termer:** Teams
+**Niveau:** let øvet
+**Kategori:** Turnering og organisering
+**Kort definition:** En holdturnering.
+
+**Forklaring:** Turneringsform, hvor man sammenligner med et andet hold og regner i IMP. Udgang og slem vægtes højt.
+
+### Howell-skifte
+**ID:** `howell-skifte`
+**Engelsk:** Howell movement
+**Niveau:** øvet
+**Kategori:** Turnering og organisering
+**Kort definition:** En bevægelsesform hvor alle par spiller mod hinanden i en sektion.
+
+**Forklaring:** En bevægelsesform hvor alle par spiller mod hinanden i en sektion.
+
+### Kamp
+**ID:** `kamp`
+**Engelsk:** Match
+**Niveau:** let øvet
+**Kategori:** Turnering og organisering
+**Kort definition:** En kamp mellem to hold eller par.
+
+**Forklaring:** En kamp mellem to hold eller par.
+
+### Kvalifikation
+**ID:** `kvalifikation`
+**Engelsk:** Qualification
+**Niveau:** let øvet
+**Kategori:** Turnering og organisering
+**Kort definition:** En fase hvor spillere eller hold forsøger at kvalificere sig til finalerunden.
+
+**Forklaring:** En fase hvor spillere eller hold forsøger at kvalificere sig til finalerunden.
+
+### Lukket rum
+**ID:** `lukket-rum`
+**Engelsk:** Closed room
+**Niveau:** øvet
+**Kategori:** Turnering og organisering
+**Kort definition:** Et rum i holdkampe hvor spillerne ikke kan se eller høre resultater fra det andet bord.
+
+**Forklaring:** Et rum i holdkampe hvor spillerne ikke kan se eller høre resultater fra det andet bord.
+
+### Meldekasse
+**ID:** `meldekasse`
+**Engelsk:** Bidding boxes
+**Niveau:** begynder
+**Kategori:** Turnering og organisering
+**Kort definition:** Meldekasser med kort, der bruges til at afgive meldinger i turneringsbridge.
+
+**Forklaring:** Meldekasser med kort, der bruges til at afgive meldinger i turneringsbridge.
+
+### Mesterpoint
+**ID:** `mesterpoint`
+**Engelsk:** Masterpoint / Master point (MP)
+**Forkortelse:** MP
+**Niveau:** let øvet
+**Kategori:** Turnering og organisering
+**Kort definition:** Point der gives for placering i turneringer; bruges til ranglister.
+
+**Forklaring:** Point der gives for placering i turneringer; bruges til ranglister.
+
+### Mesterskab
+**ID:** `mesterskab`
+**Engelsk:** Championship
+**Niveau:** let øvet
+**Kategori:** Turnering og organisering
+**Kort definition:** Et mesterskab, typisk på nationalt eller internationalt niveau.
+
+**Forklaring:** Et mesterskab, typisk på nationalt eller internationalt niveau.
+
+### Mitchell-skifte
+**ID:** `mitchell-skifte`
+**Engelsk:** Mitchell movement
+**Niveau:** let øvet
+**Kategori:** Turnering og organisering
+**Kort definition:** En bevægelsesform hvor Nord‑Syd sidder fast, og Øst‑Vest bevæger sig.
+
+**Forklaring:** En bevægelsesform hvor Nord‑Syd sidder fast, og Øst‑Vest bevæger sig.
+
+### Overførte point
+**ID:** `overfoerte-point`
+**Engelsk:** Carry-over
+**Niveau:** øvet
+**Kategori:** Turnering og organisering
+**Kort definition:** Point der overføres fra en tidligere runde eller session.
+
+**Forklaring:** Point der overføres fra en tidligere runde eller session.
+
+### Oversidder
+**ID:** `oversidder`
+**Engelsk:** Sitout
+**Niveau:** let øvet
+**Kategori:** Turnering og organisering
+**Kort definition:** Når et par sidder over i en runde, typisk ved ulige antal par.
+
+**Forklaring:** Når et par sidder over i en runde, typisk ved ulige antal par.
+
+### Par
+**ID:** `par`
+**Engelsk:** Pair
+**Niveau:** begynder
+**Kategori:** Turnering og organisering
+**Kort definition:** Et makkerpar i en turnering.
+
+**Forklaring:** Et makkerpar i en turnering.
+
+### Parturnering
+**ID:** `parturnering`
+**Engelsk:** Pair game
+**Niveau:** let øvet
+**Kategori:** Turnering og organisering
+**Kort definition:** En parturnering hvor to spillere danner et par.
+
+**Forklaring:** Turneringsform, hvor man sammenlignes med alle andre par, der spiller samme spil. Overstik tæller meget.
+
+### Pivot
+**ID:** `pivot`
+**Engelsk:** Pivot
+**Niveau:** øvet
+**Kategori:** Turnering og organisering
+**Kort definition:** At vende retning eller placering i en bevægelsesplan.
+
+**Forklaring:** At vende retning eller placering i en bevægelsesplan.
+
+### Pivotbord
+**ID:** `pivotbord`
+**Engelsk:** Pivot table
+**Niveau:** øvet
+**Kategori:** Turnering og organisering
+**Kort definition:** Bordet hvor par skifter retning i en Howell‑bevægelse.
+
+**Forklaring:** Bordet hvor par skifter retning i en Howell‑bevægelse.
+
+### Privat regnskabskort
+**ID:** `privat-regnskabskort`
+**Engelsk:** Personal score sheet
+**Niveau:** let øvet
+**Kategori:** Turnering og organisering
+**Kort definition:** Privat regnskab hvor spillere noterer deres resultater.
+
+**Forklaring:** Privat regnskab hvor spillere noterer deres resultater.
+
+### Regnskabskort
+**ID:** `regnskabskort`
+**Engelsk:** Score sheet
+**Niveau:** begynder
+**Kategori:** Turnering og organisering
+**Kort definition:** Regnskabskort hvor resultater noteres.
+
+**Forklaring:** Regnskabskort hvor resultater noteres.
+
+### Rejseregnskab
+**ID:** `rejseregnskab`
+**Engelsk:** Travelling scoresheet
+**Alternative termer:** Traveling scoreslip
+**Niveau:** let øvet
+**Kategori:** Turnering og organisering
+**Kort definition:** Et vandrende regnskabskort der følger spillet rundt i turneringen.
+
+**Forklaring:** Et vandrende regnskabskort der følger spillet rundt i turneringen.
+
+### Reserve
+**ID:** `reserve`
+**Engelsk:** Substitute
+**Niveau:** let øvet
+**Kategori:** Turnering og organisering
+**Kort definition:** En spiller der erstatter en anden i en turnering.
+
+**Forklaring:** En spiller der erstatter en anden i en turnering.
+
+### Runde
+**ID:** `runde`
+**Engelsk:** Round
+**Niveau:** begynder
+**Kategori:** Turnering og organisering
+**Kort definition:** En sektion af en turnering, typisk bestående af et antal spil.
+
+**Forklaring:** En sektion af en turnering, typisk bestående af et antal spil.
+
+### Række
+**ID:** `raekke`
+**Engelsk:** Section
+**Niveau:** let øvet
+**Kategori:** Turnering og organisering
+**Kort definition:** En gruppe af par i en turnering, typisk i større arrangementer.
+
+**Forklaring:** En gruppe af par i en turnering, typisk i større arrangementer.
+
+### Schweizerturnering
+**ID:** `schweizerturnering`
+**Engelsk:** Swiss teams
+**Niveau:** øvet
+**Kategori:** Turnering og organisering
+**Kort definition:** En holdturnering hvor hold møder modstandere med samme pointscore.
+
+**Forklaring:** En holdturnering hvor hold møder modstandere med samme pointscore.
+
+### Seedning
+**ID:** `seedning`
+**Engelsk:** Seeding / Stratification
+**Niveau:** øvet
+**Kategori:** Turnering og organisering
+**Kort definition:** Indplacering af spillere i grupper baseret på styrke.
+
+**Forklaring:** Indplacering af spillere i grupper baseret på styrke.
+
+### Skifteplan
+**ID:** `skifteplan`
+**Engelsk:** Movement
+**Alternative termer:** Guide card, Movement card
+**Niveau:** let øvet
+**Kategori:** Turnering og organisering
+**Kort definition:** Den måde par og spil flyttes rundt i turneringen.
+
+**Forklaring:** Den måde par og spil flyttes rundt i turneringen.
+
 ### Skærm
 **ID:** `skærm`
 **Engelsk:** Screen
-**Niveau:** let øvet
+**Niveau:** øvet
 **Kategori:** Turnering og organisering
 **Kort definition:** En fysisk adskillelse diagonalt over bordet, der reducerer visuelle og tidsmæssige oplysninger mellem makkere.
 
 **Forklaring:** En fysisk adskillelse diagonalt over bordet, der reducerer visuelle og tidsmæssige oplysninger mellem makkere.
 
+### Slæde
+**ID:** `slaede`
+**Engelsk:** Tray
+**Niveau:** avanceret
+**Kategori:** Turnering og organisering
+**Kort definition:** Slæden der bruges ved skærmspil til at sende meldinger mellem spillerne.
+
+**Forklaring:** Slæden der bruges ved skærmspil til at sende meldinger mellem spillerne.
+
+### Spilmappe
+**ID:** `spilmappe`
+**Engelsk:** Board
+**Niveau:** begynder
+**Kategori:** Turnering og organisering
+**Kort definition:** En mappe eller et fysisk spil med fire hænder, brugt i turneringsbridge.
+
+**Forklaring:** En mappe eller et fysisk spil med fire hænder, brugt i turneringsbridge.
+
+### Stopkort
+**ID:** `stopkort`
+**Engelsk:** Stop card
+**Niveau:** let øvet
+**Kategori:** Turnering og organisering
+**Kort definition:** Et kort, der tidligere blev brugt til at markere en springmelding.
+
+**Forklaring:** Et kort, der tidligere blev brugt til at markere en springmelding. Den konkrete procedure afhænger af de gældende turneringsbestemmelser.
+
+### Tie-break
+**ID:** `tie-break`
+**Engelsk:** Tie-break
+**Niveau:** øvet
+**Kategori:** Turnering og organisering
+**Kort definition:** En metode til at afgøre placering ved lige score.
+
+**Forklaring:** En metode til at afgøre placering ved lige score.
+
+### Tilskuer
+**ID:** `tilskuer`
+**Engelsk:** Kibitzer
+**Alternative termer:** Kibitzer
+**Niveau:** begynder
+**Kategori:** Turnering og organisering
+**Kort definition:** En tilskuer der ser på spillet uden at deltage.
+
+**Forklaring:** En tilskuer der ser på spillet uden at deltage.
+
+### Turnering
+**ID:** `turnering`
+**Engelsk:** Tournament
+**Niveau:** begynder
+**Kategori:** Turnering og organisering
+**Kort definition:** En organiseret bridgekonkurrence.
+
+**Forklaring:** En organiseret bridgekonkurrence.
+
+### Turneringsbridge
+**ID:** `turneringsbridge`
+**Engelsk:** Duplicate bridge
+**Alternative termer:** Tournament bridge
+**Niveau:** begynder
+**Kategori:** Turnering og organisering
+**Kort definition:** Turneringsbridge hvor samme spil spilles af flere par for at sammenligne resultater.
+
+**Forklaring:** Turneringsbridge hvor samme spil spilles af flere par for at sammenligne resultater.
+
+### Udstyr
+**ID:** `udstyr`
+**Engelsk:** Equipment / Paraphernalia
+**Niveau:** begynder
+**Kategori:** Turnering og organisering
+**Kort definition:** Alt udstyr brugt i turneringen, fx meldekasser, kort, mapper og skifteplaner.
+
+**Forklaring:** Alt udstyr brugt i turneringen, fx meldekasser, kort, mapper og skifteplaner.
+
+### Åbent rum
+**ID:** `aabent-rum`
+**Engelsk:** Open room
+**Niveau:** øvet
+**Kategori:** Turnering og organisering
+**Kort definition:** Det rum i holdkampe hvor tilskuere kan følge spillet.
+
+**Forklaring:** Det rum i holdkampe hvor tilskuere kan følge spillet.
+
 ## Love, etik og procedure
+
+### Afgivelse af stik
+**ID:** `afgivelse-af-stik`
+**Engelsk:** Concession
+**Alternative termer:** Concede
+**Niveau:** let øvet
+**Kategori:** Love, etik og procedure
+**Kort definition:** En afgivelse er en erklæring om, at en eller flere af de resterende stik tilfalder modparten.
+
+**Forklaring:** En afgivelse er en erklæring om, at en eller flere af de resterende stik tilfalder modparten.
+
+### Alertering
+**ID:** `alertering`
+**Engelsk:** Alert (! / *)
+**Niveau:** begynder
+**Kategori:** Love, etik og procedure
+**Kort definition:** Et signal til modstanderne om, at en melding er kunstig eller har særlig betydning.
+
+**Forklaring:** Et signal til modstanderne om, at en melding er kunstig eller har særlig betydning.
+
+**Relaterede begreber:** kunstig-melding, makkeraftale
+
+### Alertkort
+**ID:** `alertkort`
+**Engelsk:** Alert card
+**Niveau:** begynder
+**Kategori:** Love, etik og procedure
+**Kort definition:** Et fysisk kort brugt til at markere, at en melding skal alerteres.
+
+**Forklaring:** Et fysisk kort brugt til at markere, at en melding skal alerteres.
+
+### Appel
+**ID:** `appel`
+**Engelsk:** Appeal
+**Niveau:** øvet
+**Kategori:** Love, etik og procedure
+**Kort definition:** En anmodning om at få en afgørelse fra turneringslederen prøvet af en appelkomité.
+
+**Forklaring:** En anmodning om at få en afgørelse fra turneringslederen prøvet af en appelkomité.
+
+### Berigtigelse
+**ID:** `berigtigelse`
+**Engelsk:** Rectification; correction
+**Alternative termer:** Correction
+**Niveau:** øvet
+**Kategori:** Love, etik og procedure
+**Kort definition:** En berigtigelse er den lovbestemte håndtering af en uregelmæssighed.
+
+**Forklaring:** En berigtigelse er den lovbestemte håndtering af en uregelmæssighed. Formålet er normalt at genoprette et rimeligt resultat, ikke at straffe.
+
+### Bridgeetik
+**ID:** `bridgeetik`
+**Engelsk:** Etiquette
+**Niveau:** begynder
+**Kategori:** Love, etik og procedure
+**Kort definition:** De uskrevne regler for god opførsel ved bridgebordet.
+
+**Forklaring:** De uskrevne regler for god opførsel ved bridgebordet.
+
+### Forkert oplysning
+**ID:** `forkert-oplysning`
+**Engelsk:** Misinformation; incorrect explanation
+**Alternative termer:** Misinformation / Incorrect explanation
+**Niveau:** øvet
+**Kategori:** Love, etik og procedure
+**Kort definition:** Forkert forklaring af makkers melding; modstanderne kan få kompensation.
+
+**Forklaring:** Forkert forklaring af makkers melding; modstanderne kan få kompensation.
 
 ### Forklaring af melding
 **ID:** `forklaring`
 **Engelsk:** Explanation of call
-**Niveau:** begynder
+**Niveau:** let øvet
 **Kategori:** Love, etik og procedure
 **Kort definition:** En korrekt og fuldstændig beskrivelse af makkerskabets aftale om en melding, ikke en vurdering af melderens aktuelle hånd.
 
 **Forklaring:** En korrekt og fuldstændig beskrivelse af makkerskabets aftale om en melding, ikke en vurdering af melderens aktuelle hånd.
 
+### Igangværende stik
+**ID:** `igangvaerende-stik`
+**Engelsk:** Current trick
+**Niveau:** let øvet
+**Kategori:** Love, etik og procedure
+**Kort definition:** Det stik der er i gang med at blive spillet.
+
+**Forklaring:** Det stik der er i gang med at blive spillet.
+
 ### Justeret score
 **ID:** `korrigeret-score`
 **Engelsk:** Adjusted score
 **Alternative termer:** Adjusted score, AdjS
-**Niveau:** let øvet
+**Niveau:** øvet
 **Kategori:** Love, etik og procedure
 **Kort definition:** En score fastsat af turneringslederen, når en uregelmæssighed har påvirket eller forhindret et normalt resultat.
 
 **Forklaring:** En score fastsat af turneringslederen, når en uregelmæssighed har påvirket eller forhindret et normalt resultat.
+
+### Kendelse
+**ID:** `kendelse`
+**Engelsk:** Ruling
+**Niveau:** øvet
+**Kategori:** Love, etik og procedure
+**Kort definition:** En afgørelse fra turneringslederen om en uregelmæssighed.
+
+**Forklaring:** En afgørelse fra turneringslederen om en uregelmæssighed.
+
+### Krav
+**ID:** `krav`
+**Engelsk:** Claim
+**Niveau:** let øvet
+**Kategori:** Love, etik og procedure
+**Kort definition:** Et krav er en erklæring om, hvor mange af de resterende stik en spiller forventer at vinde.
+
+**Forklaring:** Et krav er en erklæring om, hvor mange af de resterende stik en spiller forventer at vinde. Spillet standses, og spilleren angiver sin spilleplan.
+
+### Kulørsvigt
+**ID:** `kuloersvigt`
+**Engelsk:** Revoke
+**Niveau:** begynder
+**Kategori:** Love, etik og procedure
+**Kort definition:** Kulørsvigt opstår, når en spiller undlader at bekende, selv om spilleren har et kort i den udspillede farve.
+
+**Forklaring:** Kulørsvigt opstår, når en spiller undlader at bekende, selv om spilleren har et kort i den udspillede farve.
+
+### Lang tænkepause
+**ID:** `lang-taenkepause`
+**Engelsk:** Huddle
+**Niveau:** let øvet
+**Kategori:** Love, etik og procedure
+**Kort definition:** En meget lang tænkepause, ofte mistænkelig i konkurrencemeldinger.
+
+**Forklaring:** En meget lang tænkepause, ofte mistænkelig i konkurrencemeldinger.
+
+### Lovbrud
+**ID:** `lovbrud`
+**Engelsk:** Infraction
+**Niveau:** let øvet
+**Kategori:** Love, etik og procedure
+**Kort definition:** Et regelbrud, som kan medføre justeret score eller straf.
+
+**Forklaring:** Et regelbrud, som kan medføre justeret score eller straf.
+
+### Lovlig
+**ID:** `lovlig`
+**Engelsk:** Legal
+**Niveau:** begynder
+**Kategori:** Love, etik og procedure
+**Kort definition:** En handling eller melding, der er tilladt efter reglerne.
+
+**Forklaring:** En handling eller melding, der er tilladt efter reglerne.
+
+### Manglende alert
+**ID:** `manglende-alert`
+**Engelsk:** Failure to alert
+**Niveau:** let øvet
+**Kategori:** Love, etik og procedure
+**Kort definition:** Når en spiller undlader at alertere en kunstig melding, som makker burde have informeret om.
+
+**Forklaring:** Når en spiller undlader at alertere en kunstig melding, som makker burde have informeret om.
+
+### Med bagsiden opad
+**ID:** `med-bagsiden-opad`
+**Engelsk:** Face down
+**Niveau:** begynder
+**Kategori:** Love, etik og procedure
+**Kort definition:** Et kort spillet med bagsiden opad, typisk ved uregelmæssigheder.
+
+**Forklaring:** Et kort spillet med bagsiden opad, typisk ved uregelmæssigheder.
+
+### Med forsiden opad
+**ID:** `med-forsiden-opad`
+**Engelsk:** Face up / Faced card
+**Niveau:** begynder
+**Kategori:** Love, etik og procedure
+**Kort definition:** Et kort spillet med forsiden opad.
+
+**Forklaring:** Et kort spillet med forsiden opad.
+
+### Mekanisk fejl
+**ID:** `mekanisk-fejl`
+**Engelsk:** Mechanical error
+**Niveau:** let øvet
+**Kategori:** Love, etik og procedure
+**Kort definition:** Et fysisk fejlgreb, fx at spille det forkerte kort ved et uheld.
+
+**Forklaring:** Et fysisk fejlgreb, fx at spille det forkerte kort ved et uheld.
+
+### Meldeperiode
+**ID:** `meldeperiode`
+**Engelsk:** Auction period
+**Niveau:** begynder
+**Kategori:** Love, etik og procedure
+**Kort definition:** Den fase af spillet hvor spillerne afgiver meldinger.
+
+**Forklaring:** Den fase af spillet hvor spillerne afgiver meldinger.
+
+### Melding uden for tur
+**ID:** `melding-uden-for-tur`
+**Engelsk:** Call out of turn
+**Niveau:** let øvet
+**Kategori:** Love, etik og procedure
+**Kort definition:** En melding afgivet af en spiller, der ikke er i tur; kan medføre rettelser eller straf.
+
+**Forklaring:** En melding afgivet af en spiller, der ikke er i tur; kan medføre rettelser eller straf.
+
+### Psykisk melding
+**ID:** `psykisk-melding`
+**Engelsk:** Psychic call
+**Alternative termer:** Psych
+**Niveau:** øvet
+**Kategori:** Love, etik og procedure
+**Kort definition:** En lovlig, bevidst og væsentligt afvigende melding i forhold til håndens honnørstyrke eller farvelængde.
+
+**Forklaring:** En lovlig, bevidst og væsentligt afvigende melding i forhold til håndens honnørstyrke eller farvelængde. Gentagne eller aftalte psykiske meldinger kan være reguleret.
+
+### Rettelsesfrist
+**ID:** `rettelsesfrist`
+**Engelsk:** Correction period
+**Niveau:** øvet
+**Kategori:** Love, etik og procedure
+**Kort definition:** Den tidsperiode hvor fejl i regnskab eller resultater kan rettes.
+
+**Forklaring:** Den tidsperiode hvor fejl i regnskab eller resultater kan rettes.
+
+### Rundpas
+**ID:** `rundpas`
+**Engelsk:** Passed out
+**Alternative termer:** Passed out / Pass out
+**Niveau:** begynder
+**Kategori:** Love, etik og procedure
+**Kort definition:** Når alle fire spillere passer, og spillet annulleres.
+
+**Forklaring:** Når alle fire spillere passer, og spillet annulleres.
+
+### Sammenlignelig melding
+**ID:** `sammenlignelig-melding`
+**Engelsk:** Comparable call
+**Niveau:** avanceret
+**Kategori:** Love, etik og procedure
+**Kort definition:** En melding der kan erstatte en ulovlig melding uden at give modstanderne fordel.
+
+**Forklaring:** En melding der kan erstatte en ulovlig melding uden at give modstanderne fordel.
+
+### Spilleperiode
+**ID:** `spilleperiode`
+**Engelsk:** Play period
+**Niveau:** begynder
+**Kategori:** Love, etik og procedure
+**Kort definition:** Den tid hvor spillere aktivt spiller spil.
+
+**Forklaring:** Den tid hvor spillere aktivt spiller spil.
+
+### Strafkort
+**ID:** `strafkort`
+**Engelsk:** Penalty card
+**Niveau:** let øvet
+**Kategori:** Love, etik og procedure
+**Kort definition:** Et kort der skal ligge åbent på bordet som straf for en fejl i udspil eller afkast.
+
+**Forklaring:** Et kort der skal ligge åbent på bordet som straf for en fejl i udspil eller afkast.
+
+### Tempobrud
+**ID:** `tempobrud`
+**Engelsk:** Break in tempo
+**Niveau:** let øvet
+**Kategori:** Love, etik og procedure
+**Kort definition:** En tydelig pause eller tøven i meldinger eller spil, som kan give ubeføjede oplysninger.
+
+**Forklaring:** En tydelig pause eller tøven i meldinger eller spil, som kan give ubeføjede oplysninger.
+
+### Turneringsleder
+**ID:** `turneringsleder`
+**Engelsk:** Tournament director
+**Alternative termer:** Tournament director (TD)
+**Forkortelse:** TD
+**Niveau:** begynder
+**Kategori:** Love, etik og procedure
+**Kort definition:** Turneringslederen der håndterer regler, uregelmæssigheder og scoring.
+
+**Forklaring:** Dommeren ved en bridgeturnering. Kan justere scoren ved regelbrud.
+
+### Tøven
+**ID:** `toeven`
+**Engelsk:** Hesitation
+**Niveau:** let øvet
+**Kategori:** Love, etik og procedure
+**Kort definition:** En længere tænkepause, der kan give makker ubeføjede oplysninger.
+
+**Forklaring:** En længere tænkepause, der kan give makker ubeføjede oplysninger.
+
+### Ubeføjede oplysninger
+**ID:** `ubefoejede-oplysninger`
+**Engelsk:** Unauthorized information
+**Niveau:** øvet
+**Kategori:** Love, etik og procedure
+**Kort definition:** Oplysninger, som makker ikke må bruge (fx tøven, tonefald, kropssprog).
+
+**Forklaring:** Oplysninger, som makker ikke må bruge (fx tøven, tonefald, kropssprog).
+
+### Udspil uden for tur
+**ID:** `udspil-uden-for-tur`
+**Engelsk:** Lead out of turn
+**Alternative termer:** Lead out of turn (LOOT)
+**Forkortelse:** LOOT
+**Niveau:** let øvet
+**Kategori:** Love, etik og procedure
+**Kort definition:** Udspil fra den forkerte hånd; modstanderne får valgmuligheder for rettelse.
+
+**Forklaring:** Udspil fra den forkerte hånd; modstanderne får valgmuligheder for rettelse.
+
+### Ulovlig
+**ID:** `ulovlig`
+**Engelsk:** Illegal
+**Niveau:** begynder
+**Kategori:** Love, etik og procedure
+**Kort definition:** En handling eller melding, der strider mod reglerne.
+
+**Forklaring:** En handling eller melding, der strider mod reglerne.
+
+### Uregelmæssighed
+**ID:** `uregelmaessighed`
+**Engelsk:** Irregularity
+**Niveau:** let øvet
+**Kategori:** Love, etik og procedure
+**Kort definition:** Enhver uregelmæssighed i meldinger eller spil, som direktøren skal håndtere.
+
+**Forklaring:** Enhver uregelmæssighed i meldinger eller spil, som direktøren skal håndtere.
+
+### Utilstrækkeligt bud
+**ID:** `utilstraekkeligt-bud`
+**Engelsk:** Insufficient bid
+**Alternative termer:** Insufficient bid (IB)
+**Forkortelse:** IB
+**Niveau:** let øvet
+**Kategori:** Love, etik og procedure
+**Kort definition:** En melding på et lavere niveau end tilladt; kan accepteres eller kræve rettelse.
+
+**Forklaring:** En melding på et lavere niveau end tilladt; kan accepteres eller kræve rettelse.
 
 ## Onlinebridge og digitale turneringer
 
@@ -3653,7 +3956,7 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 ### Robotbridge
 **ID:** `robotbridge`
 **Engelsk:** Robot bridge
-**Niveau:** let øvet
+**Niveau:** begynder
 **Kategori:** Onlinebridge og digitale turneringer
 **Kort definition:** Bridge, hvor en eller flere pladser spilles af software.
 
@@ -3662,7 +3965,7 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 ### Selvalert
 **ID:** `selvalert`
 **Engelsk:** Self-alert
-**Niveau:** begynder
+**Niveau:** let øvet
 **Kategori:** Onlinebridge og digitale turneringer
 **Kort definition:** En procedure i onlinebridge, hvor spilleren selv oplyser modstanderne om sin meldings særlige betydning uden at informere makker.
 
@@ -3670,23 +3973,66 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 
 ## Avancerede teknikker
 
+### Begrænset valg
+**ID:** `begraenset-valg`
+**Engelsk:** Restricted choice
+**Alternative termer:** Princippet om begrænset valg
+**Niveau:** avanceret
+**Kategori:** Avancerede teknikker
+**Kort definition:** En sandsynlighedsregel der siger, at modspillerens valg af kort begrænser sandsynlige fordelinger.
+
+**Forklaring:** En sandsynlighedsregel der siger, at modspillerens valg af kort begrænser sandsynlige fordelinger.
+
+### Eliminering
+**ID:** `eliminering`
+**Engelsk:** Elimination
+**Niveau:** avanceret
+**Kategori:** Avancerede teknikker
+**Kort definition:** At fjerne modspillernes sikre udspilsfarver før et slutspil.
+
+**Forklaring:** At fjerne modspillernes sikre udspilsfarver før et slutspil.
+
+**Relaterede begreber:** slutspil
+
+### Indspil
+**ID:** `indspil`
+**Engelsk:** Throw-in
+**Niveau:** avanceret
+**Kategori:** Avancerede teknikker
+**Kort definition:** En form for slutspil, hvor spilføreren sætter en modspiller ind, så han må spille ud til spilførerens fordel, fx ind i en gaffel.
+
+**Forklaring:** En form for slutspil, hvor spilføreren sætter en modspiller ind, så han må spille ud til spilførerens fordel, fx ind i en gaffel.
+
+**Relaterede begreber:** slutspil, eliminering, gaffel
+
 ### Kortlæsning
 **ID:** `kortlæsning`
 **Engelsk:** Card reading
-**Niveau:** let øvet
+**Niveau:** øvet
 **Kategori:** Avancerede teknikker
 **Kort definition:** Systematisk udledning af skjulte hænder ud fra meldinger, udspil, signaler og de spillede kort.
 
 **Forklaring:** Systematisk udledning af skjulte hænder ud fra meldinger, udspil, signaler og de spillede kort.
 
-### Princippet om begrænset valg
-**ID:** `princip-om-begrænset-valg`
-**Engelsk:** Principle of restricted choice
+### Morton's Fork
+**ID:** `morton-s-fork`
+**Engelsk:** Morton's Fork
+**Niveau:** avanceret
+**Kategori:** Avancerede teknikker
+**Kort definition:** Et slutspil hvor modspiller uanset valg giver spilfører fordel.
+
+**Forklaring:** Et slutspil hvor modspiller uanset valg giver spilfører fordel.
+
+**Relaterede begreber:** slutspil
+
+### Optimal kontrakt
+**ID:** `optimal-kontrakt`
+**Engelsk:** Optimum contract
 **Niveau:** øvet
 **Kategori:** Avancerede teknikker
-**Kort definition:** Når en modspiller spiller én af to ligeværdige honnører, øges sandsynligheden for, at spilleren ikke havde begge.
+**Kort definition:** Den bedste kontrakt baseret på hænderne.
 
-**Forklaring:** Når en modspiller spiller én af to ligeværdige honnører, øges sandsynligheden for, at spilleren ikke havde begge.
+**Forklaring:** Den bedste kontrakt baseret på hænderne.
 
 ### Procentchance
 **ID:** `procentchance`
@@ -3697,11 +4043,145 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 
 **Forklaring:** Den spilleplan, der giver størst matematisk sandsynlighed for det ønskede antal stik uden yderligere oplysninger.
 
+### Skvis
+**ID:** `skvis`
+**Engelsk:** Squeeze
+**Alternative termer:** Squeeze / Skvis
+**Niveau:** avanceret
+**Kategori:** Avancerede teknikker
+**Kort definition:** At presse en modspiller til at kaste et kort, der gør dine farver gode.
+
+**Forklaring:** At presse en modspiller til at kaste et kort, der gør dine farver gode.
+
+**Relaterede begreber:** slutspil
+
+### Strip-squeeze
+**ID:** `strip-squeeze`
+**Engelsk:** Strip-squeeze
+**Niveau:** avanceret
+**Kategori:** Avancerede teknikker
+**Kort definition:** Kombination af eliminering og skvis.
+
+**Forklaring:** Kombination af eliminering og skvis.
+
+### Taber på taber
+**ID:** `taber-paa-taber`
+**Engelsk:** Loser on loser
+**Niveau:** avanceret
+**Kategori:** Avancerede teknikker
+**Kort definition:** At smide en taber på en taber for at undgå større tab.
+
+**Forklaring:** At smide en taber på en taber for at undgå større tab.
+
+### Vienna Coup
+**ID:** `vienna-coup`
+**Engelsk:** Vienna Coup
+**Niveau:** avanceret
+**Kategori:** Avancerede teknikker
+**Kort definition:** En skvismanøvre der kræver korrekt rækkefølge af stik.
+
+**Forklaring:** En skvismanøvre der kræver korrekt rækkefølge af stik.
+
+### Åbne kort
+**ID:** `aabne-kort`
+**Engelsk:** Double-dummy
+**Niveau:** øvet
+**Kategori:** Avancerede teknikker
+**Kort definition:** Analyse hvor alle fire hænder er kendt; bruges til at beregne optimale linjer.
+
+**Forklaring:** Analyse hvor alle fire hænder er kendt; bruges til at beregne optimale linjer.
+
+## Talemåder og bridgeslang
+
+### Byttehandel
+**ID:** `byttehandel`
+**Engelsk:**
+**Niveau:** øvet
+**Kategori:** Talemåder og bridgeslang
+**Kort definition:** At gå lidt ned i sin egen kontrakt i stedet for at lade modparten vinde deres.
+
+**Forklaring:** At gå lidt ned i sin egen kontrakt i stedet for at lade modparten vinde deres.
+
+### Fanget på det gale ben
+**ID:** `fanget-paa-det-gale-ben`
+**Engelsk:**
+**Niveau:** let øvet
+**Kategori:** Talemåder og bridgeslang
+**Kort definition:** Man har spillet i en forkert rækkefølge og kan ikke komme det rigtige sted hen.
+
+**Forklaring:** Man har spillet i en forkert rækkefølge og kan ikke komme det rigtige sted hen.
+
+### Kort tredje / honnør anden
+**ID:** `kort-tredje-honnoer-anden`
+**Engelsk:**
+**Niveau:** begynder
+**Kategori:** Talemåder og bridgeslang
+**Kort definition:** Måde at beskrive en farve på: honnøren plus i alt to eller tre kort, fx "kongen tredje".
+
+**Forklaring:** Måde at beskrive en farve på: honnøren plus i alt to eller tre kort, fx "kongen tredje".
+
+### Melde i den blå luft
+**ID:** `melde-i-den-blaa-luft`
+**Engelsk:**
+**Niveau:** let øvet
+**Kategori:** Talemåder og bridgeslang
+**Kort definition:** At melde uden reel dækning i hånden.
+
+**Forklaring:** At melde uden reel dækning i hånden.
+
+### Pointrytter
+**ID:** `pointrytter`
+**Engelsk:**
+**Niveau:** let øvet
+**Kategori:** Talemåder og bridgeslang
+**Kort definition:** En spiller, der kun tæller point og overser fordeling og stikmuligheder.
+
+**Forklaring:** En spiller, der kun tæller point og overser fordeling og stikmuligheder.
+
+### Pokeransigt
+**ID:** `pokeransigt`
+**Engelsk:** Poker face
+**Niveau:** øvet
+**Kategori:** Talemåder og bridgeslang
+**Kort definition:** At holde et neutralt ansigt, så man ikke afslører noget for modparten.
+
+**Forklaring:** At holde et neutralt ansigt, så man ikke afslører noget for modparten.
+
+### Sælge ud
+**ID:** `saelge-ud`
+**Engelsk:** Sell out
+**Niveau:** øvet
+**Kategori:** Talemåder og bridgeslang
+**Kort definition:** At give op over for modpartens meldinger og passe, selvom man burde have meldt.
+
+**Forklaring:** At give op over for modpartens meldinger og passe, selvom man burde have meldt.
+
+### Unoder ved bordet
+**ID:** `unoder-ved-bordet`
+**Engelsk:**
+**Niveau:** øvet
+**Kategori:** Talemåder og bridgeslang
+**Kort definition:** Opførsel, der giver makker ulovlig information eller ødelægger stemningen, fx tøven eller kommentarer.
+
+**Forklaring:** Opførsel, der giver makker ulovlig information eller ødelægger stemningen, fx tøven eller kommentarer.
+
+### Urent trav
+**ID:** `urent-trav`
+**Engelsk:**
+**Niveau:** øvet
+**Kategori:** Talemåder og bridgeslang
+**Kort definition:** Turneringslederens betegnelse for, at man har udnyttet ulovlig information, fx makkers tøven.
+
+**Forklaring:** Turneringslederens betegnelse for, at man har udnyttet ulovlig information, fx makkers tøven.
+
 ## Engelsk-dansk indeks
 
 - **1430 (Fourteen‑Thirty)** → [1430 (Fourteen‑Thirty)](#1430-fourteenthirty)
+- **1NT opening** → [1NT-åbning](#1nt-aabning)
+- **2NT opening** → [2NT-åbning](#2nt-aabning)
 - **Ace** → [Es](#es)
 - **Adjusted score** → [Justeret score](#korrigeret-score)
+- **Advance sacrifice** → [Forhåndsoffermelding](#forhaandsoffermelding)
 - **Advancer** → [Indmelderens makker](#indmelderens-makker)
 - **Agreement** → [Makkeraftale](#makkeraftale)
 - **Alert (! / *)** → [Alertering](#alertering)
@@ -3722,6 +4202,7 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 - **Bare (honour)** → [Blank](#blank)
 - **Barometer** → [Barometerturnering](#barometerturnering)
 - **Barometer tournament** → [Barometerturnering](#barometerturnering)
+- **Bath coup** → [Badekup (Bath Coup)](#badekup-bath-coup)
 - **Bergen raises** → [Bergen-støtter](#bergen-stoetter)
 - **Bid** → [Bud](#bud)
 - **Bid and made** → [Meldt og vundet](#meldt-og-vundet)
@@ -3736,6 +4217,7 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 - **Board** → [Spilmappe](#spilmappe)
 - **Board-a-Match (BAM)** → [Board-a-Match (BAM)](#board-a-match-bam)
 - **Book** → [Bogstik](#bogstik)
+- **Book bid** → [Bogmelding](#bogmelding)
 - **Bottom** → [Bund](#bund)
 - **Break in tempo** → [Tempobrud](#tempobrud)
 - **Bridge Base Online** → [Bridge Base Online](#bridge-base-online)
@@ -3756,6 +4238,7 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 - **Closed room** → [Lukket rum](#lukket-rum)
 - **Club** → [Klør](#kloer)
 - **Communication** → [Forbindelse](#forbindelse)
+- **Communications** → [Forbindelser](#forbindelser)
 - **Comparable call** → [Sammenlignelig melding](#sammenlignelig-melding)
 - **Competitive bid** → [Konkurrencemelding](#konkurrencemelding)
 - **Concede** → [Afgivelse af stik](#afgivelse-af-stik)
@@ -3771,6 +4254,7 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 - **Count** → [Tælling](#taelling)
 - **Count signal** → [Fordelingssignal](#fordelingssignal)
 - **Court cards; picture cards** → [Billedkort](#billedkort)
+- **Cover an honour with an honour** → [Honnør på honnør](#honnoer-paa-honnoer)
 - **Cross-IMP** → [Cross-IMP](#cross-imp)
 - **Cross-ruff** → [Krydstrumfning](#krydstrumfning)
 - **Cuebid** → [Cue-bid](#cue-bid)
@@ -3783,6 +4267,7 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 - **Declarer** → [Spilfører](#spilfoerer)
 - **Defence; defense** → [Modspil](#modspil)
 - **Defenders** → [Modspillere](#modspillere)
+- **Defending side** → [Defensiven](#defensiven)
 - **Denomination** → [Benævnelse](#benaevnelse)
 - **Deny** → [Benægte](#benaegte)
 - **Diamond** → [Ruder](#ruder)
@@ -3793,6 +4278,7 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 - **Distribution points** → [Fordelingspoint](#fordelingspoint)
 - **Double** → [Dobling](#dobling)
 - **Double finesse** → [Dobbelt kipning](#dobbelt-kipning)
+- **Double jump** → [Dobbeltspring](#dobbeltspring)
 - **Double-dummy** → [Åbne kort](#aabne-kort)
 - **Doubled contract** → [Doblet kontrakt](#doblet-kontrakt)
 - **Doubleton** → [Doubleton](#doubleton)
@@ -3805,6 +4291,7 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 - **Duplicate bridge** → [Turneringsbridge](#turneringsbridge)
 - **East (E)** → [Øst (Ø)](#oest-oe)
 - **Eight (8)** → [Otter (8)](#otter-8)
+- **Eight ever, nine never** → ["Eight ever, nine never"](#eight-ever-nine-never)
 - **Elimination** → [Eliminering](#eliminering)
 - **Encourage** → [Kald-afvisning](#kald-afvisning)
 - **Endplay** → [Slutspil](#slutspil)
@@ -3851,6 +4338,7 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 - **High card** → [Højt kort](#hoejt-kort)
 - **High-card points** → [Honnørpoint](#honnoerpoint)
 - **Hold-up play** → [Hold-up](#hold-up)
+- **Honour sequence** → [Honnørsekvens](#honnoersekvens)
 - **Honour; honor** → [Honnør](#honnoer)
 - **Howell movement** → [Howell-skifte](#howell-skifte)
 - **Huddle** → [Lang tænkepause](#lang-taenkepause)
@@ -3859,6 +4347,7 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 - **Insufficient bid** → [Utilstrækkeligt bud](#utilstraekkeligt-bud)
 - **Interference** → [Indblanding](#indblanding)
 - **Interior sequence** → [Indre sekvens](#indre-sekvens)
+- **Intermediates** → [Mellemkort](#mellemkort)
 - **International Match Point** → [IMP](#imp)
 - **International Match Points** → [International Matchpoints](#international-matchpoints)
 - **Inverted** → [Omvendte minorstøtter](#omvendte-minorstoetter)
@@ -3868,6 +4357,7 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 - **Jacoby 2NT** → [Jacoby 2NT](#jacoby-2nt)
 - **Jacoby transfer** → [Jacoby-transfer](#jacoby-transfer)
 - **Jump** → [Springmelding](#springmelding)
+- **Jump rebid** → [Springgenmelding](#springgenmelding)
 - **Jump shift** → [Spring i ny farve](#spring-i-ny-farve)
 - **Jump support** → [Springstøtte](#springstoette)
 - **Key card** → [Nøglekort](#noeglekort)
@@ -3903,6 +4393,7 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 - **Michaels cuebid** → [Michaels cuebid](#michaels-cuebid)
 - **Minimum (min)** → [Minimum](#minimum)
 - **Minor** → [Minorfarve](#minorfarve)
+- **Misfit** → [Misfit](#misfit)
 - **Misinformation; incorrect explanation** → [Forkert oplysning](#forkert-oplysning)
 - **Miss** → [Brænde](#braende)
 - **Mitchell movement** → [Mitchell-skifte](#mitchell-skifte)
@@ -3923,12 +4414,15 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 - **Norwegian count** → [Norsk fordeling](#norsk-fordeling)
 - **Odd** → [Ulige antal](#ulige-antal)
 - **Offside** → [Sidder forkert](#sidder-forkert)
+- **One-round force** → [Rundekrav](#rundekrav)
 - **Onside** → [Sidder rigtigt](#sidder-rigtigt)
 - **Open** → [Åbning](#aabning)
 - **Open room** → [Åbent rum](#aabent-rum)
 - **Opener** → [Åbner](#aabner)
+- **Opener's suit** → [Åbningsfarve](#aabningsfarve)
 - **Opening hand** → [Åbningshånd](#aabnerhaand)
 - **Opening lead** → [Åbningsudspil](#aabningsudspil)
+- **Opening side** → [Offensiven](#offensiven)
 - **Opponents** → [Modstandere](#modstandere)
 - **Optimum contract** → [Optimal kontrakt](#optimal-kontrakt)
 - **Outstanding card(s)** → [Udestående kort](#udestaaende-kort)
@@ -3956,16 +4450,18 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 - **Personal score sheet** → [Privat regnskabskort](#privat-regnskabskort)
 - **Pivot** → [Pivot](#pivot)
 - **Pivot table** → [Pivotbord](#pivotbord)
+- **Plan of play** → [Spilleplan](#spilleplan)
 - **Play for the drop** → [Fald](#fald)
 - **Play period** → [Spilleperiode](#spilleperiode)
 - **Play to** → [Spille mod](#spille-mod)
 - **Player(s)** → [Spiller](#spiller)
 - **Point count** → [Pointvurdering](#pointvurdering)
+- **Poker face** → [Pokeransigt](#pokeransigt)
 - **Preempt; barrage** → [Spærremelding](#spaerremelding)
 - **Preemptive raise** → [Spærrestøtte](#spaerrestoette)
 - **Preference / Correct** → [Præference](#praeference)
 - **Premium points** → [Bonuspoint](#bonuspoint)
-- **Principle of restricted choice** → [Princippet om begrænset valg](#princip-om-begrænset-valg)
+- **Principle of restricted choice** → [Begrænset valg](#begraenset-valg)
 - **Psychic call** → [Psykisk melding](#psykisk-melding)
 - **Puppet Stayman** → [Puppet Stayman](#puppet-stayman)
 - **Qualification** → [Kvalifikation](#kvalifikation)
@@ -3994,6 +4490,7 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 - **Robot bridge** → [Robotbridge](#robotbridge)
 - **Roman Key Card Blackwood (RKCB)** → [Roman Key Card Blackwood (RKCB)](#roman-key-card-blackwood-rkcb)
 - **Round** → [Runde](#runde)
+- **Round of bidding** → [Melderunde](#melderunde)
 - **Round robin** → [Alle mod alle](#alle-mod-alle)
 - **Ruff** → [Trumfning](#trumfning)
 - **Rule of eleven** → [Regel 11](#regel-11)
@@ -4005,10 +4502,13 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 - **Scoring** → [Beregning](#beregning)
 - **Screen** → [Skærm](#skærm)
 - **Seat** → [Plads](#plads)
+- **Second hand low** → [Lavt i anden hånd](#lavt-i-anden-haand)
 - **Second round-control** → [Andenrundekontrol](#andenrundekontrol)
 - **Section** → [Række](#raekke)
 - **Seeding / Stratification** → [Seedning](#seedning)
 - **Self-alert** → [Selvalert](#selvalert)
+- **Self-sufficient suit** → [Selvspillende farve](#selvspillende-farve)
+- **Sell out** → [Sælge ud](#saelge-ud)
 - **Semi‑forcing notrump** → [Halvkrav 1NT](#halvkrav-1nt)
 - **Session** → [Afdeling](#afdeling)
 - **Seven (7)** → [Syver (7)](#syver-7)
@@ -4019,6 +4519,7 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 - **Side suit** → [Sidefarve](#sidefarve)
 - **Sign-off** → [Slutmelding](#slutmelding)
 - **Signal; carding** → [Modspilssignal](#modspilssignal)
+- **Single raise** → [Enkeltstøtte](#enkeltstoette)
 - **Singleton** → [Singleton](#singleton)
 - **Sitout** → [Oversidder](#oversidder)
 - **Six (6)** → [Sekser (6)](#sekser-6)
@@ -4043,6 +4544,7 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 - **Strong 2 clubs** → [Stærk 2♣-åbning](#staerk-2-aabning)
 - **Substitute** → [Reserve](#reserve)
 - **Suit** → [Farve](#farve)
+- **Suit combination** → [Farvebehandling](#farvebehandling)
 - **Suit symbol** → [Farvesymbol](#farvesymbol)
 - **Suit-preference signal** → [Farvepræferencesignal](#farvepraeferencesignal)
 - **Support** → [Støtte](#stoette)
@@ -4056,13 +4558,16 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 - **Tempo** → [Tempo](#tempo)
 - **Ten** → [Tier](#tier)
 - **Tenace** → [Gaffel](#gaffel)
+- **Third hand high** → [Højt i tredje hånd](#hoejt-i-tredje-haand)
 - **Three (3)** → [Treer (3)](#treer-3)
 - **Three-suiter** → [Trefarvet hånd](#trefarvet-haand)
 - **Throw-in** → [Indspil](#indspil)
 - **Tie-break** → [Tie-break](#tie-break)
 - **Top** → [Top](#top)
+- **Top loser** → [Toptaber](#toptaber)
 - **Top of nothing** → [Højt fra intet](#hoejt-fra-intet)
 - **Top of sequence** → [Øverst fra sekvens](#oeverst-fra-sekvens)
+- **Touching honours** → [Nabohonnører](#nabohonnoerer)
 - **Tournament** → [Turnering](#turnering)
 - **Tournament bridge** → [Turneringsbridge](#turneringsbridge)
 - **Tournament director** → [Turneringsleder](#turneringsleder)
@@ -4083,6 +4588,7 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 - **Two‑over‑one (2/1)** → [2 over 1](#2-over-1)
 - **Unauthorized information** → [Ubeføjede oplysninger](#ubefoejede-oplysninger)
 - **Unbalanced hand** → [Skæv hånd](#skaev-haand)
+- **Unbid suit** → [Umeldt farve](#umeldt-farve)
 - **Unblock** → [Afblokering](#afblokering)
 - **Underlead** → [Spille under en honnør](#spille-under-en-honnoer)
 - **Underruff** → [Undertrumf](#undertrumf)
@@ -4108,7 +4614,9 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 ## Dansk-engelsk indeks
 
 - **1430 (Fourteen‑Thirty)** → 1430 (Fourteen‑Thirty)
+- **1NT-åbning** → 1NT opening
 - **2 over 1** → Two‑over‑one (2/1)
+- **2NT-åbning** → 2NT opening
 - **Afblokering** → Unblock
 - **Afdeling** → Session
 - **Afgivelse af stik** → Concession
@@ -4120,6 +4628,7 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 - **Alle mod alle** → Round robin
 - **Andenrundekontrol** → Second round-control
 - **Appel** → Appeal
+- **Badekup (Bath Coup)** → Bath coup
 - **Barometerturnering** → Barometer tournament
 - **Begrænset melding** → Limit
 - **Begrænset valg** → Restricted choice
@@ -4135,6 +4644,7 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 - **Blank** → Bare (honour)
 - **Blokering** → Block
 - **Board-a-Match (BAM)** → Board-a-Match (BAM)
+- **Bogmelding** → Book bid
 - **Bogstik** → Book
 - **Bonuspoint** → Premium points
 - **Bordet** → Dummy
@@ -4149,20 +4659,25 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 - **Cue-bid** → Cuebid
 - **Dame** → Queen
 - **Datum** → Datum score
+- **Defensiven** → Defending side
 - **Delkontrakt** → Part-score
 - **Deltager** → Contestant(s)
 - **Dobbelt kipning** → Double finesse
+- **Dobbeltspring** → Double jump
 - **Doblet kontrakt** → Doubled contract
 - **Dobling** → Double
 - **Doubleton** → Doubleton
 - **Drury** → Drury
 - **Dyk** → Duck
+- **"Eight ever, nine never"** → Eight ever, nine never
 - **Eliminering** → Elimination
+- **Enkeltstøtte** → Single raise
 - **Es** → Ace
 - **Etablering** → Establish; develop
 - **Fald** → Drop
 - **Farehånd** → Danger hand
 - **Farve** → Suit
+- **Farvebehandling** → Suit combination
 - **Farvelængde** → Length
 - **Farvepræferencesignal** → Suit-preference signal
 - **Farvesymbol** → Suit symbol
@@ -4176,9 +4691,11 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 - **Fjerde farve krav** → Fourth suit forcing
 - **Fjerdehøjeste** → Fourth best
 - **Forbindelse** → Communication
+- **Forbindelser** → Communications
 - **Fordeling** → Distribution
 - **Fordelingspoint** → Distribution points
 - **Fordelingssignal** → Count signal
+- **Forhåndsoffermelding** → Advance sacrifice
 - **Forkert oplysning** → Misinformation; incorrect explanation
 - **Forklaring af melding** → Explanation of call
 - **Førsterundekontrol** → First-round control
@@ -4202,10 +4719,13 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 - **Hold-up** → Hold-up play
 - **Holdturnering** → Teams event
 - **Honnør** → Honour; honor
+- **Honnør på honnør** → Cover an honour with an honour
 - **Honnørpoint** → High-card points
+- **Honnørsekvens** → Honour sequence
 - **Howell-skifte** → Howell movement
 - **Højre modstander** → Right-hand opponent (RHO)
 - **Højt fra intet** → Top of nothing
+- **Højt i tredje hånd** → Third hand high
 - **Højt kort** → High card
 - **Hånd** → Hand
 - **Håndstyrke** → Strength
@@ -4260,6 +4780,7 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 - **Lang tænkepause** → Huddle
 - **Laveste lige kort** → Low from even
 - **Lavinthal-signal** → Lavinthal
+- **Lavt i anden hånd** → Second hand low
 - **Lavt kort** → Low card
 - **Lebensohl** → Lebensohl
 - **Lige antal** → Even
@@ -4286,12 +4807,14 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 - **Meldeperiode** → Auction period
 - **Meldeplads** → Space
 - **Melder** → Bidder
+- **Melderunde** → Round of bidding
 - **Meldesekvens** → Bidding sequence
 - **Meldesystem** → Bidding system
 - **Melding** → Call
 - **Melding uden for tur** → Call out of turn
 - **Meldingskort** → Bidding card
 - **Meldt og vundet** → Bid and made
+- **Mellemkort** → Intermediates
 - **Mesterpoint** → Masterpoint / Master point (MP)
 - **Mesterskab** → Championship
 - **Michaels cuebid** → Michaels cuebid
@@ -4300,6 +4823,7 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 - **Middelscore plus** → Average plus
 - **Minimum** → Minimum (min)
 - **Minorfarve** → Minor
+- **Misfit** → Misfit
 - **Mitchell-skifte** → Mitchell movement
 - **Modspil** → Defence; defense
 - **Modspillere** → Defenders
@@ -4307,6 +4831,7 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 - **Modstandere** → Opponents
 - **Morton's Fork** → Morton's Fork
 - **Multi** → Multi
+- **Nabohonnører** → Touching honours
 - **Naturlig melding** → Natural call
 - **Negativ dobling** → Negative double
 - **Neutralt udspil** → Neutral lead
@@ -4315,6 +4840,7 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 - **Norsk fordeling** → Norwegian count
 - **Ny farve** → New suit
 - **Nøglekort** → Key card
+- **Offensiven** → Opening side
 - **Offer** → Sacrifice bid
 - **Omvendte minorstøtter** → Inverted
 - **Oplagt kontrakt** → Laydown
@@ -4336,7 +4862,7 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 - **Pivotbord** → Pivot table
 - **Plads** → Seat
 - **Pointvurdering** → Point count
-- **Princippet om begrænset valg** → Principle of restricted choice
+- **Pokeransigt** → Poker face
 - **Privat regnskabskort** → Personal score sheet
 - **Procentchance** → Percentage play
 - **Procentscore** → Percentage score
@@ -4361,6 +4887,7 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 - **Roman Key Card Blackwood (RKCB)** → Roman Key Card Blackwood (RKCB)
 - **Ruder** → Diamond
 - **Runde** → Round
+- **Rundekrav** → One-round force
 - **Rundpas** → Passed out
 - **Række** → Section
 - **Røde farver** → Red suits
@@ -4370,6 +4897,7 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 - **Seedning** → Seeding / Stratification
 - **Sekser (6)** → Six (6)
 - **Selvalert** → Self-alert
+- **Selvspillende farve** → Self-sufficient suit
 - **Sidder forkert** → Offside
 - **Sidder rigtigt** → Onside
 - **Side (Nord–Syd eller Øst–Vest)** → Side
@@ -4394,10 +4922,12 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 - **Spille under en honnør** → Underlead
 - **Spillebord** → Table
 - **Spilleperiode** → Play period
+- **Spilleplan** → Plan of play
 - **Spiller** → Player(s)
 - **Spilmappe** → Board
 - **Splinter** → Splinter
 - **Spring i ny farve** → Jump shift
+- **Springgenmelding** → Jump rebid
 - **Springmelding** → Jump
 - **Springstøtte** → Jump support
 - **Spærremelding** → Preempt; barrage
@@ -4430,6 +4960,7 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 - **Syd (S)** → South (S)
 - **Systemkort** → Convention card
 - **Syver (7)** → Seven (7)
+- **Sælge ud** → Sell out
 - **Taber** → Loser
 - **Taber på taber** → Loser on loser
 - **Tabertælling** → Loser count
@@ -4442,6 +4973,7 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 - **Toer (2)** → Two (2)
 - **Tofarvet hånd** → Two-suiter
 - **Top** → Top
+- **Toptaber** → Top loser
 - **Treer (3)** → Three (3)
 - **Trefarvet hånd** → Three-suiter
 - **Trin** → Level
@@ -4472,6 +5004,7 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 - **Udstyr** → Equipment / Paraphernalia
 - **Ulige antal** → Odd
 - **Ulovlig** → Illegal
+- **Umeldt farve** → Unbid suit
 - **Understik** → Undertrick
 - **Undertrumf** → Underruff
 - **Uregelmæssighed** → Irregularity
@@ -4492,5 +5025,6 @@ _Version 1.2. Ordbogen indeholder 387 kanoniske opslag._
 - **Åbne kort** → Double-dummy
 - **Åbner** → Opener
 - **Åbning** → Open
+- **Åbningsfarve** → Opener's suit
 - **Åbningshånd** → Opening hand
 - **Åbningsudspil** → Opening lead

@@ -42,7 +42,7 @@ I alt: 121 omdøbes, 16 slås sammen med et dansk opslag, og 36 beholder navnet.
 | Discourage | — | slå sammen med Kald-afvisning |  |
 | Doubleton | Doubleton | behold (husets ord) |  |
 | Draw | — | slå sammen med Trumftræk |  |
-| Drop | Fald | omdøb (som "fald eller kip" i appen); Play for the drop slås sammen hertil |  |
+| Drop | Fald | omdøb (som "toppe eller kipning" i appen); Play for the drop slås sammen hertil |  |
 | Drury | Drury | behold (konventionsnavn) |  |
 | East (E) | Øst (Ø) | omdøb |  |
 | Eight (8) | Otter (8) | omdøb |  |

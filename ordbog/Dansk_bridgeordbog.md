@@ -2291,7 +2291,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 ### Dyk
 **ID:** `dyk`
 **Engelsk:** Duck
-**Alternative termer:** Dykke, Falde fra
+**Alternative termer:** Dykke
 **Niveau:** øvet
 **Kategori:** Spilføring
 **Kort definition:** At lade et stik gå med vilje for at afbryde modspillernes kommunikation.
@@ -2303,9 +2303,9 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Engelsk:** Eight ever, nine never
 **Niveau:** let øvet
 **Kategori:** Spilføring
-**Kort definition:** Huskeregel: Med otte kort i alt og manglende dame skal man kippe. Med ni skal man slå fra toppen.
+**Kort definition:** Huskeregel: Med otte kort i alt og manglende dame tages kipningen. Med ni toppes farven.
 
-**Forklaring:** Huskeregel: Med otte kort i alt og manglende dame skal man kippe. Med ni skal man slå fra toppen.
+**Forklaring:** Huskeregel: Med otte kort i alt og manglende dame tages kipningen. Med ni toppes farven.
 
 ### Etablering
 **ID:** `etablering`
@@ -2320,7 +2320,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 ### Fald
 **ID:** `fald`
 **Engelsk:** Drop
-**Alternative termer:** Play for the drop
+**Alternative termer:** Play for the drop, Toppe, Toppe farven
 **Niveau:** let øvet
 **Kategori:** Spilføring
 **Kort definition:** Når en manglende honnør falder, fordi farven toppes eller fordi den ikke længere kan holdes.
@@ -2393,7 +2393,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 ### Hold-up
 **ID:** `hold-up`
 **Engelsk:** Hold-up play
-**Alternative termer:** Frafald (hold up)
+**Alternative termer:** Frafald (hold up), Falde fra
 **Niveau:** øvet
 **Kategori:** Spilføring
 **Kort definition:** At lade modspillet vinde stik for at afskære forbindelser.
@@ -2421,7 +2421,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 ### Kipning
 **ID:** `kipning`
 **Engelsk:** Finesse
-**Alternative termer:** Knibning, snit
+**Alternative termer:** Knibning, snit, Kip, Kippe, Knibe
 **Niveau:** begynder
 **Kategori:** Spilføring
 **Kort definition:** At spille mod en honnør i håb om, at modpartens højere kort sidder foran den, fx lille mod damen med esset og damen, når kongen mangler.

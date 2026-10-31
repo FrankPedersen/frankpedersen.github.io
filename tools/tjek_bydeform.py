@@ -52,25 +52,6 @@ UNDTAGELSER = [
     'Spring til bogstav',
 ]
 
-# Fundet, da testen blev skrevet, og ikke på den godkendte liste: venter på Franks svar (Tillæg i
-# docs/specs/beskrivende-form.md). Scoringens markdown er Franks tekst; regnemaskinernes beskeder står i beregn.js og
-# build_scoring.py.
-VENTER = [
-    'Kontrollér det, før ØV får deres tal',
-    'Kæmp om delkontrakterne.',
-    'Lad ikke modstanderne spille på 2-trinnet med et fit',
-    'genåbn og byd 3 over deres 2, når I har et fit.',
-    'Kæmp, men ikke for enhver pris.',
-    'Doble ikke til udgang.',
-    'Doble delkontrakter, når du er sikker på bet.',
-    'Ofr kun, når du er sikker på, at de vinder deres kontrakt.',
-    'Tryk på en score for at se regnestykket.',
-    'Vælg en farve eller sans.',
-    'Vælg udoblet, doblet eller redoblet.',
-    'Skriv 2–20 scorer.',
-    'Skriv gennemsnitshandicappet eller alle spilleres handicap.',
-]
-
 # Sætninger, der begynder med et af ordene, men ikke er bydeform.
 FALSKE_TRÆF = [
     re.compile(r'^Spil i kampen\b'),  # scoringens tabel: antal spil
@@ -100,7 +81,7 @@ def undtaget(tekst):
 
 def bydeform(tekst):
     """Sætningerne i en dansk tekst, der begynder med et udsagnsord i bydeform, også efter kolon og semikolon. Knapper,
-    links og navne på undtagelseslisten, ventelisten og de falske træf tæller ikke."""
+    links og navne på undtagelseslisten og de falske træf tæller ikke."""
     # Et enkelt ord med små bogstaver er kode (fx 'hold'), ikke en instruktion.
     if undtaget(tekst) or re.fullmatch(r'[a-zæøå-]+', tekst.strip()):
         return []
@@ -111,7 +92,7 @@ def bydeform(tekst):
         # Et ord med store bogstaver er en forkortelse (ØV, NS), ikke et udsagnsord.
         if not første or første.group(0).lower() not in BYDEFORMER or første.group(0).isupper():
             continue
-        if undtaget(s) or s in VENTER or any(r.search(led.strip()) or r.search(s) for r in FALSKE_TRÆF):
+        if undtaget(s) or any(r.search(led.strip()) or r.search(s) for r in FALSKE_TRÆF):
             continue
         ud.append(s)
     return ud
@@ -179,11 +160,17 @@ class Bydeform(unittest.TestCase):
         self.assertIn('E-mailadressen er ikke gyldig.', filer['_kontakt-api/src/contact-messages.js'])
         self.assertNotIn('Remove the score', [s for stykker in filer.values() for s in stykker])
 
-    def test_ventelisten_er_kun_det_der_stadig_står(self):
-        # Når Frank har svaret, og en tekst er rettet, skal den af ventelisten.
-        alle = {PREFIX.sub('', led).strip() for _, stykker in al_dansk_tekst() for stykke in stykker
-                for led in SPLIT.split(stykke)}
-        self.assertEqual([v for v in VENTER if v not in alle], [])
+    def test_bydeform_inde_i_sætningen_er_rettet(self):
+        # Testen ser kun på sætningernes begyndelse; de her fandt Frank på skærmbillederne (Tillæg T3, hans svar
+        # 31. oktober 2026). Om mig tjekkes af tjek_privatliv.py.
+        scoring = {sprog: (ROD / 'scoring' / f'Scoring_i_bridge{sprog}.md').read_text(encoding='utf-8') for sprog in ('', '.en')}
+        self.assertIn('Modspillerne gør omvendt: de sparer et overstik, før de går efter at bete kontrakten.', scoring[''])
+        self.assertIn('Men først skal det være sikkert, at de vinder udgangen, og at resten af feltet melder den.',
+                      scoring[''])
+        self.assertIn('Defenders do the opposite: they save an overtrick before going all out to beat the contract.',
+                      scoring['.en'])
+        self.assertIn('But first it must be certain that they make their game and that the rest of the field bids it.',
+                      scoring['.en'])
 
     def test_fejler_ved_bydeform_også_efter_kolon_og_semikolon(self):
         self.assertEqual(bydeform('Vælg en træner, og gå i gang.'), ['Vælg en træner, og gå i gang.'])

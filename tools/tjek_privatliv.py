@@ -22,13 +22,13 @@ DANSK = ('Om dine oplysninger. Når du sender en besked, går dit navn, din e-ma
          'til min e-mail, så jeg kan svare dig. Siden gemmer ikke beskeden. Jeg sletter beskeder fra formularen og mine '
          'svar senest 14 dage efter, at jeg har modtaget dem. Din IP-adresse bruges kun i op til 15 minutter til at stoppe '
          'spam og gemmes ikke. Azure logger tidspunktet for hvert kald og et omtrentligt land og en by i 30 dage, men ikke '
-         'din besked. Vil du vide, hvad jeg har om dig, eller have det slettet før, så skriv det her. '
+         'din besked. Vil du vide, hvad jeg har om dig, eller have det slettet før, kan du skrive det her. '
          'Dataansvarlig: Frank Pedersen.')
 ENGELSK = ('About your information. When you send a message, your name, e-mail and message go through Microsoft Azure to '
            'my e-mail so I can reply. The site does not store the message. I delete messages from the form and my replies '
            'no later than 14 days after I receive them. Your IP address is used for up to 15 minutes only to stop spam and '
            'is not stored. Azure logs the time of each request and an approximate country and city for 30 days, but not '
-           'your message. If you want to know what I hold about you, or want it deleted sooner, write to me here. '
+           'your message. If you want to know what I hold about you, or want it deleted sooner, you can write to me here. '
            'Data controller: Frank Pedersen.')
 
 # Reglen i den fælles CLAUDE.md (specen, med Franks valg 25. oktober 2026: filen er privat og ligger kun lokalt)

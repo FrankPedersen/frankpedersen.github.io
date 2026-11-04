@@ -84,7 +84,7 @@ try {
   await åbn('index.html', 1280);
   const bred = await kør(`(() => {
     const k = (x) => { const e = document.querySelector(x); if (!e || !e.getClientRects().length) return null; const r = e.getBoundingClientRect(); return { top: r.top, left: r.left, right: r.right, bottom: r.bottom }; };
-    return { tekst: k('.hero-body'), eksempel: k('.demo'), ud: document.documentElement.scrollWidth - innerWidth, burger: k('.burger'), links: k('.nav-links'), h1: document.querySelector('h1').textContent.trim() };
+    return { tekst: k('.hero-body'), eksempel: k('.demo'), ud: document.documentElement.scrollWidth - document.documentElement.clientWidth, burger: k('.burger'), links: k('.nav-links'), h1: document.querySelector('h1').textContent.trim() };
   })()`);
   tjek(bred.tekst && bred.eksempel && bred.tekst.right <= bred.eksempel.left, 'Ved 1280 px: teksten og eksemplet står side om side', JSON.stringify(bred));
   tjek(bred.h1 === 'Bedre bridge på 5 minutter om dagen', 'Overskriften er den nye', bred.h1);
@@ -92,7 +92,7 @@ try {
   await gem('1280-forside.png', true);
   for (const b of [999, 390]) {
     await åbn('index.html', b);
-    const r = await kør(`(() => ({ eksempel: !!document.querySelector('.demo')?.getClientRects().length, tekst: !!document.querySelector('.hero-body')?.getClientRects().length, burger: !!document.querySelector('.burger')?.getClientRects().length, ud: document.documentElement.scrollWidth - innerWidth }))()`);
+    const r = await kør(`(() => ({ eksempel: !!document.querySelector('.demo')?.getClientRects().length, tekst: !!document.querySelector('.hero-body')?.getClientRects().length, burger: !!document.querySelector('.burger')?.getClientRects().length, ud: document.documentElement.scrollWidth - document.documentElement.clientWidth }))()`);
     tjek(!r.eksempel && r.tekst && r.burger && r.ud <= 0, `Ved ${b} px: kun teksten og ☰`, JSON.stringify(r));
   }
 
@@ -204,7 +204,7 @@ try {
     const links = [...f.querySelectorAll('nav a')];
     const cta = [...f.querySelectorAll('a')].find((a) => /Om mig og kontakt|About me and contact/.test(t(a)));
     const brand = f.querySelector('a.brand');
-    return { højde: Math.round(k(f).height), kolonner, polstring: [cs.paddingTop, cs.paddingRight, cs.paddingBottom, cs.paddingLeft].join(' '), linjehøjde: cs.lineHeight, logo: [Math.round(k(logo).width), Math.round(k(logo).height)], rækker: links.map((a) => Math.round(k(a).height)), afstand: Math.round(k(links[1].closest('li')).top - k(links[0].closest('li')).bottom), samme: Math.abs((k(cta).top + k(cta).height / 2) - (k(brand).top + k(brand).height / 2)) < 2, ctaHøjde: Math.round(k(cta).height), om: /Jeg er bridgeentusiast/.test(f.textContent), legal: t(f.querySelector('.legal')), p: synlig(f.querySelector('p')), ud: document.documentElement.scrollWidth - innerWidth };
+    return { højde: Math.round(k(f).height), kolonner, polstring: [cs.paddingTop, cs.paddingRight, cs.paddingBottom, cs.paddingLeft].join(' '), linjehøjde: cs.lineHeight, logo: [Math.round(k(logo).width), Math.round(k(logo).height)], rækker: links.map((a) => Math.round(k(a).height)), afstand: Math.round(k(links[1].closest('li')).top - k(links[0].closest('li')).bottom), samme: Math.abs((k(cta).top + k(cta).height / 2) - (k(brand).top + k(brand).height / 2)) < 2, ctaHøjde: Math.round(k(cta).height), om: /Jeg er bridgeentusiast/.test(f.textContent), legal: t(f.querySelector('.legal')), p: synlig(f.querySelector('p')), ud: document.documentElement.scrollWidth - document.documentElement.clientWidth };
   })()`);
   const KOLONNER = JSON.stringify([
     { titel: 'Trænere', links: [['Konventionstræner', '/konventionstraener/'], ['Fordeling', '/fordelingstraeneren/#fordeling'], ['Pointregnskab', '/fordelingstraeneren/#pointregnskab'], ['Farvebehandling', '/fordelingstraeneren/#farvebehandling'], ['Håndevaluering', '/fordelingstraeneren/#haandevaluering']] },
@@ -235,8 +235,18 @@ try {
   // Ingen vandret scroll ved 320 px.
   for (const side of SIDER) {
     await åbn(side, 320, 700);
-    const ud = await kør('document.documentElement.scrollWidth - innerWidth');
+    const ud = await kør('document.documentElement.scrollWidth - document.documentElement.clientWidth');
     tjek(ud <= 0, `${side} ved 320 px: ingen vandret scroll`, `${ud} px`);
+  }
+
+  // Knappen står inden for sidefodens polstring ved de smalle bredder og på begge sprog; teksten må brække.
+  // "Stikker ud" måles mod clientWidth: i mobilvisning vokser innerWidth med det, der stikker ud, så tjekket aldrig ville fejle.
+  for (const [lang, sprog] of [['da', 'dansk'], ['en', 'engelsk']]) {
+    for (const bredde of [390, 360, 320]) {
+      await åbn('index.html', bredde, 900, `?lang=${lang}`);
+      const ud = await kør(`(() => { const f = document.querySelector('.footer'); const r = f.getBoundingClientRect().right - parseFloat(getComputedStyle(f).paddingRight); return Math.round(f.querySelector('a.footer-cta').getBoundingClientRect().right - r); })()`);
+      tjek(ud <= 0, `Knappen ved ${bredde} px på ${sprog}: inden for polstringen`, `${ud} px`);
+    }
   }
 
   // Engelsk: ingen dansk tekst i det synlige ved 1280 og 390 px, heller ikke i menuen.

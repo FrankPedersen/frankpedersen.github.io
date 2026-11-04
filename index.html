@@ -33,99 +33,221 @@
   --r-md:12px; --r-lg:16px; --r-xl:24px; --r-pill:9999px;
 }
 *,*::before,*::after{ box-sizing:border-box; }
+[hidden]{ display:none !important; }
 html{ -webkit-text-size-adjust:100%; scroll-behavior:smooth; }
 body{ margin:0; background:var(--canvas-soft); color:var(--ink); font:16px/1.5 var(--sans); }
 a{ color:var(--ink); }
 a:focus-visible, button:focus-visible{ outline:2px solid var(--ink); outline-offset:3px; border-radius:var(--r-md); }
 .su{ font-family:var(--sym); font-weight:400; }
 .su-s{ color:var(--suit-black); } .su-h{ color:var(--suit-red); }
+h2,h3,p,ul,figure{ margin:0; }
 
-.page{ max-width:1200px; margin:0 auto; padding:24px clamp(16px,3vw,40px) 48px; display:flex; flex-direction:column; gap:48px; }
+.page{ max-width:1200px; margin:0 auto; padding:24px 40px 48px; display:flex; flex-direction:column; gap:40px; }
+/* Den brede udgave fra 1000 px og mobiludgaven under; de to udgavers tekster står ved siden af hinanden i HTML. */
+.kun-mobil{ display:none !important; }
 
 /* topbånd med menu og logo (meldekortet 7NT) */
-.hero{ display:flex; flex-direction:column; gap:56px; padding:20px 24px 56px; background:var(--ink); color:var(--primary); border-radius:var(--r-xl); }
-.hero-body{ display:flex; flex-direction:column; align-items:flex-start; gap:24px; }
+.hero{ display:flex; flex-direction:column; gap:40px; padding:20px 32px 48px; background:var(--ink); color:var(--primary); border-radius:var(--r-xl); }
 .nav{ display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:12px 24px; font-size:14px; font-weight:600; line-height:20px; }
 .brand{ display:inline-flex; align-items:center; gap:12px; color:#fff; text-decoration:none; font:800 20px/1 var(--display); letter-spacing:-.01em; }
 .logo{ display:inline-flex; align-items:center; justify-content:center; width:40px; height:40px; border-radius:10px; background:var(--primary); color:var(--ink); font:800 14px/1 var(--display); letter-spacing:-.02em; }
 .nav-links{ display:flex; flex-wrap:wrap; align-items:center; gap:4px; }
 .nav-links a{ color:var(--canvas-soft); text-decoration:none; padding:10px 14px; border-radius:var(--r-pill); }
 .nav-links a:hover{ background:rgba(255,255,255,.08); }
-.nav-links a[aria-current="page"]{ background:rgba(255,255,255,.12); color:#fff; }
-.hero a:focus-visible, .hero button:focus-visible{ outline-color:var(--primary); }
+.hero a:focus-visible, .hero button:focus-visible, .menu a:focus-visible, .menu button:focus-visible{ outline-color:var(--primary); }
 .lang{ margin-left:6px; min-height:40px; padding:0 16px; border:0; border-radius:var(--r-pill); background:transparent;
   box-shadow:inset 0 0 0 1px rgba(255,255,255,.3); color:var(--canvas-soft); font:inherit; cursor:pointer; }
 .lang:hover{ background:rgba(255,255,255,.08); }
-.hero .eyebrow{ font-size:14px; font-weight:600; line-height:20px; color:var(--primary-active); }
-.hero h1{ margin:0; font:800 clamp(40px,5vw,64px)/.9 var(--display); letter-spacing:-.02em; max-width:14ch; }
-.hero p{ margin:0; max-width:640px; font-size:20px; line-height:30px; color:var(--canvas-soft); }
-.btn{ display:inline-flex; align-items:center; min-height:48px; padding:12px 24px; border-radius:var(--r-xl); background:var(--primary); color:var(--on-primary); font-weight:600; text-decoration:none; }
+.burger{ display:none; align-items:center; justify-content:center; width:44px; height:44px; padding:0; border:0; border-radius:var(--r-pill); background:transparent; box-shadow:inset 0 0 0 1px rgba(255,255,255,.3); cursor:pointer; }
+.hero-grid{ display:grid; grid-template-columns:minmax(0,1.1fr) minmax(0,1fr); gap:48px; align-items:center; }
+.hero-body{ display:flex; flex-direction:column; align-items:flex-start; gap:22px; }
+.eyebrow{ display:inline-flex; padding:6px 12px; border-radius:var(--r-pill); background:rgba(255,159,74,.16); color:var(--primary-active); font-size:15px; font-weight:600; line-height:20px; }
+.hero h1{ margin:0; font:800 60px/.95 var(--display); letter-spacing:-.02em; }
+.hero-body p{ max-width:560px; font-size:19px; line-height:29px; color:var(--canvas-soft); }
+.points{ display:flex; flex-direction:column; gap:10px; padding:0; list-style:none; color:var(--canvas-soft); font-size:16px; line-height:24px; }
+.points li{ display:flex; gap:10px; align-items:center; }
+.points svg{ flex:none; width:20px; height:20px; }
+.hero-btns{ display:flex; flex-wrap:wrap; gap:12px; margin-top:6px; }
+.btn{ display:inline-flex; align-items:center; justify-content:center; min-height:48px; padding:12px 26px; border-radius:var(--r-xl); background:var(--primary); color:var(--on-primary); font-weight:600; text-decoration:none; }
 .btn:hover{ background:var(--primary-active); }
+.btn.ghost{ padding:12px 22px; background:transparent; box-shadow:inset 0 0 0 1px rgba(255,255,255,.3); color:var(--canvas-soft); }
+.btn.ghost:hover{ background:rgba(255,255,255,.08); }
+
+/* eksemplet fra Farvebehandling */
+.demo{ display:flex; flex-direction:column; gap:14px; padding:22px; background:var(--canvas); border-radius:20px; color:var(--ink); box-shadow:0 24px 48px -24px rgba(0,0,0,.6); }
+.demo-top{ display:flex; justify-content:space-between; align-items:center; font-size:13px; line-height:20px; color:var(--body); }
+.demo-top b{ font-weight:600; color:var(--ink); }
+.bord{ display:grid; grid-template-columns:auto auto auto; justify-content:space-between; align-items:center; justify-items:center; row-gap:8px; padding:14px 18px; background:var(--canvas-soft); border-radius:var(--r-lg); }
+.bord-n{ grid-column:2; grid-row:1; } .bord-s{ grid-column:2; grid-row:3; }
+.bord-n, .bord-s{ display:flex; flex-direction:column; align-items:center; gap:2px; }
+.bord-v{ grid-column:1; grid-row:2; } .bord-o{ grid-column:3; grid-row:2; }
+.bord-side{ font-size:11px; font-weight:600; letter-spacing:.08em; line-height:16px; color:var(--body); }
+.bord-hand{ font-size:22px; font-weight:600; line-height:28px; }
+.bord-midt{ grid-column:2; grid-row:2; display:flex; align-items:center; justify-content:center; width:120px; height:84px; padding:0 8px; border-radius:10px; background:var(--table); color:var(--table-text); font-size:12px; font-weight:600; line-height:1.25; text-align:center; }
+.demo-mål{ font:800 22px/1.1 var(--display); }
+.demo-linjer{ display:flex; flex-direction:column; gap:8px; font-size:14px; line-height:20px; }
+.demo-linje{ padding:10px 12px; border:1px solid var(--hairline); border-radius:var(--r-md); }
+.demo-linje.valgt{ padding:9px 11px; border:2px solid var(--ink); background:var(--primary-pale); }
+.demo-linje b{ font-weight:600; }
+.demo-valg{ display:flex; flex-wrap:wrap; align-items:center; gap:8px; font-size:13px; line-height:20px; font-weight:600; }
+.demo-valg > :first-child{ color:var(--body); font-weight:400; }
+.demo-valg > :not(:first-child){ padding:6px 10px; border:1px solid var(--hairline); border-radius:10px; }
+
+/* de fire tal */
+.tal{ display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:16px; }
+.tal > div{ padding:20px 22px; background:var(--canvas); border-radius:20px; }
+.tal-tal{ font:800 34px/1 var(--display); }
+.tal-navn{ margin-top:6px; color:var(--body); }
 
 /* afsnit */
-h2.section{ margin:0; font:800 clamp(28px,3.2vw,40px)/1 var(--display); letter-spacing:-.015em; }
+.afsnit{ display:flex; flex-direction:column; gap:20px; scroll-margin-top:16px; }
+h2.section{ font:800 40px/1 var(--display); letter-spacing:-.015em; }
 .lead{ margin:8px 0 0; max-width:640px; color:var(--body); }
+.tre{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:20px; }
+.tre.stor{ gap:24px; }
+
+/* Hvor starter jeg? */
+.path{ display:flex; flex-direction:column; gap:10px; padding:24px; background:var(--canvas); border-radius:var(--r-xl); color:var(--ink); text-decoration:none; }
+.path:hover, .opslag:hover{ box-shadow:inset 0 0 0 1px var(--ink); }
+.tag{ align-self:flex-start; padding:4px 10px; border-radius:var(--r-pill); background:var(--primary-pale); font-size:13px; font-weight:600; line-height:20px; }
+.path h3{ font-size:22px; line-height:29px; font-weight:600; letter-spacing:-.3px; }
+.path p{ color:var(--body); }
+.videre{ margin-top:auto; font-size:14px; line-height:20px; font-weight:600; }
 
 /* trænerkort */
-.cards{ display:grid; grid-template-columns:repeat(auto-fill, minmax(min(100%,340px),1fr)); gap:24px; margin-top:24px; }
-.card{ display:flex; flex-direction:column; gap:16px; padding:24px; background:var(--canvas); border-radius:var(--r-xl); text-decoration:none; color:var(--ink); box-shadow:inset 0 0 0 1px transparent; transition:box-shadow .12s ease; }
-.card:hover{ box-shadow:inset 0 0 0 1px var(--ink); }
-.art{ display:flex; align-items:center; justify-content:center; gap:10px; height:120px; border-radius:var(--r-lg); background:var(--canvas-soft); }
+.card{ display:flex; flex-direction:column; gap:14px; padding:24px; background:var(--canvas); border-radius:var(--r-xl); text-decoration:none; color:var(--ink); transition:transform .12s ease, box-shadow .12s ease; }
+.card:hover{ transform:translateY(-3px); box-shadow:0 12px 28px -16px rgba(26,26,26,.45), inset 0 3px 0 0 var(--primary); }
+.card-tekst{ display:flex; flex:1; flex-direction:column; gap:14px; }
+.card-top{ display:flex; justify-content:space-between; align-items:center; min-height:24px; }
 .kicker{ font-size:12px; line-height:16px; color:var(--body); }
-.card h3{ margin:4px 0 8px; font-size:24px; line-height:31px; font-weight:600; letter-spacing:-.48px; }
-.card p{ margin:0; color:var(--body); }
-.card .meta{ display:flex; justify-content:space-between; gap:12px; margin-top:auto; padding-top:4px; font-size:14px; line-height:20px; }
-.card .meta span:first-child{ color:var(--body); }
-.card .meta span:last-child{ font-weight:600; white-space:nowrap; }
+.badge{ padding:3px 9px; border-radius:var(--r-pill); font-size:12px; line-height:18px; font-weight:600; white-space:nowrap; }
+.badge.mork{ background:var(--ink); color:var(--primary); }
+.badge.orange{ background:var(--primary); color:var(--on-primary); }
+.card h3{ margin-top:-6px; font-size:24px; line-height:31px; font-weight:600; letter-spacing:-.48px; }
+.card p{ color:var(--body); }
 
 /* illustrationer */
-.bc{ display:inline-flex; align-items:center; justify-content:center; min-width:56px; height:66px; padding:0 10px; border:1px solid var(--hairline); border-radius:var(--r-md); background:var(--canvas); font-size:23px; font-weight:600; line-height:1; }
+.art{ display:flex; align-items:center; justify-content:center; gap:10px; height:110px; border-radius:var(--r-lg); background:var(--canvas-soft); }
+.bc{ display:inline-flex; align-items:center; justify-content:center; min-width:52px; height:60px; padding:0 12px; border:1px solid var(--hairline); border-radius:var(--r-md); background:var(--canvas); font-size:22px; font-weight:600; line-height:1; }
 .bc.pas{ background:var(--positive-deep); color:#fff; border-color:transparent; }
-.bc.ask{ color:var(--body); }
 .sky{ display:flex; align-items:flex-end; gap:6px; }
-.sky span{ display:flex; flex-direction:column; align-items:center; gap:4px; font-size:14px; font-weight:600; }
+.sky span{ display:flex; flex-direction:column; align-items:center; gap:4px; font-size:13px; line-height:16px; font-weight:600; }
 .sky i{ display:block; width:22px; border-radius:3px 3px 0 0; background:var(--ink); }
-.chip{ display:inline-flex; align-items:center; justify-content:center; width:44px; height:44px; border-radius:50%; background:var(--canvas); box-shadow:inset 0 0 0 1px var(--hairline); font-size:18px; font-weight:600; }
+.chip{ display:inline-flex; align-items:center; justify-content:center; width:40px; height:40px; border-radius:50%; background:var(--canvas); font-size:17px; font-weight:600; }
 .chip.on{ background:var(--primary-pale); box-shadow:inset 0 0 0 2px var(--ink); }
-.big{ font:800 28px/1 var(--display); }
-.diagram{ flex-direction:column; gap:6px; font-size:22px; font-weight:600; line-height:1.1; }
-.compass{ display:inline-flex; align-items:center; justify-content:center; width:40px; height:22px; border-radius:6px; background:var(--table); color:var(--table-text); font-size:12px; }
-.pill-dark{ padding:6px 12px; border-radius:var(--r-pill); background:var(--ink); color:var(--primary); font-size:14px; font-weight:600; }
+.big{ font:800 26px/1 var(--display); }
+.diagram{ flex-direction:column; gap:6px; font-size:20px; font-weight:600; line-height:1.1; }
+.compass{ display:inline-flex; align-items:center; justify-content:center; padding:3px 8px; border-radius:6px; background:var(--table); color:var(--table-text); font-size:11px; line-height:16px; }
+.pill-dark{ padding:6px 12px; border-radius:var(--r-pill); background:var(--ink); color:var(--primary); font-size:14px; font-weight:600; line-height:20px; }
+.art-lille{ flex:0 0 72px; width:72px; height:72px; display:flex; align-items:center; justify-content:center; border-radius:14px; background:var(--canvas-soft); font-weight:600; font-size:16px; }
 
-/* sådan virker det */
-.band{ display:flex; flex-direction:column; gap:24px; padding:48px 24px; background:var(--canvas); border-radius:var(--r-xl); }
-.band h2{ margin:0; font:800 40px/34px var(--display); }
-.band > p{ margin:0; max-width:640px; color:var(--body); }
-.facts{ display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%,240px),1fr)); gap:24px; }
-.facts h3{ margin:8px 0; font-size:18px; line-height:24px; font-weight:600; }
-.facts p{ margin:0; color:var(--body); }
-.icon{ display:inline-flex; align-items:center; justify-content:center; width:40px; height:40px; border-radius:50%; background:var(--primary-pale); }
+/* opslag */
+.opslag{ display:flex; align-items:center; gap:18px; padding:24px; background:var(--canvas); border-radius:var(--r-xl); color:var(--ink); text-decoration:none; }
+.opslag-ikon{ flex:none; display:inline-flex; align-items:center; justify-content:center; width:52px; height:52px; border-radius:14px; background:var(--primary-pale); font:800 15px/1 var(--display); white-space:nowrap; }
+.opslag-tekst{ display:flex; flex-direction:column; gap:4px; }
+.opslag h3{ font-size:20px; line-height:26px; font-weight:600; }
+.opslag p{ color:var(--body); }
 
-/* sidefod som på alle sider (SPEC-om-mig.md): logo, én linje, knappen til Om mig og kontakt og kolonnen Trænere;
-   overskrifter i små grå versaler, links hvide og understregede */
-.footer{ display:flex; flex-direction:column; gap:28px; padding:40px 32px; background:var(--ink); color:var(--canvas-soft); border-radius:var(--r-xl); font-size:15px; line-height:22px; }
-.footer-top{ display:flex; flex-wrap:wrap; justify-content:space-between; gap:32px 56px; }
-.footer-about{ display:flex; flex-direction:column; align-items:flex-start; gap:12px; max-width:340px; }
+/* mobilmenuen foldes ud i det mørke bånd, og resten af siden mørklægges */
+.menu-bag{ position:fixed; inset:0; z-index:10; background:rgba(26,26,26,.45); }
+.menu{ position:fixed; top:12px; left:16px; right:16px; z-index:20; display:flex; flex-direction:column; gap:18px; max-width:688px; max-height:calc(100dvh - 24px); margin:0 auto; padding:14px 18px 22px; overflow-y:auto; background:var(--ink); border-radius:var(--r-xl); box-shadow:0 24px 40px -20px rgba(0,0,0,.55); color:#fff; }
+.menu-top{ display:flex; align-items:center; justify-content:space-between; }
+.menu-top .brand{ gap:10px; font-size:18px; }
+.menu-top .logo{ width:36px; height:36px; border-radius:9px; font-size:13px; }
+.menu-luk{ display:inline-flex; align-items:center; justify-content:center; width:44px; height:44px; padding:0; border:0; border-radius:var(--r-pill); background:var(--primary); cursor:pointer; }
+.menu-gruppe{ display:flex; flex-direction:column; gap:4px; }
+.menu-gruppe + .menu-gruppe, .menu-bund{ padding-top:10px; border-top:1px solid var(--body); }
+.menu-titel{ padding:0 12px 4px; font-size:11px; font-weight:600; letter-spacing:.08em; line-height:16px; color:#9aa0a6; text-transform:uppercase; }
+.menu-gruppe a{ display:flex; align-items:center; justify-content:space-between; min-height:48px; padding:0 12px; border-radius:var(--r-md); color:#fff; text-decoration:none; font-size:17px; font-weight:600; }
+.menu-gruppe a:hover, .menu-gruppe a:focus-visible{ background:rgba(255,255,255,.08); }
+.menu-gruppe a span{ font-size:12px; font-weight:400; color:#c9cdd2; }
+.menu-gruppe.lille a{ min-height:44px; font-size:16px; font-weight:400; }
+.menu-bund{ display:flex; gap:10px; padding-top:12px; }
+.menu-bund .btn{ flex:1; }
+.menu-bund .lang{ margin:0; min-height:48px; padding:0 18px; border-radius:var(--r-xl); font-size:16px; font-weight:600; }
+
+/* sidefod som på alle sider (SPEC-ny-forside.md, Afklaret): logo, én linje, knappen til Om mig og kontakt, kolonnerne Trænere og Opslag og ©-linjen */
+.footer{ display:flex; flex-direction:column; gap:16px; padding:24px 28px 18px; background:var(--ink); color:var(--canvas-soft); border-radius:20px; font-size:14px; line-height:20px; }
+.footer-top{ display:flex; flex-wrap:wrap; justify-content:space-between; align-items:flex-start; gap:20px 48px; }
+.footer-about{ display:flex; flex-direction:column; align-items:flex-start; gap:10px; max-width:320px; }
 .footer-about p{ margin:0; color:#c9cdd2; }
-.footer-col{ display:flex; flex-direction:column; gap:10px; min-width:150px; }
-.footer-title{ margin:0 0 2px; font-size:12px; line-height:16px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:#9aa0a6; }
-.footer-col ul{ display:flex; flex-direction:column; gap:10px; margin:0; padding:0; list-style:none; }
+.footer .brand{ gap:10px; font-size:18px; }
+.footer .logo{ width:32px; height:32px; border-radius:8px; font-size:12px; }
+.footer-cols{ display:flex; gap:48px; }
+.footer-col{ display:flex; flex-direction:column; gap:4px; }
+.footer .footer-title{ margin:0 0 2px; font:600 11px/16px var(--sans); letter-spacing:.08em; text-transform:uppercase; color:#9aa0a6; }
+.footer-col ul{ display:flex; flex-direction:column; gap:4px; margin:0; padding:0; list-style:none; }
 .footer a{ color:#fff; text-decoration:underline; text-decoration-color:rgba(255,255,255,.35); text-underline-offset:4px; }
 .footer a:hover{ color:var(--primary-active); text-decoration-color:currentColor; }
 .footer a.brand{ text-decoration:none; }
-.footer a.footer-cta{ display:inline-flex; align-items:center; gap:8px; min-height:44px; padding:0 18px; border-radius:var(--r-pill);
-  background:var(--primary); color:var(--on-primary); font-weight:600; text-decoration:none; }
+.footer a.footer-cta{ display:inline-flex; align-items:center; gap:8px; min-height:36px; padding:0 14px; border-radius:var(--r-pill); background:var(--primary); color:var(--on-primary); font-weight:600; text-decoration:none; }
 .footer a.footer-cta:hover{ background:#ffb46e; color:var(--on-primary); }
 .footer a:focus-visible{ outline-color:var(--primary); }
-.legal{ padding-top:20px; border-top:1px solid var(--body); font-size:12px; line-height:16px; color:#9aa0a6; }
+.legal{ padding-top:12px; border-top:1px solid var(--body); font-size:12px; line-height:16px; color:#9aa0a6; }
+.legal-extra{ display:none; }
 
-@media (max-width:600px){
-  .page{ gap:32px; padding-top:16px; }
-  .hero{ padding:14px 16px 36px; gap:36px; }
-  .hero p{ font-size:17px; line-height:26px; }
-  .band, .footer{ padding:32px 20px; }
-  .band h2{ font-size:32px; line-height:1; }
+/* Mobiludgaven under 1000 px */
+@media (max-width:999px){
+  .kun-bred{ display:none !important; }
+  .kun-mobil{ display:revert !important; }
+  .page{ max-width:720px; padding:12px 16px 32px; gap:28px; }
+  .hero{ gap:26px; padding:14px 18px 30px; }
+  .nav .brand{ gap:10px; font-size:18px; }
+  .nav .logo{ width:36px; height:36px; border-radius:9px; font-size:13px; }
+  .nav-links{ display:none; }
+  .burger{ display:inline-flex; }
+  .hero-grid{ display:block; }
+  .demo{ display:none; }
+  .hero-body{ gap:16px; }
+  .eyebrow{ padding:5px 11px; font-size:14px; }
+  .hero h1{ font-size:40px; line-height:.98; }
+  .hero-body p{ font-size:17px; line-height:26px; }
+  .points{ gap:8px; font-size:15px; line-height:22px; }
+  .points svg{ width:18px; height:18px; }
+  .hero-btns{ align-self:stretch; margin-top:0; }
+  .hero-btns .btn{ flex:1; min-height:52px; border-radius:26px; font-size:17px; }
+  .tal{ grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
+  .tal > div{ padding:16px; border-radius:18px; }
+  .tal-tal{ font-size:28px; }
+  .tal-navn{ margin-top:4px; font-size:14px; line-height:20px; }
+  .afsnit{ gap:14px; }
+  h2.section{ font-size:30px; }
+  .tre, .tre.stor{ grid-template-columns:minmax(0,1fr); gap:14px; }
+  .path{ gap:6px; padding:18px; border-radius:20px; }
+  .tag{ padding:3px 9px; font-size:12px; line-height:18px; }
+  .path h3{ font-size:19px; line-height:25px; letter-spacing:0; }
+  .path p{ font-size:15px; line-height:22px; }
+  .videre{ margin-top:4px; }
+  .card{ flex-direction:row; align-items:center; gap:14px; padding:14px; border-radius:20px; }
+  .card:hover{ transform:none; box-shadow:inset 0 0 0 1px var(--ink); }
+  .art-lille.kun-mobil{ display:flex !important; }
+  .card-tekst{ gap:3px; min-width:0; }
+  .kicker.kun-mobil{ display:block !important; }
+  .card h3{ margin-top:0; font-size:18px; line-height:24px; letter-spacing:0; }
+  .card p{ font-size:14px; line-height:20px; }
+  .tre.lille{ gap:12px; }
+  .opslag{ gap:14px; padding:16px; border-radius:20px; }
+  .opslag-ikon{ width:44px; height:44px; border-radius:12px; font-size:13px; }
+  .opslag-tekst{ gap:0; }
+  .opslag h3{ font-size:17px; line-height:24px; }
+  .opslag p{ font-size:14px; line-height:20px; }
+
+  .footer{ gap:12px; padding:18px 18px 14px; }
+  .footer-top{ flex-direction:column; align-items:stretch; gap:12px; }
+  .footer-about{ flex-direction:row; align-items:center; justify-content:space-between; gap:12px; max-width:none; }
+  .footer-about p{ display:none; }
+  .footer .brand{ gap:8px; font-size:16px; }
+  .footer .logo{ width:30px; height:30px; font-size:11px; }
+  .footer a.footer-cta{ min-height:44px; font-size:13px; }
+  .footer-cta .pil{ display:none; }
+  .footer-cols{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
+  .footer-col, .footer-col ul{ gap:2px; }
+  .footer-col li a{ display:block; padding:3px 0; }
+  .legal{ padding-top:10px; }
+  .legal-extra{ display:inline; }
 }
+@media (min-width:1000px){ .menu, .menu-bag{ display:none !important; } }
+@media (prefers-reduced-motion:reduce){ html{ scroll-behavior:auto; } .card{ transition:none; } .card:hover{ transform:none; } }
 </style>
 </head>
 <body>
@@ -135,120 +257,171 @@ h2.section{ margin:0; font:800 clamp(28px,3.2vw,40px)/1 var(--display); letter-s
     <nav class="nav" aria-label="Hovedmenu" data-en-aria="Main menu">
       <a class="brand" href="/"><span class="logo" aria-hidden="true">7NT</span>Kontraktbridge</a>
       <div class="nav-links">
-        <a href="#traenere" aria-current="page" data-en="Trainers">Trænere</a>
+        <a href="#traenere" data-en="Trainers">Trænere</a>
+        <a href="#opslag" data-en="Reference">Opslag</a>
         <a href="/om-mig/" data-en="About me and contact">Om mig og kontakt</a>
         <button class="lang" id="langBtn" type="button" lang="en">English</button>
       </div>
+      <button class="burger" id="menuBtn" type="button" aria-label="Åbn menuen" data-en-aria="Open the menu" aria-expanded="false" aria-controls="menu"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f2f3f4" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
     </nav>
-    <div class="hero-body">
-      <span class="eyebrow" data-en="Free bridge training">Gratis bridgetræning</span>
-      <h1 id="titel" data-en="A little bridge every day">Lidt bridge hver dag</h1>
-      <p data-en="Trainers for bidding, distributions, point counting, declarer play and hand evaluation. They run in the browser, also on your phone, and need no login.">Trænere til meldinger, fordelinger, pointregnskab, spilføring og håndvurdering. De kører i browseren, også på mobilen, og kræver intet login.</p>
-      <a class="btn" href="#traenere" data-en="See the trainers">Se trænerne</a>
+    <div class="hero-grid">
+      <div class="hero-body">
+        <span class="eyebrow" data-en="Free bridge training · no login">Gratis bridgetræning · ingen login</span>
+        <h1 id="titel" data-en="Better bridge in 5 minutes a day">Bedre bridge på 5 minutter om dagen</h1>
+        <p class="kun-bred" data-en="Small trainers for bidding, distribution, point counting, declarer play and hand evaluation. They run in the browser on phone and computer – no installation.">Små trænere til meldinger, fordeling, pointregnskab, spilføring og håndvurdering. De kører i browseren på mobil og computer – uden installation.</p>
+        <p class="kun-mobil" data-en="Small trainers for bidding, distribution, point counting, declarer play and hand evaluation – right in the browser.">Små trænere til meldinger, fordeling, pointregnskab, spilføring og håndvurdering – direkte i browseren.</p>
+        <ul class="points">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#ff9f4a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg><span data-en="A session takes about 5 minutes">En session tager omkring 5 minutter</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#ff9f4a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg><span data-en="Answer and explanation straight away">Svar og forklaring med det samme</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#ff9f4a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg><span class="kun-bred" data-en="Free, no account, and your data stays with you">Gratis, uden konto, og dine data bliver hos dig</span><span class="kun-mobil" data-en="Free, no account">Gratis, uden konto</span></li>
+        </ul>
+        <div class="hero-btns">
+          <a class="btn" href="#start" data-en="Start training">Start træningen</a>
+          <a class="btn ghost kun-bred" href="#traenere" data-en="See all trainers">Se alle trænere</a>
+        </div>
+      </div>
+
+      <figure class="demo" aria-label="Eksempel fra Farvebehandling" data-en-aria="Example from Suit combinations">
+        <div class="demo-top"><b data-en="Suit combinations · Training">Farvebehandling · Træning</b><span data-en="3 of 8">3 af 8</span></div>
+        <div class="bord">
+          <span class="bord-n"><span class="bord-side" data-en="NORTH · DUMMY">NORD · BORDET</span><span class="bord-hand"><span class="su su-s">♠</span> 4 3 2</span></span>
+          <span class="bord-side bord-v" data-en="WEST">VEST</span>
+          <span class="bord-midt" data-en="K J 10 9 8 7&lt;br&gt;missing">K B 10 9 8 7<br>mangler</span>
+          <span class="bord-side bord-o" data-en="EAST">ØST</span>
+          <span class="bord-s"><span class="bord-hand" data-en="&lt;span class=&quot;su su-s&quot;&gt;♠&lt;/span&gt; A Q 6 5"><span class="su su-s">♠</span> E D 6 5</span><span class="bord-side" data-en="SOUTH · YOU">SYD · DIG</span></span>
+        </div>
+        <div class="demo-mål" data-en="Goal: 2 tricks">Mål: 2 stik</div>
+        <div class="demo-linjer">
+          <div class="demo-linje" data-en="&lt;b&gt;Line A&lt;/b&gt; · Low from dummy towards the queen (finesse)"><b>Linje A</b> · Lille fra bordet mod damen (kipning)</div>
+          <div class="demo-linje valgt" data-en="&lt;b&gt;Line B&lt;/b&gt; · The queen from hand; if West covers, low is played"><b>Linje B</b> · Damen fra hånden; dækker Vest, lægges der lille</div>
+        </div>
+        <div class="demo-valg"><span data-en="Chance of 2 tricks?">Chancen for 2 stik?</span><span>Under 50 %</span><span>50–75 %</span><span data-en="Over 75 %">Over 75 %</span></div>
+      </figure>
     </div>
   </header>
 
-  <section id="traenere" aria-labelledby="h-traenere">
-    <h2 class="section" id="h-traenere" data-en="The trainers">Trænerne</h2>
-    <p class="lead" data-en="Each trainer has its own daily practice, and you can start straight away.">Hver træner har sin egen daglige træning, og du går i gang med det samme.</p>
-    <div class="cards">
+  <section class="tal" aria-label="Kort om trænerne" data-en-aria="The trainers in short">
+    <div><div class="tal-tal">45</div><div class="tal-navn kun-bred" data-en="conventions to practise">konventioner at træne</div><div class="tal-navn kun-mobil" data-en="conventions">konventioner</div></div>
+    <div><div class="tal-tal">657</div><div class="tal-navn kun-bred" data-en="suit combinations, solved exactly">farvekombinationer, løst præcist</div><div class="tal-navn kun-mobil" data-en="suit combinations">farvekombinationer</div></div>
+    <div><div class="tal-tal">39</div><div class="tal-navn kun-bred" data-en="distribution patterns with frequency">fordelingsmønstre med hyppighed</div><div class="tal-navn kun-mobil" data-en="distribution patterns">fordelingsmønstre</div></div>
+    <div><div class="tal-tal">437</div><div class="tal-navn kun-bred" data-en="words in the bridge dictionary">ord i bridgeordbogen</div><div class="tal-navn kun-mobil" data-en="words in the dictionary">ord i ordbogen</div></div>
+  </section>
+
+  <section class="afsnit" id="start" aria-labelledby="h-start">
+    <div>
+      <h2 class="section" id="h-start" data-en="Where do I start?">Hvor starter jeg?</h2>
+      <p class="lead kun-bred" data-en="Three paths depending on where you are in bridge. All the trainers can be used straight away.">Tre veje efter, hvor du er i bridge. Alle trænere kan bruges med det samme.</p>
+    </div>
+    <div class="tre">
+      <a class="path" href="/fordelingstraeneren/#fordeling">
+        <span class="tag" data-en="New to bridge">Ny i bridge</span>
+        <h3 data-en="Distribution and Hand evaluation">Fordeling og Håndevaluering</h3>
+        <p class="kun-bred" data-en="The patterns of the hands and when there is game. The foundation for everything else.">Hændernes mønstre og hvornår der er udgang. Grundlaget for alt det andet.</p>
+        <p class="kun-mobil" data-en="The patterns of the hands and when there is game.">Hændernes mønstre og hvornår der er udgang.</p>
+        <span class="videre" data-en="Start with Distribution →">Start med Fordeling →</span>
+      </a>
+      <a class="path" href="/konventionstraener/">
+        <span class="tag" data-en="Club player">Klubspiller</span>
+        <h3 data-en="Convention trainer and Point count">Konventionstræner og Pointregnskab</h3>
+        <p class="kun-bred" data-en="The agreements with partner stick, and the honours are counted during play.">Aftalerne med makker sidder fast, og honnørerne tælles under spillet.</p>
+        <p class="kun-mobil" data-en="The agreements with partner and the honours during play.">Aftalerne med makker og honnørerne under spillet.</p>
+        <span class="videre" data-en="Start with the conventions →">Start med konventionerne →</span>
+      </a>
+      <a class="path" href="/fordelingstraeneren/#farvebehandling">
+        <span class="tag" data-en="Declarer">Spilfører</span>
+        <h3 data-en="Suit combinations and Analysis">Farvebehandling og Analyse</h3>
+        <p class="kun-bred" data-en="The best line in a suit, and its chance, worked out for all layouts.">Den bedste linje i en farve, og chancen for den, regnet ud for alle sidninger.</p>
+        <p class="kun-mobil" data-en="The best line in a suit and its chance.">Den bedste linje i en farve og chancen for den.</p>
+        <span class="videre" data-en="Start with Suit combinations →">Start med Farvebehandling →</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="afsnit" id="traenere" aria-labelledby="h-traenere">
+    <div>
+      <h2 class="section" id="h-traenere" data-en="All trainers">Alle trænere</h2>
+      <p class="lead kun-bred" data-en="Five trainers, each with its own daily practice. The whole card is a link.">Fem trænere med hver sin daglige træning. Hele kortet er et link.</p>
+    </div>
+    <div class="tre stor">
 
       <a class="card" href="/konventionstraener/">
-        <div class="art" aria-hidden="true">
-          <span class="bc">1NT</span><span class="bc">2<span class="su su-s">♣</span></span><span class="bc pas" data-en="pass">pas</span><span class="bc ask">?</span>
-        </div>
-        <div>
-          <span class="kicker" data-en="Bidding">Meldinger</span>
+        <div class="art kun-bred" aria-hidden="true"><span class="bc">1NT</span><span class="bc">2<span class="su su-s">♣</span></span><span class="bc pas" data-en="pass">pas</span></div>
+        <div class="art-lille kun-mobil" aria-hidden="true">2<span class="su su-s">♣</span></div>
+        <div class="card-tekst">
+          <div class="card-top kun-bred"><span class="kicker" data-en="Bidding">Meldinger</span><span class="badge mork" data-en="45 conventions">45 konventioner</span></div>
+          <span class="kicker kun-mobil" data-en="Bidding · 45 conventions">Meldinger · 45 konventioner</span>
           <h3 data-en="Convention trainer">Konventionstræner</h3>
-          <p data-en="The conventions with 8 random auctions at a time – as opener, responder or overcaller.">Konventionerne med 8 tilfældige meldeforløb ad gangen – som åbner, svarer eller indmelder.</p>
+          <p class="kun-bred" data-en="Eight random auctions at a time – as opener, responder or overcaller.">Otte tilfældige meldeforløb ad gangen – som åbner, svarer eller indmelder.</p>
+          <p class="kun-mobil" data-en="Eight random auctions at a time.">Otte tilfældige meldeforløb ad gangen.</p>
+          <span class="videre kun-bred" data-en="Open the trainer →">Åbn træneren →</span>
         </div>
-        <div class="meta"><span data-en="45 conventions">45 konventioner</span><span data-en="Open the trainer →">Åbn træneren →</span></div>
       </a>
 
-      <a class="card" href="/fordelingstraeneren/">
-        <div class="art" aria-hidden="true">
-          <span class="sky"><span>4<i style="height:56px"></i></span><span>4<i style="height:56px"></i></span><span>3<i style="height:42px"></i></span><span>2<i style="height:28px"></i></span></span>
-        </div>
-        <div>
-          <span class="kicker" data-en="Counting">Optælling</span>
+      <a class="card" href="/fordelingstraeneren/#fordeling">
+        <div class="art kun-bred" aria-hidden="true"><span class="sky"><span>4<i style="height:52px"></i></span><span>4<i style="height:52px"></i></span><span>3<i style="height:39px"></i></span><span>2<i style="height:26px"></i></span></span></div>
+        <div class="art-lille kun-mobil" aria-hidden="true"><span class="sky" style="gap:3px"><span><i style="width:10px;height:30px"></i></span><span><i style="width:10px;height:30px"></i></span><span><i style="width:10px;height:22px"></i></span><span><i style="width:10px;height:15px"></i></span></span></div>
+        <div class="card-tekst">
+          <div class="card-top kun-bred"><span class="kicker" data-en="Counting">Optælling</span><span class="badge orange" data-en="5 min a day">5 min om dagen</span></div>
+          <span class="kicker kun-mobil" data-en="Counting · 5 min a day">Optælling · 5 min om dagen</span>
           <h3 data-en="Distribution">Fordeling</h3>
-          <p data-en="The 39 patterns and how often they occur, so you count out hands faster. Five minutes a day.">De 39 mønstre og deres hyppighed, så du tæller hænderne ud hurtigere. Fem minutter om dagen.</p>
+          <p class="kun-bred" data-en="The 39 patterns and how often they occur, so hands are counted out faster.">De 39 mønstre og deres hyppighed, så hænderne tælles hurtigere ud.</p>
+          <p class="kun-mobil" data-en="The 39 patterns and how often they occur.">De 39 mønstre og deres hyppighed.</p>
+          <span class="videre kun-bred" data-en="Open the trainer →">Åbn træneren →</span>
         </div>
-        <div class="meta"><span data-en="In Fordelingstræneren">I Fordelingstræneren</span><span data-en="Open the trainer →">Åbn træneren →</span></div>
       </a>
 
-      <a class="card" href="/fordelingstraeneren/">
-        <div class="art" aria-hidden="true">
-          <span class="chip" data-en="A">E</span><span class="chip">K</span><span class="chip on" data-en="Q">D</span><span class="chip" data-en="J">B</span><span class="big" style="margin-left:6px">= 10</span>
-        </div>
-        <div>
-          <span class="kicker" data-en="Counting">Optælling</span>
+      <a class="card" href="/fordelingstraeneren/#pointregnskab">
+        <div class="art kun-bred" aria-hidden="true" style="gap:8px"><span class="chip" data-en="A">E</span><span class="chip">K</span><span class="chip on" data-en="Q">D</span><span class="big" style="margin-left:6px">= 9</span></div>
+        <div class="art-lille kun-mobil big" aria-hidden="true" style="font-size:20px">= 9</div>
+        <div class="card-tekst">
+          <div class="card-top kun-bred"><span class="kicker" data-en="Counting">Optælling</span></div>
+          <span class="kicker kun-mobil" data-en="Counting">Optælling</span>
           <h3 data-en="Point count">Pointregnskab</h3>
-          <p data-en="High-card points during play: who has shown what, and where are the missing honours?">Honnørpoint under spillet: hvem har vist hvad, og hvor sidder de manglende honnører?</p>
+          <p class="kun-bred" data-en="High-card points during play: who has shown what, and where are the missing honours?">Honnørpoint under spillet: hvem har vist hvad, og hvor sidder de manglende honnører?</p>
+          <p class="kun-mobil" data-en="Who has shown what, and where is the rest?">Hvem har vist hvad, og hvor sidder resten?</p>
+          <span class="videre kun-bred" data-en="Open the trainer →">Åbn træneren →</span>
         </div>
-        <div class="meta"><span data-en="In Fordelingstræneren">I Fordelingstræneren</span><span data-en="Open the trainer →">Åbn træneren →</span></div>
       </a>
 
-      <a class="card" href="/fordelingstraeneren/">
-        <div class="art diagram" aria-hidden="true">
+      <a class="card" href="/fordelingstraeneren/#farvebehandling">
+        <div class="art diagram kun-bred" aria-hidden="true">
           <span data-en="&lt;span class=&quot;su su-s&quot;&gt;♠&lt;/span&gt; J 4 3 2"><span class="su su-s">♠</span> B 4 3 2</span>
           <span class="compass">N · S</span>
           <span data-en="&lt;span class=&quot;su su-s&quot;&gt;♠&lt;/span&gt; A 10 6 5"><span class="su su-s">♠</span> E 10 6 5</span>
         </div>
-        <div>
-          <span class="kicker" data-en="Declarer play">Spilføring</span>
+        <div class="art-lille kun-mobil" aria-hidden="true" style="background:var(--table);color:var(--table-text);font-size:12px">N · S</div>
+        <div class="card-tekst">
+          <div class="card-top kun-bred"><span class="kicker" data-en="Declarer play">Spilføring</span><span class="badge mork" data-en="657 combinations">657 kombinationer</span></div>
+          <span class="kicker kun-mobil" data-en="Declarer play · 657 combinations">Spilføring · 657 kombinationer</span>
           <h3 data-en="Suit combinations">Farvebehandling</h3>
-          <p data-en="The line in one suit that gives the best chance of the tricks you need. 657 combinations.">Den linje i én farve, der giver størst chance for de stik, du skal bruge. 657 kombinationer.</p>
+          <p class="kun-bred" data-en="The line in one suit that gives the best chance of the tricks you need.">Den linje i én farve, der giver størst chance for de stik, du skal bruge.</p>
+          <p class="kun-mobil" data-en="The line with the best chance of your tricks.">Linjen med størst chance for dine stik.</p>
+          <span class="videre kun-bred" data-en="Open the trainer →">Åbn træneren →</span>
         </div>
-        <div class="meta"><span data-en="In Fordelingstræneren">I Fordelingstræneren</span><span data-en="Open the trainer →">Åbn træneren →</span></div>
       </a>
 
-      <a class="card" href="/fordelingstraeneren/">
-        <div class="art" aria-hidden="true" style="gap:14px">
-          <span class="big" style="font-size:44px">P 26</span><span class="pill-dark" data-en="Game">Udgang</span>
-        </div>
-        <div>
-          <span class="kicker" data-en="Hand evaluation">Vurdering</span>
+      <a class="card" href="/fordelingstraeneren/#haandevaluering">
+        <div class="art kun-bred" aria-hidden="true" style="gap:14px"><span class="big" style="font-size:42px">P 26</span><span class="pill-dark" data-en="Game">Udgang</span></div>
+        <div class="art-lille kun-mobil big" aria-hidden="true" style="font-size:20px">P 26</div>
+        <div class="card-tekst">
+          <div class="card-top kun-bred"><span class="kicker" data-en="Hand evaluation">Vurdering</span><span class="badge orange" data-en="Good for beginners">God til begyndere</span></div>
+          <span class="kicker kun-mobil" data-en="Hand evaluation · Good for beginners">Vurdering · God til begyndere</span>
           <h3 data-en="Hand evaluation">Håndevaluering</h3>
-          <p data-en="Hand evaluation with the P-model: your own and partner&#x27;s hand and the choice between part-score, game and slam.">Håndvurdering med P-modellen: din og makkers hånd og valget mellem delkontrakt, udgang og slem.</p>
+          <p class="kun-bred" data-en="The P-model: your own and partner&#x27;s hand and the choice between part-score, game and slam.">P-modellen: din og makkers hånd og valget mellem delkontrakt, udgang og slem.</p>
+          <p class="kun-mobil" data-en="Part-score, game or slam with the P-model.">Delkontrakt, udgang eller slem med P-modellen.</p>
+          <span class="videre kun-bred" data-en="Open the trainer →">Åbn træneren →</span>
         </div>
-        <div class="meta"><span data-en="In Fordelingstræneren">I Fordelingstræneren</span><span data-en="Open the trainer →">Åbn træneren →</span></div>
-      </a>
-
-      <a class="card" href="/fordelingstraeneren/#analyse">
-        <div class="art" aria-hidden="true" style="gap:14px">
-          <span class="big" style="font-size:44px" data-en="62.17 %">62,17 %</span><span class="pill-dark" data-en="5 tricks">5 stik</span>
-        </div>
-        <div>
-          <span class="kicker" data-en="Declarer play">Spilføring</span>
-          <h3 data-en="Analysis">Analyse</h3>
-          <p data-en="Look-up of any combination with the lines, the chances and the layouts – also with known cards, HCP limits and entries. With a guide to the calculation model.">Opslag af enhver kombination med linjerne, chancerne og sidningerne – også med kendte kort, hp-grænser og forbindelser. Med guide til regnemodellen.</p>
-        </div>
-        <div class="meta"><span data-en="In Fordelingstræneren">I Fordelingstræneren</span><span data-en="Open the analysis →">Åbn analysen →</span></div>
       </a>
 
     </div>
   </section>
 
-  <section class="band" aria-labelledby="h-saadan">
-    <h2 id="h-saadan" data-en="How it works">Sådan virker det</h2>
-    <p data-en="The trainers are small, self-contained programs that run in your browser.">Trænerne er små, selvstændige programmer, der kører i din browser.</p>
-    <div class="facts">
-      <div>
-        <span class="icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><path d="M10 17l5-5-5-5"/><path d="M15 12H3"/></svg></span>
-        <h3 data-en="Free and no login">Gratis og uden login</h3>
-        <p data-en="The trainers work straight away; there is no account to create.">Trænerne virker med det samme; der er ingen konto at oprette.</p>
-      </div>
-      <div>
-        <span class="icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 18h2"/></svg></span>
-        <h3 data-en="Made for your phone">Lavet til mobilen</h3>
-        <p data-en="The trainers work on your phone, and Fordelingstræneren can be installed as an app.">Trænerne virker på telefonen, og Fordelingstræneren kan installeres som en app.</p>
-      </div>
-      <div>
-        <span class="icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></span>
-        <h3 data-en="Your data stays with you">Dine data bliver hos dig</h3>
-        <p data-en="Progress and settings are saved only in your browser, not on a server.">Fremskridt og indstillinger gemmes kun i din browser, ikke på en server.</p>
-      </div>
+  <section class="afsnit" id="opslag" aria-labelledby="h-opslag">
+    <h2 class="section" id="h-opslag" data-en="Reference">Opslag</h2>
+    <div class="tre stor lille">
+      <a class="opslag" href="/fordelingstraeneren/#analyse"><span class="opslag-ikon" aria-hidden="true">62 %</span><span class="opslag-tekst"><h3 data-en="Analysis">Analyse</h3><p class="kun-bred" data-en="Lines, chances and layouts for any suit combination.">Linjer, chancer og sidninger for enhver farvekombination.</p><p class="kun-mobil" data-en="Lines, chances and layouts">Linjer, chancer og sidninger</p></span></a>
+      <a class="opslag" href="/ordbog/"><span class="opslag-ikon" aria-hidden="true" style="font-size:18px">Aa</span><span class="opslag-tekst"><h3 data-en="Bridge dictionary">Bridgeordbog</h3><p class="kun-bred" data-en="437 words with explanation, category and level.">437 ord med forklaring, kategori og niveau.</p><p class="kun-mobil" data-en="437 words with explanation">437 ord med forklaring</p></span></a>
+      <a class="opslag" href="/scoring/"><span class="opslag-ikon" aria-hidden="true">+620</span><span class="opslag-tekst"><h3 data-en="Scoring in bridge">Scoring i bridge</h3><p class="kun-bred" data-en="Points, imps, matchpoints and handicap – with calculators.">Point, imp, matchpoint og handicap – med beregnere.</p><p class="kun-mobil" data-en="Points, imps and matchpoints">Point, imp og matchpoint</p></span></a>
     </div>
   </section>
 
@@ -257,31 +430,61 @@ h2.section{ margin:0; font:800 clamp(28px,3.2vw,40px)/1 var(--display); letter-s
       <div class="footer-about">
         <a class="brand" href="/"><span class="logo" aria-hidden="true">7NT</span>Kontraktbridge</a>
         <p data-en="Free bridge training in the browser. Made by Frank Pedersen.">Gratis bridgetræning i browseren. Lavet af Frank Pedersen.</p>
-        <a class="footer-cta" href="/om-mig/" data-en="About me and contact &lt;span aria-hidden=&quot;true&quot;&gt;→&lt;/span&gt;">Om mig og kontakt <span aria-hidden="true">→</span></a>
+        <a class="footer-cta" href="/om-mig/" data-en="About me and contact &lt;span class=&quot;pil&quot; aria-hidden=&quot;true&quot;&gt;→&lt;/span&gt;">Om mig og kontakt <span class="pil" aria-hidden="true">→</span></a>
       </div>
-      <nav class="footer-col" aria-labelledby="footer-traenere">
-        <h2 class="footer-title" id="footer-traenere" data-en="Trainers">Trænere</h2>
-        <ul>
-          <li><a href="/konventionstraener/" data-en="Convention trainer">Konventionstræner</a></li>
-          <li><a href="/fordelingstraeneren/" data-en="Distribution">Fordeling</a></li>
-          <li><a href="/fordelingstraeneren/" data-en="Point count">Pointregnskab</a></li>
-          <li><a href="/fordelingstraeneren/" data-en="Suit combinations">Farvebehandling</a></li>
-          <li><a href="/fordelingstraeneren/" data-en="Hand evaluation">Håndevaluering</a></li>
-          <li><a href="/fordelingstraeneren/#analyse" data-en="Analysis">Analyse</a></li>
-        </ul>
-      </nav>
-      <nav class="footer-col" aria-labelledby="footer-opslag">
-        <h2 class="footer-title" id="footer-opslag" data-en="Reference">Opslag</h2>
-        <ul>
-          <li><a href="/ordbog/" data-en="Bridge dictionary">Bridgeordbog</a></li>
-          <li><a href="/scoring/" data-en="Scoring in bridge">Scoring i bridge</a></li>
-        </ul>
-      </nav>
+      <div class="footer-cols">
+        <nav class="footer-col" aria-labelledby="footer-traenere">
+          <h2 class="footer-title" id="footer-traenere" data-en="Trainers">Trænere</h2>
+          <ul>
+            <li><a href="/konventionstraener/" data-en="Convention trainer">Konventionstræner</a></li>
+            <li><a href="/fordelingstraeneren/#fordeling" data-en="Distribution">Fordeling</a></li>
+            <li><a href="/fordelingstraeneren/#pointregnskab" data-en="Point count">Pointregnskab</a></li>
+            <li><a href="/fordelingstraeneren/#farvebehandling" data-en="Suit combinations">Farvebehandling</a></li>
+            <li><a href="/fordelingstraeneren/#haandevaluering" data-en="Hand evaluation">Håndevaluering</a></li>
+          </ul>
+        </nav>
+        <nav class="footer-col" aria-labelledby="footer-opslag">
+          <h2 class="footer-title" id="footer-opslag" data-en="Reference">Opslag</h2>
+          <ul>
+            <li><a href="/fordelingstraeneren/#analyse" data-en="Analysis">Analyse</a></li>
+            <li><a href="/ordbog/" data-en="Bridge dictionary">Bridgeordbog</a></li>
+            <li><a href="/scoring/" data-en="Scoring in bridge">Scoring i bridge</a></li>
+          </ul>
+        </nav>
+      </div>
     </div>
-    <div class="legal">© 2026 Frank Pedersen</div>
+    <div class="legal">© 2026 Frank Pedersen<span class="legal-extra" data-en=" · Free bridge training in the browser"> · Gratis bridgetræning i browseren</span></div>
   </footer>
 
 </div>
+
+<!-- Mobilmenuen under 1000 px: den folder sig ud i det mørke bånd, og resten af siden mørklægges. -->
+<div class="menu-bag" id="menuBag" hidden></div>
+<div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Menu" hidden>
+  <div class="menu-top">
+    <a class="brand" href="/"><span class="logo" aria-hidden="true">7NT</span>Kontraktbridge</a>
+    <button class="menu-luk" id="menuLuk" type="button" aria-label="Luk menuen" data-en-aria="Close the menu"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1a1a1a" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  </div>
+  <nav class="menu-gruppe" aria-labelledby="menu-traenere">
+    <div class="menu-titel" id="menu-traenere" data-en="Trainers">Trænere</div>
+    <a href="/konventionstraener/"><b style="font-weight:600" data-en="Convention trainer">Konventionstræner</b><span data-en="Bidding">Meldinger</span></a>
+    <a href="/fordelingstraeneren/#fordeling"><b style="font-weight:600" data-en="Distribution">Fordeling</b><span data-en="Counting">Optælling</span></a>
+    <a href="/fordelingstraeneren/#pointregnskab"><b style="font-weight:600" data-en="Point count">Pointregnskab</b><span data-en="Counting">Optælling</span></a>
+    <a href="/fordelingstraeneren/#farvebehandling"><b style="font-weight:600" data-en="Suit combinations">Farvebehandling</b><span data-en="Declarer play">Spilføring</span></a>
+    <a href="/fordelingstraeneren/#haandevaluering"><b style="font-weight:600" data-en="Hand evaluation">Håndevaluering</b><span data-en="Hand evaluation">Vurdering</span></a>
+  </nav>
+  <nav class="menu-gruppe lille" aria-labelledby="menu-opslag">
+    <div class="menu-titel" id="menu-opslag" data-en="Reference">Opslag</div>
+    <a href="/fordelingstraeneren/#analyse" data-en="Analysis">Analyse</a>
+    <a href="/ordbog/" data-en="Bridge dictionary">Bridgeordbog</a>
+    <a href="/scoring/" data-en="Scoring in bridge">Scoring i bridge</a>
+  </nav>
+  <div class="menu-bund">
+    <a class="btn" href="/om-mig/" data-en="About me and contact">Om mig og kontakt</a>
+    <button class="lang" id="langBtnMenu" type="button" lang="en">English</button>
+  </div>
+</div>
+
 <script>
 /* Sprog: dansk som standard, engelsk med knappen i menuen. Valget gemmes under 'lang' som i Konventionstræneren
    (samme domæne), og ?lang=en eller ?lang=da i adressen virker også. Elementer med data-en får den engelske tekst. */
@@ -297,15 +500,52 @@ h2.section{ margin:0; font:800 clamp(28px,3.2vw,40px)/1 var(--display); letter-s
     document.querySelectorAll('[data-en]').forEach(function (el) { el.innerHTML = el.getAttribute('data-en'); });
     document.querySelectorAll('[data-en-aria]').forEach(function (el) { el.setAttribute('aria-label', el.getAttribute('data-en-aria')); });
   }
-  var btn = document.getElementById('langBtn');
-  btn.textContent = EN ? 'Dansk' : 'English';
-  btn.setAttribute('lang', EN ? 'da' : 'en');
-  btn.addEventListener('click', function () {
-    var u = new URL(location.href);
-    u.searchParams.delete('lang');
-    try { localStorage.setItem('lang', EN ? 'da' : 'en'); } catch (e) { u.searchParams.set('lang', EN ? 'da' : 'en'); }
-    location.href = u.toString();
+  ['langBtn', 'langBtnMenu'].forEach(function (id) {
+    var btn = document.getElementById(id);
+    btn.textContent = EN ? 'Dansk' : 'English';
+    btn.setAttribute('lang', EN ? 'da' : 'en');
+    btn.addEventListener('click', function () {
+      var u = new URL(location.href);
+      u.searchParams.delete('lang');
+      try { localStorage.setItem('lang', EN ? 'da' : 'en'); } catch (e) { u.searchParams.set('lang', EN ? 'da' : 'en'); }
+      location.href = u.toString();
+    });
   });
+})();
+
+/* Mobilmenuen (SPEC-ny-forside.md): ☰ åbner, og ✕, Esc og et tryk uden for lukker. aria-expanded og fokus følger med. */
+(function () {
+  var knap = document.getElementById('menuBtn');
+  var luk = document.getElementById('menuLuk');
+  var menu = document.getElementById('menu');
+  var bag = document.getElementById('menuBag');
+  function sæt(åben) {
+    menu.hidden = !åben;
+    bag.hidden = !åben;
+    knap.setAttribute('aria-expanded', String(åben));
+    document.documentElement.style.overflow = åben ? 'hidden' : '';
+  }
+  function åbn() { sæt(true); luk.focus(); }
+  function lukMenu() { if (menu.hidden) return; sæt(false); knap.focus(); }
+  knap.addEventListener('click', åbn);
+  luk.addEventListener('click', lukMenu);
+  bag.addEventListener('click', lukMenu);
+  menu.addEventListener('click', function (e) {
+    var a = e.target.closest('a');
+    if (a && a.getAttribute('href').charAt(0) === '#') lukMenu();
+  });
+  document.addEventListener('keydown', function (e) {
+    if (menu.hidden) return;
+    if (e.key === 'Escape') { lukMenu(); return; }
+    if (e.key !== 'Tab') return;
+    // Fokus bliver i menuen, så længe den er åben.
+    var alle = menu.querySelectorAll('a, button');
+    var først = alle[0], sidst = alle[alle.length - 1];
+    if (e.shiftKey && document.activeElement === først) { e.preventDefault(); sidst.focus(); }
+    else if (!e.shiftKey && document.activeElement === sidst) { e.preventDefault(); først.focus(); }
+  });
+  // Bliver vinduet bredt, er der ingen mobilmenu.
+  if (window.matchMedia) window.matchMedia('(min-width:1000px)').addEventListener('change', function (e) { if (e.matches && !menu.hidden) sæt(false); });
 })();
 </script>
 </body>

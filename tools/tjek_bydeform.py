@@ -33,6 +33,11 @@ kontrollér vær bliv gør glem sørg gennemgå lån sælg udskriv
 # dækker en tekst med et indsat navn eller tal.
 UNDTAGELSER = [
     # Knapper og links
+    'Start træningen',
+    'Se alle trænere',
+    re.compile(r'^Start med .+ →$'),
+    'Åbn menuen',
+    'Luk menuen',
     'Se trænerne',
     'Se trænerne →',
     'Åbn træneren →',
@@ -54,6 +59,7 @@ UNDTAGELSER = [
 
 # Sætninger, der begynder med et af ordene, men ikke er bydeform.
 FALSKE_TRÆF = [
+    re.compile(r'^Svar og forklaring med det samme\b'),  # forsidens punkt: navneordet svar
     re.compile(r'^Spil i kampen\b'),  # scoringens tabel: antal spil
     # Ordbogens forklaringer på Overføring og Redobling (Franks tekst, SPEC-ordbog-kategorier): "svar" er navneord
     re.compile(r'^Svar på 1NT eller 2NT, hvor man melder\b'),

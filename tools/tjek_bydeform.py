@@ -44,6 +44,9 @@ UNDTAGELSER = [
     'Åbn analysen →',
     'Åbn →',
     'Send besked',
+    # Linjen over privatlivsteksten på Om mig (SPEC-om-mig.md, Franks valg 5. november 2026)
+    'Se privatlivspolitik',
+    'Skjul privatlivspolitik',
     'Regn en score',
     'Tilføj score',
     'Vis for ØV',

@@ -1,6 +1,8 @@
-// Accepttest i en rigtig browser (SPEC-privatlivstekst.md): privatlivsteksten på Om mig står synligt under formularens
-// svarlinje, har mindst 4,5:1 i kontrast mod den mørke boks, og siden ruller ikke vandret ved 390 px. Kræver Node 22+
-// og Chrome eller Edge.
+// Accepttest i en rigtig browser (SPEC-privatlivstekst.md): privatlivsteksten på Om mig står under formularens
+// svarlinje, har mindst 4,5:1 i kontrast mod sin baggrund, og siden ruller ikke vandret ved 390 px. Fra 5. november 2026
+// står teksten foldet sammen i et <details> (SPEC-om-mig.md, Kortspil og privatlivsteksten): linjen står synligt under
+// svarlinjen, og testen folder teksten ud, før den måler. Det øvrige om foldningen tjekker tools/tjek_om_mig.mjs.
+// Kræver Node 22+ og Chrome eller Edge.
 //
 //   node tools/tjek_privatliv.mjs
 import { spawn } from 'node:child_process';
@@ -54,6 +56,12 @@ const lum = (rgb) => {
   return 0.2126 * r + 0.7152 * g + 0.0722 * b;
 };
 const kontrast = (a, b) => { const [x, y] = [lum(a), lum(b)].sort((p, q) => q - p); return (x + 0.05) / (y + 0.05); };
+// En halvgennemsigtig baggrund "rgba(r, g, b, a)" lagt oven på en fast farve
+const læg = (top, bund) => {
+  const t = top.match(/[\d.]+/g).map(Number), b = bund.match(/[\d.]+/g).map(Number);
+  const a = t.length > 3 ? t[3] : 1;
+  return `rgb(${[0, 1, 2].map((i) => Math.round(t[i] * a + b[i] * (1 - a))).join(', ')})`;
+};
 
 try {
   await json('/json/version');
@@ -79,23 +87,32 @@ try {
     await kør(`document.getElementById('kontakt-svar').textContent = 'Tak for din besked. Den er sendt.';`);
 
     const r = await kør(`
-      const p = document.querySelector('.om-kontakt .om-privat');
+      const p = document.querySelector('.om-kontakt details.om-privatliv > .om-privat');
       if (!p) return null;
       const boks = document.querySelector('.om-kontakt');
       const svar = document.getElementById('kontakt-svar').getBoundingClientRect();
+      const detaljer = p.closest('details'), linje = detaljer.querySelector('summary');
+      const l = linje.getBoundingClientRect();
+      // Et lukket <details> skjuler indholdet med content-visibility, så kun checkVisibility() siger, om teksten ses
+      const lukket = !detaljer.open && !p.checkVisibility();
+      linje.click();
+      await new Promise((ok) => requestAnimationFrame(() => requestAnimationFrame(ok)));
       const b = p.getBoundingClientRect();
       const s = getComputedStyle(p);
       const fed = getComputedStyle(p.querySelector('strong'));
       const d = document.documentElement;
-      return { synlig: b.height > 0 && s.display !== 'none' && s.visibility !== 'hidden', under: b.top >= svar.bottom,
-               farve: s.color, fedFarve: fed.color, fedVægt: fed.fontWeight, bund: getComputedStyle(boks).backgroundColor,
+      return { lukket, linje: l.height > 0 && l.top >= svar.bottom,
+               synlig: b.height > 0 && s.display !== 'none' && s.visibility !== 'hidden', under: b.top >= l.bottom,
+               farve: s.color, fedFarve: fed.color, fedVægt: fed.fontWeight, bund: getComputedStyle(boks).backgroundColor, egen: s.backgroundColor,
                størrelse: s.fontSize, tekst: p.textContent.replace(/\\s+/g, ' ').trim(), scroll: d.scrollWidth, klient: d.clientWidth };
     `);
     if (!r) { tjek(false, `${bredde} px: privatlivsteksten findes`); ws.close(); continue; }
-    tjek(r.synlig && r.under, `${bredde} px: teksten står synligt under formularens svarlinje`);
+    tjek(r.lukket && r.linje, `${bredde} px: teksten står foldet sammen, og linjen står synligt under formularens svarlinje`);
+    tjek(r.synlig && r.under, `${bredde} px: foldet ud står teksten synligt under linjen`);
     tjek(r.tekst.startsWith('Om dine oplysninger.') && Number(r.fedVægt) >= 600, `${bredde} px: "Om dine oplysninger." står med fed`);
-    const k = kontrast(r.farve, r.bund), kf = kontrast(r.fedFarve, r.bund);
-    tjek(k >= 4.5 && kf >= 4.5, `${bredde} px: kontrast ${k.toFixed(1)}:1 (fed ${kf.toFixed(1)}:1) i ${r.størrelse}`, `${r.farve} på ${r.bund}`);
+    const bund = læg(r.egen, r.bund);
+    const k = kontrast(r.farve, bund), kf = kontrast(r.fedFarve, bund);
+    tjek(k >= 4.5 && kf >= 4.5, `${bredde} px: kontrast ${k.toFixed(1)}:1 (fed ${kf.toFixed(1)}:1) i ${r.størrelse}`, `${r.farve} på ${bund}`);
     tjek(r.scroll <= r.klient, `${bredde} px: ingen vandret rulning (${r.scroll}/${r.klient} px)`);
     ws.close();
     await json(`/json/close/${fane.id}`).catch(() => {});

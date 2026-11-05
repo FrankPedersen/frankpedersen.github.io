@@ -166,9 +166,8 @@ async function fane(bredde, { js = true } = {}) {
       const { attributes } = await s('DOM.getAttributes', { nodeId: id });
       return attributes.includes('open');
     },
-    async vist(vælger) {
-      try { await s('DOM.getBoxModel', { nodeId: await node(vælger) }); return true; } catch { return false; }
-    },
+    // Runtime.evaluate virker også, når sidens egne scripts er slået fra
+    vist: (vælger) => kør(`const e = document.querySelector(${JSON.stringify(vælger)}); return !!e && e.checkVisibility();`),
     async udsnit(vælger, fil) {
       const r = await kør(`const e = document.querySelector(${JSON.stringify(vælger)}); const k = e.getBoundingClientRect();
         return { x: Math.max(0, k.left - 12), y: Math.max(0, k.top + scrollY - 12), w: Math.min(document.documentElement.clientWidth, k.width + 24), h: k.height + 24 };`);
@@ -195,7 +194,8 @@ const TILSTAND = `
     linje: sum.innerText.replace(/\\s+/g, ' ').trim(),
     efterForm: !!(form.compareDocumentPosition(d) & Node.DOCUMENT_POSITION_FOLLOWING),
     underSvar: d.getBoundingClientRect().top >= svar.getBoundingClientRect().bottom - 0.5,
-    tekstVist: !!p && p.getClientRects().length > 0 && p.getBoundingClientRect().height > 0,
+    // Et lukket <details> skjuler indholdet med content-visibility, så kun checkVisibility() siger, om teksten ses
+    tekstVist: !!p && p.checkVisibility() && p.getBoundingClientRect().height > 0,
     tekstUnderLinje: !!p && p.getBoundingClientRect().top >= sum.getBoundingClientRect().bottom - 0.5,
     hjørne: ps && ps.borderTopLeftRadius + ' ' + ps.borderBottomRightRadius,
     baggrund: ps && ps.backgroundColor,
@@ -307,6 +307,7 @@ try {
   // Uden JavaScript: siden er på dansk, teksten er lukket, og et klik folder den ud og sammen
   const u = await fane(390, { js: false });
   await u.gå(`${nu.url}om-mig/`);
+  tjek(await u.kør(`return document.getElementById('kontaktform').hidden`), 'uden JavaScript: sidens scripts kører ikke (formularen står skjult)');
   if (await u.node('details.om-privatliv > summary')) {
     tjek((await u.åben()) === false && !(await u.vist('details.om-privatliv > p.om-privat')), 'uden JavaScript: teksten er lukket ved start');
     await u.klik('details.om-privatliv > summary');

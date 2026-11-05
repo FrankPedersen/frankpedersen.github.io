@@ -90,8 +90,10 @@ async function fane() {
     },
     // Skrifttyperne, Chrome tegner elementet med, som { familie, egen } (egen: fra sitet, ikke fra systemet)
     async skrifter(selector) {
+      // Forsiden har en bred udgave og en mobiludgave side om side, så det første synlige element tjekkes.
+      await send('Runtime.evaluate', { expression: `(() => { document.querySelector('[data-tjek-skrift]')?.removeAttribute('data-tjek-skrift'); [...document.querySelectorAll(${JSON.stringify(selector)})].find((e) => e.getClientRects().length)?.setAttribute('data-tjek-skrift', ''); })()` });
       const doc = await send('DOM.getDocument', { depth: -1 });
-      const q = await send('DOM.querySelector', { nodeId: doc.result.root.nodeId, selector });
+      const q = await send('DOM.querySelector', { nodeId: doc.result.root.nodeId, selector: '[data-tjek-skrift]' });
       if (!q.result?.nodeId) return [];
       const f = await send('CSS.getPlatformFontsForNode', { nodeId: q.result.nodeId });
       return (f.result?.fonts ?? []).map((x) => ({ familie: x.familyName, egen: x.isCustomFont }));
@@ -102,7 +104,7 @@ async function fane() {
 
 // Hver sides elementer og den skrifttype, de skal tegnes med
 const SIDER = [
-  ['/', { h1: 'Manrope', '.hero-body p': 'Inter', '.card .art .su': 'Noto Sans Symbols 2', '.footer-about p': 'Inter' }],
+  ['/', { h1: 'Manrope', '.hero-body p': 'Inter', '.card .su': 'Noto Sans Symbols 2', '.footer-col a': 'Inter' }],
   ['/om-mig/', { h1: 'Manrope', '.om-lead': 'Inter', '.om-kontakt h2': 'Manrope', '.om-felt label': 'Inter' }],
   ['/ordbog/', { h1: 'Manrope', '.ord-lead': 'Inter', '#kipning .def': 'Inter', '[id="1430-fourteenthirty"] .def': 'Inter',
     '.entry .meta': 'Inter' }],

@@ -399,29 +399,46 @@ a:focus-visible, button:focus-visible, input:focus-visible, summary:focus-visibl
 .idx ul{ columns:2 260px; gap:32px; margin:16px 0 0; padding:0; list-style:none; font-size:15px; line-height:24px; overflow-wrap:anywhere; }
 .idx li{ break-inside:avoid; }
 
-/* sidefod som på alle sider (SPEC-om-mig.md og SPEC-sprog-og-ordbog.md) */
-.footer{ display:flex; flex-direction:column; gap:28px; padding:40px 32px; background:var(--ink); color:var(--canvas-soft); border-radius:var(--r-xl); font-size:15px; line-height:22px; }
-.footer-top{ display:flex; flex-wrap:wrap; justify-content:space-between; gap:32px 56px; }
-.footer-about{ display:flex; flex-direction:column; align-items:flex-start; gap:12px; max-width:340px; }
-.footer-about p{ margin:0; color:var(--soft-text); }
-.footer-col{ display:flex; flex-direction:column; gap:10px; min-width:150px; }
-.footer .footer-title{ margin:0 0 2px; font:600 12px/16px var(--sans); letter-spacing:.08em; text-transform:uppercase; color:var(--grey); }
-.footer-col ul{ display:flex; flex-direction:column; gap:10px; margin:0; padding:0; list-style:none; }
+/* sidefod som på alle sider (SPEC-ny-forside.md, Afklaret): logo, én linje, knappen til Om mig og kontakt, kolonnerne Trænere og Opslag og ©-linjen */
+.footer{ display:flex; flex-direction:column; gap:16px; padding:24px 28px 18px; background:var(--ink); color:var(--canvas-soft); border-radius:20px; font-size:14px; line-height:20px; }
+.footer-top{ display:flex; flex-wrap:wrap; justify-content:space-between; align-items:flex-start; gap:20px 48px; }
+.footer-about{ display:flex; flex-direction:column; align-items:flex-start; gap:10px; max-width:320px; }
+.footer-about p{ margin:0; color:#c9cdd2; }
+.footer .brand{ gap:10px; font-size:18px; }
+.footer .logo{ width:32px; height:32px; border-radius:8px; font-size:12px; }
+.footer-cols{ display:flex; gap:48px; }
+.footer-col{ display:flex; flex-direction:column; gap:4px; }
+.footer .footer-title{ margin:0 0 2px; font:600 11px/16px var(--sans); letter-spacing:.08em; text-transform:uppercase; color:#9aa0a6; }
+.footer-col ul{ display:flex; flex-direction:column; gap:4px; margin:0; padding:0; list-style:none; }
 .footer a{ color:#fff; text-decoration:underline; text-decoration-color:rgba(255,255,255,.35); text-underline-offset:4px; }
 .footer a:hover{ color:var(--primary-active); text-decoration-color:currentColor; }
 .footer a.brand{ text-decoration:none; }
-.footer a.footer-cta{ display:inline-flex; align-items:center; gap:8px; min-height:44px; padding:0 18px; border-radius:var(--r-pill);
-  background:var(--primary); color:var(--on-primary); font-weight:600; text-decoration:none; }
+.footer a.footer-cta{ display:inline-flex; align-items:center; gap:8px; min-height:36px; padding:0 14px; border-radius:var(--r-pill); background:var(--primary); color:var(--on-primary); font-weight:600; text-decoration:none; }
 .footer a.footer-cta:hover{ background:#ffb46e; color:var(--on-primary); }
 .footer a:focus-visible{ outline-color:var(--primary); }
-.legal{ padding-top:20px; border-top:1px solid var(--body); font-size:12px; line-height:16px; color:var(--grey); }
+.legal{ padding-top:12px; border-top:1px solid var(--body); font-size:12px; line-height:16px; color:#9aa0a6; }
+.legal-extra{ display:none; }
+@media (max-width:999px){
+  .footer{ gap:12px; padding:18px 18px 14px; }
+  .footer-top{ flex-direction:column; align-items:stretch; gap:12px; }
+  .footer-about{ flex-direction:row; align-items:center; justify-content:space-between; gap:12px; max-width:none; }
+  .footer-about p{ display:none; }
+  .footer .brand{ gap:8px; font-size:16px; }
+  .footer .logo{ width:30px; height:30px; font-size:11px; }
+  .footer a.footer-cta{ min-height:44px; font-size:13px; }
+  .footer-cta .pil{ display:none; }
+  .footer-cols{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
+  .footer-col, .footer-col ul{ gap:2px; }
+  .footer-col li a{ display:block; padding:3px 0; }
+  .legal{ padding-top:10px; }
+  .legal-extra{ display:inline; }
+}
 
 @media (max-width:760px){
   .ord{ padding-top:32px; gap:32px; }
   .ord-lead{ font-size:17px; line-height:27px; }
   .tools{ padding:20px 16px; }
   .entry, .idx{ padding:18px 16px; }
-  .footer{ padding:28px 20px; }
 }
 </style>
 </head>
@@ -479,28 +496,30 @@ a:focus-visible, button:focus-visible, input:focus-visible, summary:focus-visibl
       <div class="footer-about">
         <a class="brand" href="/"><span class="logo" aria-hidden="true">7NT</span>Kontraktbridge</a>
         <p data-en="Free bridge training in the browser. Made by Frank Pedersen.">Gratis bridgetræning i browseren. Lavet af Frank Pedersen.</p>
-        <a class="footer-cta" href="/om-mig/" data-en="About me and contact &lt;span aria-hidden=&quot;true&quot;&gt;→&lt;/span&gt;">Om mig og kontakt <span aria-hidden="true">→</span></a>
+        <a class="footer-cta" href="/om-mig/" data-en="About me and contact &lt;span class=&quot;pil&quot; aria-hidden=&quot;true&quot;&gt;→&lt;/span&gt;">Om mig og kontakt <span class="pil" aria-hidden="true">→</span></a>
       </div>
-      <nav class="footer-col" aria-labelledby="footer-traenere">
-        <h2 class="footer-title" id="footer-traenere" data-en="Trainers">Trænere</h2>
-        <ul>
-          <li><a href="/konventionstraener/" data-en="Convention trainer">Konventionstræner</a></li>
-          <li><a href="/fordelingstraeneren/" data-en="Distribution">Fordeling</a></li>
-          <li><a href="/fordelingstraeneren/" data-en="Point count">Pointregnskab</a></li>
-          <li><a href="/fordelingstraeneren/" data-en="Suit combinations">Farvebehandling</a></li>
-          <li><a href="/fordelingstraeneren/" data-en="Hand evaluation">Håndevaluering</a></li>
-          <li><a href="/fordelingstraeneren/#analyse" data-en="Analysis">Analyse</a></li>
-        </ul>
-      </nav>
-      <nav class="footer-col" aria-labelledby="footer-opslag">
-        <h2 class="footer-title" id="footer-opslag" data-en="Reference">Opslag</h2>
-        <ul>
-          <li><a href="/ordbog/" data-en="Bridge dictionary">Bridgeordbog</a></li>
-          <li><a href="/scoring/" data-en="Scoring in bridge">Scoring i bridge</a></li>
-        </ul>
-      </nav>
+      <div class="footer-cols">
+        <nav class="footer-col" aria-labelledby="footer-traenere">
+          <h2 class="footer-title" id="footer-traenere" data-en="Trainers">Trænere</h2>
+          <ul>
+            <li><a href="/konventionstraener/" data-en="Convention trainer">Konventionstræner</a></li>
+            <li><a href="/fordelingstraeneren/#fordeling" data-en="Distribution">Fordeling</a></li>
+            <li><a href="/fordelingstraeneren/#pointregnskab" data-en="Point count">Pointregnskab</a></li>
+            <li><a href="/fordelingstraeneren/#farvebehandling" data-en="Suit combinations">Farvebehandling</a></li>
+            <li><a href="/fordelingstraeneren/#haandevaluering" data-en="Hand evaluation">Håndevaluering</a></li>
+          </ul>
+        </nav>
+        <nav class="footer-col" aria-labelledby="footer-opslag">
+          <h2 class="footer-title" id="footer-opslag" data-en="Reference">Opslag</h2>
+          <ul>
+            <li><a href="/fordelingstraeneren/#analyse" data-en="Analysis">Analyse</a></li>
+            <li><a href="/ordbog/" data-en="Bridge dictionary">Bridgeordbog</a></li>
+            <li><a href="/scoring/" data-en="Scoring in bridge">Scoring i bridge</a></li>
+          </ul>
+        </nav>
+      </div>
     </div>
-    <div class="legal">© 2026 Frank Pedersen</div>
+    <div class="legal">© 2026 Frank Pedersen<span class="legal-extra" data-en=" · Free bridge training in the browser"> · Gratis bridgetræning i browseren</span></div>
   </footer>
 </main>
 

@@ -372,12 +372,14 @@ class Bygningen(unittest.TestCase):
 class Sidefoden(unittest.TestCase):
     def kolonne(self, sti):
         html = (ROD / sti).read_text(encoding='utf-8')
-        trænere = html.find('>Trænere</h2>')
-        opslag = html.find('>Opslag</h2>')
+        # Sidefoden står sidst; forsiden har også et afsnit, der hedder Opslag.
+        trænere = html.rfind('>Trænere</h2>')
+        opslag = html.rfind('>Opslag</h2>')
         self.assertGreater(trænere, 0, sti)
         self.assertGreater(opslag, trænere, f'{sti}: Opslag skal stå efter Trænere')
         rest = html[opslag:html.find('</nav>', opslag)]
         self.assertRegex(rest, r'<a href="/ordbog/"[^>]*>Bridgeordbog</a>', sti)
+        self.assertRegex(rest, r'<a href="/fordelingstraeneren/#analyse"[^>]*>Analyse</a>', sti)
         return html[html.rfind('<h2', 0, opslag):html.find('</nav>', opslag)]
 
     def test_forsiden_og_ordbogen_paa_dansk_og_engelsk(self):

@@ -2,11 +2,13 @@
 // Kasino og Es-makker whist linker til lobbyen, og privatlivsteksten står foldet sammen under formularen i et
 // <details> med et skjold, "Se privatlivspolitik" og en pil. Testen klikker, bruger tastaturet, læser browserens
 // tilgængelighedstræ, prøver siden uden JavaScript og sammenligner teksten med tagget, så den er uændret. Hver side
-// åbnes i sin egen browserkontekst med tom localStorage. Kræver Node 22+, git og Chrome eller Edge.
+// åbnes i sin egen browserkontekst med tom localStorage. Med --live åbnes siden på www.kontraktbridge.dk; siden før
+// kommer stadig fra tagget (SPEC-om-mig-live.md). Kræver Node 22+, git og Chrome eller Edge.
 //
-//   node tools/tjek_om_mig.mjs                    tjekker
+//   node tools/tjek_om_mig.mjs                    før fletning: siden fra arbejdsmappen
+//   node tools/tjek_om_mig.mjs --live             efter en udgivelse: siden fra www.kontraktbridge.dk
 //   node tools/tjek_om_mig.mjs --billeder=mappe   gemmer også kortene og kontaktkortet lukket og åbent, på dansk og
-//                                                 engelsk ved 1280, 390 og 320 px
+//                                                 engelsk ved 1280, 390 og 320 px (også med --live)
 import { spawn, spawnSync } from 'node:child_process';
 import { existsSync, mkdirSync, mkdtempSync, readFileSync, rmSync, statSync, writeFileSync } from 'node:fs';
 import { createServer } from 'node:http';
@@ -19,6 +21,8 @@ const TAG = 'v-foer-om-mig-kortspil';
 const LOBBY = 'https://kortspil-api-20261101-v2.azurewebsites.net/lobby/';
 const ACCENT = 'rgb(255, 159, 74)';
 const BILLEDER = process.argv.find((a) => a.startsWith('--billeder='))?.slice('--billeder='.length);
+const LIVE = process.argv.includes('--live');
+const SITE = 'https://www.kontraktbridge.dk/';
 const TEKST = {
   da: { se: 'Se privatlivspolitik', skjul: 'Skjul privatlivspolitik', lobby: 'Til lobbyen →', bridge: 'Se trænerne →', start: 'Om dine oplysninger.' },
   en: { se: 'View privacy policy', skjul: 'Hide privacy policy', lobby: 'To the lobby →', bridge: 'See the trainers →', start: 'About your information.' },
@@ -59,8 +63,10 @@ async function webserver(tag) {
   await new Promise((r) => s.listen(0, '127.0.0.1', r));
   return { s, url: `http://127.0.0.1:${s.address().port}/` };
 }
-const nu = await webserver();
+// Siden nu: arbejdsmappen eller, med --live, sitet. Siden før kommer altid fra tagget.
+const nu = LIVE ? { s: { close() {} }, url: SITE } : await webserver();
 const før = await webserver(TAG);
+if (LIVE) console.log(`Siden nu: ${SITE} (GitHub Pages kan være op til 10 minutter om at vise den nye udgave)`);
 
 const port = 9700 + Math.floor(Math.random() * 90);
 const profil = mkdtempSync(join(tmpdir(), 'tjek-om-mig-'));
@@ -209,9 +215,10 @@ const TILSTAND = `
     ud: rod.scrollWidth - rod.clientWidth,
   };
 `;
-// Det, siden henter udefra (stylesheets, scripts, billeder), uden sidens egne filer
-const UDEFRA = `return [...document.querySelectorAll('link[href], script[src], img[src], iframe[src], use[href], image[href]')]
-  .map((e) => new URL(e.getAttribute('href') || e.getAttribute('src'), location.href)).filter((u) => u.origin !== location.origin).map(String).sort();`;
+// Det, browseren har hentet udefra, uden sidens egne filer (SPEC-om-mig-live.md): målt med Resource Timing, så et link,
+// der ikke hentes (fx <link rel="canonical">, lokalt en fremmed adresse og på sitet sidens egen), ikke tæller. Samme
+// måling lokalt og live.
+const UDEFRA = `return [...new Set(performance.getEntriesByType('resource').map((r) => new URL(r.name)).filter((u) => u.origin !== location.origin).map(String))].sort();`;
 const KORTENE = `return [...document.querySelectorAll('#projekter .om-card')].map((k) => ({
   tag: k.tagName.toLowerCase(), href: k.getAttribute('href'), navn: k.querySelector('h3').textContent.trim(),
   fod: k.querySelector('.om-card-foot').textContent.trim(), mærke: k.querySelector('.om-tag').textContent.trim(),
@@ -229,6 +236,7 @@ try {
     const tekstFør = await a.kør(`return document.querySelector('p.om-privat').innerHTML.replace(/\\s+/g, ' ').trim();`);
     const udefraFør = await a.kør(UDEFRA);
     await a.luk();
+    console.log(`Hentet udefra på siden før (${lang}): ${udefraFør.length ? udefraFør.join(' ') : 'intet'}`);
 
     for (const bredde of [1280, 390, 320]) {
       const s = await fane(bredde);

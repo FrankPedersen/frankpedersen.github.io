@@ -11,7 +11,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Grundlæggende begreber
 **Kort definition:** Den plads, der spiller sidst i et stik, eller som melder efter en bestemt spiller.
 
-**Forklaring:** Den plads, der spiller sidst i et stik, eller som melder efter en bestemt spiller.
+**Forklaring:** Baghånd har fordelen: den ser, hvad de andre har lagt, før den selv vælger. En honnør, der sidder efter spilførerens gaffel, kan derfor ikke fanges ved en kipning.
 
 ### Bekende
 **ID:** `bekende`
@@ -30,16 +30,16 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Grundlæggende begreber
 **Kort definition:** Billedkortene: konge, dame og knægt.
 
-**Forklaring:** Billedkortene: konge, dame og knægt.
+**Forklaring:** Billedkortene er tre af de fem honnører; esset og tieren er de to andre. I pointtællingen giver konge 3, dame 2 og knægt 1 hp.
 
 ### Blande
 **ID:** `blande`
 **Engelsk:** Shuffle
 **Niveau:** begynder
 **Kategori:** Grundlæggende begreber
-**Kort definition:** At blande kortene.
+**Kort definition:** At ændre kortenes rækkefølge tilfældigt før kortgivningen.
 
-**Forklaring:** At blande kortene.
+**Forklaring:** Kortene blandes før hver kortgivning, så fordelingen er tilfældig. I turneringer med færdige spil blandes kun til de første kortgivninger, eller spillene laves af en computer.
 
 ### Blank
 **ID:** `blank`
@@ -78,7 +78,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Grundlæggende begreber
 **Kort definition:** Damen; et honnørkort med betydelig styrke.
 
-**Forklaring:** Damen; et honnørkort med betydelig styrke.
+**Forklaring:** Damen tæller 2 hp. Den er ofte den honnør, en kipning skal fange, fx når spilfører har E B og håber, at damen sidder foran.
 
 ### Delkontrakt
 **ID:** `delkontrakt`
@@ -108,7 +108,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Grundlæggende begreber
 **Kort definition:** Esset; det højeste kort i farven og ofte et kontrolkort i meldinger og spilføring.
 
-**Forklaring:** Esset; det højeste kort i farven og ofte et kontrolkort i meldinger og spilføring.
+**Forklaring:** Esset tæller 4 hp og vinder altid stikket i sin farve, medmindre der trumfes. I slemmeldinger spørges der efter esser, fx med Blackwood.
 
 ### Farve
 **ID:** `farve`
@@ -127,7 +127,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Grundlæggende begreber
 **Kort definition:** Antallet af kort i en farve; afgørende for meldinger og spilføring.
 
-**Forklaring:** Antallet af kort i en farve; afgørende for meldinger og spilføring.
+**Forklaring:** Længden afgør, hvilken farve der åbnes i, og om en farve kan blive trumf. To hænder med tilsammen otte kort i en farve har et fit.
 
 ### Farvesymbol
 **ID:** `farvesymbol`
@@ -137,7 +137,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Grundlæggende begreber
 **Kort definition:** Kulørsymbolerne ♠ ♥ ♦ ♣.
 
-**Forklaring:** Kulørsymbolerne ♠ ♥ ♦ ♣.
+**Forklaring:** Rækkefølgen fra laveste til højeste er klør, ruder, hjerter og spar; sans står over spar i meldingerne.
 
 ### Femkortfarve
 **ID:** `femkortfarve`
@@ -156,7 +156,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Grundlæggende begreber
 **Kort definition:** Et kort med værdien fem; bruges i længdeangivelser.
 
-**Forklaring:** Et kort med værdien fem; bruges i længdeangivelser.
+**Forklaring:** Femmeren er et lavt kort, men en fem-korts farve er grænsen for at åbne i en major i systemer med 5-korts major.
 
 ### Firekortfarve
 **ID:** `firekortfarve`
@@ -175,7 +175,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Grundlæggende begreber
 **Kort definition:** Et kort med værdien fire; standardlængde i mange meldinger.
 
-**Forklaring:** Et kort med værdien fire; standardlængde i mange meldinger.
+**Forklaring:** En fire-korts farve er den mindste længde, der normalt meldes som svar, og fire kort i makkers major er god støtte.
 
 ### Fordeling
 **ID:** `fordeling`
@@ -202,7 +202,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Grundlæggende begreber
 **Kort definition:** Den plads, der spiller eller melder før en bestemt spiller.
 
-**Forklaring:** Den plads, der spiller eller melder før en bestemt spiller.
+**Forklaring:** Forhånd melder eller spiller før en bestemt spiller og ser ikke dennes kort først. En honnør i forhånd kan derfor fanges ved en kipning.
 
 ### Giver
 **ID:** `giver`
@@ -219,9 +219,9 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Alternative termer:** Going down
 **Niveau:** begynder
 **Kategori:** Grundlæggende begreber
-**Kort definition:** Når kontrakten går ned og spilfører mister stik.
+**Kort definition:** At spilfører får færre stik end kontrakten kræver.
 
-**Forklaring:** Når kontrakten går ned og spilfører mister stik.
+**Forklaring:** Kontrakten er gået ned, når spilfører får færre stik end det, kontrakten kræver. Modparten får point for hvert stik, der mangler; pointene står i Scoring i bridge.
 
 ### Hjerter
 **ID:** `hjerter`
@@ -241,7 +241,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Grundlæggende begreber
 **Kort definition:** Et honnørkort: es, konge, dame, knægt eller ti.
 
-**Forklaring:** Et honnørkort: es, konge, dame, knægt eller ti.
+**Forklaring:** Es, konge, dame og knægt tæller hp; tieren tæller ikke, men regnes med, når honnører i en farve tælles, fx til honnørbonus.
 
 ### Honnørpoint
 **ID:** `honnoerpoint`
@@ -261,7 +261,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Grundlæggende begreber
 **Kort definition:** Tre eller flere sammenhængende honnører, fx K-D-B.
 
-**Forklaring:** Tre eller flere sammenhængende honnører, fx K-D-B.
+**Forklaring:** Fra en honnørsekvens spilles den højeste ud, fx kongen fra K D B. Sekvensen giver et sikkert stik, når den højere honnør er spillet.
 
 ### Højre modstander
 **ID:** `hoejre-modstander`
@@ -271,7 +271,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Grundlæggende begreber
 **Kort definition:** Modstanderen til højre for en given spiller.
 
-**Forklaring:** Modstanderen til højre for en given spiller.
+**Forklaring:** Højre modstander melder og spiller lige før dig. Det er den spiller, der i et stik sidder i forhånd i forhold til dig.
 
 ### Højt kort
 **ID:** `hoejt-kort`
@@ -279,9 +279,9 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Alternative termer:** High
 **Niveau:** begynder
 **Kategori:** Grundlæggende begreber
-**Kort definition:** Et højt kort (typisk 10 og op); bruges i signaler og vurdering af styrke.
+**Kort definition:** Et kort, der er højt i forhold til de andre kort, spilleren har i farven.
 
-**Forklaring:** Et højt kort (typisk 10 og op); bruges i signaler og vurdering af styrke.
+**Forklaring:** I signaler betyder et højt kort typisk kald eller et lige antal; opslagene Kald-afvisning og Count forklarer det.
 
 ### Hånd
 **ID:** `haand`
@@ -290,7 +290,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Grundlæggende begreber
 **Kort definition:** De 13 kort en spiller har.
 
-**Forklaring:** De 13 kort en spiller har.
+**Forklaring:** Hver af de fire spillere får 13 kort. Hånden beskrives ofte ved sin fordeling, fx 5-4-3-1, og sine hp.
 
 ### Håndstyrke
 **ID:** `haandstyrke`
@@ -299,7 +299,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Grundlæggende begreber
 **Kort definition:** Den samlede værdi af en hånd; vurderes via honnørpoint og fordeling.
 
-**Forklaring:** Den samlede værdi af en hånd; vurderes via honnørpoint og fordeling.
+**Forklaring:** Styrken tælles først i hp og justeres så for fordeling, mellemkort og fit. To hænder med tilsammen ca. 25 hp har normalt nok til udgang.
 
 ### Jævn hånd
 **ID:** `jaevn-haand`
@@ -309,7 +309,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Grundlæggende begreber
 **Kort definition:** En jævn hånd, typisk 4‑3‑3‑3, 4‑4‑3‑2 eller 5‑3‑3‑2.
 
-**Forklaring:** En jævn hånd, typisk 4‑3‑3‑3, 4‑4‑3‑2 eller 5‑3‑3‑2.
+**Forklaring:** En jævn hånd har ingen singleton eller renonce og højst én doubleton. Den åbnes og meldes ofte i sans.
 
 ### Klør
 **ID:** `kloer`
@@ -330,7 +330,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Grundlæggende begreber
 **Kort definition:** Knægten; et billedkort med moderat styrke.
 
-**Forklaring:** Knægten; et billedkort med moderat styrke.
+**Forklaring:** Knægten tæller 1 hp. Den er sammen med tieren et vigtigt kort i honnørsekvenser og dobbelte kipninger.
 
 ### Konge
 **ID:** `konge`
@@ -341,7 +341,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Grundlæggende begreber
 **Kort definition:** Kongen; et vigtigt honnørkort.
 
-**Forklaring:** Kongen; et vigtigt honnørkort.
+**Forklaring:** Kongen tæller 3 hp. En konge alene er sårbar over for esset; K x er bedre beskyttet.
 
 ### Kontrakt
 **ID:** `kontrakt`
@@ -350,7 +350,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Grundlæggende begreber
 **Kort definition:** Det sidste bud i meldeforløbet, eventuelt doblet eller redoblet, som fastlægger spilfører, trumf eller sans og det krævede antal stik.
 
-**Forklaring:** Det sidste bud i meldeforløbet, eventuelt doblet eller redoblet, som fastlægger spilfører, trumf eller sans og det krævede antal stik.
+**Forklaring:** Kontrakten består af trin, trumf eller sans og eventuel dobling, fx 4♠ doblet. Spilfører skal tage seks stik plus trinnet.
 
 ### Kontraktstik
 **ID:** `kontraktstik`
@@ -369,7 +369,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Grundlæggende begreber
 **Kort definition:** De enkelte spillekort i en hånd eller et spil.
 
-**Forklaring:** De enkelte spillekort i en hånd eller et spil.
+**Forklaring:** Hvert kort har en farve og en værdi, fx ♠E. Et spil kort har 52, fra esset ned til toeren i hver farve.
 
 ### Kortgivning
 **ID:** `kortgivning`
@@ -378,7 +378,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Grundlæggende begreber
 **Kort definition:** Selve kortgivningen; én runde hvor fire hænder deles ud.
 
-**Forklaring:** Selve kortgivningen; én runde hvor fire hænder deles ud.
+**Forklaring:** Giveren deler ét kort ad gangen med uret og melder først. I turneringer står giveren og zonen på spillets mappe.
 
 ### Korthed
 **ID:** `korthed`
@@ -388,7 +388,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Grundlæggende begreber
 **Kort definition:** Korthed i en farve (singleton eller renonce); giver trumfpotentiale.
 
-**Forklaring:** Korthed i en farve (singleton eller renonce); giver trumfpotentiale.
+**Forklaring:** Med trumf kan en kort farve give ekstra stik ved stjæling. Derfor tæller korthed som fordelingspoint, når der er fundet et fit.
 
 ### Kortspil
 **ID:** `kortspil`
@@ -398,7 +398,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Grundlæggende begreber
 **Kort definition:** Et komplet sæt på 52 kort.
 
-**Forklaring:** Et komplet sæt på 52 kort.
+**Forklaring:** Et spil kort består af fire farver med 13 kort hver: spar, hjerter, ruder og klør.
 
 ### Lang farve
 **ID:** `lang-farve`
@@ -408,7 +408,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Grundlæggende begreber
 **Kort definition:** En farve med mange kort, ofte 6+.
 
-**Forklaring:** En farve med mange kort, ofte 6+.
+**Forklaring:** En lang farve kan give ekstra stik, når modparten ikke har flere kort i farven. I sans er den ofte den vigtigste kilde til stik.
 
 ### Lavhonnør
 **ID:** `lavhonnoer`
@@ -417,7 +417,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Grundlæggende begreber
 **Kort definition:** Dame eller knægt, som er mindre sikre stikvindere end es og konge.
 
-**Forklaring:** Dame eller knægt, som er mindre sikre stikvindere end es og konge.
+**Forklaring:** Damen og knægten giver sjældnere stik end esset og kongen, især når de står uden andre honnører. Derfor tælles de lidt ned i håndvurderingen.
 
 ### Lavt kort
 **ID:** `lavt-kort`
@@ -425,9 +425,9 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Alternative termer:** Low, Småkort
 **Niveau:** begynder
 **Kategori:** Grundlæggende begreber
-**Kort definition:** Et lavt kort (typisk 2–6); bruges i signaler og tekniske spil.
+**Kort definition:** Et kort, der er lavt i forhold til de andre kort, spilleren har i farven.
 
-**Forklaring:** Et lavt kort (typisk 2–6); bruges i signaler og tekniske spil.
+**Forklaring:** I signaler betyder et lavt kort typisk afvisning eller et ulige antal; opslagene Kald-afvisning og Count forklarer det.
 
 ### Lilleslem
 **ID:** `lilleslem`
@@ -436,7 +436,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Grundlæggende begreber
 **Kort definition:** En kontrakt på 6‑trinnet, hvor 12 stik skal vindes.
 
-**Forklaring:** En kontrakt på 6‑trinnet, hvor 12 stik skal vindes.
+**Forklaring:** Lilleslem giver en stor bonus: 500 uden for zonen og 750 i zonen. Normalt kræves ca. 33 hp eller et godt fit.
 
 ### Majorfarve
 **ID:** `majorfarve`
@@ -455,7 +455,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Grundlæggende begreber
 **Kort definition:** Din makker; den spiller du samarbejder med.
 
-**Forklaring:** Din makker; den spiller du samarbejder med.
+**Forklaring:** Makkeren sidder over for dig, og I spiller sammen som par. Kontrakten og alle stik er fælles.
 
 ### Makkerpar
 **ID:** `makkerpar`
@@ -464,7 +464,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Grundlæggende begreber
 **Kort definition:** Makkerskabet mellem to spillere.
 
-**Forklaring:** Makkerskabet mellem to spillere.
+**Forklaring:** Et makkerpar er to spillere, der spiller sammen og har aftalt et meldesystem. I parturnering er makkerparret enheden, der får score.
 
 ### Med uret
 **ID:** `med-uret`
@@ -473,16 +473,16 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Grundlæggende begreber
 **Kort definition:** Meldinger afgives med uret rundt om bordet.
 
-**Forklaring:** Meldinger afgives med uret rundt om bordet.
+**Forklaring:** Alt ved bridgebordet går med uret: kortgivningen, meldingerne og spillet af kortene.
 
 ### Mellemhånd
 **ID:** `mellemhaand`
 **Engelsk:**
 **Niveau:** let øvet
 **Kategori:** Grundlæggende begreber
-**Kort definition:** At sidde i klemme mellem to modstandere, så man skal lægge kort til, før den anden har valgt.
+**Kort definition:** Den plads, der spiller som anden i et stik, mellem den, der spiller ud, og den, der spiller efter.
 
-**Forklaring:** At sidde i klemme mellem to modstandere, så man skal lægge kort til, før den anden har valgt.
+**Forklaring:** Mellemhånd skal vælge, før den sidste spiller har vist sit kort. Det er grunden til reglen "lavt i anden hånd".
 
 ### Mellemkort
 **ID:** `mellemkort`
@@ -491,7 +491,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Grundlæggende begreber
 **Kort definition:** 10, 9 og 8, der kan få betydning for stik.
 
-**Forklaring:** 10, 9 og 8, der kan få betydning for stik.
+**Forklaring:** Mellemkortene gør en farve stærkere, end hp viser, fx giver 10 9 8 ofte ekstra stik efter honnørerne.
 
 ### Minorfarve
 **ID:** `minorfarve`
@@ -511,7 +511,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Grundlæggende begreber
 **Kort definition:** Modspillerne; de to spillere der spiller mod spilføreren.
 
-**Forklaring:** Modspillerne; de to spillere der spiller mod spilføreren.
+**Forklaring:** Modspillerne er spilførerens to modstandere. Den ene spiller ud, og så lægges bordets kort frem.
 
 ### Modstandere
 **ID:** `modstandere`
@@ -521,7 +521,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Grundlæggende begreber
 **Kort definition:** Modstanderne; de to spillere der ikke er i makkerskab med dig.
 
-**Forklaring:** Modstanderne; de to spillere der ikke er i makkerskab med dig.
+**Forklaring:** Modstanderne er parret, der sidder på de to andre pladser. Under spillet kaldes de modspillere.
 
 ### Nabohonnører
 **ID:** `nabohonnoerer`
@@ -530,7 +530,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Grundlæggende begreber
 **Kort definition:** Honnører, der ligger lige op ad hinanden i rangfølgen.
 
-**Forklaring:** Honnører, der ligger lige op ad hinanden i rangfølgen.
+**Forklaring:** Nabohonnører som D og B er ligeværdige: det er ligegyldigt, hvilken af dem der spilles. Det er grundlaget for begrænset valg.
 
 ### Nier (9)
 **ID:** `nier-9`
@@ -540,7 +540,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Grundlæggende begreber
 **Kort definition:** Et kort med værdien ni; ofte relevant i sekvenser og kipninger.
 
-**Forklaring:** Et kort med værdien ni; ofte relevant i sekvenser og kipninger.
+**Forklaring:** Nieren er et mellemkort, der ofte giver farven et stik mere, fx K 10 9 mod små kort, hvor en dobbelt kipning kan give to stik.
 
 ### Nord (N)
 **ID:** `nord-n`
@@ -550,7 +550,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Grundlæggende begreber
 **Kort definition:** Spilleren der sidder i nord.
 
-**Forklaring:** Spilleren der sidder i nord.
+**Forklaring:** Nord og Syd er et par. I diagrammer står Nord øverst, og bordet er ofte Nord.
 
 ### Otter (8)
 **ID:** `otter-8`
@@ -560,7 +560,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Grundlæggende begreber
 **Kort definition:** Et kort med værdien otte; bruges i længdeangivelser og tælling.
 
-**Forklaring:** Et kort med værdien otte; bruges i længdeangivelser og tælling.
+**Forklaring:** Otteren er et mellemkort. Otte kort i alt i en farve er den sædvanlige grænse for et fit.
 
 ### Overstik
 **ID:** `overstik`
@@ -578,7 +578,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Grundlæggende begreber
 **Kort definition:** En plads ved bordet (Nord, Syd, Øst, Vest).
 
-**Forklaring:** En plads ved bordet (Nord, Syd, Øst, Vest).
+**Forklaring:** Pladserne er Nord, Øst, Syd og Vest. Nord–Syd og Øst–Vest er de to par.
 
 ### Pointvurdering
 **ID:** `pointvurdering`
@@ -588,16 +588,16 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Grundlæggende begreber
 **Kort definition:** Samlet vurdering af håndens styrke (hp + fordeling).
 
-**Forklaring:** Samlet vurdering af håndens styrke (hp + fordeling).
+**Forklaring:** Først tælles hp, så lægges der til for længde eller korthed og trækkes fra for dårlige honnører. Vurderingen ændrer sig, når makkers farver kendes.
 
 ### Rang
 **ID:** `rang`
 **Engelsk:** Rank
 **Niveau:** begynder
 **Kategori:** Grundlæggende begreber
-**Kort definition:** Kortets rang i farven (A højst, 2 lavest).
+**Kort definition:** Kortets plads i rækkefølgen i farven, fra esset højest til toeren lavest.
 
-**Forklaring:** Kortets rang i farven (A højst, 2 lavest).
+**Forklaring:** Rækkefølgen i farven er E K D B 10 9 8 7 6 5 4 3 2. Farverne har også en rang i meldingerne: klør, ruder, hjerter, spar og sans øverst.
 
 ### Renonce
 **ID:** `renonce`
@@ -615,7 +615,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Grundlæggende begreber
 **Kort definition:** Et led ved bordet: Nord, Syd, Øst eller Vest.
 
-**Forklaring:** Et led ved bordet: Nord, Syd, Øst eller Vest.
+**Forklaring:** Pladserne angives som retninger. I turneringer siger retningen også, hvilken vej man flytter, fx Øst–Vest skifter bord.
 
 ### Ruder
 **ID:** `ruder`
@@ -634,7 +634,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Grundlæggende begreber
 **Kort definition:** De røde farver: hjerter (♥) og ruder (♦).
 
-**Forklaring:** De røde farver: hjerter (♥) og ruder (♦).
+**Forklaring:** Hjerter er en major og ruder en minor. Nogle konventioner viser de to røde farver på én gang, fx en to-farvet indmelding.
 
 ### Sans
 **ID:** `sans`
@@ -655,7 +655,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Grundlæggende begreber
 **Kort definition:** Et kort med værdien seks.
 
-**Forklaring:** Et kort med værdien seks.
+**Forklaring:** Sekseren er et lavt kort, men en seks-korts farve er typisk længden for en svag 2-åbning eller et spring.
 
 ### Selvspillende farve
 **ID:** `selvspillende-farve`
@@ -664,7 +664,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Grundlæggende begreber
 **Kort definition:** En farve, der med stor sikkerhed kan spilles med højst én taber, uanset makkers kort.
 
-**Forklaring:** En farve, der med stor sikkerhed kan spilles med højst én taber, uanset makkers kort.
+**Forklaring:** En selvspillende farve kan meldes og spilles uden støtte fra makker, fx E K D B 10 8.
 
 ### Side (Nord–Syd eller Øst–Vest)
 **ID:** `side-nord-syd-eller-oest-vest`
@@ -673,7 +673,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Grundlæggende begreber
 **Kort definition:** Et par eller led (Nord‑Syd eller Øst‑Vest).
 
-**Forklaring:** Et par eller led (Nord‑Syd eller Øst‑Vest).
+**Forklaring:** Siden er parret, der sidder over for hinanden. Scoren står altid for en side.
 
 ### Sidefarve
 **ID:** `sidefarve`
@@ -701,7 +701,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Grundlæggende begreber
 **Kort definition:** En skæv hånd med korthed i én eller flere farver.
 
-**Forklaring:** En skæv hånd med korthed i én eller flere farver.
+**Forklaring:** En skæv hånd har en singleton, en renonce eller to doubletoner. Den spiller ofte bedre i farve end i sans.
 
 ### Slem
 **ID:** `slem`
@@ -754,9 +754,9 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Engelsk:** Player(s)
 **Niveau:** begynder
 **Kategori:** Grundlæggende begreber
-**Kort definition:** De personer der deltager i spillet.
+**Kort definition:** En af de fire, der deltager i spillet.
 
-**Forklaring:** De personer der deltager i spillet.
+**Forklaring:** Bridge spilles af fire spillere i to par. Hver spiller har en plads: Nord, Øst, Syd eller Vest.
 
 ### Spillestærk hånd
 **ID:** `spillestaerk-haand`
@@ -765,7 +765,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Grundlæggende begreber
 **Kort definition:** En hånd, der kan tage mange stik, selv med få point.
 
-**Forklaring:** En hånd, der kan tage mange stik, selv med få point.
+**Forklaring:** En spillestærk hånd har lange farver og gode mellemkort. Den kan åbnes eller meldes stærkere, end hp viser.
 
 ### Stik
 **ID:** `stik`
@@ -783,7 +783,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Grundlæggende begreber
 **Kort definition:** En kontrakt på 7‑trinnet, hvor alle 13 stik skal vindes.
 
-**Forklaring:** En kontrakt på 7‑trinnet, hvor alle 13 stik skal vindes.
+**Forklaring:** Storeslem giver 1000 uden for zonen og 1500 i zonen. Normalt kræves ca. 37 hp eller en sikker tælling af 13 stik.
 
 ### Syd (S)
 **ID:** `syd-s`
@@ -793,7 +793,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Grundlæggende begreber
 **Kort definition:** Spilleren der sidder i syd.
 
-**Forklaring:** Spilleren der sidder i syd.
+**Forklaring:** Syd og Nord er et par. I opgaver er Syd ofte spilfører, og Nord er bordet.
 
 ### Syver (7)
 **ID:** `syver-7`
@@ -803,7 +803,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Grundlæggende begreber
 **Kort definition:** Et kort med værdien syv; bruges i længdeangivelser.
 
-**Forklaring:** Et kort med værdien syv; bruges i længdeangivelser.
+**Forklaring:** Syveren er et lavt kort, men kan være et mellemkort i en lang farve.
 
 ### Tier
 **ID:** `tier`
@@ -814,7 +814,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Grundlæggende begreber
 **Kort definition:** Tieren; et vigtigt kort i sekvenser og kipninger.
 
-**Forklaring:** Tieren; et vigtigt kort i sekvenser og kipninger.
+**Forklaring:** Tieren tæller ikke hp, men er en honnør og et vigtigt mellemkort, fx i E D 10, hvor en kipning med tieren kan fange knægten.
 
 ### Toer (2)
 **ID:** `toer-2`
@@ -824,7 +824,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Grundlæggende begreber
 **Kort definition:** Et kort med værdien to.
 
-**Forklaring:** Et kort med værdien to.
+**Forklaring:** Toeren er det laveste kort i farven og bruges ofte til at vise afvisning i signaler.
 
 ### Tofarvet hånd
 **ID:** `tofarvet-haand`
@@ -842,7 +842,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Grundlæggende begreber
 **Kort definition:** Et stik, modparten er sikker på at tage, fordi de har esset eller kongen.
 
-**Forklaring:** Et stik, modparten er sikker på at tage, fordi de har esset eller kongen.
+**Forklaring:** Toptaberne tælles før spillet. De kan ikke fjernes ved kipning, men nogle gange ved stjæling eller afkast.
 
 ### Treer (3)
 **ID:** `treer-3`
@@ -852,7 +852,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Grundlæggende begreber
 **Kort definition:** Et kort med værdien tre.
 
-**Forklaring:** Et kort med værdien tre.
+**Forklaring:** Treeren er et af de laveste kort og bruges i signaler eller som udspil fra små kort.
 
 ### Trefarvet hånd
 **ID:** `trefarvet-haand`
@@ -870,7 +870,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Grundlæggende begreber
 **Kort definition:** En farve med præcis tre kort.
 
-**Forklaring:** En farve med præcis tre kort.
+**Forklaring:** En tripleton er tre kort i en farve. Tre kort i makkers fem-korts farve er nok til et fit.
 
 ### Trumf
 **ID:** `trumf`
@@ -889,7 +889,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Grundlæggende begreber
 **Kort definition:** Den spiller der er i tur til at melde eller spille.
 
-**Forklaring:** Den spiller der er i tur til at melde eller spille.
+**Forklaring:** Det går med uret, så turen går til venstre. At melde eller spille uden for tur er en lovovertrædelse, som Lovene beskriver.
 
 ### Udgang
 **ID:** `udgang`
@@ -908,7 +908,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Grundlæggende begreber
 **Kort definition:** Modstanderen til venstre for en given spiller.
 
-**Forklaring:** Modstanderen til venstre for en given spiller.
+**Forklaring:** Venstre modstander melder og spiller lige efter dig. Den spiller ud, når du er spilfører.
 
 ### Vest (V)
 **ID:** `vest-v`
@@ -918,7 +918,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Grundlæggende begreber
 **Kort definition:** Spilleren der sidder i vest.
 
-**Forklaring:** Spilleren der sidder i vest.
+**Forklaring:** Vest og Øst er et par. Vest spiller ud, når Syd er spilfører.
 
 ### Værdi
 **ID:** `vaerdi`
@@ -927,7 +927,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Grundlæggende begreber
 **Kort definition:** Den vurderede styrke af en hånd eller farve.
 
-**Forklaring:** Den vurderede styrke af en hånd eller farve.
+**Forklaring:** Værdien af en hånd eller farve vurderes ud fra hp, længde, mellemkort og fit.
 
 ### Øst (Ø)
 **ID:** `oest-oe`
@@ -937,7 +937,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Grundlæggende begreber
 **Kort definition:** Spilleren der sidder i øst.
 
-**Forklaring:** Spilleren der sidder i øst.
+**Forklaring:** Øst og Vest er et par. I opgaver sidder Øst efter bordet, når Nord er bordet.
 
 ## Meldinger og meldeforløb
 

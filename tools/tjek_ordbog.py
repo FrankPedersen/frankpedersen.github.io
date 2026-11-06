@@ -192,10 +192,12 @@ class KategorierOgNiveauer(unittest.TestCase):
            'Lavt i anden hånd', 'Stik ikke automatisk', 'Tilspil', 'Regnskab', 'Byttehandel', 'Fanget på det gale ben',
            'Kort tredje / honnør anden', 'Melde i den blå luft', 'Pointrytter', 'Pokeransigt', 'Sælge ud',
            'Unoder ved bordet', 'Urent trav']
-    # Portion 1 af forklaringerne (SPEC-ordbog-forklaringer-1.md, Franks valg 6. november 2026) har givet 10 af de nye
-    # opslag deres egen forklaring; de andre har samme forklaring som definition, til deres portion kommer.
+    # Portion 1 og 2 af forklaringerne (SPEC-ordbog-forklaringer-1.md og -2.md, Franks valg 6. november 2026) har givet
+    # 23 af de nye opslag deres egen forklaring; de andre har samme forklaring som definition, til deres portion kommer.
     MED_FORKLARING = {'Baghånd', 'Forhånd', 'Honnørsekvens', 'Lavhonnør', 'Mellemhånd', 'Mellemkort', 'Nabohonnører',
-                      'Selvspillende farve', 'Spillestærk hånd', 'Toptaber'}
+                      'Selvspillende farve', 'Spillestærk hånd', 'Toptaber',
+                      '26-33-37', '3-trinsraketten', 'Bogmelding', 'Dobbeltspring', 'Enkeltstøtte', 'Melderunde', 'Misfit',
+                      'Nødmelding / nødsans', 'Overmelding', 'Rundekrav', 'Springgenmelding', 'Umeldt farve', 'Åbningsfarve'}
 
     @classmethod
     def setUpClass(cls):

@@ -192,6 +192,10 @@ class KategorierOgNiveauer(unittest.TestCase):
            'Lavt i anden hånd', 'Stik ikke automatisk', 'Tilspil', 'Regnskab', 'Byttehandel', 'Fanget på det gale ben',
            'Kort tredje / honnør anden', 'Melde i den blå luft', 'Pointrytter', 'Pokeransigt', 'Sælge ud',
            'Unoder ved bordet', 'Urent trav']
+    # Portion 1 af forklaringerne (SPEC-ordbog-forklaringer-1.md, Franks valg 6. november 2026) har givet 10 af de nye
+    # opslag deres egen forklaring; de andre har samme forklaring som definition, til deres portion kommer.
+    MED_FORKLARING = {'Baghånd', 'Forhånd', 'Honnørsekvens', 'Lavhonnør', 'Mellemhånd', 'Mellemkort', 'Nabohonnører',
+                      'Selvspillende farve', 'Spillestærk hånd', 'Toptaber'}
 
     @classmethod
     def setUpClass(cls):
@@ -233,7 +237,10 @@ class KategorierOgNiveauer(unittest.TestCase):
             self.assertIn(navn, self.opslag, navn)
             o = self.opslag[navn]
             self.assertTrue(o['Kort definition'], navn)
-            self.assertEqual(o['Forklaring'], o['Kort definition'], navn)
+            if navn in self.MED_FORKLARING:
+                self.assertNotEqual(o['Forklaring'], o['Kort definition'], navn)
+            else:
+                self.assertEqual(o['Forklaring'], o['Kort definition'], navn)
         self.assertEqual((self.opslag['Pokeransigt']['Kategori'], self.opslag['Pokeransigt']['Niveau']),
                          ('Talemåder og bridgeslang', 'øvet'))
         self.assertEqual(self.opslag['Pokeransigt']['Engelsk'], 'Poker face')

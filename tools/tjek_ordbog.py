@@ -108,9 +108,23 @@ class Ordbogssiden(unittest.TestCase):
             self.assertIn(mål, self.side.ids, mål)
 
     def test_forklaring_vises_kun_naar_den_er_forskellig_fra_definitionen(self):
-        # Afblokering: forklaringen er den samme som definitionen. Bordet: forklaringen er en anden.
-        self.assertEqual(self.opslag['afblokering']['p'].count('def'), 1)
-        self.assertNotIn('expl', self.opslag['afblokering']['p'])
+        # Alle opslag: et afsnit med forklaringen, præcis når den er en anden end definitionen. Før stod Afblokering
+        # som eksemplet på en forklaring, der gentager definitionen, men portionerne giver opslagene en forklaring
+        # (SPEC-ordbog-forklaringer-4.md), så testen ser på dem alle i stedet for ét fast eksempel.
+        ens = forskellige = 0
+        for navn, o in opslag_i_kilden().items():
+            if 'ID' not in o:
+                continue
+            p = self.opslag[o['ID'].strip('`')]['p']
+            self.assertEqual(p.count('def'), 1, navn)
+            if o['Forklaring'] == o['Kort definition']:
+                ens += 1
+                self.assertNotIn('expl', p, navn)
+            else:
+                forskellige += 1
+                self.assertIn('expl', p, navn)
+        self.assertEqual(ens + forskellige, 437)
+        self.assertTrue(ens and forskellige)
         self.assertIn('expl', self.opslag['bordet']['p'])
 
     def test_engelsk_dansk_indeks_er_en_foldbar_liste_og_dansk_engelsk_vises_ikke(self):
@@ -192,12 +206,15 @@ class KategorierOgNiveauer(unittest.TestCase):
            'Lavt i anden hånd', 'Stik ikke automatisk', 'Tilspil', 'Regnskab', 'Byttehandel', 'Fanget på det gale ben',
            'Kort tredje / honnør anden', 'Melde i den blå luft', 'Pointrytter', 'Pokeransigt', 'Sælge ud',
            'Unoder ved bordet', 'Urent trav']
-    # Portion 1 og 2 af forklaringerne (SPEC-ordbog-forklaringer-1.md og -2.md, Franks valg 6. november 2026) har givet
-    # 23 af de nye opslag deres egen forklaring; de andre har samme forklaring som definition, til deres portion kommer.
+    # Portion 1, 2 og 4 af forklaringerne (SPEC-ordbog-forklaringer-1.md, -2.md og -4.md, Franks valg 6. og 10. november
+    # 2026) har givet 29 af de nye opslag deres egen forklaring; de andre har samme forklaring som definition, til deres
+    # portion kommer (portion 3 havde ingen af dem).
     MED_FORKLARING = {'Baghånd', 'Forhånd', 'Honnørsekvens', 'Lavhonnør', 'Mellemhånd', 'Mellemkort', 'Nabohonnører',
                       'Selvspillende farve', 'Spillestærk hånd', 'Toptaber',
                       '26-33-37', '3-trinsraketten', 'Bogmelding', 'Dobbeltspring', 'Enkeltstøtte', 'Melderunde', 'Misfit',
-                      'Nødmelding / nødsans', 'Overmelding', 'Rundekrav', 'Springgenmelding', 'Umeldt farve', 'Åbningsfarve'}
+                      'Nødmelding / nødsans', 'Overmelding', 'Rundekrav', 'Springgenmelding', 'Umeldt farve', 'Åbningsfarve',
+                      '"Eight ever, nine never"', 'Badekup (Bath Coup)', 'Farvebehandling', 'Forbindelser',
+                      'Fordelingssandsynlighed', 'Spilleplan'}
 
     @classmethod
     def setUpClass(cls):

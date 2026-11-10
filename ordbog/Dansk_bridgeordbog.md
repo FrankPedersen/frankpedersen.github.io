@@ -3733,7 +3733,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Love, etik og procedure
 **Kort definition:** En meget lang tænkepause, ofte mistænkelig i konkurrencemeldinger.
 
-**Forklaring:** En lang tænkepause er ikke i sig selv et lovbrud (§ 73 D 1), men den giver makker ubeføjede oplysninger (§ 16 B 1). Forbundet kan kræve faste pauser, fx i første meldeomgang eller efter et stopkort, så tempoet ikke afslører noget (§ 73 A 2).
+**Forklaring:** En lang tænkepause er ikke i sig selv et lovbrud (§ 73 D 1), men den giver makker ubeføjede oplysninger (§ 16 B 1). Forbundet kan kræve faste pauser, fx i første meldeomgang eller efter en springmelding, så tempoet ikke afslører noget (§ 73 A 2).
 
 ### Lovbrud
 **ID:** `lovbrud`
@@ -3796,7 +3796,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Love, etik og procedure
 **Kort definition:** Perioden, der for en side begynder, når en af dens spillere tager sine kort op af spilmappen, og slutter, når udspillet vendes.
 
-**Forklaring:** Mellem sidste pas og det vendte udspil ligger afklaringsperioden, hvor der kan spørges til meldingerne, og hvor spilfører eller bordet skal gøre opmærksom på makkers forkerte forklaring; en modspiller venter, til spillet er slut (§ 17 D og § 20 F 5 b). Et kort, der bliver vist i meldeperioden, kan give makker pligt til at passe og bliver et strafkort, hvis spilleren bliver modspiller (§ 24).
+**Forklaring:** Mellem sidste pas og det vendte udspil ligger afklaringsperioden, hvor der kan spørges til meldingerne (§ 17 D). En spiller, der opdager, at egen forklaring var forkert, skal gøre opmærksom på det, inden afklaringsperioden er slut (§ 20 F 4); er det makkers forklaring, der var forkert, siger spilfører eller bordet det efter sidste pas, mens en modspiller venter, til spillet er slut (§ 20 F 5 b). Et kort, der bliver vist i meldeperioden, kan give makker pligt til at passe og bliver et strafkort, hvis spilleren bliver modspiller (§ 24).
 
 ### Melding uden for tur
 **ID:** `melding-uden-for-tur`

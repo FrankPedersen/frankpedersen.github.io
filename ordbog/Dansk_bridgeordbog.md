@@ -2249,7 +2249,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Spilføring
 **Kort definition:** At afblokere en farve ved at spille høje kort i den rigtige rækkefølge.
 
-**Forklaring:** At afblokere en farve ved at spille høje kort i den rigtige rækkefølge.
+**Forklaring:** Reglen er høje kort fra den korte hånd først. Med D 2 over for E K 5 4 3 indkasseres damen først; ellers står den alene tilbage og blokerer farven.
 
 ### Badekup (Bath Coup)
 **ID:** `badekup-bath-coup`
@@ -2258,7 +2258,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Spilføring
 **Kort definition:** Spilfører har fx E-B-x og lader modpartens konge-udspil vinde, så modspilleren ikke kan fortsætte farven uden at give et stik.
 
-**Forklaring:** Spilfører har fx E-B-x og lader modpartens konge-udspil vinde, så modspilleren ikke kan fortsætte farven uden at give et stik.
+**Forklaring:** Efter kongen kan udspilleren ikke fortsætte farven uden at spille ind i spilførerens gaffel E B, så den må skifte farve. Navnet kommer fra byen Bath i England.
 
 ### Blokering
 **ID:** `blokering`
@@ -2267,7 +2267,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Spilføring
 **Kort definition:** At forhindre en farve i at løbe ved at have høje kort i den forkerte hånd.
 
-**Forklaring:** At forhindre en farve i at løbe ved at have høje kort i den forkerte hånd.
+**Forklaring:** En blokering koster stik, når den lange hånd mangler en indgang, efter at den korte hånds høje kort har vundet. Opslaget Afblokering forklarer, hvordan den undgås.
 
 ### Brænde
 **ID:** `braende`
@@ -2276,7 +2276,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Spilføring
 **Kort definition:** At brænde et stik eller en mulighed; bruges især i spilføring.
 
-**Forklaring:** At brænde et stik eller en mulighed; bruges især i spilføring.
+**Forklaring:** At brænde en honnør er at bruge den uden at få noget for den, fx esset på et lille kort, når det kunne have fanget en honnør. Udtrykket bruges også om en chance, der går tabt.
 
 ### Dobbelt kipning
 **ID:** `dobbelt-kipning`
@@ -2294,9 +2294,9 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Alternative termer:** Dykke
 **Niveau:** øvet
 **Kategori:** Spilføring
-**Kort definition:** At lade et stik gå med vilje for at afbryde modspillernes kommunikation.
+**Kort definition:** At lægge et lavt kort og bevidst afgive et stik, typisk for at bevare egne forbindelser eller afbryde modspillets.
 
-**Forklaring:** At lade et stik gå med vilje for at afbryde modspillernes kommunikation.
+**Forklaring:** Med E K 5 4 3 på bordet, to små på hånden og ingen anden indgang til bordet dykkes første runde, så farven kan indkasseres bagefter, når den sidder 3-2. Dykket koster et stik, der skulle tabes alligevel, og bevarer forbindelsen.
 
 ### "Eight ever, nine never"
 **ID:** `eight-ever-nine-never`
@@ -2305,7 +2305,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Spilføring
 **Kort definition:** Huskeregel: Med otte kort i alt og manglende dame tages kipningen. Med ni toppes farven.
 
-**Forklaring:** Huskeregel: Med otte kort i alt og manglende dame tages kipningen. Med ni toppes farven.
+**Forklaring:** Huskereglen er en tommelfingerregel for den manglende dame: med otte kort i alt er kipningen bedst, med ni er det bedre at toppe farven. Den gælder ikke, når meldingerne eller udspillet har vist, hvor damen sidder.
 
 ### Etablering
 **ID:** `etablering`
@@ -2315,7 +2315,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Spilføring
 **Kort definition:** At spille en farve god ved at tvinge modstandernes honnører ud.
 
-**Forklaring:** At spille en farve god ved at tvinge modstandernes honnører ud.
+**Forklaring:** Etablering koster tit stik: med K D B 10 skal esset ud, før de tre andre bliver vindere. Derfor kræver den en indgang til hånden med farven bagefter.
 
 ### Fald
 **ID:** `fald`
@@ -2325,7 +2325,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Spilføring
 **Kort definition:** Når en manglende honnør falder, fordi farven toppes eller fordi den ikke længere kan holdes.
 
-**Forklaring:** Når en manglende honnør falder, fordi farven toppes eller fordi den ikke længere kan holdes.
+**Forklaring:** Damen falder, når den sidder kort, fx når den sidder D x og falder under esset og kongen. At spille på det hedder at toppe farven, og huskereglen "Eight ever, nine never" siger, hvornår det er bedst.
 
 ### Farehånd
 **ID:** `farehånd`
@@ -2334,7 +2334,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Spilføring
 **Kort definition:** Den modspiller, som ikke bør komme ind, fordi et gennembrud eller en farvefortsættelse kan true kontrakten.
 
-**Forklaring:** Den modspiller, som ikke bør komme ind, fordi et gennembrud eller en farvefortsættelse kan true kontrakten.
+**Forklaring:** Spilfører prøver at holde farehånden ude af stikket, fx ved at vælge den kipning, der taber til den ufarlige modspiller. I sans er farehånden ofte den, der har den lange farve, når den er spillet fri.
 
 ### Farvebehandling
 **ID:** `farvebehandling`
@@ -2343,7 +2343,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Spilføring
 **Kort definition:** Den bedste måde at spille en bestemt farvekombination på.
 
-**Forklaring:** Den bedste måde at spille en bestemt farvekombination på.
+**Forklaring:** Den bedste behandling afhænger af, hvor mange stik der skal bruges: med E D 10 9 over for 3 2 giver en dobbelt kipning flest stik, men en anden linje kan være sikrere for færre. Træneren Farvebehandling i Fordelingstræneren øver netop det.
 
 ### Forbindelse
 **ID:** `forbindelse`
@@ -2352,7 +2352,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Spilføring
 **Kort definition:** Forbindelsen mellem hænderne via indgange; afgørende for etablering af farver.
 
-**Forklaring:** Forbindelsen mellem hænderne via indgange; afgørende for etablering af farver.
+**Forklaring:** En forbindelse er et kort, der kan bringe spillet over til den anden hånd, fx esset i en sidefarve. Uden den kan en etableret farve på bordet være uden værdi.
 
 ### Forbindelser
 **ID:** `forbindelser`
@@ -2361,7 +2361,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Spilføring
 **Kort definition:** Muligheden for at komme ind på hånden eller bordet, når man har brug for det.
 
-**Forklaring:** Muligheden for at komme ind på hånden eller bordet, når man har brug for det.
+**Forklaring:** Gode forbindelser betyder, at spilfører kan skifte mellem hånden og bordet, når en kipning skal tages fra den rigtige hånd. Derfor tælles indgangene tidligt i spilleplanen.
 
 ### Fordelingssandsynlighed
 **ID:** `fordelingssandsynlighed`
@@ -2370,7 +2370,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Spilføring
 **Kort definition:** Sandsynligheden for, hvordan modpartens kort i en farve sidder.
 
-**Forklaring:** Sandsynligheden for, hvordan modpartens kort i en farve sidder.
+**Forklaring:** Fem manglende kort sidder 3-2 i ca. 68 % af tilfældene, 4-1 i ca. 28 % og 5-0 i ca. 4 %. Tallene ændrer sig, når meldingerne eller spillet viser noget om hænderne.
 
 ### Gaffel
 **ID:** `gaffel`
@@ -2386,9 +2386,9 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Engelsk:** Solid suit
 **Niveau:** let øvet
 **Kategori:** Spilføring
-**Kort definition:** En farve hvor alle topkortene sidder hos én spiller; ofte gående.
+**Kort definition:** En farve, der kan indkasseres helt uden at afgive stik.
 
-**Forklaring:** En farve hvor alle topkortene sidder hos én spiller; ofte gående.
+**Forklaring:** En gående farve giver lige så mange stik, som den lange hånd har kort, fx E K D B 10 9. I sans er den en sikker kilde til stik, når der er en indgang til den.
 
 ### Hold-up
 **ID:** `hold-up`
@@ -2398,7 +2398,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Spilføring
 **Kort definition:** At lade modspillet vinde stik for at afskære forbindelser.
 
-**Forklaring:** At lade modspillet vinde stik for at afskære forbindelser.
+**Forklaring:** I sans holder spilfører esset tilbage, til den ene modspiller ikke har flere kort i farven; så kan den ikke nå sin makker, når den kommer ind. Med E x x i modpartens farve tages esset i tredje runde.
 
 ### Indgang
 **ID:** `indgang`
@@ -2407,7 +2407,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Spilføring
 **Kort definition:** En indgang til en hånd, der giver adgang til etablerede stik.
 
-**Forklaring:** En indgang til en hånd, der giver adgang til etablerede stik.
+**Forklaring:** Indgange er tit sidefarvernes esser og konger eller trumfer. En etableret farve er kun noget værd, hvis der er en indgang til den bagefter.
 
 ### Indkassere
 **ID:** `indkassere`
@@ -2416,7 +2416,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Spilføring
 **Kort definition:** At indkassere et sikkert stik ved at spille et højt kort.
 
-**Forklaring:** At indkassere et sikkert stik ved at spille et højt kort.
+**Forklaring:** Det er tit bedst at vente med at indkassere, for vinderne er også indgange og kontrol over farverne. Indkasseres de for tidligt, kan modspillet få stik, der ellers var gået tabt.
 
 ### Kipning
 **ID:** `kipning`
@@ -2447,7 +2447,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Spilføring
 **Kort definition:** Spilførers hånd, som kun spilføreren kan se.
 
-**Forklaring:** Spilførers hånd, som kun spilføreren kan se.
+**Forklaring:** Modspillerne ser bordets kort, men ikke den lukkede hånd, og må slutte sig til den ud fra meldingerne og spillet. Spilfører kan derfor skjule sin styrke ved at vælge, hvilke kort der spilles fra hånden.
 
 ### Oplagt kontrakt
 **ID:** `oplagt-kontrakt`
@@ -2456,7 +2456,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Spilføring
 **Kort definition:** En kontrakt der er trivielt vundet uanset modspil.
 
-**Forklaring:** En kontrakt der er trivielt vundet uanset modspil.
+**Forklaring:** Er kontrakten oplagt, kan spilfører lægge kortene og kræve stikkene; opslaget Krav forklarer reglerne. En kontrakt er først oplagt, når den vinder mod enhver fordeling af modpartens kort.
 
 ### Overtrumf
 **ID:** `overtrumf`
@@ -2465,7 +2465,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Spilføring
 **Kort definition:** At trumfe over modstanderen.
 
-**Forklaring:** At trumfe over modstanderen.
+**Forklaring:** Overtrumf sker, når to spillere er renonce i samme farve, fx når en modspiller trumfer højere end bordets trumfning. Derfor trumfes der tit med en høj trumf, når en overtrumf truer.
 
 ### Sidder forkert
 **ID:** `sidder-forkert`
@@ -2475,7 +2475,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Spilføring
 **Kort definition:** Når en honnør sidder “forkert” i forhold til en kipning.
 
-**Forklaring:** Når en honnør sidder “forkert” i forhold til en kipning.
+**Forklaring:** Sidder kongen forkert, taber kipningen mod damen: kongen ligger efter gaflen E D og vinder damen. Spilfører kan prøve at undgå kipningen, fx med et slutspil, der tvinger modparten til at spille farven.
 
 ### Sidder rigtigt
 **ID:** `sidder-rigtigt`
@@ -2485,7 +2485,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Spilføring
 **Kort definition:** Når en honnør sidder “rigtigt” i forhold til en kipning.
 
-**Forklaring:** Når en honnør sidder “rigtigt” i forhold til en kipning.
+**Forklaring:** En honnør sidder rigtigt, når den ligger foran gaflen, så kipningen lykkes, fx kongen hos Vest, når Syd spiller lille mod bordets E D. Uden andre oplysninger er det ca. 50 % for én honnør.
 
 ### Sikkerhedsspil
 **ID:** `sikkerhedsspil`
@@ -2495,7 +2495,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Spilføring
 **Kort definition:** Et spil der sikrer kontrakten, selv hvis det reducerer chancen for overstik.
 
-**Forklaring:** Et spil der sikrer kontrakten, selv hvis det reducerer chancen for overstik.
+**Forklaring:** Et sikkerhedsspil er en forsikring: det koster et overstik i de fleste fordelinger, men redder kontrakten i de få, der går galt. Det er mest værd i holdturnering, hvor kontrakten tæller mere end overstikket.
 
 ### Slutspil
 **ID:** `slutspil`
@@ -2515,17 +2515,17 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Spilføring
 **Kort definition:** Selve processen med at spille kortene i en kontrakt.
 
-**Forklaring:** Selve processen med at spille kortene i en kontrakt.
+**Forklaring:** Udtrykket dækker både spilførerens spil og modspillet, efter at meldingerne er slut. Det er den del, hvor tælling, forbindelser og farvebehandling bruges.
 
 ### Spille mod
 **ID:** `spille-mod`
-**Engelsk:** Play to
+**Engelsk:** Lead towards
 **Alternative termer:** Opspil
 **Niveau:** begynder
 **Kategori:** Spilføring
-**Kort definition:** At spille til et bestemt kort eller en bestemt hånd.
+**Kort definition:** At spille et lavt kort hen imod en honnør i den anden hånd, så 2. hånd skal lægge sit kort først.
 
-**Forklaring:** At spille til et bestemt kort eller en bestemt hånd.
+**Forklaring:** At spille mod en honnør giver den en chance for at vinde, fordi 2. hånd skal lægge først, fx lille fra hånden mod bordets konge. Det er noget andet end at spille til et kort, der vinder stikket med sikkerhed, fx lille til esset.
 
 ### Spilleplan
 **ID:** `spilleplan`
@@ -2534,7 +2534,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Spilføring
 **Kort definition:** Spilførers plan, som lægges, før det første kort fra bordet spilles.
 
-**Forklaring:** Spilførers plan, som lægges, før det første kort fra bordet spilles.
+**Forklaring:** Spilleplanen begynder med at tælle vindere i sans eller tabere i trumf og at se på forbindelserne. Første stik er tit det vigtigste, for kortet fra bordet afgør, hvilke muligheder der er tilbage.
 
 ### Stikke over
 **ID:** `stikke-over`
@@ -2543,7 +2543,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Spilføring
 **Kort definition:** At stikke over makkers kort for at bevare tempo eller skifte farve.
 
-**Forklaring:** At stikke over makkers kort for at bevare tempo eller skifte farve.
+**Forklaring:** At stikke over koster et højt kort, men kan give indgang til den anden hånd. Med kongen alene på hånden og E D B 10 9 på bordet stikkes kongen over med esset, så bordet bliver inde og kan fortsætte farven.
 
 ### Taber
 **ID:** `taber`
@@ -2561,7 +2561,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Spilføring
 **Kort definition:** En planlægningsmetode i trumfkontrakter, hvor spilføreren tæller forventede tabere og undersøger, hvordan de kan fjernes.
 
-**Forklaring:** En planlægningsmetode i trumfkontrakter, hvor spilføreren tæller forventede tabere og undersøger, hvordan de kan fjernes.
+**Forklaring:** Taberne tælles i den lange trumfhånd, typisk spilførerens. De kan fjernes ved trumfning på bordet, afkast på bordets vindere eller en kipning, der lykkes.
 
 ### Tempo
 **ID:** `tempo`
@@ -2570,7 +2570,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Spilføring
 **Kort definition:** Et stik eller en spilleomgang, der bruges til at udvikle en farve, fjerne en indgang eller bevare initiativet.
 
-**Forklaring:** Et stik eller en spilleomgang, der bruges til at udvikle en farve, fjerne en indgang eller bevare initiativet.
+**Forklaring:** I sans er tempo et kapløb: spilfører skal etablere sine stik, før modspillet etablerer sine. Derfor tæller det, hvem der har udspillet, og hvor mange gange en farve skal spilles, før den er god.
 
 ### Trumfbehandling
 **ID:** `trumfbehandling`
@@ -2579,7 +2579,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Spilføring
 **Kort definition:** At styre hvornår man trækker trumfer og hvornår man trumfer tabere.
 
-**Forklaring:** At styre hvornår man trækker trumfer og hvornår man trumfer tabere.
+**Forklaring:** Trumfbehandling handler om at vælge mellem at trække trumf straks eller først trumfe tabere på bordet. Trækkes trumf for tidligt, kan bordets trumfer mangle til trumfningerne.
 
 ### Trumfkontrol
 **ID:** `trumfkontrol`
@@ -2588,7 +2588,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Spilføring
 **Kort definition:** Evnen til at styre trumferne og forhindre modspillets trumfning.
 
-**Forklaring:** Evnen til at styre trumferne og forhindre modspillets trumfning.
+**Forklaring:** Spilfører mister trumfkontrollen, når modspillet tvinger den lange trumfhånd til at trumfe så tit, at modparten får flere trumf tilbage. Opslaget Trumfpres på spilfører forklarer det.
 
 ### Trumfning
 **ID:** `trumfning`
@@ -2598,7 +2598,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Spilføring
 **Kort definition:** At trumfe et stik.
 
-**Forklaring:** At trumfe et stik.
+**Forklaring:** En trumfning giver kun et ekstra stik, når den sker fra den korte trumfhånd, typisk bordet. Trumfer den lange hånd, bruger den bare en trumf, der alligevel ville have vundet. Undtagelsen er omvendt bord, hvor den lange hånd trumfer så mange gange, at bordets trumfer trækker de sidste.
 
 ### Trumftræk
 **ID:** `trumftraek`
@@ -2608,7 +2608,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Spilføring
 **Kort definition:** At fjerne modstandernes trumfer.
 
-**Forklaring:** At fjerne modstandernes trumfer.
+**Forklaring:** Trumf trækkes normalt tidligt, så modspillet ikke kan trumfe spilførerens vindere. Trumftrækket venter, når bordet skal trumfe tabere først, eller når trumferne skal bruges som indgange.
 
 ### Tælling
 **ID:** `taelling`
@@ -2617,7 +2617,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Spilføring
 **Kort definition:** At tælle fordeling, honnører eller stikmuligheder.
 
-**Forklaring:** At tælle fordeling, honnører eller stikmuligheder.
+**Forklaring:** Ved at tælle hver modspillers kort i en farve kan spilfører finde den sidste ukendte fordeling og vide, hvem der har en manglende honnør. Mod slutningen af spillet giver tællingen tit hele billedet.
 
 ### Udestående kort
 **ID:** `udestaaende-kort`
@@ -2626,16 +2626,16 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Spilføring
 **Kort definition:** Kort i en farve der endnu ikke er spillet.
 
-**Forklaring:** Kort i en farve der endnu ikke er spillet.
+**Forklaring:** Spilfører holder øje med de udestående kort i trumf og i de vigtige farver, så det vides, hvornår farven er ude, og de lave kort er vindere. Med tretten kort pr. farve er det et spørgsmål om at trække de spillede fra.
 
 ### Undertrumf
 **ID:** `undertrumf`
 **Engelsk:** Underruff
 **Niveau:** øvet
 **Kategori:** Spilføring
-**Kort definition:** At trumfe lavere for at bevare trumfer.
+**Kort definition:** At trumfe lavere end en anden spiller, der allerede har trumfet i samme stik.
 
-**Forklaring:** At trumfe lavere for at bevare trumfer.
+**Forklaring:** En undertrumf koster en trumf uden at vinde stikket, men kan være det mindst dårlige, når alle andre kort i hånden skal bruges senere, fx i et slutspil.
 
 ### Vinderkort
 **ID:** `vinderkort`
@@ -2645,7 +2645,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Spilføring
 **Kort definition:** Et kort der med sikkerhed vinder et stik.
 
-**Forklaring:** Et kort der med sikkerhed vinder et stik.
+**Forklaring:** Et kort er en vinder, når alle højere kort i farven er spillet, eller når de højere kort sidder på samme side. Spilfører tæller vinderkortene i en vindertælling for at se, hvor mange stik der mangler.
 
 ### Vindertælling
 **ID:** `vindertælling`
@@ -2655,7 +2655,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Spilføring
 **Kort definition:** En planlægningsmetode i sanskontrakter, hvor spilføreren tæller sikre stik og identificerer muligheder for at udvikle flere.
 
-**Forklaring:** En planlægningsmetode i sanskontrakter, hvor spilføreren tæller sikre stik og identificerer muligheder for at udvikle flere.
+**Forklaring:** Vindertællingen siger, hvor mange stik der skal etableres. Mangler der to, vælges den farve, der kan give dem med færrest tabte tempi, og den er grundlaget for spilleplanen i sans.
 
 ## Modspil, udspil og signaler
 
@@ -4367,6 +4367,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 - **Laydown** → [Oplagt kontrakt](#oplagt-kontrakt)
 - **Lead** → [Udspil](#udspil)
 - **Lead out of turn** → [Udspil uden for tur](#udspil-uden-for-tur)
+- **Lead towards** → [Spille mod](#spille-mod)
 - **Lead-directing** → [Udspilsdirigerende dobling](#udspilsdirigerende-dobling)
 - **Leading through** → [Gennembrud](#gennembrud)
 - **Lebensohl** → [Lebensohl](#lebensohl)
@@ -4454,7 +4455,6 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 - **Plan of play** → [Spilleplan](#spilleplan)
 - **Play for the drop** → [Fald](#fald)
 - **Play period** → [Spilleperiode](#spilleperiode)
-- **Play to** → [Spille mod](#spille-mod)
 - **Player(s)** → [Spiller](#spiller)
 - **Point count** → [Pointvurdering](#pointvurdering)
 - **Poker face** → [Pokeransigt](#pokeransigt)
@@ -4921,7 +4921,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 - **Spar** → Spade
 - **Spil af kortene** → Card play
 - **Spilfører** → Declarer
-- **Spille mod** → Play to
+- **Spille mod** → Lead towards
 - **Spille under en honnør** → Underlead
 - **Spillebord** → Table
 - **Spilleperiode** → Play period

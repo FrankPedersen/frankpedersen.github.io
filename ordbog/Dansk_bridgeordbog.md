@@ -3214,7 +3214,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Turnering og organisering
 **Kort definition:** En del af en turnering, typisk 24–32 spil.
 
-**Forklaring:** En del af en turnering, typisk 24–32 spil.
+**Forklaring:** En turnering kan have flere afdelinger, fx en eftermiddag og en aften, og resultaterne lægges ofte sammen til sidst. I klubberne er en spilleaften typisk én afdeling.
 
 ### Alle mod alle
 **ID:** `alle-mod-alle`
@@ -3223,7 +3223,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Turnering og organisering
 **Kort definition:** En turneringsform hvor alle par eller hold møder hinanden.
 
-**Forklaring:** En turneringsform hvor alle par eller hold møder hinanden.
+**Forklaring:** Alle mod alle er den mest retfærdige form, fordi alle møder de samme modstandere, men den kræver mange runder. Med mange deltagere bruges i stedet en schweizerturnering.
 
 ### Barometerturnering
 **ID:** `barometerturnering`
@@ -3233,7 +3233,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Turnering og organisering
 **Kort definition:** En turnering, hvor alle borde spiller de samme spil samtidig, så løbende stillinger kan offentliggøres efter hver runde.
 
-**Forklaring:** En turnering, hvor alle borde spiller de samme spil samtidig, så løbende stillinger kan offentliggøres efter hver runde.
+**Forklaring:** Formen bruges ofte ved mesterskaber, fordi stillingen kan følges undervejs, og alle kender resultaterne fra de spil, de lige har spillet. Det kræver lige så mange sæt spilmapper, som der er spilleborde.
 
 ### Bridgemate
 **ID:** `bridgemate`
@@ -3242,7 +3242,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Turnering og organisering
 **Kort definition:** En elektronisk enhed ved bordet til registrering og godkendelse af resultater.
 
-**Forklaring:** En elektronisk enhed ved bordet til registrering og godkendelse af resultater.
+**Forklaring:** Efter hvert spil taster Nord kontrakten, spilføreren og antallet af stik, og Øst eller Vest godkender. Resultaterne regnes så ud med det samme, uden regnskabskort.
 
 ### Deltager
 **ID:** `deltager`
@@ -3251,7 +3251,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Turnering og organisering
 **Kort definition:** Deltager(e) i en turnering.
 
-**Forklaring:** Deltager(e) i en turnering.
+**Forklaring:** Deltageren er den, der får en placering: et par i en parturnering og et hold i en holdturnering. Antallet af deltagere afgør, hvilken skifteplan der kan bruges.
 
 ### Fast par
 **ID:** `fast-par`
@@ -3260,7 +3260,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Turnering og organisering
 **Kort definition:** Et par der sidder fast ved bordet og ikke flytter sig.
 
-**Forklaring:** Et par der sidder fast ved bordet og ikke flytter sig.
+**Forklaring:** I et Mitchell-skifte er Nord–Syd typisk de faste par. Et fast par får nye modstandere og nye spil hver runde, men bliver ved samme spillebord hele afdelingen.
 
 ### Feltet
 **ID:** `feltet`
@@ -3269,7 +3269,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Turnering og organisering
 **Kort definition:** Deltagerfeltet i en turnering.
 
-**Forklaring:** Deltagerfeltet i en turnering.
+**Forklaring:** I parturnering afgør feltets resultater, hvor godt ens eget resultat er, så et stærkt felt gør det sværere at få høje procenter. At spille med feltet betyder at vælge det, de fleste vil gøre; at spille mod feltet er at vælge noget andet for at få en top, typisk når man ligger bagud.
 
 ### Handicap
 **ID:** `handicap`
@@ -3278,7 +3278,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Turnering og organisering
 **Kort definition:** Et tal for spillerens aktuelle styrke (0–52, lavt er godt), som reguleres efter hver turnering.
 
-**Forklaring:** Et tal for spillerens aktuelle styrke (0–52, lavt er godt), som reguleres efter hver turnering.
+**Forklaring:** Handicappet følger spillerens resultater over tid og viser derfor udviklingen. Det kan også bruges til at dele en turnering i rækker efter styrke.
 
 ### Hold (spillere)
 **ID:** `hold-spillere`
@@ -3287,7 +3287,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Turnering og organisering
 **Kort definition:** Et hold bestående af flere spillere.
 
-**Forklaring:** Et hold bestående af flere spillere.
+**Forklaring:** Et hold har fire til seks spillere, og fire spiller ad gangen, to par ved hvert sit spillebord. Holdets resultat i et spil er summen af de to pars resultater, og forskellen til modstanderholdet omregnes til IMP.
 
 ### Holdturnering
 **ID:** `holdturnering`
@@ -3306,7 +3306,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Turnering og organisering
 **Kort definition:** En bevægelsesform hvor alle par spiller mod hinanden i en sektion.
 
-**Forklaring:** En bevægelsesform hvor alle par spiller mod hinanden i en sektion.
+**Forklaring:** Howell-skiftet bruges til små turneringer, hvor alle par skal møde hinanden, og parrene skifter både spillebord og retning undervejs. Med mange par bliver det for langt, og så bruges et Mitchell-skifte.
 
 ### Kamp
 **ID:** `kamp`
@@ -3315,7 +3315,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Turnering og organisering
 **Kort definition:** En kamp mellem to hold eller par.
 
-**Forklaring:** En kamp mellem to hold eller par.
+**Forklaring:** I holdturnering spilles en kamp over et antal spil; forskellen regnes i IMP og omregnes ofte til kamppoint. Opslaget Kamppoint forklarer det.
 
 ### Kvalifikation
 **ID:** `kvalifikation`
@@ -3324,16 +3324,16 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Turnering og organisering
 **Kort definition:** En fase hvor spillere eller hold forsøger at kvalificere sig til finalerunden.
 
-**Forklaring:** En fase hvor spillere eller hold forsøger at kvalificere sig til finalerunden.
+**Forklaring:** En kvalifikation skærer feltet ned, så finalen kun har de bedste. Point fra kvalifikationen kan følge med ind i finalen; opslaget Overførte point forklarer det.
 
 ### Lukket rum
 **ID:** `lukket-rum`
 **Engelsk:** Closed room
 **Niveau:** øvet
 **Kategori:** Turnering og organisering
-**Kort definition:** Et rum i holdkampe hvor spillerne ikke kan se eller høre resultater fra det andet bord.
+**Kort definition:** Det rum i holdkampe, hvor der ikke er tilskuere.
 
-**Forklaring:** Et rum i holdkampe hvor spillerne ikke kan se eller høre resultater fra det andet bord.
+**Forklaring:** I en holdkamp sidder holdets to par i hvert sit rum, så ingen hører resultaterne fra det andet spillebord. Det lukkede rum er stille og uden tilskuere, mens det åbne rum kan have tilskuere.
 
 ### Meldekasse
 **ID:** `meldekasse`
@@ -3342,7 +3342,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Turnering og organisering
 **Kort definition:** Meldekasser med kort, der bruges til at afgive meldinger i turneringsbridge.
 
-**Forklaring:** Meldekasser med kort, der bruges til at afgive meldinger i turneringsbridge.
+**Forklaring:** Meldekassen gør meldingerne lydløse, så tonefald ikke kan give makker oplysninger. Den har et kort for hvert bud og kort for pas, dobling, redobling, stop og alert.
 
 ### Mesterpoint
 **ID:** `mesterpoint`
@@ -3352,7 +3352,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Turnering og organisering
 **Kort definition:** Point der gives for placering i turneringer; bruges til ranglister.
 
-**Forklaring:** Point der gives for placering i turneringer; bruges til ranglister.
+**Forklaring:** Mesterpoint samles over tid og kan ikke tabes igen, så de viser både, hvor meget og hvor godt en spiller har spillet. Flere point gives typisk for en god placering i et stort felt.
 
 ### Mesterskab
 **ID:** `mesterskab`
@@ -3361,7 +3361,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Turnering og organisering
 **Kort definition:** Et mesterskab, typisk på nationalt eller internationalt niveau.
 
-**Forklaring:** Et mesterskab, typisk på nationalt eller internationalt niveau.
+**Forklaring:** Et mesterskab giver en titel, fx danmarksmester, og ofte en plads ved et mesterskab på et højere niveau. Der spilles både par- og holdmesterskaber.
 
 ### Mitchell-skifte
 **ID:** `mitchell-skifte`
@@ -3370,7 +3370,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Turnering og organisering
 **Kort definition:** En bevægelsesform hvor Nord‑Syd sidder fast, og Øst‑Vest bevæger sig.
 
-**Forklaring:** En bevægelsesform hvor Nord‑Syd sidder fast, og Øst‑Vest bevæger sig.
+**Forklaring:** Mitchell-skiftet er det mest brugte i klubberne: Øst–Vest flytter et spillebord op, og spillene flytter et ned. Der kåres ofte en vinder i hver retning, fordi Nord–Syd og Øst–Vest ikke møder alle.
 
 ### Overførte point
 **ID:** `overfoerte-point`
@@ -3379,7 +3379,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Turnering og organisering
 **Kort definition:** Point der overføres fra en tidligere runde eller session.
 
-**Forklaring:** Point der overføres fra en tidligere runde eller session.
+**Forklaring:** Overførte point gør, at en god start tæller med, så kvalifikationen ikke er spildt, når finalen begynder. Hvor meget der overføres, står i turneringens regler.
 
 ### Oversidder
 **ID:** `oversidder`
@@ -3388,7 +3388,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Turnering og organisering
 **Kort definition:** Når et par sidder over i en runde, typisk ved ulige antal par.
 
-**Forklaring:** Når et par sidder over i en runde, typisk ved ulige antal par.
+**Forklaring:** Med et ulige antal par sidder ét par over i hver runde, og skifteplanen sørger for, at det er et nyt par hver gang. Resultatet regnes så ud fra de spil, parret har spillet.
 
 ### Par
 **ID:** `par`
@@ -3397,7 +3397,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Turnering og organisering
 **Kort definition:** Et makkerpar i en turnering.
 
-**Forklaring:** Et makkerpar i en turnering.
+**Forklaring:** I en parturnering sammenlignes parret med de andre par, der har spillet de samme spil. Parret har ét fælles meldesystem og ét systemkort.
 
 ### Parturnering
 **ID:** `parturnering`
@@ -3413,9 +3413,9 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Engelsk:** Pivot
 **Niveau:** øvet
 **Kategori:** Turnering og organisering
-**Kort definition:** At vende retning eller placering i en bevægelsesplan.
+**Kort definition:** En holdturnering, hvor holdets fire spillere skifter makker undervejs, så hver spiller har spillet med hver af de andre.
 
-**Forklaring:** At vende retning eller placering i en bevægelsesplan.
+**Forklaring:** Pivot bruges, når fire spillere ikke har faste par eller vil prøve forskellige makkere. Det kræver, at alle fire spiller samme system.
 
 ### Pivotbord
 **ID:** `pivotbord`
@@ -3433,7 +3433,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Turnering og organisering
 **Kort definition:** Privat regnskab hvor spillere noterer deres resultater.
 
-**Forklaring:** Privat regnskab hvor spillere noterer deres resultater.
+**Forklaring:** På det private regnskabskort skriver spilleren kontrakt, udspil og resultat for hvert spil, så parret kan gennemgå spillene bagefter. Det er kun til parret selv og ikke en del af den officielle score.
 
 ### Regnskabskort
 **ID:** `regnskabskort`
@@ -3442,7 +3442,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Turnering og organisering
 **Kort definition:** Regnskabskort hvor resultater noteres.
 
-**Forklaring:** Regnskabskort hvor resultater noteres.
+**Forklaring:** Regnskabskortet er den skriftlige score: kontrakt, spilfører, antal stik og point for hvert spil. Mange steder er det afløst af Bridgemate.
 
 ### Rejseregnskab
 **ID:** `rejseregnskab`
@@ -3452,7 +3452,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Turnering og organisering
 **Kort definition:** Et vandrende regnskabskort der følger spillet rundt i turneringen.
 
-**Forklaring:** Et vandrende regnskabskort der følger spillet rundt i turneringen.
+**Forklaring:** Rejseregnskabet ligger i spilmappen og følger spillet fra spillebord til spillebord, så alle resultater for spillet samles ét sted til beregningen. Mange steder er det afløst af Bridgemate.
 
 ### Reserve
 **ID:** `reserve`
@@ -3461,16 +3461,16 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Turnering og organisering
 **Kort definition:** En spiller der erstatter en anden i en turnering.
 
-**Forklaring:** En spiller der erstatter en anden i en turnering.
+**Forklaring:** En reserve sættes ind efter aftale med turneringslederen, når en spiller ikke kan spille. I holdturnering er det ofte holdets femte eller sjette spiller.
 
 ### Runde
 **ID:** `runde`
 **Engelsk:** Round
 **Niveau:** begynder
 **Kategori:** Turnering og organisering
-**Kort definition:** En sektion af en turnering, typisk bestående af et antal spil.
+**Kort definition:** Den del af en afdeling, hvor parrene spiller et antal spil mod de samme modstandere, før de skifter.
 
-**Forklaring:** En sektion af en turnering, typisk bestående af et antal spil.
+**Forklaring:** En runde er typisk to til fire spil ved klubberne, og skifteplanen siger, hvor parrene og spillene skal hen bagefter. Turneringslederen kalder runden af, så alle skifter samtidig.
 
 ### Række
 **ID:** `raekke`
@@ -3479,16 +3479,16 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Turnering og organisering
 **Kort definition:** En gruppe af par i en turnering, typisk i større arrangementer.
 
-**Forklaring:** En gruppe af par i en turnering, typisk i større arrangementer.
+**Forklaring:** Store turneringer deles i rækker, så hver række kan have sit eget skifte og ofte sin egen vinder. Rækkerne kan også deles efter styrke, fx en A- og en B-række.
 
 ### Schweizerturnering
 **ID:** `schweizerturnering`
-**Engelsk:** Swiss teams
+**Engelsk:** Swiss teams, Swiss pairs
 **Niveau:** øvet
 **Kategori:** Turnering og organisering
-**Kort definition:** En holdturnering hvor hold møder modstandere med samme pointscore.
+**Kort definition:** En turnering, hvor hold eller par efter hver kamp møder modstandere med omtrent samme score.
 
-**Forklaring:** En holdturnering hvor hold møder modstandere med samme pointscore.
+**Forklaring:** Schweizerformen gør det muligt at spille få kampe med mange deltagere, og de bedste møder hinanden til sidst. Den er almindelig i weekendturneringer. På engelsk hedder formen Swiss Pairs i parturnering og Swiss Teams i holdturnering.
 
 ### Seedning
 **ID:** `seedning`
@@ -3497,7 +3497,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Turnering og organisering
 **Kort definition:** Indplacering af spillere i grupper baseret på styrke.
 
-**Forklaring:** Indplacering af spillere i grupper baseret på styrke.
+**Forklaring:** Seedning sikrer, at de stærkeste ikke møder hinanden for tidligt, fx i en cup eller i første runde af en schweizerturnering. Den bygger ofte på mesterpoint, handicap eller tidligere resultater.
 
 ### Skifteplan
 **ID:** `skifteplan`
@@ -3507,7 +3507,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Turnering og organisering
 **Kort definition:** Den måde par og spil flyttes rundt i turneringen.
 
-**Forklaring:** Den måde par og spil flyttes rundt i turneringen.
+**Forklaring:** Skifteplanen afhænger af antallet af par og spil; de almindelige er Mitchell-skifte og Howell-skifte. Den står ofte på et kort ved hvert spillebord, så parrene kan se, hvor de skal hen.
 
 ### Skærm
 **ID:** `skærm`
@@ -3516,7 +3516,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Turnering og organisering
 **Kort definition:** En fysisk adskillelse diagonalt over bordet, der reducerer visuelle og tidsmæssige oplysninger mellem makkere.
 
-**Forklaring:** En fysisk adskillelse diagonalt over bordet, der reducerer visuelle og tidsmæssige oplysninger mellem makkere.
+**Forklaring:** Med skærm ser hver spiller kun sin ene modstander under meldingerne, og meldingerne sendes på en slæde under skærmen. Alerteringer og forklaringer gives skriftligt til modstanderen på samme side, så makker ikke ser dem.
 
 ### Slæde
 **ID:** `slaede`
@@ -3525,7 +3525,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Turnering og organisering
 **Kort definition:** Slæden der bruges ved skærmspil til at sende meldinger mellem spillerne.
 
-**Forklaring:** Slæden der bruges ved skærmspil til at sende meldinger mellem spillerne.
+**Forklaring:** Slæden skubbes under skærmen, når begge spillere på den ene side har meldt, så ingen kan se, hvor længe makker tænkte. Det mindsker ubeføjede oplysninger.
 
 ### Spilmappe
 **ID:** `spilmappe`
@@ -3534,7 +3534,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Turnering og organisering
 **Kort definition:** En mappe eller et fysisk spil med fire hænder, brugt i turneringsbridge.
 
-**Forklaring:** En mappe eller et fysisk spil med fire hænder, brugt i turneringsbridge.
+**Forklaring:** Spilmappen holder de fire hænder adskilt, så samme spil kan spilles ved flere spilleborde; den viser også giveren og zonen. Kortene lægges tilbage i lommerne efter hvert spil.
 
 ### Stopkort
 **ID:** `stopkort`
@@ -3552,7 +3552,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Turnering og organisering
 **Kort definition:** En metode til at afgøre placering ved lige score.
 
-**Forklaring:** En metode til at afgøre placering ved lige score.
+**Forklaring:** Tie-break bruges, når to eller flere deltagere står lige, fx ved at se på den indbyrdes kamp eller flest vundne kampe. Metoden står i turneringens regler.
 
 ### Tilskuer
 **ID:** `tilskuer`
@@ -3562,7 +3562,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Turnering og organisering
 **Kort definition:** En tilskuer der ser på spillet uden at deltage.
 
-**Forklaring:** En tilskuer der ser på spillet uden at deltage.
+**Forklaring:** En tilskuer må ikke kommentere eller vise reaktioner under spillet og ser normalt kun én spillers kort. Ved holdkampe er tilskuerne i det åbne rum.
 
 ### Turnering
 **ID:** `turnering`
@@ -3571,7 +3571,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Turnering og organisering
 **Kort definition:** En organiseret bridgekonkurrence.
 
-**Forklaring:** En organiseret bridgekonkurrence.
+**Forklaring:** En turnering har en turneringsleder, en skifteplan og regler for beregningen, og resultatet kan give en placering, mesterpoint eller en titel. Den spilles som par- eller holdturnering.
 
 ### Turneringsbridge
 **ID:** `turneringsbridge`
@@ -3581,7 +3581,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Turnering og organisering
 **Kort definition:** Turneringsbridge hvor samme spil spilles af flere par for at sammenligne resultater.
 
-**Forklaring:** Turneringsbridge hvor samme spil spilles af flere par for at sammenligne resultater.
+**Forklaring:** I turneringsbridge betyder heldet med kortene mindre, fordi resultatet sammenlignes med dem, der har spillet de samme kort. Det er grundlaget for både parturnering og holdturnering.
 
 ### Udstyr
 **ID:** `udstyr`
@@ -3590,7 +3590,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Turnering og organisering
 **Kort definition:** Alt udstyr brugt i turneringen, fx meldekasser, kort, mapper og skifteplaner.
 
-**Forklaring:** Alt udstyr brugt i turneringen, fx meldekasser, kort, mapper og skifteplaner.
+**Forklaring:** Udstyret sørger for, at spillet foregår ens ved alle spilleborde, og at resultaterne kan sammenlignes. Ved store turneringer kommer skærme og slæder til.
 
 ### Åbent rum
 **ID:** `aabent-rum`
@@ -3599,7 +3599,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Turnering og organisering
 **Kort definition:** Det rum i holdkampe hvor tilskuere kan følge spillet.
 
-**Forklaring:** Det rum i holdkampe hvor tilskuere kan følge spillet.
+**Forklaring:** I det åbne rum kan tilskuere følge spillet, ofte også på storskærm eller i en onlineudsendelse. Opslaget Lukket rum forklarer det andet rum.
 
 ## Love, etik og procedure
 
@@ -4426,6 +4426,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 - **Opponents** → [Modstandere](#modstandere)
 - **Optimum contract** → [Optimal kontrakt](#optimal-kontrakt)
 - **Outstanding card(s)** → [Udestående kort](#udestaaende-kort)
+- **Overbid** → [Overmelding](#overmelding)
 - **Overcall** → [Indmelding](#indmelding)
 - **Overruff** → [Overtrumf](#overtrumf)
 - **Overtake** → [Stikke over](#stikke-over)
@@ -4550,6 +4551,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 - **Support** → [Støtte](#stoette)
 - **Support double** → [Støttedobling](#støttedobling)
 - **Support redouble** → [Støtteredobling](#støtteredobling)
+- **Swiss pairs** → [Schweizerturnering](#schweizerturnering)
 - **Swiss teams** → [Schweizerturnering](#schweizerturnering)
 - **Table** → [Spillebord](#spillebord)
 - **Takeout double** → [Oplysningsdobling](#oplysningsdobling)
@@ -4849,6 +4851,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 - **Otter (8)** → Eight (8)
 - **Overføring** → Transfer
 - **Overførte point** → Carry-over
+- **Overmelding** → Overbid
 - **Oversidder** → Sitout
 - **Overstik** → Overtrick
 - **Overstikspoint** → Overtrick points
@@ -4893,7 +4896,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 - **Røde farver** → Red suits
 - **Sammenlignelig melding** → Comparable call
 - **Sans** → No trump
-- **Schweizerturnering** → Swiss teams
+- **Schweizerturnering** → Swiss teams, Swiss pairs
 - **Seedning** → Seeding / Stratification
 - **Sekser (6)** → Six (6)
 - **Selvalert** → Self-alert

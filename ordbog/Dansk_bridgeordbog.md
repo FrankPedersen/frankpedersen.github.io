@@ -948,7 +948,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Meldinger og meldeforløb
 **Kort definition:** De tre pointgrænser for udgang, lilleslem og storeslem.
 
-**Forklaring:** De tre pointgrænser for udgang, lilleslem og storeslem.
+**Forklaring:** Tallene er de hp, to hænder tilsammen normalt skal have: ca. 26 til udgang i major eller sans, 33 til lilleslem og 37 til storeslem. Et godt fit og en god fordeling kan erstatte nogle af pointene.
 
 ### 3-trinsraketten
 **ID:** `3-trinsraketten`
@@ -957,7 +957,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Meldinger og meldeforløb
 **Kort definition:** Huskeregel for svarhåndens styrke: 6–9 (minimum), 10–12 (invit) og 13+ (udgangskrav).
 
-**Forklaring:** Huskeregel for svarhåndens styrke: 6–9 (minimum), 10–12 (invit) og 13+ (udgangskrav).
+**Forklaring:** Svarhånden viser med sin første melding, hvilket trin den ligger på: med 6–9 hp melder den lavt, med 10–12 inviterer den, og med 13 eller flere er udgangen sikker over for en åbning. Grænserne passer med 26-33-37, når åbner har ca. 13 hp.
 
 ### Afslå
 **ID:** `afslaa`
@@ -966,16 +966,16 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Meldinger og meldeforløb
 **Kort definition:** At afvise en invit eller en foreslået farve.
 
-**Forklaring:** At afvise en invit eller en foreslået farve.
+**Forklaring:** En invit afslås typisk med minimum, ved at passe eller melde det laveste trin i den aftalte farve. Med maksimum tages invitten, og der meldes udgang.
 
 ### Begrænset melding
 **ID:** `begraenset-melding`
 **Engelsk:** Limit
 **Niveau:** let øvet
 **Kategori:** Meldinger og meldeforløb
-**Kort definition:** En melding der viser begrænset styrke, typisk invit.
+**Kort definition:** En melding, der viser håndens styrke inden for et snævert interval.
 
-**Forklaring:** En melding der viser begrænset styrke, typisk invit.
+**Forklaring:** En begrænset melding viser styrken inden for et snævert interval, fx 1NT med 15–17 hp eller en invitstøtte. Makker kan så ofte vælge kontrakten selv, fordi det samlede antal hp er nogenlunde kendt.
 
 ### Benægte
 **ID:** `benaegte`
@@ -984,7 +984,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Meldinger og meldeforløb
 **Kort definition:** At benægte en egenskab, fx støtte eller kontrol.
 
-**Forklaring:** At benægte en egenskab, fx støtte eller kontrol.
+**Forklaring:** En melding kan benægte noget, fx benægter 2♦ som svar på Stayman en fire-korts major. Det, der ikke meldes, er også en oplysning for makker.
 
 ### Benævnelse
 **ID:** `benaevnelse`
@@ -993,7 +993,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Meldinger og meldeforløb
 **Kort definition:** Den meldte farve eller sans.
 
-**Forklaring:** Den meldte farve eller sans.
+**Forklaring:** Benævnelsen er den ene halvdel af et bud; den anden er trinnet. I 4♠ er spar benævnelsen, og rækkefølgen er klør, ruder, hjerter, spar og sans øverst.
 
 ### Bogmelding
 **ID:** `bogmelding`
@@ -1002,7 +1002,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Meldinger og meldeforløb
 **Kort definition:** Den melding, lærebøgerne anbefaler i en bestemt situation.
 
-**Forklaring:** Den melding, lærebøgerne anbefaler i en bestemt situation.
+**Forklaring:** Bogmeldingen er det sikre valg, som de fleste spillere forstår. Den er ikke altid den bedste, men den giver sjældent misforståelser med en ny makker.
 
 ### Bud
 **ID:** `bud`
@@ -1020,7 +1020,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Meldinger og meldeforløb
 **Kort definition:** En melding, der springer to trin over det nødvendige.
 
-**Forklaring:** En melding, der springer to trin over det nødvendige.
+**Forklaring:** Et dobbeltspring springer så meget meldeplads over, at det næsten altid har en særlig betydning i meldesystemet, fx 1♥ – 4♣ som splinter. Opslaget Splinter forklarer det.
 
 ### Enkeltstøtte
 **ID:** `enkeltstoette`
@@ -1029,7 +1029,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Meldinger og meldeforløb
 **Kort definition:** Støtte til makkers farve på laveste trin.
 
-**Forklaring:** Støtte til makkers farve på laveste trin.
+**Forklaring:** En enkeltstøtte, fx 1♥ – 2♥, viser typisk 6–9 hp og mindst tre kort i makkers major i systemer med 5-korts major. Åbner kan så passe eller prøve udgang med et udgangsforsøg.
 
 ### Genmelding
 **ID:** `genmelding`
@@ -1057,7 +1057,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Meldinger og meldeforløb
 **Kort definition:** En melding der må passes.
 
-**Forklaring:** En melding der må passes.
+**Forklaring:** Makker må passe en melding, der ikke er krav. Om en melding er krav, står i meldesystemet: en ny farve fra svarer er typisk krav, mens en enkeltstøtte ikke er.
 
 ### Invitation
 **ID:** `invitation`
@@ -1077,7 +1077,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Systemafhængig:** Ja
 **Kort definition:** En invitstyrke med støtte til makkers farve.
 
-**Forklaring:** En invitstyrke med støtte til makkers farve.
+**Forklaring:** En invitstøtte, fx 1♠ – 3♠, viser typisk 10–12 hp og fire kort i makkers farve. Åbner melder udgang med maksimum og passer med minimum.
 
 ### Kaptajn
 **ID:** `kaptajn`
@@ -1086,7 +1086,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Meldinger og meldeforløb
 **Kort definition:** Den spiller der styrer meldingerne i slemforløb og tager de endelige beslutninger.
 
-**Forklaring:** Den spiller der styrer meldingerne i slemforløb og tager de endelige beslutninger.
+**Forklaring:** Den spiller, der kender makkers hånd bedst, bliver kaptajn, typisk den, hvis makker har vist en begrænset melding. Kaptajnen spørger, og makkeren svarer og beskriver sin hånd.
 
 ### Kravmelding
 **ID:** `kravmelding`
@@ -1120,9 +1120,9 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Engelsk:** Space
 **Niveau:** let øvet
 **Kategori:** Meldinger og meldeforløb
-**Kort definition:** Den tilgængelige plads i meldeforløbet.
+**Kort definition:** Trinene, der er tilbage i meldeforløbet til at beskrive hænderne.
 
-**Forklaring:** Den tilgængelige plads i meldeforløbet.
+**Forklaring:** Meldepladsen er en ressource: hvert trin, der springes over, kan parret ikke bruge til at beskrive hænderne. Derfor bruges spring til at spærre for modparten, og lave meldinger, når der er brug for plads til et slemforsøg.
 
 ### Melder
 **ID:** `melder`
@@ -1131,7 +1131,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Meldinger og meldeforløb
 **Kort definition:** Den spiller der afgiver en melding i meldeforløbet.
 
-**Forklaring:** Den spiller der afgiver en melding i meldeforløbet.
+**Forklaring:** Melderen er den, der har turen i meldeforløbet. Den i det vindende par, der først melder benævnelsen i den endelige kontrakt, bliver spilfører.
 
 ### Melderunde
 **ID:** `melderunde`
@@ -1140,7 +1140,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Meldinger og meldeforløb
 **Kort definition:** Én melding fra hver af de fire spillere.
 
-**Forklaring:** Én melding fra hver af de fire spillere.
+**Forklaring:** En melderunde er fire meldinger, én fra hver spiller, også når de passer. Meldeforløbet slutter efter tre pas i træk efter et bud, en dobling eller en redobling, eller når alle fire passer i første runde.
 
 ### Meldesekvens
 **ID:** `meldesekvens`
@@ -1150,7 +1150,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Meldinger og meldeforløb
 **Kort definition:** Rækkefølgen af meldinger i et meldeforløb.
 
-**Forklaring:** Rækkefølgen af meldinger i et meldeforløb.
+**Forklaring:** Meldesekvensen skrives med tankestreger og modpartens meldinger i parentes, fx 1♥ – (1♠) – 2♥. Samme melding kan betyde noget forskelligt i to sekvenser.
 
 ### Melding
 **ID:** `melding`
@@ -1159,7 +1159,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Meldinger og meldeforløb
 **Kort definition:** Enhver melding: bud, pas, dobling eller redobling.
 
-**Forklaring:** Enhver melding: bud, pas, dobling eller redobling.
+**Forklaring:** Melding er det samlede ord for alt, der kan siges i meldeforløbet. Et bud er kun den melding, der nævner et trin og en benævnelse, fx 2♥.
 
 ### Meldingskort
 **ID:** `meldingskort`
@@ -1168,7 +1168,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Meldinger og meldeforløb
 **Kort definition:** Et kort i meldekassen, der viser et bud, pas, dobling, redobling eller en proceduremarkering.
 
-**Forklaring:** Et kort i meldekassen, der viser et bud, pas, dobling, redobling eller en proceduremarkering.
+**Forklaring:** Meldingskortene lægges foran hver spiller i rækkefølge, så alle kan se meldeforløbet, til udspillet er lagt. Med meldekasse siges meldingerne ikke højt.
 
 ### Minimum
 **ID:** `minimum`
@@ -1177,7 +1177,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Meldinger og meldeforløb
 **Kort definition:** Den nedre grænse af en hånds styrke.
 
-**Forklaring:** Den nedre grænse af en hånds styrke.
+**Forklaring:** En hånd med minimum ligger i bunden af det interval, meldingen har vist, fx ca. 12 hp for en åbning. Med minimum afslås en invit, og en ekstra melding undgås.
 
 ### Misfit
 **ID:** `misfit`
@@ -1186,7 +1186,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Meldinger og meldeforløb
 **Kort definition:** De to hænder passer dårligt sammen og har ingen fælles trumffarve.
 
-**Forklaring:** De to hænder passer dårligt sammen og har ingen fælles trumffarve.
+**Forklaring:** Ved misfit er det ofte bedst at stoppe lavt, også med mange point, for hænderne giver færre stik, end hp viser. Sans kan være en udvej, når begge har hold i farverne.
 
 ### Naturlig melding
 **ID:** `naturlig-melding`
@@ -1196,7 +1196,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Meldinger og meldeforløb
 **Kort definition:** En melding der viser den meldte farve.
 
-**Forklaring:** En melding der viser den meldte farve.
+**Forklaring:** En naturlig melding er det modsatte af en kunstig melding: 1♠ viser spar. De fleste meldinger er naturlige; en kunstig melding, fx Stayman, viser noget andet end farven, og alertreglerne siger, om den skal alerteres.
 
 ### Ny farve
 **ID:** `ny-farve`
@@ -1214,16 +1214,16 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Meldinger og meldeforløb
 **Kort definition:** En melding, man må bruge, fordi intet andet passer, fx 1NT som svar med en svag hånd.
 
-**Forklaring:** En melding, man må bruge, fordi intet andet passer, fx 1NT som svar med en svag hånd.
+**Forklaring:** En nødmelding siger mindre, end den ser ud til: 1NT som nødsans kan have en singleton. Makker regner derfor ikke med, at hånden er beskrevet.
 
 ### Overmelding
 **ID:** `overmelding`
-**Engelsk:**
+**Engelsk:** Overbid
 **Niveau:** begynder
 **Kategori:** Meldinger og meldeforløb
-**Kort definition:** En melding, der er højere end den forrige.
+**Kort definition:** At melde mere, end hånden er værd.
 
-**Forklaring:** En melding, der er højere end den forrige.
+**Forklaring:** En overmelding lover makker mere, end hånden har, og makker melder så videre i tillid til den. Det ender tit i en kontrakt, der går ned, måske doblet; det modsatte er at melde for lavt og gå glip af en udgang eller slem.
 
 ### Pas
 **ID:** `pas`
@@ -1233,7 +1233,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Meldinger og meldeforløb
 **Kort definition:** At afstå fra at melde.
 
-**Forklaring:** At afstå fra at melde.
+**Forklaring:** Pas er en melding som de andre og tæller i melderunden. Tre pas i træk efter et bud, en dobling eller en redobling slutter meldeforløbet, og fire pas i første runde betyder, at spillet ikke spilles (rundpas).
 
 ### Passet hånd
 **ID:** `passet-haand`
@@ -1242,7 +1242,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Meldinger og meldeforløb
 **Kort definition:** En spiller der har passet i første melderunde og dermed har begrænset styrke.
 
-**Forklaring:** En spiller der har passet i første melderunde og dermed har begrænset styrke.
+**Forklaring:** En passet hånd kan ikke have åbningsstyrke, så makker ved, at styrken er begrænset. Derfor er en ny farve fra en passet hånd typisk ikke krav, og Drury er bygget til netop den situation.
 
 ### Præference
 **ID:** `praeference`
@@ -1261,7 +1261,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Meldinger og meldeforløb
 **Kort definition:** En melding der viser ekstra styrke, fordi den tvinger makker til at melde på et højere niveau.
 
-**Forklaring:** En melding der viser ekstra styrke, fordi den tvinger makker til at melde på et højere niveau.
+**Forklaring:** En reversmelding, fx 1♦ – 1♠ – 2♥, viser flere ruder end hjerter og typisk 17 hp eller mere. Makker skal på tretrinnet for at vælge åbners første farve, og derfor kræver meldingen ekstra styrke.
 
 ### Rundekrav
 **ID:** `rundekrav`
@@ -1270,7 +1270,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Meldinger og meldeforløb
 **Kort definition:** En melding, der forpligter makker til at melde mindst én gang mere.
 
-**Forklaring:** En melding, der forpligter makker til at melde mindst én gang mere.
+**Forklaring:** Et rundekrav lover ikke udgang, men makker må ikke passe i næste runde. En ny farve fra svarer på 1-trinnet, fx 1♦ – 1♥, er rundekrav i naturlige systemer.
 
 ### Slemforsøg
 **ID:** `slemforsoeg`
@@ -1279,7 +1279,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Meldinger og meldeforløb
 **Kort definition:** En melding der undersøger muligheden for slem.
 
-**Forklaring:** En melding der undersøger muligheden for slem.
+**Forklaring:** Et slemforsøg spørger makker, om hånden er god til slem, uden at gå over udgang, fx en kontrolmelding efter et fundet fit. Siger makker nej, stoppes der i udgang.
 
 ### Slutmelding
 **ID:** `slutmelding`
@@ -1289,7 +1289,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Meldinger og meldeforløb
 **Kort definition:** En melding, der beder makker passe; kontrakten er fundet.
 
-**Forklaring:** En melding, der beder makker passe; kontrakten er fundet.
+**Forklaring:** Efter en slutmelding passer makker, også med ekstra styrke, fordi den, der slutter, kender begge hænder godt nok. Fx er 1NT – 3NT en slutmelding: svarer har valgt kontrakten.
 
 ### Spring i ny farve
 **ID:** `spring-i-ny-farve`
@@ -1298,7 +1298,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Meldinger og meldeforløb
 **Kort definition:** Et spring i ny farve, der viser enten spær eller styrke.
 
-**Forklaring:** Et spring i ny farve, der viser enten spær eller styrke.
+**Forklaring:** Det står i meldesystemet, hvad springet viser. Et stærkt spring, fx 1♥ – 3♣, lover udgang og tit slem, mens et svagt spring viser en lang farve og få point; opslaget Svagt spring i ny farve forklarer det.
 
 ### Springgenmelding
 **ID:** `springgenmelding`
@@ -1307,7 +1307,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Meldinger og meldeforløb
 **Kort definition:** Åbners genmelding med spring i sin egen farve.
 
-**Forklaring:** Åbners genmelding med spring i sin egen farve.
+**Forklaring:** En springgenmelding, fx 1♥ – 1♠ – 3♥, viser typisk en god seks-korts farve og 16–18 hp. Den er invit, og svarer kan passe med minimum.
 
 ### Springmelding
 **ID:** `springmelding`
@@ -1335,7 +1335,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Meldinger og meldeforløb
 **Kort definition:** En melding der viser betydelig styrke.
 
-**Forklaring:** En melding der viser betydelig styrke.
+**Forklaring:** En stærk melding lover så meget, at makker ikke passer for tidligt, fx en stærk 2♣-åbning. Den holder meldingerne lave, så der er plads til at finde den rigtige kontrakt.
 
 ### Støtte
 **ID:** `stoette`
@@ -1344,7 +1344,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Meldinger og meldeforløb
 **Kort definition:** At hæve makkers farve for at vise længde og styrke.
 
-**Forklaring:** At hæve makkers farve for at vise længde og styrke.
+**Forklaring:** Hvor meget støtte, der skal til, afhænger af makkers farve: tre kort er nok til en fem-korts farve og fire til en fire-korts farve, så parret har et fit på mindst otte kort.
 
 ### Støttemelding
 **ID:** `stoettemelding`
@@ -1353,7 +1353,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Meldinger og meldeforløb
 **Kort definition:** At hæve makkers farve.
 
-**Forklaring:** At hæve makkers farve.
+**Forklaring:** Støttemeldingen siger både, at parret har et fit, og hvor stærk hånden er. Enkeltstøtte, invitstøtte og springstøtte er de almindelige trin.
 
 ### Svag 2-åbning
 **ID:** `svag-2-aabning`
@@ -1361,9 +1361,9 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Niveau:** let øvet
 **Kategori:** Meldinger og meldeforløb
 **Systemafhængig:** Ja
-**Kort definition:** En svag 2‑åbning der viser en 6‑farve og begrænset styrke.
+**Kort definition:** En åbning på 2-trinnet, der viser en 6-farve og ca. 6–10 hp.
 
-**Forklaring:** En svag 2‑åbning der viser en 6‑farve og begrænset styrke.
+**Forklaring:** Den svage 2-åbning spærrer for modparten og beskriver samtidig hånden præcist, så makker kan vælge kontrakten. Mange systemer bruger den i ruder, hjerter og spar, fordi 2♣ er stærk.
 
 ### Svag melding
 **ID:** `svag-melding`
@@ -1372,7 +1372,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Meldinger og meldeforløb
 **Kort definition:** En melding der viser svag hånd eller spærrestyrke.
 
-**Forklaring:** En melding der viser svag hånd eller spærrestyrke.
+**Forklaring:** En svag melding viser få point, men tit en lang farve, og kan gøre det svært for modparten at melde, fx en spærremelding. Makker regner den som en grænse og melder sjældent videre uden en god grund.
 
 ### Svarer
 **ID:** `svarer`
@@ -1391,7 +1391,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Meldinger og meldeforløb
 **Kort definition:** Svarers anden melding, der beskriver håndens styrke og fordeling.
 
-**Forklaring:** Svarers anden melding, der beskriver håndens styrke og fordeling.
+**Forklaring:** Med sin genmelding afgør svarer ofte, om parret skal i delkontrakt, invitere eller melde udgang, for åbner har nu beskrevet sin hånd to gange. Fjerde farve krav er en kunstig genmelding til netop den situation.
 
 ### Svarmelding
 **ID:** `svarmelding`
@@ -1401,7 +1401,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Meldinger og meldeforløb
 **Kort definition:** At melde efter makkers åbning.
 
-**Forklaring:** At melde efter makkers åbning.
+**Forklaring:** Svarmeldingen begynder beskrivelsen af svarhånden: styrken efter 3-trinsraketten og helst støtte eller en ny farve. Med under ca. 6 hp passes der normalt.
 
 ### Tilpasning
 **ID:** `tilpasning`
@@ -1428,7 +1428,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Meldinger og meldeforløb
 **Kort definition:** En melding der ikke begrænser håndens styrke.
 
-**Forklaring:** En melding der ikke begrænser håndens styrke.
+**Forklaring:** En ubegrænset melding, fx en ny farve fra svarer, kan dække alt fra 6 hp til slemstyrke, så makker må ikke passe den. Den er derfor typisk krav.
 
 ### Udgangsforsøg
 **ID:** `udgangsforsoeg`
@@ -1439,7 +1439,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Systemafhængig:** Ja
 **Kort definition:** En melding der undersøger om makker har tilstrækkelig styrke til udgang.
 
-**Forklaring:** En melding der undersøger om makker har tilstrækkelig styrke til udgang.
+**Forklaring:** Et udgangsforsøg spørger makker om hjælp i en bestemt farve eller om styrken, fx 1♠ – 2♠ – 3♦ efter et fundet fit. Makker melder udgang med god hjælp i den farve eller med maksimum og stopper ellers.
 
 ### Udgangskrav
 **ID:** `udgangskrav`
@@ -1458,7 +1458,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Meldinger og meldeforløb
 **Kort definition:** En farve, ingen har meldt endnu.
 
-**Forklaring:** En farve, ingen har meldt endnu.
+**Forklaring:** Før der meldes sans, er det de umeldte farver, der skal have hold. Fjerde farve krav bruger den sidste umeldte farve som en kunstig melding.
 
 ### Åbner
 **ID:** `aabner`
@@ -1487,7 +1487,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Meldinger og meldeforløb
 **Kort definition:** Den farve, åbner har meldt først.
 
-**Forklaring:** Den farve, åbner har meldt først.
+**Forklaring:** Åbningsfarven er normalt åbners længste farve. I systemer med 5-korts major lover 1♥ og 1♠ mindst fem kort, mens 1♣ og 1♦ kan være kortere.
 
 ### Åbningshånd
 **ID:** `aabnerhaand`
@@ -1496,7 +1496,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Meldinger og meldeforløb
 **Kort definition:** En hånd med tilstrækkelig styrke og egnet fordeling til at afgive meldeforløbets første bud efter makkerskabets system.
 
-**Forklaring:** En hånd med tilstrækkelig styrke og egnet fordeling til at afgive meldeforløbets første bud efter makkerskabets system.
+**Forklaring:** En åbningshånd har typisk 12 hp eller flere. Med færre hp og en god fordeling åbner mange, når hp og længden i de to længste farver giver mindst 20.
 
 ## Meldesystemer og konventioner
 
@@ -3939,7 +3939,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Love, etik og procedure
 **Kort definition:** En melding på et lavere niveau end tilladt; kan accepteres eller kræve rettelse.
 
-**Forklaring:** En melding på et lavere niveau end tilladt; kan accepteres eller kræve rettelse.
+**Forklaring:** Et bud skal være højere end det forrige: et højere trin, eller samme trin i en højere benævnelse. Et bud, der ikke er højere, er utilstrækkeligt, og lovene siger, hvordan det rettes.
 
 ## Onlinebridge og digitale turneringer
 

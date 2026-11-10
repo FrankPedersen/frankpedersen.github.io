@@ -3611,7 +3611,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Love, etik og procedure
 **Kort definition:** En afgivelse er en erklæring om, at en eller flere af de resterende stik tilfalder modparten.
 
-**Forklaring:** En afgivelse er en erklæring om, at en eller flere af de resterende stik tilfalder modparten.
+**Forklaring:** Et krav på nogle af stikkene er samtidig en afgivelse af resten (§ 68 B 1). En modspillers afgivelse gælder ikke, hvis makker straks protesterer (§ 68 B 2), og inden for rettelsesfristen annullerer turneringslederen afgivelsen af et stik, som siden allerede havde vundet, eller som den ikke kunne tabe ved noget normalt spil (§ 71).
 
 ### Alertering
 **ID:** `alertering`
@@ -3620,7 +3620,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Love, etik og procedure
 **Kort definition:** Et signal til modstanderne om, at en melding er kunstig eller har særlig betydning.
 
-**Forklaring:** Et signal til modstanderne om, at en melding er kunstig eller har særlig betydning.
+**Forklaring:** Alerten fortæller modstanderne, at de kan have brug for en forklaring (lovenes definition af alert). Hvordan og hvornår der alerteres, fastsætter forbundet i alertreglerne (§ 40 B 2), og en manglende alert, hvor reglerne kræver den, regnes for forkert oplysning (§ 21 B 1 a).
 
 **Relaterede begreber:** kunstig-melding, makkeraftale
 
@@ -3631,7 +3631,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Love, etik og procedure
 **Kort definition:** Et fysisk kort brugt til at markere, at en melding skal alerteres.
 
-**Forklaring:** Et fysisk kort brugt til at markere, at en melding skal alerteres.
+**Forklaring:** Alertkortet ligger i meldekassen, og efter alertreglerne viser melderens makker det til modstanderne, så alerten er tydelig uden ord. Online alerterer spilleren sin egen melding; opslaget Selvalert forklarer det.
 
 ### Appel
 **ID:** `appel`
@@ -3640,7 +3640,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Love, etik og procedure
 **Kort definition:** En anmodning om at få en afgørelse fra turneringslederen prøvet af en appelkomité.
 
-**Forklaring:** En anmodning om at få en afgørelse fra turneringslederen prøvet af en appelkomité.
+**Forklaring:** Fristen er normalt 30 minutter efter, at den officielle score er gjort tilgængelig, medmindre arrangøren har fastsat en anden frist (§ 92 B). En appel går altid gennem turneringslederen (§ 92 C), og uden appelkomité afgør den ansvarlige turneringsleder selv appellen (§ 93 A).
 
 ### Berigtigelse
 **ID:** `berigtigelse`
@@ -3657,9 +3657,9 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Engelsk:** Etiquette
 **Niveau:** begynder
 **Kategori:** Love, etik og procedure
-**Kort definition:** De uskrevne regler for god opførsel ved bridgebordet.
+**Kort definition:** Reglerne for god opførsel og korrekt fremgangsmåde ved spillebordet.
 
-**Forklaring:** De uskrevne regler for god opførsel ved bridgebordet.
+**Forklaring:** Etikken handler både om høflighed og om korrekt fremgangsmåde: at følge med i spillet, ikke kommentere meldinger og spil, ikke vise sine reaktioner og ikke variere tempoet for at forvirre modparten (§ 74). Brud kan give en disciplinærstraf fra turneringslederen (§ 91).
 
 ### Forkert oplysning
 **ID:** `forkert-oplysning`
@@ -3669,7 +3669,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Love, etik og procedure
 **Kort definition:** Forkert forklaring af makkers melding; modstanderne kan få kompensation.
 
-**Forklaring:** Forkert forklaring af makkers melding; modstanderne kan få kompensation.
+**Forklaring:** Forkert oplysning er en fejl i forklaringen af parrets aftaler, ikke en forkert melding: er aftalen forklaret rigtigt, og melderen har glemt den, er der intet lovbrud, og resultatet står (§ 75 C). Uden beviser for andet går turneringslederen ud fra, at forklaringen var forkert (§ 21 B 1 b), og bliver modparten skadet, gives en justeret score (§ 75 B 1).
 
 ### Forklaring af melding
 **ID:** `forklaring`
@@ -3678,7 +3678,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Love, etik og procedure
 **Kort definition:** En korrekt og fuldstændig beskrivelse af makkerskabets aftale om en melding, ikke en vurdering af melderens aktuelle hånd.
 
-**Forklaring:** En korrekt og fuldstændig beskrivelse af makkerskabets aftale om en melding, ikke en vurdering af melderens aktuelle hånd.
+**Forklaring:** Den, der spørger, har ret til at kende modpartens aftaler, også om meldinger, der kunne være givet i stedet, og om de slutninger, aftalerne giver (§ 20 F 1). Under meldingerne spørges der kun, når det er ens egen tur, og svaret kommer fra melderens makker.
 
 ### Igangværende stik
 **ID:** `igangvaerende-stik`
@@ -3687,7 +3687,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Love, etik og procedure
 **Kort definition:** Det stik der er i gang med at blive spillet.
 
-**Forklaring:** Det stik der er i gang med at blive spillet.
+**Forklaring:** Spilfører eller en modspiller kan få vist kortene i det igangværende stik, så længe spillerens eget kort ikke er vendt, og siden ikke har spillet til næste stik (§ 66 A). Et udsagn, der kun handler om det igangværende stik, er hverken et krav eller en afgivelse, og spillet fortsætter normalt (§ 68).
 
 ### Justeret score
 **ID:** `korrigeret-score`
@@ -3697,7 +3697,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Love, etik og procedure
 **Kort definition:** En score fastsat af turneringslederen, når en uregelmæssighed har påvirket eller forhindret et normalt resultat.
 
-**Forklaring:** En score fastsat af turneringslederen, når en uregelmæssighed har påvirket eller forhindret et normalt resultat.
+**Forklaring:** En justeret score er enten tildelt eller kunstig (§ 12 C). Den tildelte er det resultat, der sandsynligvis var opnået uden lovbruddet, eventuelt vægtet mellem flere mulige resultater; den kunstige gives, når spillet ikke kan få et resultat: i parturnering middelscore plus (mindst 60 %) til en side uden skyld og middelscore minus (højst 40 %) til den side, der er skyld i fejlen.
 
 ### Kendelse
 **ID:** `kendelse`
@@ -3706,7 +3706,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Love, etik og procedure
 **Kort definition:** En afgørelse fra turneringslederen om en uregelmæssighed.
 
-**Forklaring:** En afgørelse fra turneringslederen om en uregelmæssighed.
+**Forklaring:** Er parterne enige om, hvad der skete, følger kendelsen den lov, der dækker tilfældet, og tvivl afgøres til fordel for den side, der ikke er skyld i fejlen (§ 84). Er de uenige, fastslår turneringslederen først, hvad der mest sandsynligt skete (§ 85). En kendelse kan appelleres (§ 92).
 
 ### Krav
 **ID:** `krav`
@@ -3724,7 +3724,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Love, etik og procedure
 **Kort definition:** Kulørsvigt opstår, når en spiller undlader at bekende, selv om spilleren har et kort i den udspillede farve.
 
-**Forklaring:** Kulørsvigt opstår, når en spiller undlader at bekende, selv om spilleren har et kort i den udspillede farve.
+**Forklaring:** En kulørsvigt skal rettes, hvis der gøres opmærksom på den i tide (§ 62 A). Den bliver endelig, når den skyldige side spiller til næste stik, eller når den gør krav på eller afgiver stik (§ 63 A), og en endelig kulørsvigt giver modparten et eller to stik efter reglerne i § 64.
 
 ### Lang tænkepause
 **ID:** `lang-taenkepause`
@@ -3733,7 +3733,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Love, etik og procedure
 **Kort definition:** En meget lang tænkepause, ofte mistænkelig i konkurrencemeldinger.
 
-**Forklaring:** En meget lang tænkepause, ofte mistænkelig i konkurrencemeldinger.
+**Forklaring:** En lang tænkepause er ikke i sig selv et lovbrud (§ 73 D 1), men den giver makker ubeføjede oplysninger (§ 16 B 1). Forbundet kan kræve faste pauser, fx i første meldeomgang eller efter en springmelding, så tempoet ikke afslører noget (§ 73 A 2).
 
 ### Lovbrud
 **ID:** `lovbrud`
@@ -3742,7 +3742,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Love, etik og procedure
 **Kort definition:** Et regelbrud, som kan medføre justeret score eller straf.
 
-**Forklaring:** Et regelbrud, som kan medføre justeret score eller straf.
+**Forklaring:** Et lovbrud er en spillers brud på lovene eller på en regel, der er fastsat efter dem (lovenes definition af infraction). Lovene er ikke skrevet for at straffe, men for at rette op, hvor den side, der ikke er skyld i fejlen, ellers kunne lide skade (lovenes indledning); en egentlig straf kan komme oveni ved brud på fremgangsmåden eller god opførsel (§ 90 og § 91).
 
 ### Lovlig
 **ID:** `lovlig`
@@ -3751,25 +3751,25 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Love, etik og procedure
 **Kort definition:** En handling eller melding, der er tilladt efter reglerne.
 
-**Forklaring:** En handling eller melding, der er tilladt efter reglerne.
+**Forklaring:** Lovligt dækker også de regler, forbundet fastsætter efter lovene: forbundet kan fx tillade eller forbyde særlige aftaler og konventioner (§ 40 B 2). Et bud er kun tilstrækkeligt, når det er højere end det forrige; ellers er det et utilstrækkeligt bud og et lovbrud (§ 18 D og § 27).
 
 ### Manglende alert
 **ID:** `manglende-alert`
 **Engelsk:** Failure to alert
 **Niveau:** let øvet
 **Kategori:** Love, etik og procedure
-**Kort definition:** Når en spiller undlader at alertere en kunstig melding, som makker burde have informeret om.
+**Kort definition:** Når en melding ikke bliver alerteret, selv om alertreglerne kræver det.
 
-**Forklaring:** Når en spiller undlader at alertere en kunstig melding, som makker burde have informeret om.
+**Forklaring:** En manglende alert regnes for forkert oplysning, og turneringslederen kan lade modstanderen ændre en melding, som den kan have påvirket, hvis modstanderens makker ikke har meldt siden (§ 21 B 1 a). Melderen må heller ikke bruge, at makker ikke alerterede, for det er ubeføjede oplysninger (§ 16 B 1).
 
 ### Med bagsiden opad
 **ID:** `med-bagsiden-opad`
 **Engelsk:** Face down
 **Niveau:** begynder
 **Kategori:** Love, etik og procedure
-**Kort definition:** Et kort spillet med bagsiden opad, typisk ved uregelmæssigheder.
+**Kort definition:** Om et kort, der ligger med forsiden nedad, fx udspillet, før det vendes, og kortene i et færdigt stik.
 
-**Forklaring:** Et kort spillet med bagsiden opad, typisk ved uregelmæssigheder.
+**Forklaring:** Udspillet lægges med bagsiden opad, så udspillerens makker og spilfører kan få meldingerne gentaget eller spørge, før det vendes, og det kan kun tages tilbage efter turneringslederens anvisning (§ 41 A og B). Forbundet kan dog bestemme, at udspillet lægges med forsiden opad (fodnote til § 41 A).
 
 ### Med forsiden opad
 **ID:** `med-forsiden-opad`
@@ -3778,7 +3778,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Love, etik og procedure
 **Kort definition:** Et kort spillet med forsiden opad.
 
-**Forklaring:** Et kort spillet med forsiden opad.
+**Forklaring:** Når udspillet vendes, begynder spilleperioden, og bordets kort lægges op med forsiden opad (§ 41 C). En modspillers kort, der kommer til syne for tidligt, bliver et strafkort og skal ligge med forsiden opad foran spilleren (§ 49 og § 50 A); spilførerens og bordets kort bliver aldrig strafkort (§ 48 A).
 
 ### Mekanisk fejl
 **ID:** `mekanisk-fejl`
@@ -3787,16 +3787,16 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Love, etik og procedure
 **Kort definition:** Et fysisk fejlgreb, fx at spille det forkerte kort ved et uheld.
 
-**Forklaring:** Et fysisk fejlgreb, fx at spille det forkerte kort ved et uheld.
+**Forklaring:** En mekanisk fejl i meldingerne kan rettes: tog spilleren det forkerte kort i meldekassen, kan den tilsigtede melding gives i stedet, indtil makker har meldt, men ikke, når spilleren har tænkt forkert (§ 25 A). Et kort, der er spillet, kan derimod normalt ikke tages tilbage (§ 47 F).
 
 ### Meldeperiode
 **ID:** `meldeperiode`
 **Engelsk:** Auction period
 **Niveau:** begynder
 **Kategori:** Love, etik og procedure
-**Kort definition:** Den fase af spillet hvor spillerne afgiver meldinger.
+**Kort definition:** Perioden, der for en side begynder, når en af dens spillere tager sine kort op af spilmappen, og slutter, når udspillet vendes.
 
-**Forklaring:** Den fase af spillet hvor spillerne afgiver meldinger.
+**Forklaring:** Mellem sidste pas og det vendte udspil ligger afklaringsperioden, hvor der kan spørges til meldingerne (§ 17 D). En spiller, der opdager, at egen forklaring var forkert, skal gøre opmærksom på det, inden afklaringsperioden er slut (§ 20 F 4); er det makkers forklaring, der var forkert, siger spilfører eller bordet det efter sidste pas, mens en modspiller venter, til spillet er slut (§ 20 F 5 b). Et kort, der bliver vist i meldeperioden, kan give makker pligt til at passe og bliver et strafkort, hvis spilleren bliver modspiller (§ 24).
 
 ### Melding uden for tur
 **ID:** `melding-uden-for-tur`
@@ -3805,7 +3805,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Love, etik og procedure
 **Kort definition:** En melding afgivet af en spiller, der ikke er i tur; kan medføre rettelser eller straf.
 
-**Forklaring:** En melding afgivet af en spiller, der ikke er i tur; kan medføre rettelser eller straf.
+**Forklaring:** Modstanderen til venstre for den skyldige kan acceptere meldingen ved at melde videre; ellers annulleres den, og den spiller, der var i tur, melder (§ 29). Erstatter den skyldige senere meldingen med en sammenlignelig melding, er der ingen yderligere rettelse; ellers må makker passe, næste gang det er makkers tur, og der kan komme begrænsninger i udspillet (§ 30–32 og § 26 B).
 
 ### Psykisk melding
 **ID:** `psykisk-melding`
@@ -3824,7 +3824,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Love, etik og procedure
 **Kort definition:** Den tidsperiode hvor fejl i regnskab eller resultater kan rettes.
 
-**Forklaring:** Den tidsperiode hvor fejl i regnskab eller resultater kan rettes.
+**Forklaring:** Rettelsesfristen udløber normalt 30 minutter efter, at den officielle score er gjort tilgængelig, medmindre arrangøren har fastsat en anden frist (§ 79 C). Inden for fristen kan turneringslederen også rette uregelmæssigheder og annullere en afgivelse af stik, som ikke kunne tabes (§ 71 og § 81 C 3).
 
 ### Rundpas
 **ID:** `rundpas`
@@ -3832,36 +3832,36 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Alternative termer:** Passed out / Pass out
 **Niveau:** begynder
 **Kategori:** Love, etik og procedure
-**Kort definition:** Når alle fire spillere passer, og spillet annulleres.
+**Kort definition:** Når alle fire spillere passer, og kortene lægges tilbage i spilmappen uden spil.
 
-**Forklaring:** Når alle fire spillere passer, og spillet annulleres.
+**Forklaring:** Der gives ikke om (§ 22 B): spillet står som 0 til begge sider og sammenlignes med resultaterne ved de andre spilleborde. Meldeperioden slutter først, når alle fire hænder er lagt tilbage, så indtil da kan en spiller stadig rette et pas, der var et fejlgreb (§ 17 D 2 og § 25 A).
 
 ### Sammenlignelig melding
 **ID:** `sammenlignelig-melding`
 **Engelsk:** Comparable call
 **Niveau:** avanceret
 **Kategori:** Love, etik og procedure
-**Kort definition:** En melding der kan erstatte en ulovlig melding uden at give modstanderne fordel.
+**Kort definition:** En melding, der erstatter en annulleret melding og har samme eller lignende betydning, en del af dens mulige betydninger eller samme formål.
 
-**Forklaring:** En melding der kan erstatte en ulovlig melding uden at give modstanderne fordel.
+**Forklaring:** Reglen giver flere spil et normalt resultat efter en annulleret melding, fx et utilstrækkeligt bud eller en melding uden for tur: erstattes den med en sammenlignelig melding, fortsætter meldinger og spil uden yderligere rettelse (§ 23 B og § 27 B 1 b). Har modparten alligevel lidt skade, fordi den skyldige side fik hjælp af lovbruddet, justerer turneringslederen scoren (§ 23 C).
 
 ### Spilleperiode
 **ID:** `spilleperiode`
 **Engelsk:** Play period
 **Niveau:** begynder
 **Kategori:** Love, etik og procedure
-**Kort definition:** Den tid hvor spillere aktivt spiller spil.
+**Kort definition:** Perioden fra udspillet vendes, til kortene tages op af næste spilmappe.
 
-**Forklaring:** Den tid hvor spillere aktivt spiller spil.
+**Forklaring:** I spilleperioden kan spilfører og modspillerne spørge til modpartens meldinger og aftaler, hver når det er ens egen tur til at spille (§ 20 F 2). Spillernes rettigheder i perioden udløber hver for sig efter den lov, der gælder, fx retten til at få vist det igangværende stik (§ 66 A og lovenes definition af play period).
 
 ### Strafkort
 **ID:** `strafkort`
 **Engelsk:** Penalty card
 **Niveau:** let øvet
 **Kategori:** Love, etik og procedure
-**Kort definition:** Et kort der skal ligge åbent på bordet som straf for en fejl i udspil eller afkast.
+**Kort definition:** Et kort, som en modspiller har vist for tidligt, og som derfor skal ligge med forsiden opad foran spilleren og spilles efter særlige regler.
 
-**Forklaring:** Et kort der skal ligge åbent på bordet som straf for en fejl i udspil eller afkast.
+**Forklaring:** Et lille strafkort er et enkelt kort under 10, der er vist ved et uheld; modspilleren må ikke spille et andet kort under 10 i farven, før strafkortet er spillet, men må gerne spille en honnør (§ 50 B og C). Alle andre er store strafkort: de skal spilles ved første lovlige lejlighed, og spilfører kan stille krav til makkers næste udspil (§ 50 D).
 
 ### Tempobrud
 **ID:** `tempobrud`
@@ -3870,7 +3870,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Love, etik og procedure
 **Kort definition:** En tydelig pause eller tøven i meldinger eller spil, som kan give ubeføjede oplysninger.
 
-**Forklaring:** En tydelig pause eller tøven i meldinger eller spil, som kan give ubeføjede oplysninger.
+**Forklaring:** Et utilsigtet tempobrud er ikke et lovbrud, og kun modparten må bruge det, den kan slutte af det, og på egen risiko (§ 73 D 1). Bruges tempoet bevidst til at vildlede modparten, fx ved at tøve med en singleton, er det et lovbrud, og bliver modparten narret, kan turneringslederen justere scoren (§ 73 D 2 og § 73 E 2).
 
 ### Turneringsleder
 **ID:** `turneringsleder`
@@ -3890,7 +3890,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Love, etik og procedure
 **Kort definition:** En længere tænkepause, der kan give makker ubeføjede oplysninger.
 
-**Forklaring:** En længere tænkepause, der kan give makker ubeføjede oplysninger.
+**Forklaring:** Makker må ikke vælge en melding eller et kort, som tøven tydeligt peger på, frem for et logisk alternativ, dvs. en handling, som en betydelig del af tilsvarende spillere med samme system ville overveje alvorligt (§ 16 B 1). Modparten kan tage forbehold om at tilkalde turneringslederen senere; er den side, der tøvede, uenig i, at der var tøven, tilkaldes turneringslederen med det samme (§ 16 B 2).
 
 ### Ubeføjede oplysninger
 **ID:** `ubefoejede-oplysninger`
@@ -3899,7 +3899,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Love, etik og procedure
 **Kort definition:** Oplysninger, som makker ikke må bruge (fx tøven, tonefald, kropssprog).
 
-**Forklaring:** Oplysninger, som makker ikke må bruge (fx tøven, tonefald, kropssprog).
+**Forklaring:** Ubeføjede oplysninger kan også komme fra makkers spørgsmål, svar og alerter eller manglende alerter (§ 16 B 1) og fra en melding eller et kort, som den skyldige side har måttet tage tilbage (§ 16 C 2). Spilleren må ikke vælge det, oplysningerne tydeligt peger på, frem for et logisk alternativ; ellers justerer turneringslederen scoren (§ 16 B 3).
 
 ### Udspil uden for tur
 **ID:** `udspil-uden-for-tur`
@@ -3910,7 +3910,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Love, etik og procedure
 **Kort definition:** Udspil fra den forkerte hånd; modstanderne får valgmuligheder for rettelse.
 
-**Forklaring:** Udspil fra den forkerte hånd; modstanderne får valgmuligheder for rettelse.
+**Forklaring:** Ved et vendt åbningsudspil uden for tur kan spilfører acceptere det og spille kontrakten, lægge sine kort op og blive bordet, eller kræve udspillet taget tilbage, så kortet bliver et stort strafkort (§ 54). Senere i spillet kan et udspil uden for tur også accepteres (§ 53); ellers gælder § 55 for spilfører og § 56 for en modspiller.
 
 ### Ulovlig
 **ID:** `ulovlig`
@@ -3919,16 +3919,16 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Love, etik og procedure
 **Kort definition:** En handling eller melding, der strider mod reglerne.
 
-**Forklaring:** En handling eller melding, der strider mod reglerne.
+**Forklaring:** Spillerne retter ikke selv en ulovlig handling og kan heller ikke give afkald på rettelsen: det er turneringslederen alene, der fastsætter den (§ 10 A). Lovene siger, hvornår modparten kan acceptere en ulovlig handling, fx et utilstrækkeligt bud eller en melding uden for tur, ved at melde videre (§ 27 A og § 29 A).
 
 ### Uregelmæssighed
 **ID:** `uregelmaessighed`
 **Engelsk:** Irregularity
 **Niveau:** let øvet
 **Kategori:** Love, etik og procedure
-**Kort definition:** Enhver uregelmæssighed i meldinger eller spil, som direktøren skal håndtere.
+**Kort definition:** En afvigelse fra den korrekte fremgangsmåde, med eller uden et lovbrud.
 
-**Forklaring:** Enhver uregelmæssighed i meldinger eller spil, som direktøren skal håndtere.
+**Forklaring:** Når der gøres opmærksom på en uregelmæssighed, tilkaldes turneringslederen med det samme (§ 9 B 1). Ingen er forpligtet til at gøre opmærksom på sin egen sides lovbrud (§ 9 A 5), og bordet må først gøre opmærksom på en uregelmæssighed, når spillet er slut (§ 9 A 4).
 
 ### Utilstrækkeligt bud
 **ID:** `utilstraekkeligt-bud`

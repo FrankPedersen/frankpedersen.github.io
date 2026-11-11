@@ -206,16 +206,16 @@ class KategorierOgNiveauer(unittest.TestCase):
            'Lavt i anden hånd', 'Stik ikke automatisk', 'Tilspil', 'Regnskab', 'Byttehandel', 'Fanget på det gale ben',
            'Kort tredje / honnør anden', 'Melde i den blå luft', 'Pointrytter', 'Pokeransigt', 'Sælge ud',
            'Unoder ved bordet', 'Urent trav']
-    # Portion 1, 2, 4 og 6 af forklaringerne (SPEC-ordbog-forklaringer-1.md, -2.md, -4.md og -6.md, Franks valg 6. og
-    # 10. november 2026) har givet 31 af de nye opslag deres egen forklaring; de andre har samme forklaring som definition,
-    # til deres portion kommer (portion 3 og 5 havde ingen af dem).
+    # Portion 1, 2, 4, 6 og 7 af forklaringerne (SPEC-ordbog-forklaringer-1.md, -2.md, -4.md, -6.md og -7.md, Franks valg
+    # 6., 10. og 11. november 2026) har givet 32 af de nye opslag deres egen forklaring; de andre har samme forklaring som
+    # definition, til deres portion kommer (portion 3 og 5 havde ingen af dem).
     MED_FORKLARING = {'Baghånd', 'Forhånd', 'Honnørsekvens', 'Lavhonnør', 'Mellemhånd', 'Mellemkort', 'Nabohonnører',
                       'Selvspillende farve', 'Spillestærk hånd', 'Toptaber',
                       '26-33-37', '3-trinsraketten', 'Bogmelding', 'Dobbeltspring', 'Enkeltstøtte', 'Melderunde', 'Misfit',
                       'Nødmelding / nødsans', 'Overmelding', 'Rundekrav', 'Springgenmelding', 'Umeldt farve', 'Åbningsfarve',
                       '"Eight ever, nine never"', 'Badekup (Bath Coup)', 'Farvebehandling', 'Forbindelser',
                       'Fordelingssandsynlighed', 'Spilleplan',
-                      '1NT-åbning', '2NT-åbning'}
+                      '1NT-åbning', '2NT-åbning', 'Regnskab'}
 
     @classmethod
     def setUpClass(cls):

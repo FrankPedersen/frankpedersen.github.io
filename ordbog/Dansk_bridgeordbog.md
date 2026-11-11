@@ -2934,7 +2934,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Score og beregning
 **Kort definition:** En zonestilling, hvor begge sider er i zonen.
 
-**Forklaring:** En zonestilling, hvor begge sider er i zonen.
+**Forklaring:** Zonen står på spilmappen: alle er i zonen i spil 4, 7, 10 og 13, og samme mønster gentages for hver 16 spil (§ 2). I zonen giver udgang 500 i bonus i stedet for 300, lilleslem 750 og storeslem 1500 ekstra, og udoblet koster hvert bet 100 (§ 77). Lovene kalder det at være i farezonen.
 
 ### Beregning
 **ID:** `beregning`
@@ -2943,7 +2943,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Score og beregning
 **Kort definition:** Den metode der bruges til at beregne resultater i en turnering.
 
-**Forklaring:** Den metode der bruges til at beregne resultater i en turnering.
+**Forklaring:** Lovene beskriver tre metoder: parpointberegning (matchpoint), imp-beregning og totalpointberegning, og med den regulerende myndigheds godkendelse kan andre bruges, fx kamppoint (§ 78). Turneringens propositioner bør oplyse, hvilken metode der bruges (§ 78D).
 
 ### Board-a-Match (BAM)
 **ID:** `board-a-match-bam`
@@ -2953,7 +2953,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Score og beregning
 **Kort definition:** En scoringsform hvor hvert spil er enten vundet, tabt eller uafgjort.
 
-**Forklaring:** En scoringsform hvor hvert spil er enten vundet, tabt eller uafgjort.
+**Forklaring:** Board-a-match bruges i holdturnering: hvert spil giver 2–0, 1–1 eller 0–2 til det hold, der fik flest point på spillet, uanset hvor stor forskellen er (DBf's turneringsbestemmelser § 206). Derfor er taktikken parturneringens, og et overstik kan vinde et helt spil.
 
 ### Bonuspoint
 **ID:** `bonuspoint`
@@ -2961,9 +2961,9 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Alternative termer:** Udgangsbonus, Bonus
 **Niveau:** begynder
 **Kategori:** Score og beregning
-**Kort definition:** Bonuspoint for udgang, slem eller overstik.
+**Kort definition:** Point, der gives oven i stikpointene, for delkontrakt, udgang, slem, overstik og vundet doblet eller redoblet kontrakt.
 
-**Forklaring:** Bonuspoint for udgang, slem eller overstik.
+**Forklaring:** Lovene giver bonuspoint for delkontrakt (50), udgang (300 uden for zonen og 500 i zonen), lilleslem (500 og 750) og storeslem (1000 og 1500), for vundet doblet eller redoblet kontrakt (50 og 100) og for overtræk (§ 77). Bonussen kommer oven i trækværdien, så 4♠ hjemme giver 120 + 300 = 420 uden for zonen.
 
 ### Bund
 **ID:** `bund`
@@ -2972,16 +2972,16 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Score og beregning
 **Kort definition:** Den laveste score på et spil i parturnering.
 
-**Forklaring:** Den laveste score på et spil i parturnering.
+**Forklaring:** En bund giver 0 point i 2/1/0, uanset hvor lille forskellen til de andre resultater er. Har to par samme laveste score, deler de bunden og får 1 point hver (§ 78A).
 
 ### Butler-beregning
 **ID:** `butler-beregning`
 **Engelsk:** Butler scoring
 **Niveau:** øvet
 **Kategori:** Score og beregning
-**Kort definition:** En holdscoringsmetode baseret på IMP mod et gennemsnitligt resultat.
+**Kort definition:** En beregning, hvor hvert pars score sammenlignes med et gennemsnit af de andre resultater på spillet (datum) og omregnes til imp.
 
-**Forklaring:** En holdscoringsmetode baseret på IMP mod et gennemsnitligt resultat.
+**Forklaring:** Efter DBf's turneringsbestemmelser fjernes den højeste og den laveste score, datum er gennemsnittet af resten, og forskellen mellem parrets score og datum afrundes til nærmeste 10 og omregnes til imp efter imp-skalaen (§ 78B). Middel plus giver +2 imp og middel minus −2 imp, og taktikken er holdturneringens.
 
 ### Cross-IMP
 **ID:** `cross-imp`
@@ -2990,7 +2990,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Score og beregning
 **Kort definition:** En scoringsmetode hvor alle resultater sammenlignes IMP‑mæssigt mod hinanden.
 
-**Forklaring:** En scoringsmetode hvor alle resultater sammenlignes IMP‑mæssigt mod hinanden.
+**Forklaring:** Hvert resultat sammenlignes med hvert af de andre resultater på spillet, og hver forskel omregnes til imp. DBf lægger impene sammen, mens nogle steder deler summen med antallet af sammenligninger. Cross-imp er mere retfærdig end Butler, fordi én vild score ikke flytter et datum, men den er tungere at regne i hånden.
 
 ### Datum
 **ID:** `datum`
@@ -2999,7 +2999,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Score og beregning
 **Kort definition:** Et gennemsnitsresultat brugt som reference i Butler‑scoring.
 
-**Forklaring:** Et gennemsnitsresultat brugt som reference i Butler‑scoring.
+**Forklaring:** Efter DBf's turneringsbestemmelser fjernes den højeste og den laveste score, før gennemsnittet tages, så én vild score ikke trækker datum skævt; arrangøren kan bestemme, at flere fjernes. Ved +620, +620, +600, +170, +170, +140, −100 og −100 er datum 266,67, og +620 ligger 350 over, når forskellen afrundes til nærmeste 10, hvilket giver 8 imp.
 
 ### Doblet kontrakt
 **ID:** `doblet-kontrakt`
@@ -3009,7 +3009,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Score og beregning
 **Kort definition:** En kontrakt, hvor en dobling øger stikpoint, bonus og straf.
 
-**Forklaring:** En kontrakt, hvor en dobling øger stikpoint, bonus og straf.
+**Forklaring:** Doblet ganges trækværdien med 2, og når den derved op på 100, er kontrakten udgang: 2♥ doblet hjemme uden for zonen giver 120 + 300 + 50 = 470 i stedet for 110. Hvert overtræk giver 100 (200 i zonen), og bet koster 100, 300, 500 og 800 uden for zonen og 200, 500, 800 og 1100 i zonen (§ 77).
 
 ### I zonen
 **ID:** `i-zonen`
@@ -3039,7 +3039,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Score og beregning
 **Kort definition:** En scoringsform hvor forskellen i score omregnes til IMP.
 
-**Forklaring:** En scoringsform hvor forskellen i score omregnes til IMP.
+**Forklaring:** Lovene kalder det imp-beregning: forskellen mellem to scorer omregnes efter en fast skala fra 0 imp (0–10 point) til 24 imp (4000 point eller mere) (§ 78B). Skalaen er aftagende: de første 400 point giver 9 imp og de næste 1600 kun 10 mere, så en misset udgang, typisk 10 imp, vejer tungere end et overstik, der giver 1.
 
 ### Kamppoint
 **ID:** `kamppoint`
@@ -3048,9 +3048,9 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Forkortelse:** VP
 **Niveau:** øvet
 **Kategori:** Score og beregning
-**Kort definition:** Kamppoint brugt i holdturneringer baseret på IMP‑forskel.
+**Kort definition:** Point, som en holdkamps imp-forskel omregnes til, så en kamp altid giver 20 point i alt.
 
-**Forklaring:** Kamppoint brugt i holdturneringer baseret på IMP‑forskel.
+**Forklaring:** Uafgjort er 10–10, og DBf bruger WBF's skala fra 2013 med to decimaler; opslaget VP-skala forklarer skalaen. Lovene nævner kamppoint som en af de udregningsmetoder, den regulerende myndighed kan godkende (§ 78D), og i en cupkamp bruges impene direkte uden kamppoint.
 
 ### Matchpoint
 **ID:** `matchpoint`
@@ -3059,9 +3059,9 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Forkortelse:** MP
 **Niveau:** let øvet
 **Kategori:** Score og beregning
-**Kort definition:** Scoring i parturnering, hvor hvert spil sammenlignes med alle andre par.
+**Kort definition:** Scoring i parturnering, hvor hvert resultat sammenlignes med de andre par, der har spillet samme spil i samme retning.
 
-**Forklaring:** Scoring i parturnering, hvor hvert spil sammenlignes med alle andre par.
+**Forklaring:** Lovene kalder det parpointberegning: hver score får 2 point for hver dårligere score, 1 for hver ens og 0 for hver bedre (§ 78A). Med n borde er toppen 2 × (n − 1), og kun rækkefølgen tæller, så +620 mod +590 tæller lige så meget som +1430 mod −100.
 
 ### Meldt og vundet
 **ID:** `meldt-og-vundet`
@@ -3071,7 +3071,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Score og beregning
 **Kort definition:** Når den meldte kontrakt bliver vundet.
 
-**Forklaring:** Når den meldte kontrakt bliver vundet.
+**Forklaring:** Spilførerens side får trækværdien for de meldte træk og bonuspoint for delkontrakt eller udgang og eventuel slem; overtræk scores for sig og tæller ikke med til udgang (§ 77). 3♥ med 10 stik giver derfor 140 + 30 = 170 uden for zonen og er ikke udgang.
 
 ### Middelscore
 **ID:** `middelscore`
@@ -3080,16 +3080,16 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Score og beregning
 **Kort definition:** Den score, et par får, når et spil ikke kan spilles eller ikke kan gennemføres korrekt; i parturnering typisk 50 % af toppen.
 
-**Forklaring:** Den score, et par får, når et spil ikke kan spilles eller ikke kan gennemføres korrekt; i parturnering typisk 50 % af toppen.
+**Forklaring:** Lovene giver middel til en side, der kun var delvist skyld i, at spillet ikke kunne få et resultat; en side uden skyld får middel plus og en side med direkte skyld middel minus (§ 12C2a). Pointene kaldes kunstig score, fordi de ikke kommer fra spillet ved bordet.
 
 ### Middelscore minus
 **ID:** `middelscore-minus`
 **Engelsk:** Average minus
 **Niveau:** øvet
 **Kategori:** Score og beregning
-**Kort definition:** En lavere middelscore, typisk når en spiller har delvist ansvar for en fejl.
+**Kort definition:** En kunstig score under middel, i parturnering højst 40 %, til den side, der var direkte skyld i, at spillet ikke kunne få et resultat.
 
-**Forklaring:** En lavere middelscore, typisk når en spiller har delvist ansvar for en fejl.
+**Forklaring:** I parturnering er middel minus højst 40 %, men en side med skyld, der får under 40 % i resten af sektionen, får sin egen procent (§ 12C2a og § 12C2c). Med imp-beregning er middel minus −3 imp (§ 12C2b), og i Butler og cross-imp giver DBf −2 imp.
 
 ### Middelscore plus
 **ID:** `middelscore-plus`
@@ -3098,7 +3098,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Score og beregning
 **Kort definition:** En højere middelscore, typisk når en spiller ikke har ansvar for en fejl.
 
-**Forklaring:** En højere middelscore, typisk når en spiller ikke har ansvar for en fejl.
+**Forklaring:** I parturnering er middel plus mindst 60 %, men en side uden skyld, der får mere end 60 % i resten af sektionen, får sin egen procent (§ 12C2a og § 12C2c). Med imp-beregning er middel plus +3 imp (§ 12C2b), og i Butler og cross-imp giver DBf +2 imp.
 
 ### Overstikspoint
 **ID:** `overstikspoint`
@@ -3107,16 +3107,16 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Score og beregning
 **Kort definition:** Point for stik ud over kontrakten.
 
-**Forklaring:** Point for stik ud over kontrakten.
+**Forklaring:** Lovene kalder dem bonuspoint for overtræk: udoblet giver et overtræk trækværdien, 20 i minor og 30 i major og sans, doblet 100 (200 i zonen) og redoblet 200 (400), uanset farve (§ 77). Overstik tæller aldrig med til udgang.
 
 ### Procentscore
 **ID:** `procentscore`
 **Engelsk:** Percentage score
 **Niveau:** let øvet
 **Kategori:** Score og beregning
-**Kort definition:** Procentscore i parturnering baseret på matchpoints.
+**Kort definition:** Et pars matchpoint omregnet til procent af toppen.
 
-**Forklaring:** Procentscore i parturnering baseret på matchpoints.
+**Forklaring:** 50 % er middel, og en parturnering vindes typisk med 60–65 %. Procenten gør spil, der er spillet ved forskelligt antal borde, lige meget værd: ved 7 borde er toppen 12, så 9 point er 75 %.
 
 ### Redoblet kontrakt
 **ID:** `redoblet-kontrakt`
@@ -3125,7 +3125,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Score og beregning
 **Kort definition:** En kontrakt, hvor en redobling fordobler virkningen af den forudgående dobling.
 
-**Forklaring:** En kontrakt, hvor en redobling fordobler virkningen af den forudgående dobling.
+**Forklaring:** Redoblet ganges trækværdien med 4, så selv 1♠ redoblet hjemme er udgang: 120 + 300 + 100 = 520 uden for zonen. Bonus for vundet redoblet kontrakt er 100, og overtræk og undertræk koster det dobbelte af doblet (§ 77).
 
 ### Regnskab
 **ID:** `regnskab`
@@ -3134,7 +3134,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Score og beregning
 **Kort definition:** Udregning af scoren for et spil.
 
-**Forklaring:** Udregning af scoren for et spil.
+**Forklaring:** Lovene kalder scoringstabellen turneringsregnskab (§ 77). Ved bordet skal der være enighed om antal vundne stik, før alle fire hænder er lagt tilbage i mappen (§ 79A), og en fejl i regnskabet kan rettes inden for rettelsesfristen (§ 79C).
 
 ### Stikpoint
 **ID:** `stikpoint`
@@ -3144,7 +3144,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Score og beregning
 **Kort definition:** De point der gives for stik i kontrakten.
 
-**Forklaring:** De point der gives for stik i kontrakten.
+**Forklaring:** Lovene kalder dem trækværdi: 20 pr. meldt træk i minor, 30 i major og i sans 40 for det første og 30 for de næste (§ 77). Kun meldte træk tæller, og når trækværdien når 100, er kontrakten udgang; derfor er 3NT (100) den billigste udgang, og 5 i minor kræver ét stik mere end 4 i major.
 
 ### Straf
 **ID:** `straf`
@@ -3162,7 +3162,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Score og beregning
 **Kort definition:** Den højeste score på et spil i parturnering.
 
-**Forklaring:** Den højeste score på et spil i parturnering.
+**Forklaring:** Med 2/1/0 er toppen 2 × (antal borde − 1), fx 12 ved 7 borde, og et par får top ved at slå alle de andre, der har spillet spillet i samme retning (§ 78A). Har to par den højeste score, deler de og får 1 point mindre hver.
 
 ### Uden for zonen
 **ID:** `uden-for-zonen`
@@ -3170,9 +3170,9 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Alternative termer:** Udenfor zonen
 **Niveau:** begynder
 **Kategori:** Score og beregning
-**Kort definition:** Uden for zonen; giver lavere bonus og lavere straf.
+**Kort definition:** Om en side, der ikke er i zonen på spillet, og som derfor får lavere bonus for udgang og slem og lavere straf for bet.
 
-**Forklaring:** Uden for zonen; giver lavere bonus og lavere straf.
+**Forklaring:** Uden for zonen giver udgang 300 i bonus, lilleslem 500 og storeslem 1000, og udoblet koster hvert bet 50 (§ 77); lovene siger uden for farezonen. Det billige bet gør det lettere at ofre: 4♠ doblet tre bet uden for zonen koster 500, mindre end modpartens udgang i zonen (620).
 
 ### Understik
 **ID:** `understik`
@@ -3182,7 +3182,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Score og beregning
 **Kort definition:** Et tabt stik i forhold til kontrakten.
 
-**Forklaring:** Et tabt stik i forhold til kontrakten.
+**Forklaring:** Lovene kalder det undertræk. Udoblet koster hvert undertræk 50 uden for zonen og 100 i zonen; doblet uden for zonen 100 for det første, 200 for andet og tredje og 300 for hvert følgende, i zonen 200 for det første og 300 for hvert følgende, og redoblet det dobbelte (§ 77).
 
 ### VP-skala
 **ID:** `vp-skala`
@@ -3191,7 +3191,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Score og beregning
 **Kort definition:** Tabellen der omregner IMP‑forskel til VP.
 
-**Forklaring:** Tabellen der omregner IMP‑forskel til VP.
+**Forklaring:** Skalaen afhænger af antallet af spil i kampen: vinderen får 20,00 fra 60 imp ved 16 spil, 74 ved 24, 85 ved 32 og 95 ved 40. Den er aftagende, så de første 10 imp giver 1,85 kamppoint i en kamp på 40 spil, mens imp 60–70 kun giver 0,74; DBf bruger WBF's skala fra 2013.
 
 ### Zonestilling
 **ID:** `zonestilling`

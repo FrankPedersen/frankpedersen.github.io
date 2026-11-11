@@ -1508,7 +1508,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Systemafhængig:** Ja
 **Kort definition:** En variant af Roman Key Card Blackwood hvor 5♣ viser 1 eller 4 nøglekort.
 
-**Forklaring:** En variant af Roman Key Card Blackwood hvor 5♣ viser 1 eller 4 nøglekort.
+**Forklaring:** Navnet kommer af de to første svar: 5♣ viser 1 eller 4 nøglekort, og 5♦ viser 0 eller 3. 5♥ og 5♠ viser 2 nøglekort uden og med trumfdamen, og efter 5♣ og 5♦ spørger det billigste trin, der ikke er trumffarven, efter damen. Har meldingerne lydt på sans, er 4NT ikke 1430, men kvantitativ. Både Bridgesystem og 2 over 1 – Moderne majorstøtte bruger 1430.
 
 ### 1NT-åbning
 **ID:** `1nt-aabning`
@@ -1517,7 +1517,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Meldesystemer og konventioner
 **Kort definition:** Åbning med jævn fordeling og 15–17 hp.
 
-**Forklaring:** Åbning med jævn fordeling og 15–17 hp.
+**Forklaring:** Over 1NT bruger svarer typisk Stayman (2♣) og overføringer (2♦ til hjerter og 2♥ til spar), og jævne hænder uden 4-farve i major melder efter styrken: 2NT inviterer, 3NT er udgang, og 4NT inviterer til slem. Efter en indmelding bortfalder Stayman og overføringerne normalt. I både Bridgesystem og 2 over 1 – Moderne majorstøtte må 1NT rumme en 5-farve i major.
 
 ### 2 over 1
 **ID:** `2-over-1`
@@ -1538,7 +1538,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Meldesystemer og konventioner
 **Kort definition:** Åbning med jævn fordeling og 20–21 hp.
 
-**Forklaring:** Åbning med jævn fordeling og 20–21 hp.
+**Forklaring:** Jævne hænder med 18–19 hp åbnes i en farve og genmelder sans bagefter, og jævne hænder fra 22 hp åbnes 2♣. I 2 over 1 – Moderne majorstøtte gælder de samme konventioner over 2NT som over 1NT, ét trin højere.
 
 ### Andenrundekontrol
 **ID:** `andenrundekontrol`
@@ -1558,7 +1558,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Systemafhængig:** Ja
 **Kort definition:** En konvention der viser præcis støtte og styrke efter makkers 1‑major åbning.
 
-**Forklaring:** En konvention der viser præcis støtte og styrke efter makkers 1‑major åbning.
+**Forklaring:** Efter 1♥ eller 1♠ viser spring til 3♣ og 3♦ fire trumf med to forskellige styrker, og 3 i majoren er spærrende; i den oprindelige form er 3♣ den svageste. Bridgesystem bruger omvendt Bergen, hvor 3♦ viser 7–10 sp og 3♣ 10–11 sp, begge med 4+ trumf; 2 over 1 – Moderne majorstøtte bruger revideret omvendt Bergen, hvor 3♣ og 3♦ begge viser 10–12 sp, 3♣ med præcis 3 trumf og 3♦ med 4+.
 
 ### Blackwood
 **ID:** `blackwood`
@@ -1581,7 +1581,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Systemafhængig:** Ja
 **Kort definition:** En konvention hvor svarer viser en invitstyrke med støtte til makkers major i passet hånd.
 
-**Forklaring:** En konvention hvor svarer viser en invitstyrke med støtte til makkers major i passet hånd.
+**Forklaring:** Drury bruges, når svarer har passet, og makker åbner 1♥ eller 1♠ i tredje eller fjerde hånd, hvor åbningen kan være let: 2♣ viser støtte og invitstyrke, og åbner viser med sit næste bud, om åbningen er fuld eller let. Så kan parret stoppe på 2-trinnet, når åbningen er let.
 
 ### Fitvisende spring
 **ID:** `fitvisende-spring`
@@ -1592,7 +1592,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Systemafhængig:** Ja
 **Kort definition:** Et spring i ny farve der viser både en god farve og støtte til makkers farve.
 
-**Forklaring:** Et spring i ny farve der viser både en god farve og støtte til makkers farve.
+**Forklaring:** Fitvisende spring bruges især af en hånd, der har passet, og i konkurrence: det viser typisk en god 5-farve og mindst 4 korts støtte, så makker kan vurdere, hvordan hænderne passer sammen. Kampen om kontrakten i Konventionstræneren bruger det ikke: der er et spring i ny farve i første melderunde udgangskrav.
 
 ### Fjerde farve krav
 **ID:** `fjerde-farve-krav`
@@ -1604,7 +1604,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Systemafhængig:** Ja
 **Kort definition:** Når svarer melder den fjerde umeldte farve som et kunstigt krav.
 
-**Forklaring:** Når svarer melder den fjerde umeldte farve som et kunstigt krav.
+**Forklaring:** Den fjerde farve siger intet om farvens længde, men beder åbner beskrive hånden, og åbner svarer i rækkefølgen støtte til svarers første farve, sans og egen farve. Har svarer en naturlig kravmelding eller hold til sans, bruges den ikke. I både Bridgesystem og 2 over 1 – Moderne majorstøtte er den på 2-trinnet rundekrav med 11+ hp og på 3-trinnet udgangskrav med 13+ hp.
 
 ### Førsterundekontrol
 **ID:** `førsterundekontrol`
@@ -1613,7 +1613,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Meldesystemer og konventioner
 **Kort definition:** Et es eller en renonce, som forhindrer modparten i at tage første stik i farven.
 
-**Forklaring:** Et es eller en renonce, som forhindrer modparten i at tage første stik i farven.
+**Forklaring:** En konge eller en singleton er andenrundekontrol, og i sans er det kun esset, der stopper farven i første runde. I både Bridgesystem og 2 over 1 – Moderne majorstøtte viser en kontrolmelding den billigste farve med første- eller andenrundekontrol, når trumffarven er fastlagt.
 
 ### Gambling 3NT
 **ID:** `gambling-3nt`
@@ -1623,16 +1623,16 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Systemafhængig:** Ja
 **Kort definition:** En 3NT‑åbning der viser en gående minorfarve og ingen sidehonnører.
 
-**Forklaring:** En 3NT‑åbning der viser en gående minorfarve og ingen sidehonnører.
+**Forklaring:** Svarer afgør kontrakten: med hold i de andre farver passer svarer 3NT, og ellers melder svarer 4♣, som åbner passer med klør og retter til 4♦ med ruder. I Bridgesystem viser 3NT en gående 7-farve i minor og benægter konger i de andre farver.
 
 ### Genoverføring
 **ID:** `genoverfoering`
 **Engelsk:** Retransfer
 **Niveau:** øvet
 **Kategori:** Meldesystemer og konventioner
-**Kort definition:** En genoverførsel i sanskontrakter.
+**Kort definition:** En ny overføring, når åbner ikke har fuldført den første, fx efter en superaccept: svarer melder igen farven under sin major, så sansåbneren bliver spilfører.
 
-**Forklaring:** En genoverførsel i sanskontrakter.
+**Forklaring:** Formålet er det samme som ved den første overføring: den stærke hånd skal være spilfører, så den er skjult, og udspillet går op i den. I både Bridgesystem og 2 over 1 – Moderne majorstøtte superaccepterer åbner ved at springe i majoren, så der er ikke brug for genoverføring.
 
 ### Gerber
 **ID:** `gerber`
@@ -1651,9 +1651,9 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Niveau:** let øvet
 **Kategori:** Meldesystemer og konventioner
 **Systemafhængig:** Ja
-**Kort definition:** Et 1NT‑svar der er krav i én runde, men åbner må passe med minimum og 5‑kort major.
+**Kort definition:** Et 1NT-svar på makkers 1♥ eller 1♠, som åbner kun må passe med minimum og jævn fordeling.
 
-**Forklaring:** Et 1NT‑svar der er krav i én runde, men åbner må passe med minimum og 5‑kort major.
+**Forklaring:** Halvkrav bruges især, når 2 over 1 er krav, så 1NT skal dække alle hænder uden støtte, der er for svage til 2 over 1. Åbner passer kun med minimum og en jævn 5-3-3-2 og melder ellers videre, fx en ny lavere farve med 3+ kort. I Bridgesystem viser 1NT 6–10 hp og i 2 over 1 – Moderne majorstøtte 6–12 hp, og i begge benægter det 3-korts støtte og over 1♥ også 4 spar.
 
 ### Jacoby 2NT
 **ID:** `jacoby-2nt`
@@ -1663,7 +1663,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Systemafhængig:** Ja
 **Kort definition:** En kunstig 2NT‑melding over makkers 1‑major, der viser stærk støtte og udgangskrav.
 
-**Forklaring:** En kunstig 2NT‑melding over makkers 1‑major, der viser stærk støtte og udgangskrav.
+**Forklaring:** I den oprindelige form viser åbner en kortfarve på 3-trinnet, og 4 i majoren viser minimum uden kortfarve. Både Bridgesystem og 2 over 1 – Moderne majorstøtte bruger 2NT med 13+ sp og 4+ trumf under navnet Bekkasin, men med andre svar: åbner viser minimum (3♣), tillæg uden kortfarve (3♦) eller tillæg med kortfarve (3♥, 3♠ eller 3NT), og svarer er kaptajn.
 
 ### Jacoby-transfer
 **ID:** `jacoby-transfer`
@@ -1682,7 +1682,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Meldesystemer og konventioner
 **Kort definition:** Et es eller konge i en farve, vigtigt i slemundersøgelser.
 
-**Forklaring:** Et es eller konge i en farve, vigtigt i slemundersøgelser.
+**Forklaring:** Ved kontrolmeldinger tæller es, konge, singleton og renonce som kontrol, når trumffarven er fastlagt; opslaget Førsterundekontrol forklarer forskellen på første og anden runde. Ved kontrolsvar på en stærk 2♣ tæller et es 2 kontroller og en konge 1.
 
 ### Kontrolmelding
 **ID:** `kontrolmelding`
@@ -1692,7 +1692,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Meldesystemer og konventioner
 **Kort definition:** En melding der viser kontrol i en farve, typisk i slemforløb.
 
-**Forklaring:** En melding der viser kontrol i en farve, typisk i slemforløb.
+**Forklaring:** Kontrolmeldinger kræver fastlagt trumf: en ny farve under udgang viser kontrol i den billigste farve, hvor spilleren har den, og en farve, der springes over, benægter kontrol. Kontrolmeldingerne viser, hvor kontrollerne sidder, og nøglekortene tælles bagefter, fx med 1430. I både Bridgesystem og 2 over 1 – Moderne majorstøtte afmelder 4 i trumf, og 4NT er 1430.
 
 ### Konvention
 **ID:** `konvention`
@@ -1711,7 +1711,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Systemafhængig:** Ja
 **Kort definition:** 1NT‑svar der lover mindst én runde krav efter makkers major‑åbning.
 
-**Forklaring:** 1NT‑svar der lover mindst én runde krav efter makkers major‑åbning.
+**Forklaring:** Kravsans hører til den amerikanske 2 over 1, hvor ny farve på 2-trinnet er udgangskrav, så 1NT skal dække alle hænder uden støtte op til 12 hp. Åbner må ikke passe og melder med en jævn minimumshånd ofte en 3-kortsfarve i minor. Bridgesystem og 2 over 1 – Moderne majorstøtte bruger i stedet halvkrav, hvor åbner må passe med minimum og en jævn 5-3-3-2; opslaget Halvkrav 1NT forklarer det.
 
 ### Kunstig melding
 **ID:** `kunstig-melding`
@@ -1721,7 +1721,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Meldesystemer og konventioner
 **Kort definition:** En melding der ikke viser den meldte farve, men har en konventionel betydning.
 
-**Forklaring:** En melding der ikke viser den meldte farve, men har en konventionel betydning.
+**Forklaring:** Efter lovene kan også en dobling, en redobling eller et pas være kunstigt, fx et pas, der lover en vis styrke, og en kunstig melding er en særlig makkeraftale, som forbundet kan regulere (lovenes definition af artificial call og § 40 B 1 c). Mange kunstige meldinger skal alerteres; fx er 3♣ og 3♦ i omvendt Bergen kunstige, fordi de viser støtte til majoren.
 
 ### Kvantitativ melding
 **ID:** `kvantitativ-melding`
@@ -1730,7 +1730,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Meldesystemer og konventioner
 **Kort definition:** En melding der viser styrke og spørger makker om at vurdere udgang/slem.
 
-**Forklaring:** En melding der viser styrke og spørger makker om at vurdere udgang/slem.
+**Forklaring:** Har meldingerne lydt på sans, er 4NT kvantitativ: den spørger, om makker har minimum eller maksimum, og svaret er pas eller 6NT; 5NT spørger tilsvarende om 6NT eller 7NT. Over 1NT viser 4NT fx 16–17 hp og inviterer til 6NT, så den skal ikke forveksles med 1430, som kræver fastlagt trumf.
 
 ### Lebensohl
 **ID:** `lebensohl`
@@ -1740,7 +1740,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Systemafhængig:** Ja
 **Kort definition:** En konvention der håndterer indblanding over 1NT og viser forskellige styrker via 2NT‑relay.
 
-**Forklaring:** En konvention der håndterer indblanding over 1NT og viser forskellige styrker via 2NT‑relay.
+**Forklaring:** 2NT er et relæ, der beder makker melde 3♣, så svarer kan stoppe i en svag farve, mens en melding direkte på 3-trinnet viser mere styrke end den samme melding via relæet. Mod svage 3-åbninger er der ikke plads til relæet. Bridgesystem og 2 over 1 – Moderne majorstøtte bruger Lebensohl, når makker har oplysningsdoblet en svag 2-åbning, og Kampen om kontrakten (profilen Turnering) også efter en indmelding over egen 1NT.
 
 ### Makkeraftale
 **ID:** `makkeraftale`
@@ -1750,7 +1750,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Meldesystemer og konventioner
 **Kort definition:** En aftale mellem makkerne om betydningen af bestemte meldinger.
 
-**Forklaring:** En aftale mellem makkerne om betydningen af bestemte meldinger.
+**Forklaring:** Aftaler kan være indgået udtrykkeligt eller opstå af erfaring, og modstanderne har ret til at kende dem: det er aftalen, der forklares, ikke hånden (§ 40 A 1 og § 20 F). Aftalerne gælder også udspil og markeringer, og Konventionstræneren samler hvert pars aftaler på siden Mine makkeraftaler.
 
 ### Meldesystem
 **ID:** `meldesystem`
@@ -1758,9 +1758,9 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Alternative termer:** System / Bidding system
 **Niveau:** let øvet
 **Kategori:** Meldesystemer og konventioner
-**Kort definition:** Det aftalte meldesystem mellem makkerne.
+**Kort definition:** Den samlede aftale mellem makkerne om, hvad åbningerne, svarene og de videre meldinger betyder.
 
-**Forklaring:** Det aftalte meldesystem mellem makkerne.
+**Forklaring:** Et meldesystem bygges op om åbningerne, fx femkorts major og 1NT 15–17, og konventionerne er dele af det. Konventionstræneren har to systemer, begge med femkorts major og 1NT 15–17: Bridgesystem, hvor 2 over 1 lover 10+ hp, og 2 over 1 – Moderne majorstøtte, hvor ny farve på 2-trinnet lover 13+ hp og er udgangskrav.
 
 ### Multi
 **ID:** `multi`
@@ -1770,7 +1770,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Systemafhængig:** Ja
 **Kort definition:** En kunstig 2♦‑åbning der viser flere mulige håndtyper (typisk svag 2 i major).
 
-**Forklaring:** En kunstig 2♦‑åbning der viser flere mulige håndtyper (typisk svag 2 i major).
+**Forklaring:** Den svage variant er en svag 2 i en ukendt major, og en eller flere aftalte stærke hænder kan høre med. Svarer melder normalt 2♥, som er pas eller ret, og 2NT er krav og spørger om major og styrke. Multi frigør 2♥ og 2♠ til andre åbninger, og fordi modparten ikke ved, hvilken major åbner har, er den svær at melde imod; Konventionstræneren beskriver forsvaret i Crowhurst-kortet.
 
 ### Nøglekort
 **ID:** `noeglekort`
@@ -1788,7 +1788,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Meldesystemer og konventioner
 **Kort definition:** En aftale, hvor støtte til makkers minoråbning byttes om: en enkelt hævning (fx 1♣–2♣) er stærk og krav, mens et spring (1♣–3♣) er svagt og spærrende.
 
-**Forklaring:** En aftale, hvor støtte til makkers minoråbning byttes om: en enkelt hævning (fx 1♣–2♣) er stærk og krav, mens et spring (1♣–3♣) er svagt og spærrende.
+**Forklaring:** En 4-farve i major meldes før minorstøtten, og efter den stærke støtte søger parret 3NT: en ny farve viser hold, ikke længde. I 2 over 1 – Moderne majorstøtte viser 2 i åbningsfarven 10+ sp og 3 i farven 6–9 sp, begge med 4+ ruder eller 5+ klør, fordi 1♣ kan være 2 kort.
 
 ### Overføring
 **ID:** `overfoering`
@@ -1807,9 +1807,9 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Niveau:** øvet
 **Kategori:** Meldesystemer og konventioner
 **Systemafhængig:** Ja
-**Kort definition:** En melding der beder makker om at vælge den bedste af to farver.
+**Kort definition:** En melding i en farve, som makker passer, hvis det er makkers farve, og ellers retter til sin egen, fordi makkers farve ikke er kendt.
 
-**Forklaring:** En melding der beder makker om at vælge den bedste af to farver.
+**Forklaring:** Pas eller ret bruges, når makker har vist en farve, der ikke er nævnt: efter Multi 2♦ beder 2♥ åbner passe med hjerter og melde 2♠ med spar, og efter Gambling 3NT beder 4♣ åbner passe med klør og rette til 4♦ med ruder.
 
 ### Puppet Stayman
 **ID:** `puppet-stayman`
@@ -1826,9 +1826,9 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Engelsk:** Relay
 **Niveau:** avanceret
 **Kategori:** Meldesystemer og konventioner
-**Kort definition:** En kunstig melding der beder makker beskrive sin hånd.
+**Kort definition:** En kunstig melding, typisk det billigste trin, der beder makker om en bestemt melding eller om at beskrive sin hånd.
 
-**Forklaring:** En kunstig melding der beder makker beskrive sin hånd.
+**Forklaring:** Mange relæer tvinger makker til en bestemt melding, så relæmelderen kan beskrive sin egen hånd bagefter, fx 2NT i Lebensohl, der beder om 3♣, og 2♣ i xy sans, der beder om 2♦. Andre relæer spørger, fx 2NT efter multi 2♦, og et relæ skal normalt alerteres. Lebensohl og xy sans findes i både Bridgesystem og 2 over 1 – Moderne majorstøtte.
 
 ### Roman Key Card Blackwood (RKCB)
 **ID:** `roman-key-card-blackwood-rkcb`
@@ -1839,7 +1839,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Systemafhængig:** Ja
 **Kort definition:** En udvidet Blackwood der spørger efter nøglekort (esser + trumfkonge).
 
-**Forklaring:** En udvidet Blackwood der spørger efter nøglekort (esser + trumfkonge).
+**Forklaring:** Svarene tæller de fem nøglekort efter skemaet 1430 eller 3014, og trumfdamen kan vises eller spørges om bagefter. Med minor som trumf kan svaret komme forbi 5 i minoren. Både Bridgesystem og 2 over 1 – Moderne majorstøtte bruger 1430, som opslaget 1430 forklarer, og 2 over 1 – Moderne majorstøtte bruger ikke RKC med minor som trumf.
 
 ### Smolen
 **ID:** `smolen`
@@ -1849,7 +1849,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Systemafhængig:** Ja
 **Kort definition:** En konvention efter en sansåbning og Stayman, hvor svarer viser fem kort i den ene major og fire i den anden ved at springe i firekortsfarven.
 
-**Forklaring:** En konvention efter en sansåbning og Stayman, hvor svarer viser fem kort i den ene major og fire i den anden ved at springe i firekortsfarven.
+**Forklaring:** Smolen bruges, når åbner har svaret 2♦ på Stayman, og svarer har udgangsstyrke med 5-4 i majorerne: 3♥ viser fire hjerter og fem spar, og 3♠ fire spar og fem hjerter. Med 3-korts støtte melder åbner 4 i femfarven og bliver spilfører; ellers melder åbner 3NT.
 
 ### Splinter
 **ID:** `splinter`
@@ -1859,7 +1859,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Systemafhængig:** Ja
 **Kort definition:** Et usædvanligt spring i en ny farve, der viser korthed, normalt singleton eller renonce, samt stærk støtte til makkers farve.
 
-**Forklaring:** Et usædvanligt spring i en ny farve, der viser korthed, normalt singleton eller renonce, samt stærk støtte til makkers farve.
+**Forklaring:** Splinteren hjælper makker med at vurdere, om honnørerne passer: honnører over for kortfarven er mindre værd, mens et es dér er godt. I både Bridgesystem og 2 over 1 – Moderne majorstøtte vises kortfarver normalt først, når trumf er fundet, fx når åbner viser korthed efter Bekkasin 2NT. Splinter bruges kun i 2 over 1 – Moderne majorstøtte: i 2 over 1-forløbet og ved svarers spring efter 2♣-åbningen.
 
 ### Spørgemelding
 **ID:** `spoergemelding`
@@ -1889,9 +1889,9 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Niveau:** let øvet
 **Kategori:** Meldesystemer og konventioner
 **Systemafhængig:** Ja
-**Kort definition:** En kunstig åbning der viser en stærk hånd (typisk 22+ HP eller stærk farve).
+**Kort definition:** En kunstig åbning der viser en stærk hånd (typisk 22+ hp eller stærk farve).
 
-**Forklaring:** En kunstig åbning der viser en stærk hånd (typisk 22+ HP eller stærk farve).
+**Forklaring:** Åbningen er krav, og svarene er enten ventesvar, hvor 2♦ intet siger om styrken, eller kontrolsvar, hvor et es tæller 2 og en konge 1. I Bridgesystem viser 2♣ 22+ hp eller 9 stik med major og 10 med minor på egen hånd; i 2 over 1 – Moderne majorstøtte viser den 20+ hp (jævn fra 22 hp) og har kontrolsvar.
 
 ### Svagt spring i ny farve
 **ID:** `svagt-spring-i-ny-farve`
@@ -1899,18 +1899,18 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Niveau:** øvet
 **Kategori:** Meldesystemer og konventioner
 **Systemafhængig:** Ja
-**Kort definition:** Et svagt spring i ny farve der viser en spærrehånd.
+**Kort definition:** Et spring i ny farve fra svarer, der viser en svag hånd med en lang farve, som en spærreåbning.
 
-**Forklaring:** Et svagt spring i ny farve der viser en spærrehånd.
+**Forklaring:** Svagt spring i ny farve giver svarer en måde at spærre på med en svag hånd og en lang farve, hvor en ny farve uden spring ville være krav. I Bridgesystem viser det 5–9 hp som en spærreåbning, kun i major, kun i første melderunde og kun på 2- og 3-trinnet.
 
 ### Systemkort
 **ID:** `systemkort`
 **Engelsk:** Convention card
 **Niveau:** let øvet
 **Kategori:** Meldesystemer og konventioner
-**Kort definition:** Systemkort der beskriver makkerskabets meldesystem og aftaler.
+**Kort definition:** Et skema, hvor makkerne skriver deres meldesystem og aftaler, så modstanderne kan læse dem.
 
-**Forklaring:** Systemkort der beskriver makkerskabets meldesystem og aftaler.
+**Forklaring:** Forbundet kan kræve et systemkort og fastsætte, hvordan det bruges (§ 40 B 2 a). Fra meldeperioden begynder, til spillet er slut, må en spiller normalt ikke se i sit eget systemkort, men spilførerens side må i afklaringsperioden (§ 40 B 2 b). Konventionskortene i Konventionstræneren er noget andet: de beskriver én konvention ad gangen.
 
 ### Trumfdame
 **ID:** `trumfdame`

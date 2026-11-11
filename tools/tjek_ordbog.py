@@ -424,5 +424,34 @@ class Sitemap(unittest.TestCase):
         self.assertIn('<loc>https://www.kontraktbridge.dk/ordbog/</loc>', (ROD / 'sitemap.xml').read_text(encoding='utf-8'))
 
 
+class Lovhenvisninger(unittest.TestCase):
+    """SPEC-ordbog-lovhenvisninger.md (Franks valg 11. november 2026): henvisninger i formen fra Love for Turneringsbridge
+    2017 (DBf's danske udgave), lovenes definitioner med bogens ord og lovens ord i Afgivelse af stik og Forkert oplysning."""
+
+    @classmethod
+    def setUpClass(cls):
+        cls.opslag = opslag_i_kilden()
+
+    def test_bogens_henvisningsform(self):
+        for navn, o in self.opslag.items():
+            for felt in ('Kort definition', 'Forklaring'):
+                self.assertIsNone(re.search(r'§ \d+ [A-H]\b', o.get(felt, '')), (navn, felt))
+
+    def test_lovenes_definitioner_med_danske_ord(self):
+        for navn, o in self.opslag.items():
+            self.assertIsNone(re.search(r'definition af (infraction|play period|artificial call|misinformation)\b',
+                                        o.get('Forklaring', '')), navn)
+
+    def test_dansk_nummerering(self):
+        # WBF's § 73A2 (obligatoriske pauser) er § 73A1 i den danske udgave.
+        self.assertIn('(§ 73A1)', self.opslag['Lang tænkepause']['Forklaring'])
+
+    def test_lovens_ord(self):
+        self.assertIn('Lovene kalder det afkald på stik', self.opslag['Afgivelse af stik']['Forklaring'])
+        self.assertIn('Lovene kalder det misinformation', self.opslag['Forkert oplysning']['Forklaring'])
+        self.assertIn('kan et fordækt udspil uden for tur dog tages tilbage uden turneringslederen',
+                      self.opslag['Med bagsiden opad']['Forklaring'])
+
+
 if __name__ == '__main__':
     unittest.main()

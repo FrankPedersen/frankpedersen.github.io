@@ -176,10 +176,11 @@ try {
   const inMenu = await kør(`(() => {
     const t = (e) => e.textContent.replace(/\\s+/g, ' ').trim();
     const g = [...document.querySelectorAll('#menu .menu-gruppe')];
-    return { titler: g.map((x) => t(x.querySelector('.menu-titel'))), trænere: [...g[0].querySelectorAll('a')].map((a) => t(a)), opslag: [...g[1].querySelectorAll('a')].map((a) => [t(a), a.getAttribute('href')]), bund: [...document.querySelectorAll('#menu .menu-bund a, #menu .menu-bund button')].map(t) };
+    return { titler: g.map((x) => t(x.querySelector('.menu-titel'))), trænere: [...g[0].querySelectorAll('a')].map((a) => t(a)), trænerHref: [...g[0].querySelectorAll('a')].map((a) => a.getAttribute('href')), opslag: [...g[1].querySelectorAll('a')].map((a) => [t(a), a.getAttribute('href')]), bund: [...document.querySelectorAll('#menu .menu-bund a, #menu .menu-bund button')].map(t) };
   })()`);
   tjek(JSON.stringify(inMenu.titler) === JSON.stringify(['Trænere', 'Opslag']), 'Menuen har Trænere og Opslag', inMenu.titler.join());
-  tjek(JSON.stringify(inMenu.trænere) === JSON.stringify(['KonventionstrænerMeldinger', 'FordelingOptælling', 'PointregnskabOptælling', 'FarvebehandlingSpilføring', 'HåndevalueringVurdering']), 'Trænerne i menuen har kategorien til højre', inMenu.trænere.join());
+  tjek(JSON.stringify(inMenu.trænere) === JSON.stringify(['KonventionstrænerMeldinger', 'FordelingOptælling', 'PointregnskabOptælling', 'FarvebehandlingSpilføring', 'HåndevalueringVurdering', 'Post MortemAnalyse']), 'Trænerne og Post Mortem i menuen har kategorien til højre', inMenu.trænere.join());
+  tjek(inMenu.trænerHref.at(-1) === '/postmortem/', 'Post Mortem i menuen fører til /postmortem/', inMenu.trænerHref.join());
   tjek(inMenu.opslag[0][0] === 'Analyse' && inMenu.opslag[0][1] === '/fordelingstraeneren/#analyse' && inMenu.opslag.length === 3, 'Analyse står under Opslag i menuen', JSON.stringify(inMenu.opslag));
   tjek(JSON.stringify(inMenu.bund) === JSON.stringify(['Om mig og kontakt', 'English']), 'Om mig og kontakt og English nederst i menuen', inMenu.bund.join());
   await gem('390-forside-menu-aaben.png', false);

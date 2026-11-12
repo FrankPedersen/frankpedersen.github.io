@@ -29,7 +29,7 @@ if (!browser) {
 
 // Navne og tegn, der er de samme på begge sprog
 const NAVNE = ['Kontraktbridge', 'Frank Pedersen', 'Fordelingstræneren', 'Kasino', 'Es-makker whist', 'Bridge', 'E-mail', '7NT',
-  '© 2026 Frank Pedersen', 'English', 'Dansk', '→'];
+  '© 2026 Frank Pedersen', 'English', 'Dansk', '→', 'Post Mortem'];
 // Danske småord, som ikke findes på engelsk
 const DANSKE_ORD = /\b(og|jeg|du|din|dit|dine|mig|til|med|ikke|eller|har|af|på|kan|vil|skal|alle|fra|om|hvad|besked|beskeder|navn|kontakt|trænere|sendt|sender)\b/i;
 // Svarene fra kontakt-API'et står på dansk og engelsk i _kontakt-api/src/contact-messages.js; siden skal vise de engelske.

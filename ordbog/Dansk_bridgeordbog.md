@@ -1939,7 +1939,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Konkurrencemeldinger
 **Kort definition:** Det par, der ikke åbnede meldingerne.
 
-**Forklaring:** Det par, der ikke åbnede meldingerne.
+**Forklaring:** Defensiven har normalt færre point og melder for at konkurrere om delkontrakten, finde et godt udspil eller ofre, mens offensiven leder efter sin bedste kontrakt. Kampen om kontrakten giver meldingerne i defensiven egne betydninger: efter makkers indmelding er alle direkte støtter 6–9 hp og viser antallet af trumf, støtte med 10+ går via fjendens farve, og tre-trins-raketten bruges kun i offensiven.
 
 ### Dobling
 **ID:** `dobling`
@@ -1957,7 +1957,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Konkurrencemeldinger
 **Kort definition:** En offermelding, der meldes med det samme, før modparten har nået sin kontrakt.
 
-**Forklaring:** En offermelding, der meldes med det samme, før modparten har nået sin kontrakt.
+**Forklaring:** Ved at ofre med det samme tager man meldeplads, før modparten har udvekslet oplysninger, så den skal gætte, om den skal doble, melde videre eller passe. Risikoen er, at modparten ikke kunne have vundet sin kontrakt, eller at den nu melder slem. Kampen om kontrakten og 2 over 1 – Moderne majorstøtte melder efter antallet af fælles trumf: med 10 trumf meldes 4-trinnet, som spil eller som ofring.
 
 ### Genåbning
 **ID:** `genaabning`
@@ -1983,27 +1983,27 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Engelsk:** Balancing position
 **Niveau:** øvet
 **Kategori:** Konkurrencemeldinger
-**Kort definition:** Den position hvor en spiller kan genåbne efter tre pas.
+**Kort definition:** Den position, hvor en spiller kan melde, når modpartens bud ellers bliver kontrakten, typisk i fjerde hånd efter 1 i farve – pas – pas.
 
-**Forklaring:** Den position hvor en spiller kan genåbne efter tre pas.
+**Forklaring:** I genåbningsposition kan der meldes lettere end direkte efter åbneren, fordi makker kan sidde med op til 17 hp uden en naturlig melding: genåbneren låner 3–4 hp af makker, og makker trækker dem fra igen, når makker svarer. Kampen om kontrakten låner kun på ujævne hænder; jævne hænder melder på rene hp, så 1NT er 11–14. 2 over 1 – Moderne majorstøtte låner ca. 3 hp med samme 1NT.
 
 ### Indblanding
 **ID:** `indblanding`
 **Engelsk:** Interference
 **Niveau:** let øvet
 **Kategori:** Konkurrencemeldinger
-**Kort definition:** Modstandernes indblanding i meldeforløbet.
+**Kort definition:** Når modparten melder eller dobler i et meldeforløb, som den anden side har åbnet.
 
-**Forklaring:** Modstandernes indblanding i meldeforløbet.
+**Forklaring:** Indblanding tager meldeplads og kan ændre, hvilke af parrets aftaler der gælder. I Bridgesystem gælder alle konventioner fortsat efter en dobling, mens Stayman, overføringer, Bekkasin og omvendt Bergen bortfalder efter en indmelding i farve; xy sans gælder fortsat.
 
 ### Indmelderens makker
 **ID:** `indmelderens-makker`
 **Engelsk:** Advancer
 **Niveau:** let øvet
 **Kategori:** Konkurrencemeldinger
-**Kort definition:** Indmelderens makker; den spiller der svarer efter en indmelding.
+**Kort definition:** Den spiller, der svarer på makkers indmelding.
 
-**Forklaring:** Indmelderens makker; den spiller der svarer efter en indmelding.
+**Forklaring:** Indmelderens makker kaldes også fortsætter. Fordi indmelderen kan have et bredt interval, viser fortsætteren først og fremmest støtten: i Kampen om kontrakten (indmelder 8–17 hp) viser enkeltstøtte 3 trumf, springstøtte 4 og udgang 5, alle med 6–9 hp, mens støtte med 10+ meldes via fjendens farve.
 
 ### Indmelding
 **ID:** `indmelding`
@@ -2022,7 +2022,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Konkurrencemeldinger
 **Kort definition:** En melding afgivet i konkurrence med modstanderne.
 
-**Forklaring:** En melding afgivet i konkurrence med modstanderne.
+**Forklaring:** Når begge sider melder, afgør antallet af fælles trumf, hvor højt der meldes: 8 trumf til 2-trinnet, 9 til 3 og 10 til 4 (Loven). Kampen om kontrakten sælger ikke ud under 2♠, når modparten har fundet tilpasning, og kræver én trumf ekstra for det sidste trin i zonen.
 
 ### Kravpas
 **ID:** `kravpas`
@@ -2031,9 +2031,9 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Forkortelse:** FP
 **Niveau:** avanceret
 **Kategori:** Konkurrencemeldinger
-**Kort definition:** Et pas der viser styrke og kræver handling fra makker.
+**Kort definition:** Et pas, som makker ikke må lade stå, fordi parret har vist, at kontrakten er deres; makker skal doble eller melde videre.
 
-**Forklaring:** Et pas der viser styrke og kræver handling fra makker.
+**Forklaring:** Kravpas opstår, når parret har vist overvægt, fx med en redobling eller et udgangskrav, og modparten melder: passet overlader beslutningen til makker. I 2 over 1 – Moderne majorstøtte er et pas krav efter parrets redobling og på højt niveau, og i Bridgesystem efter en indmelding over 2♣-åbningen.
 
 ### Maksimaldobling
 **ID:** `maksimal-dobling`
@@ -2043,7 +2043,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Systemafhængig:** Ja
 **Kort definition:** En konventionel dobling i en konkurrencesekvens, som viser udgangsinteresse, når en direkte farvemelding ville være konkurrerende.
 
-**Forklaring:** En konventionel dobling i en konkurrencesekvens, som viser udgangsinteresse, når en direkte farvemelding ville være konkurrerende.
+**Forklaring:** Problemet opstår, når modparten konkurrerer til 3 i farven lige under parrets egen, så der ikke er plads til en invitation: 3 i egen farve er da kun konkurrence, og dobling viser maksimum og inviterer til udgang. Doblingen er derfor ikke straf. 2 over 1 – Moderne majorstøtte bruger maksimaldobling.
 
 ### Meldenød
 **ID:** `meldenoed`
@@ -2052,7 +2052,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Konkurrencemeldinger
 **Kort definition:** Situationen, hvor ingen melding passer helt, fordi modparten har taget meldepladsen.
 
-**Forklaring:** Situationen, hvor ingen melding passer helt, fordi modparten har taget meldepladsen.
+**Forklaring:** I meldenød vælges den melding, der gør mindst skade, ofte den, der viser det vigtigste ved hånden. Kampen om kontrakten giver to regler: det er næsten altid rigtigt at kæmpe med støtte, man mangler at vise, og har man en farve, man vil spille i, meldes den, mens dobling tager makker med på råd.
 
 ### Michaels cuebid
 **ID:** `michaels-cuebid`
@@ -2062,7 +2062,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Systemafhængig:** Ja
 **Kort definition:** En indmelding der viser tofarvede hænder (major/major eller major/minor).
 
-**Forklaring:** En indmelding der viser tofarvede hænder (major/major eller major/minor).
+**Forklaring:** Over 1♣ eller 1♦ viser cuebiddet begge majorer, og over 1♥ eller 1♠ den anden major og en minor, som makker kan spørge efter med 2NT. Bridgesystem og 2 over 1 – Moderne majorstøtte kræver mindst 5-5 og 8–15 hp eller 17+; med mellemstyrken meldes den bedste farve naturligt.
 
 ### Negativ dobling
 **ID:** `negativ-dobling`
@@ -2072,7 +2072,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Systemafhængig:** Ja
 **Kort definition:** En dobling der viser ubesluttede farver og typisk 4‑kort i umeldt major.
 
-**Forklaring:** En dobling der viser ubesluttede farver og typisk 4‑kort i umeldt major.
+**Forklaring:** Den negative dobling er ikke straf: den viser værdier og typisk 4 kort i den umeldte major, og åbner kan passe med længde og styrke bag indmelderen. 2 over 1 – Moderne majorstøtte kræver 8+ hp (6+ efter 1 over 1), og i Kampen om kontrakten lover doblingen præcis fire kort i den umeldte major, når en femfarve kunne være meldt på 1-trinnet.
 
 ### Offensiven
 **ID:** `offensiven`
@@ -2081,7 +2081,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Konkurrencemeldinger
 **Kort definition:** Det par, der åbnede meldingerne.
 
-**Forklaring:** Det par, der åbnede meldingerne.
+**Forklaring:** Offensiven har som regel flest point og skal finde den rigtige kontrakt, mens defensiven forstyrrer. I Kampen om kontrakten viser 2, 3 og 4 i makkers major efter en indmelding 3, 4 og 5 trumf med 6–9 hp, støtte med 10+ går via fjendens farve, og dobling er negativ.
 
 ### Offer
 **ID:** `offer`
@@ -2091,7 +2091,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Konkurrencemeldinger
 **Kort definition:** En melding der går ned med vilje for at undgå modstandernes udgang/slem.
 
-**Forklaring:** En melding der går ned med vilje for at undgå modstandernes udgang/slem.
+**Forklaring:** Et offer betaler sig, når straffen er mindre end værdien af modpartens kontrakt: uden for zonen koster 4♠ doblet tre bet 500, mindre end modpartens udgang i zonen (620) (§ 77). Bilag E3 i 2 over 1 – Moderne majorstøtte siger, at ofring på 5-trinnet ofte er rigtig i matchpoint, men i imp kun, når den er sikkert billigere.
 
 ### Oplysningsdobling
 **ID:** `oplysningsdobling`
@@ -2111,7 +2111,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Konkurrencemeldinger
 **Kort definition:** En melding der forsøger at undgå en strafdoblet kontrakt.
 
-**Forklaring:** En melding der forsøger at undgå en strafdoblet kontrakt.
+**Forklaring:** Redningsmeldingen bruges især, når modparten strafdobler parrets 1NT, og svarer har en svag hånd. I Kampen om kontrakten flygter en svag hånd (0–5 hp) altid i en femfarve, og i 2 over 1 – Moderne majorstøtte beder en SOS-redobling med 0–3 hp åbner melde sine 4-farver nedefra.
 
 ### Redobling
 **ID:** `redobling`
@@ -2132,7 +2132,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Systemafhængig:** Ja
 **Kort definition:** En kunstig dobling efter makkers oplysningsdobling og modpartens støtte, som normalt viser værdier og interesse for de umeldte farver.
 
-**Forklaring:** En kunstig dobling efter makkers oplysningsdobling og modpartens støtte, som normalt viser værdier og interesse for de umeldte farver.
+**Forklaring:** Når modparten har støttet hinanden, er en strafdobling sjældent nyttig, så doblingen bruges til at vise værdier og flere mulige farver. I 2 over 1 – Moderne majorstøtte er den oplysende op til og med 3♠ med 6+ hp: over støtte i major viser den begge minorer eller en farve, der ikke kan meldes, og over støtte i minor begge majorer.
 
 ### Spærremelding
 **ID:** `spaerremelding`
@@ -2149,9 +2149,9 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Engelsk:** Preemptive raise
 **Niveau:** øvet
 **Kategori:** Konkurrencemeldinger
-**Kort definition:** En spærrestøtte der hæver makkers farve højt for at presse modstanderne.
+**Kort definition:** En støtte til makkers farve med et spring, der viser mange trumf og en svag hånd, så modparten får mindre meldeplads.
 
-**Forklaring:** En spærrestøtte der hæver makkers farve højt for at presse modstanderne.
+**Forklaring:** Antallet af trumf bestemmer niveauet: med 9 trumf meldes 3-trinnet og med 10 trumf 4-trinnet (Loven). I Bridgesystem viser 3 og 4 i makkers major efter åbningen 4 og 5 trumf med en destruktiv hånd, og i Kampen om kontrakten er en direkte udgang altid destruktiv.
 
 ### Strafdobling
 **ID:** `strafdobling`
@@ -2179,7 +2179,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Systemafhængig:** Ja
 **Kort definition:** En dobling der viser præcis 3‑kort støtte til makkers farve.
 
-**Forklaring:** En dobling der viser præcis 3‑kort støtte til makkers farve.
+**Forklaring:** Støttedoblingen bruges, når åbner har fået et svar i major, og modparten melder ind: dobling viser præcis 3 kort i svarers major, mens en direkte støtte viser 4. Den erstatter strafdoblingen i netop den sekvens. I 2 over 1 – Moderne majorstøtte gælder den til og med 2♠ og uanset styrke.
 
 ### Støtteredobling
 **ID:** `støtteredobling`
@@ -2189,7 +2189,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Systemafhængig:** Ja
 **Kort definition:** En redobling der viser 3‑kort støtte efter modstandernes dobling.
 
-**Forklaring:** En redobling der viser 3‑kort støtte efter modstandernes dobling.
+**Forklaring:** Støtteredoblingen bruges, når modparten dobler i stedet for at melde ind efter 1 i farve – 1 i major: åbners redobling viser præcis 3 kort i svarers major, ligesom støttedoblingen, og en direkte støtte viser 4. Den viser derfor støtten, ikke ekstra styrke.
 
 ### Svag springstøtte
 **ID:** `svag-springstoette`
@@ -2198,9 +2198,9 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Niveau:** let øvet
 **Kategori:** Konkurrencemeldinger
 **Systemafhængig:** Ja
-**Kort definition:** En svag springstøtte der viser længde og spærrestyrke.
+**Kort definition:** Et spring i makkers farve, der viser god støtte og en svag hånd, så modparten får mindre meldeplads.
 
-**Forklaring:** En svag springstøtte der viser længde og spærrestyrke.
+**Forklaring:** Den svage springstøtte bruges især i konkurrence, hvor invitstyrke kan vises på anden måde, fx via fjendens farve. I Kampen om kontrakten viser springstøtten 4 trumf og 6–9 hp, både når makker har åbnet, og når makker har meldt ind.
 
 ### Udspilsdirigerende dobling
 **ID:** `udspilsdirigerende-dobling`
@@ -2210,7 +2210,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Konkurrencemeldinger
 **Kort definition:** En dobling (eller melding), der beder makker om et bestemt udspil.
 
-**Forklaring:** En dobling (eller melding), der beder makker om et bestemt udspil.
+**Forklaring:** Doblingen bruges især af kunstige meldinger og af modpartens frivillige 3NT eller slem, hvor en strafdobling sjældent er nødvendig; Lightner-doblingen af en slem beder om et usædvanligt udspil, ofte bordets først meldte farve. I 2 over 1 – Moderne majorstøtte peger doblingen af 3NT altid på bordets farve, og i Bridgesystem er fortsætterens dobling af modpartens Stayman eller overføring udspilsdirigerende (ca. 8+ hp).
 
 ### Usædvanlig 2NT
 **ID:** `usaedvanlig-2nt`
@@ -2220,7 +2220,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Systemafhængig:** Ja
 **Kort definition:** En kunstig 2NT‑melding der viser to lavere umeldte farver.
 
-**Forklaring:** En kunstig 2NT‑melding der viser to lavere umeldte farver.
+**Forklaring:** Over 1♥ eller 1♠ viser den minorerne, over 1♦ klør og hjerter og over 1♣ ruder og hjerter. Makker vælger farve på laveste niveau med en svag hånd og cuebidder med en god. Bridgesystem og 2 over 1 – Moderne majorstøtte kræver mindst 5-5 og 8–15 hp eller 17+.
 
 ### Usædvanlig melding
 **ID:** `usaedvanlig-melding`
@@ -2229,7 +2229,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Konkurrencemeldinger
 **Kort definition:** En kunstig melding der viser tofarvet hånd.
 
-**Forklaring:** En kunstig melding der viser tofarvet hånd.
+**Forklaring:** En melding er usædvanlig, når den naturlige betydning er urimelig i situationen, fx 2NT direkte over en åbning eller 4NT i et konkurrenceforløb, hvor sans ikke er sandsynlig; den viser da normalt de to laveste umeldte farver. Den kendteste er usædvanlig 2NT, som opslaget Usædvanlig 2NT forklarer.
 
 ### Viderespærring
 **ID:** `viderespaerring`
@@ -2238,7 +2238,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Konkurrencemeldinger
 **Kort definition:** At støtte makkers spærremelding endnu højere for at presse modparten.
 
-**Forklaring:** At støtte makkers spærremelding endnu højere for at presse modparten.
+**Forklaring:** Svarer melder videre efter antallet af fælles trumf, ikke efter point: 3 i farven med 9 trumf og 4 med 10 (Loven). Det tager meldeplads fra modparten, før den har fundet sin bedste kontrakt. I 2 over 1 – Moderne majorstøtte gælder det efter en svag 2-åbning, hvor 2NT (Ogust) bruges med udgangsinteresse.
 
 ## Spilføring
 
@@ -3843,7 +3843,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Love, etik og procedure
 **Kort definition:** En melding, der erstatter en annulleret melding og har samme eller lignende betydning, en del af dens mulige betydninger eller samme formål.
 
-**Forklaring:** Reglen giver flere spil et normalt resultat efter en annulleret melding, fx et utilstrækkeligt bud eller en melding uden for tur: erstattes den med en sammenlignelig melding, fortsætter meldinger og spil uden yderligere rettelse (§ 23B og § 27B1b). Har modparten alligevel lidt skade, fordi den skyldige side fik hjælp af lovbruddet, justerer turneringslederen scoren (§ 23C).
+**Forklaring:** Reglen giver flere spil et normalt resultat efter en annulleret melding, fx et utilstrækkeligt bud eller en melding uden for tur: erstattes den med en sammenlignelig melding, fortsætter meldinger og spil uden yderligere rettelse (§ 23B og § 27B1b). Har modparten alligevel lidt skade, fordi den skyldige side fik hjælp af lovbruddet, justerer turneringslederen scoren (§ 23C). Lovene kalder den en tilsvarende melding (§ 23).
 
 ### Spilleperiode
 **ID:** `spilleperiode`

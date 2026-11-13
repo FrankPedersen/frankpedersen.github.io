@@ -2,10 +2,10 @@
 
     python tools/tjek_mappe.py
 
-Repoerne Forside, Fordelingstræneren og Konventionstræner og mappen bridge-model ligger samlet i Kontraktbridge med
+Repoerne Forside, Fordelingstræneren, Konventionstræner og Postmortem og mappen bridge-model ligger samlet i Kontraktbridge med
 den private SYSTEM.md, en fælles CLAUDE.md og Kontraktbridge.code-workspace. Testen tjekker, at ingen fil henviser til
 de gamle mapper i Overførsler, at den fælles CLAUDE.md har det, der gælder alle repoer, at repoernes CLAUDE.md henviser
-dertil uden at gentage det, og at workspace-filen åbner de fire mapper. At SYSTEM.md ligger uden for repoerne, og at
+dertil uden at gentage det, og at workspace-filen åbner de fem mapper (Postmortem kom med i vindue 1a af Post Mortem). At SYSTEM.md ligger uden for repoerne, og at
 reglen om den står i den fælles CLAUDE.md, tjekkes af tools/tjek_privatliv.py.
 """
 import json
@@ -16,14 +16,14 @@ import unittest
 
 ROD = pathlib.Path(__file__).resolve().parent.parent
 MAPPE = ROD.parent
-REPOER = ('Forside', 'Fordelingstræneren', 'Konventionstræner')
+REPOER = ('Forside', 'Fordelingstræneren', 'Konventionstræner', 'Postmortem')
 MAPPER = REPOER + ('bridge-model',)
 
 # De gamle stier, også med dobbelte skråstreger som i JSON
 GAMLE = re.compile(r'Downloads[\\/]+(?:githubUpload|Fordelingstr(?:æ|ae)neren|Konventionstr(?:æ|ae)ner|bridge-model)'
                    r'|githubUpload[\\/]', re.I)
 TEKST = {'.md', '.py', '.mjs', '.js', '.ts', '.tsx', '.json', '.yml', '.html', '.txt', '.css'}
-SPRING_OVER = {'.git', 'node_modules', 'dist', '__pycache__'}
+SPRING_OVER = {'.git', 'node_modules', 'dist', '__pycache__', '.venv', '.pytest_cache'}
 
 
 def tekstfiler():
@@ -92,6 +92,7 @@ class RepoernesClaudeMd(unittest.TestCase):
                                'scripts/sprogtjek.ts', 'scripts/ordliste.txt'),
         'Konventionstræner': ('docs/konventionskort-skabelon.md', 'tools/tjek_fagord.py', 'tools/tjek_sprog.py',
                               'tools/sprogtjek.py', '_config.yml'),
+        'Postmortem': ('api/SVAR.md', 'Rigtige navne må aldrig i git', 'src/tekster.ts'),
     }
 
     def test_henviser_til_den_faelles(self):
@@ -112,7 +113,7 @@ class RepoernesClaudeMd(unittest.TestCase):
 
 
 class Workspace(unittest.TestCase):
-    def test_de_fire_mapper(self):
+    def test_de_fem_mapper(self):
         data = json.loads((MAPPE / 'Kontraktbridge.code-workspace').read_text(encoding='utf-8'))
         stier = [f['path'] for f in data['folders']]
         self.assertEqual(sorted(stier), sorted(MAPPER))

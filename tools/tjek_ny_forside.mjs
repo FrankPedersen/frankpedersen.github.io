@@ -5,7 +5,7 @@
 //
 // Kræver Node 22+ og Chrome eller Edge. Stien til browseren kan gives i CHROME.
 import { spawn } from 'node:child_process';
-import { existsSync, mkdirSync, mkdtempSync, rmSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
@@ -96,6 +96,8 @@ try {
     tjek(!r.eksempel && r.tekst && r.burger && r.ud <= 0, `Ved ${b} px: kun teksten og ☰`, JSON.stringify(r));
   }
 
+  tjek(readFileSync(join(ROD, 'sitemap.xml'), 'utf8').includes('<loc>https://www.kontraktbridge.dk/postmortem/</loc>'), 'Post Mortem står i sitemap.xml');
+
   // Indholdet: tal, kort og links.
   await åbn('index.html', 1280);
   const ind = await kør(`(() => {
@@ -118,10 +120,16 @@ try {
       eyebrow: tekst(document.querySelector('.eyebrow')),
       saadan: !!document.querySelector('#h-saadan'),
       mærkater: synlige('#traenere .badge').map(tekst),
+      lead: tekst(document.querySelector('#traenere .lead')),
+      pm: (() => { const k = [...document.querySelectorAll('#traenere .card')].find((c) => c.getAttribute('href') === '/postmortem/'); return k ? { kicker: synlige('#traenere .card[href="/postmortem/"] .kicker').map(tekst), tekst: synlige('#traenere .card[href="/postmortem/"] p').map(tekst), mærke: synlige('#traenere .card[href="/postmortem/"] .badge').map(tekst) } : null; })(),
     };
   })()`);
   tjek(JSON.stringify(ind.tal) === JSON.stringify(['45', '657', '39', '437']), 'Fire tal: 45, 657, 39 og 437', ind.tal.join());
-  tjek(JSON.stringify(ind.trænere) === JSON.stringify(['Konventionstræner', 'Fordeling', 'Pointregnskab', 'Farvebehandling', 'Håndevaluering']), 'Fem trænerkort, uden Analyse', ind.trænere.join());
+  // Post Mortem er det sjette kort (SPEC-postmortem-1c-app.md i postmortem-repoet).
+  tjek(JSON.stringify(ind.trænere) === JSON.stringify(['Konventionstræner', 'Fordeling', 'Pointregnskab', 'Farvebehandling', 'Håndevaluering', 'Post Mortem']), 'Fem trænerkort og Post Mortem, uden Analyse', ind.trænere.join());
+  tjek(ind.trænerHref.at(-1) === '/postmortem/', 'Post Mortem-kortet fører til /postmortem/', ind.trænerHref.join());
+  tjek(JSON.stringify(ind.pm) === JSON.stringify({ kicker: ['Analyse'], tekst: ['Med linket til jeres klubaften fra bridge.dk viser analysen, hvor pointene gik tabt.'], mærke: ['Ny'] }), 'Post Mortem-kortet: Analyse, teksten og mærket Ny', JSON.stringify(ind.pm));
+  tjek(ind.lead === 'Fem trænere og en analyse af jeres klubaften. Hele kortet er et link.', 'Ledeteksten over kortene', ind.lead);
   tjek(JSON.stringify(ind.opslag) === JSON.stringify(['Analyse', 'Bridgeordbog', 'Scoring i bridge']), 'Tre opslagskort med Analyse først', ind.opslag.join());
   tjek(JSON.stringify(ind.start) === JSON.stringify(['Fordeling og Håndevaluering', 'Konventionstræner og Pointregnskab', 'Farvebehandling og Analyse']), 'Hvor starter jeg? har tre kort', ind.start.join());
   tjek(JSON.stringify(ind.startHref) === JSON.stringify(['/fordelingstraeneren/#fordeling', '/konventionstraener/', '/fordelingstraeneren/#farvebehandling']), 'Hvert af de tre kort fører til den første træner', ind.startHref.join());
@@ -130,7 +138,7 @@ try {
   tjek(JSON.stringify(ind.knapper) === JSON.stringify([['Start træningen', '#start'], ['Se alle trænere', '#traenere']]), 'Knapperne i båndet', JSON.stringify(ind.knapper));
   tjek(ind.punkter.length === 3 && ind.eyebrow === 'Gratis bridgetræning · ingen login', 'Mærkaten og de tre punkter i båndet', JSON.stringify([ind.eyebrow, ind.punkter]));
   tjek(!ind.saadan, 'Sådan virker det er væk som eget afsnit');
-  tjek(JSON.stringify(ind.mærkater) === JSON.stringify(['45 konventioner', '5 min om dagen', '657 kombinationer', 'God til begyndere']), 'Mærkaterne på trænerkortene', ind.mærkater.join());
+  tjek(JSON.stringify(ind.mærkater) === JSON.stringify(['45 konventioner', '5 min om dagen', '657 kombinationer', 'God til begyndere', 'Ny']), 'Mærkaterne på trænerkortene', ind.mærkater.join());
   const hover = await kør(`(() => { const kilde = [...document.querySelectorAll('style')].map((s) => s.textContent).join(' '); const m = kilde.match(/\\.card:hover\\{([^}]*)\\}/); return m ? m[1] : ''; })()`);
   tjek(/translateY\(-3px\)/.test(hover) && /inset 0 3px 0 0 var\(--primary\)|inset 0 3px 0 0 #ff9f4a/.test(hover), 'Ved hover løftes kortet 3 px, med skygge og en orange streg øverst', hover);
   await kør(`document.fonts.ready.then(() => true)`);
@@ -146,7 +154,7 @@ try {
     return { tal: [tal[0].top === tal[1].top, tal[1].top < tal[2].top], art: art.map((a) => [Math.round(a.width), Math.round(a.height)]), række: kort.every((c) => { const b = c.querySelector('.card-tekst').getBoundingClientRect(); const a = c.querySelector('.art-lille').getBoundingClientRect(); return a.right <= b.left; }), knapper: synlige('.hero-btns a').map((e) => [e.textContent.trim(), Math.round(k(e).width)]), bånd: Math.round(k(document.querySelector('.hero-body')).width), burger: [Math.round(k(document.querySelector('.burger')).width), Math.round(k(document.querySelector('.burger')).height)] };
   })()`);
   tjek(mob.tal[0] && mob.tal[1], 'Ved 390 px: tallene står to og to');
-  tjek(mob.art.length === 5 && mob.art.every(([b, h]) => b === 72 && h === 72) && mob.række, 'Ved 390 px: trænerne er rækker med et billede på 72 × 72 px til venstre', JSON.stringify(mob.art));
+  tjek(mob.art.length === 6 && mob.art.every(([b, h]) => b === 72 && h === 72) && mob.række, 'Ved 390 px: trænerne er rækker med et billede på 72 × 72 px til venstre', JSON.stringify(mob.art));
   tjek(mob.knapper.length === 1 && mob.knapper[0][0] === 'Start træningen' && mob.knapper[0][1] === mob.bånd, 'Ved 390 px: kun Start træningen i fuld bredde', JSON.stringify(mob));
   tjek(mob.burger[0] === 44 && mob.burger[1] === 44, 'Ved 390 px: ☰ er 44 × 44 px', mob.burger.join());
   await gem('390-forside-menu-lukket.png', true);
@@ -168,10 +176,11 @@ try {
   const inMenu = await kør(`(() => {
     const t = (e) => e.textContent.replace(/\\s+/g, ' ').trim();
     const g = [...document.querySelectorAll('#menu .menu-gruppe')];
-    return { titler: g.map((x) => t(x.querySelector('.menu-titel'))), trænere: [...g[0].querySelectorAll('a')].map((a) => t(a)), opslag: [...g[1].querySelectorAll('a')].map((a) => [t(a), a.getAttribute('href')]), bund: [...document.querySelectorAll('#menu .menu-bund a, #menu .menu-bund button')].map(t) };
+    return { titler: g.map((x) => t(x.querySelector('.menu-titel'))), trænere: [...g[0].querySelectorAll('a')].map((a) => t(a)), trænerHref: [...g[0].querySelectorAll('a')].map((a) => a.getAttribute('href')), opslag: [...g[1].querySelectorAll('a')].map((a) => [t(a), a.getAttribute('href')]), bund: [...document.querySelectorAll('#menu .menu-bund a, #menu .menu-bund button')].map(t) };
   })()`);
   tjek(JSON.stringify(inMenu.titler) === JSON.stringify(['Trænere', 'Opslag']), 'Menuen har Trænere og Opslag', inMenu.titler.join());
-  tjek(JSON.stringify(inMenu.trænere) === JSON.stringify(['KonventionstrænerMeldinger', 'FordelingOptælling', 'PointregnskabOptælling', 'FarvebehandlingSpilføring', 'HåndevalueringVurdering']), 'Trænerne i menuen har kategorien til højre', inMenu.trænere.join());
+  tjek(JSON.stringify(inMenu.trænere) === JSON.stringify(['KonventionstrænerMeldinger', 'FordelingOptælling', 'PointregnskabOptælling', 'FarvebehandlingSpilføring', 'HåndevalueringVurdering', 'Post MortemAnalyse']), 'Trænerne og Post Mortem i menuen har kategorien til højre', inMenu.trænere.join());
+  tjek(inMenu.trænerHref.at(-1) === '/postmortem/', 'Post Mortem i menuen fører til /postmortem/', inMenu.trænerHref.join());
   tjek(inMenu.opslag[0][0] === 'Analyse' && inMenu.opslag[0][1] === '/fordelingstraeneren/#analyse' && inMenu.opslag.length === 3, 'Analyse står under Opslag i menuen', JSON.stringify(inMenu.opslag));
   tjek(JSON.stringify(inMenu.bund) === JSON.stringify(['Om mig og kontakt', 'English']), 'Om mig og kontakt og English nederst i menuen', inMenu.bund.join());
   await gem('390-forside-menu-aaben.png', false);
@@ -207,7 +216,7 @@ try {
     return { højde: Math.round(k(f).height), kolonner, polstring: [cs.paddingTop, cs.paddingRight, cs.paddingBottom, cs.paddingLeft].join(' '), linjehøjde: cs.lineHeight, logo: [Math.round(k(logo).width), Math.round(k(logo).height)], rækker: links.map((a) => Math.round(k(a).height)), afstand: Math.round(k(links[1].closest('li')).top - k(links[0].closest('li')).bottom), samme: Math.abs((k(cta).top + k(cta).height / 2) - (k(brand).top + k(brand).height / 2)) < 2, ctaHøjde: Math.round(k(cta).height), om: /Jeg er bridgeentusiast/.test(f.textContent), legal: t(f.querySelector('.legal')), p: synlig(f.querySelector('p')), ud: document.documentElement.scrollWidth - document.documentElement.clientWidth };
   })()`);
   const KOLONNER = JSON.stringify([
-    { titel: 'Trænere', links: [['Konventionstræner', '/konventionstraener/'], ['Fordeling', '/fordelingstraeneren/#fordeling'], ['Pointregnskab', '/fordelingstraeneren/#pointregnskab'], ['Farvebehandling', '/fordelingstraeneren/#farvebehandling'], ['Håndevaluering', '/fordelingstraeneren/#haandevaluering']] },
+    { titel: 'Trænere', links: [['Konventionstræner', '/konventionstraener/'], ['Fordeling', '/fordelingstraeneren/#fordeling'], ['Pointregnskab', '/fordelingstraeneren/#pointregnskab'], ['Farvebehandling', '/fordelingstraeneren/#farvebehandling'], ['Håndevaluering', '/fordelingstraeneren/#haandevaluering'], ['Post Mortem', '/postmortem/']] },
     { titel: 'Opslag', links: [['Analyse', '/fordelingstraeneren/#analyse'], ['Bridgeordbog', '/ordbog/'], ['Scoring i bridge', '/scoring/']] },
   ]);
   const ens = {};
@@ -217,7 +226,7 @@ try {
       const f = await fod();
       const hvor = `Sidefoden på ${side} ved ${bredde} px`;
       tjek(f.højde < HØJDE_FØR[bredde], `${hvor}: lavere end i dag (${HØJDE_FØR[bredde]} px)`, `${f.højde} px`);
-      tjek(JSON.stringify(f.kolonner) === KOLONNER, `${hvor}: Trænere (fem) og Opslag (Analyse, Bridgeordbog, Scoring i bridge)`, JSON.stringify(f.kolonner));
+      tjek(JSON.stringify(f.kolonner) === KOLONNER, `${hvor}: Trænere (fem og Post Mortem) og Opslag (Analyse, Bridgeordbog, Scoring i bridge)`, JSON.stringify(f.kolonner));
       tjek(f.linjehøjde === '20px', `${hvor}: linjehøjde 20 px`, f.linjehøjde);
       if (bredde === 1280) {
         tjek(f.polstring === '24px 28px 18px 28px' && f.logo[0] === 32 && f.afstand === 4, `${hvor}: polstring 24/28 px, logo 32 px og 4 px mellem links`, JSON.stringify([f.polstring, f.logo, f.afstand]));

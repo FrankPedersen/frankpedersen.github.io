@@ -42,8 +42,8 @@ const SKJULT = ['/CLAUDE.md', '/CLAUDE.html', '/CLAUDE', '/tools/build_ordbog.py
   '/SPEC-scoring.md', '/docs/specs/README.md', '/ordbog/Dansk_bridgeordbog.md', '/ordbog/Dansk_bridgeordbog.html',
   '/ordbog/Forslag_danske_opslagsord.md', '/ordbog/Forslag_danske_opslagsord.html', '/scoring/Scoring_i_bridge.md',
   '/scoring/Scoring_i_bridge.html', '/scoring/Scoring_i_bridge.en.md', '/scoring/Scoring_i_bridge.en.html'];
-// De to apps ligger i egne repoer under samme domæne
-const ANDRE_REPOER = /^\/(fordelingstraeneren|konventionstraener)\//;
+// De tre apps ligger i egne repoer under samme domæne
+const ANDRE_REPOER = /^\/(fordelingstraeneren|konventionstraener|postmortem)\//;
 
 let fejl = 0;
 const tjek = (ok, navn, detalje = '') => {

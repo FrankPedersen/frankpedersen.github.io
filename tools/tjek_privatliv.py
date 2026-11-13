@@ -111,16 +111,18 @@ class Teksten(unittest.TestCase):
 
 PM_DANSK = ('Post Mortem. Når du indsætter et link, henter en funktion i Microsoft Azure turneringens sider fra '
             'resultater.bridge.dk og regner spillene igennem. Navnene fra siderne gemmes ikke: kun beregningerne af '
-            'spillene gemmes, uden navne, og svaret ligger kun i din browser, til du lukker fanen. Din IP-adresse bruges i '
-            'krypteret form i højst 20 minutter til at begrænse antallet af analyser. Formålet er at forhindre misbrug, og '
-            'grundlaget er legitim interesse. Azure logger tidspunktet for hvert kald og et omtrentligt land og en by i 30 '
-            'dage, men ikke din IP-adresse eller linket.')
-PM_ENGELSK = ('Post Mortem. When you paste a link, a function in Microsoft Azure fetches the tournament\'s pages from '
+            'spillene gemmes, uden navne, og svaret ligger kun i din browser, til du lukker fanen. Din IP-adresse gemmes i '
+            'højst 20 minutter som en kode, der ikke kan føres tilbage til adressen uden en hemmelig nøgle, for at '
+            'begrænse antallet af analyser. Formålet er at forhindre misbrug, og grundlaget er legitim interesse. Azure '
+            'logger tidspunktet for hvert kald og et omtrentligt land og en by i 30 dage, men ikke din IP-adresse eller '
+            'linket.')
+PM_ENGELSK = ("Post Mortem. When you paste a link, a function in Microsoft Azure fetches the tournament's pages from "
               'resultater.bridge.dk and works through the boards. The names on the pages are not stored: only the '
               'calculations of the boards are stored, without names, and the result stays in your browser until you close '
-              'the tab. Your IP address is used in encrypted form for up to 20 minutes to limit the number of analyses. '
-              'The purpose is to prevent misuse, and the legal basis is legitimate interest. Azure logs the time of each '
-              'request and an approximate country and city for 30 days, but not your IP address or the link.')
+              'the tab. Your IP address is stored for up to 20 minutes as a code that cannot be traced back to the address '
+              'without a secret key, to limit the number of analyses. The purpose is to prevent misuse, and the legal '
+              'basis is legitimate interest. Azure logs the time of each request and an approximate country and city for '
+              '30 days, but not your IP address or the link.')
 
 
 class PostMortem(unittest.TestCase):
@@ -148,7 +150,7 @@ class PostMortem(unittest.TestCase):
 
     def test_det_specen_kraever(self):
         tekst = ren(self.m.group(2))
-        for del_ in ('resultater.bridge.dk', 'Navnene fra siderne gemmes ikke', 'højst 20 minutter',
+        for del_ in ('resultater.bridge.dk', 'Navnene fra siderne gemmes ikke', 'højst 20 minutter', 'uden en hemmelig nøgle',
                      'forhindre misbrug', 'legitim interesse', '30 dage', 'ikke din IP-adresse eller linket'):
             self.assertIn(del_, tekst)
 

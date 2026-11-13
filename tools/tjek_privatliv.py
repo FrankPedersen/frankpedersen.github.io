@@ -109,6 +109,55 @@ class Teksten(unittest.TestCase):
         self.assertIn("const KONTAKT_API = 'https://kontraktbridge-kontakt.azurewebsites.net/api/contact';", self.side)
 
 
+PM_DANSK = ('Post Mortem. Når du indsætter et link, henter en funktion i Microsoft Azure turneringens sider fra '
+            'resultater.bridge.dk og regner spillene igennem. Navnene fra siderne gemmes ikke: kun beregningerne af '
+            'spillene gemmes, uden navne, og svaret ligger kun i din browser, til du lukker fanen. Din IP-adresse gemmes i '
+            'højst 20 minutter som en kode, der ikke kan føres tilbage til adressen uden en hemmelig nøgle, for at '
+            'begrænse antallet af analyser. Formålet er at forhindre misbrug, og grundlaget er legitim interesse. Azure '
+            'logger tidspunktet for hvert kald og et omtrentligt land og en by i 30 dage, men ikke din IP-adresse eller '
+            'linket.')
+PM_ENGELSK = ("Post Mortem. When you paste a link, a function in Microsoft Azure fetches the tournament's pages from "
+              'resultater.bridge.dk and works through the boards. The names on the pages are not stored: only the '
+              'calculations of the boards are stored, without names, and the result stays in your browser until you close '
+              'the tab. Your IP address is stored for up to 20 minutes as a code that cannot be traced back to the address '
+              'without a secret key, to limit the number of analyses. The purpose is to prevent misuse, and the legal '
+              'basis is legitimate interest. Azure logs the time of each request and an approximate country and city for '
+              '30 days, but not your IP address or the link.')
+
+
+class PostMortem(unittest.TestCase):
+    """Afsnittet om Post Mortem i privatlivspolitikken (SPEC-postmortem-ip-graense.md i postmortem-repoet): hvad der
+    hentes fra bridge.dk, at navne ikke gemmes, IP-tælleren (formål, grundlag, opbevaring) og Azures log."""
+
+    @classmethod
+    def setUpClass(cls):
+        cls.side = SIDE.read_text(encoding='utf-8')
+        cls.m = re.search(r'<p class="om-privat om-privat-pm"([^>]*)>(.*?)</p>', cls.side, re.S)
+
+    def test_afsnittet_staar_i_privatlivspolitikken_efter_det_foerste(self):
+        self.assertIsNotNone(self.m, 'mangler <p class="om-privat om-privat-pm">')
+        details = self.side[self.side.index('<details class="om-privatliv">'):self.side.index('</details>')]
+        self.assertLess(details.index('<p class="om-privat"'), details.index('<p class="om-privat om-privat-pm"'))
+
+    def test_dansk_med_fed_overskrift(self):
+        self.assertEqual(ren(self.m.group(2)), PM_DANSK)
+        self.assertTrue(self.m.group(2).strip().startswith('<strong>Post Mortem.</strong>'))
+
+    def test_engelsk_i_data_en(self):
+        en = html.unescape(re.search(r'data-en="([^"]*)"', self.m.group(1)).group(1))
+        self.assertEqual(ren(en), PM_ENGELSK)
+        self.assertTrue(en.startswith('<strong>Post Mortem.</strong>'))
+
+    def test_det_specen_kraever(self):
+        tekst = ren(self.m.group(2))
+        for del_ in ('resultater.bridge.dk', 'Navnene fra siderne gemmes ikke', 'højst 20 minutter', 'uden en hemmelig nøgle',
+                     'forhindre misbrug', 'legitim interesse', '30 dage', 'ikke din IP-adresse eller linket'):
+            self.assertIn(del_, tekst)
+
+    def test_det_foerste_afsnit_er_uaendret(self):
+        self.assertEqual(ren(privatliv(self.side)[1]), DANSK)
+
+
 class Systemdokumentationen(unittest.TestCase):
     def test_system_md_findes(self):
         self.assertTrue(SYSTEM.is_file())

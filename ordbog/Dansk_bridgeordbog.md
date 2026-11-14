@@ -1,6 +1,6 @@
 # Dansk bridgeordbog
 
-_Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
+_Version 1.3. Ordbogen indeholder 438 kanoniske opslag._
 
 ## Grundlæggende begreber
 
@@ -1754,7 +1754,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 
 ### Marmic
 **ID:** `marmic`
-**Engelsk:**
+**Engelsk:** Marmic
 **Niveau:** avanceret
 **Kategori:** Meldesystemer og konventioner
 **Kort definition:** En trefarvet hånd med 4-4-4-1-fordeling (eller 5-4-4-0); navnet kommer fra det italienske Marmic-system, hvor åbningerne 2♣ og 2♦ viste den.
@@ -2678,6 +2678,17 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kort definition:** At lægge et kort i en anden farve end den udspillede, uden at trumfe, fordi man ikke kan bekende.
 
 **Forklaring:** Et afkast kan aldrig vinde stikket, så det vælges efter, hvad hånden kan undvære: kort, der vogter en farve hos spilfører eller på bordet, beholdes. Afkastet er samtidig et signal til makker. I Bridgesystem er det første afkast mod en farvekontrakt kald eller afvisning (lavt = kald), og mod sans kastes der i den farve, der er uinteressant. I 2 over 1 – Moderne majorstøtte er afkastet i en uinteressant farve Lavinthal: et højt kort beder om den højeste af de to øvrige farver, et lavt om den laveste.
+
+### Aktivt udspil
+**ID:** `aktivt-udspil`
+**Engelsk:** Active lead
+**Niveau:** let øvet
+**Kategori:** Modspil, udspil og signaler
+**Kort definition:** Et udspil, der skal rejse eller indkassere stik, før spilfører får kastet sine tabere af.
+
+**Forklaring:** Det modsatte er et passivt eller neutralt udspil. Et aktivt udspil passer, når bordet har en lang farve at kaste af på, eller når meldingerne viser, at spilfører har stikkene, hvis modspillet venter; det kommer typisk fra en honnør, fx fra K x x i en umeldt farve.
+
+**Relaterede begreber:** neutralt-udspil
 
 ### Farvepræferencesignal
 **ID:** `farvepraeferencesignal`
@@ -4182,6 +4193,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 - **1NT opening** → [1NT-åbning](#1nt-aabning)
 - **2NT opening** → [2NT-åbning](#2nt-aabning)
 - **Ace** → [Es](#es)
+- **Active lead** → [Aktivt udspil](#aktivt-udspil)
 - **Adjusted score** → [Justeret score](#korrigeret-score)
 - **Advance sacrifice** → [Forhåndsoffermelding](#forhaandsoffermelding)
 - **Advancer** → [Indmelderens makker](#indmelderens-makker)
@@ -4386,6 +4398,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 - **Low card** → [Lavt kort](#lavt-kort)
 - **Major** → [Majorfarve](#majorfarve)
 - **Makes** → [Meldt og vundet](#meldt-og-vundet)
+- **Marmic** → [Marmic](#marmic)
 - **Masterpoint / Master point (MP)** → [Mesterpoint](#mesterpoint)
 - **Match** → [Kamp](#kamp)
 - **Matchpoints** → [Matchpoint](#matchpoint)
@@ -4625,6 +4638,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 - **Afgivelse af stik** → Concession
 - **Afkast** → Discard
 - **Afslå** → Reject
+- **Aktivt udspil** → Active lead
 - **Alertering** → Alert (! / *)
 - **Alertkort** → Alert card
 - **Alle i zonen** → Game all
@@ -4799,6 +4813,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 - **Maksimum** → Maximum (max)
 - **Malmømarkering** → Upside-down count
 - **Manglende alert** → Failure to alert
+- **Marmic** → Marmic
 - **Matchpoint** → Matchpoints
 - **Med bagsiden opad** → Face down
 - **Med forsiden opad** → Face up / Faced card

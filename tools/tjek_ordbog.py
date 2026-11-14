@@ -83,10 +83,11 @@ class Ordbogssiden(unittest.TestCase):
         bygger = hent_bygger()
         self.assertEqual(bygger.byg(KILDE.read_text(encoding='utf-8')), self.html)
 
-    def test_437_opslag_og_tallet_i_underteksten(self):
-        # Version 1.3 (SPEC-ordbog-kategorier): 387 − 1 sammenlagt + 51 nye
-        self.assertEqual(len(self.side.opslag), 437)
-        self.assertIn('437 bridgeord på dansk med engelsk oversættelse.', self.html)
+    def test_438_opslag_og_tallet_i_underteksten(self):
+        # Version 1.3 (SPEC-ordbog-kategorier): 387 − 1 sammenlagt + 51 nye; portion 9 (SPEC-ordbog-forklaringer-9.md):
+        # Norsk fordeling ud, MUD og Aktivt udspil ind
+        self.assertEqual(len(self.side.opslag), 438)
+        self.assertIn('438 bridgeord på dansk med engelsk oversættelse.', self.html)
 
     def test_finesse_knibning_og_kipning_finder_kipning(self):
         for q in ('finesse', 'knibning', 'kipning', 'Knibning'):
@@ -123,7 +124,7 @@ class Ordbogssiden(unittest.TestCase):
             else:
                 forskellige += 1
                 self.assertIn('expl', p, navn)
-        self.assertEqual(ens + forskellige, 437)
+        self.assertEqual(ens + forskellige, 438)
         self.assertTrue(ens and forskellige)
         self.assertIn('expl', self.opslag['bordet']['p'])
 
@@ -193,12 +194,12 @@ class KategorierOgNiveauer(unittest.TestCase):
                   'Talemåder og bridgeslang']
     # Forslagets tal for de 387 opslag, uden Princippet om begrænset valg og med de 51 nye. Portion 9
     # (SPEC-ordbog-forklaringer-9.md): Marmic er flyttet til Meldesystemer og konventioner (42 → 43), Norsk fordeling er
-    # fjernet, og MUD er nyt under Modspil, udspil og signaler (28 → 27).
+    # fjernet, og MUD og Aktivt udspil er nye under Modspil, udspil og signaler (28 → 29 − 1 = 28).
     PR_KATEGORI = {'Grundlæggende begreber': 98, 'Meldinger og meldeforløb': 60, 'Meldesystemer og konventioner': 43,
-                   'Konkurrencemeldinger': 33, 'Spilføring': 44, 'Modspil, udspil og signaler': 27, 'Score og beregning': 29,
+                   'Konkurrencemeldinger': 33, 'Spilføring': 44, 'Modspil, udspil og signaler': 28, 'Score og beregning': 29,
                    'Turnering og organisering': 43, 'Love, etik og procedure': 36, 'Onlinebridge og digitale turneringer': 3,
                    'Avancerede teknikker': 12, 'Talemåder og bridgeslang': 9}
-    PR_NIVEAU = {'begynder': 190, 'let øvet': 135, 'øvet': 94, 'avanceret': 18}
+    PR_NIVEAU = {'begynder': 190, 'let øvet': 136, 'øvet': 94, 'avanceret': 18}
     NYE = ['Baghånd', 'Forhånd', 'Honnørsekvens', 'Lavhonnør', 'Mellemhånd', 'Mellemkort', 'Nabohonnører',
            'Selvspillende farve', 'Spillestærk hånd', 'Toptaber', '3-trinsraketten', 'Åbningsfarve', 'Bogmelding',
            'Dobbeltspring', 'Enkeltstøtte', 'Melderunde', 'Misfit', 'Nødmelding / nødsans', 'Overmelding', 'Rundekrav',
@@ -228,9 +229,9 @@ class KategorierOgNiveauer(unittest.TestCase):
         cls.side = læs_side()
         cls.html = SIDE.read_text(encoding='utf-8')
 
-    def test_version_13_med_437_opslag(self):
-        self.assertIn('_Version 1.3. Ordbogen indeholder 437 kanoniske opslag._', self.kilde)
-        self.assertEqual(len(self.opslag), 437)
+    def test_version_13_med_438_opslag(self):
+        self.assertIn('_Version 1.3. Ordbogen indeholder 438 kanoniske opslag._', self.kilde)
+        self.assertEqual(len(self.opslag), 438)
 
     def test_tolv_kategorier_og_talemaader_i_filteret(self):
         self.assertEqual([k for k in hent_bygger().parse(self.kilde)['kategorier']], self.KATEGORIER)
@@ -277,9 +278,9 @@ class KategorierOgNiveauer(unittest.TestCase):
         self.assertIn('<span lang="en">Poker face</span>', artikel)
 
     def test_soegeordene_finder_opslagene(self):
-        # "aktivt udspil" var søgeord for Neutralt udspil, men er det modsatte og er taget ud som alternativ term
-        # (SPEC-ordbog-forklaringer-9.md, Franks afgørelse 14. november 2026).
-        for q, mål in (('bonde', 'knaegt'), ('passivt udspil', 'neutralt-udspil'),
+        # "aktivt udspil" finder fra portion 9 opslaget Aktivt udspil og ikke længere Neutralt udspil, hvor det var en
+        # alternativ term (SPEC-ordbog-forklaringer-9.md, Franks afgørelse 14. november 2026).
+        for q, mål in (('bonde', 'knaegt'), ('aktivt udspil', 'aktivt-udspil'), ('passivt udspil', 'neutralt-udspil'),
                        ('princippet om begrænset valg', 'begraenset-valg'), ('espørgemelding', 'blackwood'),
                        ('balanceret fordeling', 'jaevn-haand'), ('trækværdi', 'stikpoint'), ('frafald', 'hold-up'),
                        ('udoblet', 'doblet-kontrakt'), ('2-over-1', '2-over-1')):
@@ -324,7 +325,8 @@ class KategorierOgNiveauer(unittest.TestCase):
 
 class Portion9(unittest.TestCase):
     """SPEC-ordbog-forklaringer-9.md (Franks valg 14. november 2026): Modspil, udspil og signaler. De 22 forklaringer,
-    omdøbningerne til Gennemspil og Malmømarkering, Marmic som trefarvet hånd, det nye opslag MUD og indekserne."""
+    omdøbningerne til Gennemspil og Malmømarkering, Marmic som trefarvet hånd, de nye opslag MUD og Aktivt udspil og
+    indekserne."""
 
     MODSPIL = 'Modspil, udspil og signaler'
     DE_22 = ['Afkast', 'Farvepræferencesignal', 'Fordelingssignal', 'Gennemspil', 'Honnør på honnør', 'Højt fra intet',
@@ -344,7 +346,7 @@ class Portion9(unittest.TestCase):
             self.assertIn(navn, self.opslag, navn)
             self.assertEqual(self.opslag[navn]['Kategori'], self.MODSPIL, navn)
         i_kategorien = [n for n, o in self.opslag.items() if o['Kategori'] == self.MODSPIL]
-        self.assertEqual(len(i_kategorien), 27)
+        self.assertEqual(len(i_kategorien), 28)
         for navn in i_kategorien:
             self.assertNotEqual(self.opslag[navn]['Forklaring'], self.opslag[navn]['Kort definition'], navn)
         # 46 før portion 9, 22 færre nu.
@@ -374,7 +376,7 @@ class Portion9(unittest.TestCase):
         self.assertEqual((marmic['Kategori'], marmic['afsnit']), ('Meldesystemer og konventioner',) * 2)
         self.assertEqual(marmic['Kort definition'], 'En trefarvet hånd med 4-4-4-1-fordeling (eller 5-4-4-0); navnet kommer fra det '
                                                     'italienske Marmic-system, hvor åbningerne 2♣ og 2♦ viste den.')
-        self.assertEqual(marmic['Engelsk'], '')
+        self.assertEqual(marmic['Engelsk'], 'Marmic')
         self.assertNotIn('Systemafhængig', marmic)
         self.assertEqual(marmic['Relaterede begreber'], 'trefarvet-haand, usaedvanlig-2nt')
         self.assertIn('I Norge bruges ordet om et spring til 2NT', marmic['Forklaring'])
@@ -388,16 +390,19 @@ class Portion9(unittest.TestCase):
 
     def test_indekserne_foelger_med(self):
         engelsk = {(r['engelsk'], r['id']) for r in self.bygget['indeks']}
-        for række in (('Leading through', 'gennemspil'), ('Upside-down count', 'malmoemarkering'), ('MUD', 'mud')):
+        for række in (('Leading through', 'gennemspil'), ('Upside-down count', 'malmoemarkering'), ('MUD', 'mud'),
+                      ('Marmic', 'marmic'), ('Active lead', 'aktivt-udspil')):
             self.assertIn(række, engelsk)
         for ord_ in ('Low from even', 'Norwegian count'):
             self.assertNotIn(ord_, {e for e, _ in engelsk})
-        for id_ in ('gennembrud', 'laveste-lige-kort', 'norsk-fordeling', 'marmic'):
+        self.assertNotIn(('MUD', 'marmic'), engelsk)
+        for id_ in ('gennembrud', 'laveste-lige-kort', 'norsk-fordeling'):
             self.assertNotIn(id_, {i for _, i in engelsk}, id_)
         dansk = self.kilde[self.kilde.index('## Dansk-engelsk indeks'):].splitlines()
-        for linje in ('- **Gennemspil** → Leading through', '- **Malmømarkering** → Upside-down count', '- **MUD** → MUD'):
+        for linje in ('- **Gennemspil** → Leading through', '- **Malmømarkering** → Upside-down count', '- **MUD** → MUD',
+                      '- **Marmic** → Marmic', '- **Aktivt udspil** → Active lead'):
             self.assertIn(linje, dansk)
-        for navn in ('Gennembrud', 'Laveste lige kort', 'Norsk fordeling', 'Marmic'):
+        for navn in ('Gennembrud', 'Laveste lige kort', 'Norsk fordeling'):
             self.assertFalse([l for l in dansk if l.startswith(f'- **{navn}** ')], navn)
         # Det engelsk-danske indeks står stadig i alfabetisk orden.
         ord_ = [r['engelsk'] for r in self.bygget['indeks']]
@@ -409,6 +414,14 @@ class Portion9(unittest.TestCase):
         self.assertIn('(§ 44G)', self.opslag['Udspil']['Forklaring'])
         self.assertEqual(self.opslag['Neutralt udspil']['Alternative termer'], 'Passivt udspil')
         self.assertNotIn('neutralt-udspil', søg(self.side, 'aktivt udspil'))
+        # Aktivt udspil er et opslag for sig (Franks ændring før fletningen).
+        o = self.opslag['Aktivt udspil']
+        self.assertEqual((o['ID'], o['Engelsk'], o['Kategori'], o['afsnit'], o['Relaterede begreber']),
+                         ('`aktivt-udspil`', 'Active lead', self.MODSPIL, self.MODSPIL, 'neutralt-udspil'))
+        self.assertEqual(o['Kort definition'], 'Et udspil, der skal rejse eller indkassere stik, før spilfører får kastet sine tabere af.')
+        self.assertTrue(o['Forklaring'].startswith('Det modsatte er et passivt eller neutralt udspil.'))
+        self.assertIn('fx fra K x x i en umeldt farve', o['Forklaring'])
+        self.assertEqual(søg(self.side, 'active lead'), ['aktivt-udspil'])
         self.assertEqual(self.opslag['Kald-afvisning']['Alternative termer'], 'Kald og afvisning')
         for q in ('attitude', 'encourage', 'discourage'):
             self.assertIn('kald-afvisning', søg(self.side, q), q)

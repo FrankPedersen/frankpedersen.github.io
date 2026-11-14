@@ -124,7 +124,7 @@ try {
       pm: (() => { const k = [...document.querySelectorAll('#traenere .card')].find((c) => c.getAttribute('href') === '/postmortem/'); return k ? { kicker: synlige('#traenere .card[href="/postmortem/"] .kicker').map(tekst), tekst: synlige('#traenere .card[href="/postmortem/"] p').map(tekst), mærke: synlige('#traenere .card[href="/postmortem/"] .badge').map(tekst) } : null; })(),
     };
   })()`);
-  tjek(JSON.stringify(ind.tal) === JSON.stringify(['45', '657', '39', '437']), 'Fire tal: 45, 657, 39 og 437', ind.tal.join());
+  tjek(JSON.stringify(ind.tal) === JSON.stringify(['45', '657', '39', '438']), 'Fire tal: 45, 657, 39 og 438', ind.tal.join());
   // Post Mortem er det sjette kort (SPEC-postmortem-1c-app.md i postmortem-repoet).
   tjek(JSON.stringify(ind.trænere) === JSON.stringify(['Konventionstræner', 'Fordeling', 'Pointregnskab', 'Farvebehandling', 'Håndevaluering', 'Post Mortem']), 'Fem trænerkort og Post Mortem, uden Analyse', ind.trænere.join());
   tjek(ind.trænerHref.at(-1) === '/postmortem/', 'Post Mortem-kortet fører til /postmortem/', ind.trænerHref.join());

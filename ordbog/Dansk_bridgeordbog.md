@@ -1,6 +1,6 @@
 # Dansk bridgeordbog
 
-_Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
+_Version 1.3. Ordbogen indeholder 438 kanoniske opslag._
 
 ## Grundlæggende begreber
 
@@ -1752,6 +1752,17 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 
 **Forklaring:** Aftaler kan være indgået udtrykkeligt eller opstå af erfaring, og modstanderne har ret til at kende dem: det er aftalen, der forklares, ikke hånden (§ 40A1 og § 20F). Aftalerne gælder også udspil og markeringer, og Konventionstræneren samler hvert pars aftaler på siden Mine makkeraftaler.
 
+### Marmic
+**ID:** `marmic`
+**Engelsk:** Marmic
+**Niveau:** avanceret
+**Kategori:** Meldesystemer og konventioner
+**Kort definition:** En trefarvet hånd med 4-4-4-1-fordeling (eller 5-4-4-0); navnet kommer fra det italienske Marmic-system, hvor åbningerne 2♣ og 2♦ viste den.
+
+**Forklaring:** En 4-4-4-1-hånd er svær at melde i naturlige systemer, fordi den hverken er jævn eller har en 5-farve. I Norge bruges ordet om et spring til 2NT, der viser 5-5 i de to laveste umeldte farver.
+
+**Relaterede begreber:** trefarvet-haand, usaedvanlig-2nt
+
 ### Meldesystem
 **ID:** `meldesystem`
 **Engelsk:** Bidding system
@@ -2332,7 +2343,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Engelsk:** Danger hand
 **Niveau:** øvet
 **Kategori:** Spilføring
-**Kort definition:** Den modspiller, som ikke bør komme ind, fordi et gennembrud eller en farvefortsættelse kan true kontrakten.
+**Kort definition:** Den modspiller, som ikke bør komme ind, fordi et gennemspil eller en farvefortsættelse kan true kontrakten.
 
 **Forklaring:** Spilfører prøver at holde farehånden ude af stikket, fx ved at vælge den kipning, der taber til den ufarlige modspiller. I sans er farehånden ofte den, der har den lange farve, når den er spillet fri.
 
@@ -2664,9 +2675,20 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Engelsk:** Discard
 **Niveau:** begynder
 **Kategori:** Modspil, udspil og signaler
-**Kort definition:** At smide af i en farve man ikke kan bekende.
+**Kort definition:** At lægge et kort i en anden farve end den udspillede, uden at trumfe, fordi man ikke kan bekende.
 
-**Forklaring:** At smide af i en farve man ikke kan bekende.
+**Forklaring:** Et afkast kan aldrig vinde stikket, så det vælges efter, hvad hånden kan undvære: kort, der vogter en farve hos spilfører eller på bordet, beholdes. Afkastet er samtidig et signal til makker. I Bridgesystem er det første afkast mod en farvekontrakt kald eller afvisning (lavt = kald), og mod sans kastes der i den farve, der er uinteressant. I 2 over 1 – Moderne majorstøtte er afkastet i en uinteressant farve Lavinthal: et højt kort beder om den højeste af de to øvrige farver, et lavt om den laveste.
+
+### Aktivt udspil
+**ID:** `aktivt-udspil`
+**Engelsk:** Active lead
+**Niveau:** let øvet
+**Kategori:** Modspil, udspil og signaler
+**Kort definition:** Et udspil, der skal rejse eller indkassere stik, før spilfører får kastet sine tabere af.
+
+**Forklaring:** Det modsatte er et passivt eller neutralt udspil. Et aktivt udspil passer, når bordet har en lang farve at kaste af på, eller når meldingerne viser, at spilfører har stikkene, hvis modspillet venter; det kommer typisk fra en honnør, fx fra K x x i en umeldt farve.
+
+**Relaterede begreber:** neutralt-udspil
 
 ### Farvepræferencesignal
 **ID:** `farvepraeferencesignal`
@@ -2675,9 +2697,9 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Niveau:** øvet
 **Kategori:** Modspil, udspil og signaler
 **Systemafhængig:** Ja
-**Kort definition:** Et signal der viser, hvilken farve makker ønsker spillet.
+**Kort definition:** Et signal, der viser makker, hvilken af de øvrige farver man ønsker spillet.
 
-**Forklaring:** Et signal der viser, hvilken farve makker ønsker spillet.
+**Forklaring:** Signalet bruges, når kald og antal ikke er det, makker har brug for at vide: når makker får en trumfning og skal vide, hvilken farve der skal spilles tilbage, når bordet har en singleton i den udspillede farve, og ved afkast. Et højt kort beder om den højeste af de to øvrige farver og et lavt kort om den laveste; trumffarven og den farve, signalet gives i, tæller ikke med. Signalet kaldes også Lavinthal, og både Konventionstrænerens kort Lavinthal og 2 over 1 – Moderne majorstøtte bruger det.
 
 ### Fjerdehøjeste
 **ID:** `fjerdehoejeste`
@@ -2687,7 +2709,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Systemafhængig:** Ja
 **Kort definition:** Udspil af fjerdehøjeste kort i en farve; standard i sanskontrakter.
 
-**Forklaring:** Udspil af det fjerdehøjeste kort i en lang farve.
+**Forklaring:** Udspillet lover normalt en honnør i farven og fortæller om længden: kan makker se alle lavere kort, har udspilleren præcis fire, og dukker der senere et lavere kort op hos udspilleren, har udspilleren fem eller flere. Fra K 10 7 4 2 spilles 4'eren. Makker og spilfører kan bruge regel 11. Bridgesystem og 2 over 1 – Moderne majorstøtte spiller 4. højeste fra en farve med honnør mod både farve og sans, men ikke fra E x x x mod sans, og fra en sekvens spilles det højeste kort i stedet. Kompendium over modspilsaftaler foreslår 1., 3. og 5. højeste mod farvekontrakter, så udspillet viser antallet.
 
 ### Fordelingssignal
 **ID:** `fordelingssignal`
@@ -2696,16 +2718,17 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Modspil, udspil og signaler
 **Kort definition:** Et signal der viser længde (lige/ulige antal kort).
 
-**Forklaring:** Et signal der viser længde (lige/ulige antal kort).
+**Forklaring:** Signalet er vigtigst, når spilfører spiller en lang farve på bordet uden sideindgang, og makker skal vide, hvornår esset skal tages. Med K D B 10 x på bordet og E x x hos modspilleren er de fem sidste kort hos makker og spilfører: viser makker to, har spilfører tre, og esset holdes til tredje runde; viser makker tre, tages det i anden. Internationalt viser højt-lavt et lige antal og lavt-højt et ulige, og sådan spiller 2 over 1 – Moderne majorstøtte. Bridgesystem spiller Malmømarkeringer: lavt kort = lige antal og højt kort = ulige, når spilfører spiller en ny farve, og efter makkers konge-udspil.
 
-### Gennembrud
-**ID:** `gennembrud`
+### Gennemspil
+**ID:** `gennemspil`
 **Engelsk:** Leading through
+**Alternative termer:** Gennembrud
 **Niveau:** let øvet
 **Kategori:** Modspil, udspil og signaler
-**Kort definition:** At spille en farve igennem modstanderne for at tvinge honnører ud.
+**Kort definition:** At spille en farve ud, så en bestemt modstander skal lægge til før ens makker, typisk den hånd, der har honnørerne.
 
-**Forklaring:** At spille en farve igennem modstanderne for at tvinge honnører ud.
+**Forklaring:** Den modstander, der skal lægge til før makker, er spillet igennem: lægger den en honnør, kan makker slå den, og lægger den lavt, kan makker vinde billigt. Tommelfingerreglen er gennem styrke og op til svaghed. Med K x x på bordet til venstre for udspilleren og E D hos makker bag bordet giver et udspil gennem kongen to stik; spilles farven fra makkers hånd, får kongen et stik. Spilfører gør det samme, når en kipning spilles gennem den modspiller, der kan have honnøren.
 
 ### Honnør på honnør
 **ID:** `honnoer-paa-honnoer`
@@ -2714,7 +2737,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Modspil, udspil og signaler
 **Kort definition:** At lægge en honnør på spilførers honnør, så et af ens egne kort eller makkers kort bliver højt.
 
-**Forklaring:** At lægge en honnør på spilførers honnør, så et af ens egne kort eller makkers kort bliver højt.
+**Forklaring:** Reglen gælder kun, når noget kan blive højt. Med D 6 5 på bordet, K 7 2 bag bordet, E B 4 hos spilfører og 10 9 8 3 hos makker giver kongen på damen makker et stik til tieren i tredje runde; dækkes damen ikke, får spilfører tre stik med en kipning mere. Ligger der to honnører i følge på bordet (D B 9), dækkes først den sidste: dækkes damen, kan spilfører bagefter tage en kipning mod makkers tier. Der dækkes ikke, når spilfører tydeligt har alle de manglende mellemkort, fx i en lang trumffarve.
 
 ### Højt fra intet
 **ID:** `hoejt-fra-intet`
@@ -2722,9 +2745,9 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Niveau:** let øvet
 **Kategori:** Modspil, udspil og signaler
 **Systemafhængig:** Ja
-**Kort definition:** Udspil af et højt lavt kort (fx 9) fra en svag farve.
+**Kort definition:** Udspil af det højeste kort fra en farve uden honnør, fx 8 fra 8 5 2.
 
-**Forklaring:** Udspil af et højt lavt kort (fx 9) fra en svag farve.
+**Forklaring:** Det høje kort fortæller makker, at udspilleren ingen honnør har i farven. Fra en doubleton spilles altid det højeste kort. Fra tre små er der flere skoler: det højeste (8 fra 8 5 2), det midterste efterfulgt af det højeste (5 og derefter 8, kaldet MUD) eller det laveste (2, når parret viser antal med udspillet). Bridgesystem og 2 over 1 – Moderne majorstøtte spiller det højeste fra to, men 2. højeste fra tre små (5 fra 8 5 2); fra fire små spiller Bridgesystem 2. højeste, og 2 over 1 – Moderne majorstøtte 2. højeste mod farve og 4. højeste mod sans.
 
 ### Højt i tredje hånd
 **ID:** `hoejt-i-tredje-haand`
@@ -2733,36 +2756,26 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Modspil, udspil og signaler
 **Kort definition:** Tredje hånd lægger normalt sit højeste kort, når makker har spillet ud.
 
-**Forklaring:** Tredje hånd lægger normalt sit højeste kort, når makker har spillet ud.
+**Forklaring:** Det høje kort tvinger en honnør ud hos spilfører og forhindrer et billigt stik, når makker har spillet lavt ud, og bordet har lagt lavt. Af kort i følge lægges det laveste: damen fra K D x, så makker kan regne med kongen, når damen tvinger esset ud. Har bordet en honnør, som tredje hånd sidder over, gemmes det højeste kort til den: med D 5 2 på bordet og K B 4 i tredje hånd lægges knægten, så kongen stadig sidder over damen.
 
 ### Indre sekvens
 **ID:** `indre-sekvens`
 **Engelsk:** Interior sequence
 **Niveau:** øvet
 **Kategori:** Modspil, udspil og signaler
-**Kort definition:** En indre sekvens er to eller flere sammenhængende honnører under et højere, ikke-sammenhængende kort, fx K-B-10-x.
+**Kort definition:** To eller flere kort i følge under et højere kort, der ikke står i følge med dem, fx K B 10 x.
 
-**Forklaring:** En indre sekvens er to eller flere sammenhængende honnører under et højere, ikke-sammenhængende kort, fx K-B-10-x.
+**Forklaring:** Almindeligt spilles det højeste kort i den indre sekvens ud mod sans: knægten fra K B 10 x eller E B 10 x, tieren fra D 10 9 x eller K 10 9 x og damen fra E D B x. Knægten kan da komme fra både B 10 9 og K B 10, og derfor findes en anden skole, hvor knægten benægter en højere honnør, mens 10 og 9 lover nul eller to højere kort: 10 fra K B 10 og 9 fra D 10 9. Bridgesystem og 2 over 1 – Moderne majorstøtte spiller det højeste i den indre sekvens mod sans, men den højeste honnør mod farvekontrakt: kongen fra K B 10 og esset fra E D B, og i Bridgesystem damen fra D 10 9.
 
 ### Kald-afvisning
 **ID:** `kald-afvisning`
 **Engelsk:** Attitude signal
-**Alternative termer:** Attitude, Discourage, Encourage, Kald og afvisning
+**Alternative termer:** Kald og afvisning
 **Niveau:** begynder
 **Kategori:** Modspil, udspil og signaler
 **Kort definition:** Et signal der viser, om man ønsker farven fortsat spillet (positiv) eller stoppet (negativ).
 
-**Forklaring:** Et signal der viser, om man ønsker farven fortsat spillet (positiv) eller stoppet (negativ).
-
-### Laveste lige kort
-**ID:** `laveste-lige-kort`
-**Engelsk:** Low from even
-**Niveau:** øvet
-**Kategori:** Modspil, udspil og signaler
-**Systemafhængig:** Ja
-**Kort definition:** En udspils- eller signalmetode, hvor et lavt kort kan vise et lige antal kort.
-
-**Forklaring:** En udspils- eller signalmetode, hvor et lavt kort kan vise et lige antal kort. Betydningen afhænger af makkerskabets aftaler.
+**Forklaring:** Signalet gives især på makkers udspil og ved afkast. Der kaldes med en honnør, der passer til makkers, fx damen, når makker spiller esset ud fra es-konge, og mod farvekontrakt også med en doubleton, når en trumfning er mulig. Internationalt er et højt kort kald og et lavt afvisning; i Danmark er det udbredt at vende det om, så de høje kort spares. Bridgesystem spiller lavt kort = kald og højt = afvisning efter es-udspil, når makker skifter farve, og ved første afkast mod farvekontrakt. 2 over 1 – Moderne majorstøtte spiller højt kort = kald og lavt = afvisning mod både farve og sans. Kompendium over modspilsaftaler foreslår romersk kald mod farvekontrakt: et ulige kort kalder, og et lige kort foreslår et farveskifte, et lavt lige til den laveste farve og et højt lige til den højeste.
 
 ### Lavinthal-signal
 **ID:** `lavinthal-signal`
@@ -2770,9 +2783,9 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Niveau:** øvet
 **Kategori:** Modspil, udspil og signaler
 **Systemafhængig:** Ja
-**Kort definition:** Et afkast der viser farvepræference.
+**Kort definition:** Et farvepræferencesignal: et højt kort beder om den højeste og et lavt kort om den laveste af de to øvrige farver.
 
-**Forklaring:** Et afkast der viser farvepræference.
+**Forklaring:** Signalet er opkaldt efter amerikaneren Hy Lavinthal og er det samme som et farvepræferencesignal. De to farver er dem, der er tilbage, når trumffarven og den farve, signalet gives i, er trukket fra. Konventionstrænerens kort Lavinthal bruger signalet i tre situationer: når makker får en trumfning og skal vide, hvad der skal spilles tilbage, når bordet har en singleton i makkers es-udspil, og ved første afkast i en uønsket farve. I 2 over 1 – Moderne majorstøtte er Lavinthal en afkastmarkering, der først gælder, når kald og afvisning ikke har mere at sige.
 
 ### Lavt i anden hånd
 **ID:** `lavt-i-anden-haand`
@@ -2781,26 +2794,26 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Modspil, udspil og signaler
 **Kort definition:** Anden hånd lægger normalt et lille kort.
 
-**Forklaring:** Anden hånd lægger normalt et lille kort.
+**Forklaring:** Makker lægger til som den sidste, så et lille kort fra anden hånd koster sjældent noget og sparer honnørerne til spilførers. Spiller spilfører lille mod K B 5 på bordet, og anden hånd har D 7 3, lægges et lille kort i normalt tempo, så spilfører selv må gætte mellem kongen og knægten; tøven for at vildlede er ikke tilladt (§ 73D2). Undtagelserne er at dække en honnør (opslaget Honnør på honnør), at lægge den ene af to honnører i følge, så farven giver et stik, og at tage det stik, der sætter kontrakten.
 
 ### Lige antal
 **ID:** `lige-antal`
 **Engelsk:** Even
 **Niveau:** let øvet
 **Kategori:** Modspil, udspil og signaler
-**Kort definition:** En lige antal kort i en farve (fx 2, 4, 6).
+**Kort definition:** Et lige antal kort i en farve (fx 2, 4 eller 6).
 
-**Forklaring:** En lige antal kort i en farve (fx 2, 4, 6).
+**Forklaring:** Et lige antal vises med et fordelingssignal og er oftest to eller fire kort; meldingerne og de kort, makker selv kan se, afgør hvilket. Internationalt vises det med højt-lavt, og sådan spiller 2 over 1 – Moderne majorstøtte. I Bridgesystem vises det med et lavt kort (Malmømarkering), både når spilfører spiller en ny farve, og efter makkers konge-udspil.
 
-### Marmic
-**ID:** `marmic`
-**Engelsk:** MUD
-**Niveau:** avanceret
+### Malmømarkering
+**ID:** `malmoemarkering`
+**Engelsk:** Upside-down count
+**Niveau:** øvet
 **Kategori:** Modspil, udspil og signaler
 **Systemafhængig:** Ja
-**Kort definition:** Udspil af det midterste kort fra tre små kort, efterfulgt af det højeste.
+**Kort definition:** Et fordelingssignal, hvor et lavt kort viser et lige antal og et højt kort et ulige.
 
-**Forklaring:** Udspil af det midterste kort fra tre små kort, efterfulgt af det højeste. Metoden er systemafhængig.
+**Forklaring:** Signalet er det omvendte af det internationale, hvor højt-lavt viser et lige antal. Bridgesystem bruger Malmømarkeringer, når spilfører spiller en ny farve, og efter makkers konge-udspil: fra to eller fire kort lægges det laveste, fra tre eller fem det højeste, man har råd til.
 
 ### Modspil
 **ID:** `modspil`
@@ -2818,29 +2831,29 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Alternative termer:** Signal / Carding
 **Niveau:** let øvet
 **Kategori:** Modspil, udspil og signaler
-**Kort definition:** Modspilssignaler der viser attitude, længde eller præference.
+**Kort definition:** Et kort, en modspiller lægger for at vise makker kald eller afvisning, antal eller farvepræference.
 
-**Forklaring:** Modspilssignaler der viser attitude, længde eller præference.
+**Forklaring:** Modspilssignaler kaldes også markeringer. Der er tre slags: kald eller afvisning, antal og farvepræference, og parret aftaler, hvilken der gælder hvornår. I 2 over 1 – Moderne majorstøtte kommer kald og afvisning først, så antal og til sidst Lavinthal; i Bridgesystem beder es-udspillet om kald og konge-udspillet om antal. Kompendium over modspilsaftaler foreslår desuden omvendt forsinket kald: lavt-højt i den første farve, spilfører spiller, viser interesse for udspilsfarven, og højt-lavt foreslår et farveskifte. Signalerne er lovlige, fordi de gives med kortene selv (§ 73A), men aftalerne skal være tilgængelige for modparten (§ 40A1b), og spilfører kan spørge om dem, når spilfører eller bordet er i tur (§ 20F2). Måden, kortet lægges på, må ikke være et signal (§ 73B1), og makkers tøven er en ubeføjet oplysning (§ 16B1).
+
+### MUD
+**ID:** `mud`
+**Engelsk:** MUD
+**Niveau:** øvet
+**Kategori:** Modspil, udspil og signaler
+**Systemafhængig:** Ja
+**Kort definition:** Udspil af det midterste kort fra tre små kort, efterfulgt af det højeste.
+
+**Forklaring:** Navnet er de engelske ord middle, up, down: det midterste kort, så det højeste og til sidst det laveste. Når makker ser et højere kort i anden runde, ved makker, at udspillet ikke var fra en doubleton. Ulempen er, at det første kort alene kan ligne både en doubleton og fjerdehøjeste. Bridgesystem og 2 over 1 – Moderne majorstøtte spiller 2. højeste fra tre små, altså samme første kort.
 
 ### Neutralt udspil
 **ID:** `neutralt-udspil`
 **Engelsk:** Neutral lead
-**Alternative termer:** Aktivt udspil, Passivt udspil
+**Alternative termer:** Passivt udspil
 **Niveau:** let øvet
 **Kategori:** Modspil, udspil og signaler
-**Kort definition:** Et udspil der ikke giver spilfører fordel; ofte i sanskontrakter.
+**Kort definition:** Et udspil, der først og fremmest skal undgå at forære spilfører et stik; kaldes også passivt udspil.
 
-**Forklaring:** Et udspil der ikke giver spilfører fordel; ofte i sanskontrakter.
-
-### Norsk fordeling
-**ID:** `norsk-fordeling`
-**Engelsk:** Norwegian count
-**Niveau:** øvet
-**Kategori:** Modspil, udspil og signaler
-**Systemafhængig:** Ja
-**Kort definition:** En signalmetode, hvor højt-lavt normalt viser ulige antal og lavt-højt lige antal.
-
-**Forklaring:** En signalmetode, hvor højt-lavt normalt viser ulige antal og lavt-højt lige antal. Den præcise brug afhænger af aftalerne.
+**Forklaring:** Et neutralt udspil kaldes også passivt: det lader spilfører selv finde sine stik og kommer typisk fra en sekvens, fra små kort eller i trumf. Det modsatte er et aktivt udspil fra en honnør, som skal rejse eller indkassere stik, før spilfører får kastet sine tabere af. Passive udspil passer, når meldingerne viser to jævne hænder uden en lang sidefarve, og aktive, når bordet har en lang farve at kaste af på. I 2 over 1 – Moderne majorstøtte spilles der passivt ud mod lilleslem, og et es spilles kun ud med en plan.
 
 ### Regel 11
 **ID:** `regel-11`
@@ -2849,7 +2862,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Modspil, udspil og signaler
 **Kort definition:** En beregningsregel ved udspil af fjerdehøjeste: elleve minus udspilskortets værdi angiver antallet af højere kort uden for udspillerens hånd.
 
-**Forklaring:** En beregningsregel ved udspil af fjerdehøjeste: elleve minus udspilskortets værdi angiver antallet af højere kort uden for udspillerens hånd.
+**Forklaring:** Reglen virker, fordi der er 14 minus kortets værdi højere kort i farven (esset tæller 14), og udspilleren selv har de tre af dem. Spiller makker 7'eren ud, er der 11 − 7 = 4 højere kort hos bordet, spilfører og tredje hånd. Har bordet D 9 3 og tredje hånd E 10 5, er alle fire i syne, så spilfører har intet kort over 7'eren, og den vinder stikket, hvis bordet lægger lavt. Spilfører kan regne på samme måde. Bridgesystem og 2 over 1 – Moderne majorstøtte kalder den reglen om 11; den gælder kun efter 4. højeste, ikke efter 2. højeste fra en svag farve. Spiller et par tredjehøjeste ud, er tallet 12, og ved femtehøjeste 10.
 
 ### Spille under en honnør
 **ID:** `spille-under-en-honnoer`
@@ -2857,9 +2870,9 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Alternative termer:** Underspilning
 **Niveau:** øvet
 **Kategori:** Modspil, udspil og signaler
-**Kort definition:** At spille et lavere kort end forventet, typisk under en honnør.
+**Kort definition:** At spille et lille kort ud fra en farve, hvor man selv har en højere honnør, typisk esset eller kongen.
 
-**Forklaring:** At spille et lavere kort end forventet, typisk under en honnør.
+**Forklaring:** Mod sans er det almindeligt: 4. højeste fra E 10 7 4 2 eller K 10 7 4 2 beholder honnøren og forbindelsen til makker, til farven er rejst. Mod farvekontrakt er det risikabelt at spille under et es i første stik, fordi spilfører kan have en singleton konge, eller esset senere kan blive trumfet; under en konge eller en dame spilles der oftere. Bridgesystem og 2 over 1 – Moderne majorstøtte spiller 4. højeste fra K x x x, men har valgt ikke at spille ud fra E x x x mod sans; mod farve spilles esset eller et lille kort, i Bridgesystem helst en anden farve.
 
 ### Stik ikke automatisk
 **ID:** `stik-ikke-automatisk`
@@ -2868,34 +2881,34 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Modspil, udspil og signaler
 **Kort definition:** Man skal ikke altid vinde et stik bare fordi man kan.
 
-**Forklaring:** Man skal ikke altid vinde et stik bare fordi man kan.
+**Forklaring:** Et stik kan være mere værd senere. Har bordet K D B 10 5 i en farve og ingen sideindgang, og har spilfører to kort i farven, giver esset i første runde spilfører fire stik, fordi spilfører stadig har et kort at nå bordet med; holdes esset til anden runde, er bordets tre sidste vindere afskåret. Det er et frafald, og makkers fordelingssignal viser, hvornår esset skal tages. Samme tanke gælder, når en indgang skal gemmes til senere, eller når spilfører skal tvinges til at gætte.
 
 ### Tilspil
 **ID:** `tilspil`
 **Engelsk:**
 **Niveau:** begynder
 **Kategori:** Modspil, udspil og signaler
-**Kort definition:** Det kort, tredje hånd lægger til efter makkers udspil.
+**Kort definition:** Et kort, der spilles til et stik efter udspillet; hver af de tre andre spillere spiller til efter tur.
 
-**Forklaring:** Det kort, tredje hånd lægger til efter makkers udspil.
+**Forklaring:** Lovbogen taler om ud- og tilspil: udspillet er det første kort i stikket, og de tre andre kort er tilspil. Ved tilspil skal der bekendes, hvis det er muligt (§ 44C). I modspillet bærer tilspillet signalerne: tredje hånds kort på makkers udspil viser kald eller afvisning eller er det høje kort, der skal tvinge en honnør ud, og anden hånd lægger normalt lavt.
 
 ### Trumfpres på spilfører
 **ID:** `trumfpres-paa-spilfoerer`
 **Engelsk:** Force declarer
 **Niveau:** øvet
 **Kategori:** Modspil, udspil og signaler
-**Kort definition:** At tvinge spilfører til at trumfe eller til at spille en uønsket farve.
+**Kort definition:** At spille en farve, spilfører må trumfe på hånden, igen og igen, så spilfører til sidst har færre trumfer end en modspiller.
 
-**Forklaring:** At tvinge spilfører til at trumfe eller til at spille en uønsket farve.
+**Forklaring:** Modspillet lykkes typisk, når en modspiller har fire trumfer, og parret har en lang, stærk farve: den spilles ud og fortsættes, hver gang modspillet er inde. Har spilfører fem trumfer mod modspillerens fire og må trumfe to gange på hånden, er der tre tilbage mod fire, og spilfører kan ikke længere trække trumferne uden at miste trumfkontrollen. Trumfninger på bordet, den korte trumfhånd, skader ikke spilfører. Med fire trumfer spilles derfor den lange farve ud og ikke en singleton.
 
 ### Udspil
 **ID:** `udspil`
 **Engelsk:** Lead
 **Niveau:** begynder
 **Kategori:** Modspil, udspil og signaler
-**Kort definition:** Udspillet til første stik.
+**Kort definition:** Det første kort i et stik; udspillet til første stik kaldes åbningsudspillet.
 
-**Forklaring:** Det første kort i spillet, som spilles af spilleren til venstre for spilfører.
+**Forklaring:** Åbningsudspillet kommer fra spilførers modstander til venstre (§ 41A); derefter spiller den, der vandt stikket, ud til det næste (§ 44G). Udspilleren må spille et hvilket som helst kort fra sin hånd (§ 44A).
 
 ### Ulige antal
 **ID:** `ulige-antal`
@@ -2904,7 +2917,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Modspil, udspil og signaler
 **Kort definition:** Ulige antal kort i en farve (fx 1, 3, 5).
 
-**Forklaring:** Ulige antal kort i en farve (fx 1, 3, 5).
+**Forklaring:** Et ulige antal vises med et fordelingssignal og er oftest tre kort, sjældnere et eller fem. Internationalt vises det med lavt-højt, og sådan spiller 2 over 1 – Moderne majorstøtte. I Bridgesystem vises det med et højt kort (Malmømarkering): efter makkers konge-udspil lægges fx 9'eren fra 9 8 7 6 4.
 
 ### Øverst fra sekvens
 **ID:** `oeverst-fra-sekvens`
@@ -2914,7 +2927,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Systemafhængig:** Ja
 **Kort definition:** Udspil af det højeste kort i en sekvens (fx D fra D‑B‑10).
 
-**Forklaring:** Udspil af det højeste kort i en sekvens (fx D fra D‑B‑10).
+**Forklaring:** Det højeste kort lover det næste under sig og benægter det over: damen fra D B 10 lover knægten og benægter kongen. Mod sans kræves normalt tre kort i følge (K D B, D B 10, B 10 9) eller en brudt sekvens, hvor det tredje kort ligger ét trin lavere (K D 10, D B 9); mod farvekontrakt er to honnører i følge nok. Fra es-konge er der to skoler: esset først, som er det almindelige i dag, eller kongen først. Bridgesystem og 2 over 1 – Moderne majorstøtte spiller esset fra E K x og kongen fra K D B; fra K D x x spilles kongen mod farve og 4. højeste mod sans. I Bridgesystem beder esset om kald og kongen om antal, og fra es-konge doubleton spilles kongen først. Kompendium over modspilsaftaler foreslår ALA mod sans: es-udspil beder om kald eller afvisning, konge-udspil om antal og dame-udspil om kald eller afvisning.
 
 ### Åbningsudspil
 **ID:** `aabningsudspil`
@@ -2923,7 +2936,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 **Kategori:** Modspil, udspil og signaler
 **Kort definition:** Det første kort i spillet, som spilles af modstanderen til venstre for spilføreren.
 
-**Forklaring:** Det første kort i spillet, som spilles af modstanderen til venstre for spilføreren.
+**Forklaring:** Åbningsudspillet lægges med forsiden nedad (§ 41A), så udspillerens makker og spilfører kan nå at spørge til meldingerne, før kortet vendes (§ 41B). Når det er vendt, begynder spilleperioden, og bordets kort lægges op (§ 41C). Det er det eneste kort, der spilles, uden at bordet er set, og det vælges derfor ud fra meldingerne: mod farvekontrakt søges hurtige stik og trumfninger, mod sans rejses en lang farve. Bridgesystem og 2 over 1 – Moderne majorstøtte spiller 4. højeste fra en farve med honnør, 2. højeste fra en svag farve og det højeste fra en honnørsekvens.
 
 ## Score og beregning
 
@@ -4180,6 +4193,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 - **1NT opening** → [1NT-åbning](#1nt-aabning)
 - **2NT opening** → [2NT-åbning](#2nt-aabning)
 - **Ace** → [Es](#es)
+- **Active lead** → [Aktivt udspil](#aktivt-udspil)
 - **Adjusted score** → [Justeret score](#korrigeret-score)
 - **Advance sacrifice** → [Forhåndsoffermelding](#forhaandsoffermelding)
 - **Advancer** → [Indmelderens makker](#indmelderens-makker)
@@ -4369,7 +4383,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 - **Lead out of turn** → [Udspil uden for tur](#udspil-uden-for-tur)
 - **Lead towards** → [Spille mod](#spille-mod)
 - **Lead-directing** → [Udspilsdirigerende dobling](#udspilsdirigerende-dobling)
-- **Leading through** → [Gennembrud](#gennembrud)
+- **Leading through** → [Gennemspil](#gennemspil)
 - **Lebensohl** → [Lebensohl](#lebensohl)
 - **Left-hand opponent (LHO)** → [Venstre modstander](#venstre-modstander)
 - **Legal** → [Lovlig](#lovlig)
@@ -4382,9 +4396,9 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 - **Loser count** → [Tabertælling](#tabertælling)
 - **Loser on loser** → [Taber på taber](#taber-paa-taber)
 - **Low card** → [Lavt kort](#lavt-kort)
-- **Low from even** → [Laveste lige kort](#laveste-lige-kort)
 - **Major** → [Majorfarve](#majorfarve)
 - **Makes** → [Meldt og vundet](#meldt-og-vundet)
+- **Marmic** → [Marmic](#marmic)
 - **Masterpoint / Master point (MP)** → [Mesterpoint](#mesterpoint)
 - **Match** → [Kamp](#kamp)
 - **Matchpoints** → [Matchpoint](#matchpoint)
@@ -4401,7 +4415,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 - **Morton's Fork** → [Morton's Fork](#morton-s-fork)
 - **Movement** → [Skifteplan](#skifteplan)
 - **Movement card** → [Skifteplan](#skifteplan)
-- **MUD** → [Marmic](#marmic)
+- **MUD** → [MUD](#mud)
 - **Multi** → [Multi](#multi)
 - **Natural call** → [Naturlig melding](#naturlig-melding)
 - **Negative double** → [Negativ dobling](#negativ-dobling)
@@ -4412,7 +4426,6 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 - **Non-forcing** → [Ikke-krav](#ikke-krav)
 - **Non-vulnerable** → [Uden for zonen](#uden-for-zonen)
 - **North (N)** → [Nord (N)](#nord-n)
-- **Norwegian count** → [Norsk fordeling](#norsk-fordeling)
 - **Odd** → [Ulige antal](#ulige-antal)
 - **Offside** → [Sidder forkert](#sidder-forkert)
 - **One-round force** → [Rundekrav](#rundekrav)
@@ -4598,6 +4611,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 - **Unlimited** → [Ubegrænset melding](#ubegraenset-melding)
 - **Unusual** → [Usædvanlig melding](#usaedvanlig-melding)
 - **Unusual 2NT** → [Usædvanlig 2NT](#usaedvanlig-2nt)
+- **Upside-down count** → [Malmømarkering](#malmoemarkering)
 - **Value** → [Værdi](#vaerdi)
 - **Victory Points** → [Kamppoint](#kamppoint)
 - **Vienna Coup** → [Vienna Coup](#vienna-coup)
@@ -4624,6 +4638,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 - **Afgivelse af stik** → Concession
 - **Afkast** → Discard
 - **Afslå** → Reject
+- **Aktivt udspil** → Active lead
 - **Alertering** → Alert (! / *)
 - **Alertkort** → Alert card
 - **Alle i zonen** → Game all
@@ -4704,7 +4719,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 - **Gaffel** → Tenace
 - **Gambling 3NT** → Gambling 3NT
 - **Genmelding** → Rebid
-- **Gennembrud** → Leading through
+- **Gennemspil** → Leading through
 - **Genoverføring** → Retransfer
 - **Genåbning** → Balancing
 - **Genåbningsdobling** → Balancing double
@@ -4780,7 +4795,6 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 - **Kvantitativ melding** → Quantitative
 - **Lang farve** → Long suit
 - **Lang tænkepause** → Huddle
-- **Laveste lige kort** → Low from even
 - **Lavinthal-signal** → Lavinthal
 - **Lavt i anden hånd** → Second hand low
 - **Lavt kort** → Low card
@@ -4797,8 +4811,9 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 - **Makkerpar** → Partnership
 - **Maksimaldobling** → Maximal double
 - **Maksimum** → Maximum (max)
+- **Malmømarkering** → Upside-down count
 - **Manglende alert** → Failure to alert
-- **Marmic** → MUD
+- **Marmic** → Marmic
 - **Matchpoint** → Matchpoints
 - **Med bagsiden opad** → Face down
 - **Med forsiden opad** → Face up / Faced card
@@ -4832,6 +4847,7 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 - **Modspilssignal** → Signal; carding
 - **Modstandere** → Opponents
 - **Morton's Fork** → Morton's Fork
+- **MUD** → MUD
 - **Multi** → Multi
 - **Nabohonnører** → Touching honours
 - **Naturlig melding** → Natural call
@@ -4839,7 +4855,6 @@ _Version 1.3. Ordbogen indeholder 437 kanoniske opslag._
 - **Neutralt udspil** → Neutral lead
 - **Nier (9)** → Nine (9)
 - **Nord (N)** → North (N)
-- **Norsk fordeling** → Norwegian count
 - **Ny farve** → New suit
 - **Nøglekort** → Key card
 - **Offensiven** → Opening side

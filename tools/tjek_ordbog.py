@@ -191,9 +191,11 @@ class KategorierOgNiveauer(unittest.TestCase):
                   'Spilføring', 'Modspil, udspil og signaler', 'Score og beregning', 'Turnering og organisering',
                   'Love, etik og procedure', 'Onlinebridge og digitale turneringer', 'Avancerede teknikker',
                   'Talemåder og bridgeslang']
-    # Forslagets tal for de 387 opslag, uden Princippet om begrænset valg og med de 51 nye
-    PR_KATEGORI = {'Grundlæggende begreber': 98, 'Meldinger og meldeforløb': 60, 'Meldesystemer og konventioner': 42,
-                   'Konkurrencemeldinger': 33, 'Spilføring': 44, 'Modspil, udspil og signaler': 28, 'Score og beregning': 29,
+    # Forslagets tal for de 387 opslag, uden Princippet om begrænset valg og med de 51 nye. Portion 9
+    # (SPEC-ordbog-forklaringer-9.md): Marmic er flyttet til Meldesystemer og konventioner (42 → 43), Norsk fordeling er
+    # fjernet, og MUD er nyt under Modspil, udspil og signaler (28 → 27).
+    PR_KATEGORI = {'Grundlæggende begreber': 98, 'Meldinger og meldeforløb': 60, 'Meldesystemer og konventioner': 43,
+                   'Konkurrencemeldinger': 33, 'Spilføring': 44, 'Modspil, udspil og signaler': 27, 'Score og beregning': 29,
                    'Turnering og organisering': 43, 'Love, etik og procedure': 36, 'Onlinebridge og digitale turneringer': 3,
                    'Avancerede teknikker': 12, 'Talemåder og bridgeslang': 9}
     PR_NIVEAU = {'begynder': 190, 'let øvet': 135, 'øvet': 94, 'avanceret': 18}
@@ -206,9 +208,9 @@ class KategorierOgNiveauer(unittest.TestCase):
            'Lavt i anden hånd', 'Stik ikke automatisk', 'Tilspil', 'Regnskab', 'Byttehandel', 'Fanget på det gale ben',
            'Kort tredje / honnør anden', 'Melde i den blå luft', 'Pointrytter', 'Pokeransigt', 'Sælge ud',
            'Unoder ved bordet', 'Urent trav']
-    # Portion 1, 2, 4, 6, 7 og 8 af forklaringerne (SPEC-ordbog-forklaringer-1.md, -2.md, -4.md, -6.md, -7.md og -8.md,
-    # Franks valg 6., 10. og 11. november 2026) har givet 37 af de nye opslag deres egen forklaring; de andre har samme
-    # forklaring som definition, til deres portion kommer (portion 3 og 5 havde ingen af dem).
+    # Portion 1, 2, 4, 6, 7, 8 og 9 af forklaringerne (SPEC-ordbog-forklaringer-1.md, -2.md, -4.md, -6.md, -7.md, -8.md
+    # og -9.md, Franks valg 6., 10., 11. og 14. november 2026) har givet 42 af de nye opslag deres egen forklaring; de
+    # andre har samme forklaring som definition, til deres portion kommer (portion 3 og 5 havde ingen af dem).
     MED_FORKLARING = {'Baghånd', 'Forhånd', 'Honnørsekvens', 'Lavhonnør', 'Mellemhånd', 'Mellemkort', 'Nabohonnører',
                       'Selvspillende farve', 'Spillestærk hånd', 'Toptaber',
                       '26-33-37', '3-trinsraketten', 'Bogmelding', 'Dobbeltspring', 'Enkeltstøtte', 'Melderunde', 'Misfit',
@@ -216,7 +218,8 @@ class KategorierOgNiveauer(unittest.TestCase):
                       '"Eight ever, nine never"', 'Badekup (Bath Coup)', 'Farvebehandling', 'Forbindelser',
                       'Fordelingssandsynlighed', 'Spilleplan',
                       '1NT-åbning', '2NT-åbning', 'Regnskab',
-                      'Defensiven', 'Forhåndsoffermelding', 'Meldenød', 'Offensiven', 'Viderespærring'}
+                      'Defensiven', 'Forhåndsoffermelding', 'Meldenød', 'Offensiven', 'Viderespærring',
+                      'Honnør på honnør', 'Højt i tredje hånd', 'Lavt i anden hånd', 'Stik ikke automatisk', 'Tilspil'}
 
     @classmethod
     def setUpClass(cls):
@@ -274,7 +277,9 @@ class KategorierOgNiveauer(unittest.TestCase):
         self.assertIn('<span lang="en">Poker face</span>', artikel)
 
     def test_soegeordene_finder_opslagene(self):
-        for q, mål in (('bonde', 'knaegt'), ('aktivt udspil', 'neutralt-udspil'), ('passivt udspil', 'neutralt-udspil'),
+        # "aktivt udspil" var søgeord for Neutralt udspil, men er det modsatte og er taget ud som alternativ term
+        # (SPEC-ordbog-forklaringer-9.md, Franks afgørelse 14. november 2026).
+        for q, mål in (('bonde', 'knaegt'), ('passivt udspil', 'neutralt-udspil'),
                        ('princippet om begrænset valg', 'begraenset-valg'), ('espørgemelding', 'blackwood'),
                        ('balanceret fordeling', 'jaevn-haand'), ('trækværdi', 'stikpoint'), ('frafald', 'hold-up'),
                        ('udoblet', 'doblet-kontrakt'), ('2-over-1', '2-over-1')):
@@ -315,6 +320,124 @@ class KategorierOgNiveauer(unittest.TestCase):
                           if not l.startswith(('**Alternative termer:**', '**Engelsk:**')))
         for mønster in (r'\bbonde\b', r'\bknib\w*', r'\bsnit\b', r'\bUT\b', r'\bHCP\b', r'\bblindemand\w*'):
             self.assertIsNone(re.search(mønster, tekst, re.I if mønster not in (r'\bUT\b', r'\bHCP\b') else 0), mønster)
+
+
+class Portion9(unittest.TestCase):
+    """SPEC-ordbog-forklaringer-9.md (Franks valg 14. november 2026): Modspil, udspil og signaler. De 22 forklaringer,
+    omdøbningerne til Gennemspil og Malmømarkering, Marmic som trefarvet hånd, det nye opslag MUD og indekserne."""
+
+    MODSPIL = 'Modspil, udspil og signaler'
+    DE_22 = ['Afkast', 'Farvepræferencesignal', 'Fordelingssignal', 'Gennemspil', 'Honnør på honnør', 'Højt fra intet',
+             'Højt i tredje hånd', 'Indre sekvens', 'Kald-afvisning', 'Lavinthal-signal', 'Lavt i anden hånd', 'Lige antal',
+             'Modspilssignal', 'Neutralt udspil', 'Regel 11', 'Spille under en honnør', 'Stik ikke automatisk', 'Tilspil',
+             'Trumfpres på spilfører', 'Ulige antal', 'Øverst fra sekvens', 'Åbningsudspil']
+
+    @classmethod
+    def setUpClass(cls):
+        cls.kilde = KILDE.read_text(encoding='utf-8')
+        cls.opslag = opslag_i_kilden()
+        cls.side = læs_side()
+        cls.bygget = hent_bygger().parse(cls.kilde)
+
+    def test_de_22_og_resten_af_kategorien_har_deres_egen_forklaring(self):
+        for navn in self.DE_22:
+            self.assertIn(navn, self.opslag, navn)
+            self.assertEqual(self.opslag[navn]['Kategori'], self.MODSPIL, navn)
+        i_kategorien = [n for n, o in self.opslag.items() if o['Kategori'] == self.MODSPIL]
+        self.assertEqual(len(i_kategorien), 27)
+        for navn in i_kategorien:
+            self.assertNotEqual(self.opslag[navn]['Forklaring'], self.opslag[navn]['Kort definition'], navn)
+        # 46 før portion 9, 22 færre nu.
+        gentager = [n for n, o in self.opslag.items() if o['Forklaring'] == o['Kort definition']]
+        self.assertEqual(len(gentager), 24)
+
+    def test_gennemspil_i_stedet_for_gennembrud(self):
+        self.assertNotIn('Gennembrud', self.opslag)
+        o = self.opslag['Gennemspil']
+        self.assertEqual((o['ID'], o['Engelsk'], o['Alternative termer']), ('`gennemspil`', 'Leading through', 'Gennembrud'))
+        self.assertEqual(o['Kort definition'], 'At spille en farve ud, så en bestemt modstander skal lægge til før ens makker, '
+                                               'typisk den hånd, der har honnørerne.')
+        self.assertIn('gennemspil', søg(self.side, 'gennembrud'))
+        self.assertIn('fordi et gennemspil eller en farvefortsættelse', self.opslag['Farehånd']['Kort definition'])
+        self.assertNotIn('gennembrud', self.opslag['Farehånd']['Kort definition'])
+
+    def test_malmoemarkering_i_stedet_for_laveste_lige_kort_og_norsk_fordeling_er_ude(self):
+        for navn in ('Laveste lige kort', 'Norsk fordeling'):
+            self.assertNotIn(navn, self.opslag)
+        o = self.opslag['Malmømarkering']
+        self.assertEqual((o['ID'], o['Engelsk'], o['Kategori']), ('`malmoemarkering`', 'Upside-down count', self.MODSPIL))
+        self.assertEqual(o['Kort definition'], 'Et fordelingssignal, hvor et lavt kort viser et lige antal og et højt kort et ulige.')
+        self.assertIn('Bridgesystem bruger Malmømarkeringer', o['Forklaring'])
+
+    def test_marmic_er_en_trefarvet_haand_og_mud_er_udspillet(self):
+        marmic = self.opslag['Marmic']
+        self.assertEqual((marmic['Kategori'], marmic['afsnit']), ('Meldesystemer og konventioner',) * 2)
+        self.assertEqual(marmic['Kort definition'], 'En trefarvet hånd med 4-4-4-1-fordeling (eller 5-4-4-0); navnet kommer fra det '
+                                                    'italienske Marmic-system, hvor åbningerne 2♣ og 2♦ viste den.')
+        self.assertEqual(marmic['Engelsk'], '')
+        self.assertNotIn('Systemafhængig', marmic)
+        self.assertEqual(marmic['Relaterede begreber'], 'trefarvet-haand, usaedvanlig-2nt')
+        self.assertIn('I Norge bruges ordet om et spring til 2NT', marmic['Forklaring'])
+        mud = self.opslag['MUD']
+        self.assertEqual((mud['ID'], mud['Engelsk'], mud['Kategori'], mud['Niveau'], mud['Systemafhængig']),
+                         ('`mud`', 'MUD', self.MODSPIL, 'øvet', 'Ja'))
+        self.assertEqual(mud['Kort definition'], 'Udspil af det midterste kort fra tre små kort, efterfulgt af det højeste.')
+        self.assertIn('middle, up, down', mud['Forklaring'])
+        self.assertIn('mud', søg(self.side, 'mud'))
+        self.assertNotIn('marmic', søg(self.side, 'mud'))
+
+    def test_indekserne_foelger_med(self):
+        engelsk = {(r['engelsk'], r['id']) for r in self.bygget['indeks']}
+        for række in (('Leading through', 'gennemspil'), ('Upside-down count', 'malmoemarkering'), ('MUD', 'mud')):
+            self.assertIn(række, engelsk)
+        for ord_ in ('Low from even', 'Norwegian count'):
+            self.assertNotIn(ord_, {e for e, _ in engelsk})
+        for id_ in ('gennembrud', 'laveste-lige-kort', 'norsk-fordeling', 'marmic'):
+            self.assertNotIn(id_, {i for _, i in engelsk}, id_)
+        dansk = self.kilde[self.kilde.index('## Dansk-engelsk indeks'):].splitlines()
+        for linje in ('- **Gennemspil** → Leading through', '- **Malmømarkering** → Upside-down count', '- **MUD** → MUD'):
+            self.assertIn(linje, dansk)
+        for navn in ('Gennembrud', 'Laveste lige kort', 'Norsk fordeling', 'Marmic'):
+            self.assertFalse([l for l in dansk if l.startswith(f'- **{navn}** ')], navn)
+        # Det engelsk-danske indeks står stadig i alfabetisk orden.
+        ord_ = [r['engelsk'] for r in self.bygget['indeks']]
+        self.assertEqual(ord_, sorted(ord_, key=str.casefold))
+
+    def test_udspil_neutralt_udspil_og_kald_afvisning(self):
+        self.assertEqual(self.opslag['Udspil']['Kort definition'],
+                         'Det første kort i et stik; udspillet til første stik kaldes åbningsudspillet.')
+        self.assertIn('(§ 44G)', self.opslag['Udspil']['Forklaring'])
+        self.assertEqual(self.opslag['Neutralt udspil']['Alternative termer'], 'Passivt udspil')
+        self.assertNotIn('neutralt-udspil', søg(self.side, 'aktivt udspil'))
+        self.assertEqual(self.opslag['Kald-afvisning']['Alternative termer'], 'Kald og afvisning')
+        for q in ('attitude', 'encourage', 'discourage'):
+            self.assertIn('kald-afvisning', søg(self.side, q), q)
+
+    def test_begge_systemer_staar_med_navn_og_kompendiet_som_forslag(self):
+        kald = self.opslag['Kald-afvisning']['Forklaring']
+        self.assertIn('Bridgesystem spiller lavt kort = kald', kald)
+        self.assertIn('2 over 1 – Moderne majorstøtte spiller højt kort = kald', kald)
+        antal = self.opslag['Fordelingssignal']['Forklaring']
+        self.assertIn('Bridgesystem spiller Malmømarkeringer: lavt kort = lige antal', antal)
+        self.assertIn('sådan spiller 2 over 1 – Moderne majorstøtte', antal)
+        for navn, forslag in (('Øverst fra sekvens', 'foreslår ALA mod sans'), ('Fjerdehøjeste', 'foreslår 1., 3. og 5. højeste'),
+                              ('Kald-afvisning', 'foreslår romersk kald'), ('Modspilssignal', 'foreslår desuden omvendt forsinket kald')):
+            self.assertIn('Kompendium over modspilsaftaler ' + forslag, self.opslag[navn]['Forklaring'], navn)
+
+    def test_franks_rettelser_og_eksemplerne(self):
+        self.assertIn('fra K D x x spilles kongen mod farve og 4. højeste mod sans', self.opslag['Øverst fra sekvens']['Forklaring'])
+        self.assertIn('4. højeste fra E 10 7 4 2 eller K 10 7 4 2', self.opslag['Spille under en honnør']['Forklaring'])
+        self.assertIn('har valgt ikke at spille ud fra E x x x mod sans', self.opslag['Spille under en honnør']['Forklaring'])
+        self.assertIn('lægges med forsiden nedad (§ 41A)', self.opslag['Åbningsudspil']['Forklaring'])
+        self.assertIn('kan makker se alle lavere kort, har udspilleren præcis fire', self.opslag['Fjerdehøjeste']['Forklaring'])
+        self.assertIn('11 − 7 = 4 højere kort', self.opslag['Regel 11']['Forklaring'])
+        self.assertIn('er tallet 12, og ved femtehøjeste 10', self.opslag['Regel 11']['Forklaring'])
+        self.assertEqual(self.opslag['Tilspil']['Kort definition'],
+                         'Et kort, der spilles til et stik efter udspillet; hver af de tre andre spillere spiller til efter tur.')
+        self.assertEqual(self.opslag['Lige antal']['Kort definition'], 'Et lige antal kort i en farve (fx 2, 4 eller 6).')
+        for navn, henvisning in (('Modspilssignal', '(§ 40A1b)'), ('Modspilssignal', '(§ 20F2)'), ('Tilspil', '(§ 44C)'),
+                                 ('Lavt i anden hånd', '(§ 73D2)'), ('Åbningsudspil', '(§ 41C)')):
+            self.assertIn(henvisning, self.opslag[navn]['Forklaring'], navn)
 
 
 class LinksTilScoring(unittest.TestCase):

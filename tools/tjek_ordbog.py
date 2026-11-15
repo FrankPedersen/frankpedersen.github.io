@@ -705,8 +705,15 @@ class Portion11(unittest.TestCase):
                 ('Unoder ved bordet', '(§ 74C2, C5 og C6)'),
                 ('Unoder ved bordet', 'modsætning til det forældede noder'),
                 ('Urent trav', '(§ 16B1a)'),
-                ('Urent trav', 'Udtrykket kommer fra travsporten')):
+                ('Urent trav', 'Udtrykket kommer fra travsporten'),
+                # Franks afgørelse før fletningen: neutral form, for ordbogen bruger ikke "jeg".
+                ('Byttehandel', 'Hvornår ordet kom ind i bridgesproget, står ikke i ordbøgerne.'),
+                ('Sælge ud', 'Hvornår ordet kom ind i bridgesproget, står ikke i ordbøgerne.'),
+                ('Pointrytter', 'Ordet står ikke i Den Danske Ordbog, og dets oprindelse er ikke fundet.')):
             self.assertIn(uddrag, self.opslag[navn]['Forklaring'], navn)
+        # Uden for citater (fx "Jeg havde kongen anden i hjerter" i Kort tredje / honnør anden).
+        for navn, o in self.opslag.items():
+            self.assertNotRegex(re.sub(r'"[^"]*"', '', o['Forklaring']), r'\b[Jj]eg\b', navn)
 
 
 class LinksTilScoring(unittest.TestCase):

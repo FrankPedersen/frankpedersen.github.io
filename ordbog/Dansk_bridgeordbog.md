@@ -4138,7 +4138,7 @@ _Version 1.3. Ordbogen indeholder 438 kanoniske opslag._
 **Kategori:** Talemåder og bridgeslang
 **Kort definition:** At gå lidt ned i sin egen kontrakt i stedet for at lade modparten vinde deres.
 
-**Forklaring:** Byttehandlen betaler sig, når minusscoren er mindre end modpartens plusscore. Kan modparten vinde 2♥ (110), koster 3♠ en ned uden for zonen 50, eller 100 doblet, og begge dele er en god handel; i zonen koster en ned doblet 200, og uden for zonen koster to ned doblet 300, og så er handlen dårlig (§ 77). I parturnering tæller hvert point, så 100 mod 110 er et godt resultat, mens forskellen i holdturnering ikke giver nogen imp. Mod en udgang eller slem hedder det et offer. Ordet er hentet fra almindeligt dansk, hvor en byttehandel er en handel ved udveksling og overført en aftale om at gengælde en ydelse med en anden (Den Danske Ordbog); hvornår det kom ind i bridgesproget, har jeg ikke kunnet bekræfte.
+**Forklaring:** Byttehandlen betaler sig, når minusscoren er mindre end modpartens plusscore. Kan modparten vinde 2♥ (110), koster 3♠ en ned uden for zonen 50, eller 100 doblet, og begge dele er en god handel; i zonen koster en ned doblet 200, og uden for zonen koster to ned doblet 300, og så er handlen dårlig (§ 77). I parturnering tæller hvert point, så 100 mod 110 er et godt resultat, mens forskellen i holdturnering ikke giver nogen imp. Mod en udgang eller slem hedder det et offer. Ordet er hentet fra almindeligt dansk, hvor en byttehandel er en handel ved udveksling og overført en aftale om at gengælde en ydelse med en anden (Den Danske Ordbog). Hvornår ordet kom ind i bridgesproget, står ikke i ordbøgerne.
 
 **Relaterede begreber:** offer, matchpoint
 
@@ -4182,7 +4182,7 @@ _Version 1.3. Ordbogen indeholder 438 kanoniske opslag._
 **Kategori:** Talemåder og bridgeslang
 **Kort definition:** En spiller, der kun tæller point og overser fordeling og stikmuligheder.
 
-**Forklaring:** Pointrytteren åbner ♠D x x ♥K x x ♦E x x ♣D B x x (12 hp), men passer med ♠E K 10 9 x ♥K B 10 x x ♦x x ♣x (11 hp), som Bridgesystem åbner efter 20-reglen: 11 hp og to femfarver giver 21. Hp måler honnørstyrken, men fordelingen, mellemkortene, og om honnørerne sidder i de lange farver, tæller også. Udtrykket bruges om en makker eller modstander, der melder efter tallet alene. Ordet findes ikke i Den Danske Ordbog, og jeg har ikke kunnet finde dets oprindelse; endelsen -rytter bruges på samme måde i paragrafrytter, om en person, der strengt og usmidigt holder sig til reglerne (Den Danske Ordbog).
+**Forklaring:** Pointrytteren åbner ♠D x x ♥K x x ♦E x x ♣D B x x (12 hp), men passer med ♠E K 10 9 x ♥K B 10 x x ♦x x ♣x (11 hp), som Bridgesystem åbner efter 20-reglen: 11 hp og to femfarver giver 21. Hp måler honnørstyrken, men fordelingen, mellemkortene, og om honnørerne sidder i de lange farver, tæller også. Udtrykket bruges om en makker eller modstander, der melder efter tallet alene. Ordet står ikke i Den Danske Ordbog, og dets oprindelse er ikke fundet. Endelsen -rytter bruges på samme måde i paragrafrytter, om en person, der strengt og usmidigt holder sig til reglerne (Den Danske Ordbog).
 
 **Relaterede begreber:** fordelingspoint
 
@@ -4204,7 +4204,7 @@ _Version 1.3. Ordbogen indeholder 438 kanoniske opslag._
 **Kategori:** Talemåder og bridgeslang
 **Kort definition:** At passe og lade modparten spille kontrakten på et lavt trin i stedet for at melde videre.
 
-**Forklaring:** Udtrykket bruges om konkurrencemeldinger på lavt trin: når modparten har fundet et fit og stopper på 2-trinnet, har ens egen side tit omkring halvdelen af honnørstyrken, og et pas lader dem spille for billigt. Fjerde hånd kan så genåbne, og det er ofte rigtigt i parturnering. Det er ikke altid forkert at sælge ud: med jævne hænder og få trumfer er det tit bedst at forsvare. Udtrykket svarer til det engelske sell out; i almindeligt dansk betyder sælge ud at sælge en beholdning, evt. billigt, og overført at give køb på sine principper (Den Danske Ordbog). Hvornår det kom ind i bridgesproget, har jeg ikke kunnet bekræfte.
+**Forklaring:** Udtrykket bruges om konkurrencemeldinger på lavt trin: når modparten har fundet et fit og stopper på 2-trinnet, har ens egen side tit omkring halvdelen af honnørstyrken, og et pas lader dem spille for billigt. Fjerde hånd kan så genåbne, og det er ofte rigtigt i parturnering. Det er ikke altid forkert at sælge ud: med jævne hænder og få trumfer er det tit bedst at forsvare. Udtrykket svarer til det engelske sell out; i almindeligt dansk betyder sælge ud at sælge en beholdning, evt. billigt, og overført at give køb på sine principper (Den Danske Ordbog). Hvornår ordet kom ind i bridgesproget, står ikke i ordbøgerne.
 
 **Relaterede begreber:** genaabning, konkurrencemelding
 

@@ -20,14 +20,14 @@ FOER = 'v-foer-privatliv'
 
 DANSK = ('Om dine oplysninger. Når du sender en besked, går dit navn, din e-mail og din besked gennem Microsoft Azure '
          'til min e-mail, så jeg kan svare dig. Siden gemmer ikke beskeden. Jeg sletter beskeder fra formularen og mine '
-         'svar senest 14 dage efter, at jeg har modtaget dem. Din IP-adresse bruges kun i op til 15 minutter til at stoppe '
-         'spam og gemmes ikke. Azure logger tidspunktet for hvert kald og et omtrentligt land og en by i 30 dage, men ikke '
+         'svar senest 14 dage efter, at jeg har modtaget dem. Din IP-adresse gemmes i højst 20 minutter som en kode, der '
+         'ikke kan føres tilbage til adressen uden en hemmelig nøgle, kun for at stoppe spam. Azure logger tidspunktet for hvert kald og et omtrentligt land og en by i 30 dage, men ikke '
          'din besked. Vil du vide, hvad jeg har om dig, eller have det slettet før, kan du skrive det her. '
          'Dataansvarlig: Frank Pedersen.')
 ENGELSK = ('About your information. When you send a message, your name, e-mail and message go through Microsoft Azure to '
            'my e-mail so I can reply. The site does not store the message. I delete messages from the form and my replies '
-           'no later than 14 days after I receive them. Your IP address is used for up to 15 minutes only to stop spam and '
-           'is not stored. Azure logs the time of each request and an approximate country and city for 30 days, but not '
+           'no later than 14 days after I receive them. Your IP address is stored for up to 20 minutes as a code that '
+           'cannot be traced back to the address without a secret key, only to stop spam. Azure logs the time of each request and an approximate country and city for 30 days, but not '
            'your message. If you want to know what I hold about you, or want it deleted sooner, you can write to me here. '
            'Data controller: Frank Pedersen.')
 
@@ -74,11 +74,17 @@ class Teksten(unittest.TestCase):
         self.assertEqual(ren(en), ENGELSK)
         self.assertTrue(en.startswith('<strong>About your information.</strong>'))
 
-    def test_14_dage_15_minutter_og_den_dataansvarlige(self):
-        for del_ in ('14 dage', '15 minutter', '30 dage', 'Dataansvarlig: Frank Pedersen.'):
+    def test_14_dage_20_minutter_og_den_dataansvarlige(self):
+        # Grænsen pr. IP står i Table Storage som en HMAC i højst 20 minutter (SPEC-kontakt-ip-graense.md); "15 minutter"
+        # om IP-adressen er den gamle tekst og må ikke stå i kontaktafsnittet.
+        for del_ in ('14 dage', 'højst 20 minutter', 'uden en hemmelig nøgle', '30 dage', 'Dataansvarlig: Frank Pedersen.'):
             self.assertIn(del_, ren(self.indhold))
-        for del_ in ('14 days', '15 minutes', '30 days', 'Data controller: Frank Pedersen.'):
-            self.assertIn(del_, ENGELSK)
+        self.assertNotIn('15 minutter', ren(self.indhold))
+        m = re.search(r'data-en="([^"]*)"', self.attr or '')
+        en = ren(html.unescape(m.group(1))) if m else ''
+        for del_ in ('14 days', 'up to 20 minutes', 'without a secret key', '30 days', 'Data controller: Frank Pedersen.'):
+            self.assertIn(del_, en)
+        self.assertNotIn('15 minutes', en)
 
     def test_lille_tekst_med_eksisterende_vaerdier(self):
         m = re.search(r'\.om-privat\s*\{([^}]*)\}', self.side)

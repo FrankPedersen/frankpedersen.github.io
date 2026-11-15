@@ -429,12 +429,14 @@ class Portion9(unittest.TestCase):
             self.assertIn('kald-afvisning', søg(self.side, q), q)
 
     def test_begge_systemer_staar_med_navn_og_kompendiet_som_forslag(self):
+        # Systemerne står stadig med navn, men spiller samme retning (SPEC-ordbog-markeringer.md, Franks afgørelse
+        # 15. november 2026: Makker 2-dokumentet havde markeringerne forkert); klassen Markeringer tjekker teksten.
         kald = self.opslag['Kald-afvisning']['Forklaring']
-        self.assertIn('Bridgesystem spiller lavt kort = kald', kald)
-        self.assertIn('2 over 1 – Moderne majorstøtte spiller højt kort = kald', kald)
+        self.assertIn('Bridgesystem efter es-udspil', kald)
+        self.assertIn('2 over 1 – Moderne majorstøtte på makkers udspil', kald)
         antal = self.opslag['Fordelingssignal']['Forklaring']
-        self.assertIn('Bridgesystem spiller Malmømarkeringer: lavt kort = lige antal', antal)
-        self.assertIn('sådan spiller 2 over 1 – Moderne majorstøtte', antal)
+        self.assertIn('Bridgesystem bruger antal, når spilfører spiller en ny farve', antal)
+        self.assertIn('2 over 1 – Moderne majorstøtte, når attitude er kendt', antal)
         for navn, forslag in (('Øverst fra sekvens', 'foreslår ALA mod sans'), ('Fjerdehøjeste', 'foreslår 1., 3. og 5. højeste'),
                               ('Kald-afvisning', 'foreslår romersk kald'), ('Modspilssignal', 'foreslår desuden omvendt forsinket kald')):
             self.assertIn('Kompendium over modspilsaftaler ' + forslag, self.opslag[navn]['Forklaring'], navn)
@@ -714,6 +716,59 @@ class Portion11(unittest.TestCase):
         # Uden for citater (fx "Jeg havde kongen anden i hjerter" i Kort tredje / honnør anden).
         for navn, o in self.opslag.items():
             self.assertNotRegex(re.sub(r'"[^"]*"', '', o['Forklaring']), r'\b[Jj]eg\b', navn)
+
+
+class Markeringer(unittest.TestCase):
+    """SPEC-ordbog-markeringer.md (Franks afgørelse 15. november 2026): Makker 2 spiller markeringerne som Bridgesystem,
+    lavt kort = kald og lavt kort = lige antal. Bridgesystem bruger antal ved ny farve og efter konge-udspil, og 2 over 1 –
+    Moderne majorstøtte, når attitude er kendt, eller spilfører angriber farven. Lavinthal er uændret."""
+
+    NY = {
+        'Fordelingssignal': ('Internationalt viser højt-lavt et lige antal og lavt-højt et ulige. Begge husets systemer spiller '
+                             'det omvendt: lavt kort = lige antal og højt kort = ulige (Malmømarkeringer). Bridgesystem bruger '
+                             'antal, når spilfører spiller en ny farve, og efter makkers konge-udspil, og 2 over 1 – Moderne '
+                             'majorstøtte, når attitude er kendt, eller spilfører angriber farven.'),
+        'Kald-afvisning': ('Begge husets systemer spiller lavt kort = kald og højt = afvisning: Bridgesystem efter es-udspil, '
+                           'når makker skifter farve, og ved første afkast mod farvekontrakt, og 2 over 1 – Moderne '
+                           'majorstøtte på makkers udspil mod både farve og sans.'),
+        'Lige antal': ('Internationalt vises det med højt-lavt. Begge husets systemer viser det med et lavt kort (lavt-højt): '
+                       'Bridgesystem, når spilfører spiller en ny farve, og efter makkers konge-udspil (Malmømarkering), og 2 '
+                       'over 1 – Moderne majorstøtte, når attitude er kendt, eller spilfører angriber farven.'),
+        'Ulige antal': ('Internationalt vises det med lavt-højt. Begge husets systemer viser det med et højt kort (højt-lavt): '
+                        'Bridgesystem, når spilfører spiller en ny farve, og efter makkers konge-udspil (Malmømarkering), '
+                        'hvor fx 9\'eren lægges fra 9 8 7 6 4, og 2 over 1 – Moderne majorstøtte, når attitude er kendt, '
+                        'eller spilfører angriber farven.'),
+        'Modspilssignal': ('og parret aftaler, hvilken der gælder hvornår. Begge husets systemer spiller lavt kort = kald og '
+                           'lavt kort = lige antal. I 2 over 1 – Moderne majorstøtte kommer kald og afvisning først'),
+    }
+    UAENDREDE = {
+        'Afkast': 'I 2 over 1 – Moderne majorstøtte er afkastet i en uinteressant farve Lavinthal: et højt kort beder om '
+                  'den højeste af de to øvrige farver, et lavt om den laveste.',
+        'Lavinthal-signal': 'I 2 over 1 – Moderne majorstøtte er Lavinthal en afkastmarkering, der først gælder, når kald og '
+                            'afvisning ikke har mere at sige.',
+        'Malmømarkering': 'Bridgesystem bruger Malmømarkeringer, når spilfører spiller en ny farve, og efter makkers '
+                          'konge-udspil',
+        'Farvepræferencesignal': 'Signalet kaldes også Lavinthal, og både Konventionstrænerens kort Lavinthal og 2 over 1 – '
+                                 'Moderne majorstøtte bruger det.',
+    }
+
+    @classmethod
+    def setUpClass(cls):
+        cls.opslag = opslag_i_kilden()
+
+    def test_de_fem_opslag_siger_lavt_kald_og_lavt_lige_for_begge_systemer(self):
+        for navn, tekst in self.NY.items():
+            self.assertIn(tekst, self.opslag[navn]['Forklaring'], navn)
+
+    def test_ingen_forklaring_har_den_gamle_retning_for_2_over_1(self):
+        for navn, o in self.opslag.items():
+            for gammel in ('Moderne majorstøtte spiller højt kort = kald', 'sådan spiller 2 over 1 – Moderne majorstøtte',
+                           'højt-lavt, og sådan spiller', 'lavt-højt, og sådan spiller'):
+                self.assertNotIn(gammel, o['Forklaring'], navn)
+
+    def test_afkast_og_lavinthal_er_uaendrede(self):
+        for navn, tekst in self.UAENDREDE.items():
+            self.assertIn(tekst, self.opslag[navn]['Forklaring'], navn)
 
 
 class LinksTilScoring(unittest.TestCase):

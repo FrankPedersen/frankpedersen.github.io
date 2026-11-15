@@ -48,7 +48,10 @@ before(async () => {
   const port = await freePort()
   const args = ['--yes', '-p', AZURITE, 'azurite-table', '--inMemoryPersistence', '--tableHost', '127.0.0.1',
     '--tablePort', String(port), '--skipApiVersionCheck', '--silent', '--disableTelemetry']
-  azurite = spawn(WINDOWS ? 'npx.cmd' : 'npx', args, { stdio: 'ignore', shell: WINDOWS, detached: !WINDOWS })
+  // På Windows er npx en .cmd-fil, der kræver en skal; argumenterne er faste, så de samles til én kommando.
+  azurite = WINDOWS
+    ? spawn(`npx ${args.join(' ')}`, { stdio: 'ignore', shell: true })
+    : spawn('npx', args, { stdio: 'ignore', detached: true })
   for (let i = 0; i < 240; i++) { // første gang henter npx Azurite
     if (await answers(port)) break
     if (azurite.exitCode !== null) throw new Error('Azurite stoppede ved start')

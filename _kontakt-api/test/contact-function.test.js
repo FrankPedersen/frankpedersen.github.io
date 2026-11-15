@@ -5,3 +5,8 @@ import test from 'node:test'
 test('the contact function module loads', async () => {
   await assert.doesNotReject(import('../src/functions/contact.js'))
 })
+
+// Timer-funktionen, der sletter grænsens gamle vinduer (SPEC-kontakt-ip-graense.md).
+test('the cleanup timer module loads', async () => {
+  await assert.doesNotReject(import('../src/functions/contact-cleanup.js'))
+})

@@ -63,7 +63,7 @@ app.http('contact', {
       return jsonResponse(503, errorBody(MESSAGES.notConfigured))
     }
 
-    const rateLimit = checkRateLimit(getClientIp(request))
+    const rateLimit = await checkRateLimit(getClientIp(request), { log: context })
     if (!rateLimit.allowed) {
       const response = jsonResponse(429, errorBody(MESSAGES.rateLimited))
       response.headers['Retry-After'] = String(rateLimit.retryAfterSeconds)

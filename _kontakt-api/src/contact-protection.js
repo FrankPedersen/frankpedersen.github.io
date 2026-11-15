@@ -1,12 +1,8 @@
 import { MESSAGES } from './contact-messages.js'
+import { rateLimiterFromEnvironment } from './contact-rate-limit.js'
 
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-const RATE_LIMIT_WINDOW_MS = 15 * 60 * 1000
-const RATE_LIMIT_MAX_REQUESTS = 3
 const MINIMUM_FORM_TIME_MS = 2000
-const MAX_RATE_LIMIT_ENTRIES = 5000
-
-const contactAttempts = new Map()
 
 // Azure Functions sender adressen som "ip:port" (IPv6 som "[ip]:port"), og porten skifter med hver forbindelse.
 function withoutPort(address) {
@@ -23,37 +19,16 @@ export function getClientIp(request) {
   return clientIp ? withoutPort(clientIp) : null
 }
 
-export function checkRateLimit(clientIp, now = Date.now()) {
+// Højst 3 beskeder pr. IP pr. 15 minutter på tværs af instanser; tælleren står i Table Storage (src/contact-rate-limit.js,
+// SPEC-kontakt-ip-graense.md). Uden IP er der ingen grænse. Mangler IP_HASH_KEY eller lageret, er grænsen slået fra, og
+// beskeden går igennem.
+export async function checkRateLimit(clientIp, { limiter = rateLimiterFromEnvironment(), log = console } = {}) {
   if (!clientIp) return { allowed: true }
-
-  const attempt = contactAttempts.get(clientIp)
-  if (!attempt || attempt.expiresAt <= now) {
-    if (contactAttempts.size >= MAX_RATE_LIMIT_ENTRIES) {
-      for (const [ip, entry] of contactAttempts) {
-        if (entry.expiresAt <= now) contactAttempts.delete(ip)
-      }
-    }
-
-    if (contactAttempts.size >= MAX_RATE_LIMIT_ENTRIES) {
-      return { allowed: false, retryAfterSeconds: Math.ceil(RATE_LIMIT_WINDOW_MS / 1000) }
-    }
-
-    contactAttempts.set(clientIp, {
-      count: 1,
-      expiresAt: now + RATE_LIMIT_WINDOW_MS,
-    })
+  if (!limiter) {
+    log.warn('kontakt: grænsen er slået fra')
     return { allowed: true }
   }
-
-  if (attempt.count >= RATE_LIMIT_MAX_REQUESTS) {
-    return {
-      allowed: false,
-      retryAfterSeconds: Math.max(1, Math.ceil((attempt.expiresAt - now) / 1000)),
-    }
-  }
-
-  attempt.count += 1
-  return { allowed: true }
+  return limiter.check(clientIp, log)
 }
 
 export function validateContact(body) {

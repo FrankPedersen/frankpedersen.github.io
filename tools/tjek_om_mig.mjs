@@ -18,6 +18,14 @@ import { fileURLToPath } from 'node:url';
 
 const ROD = fileURLToPath(new URL('..', import.meta.url));
 const TAG = 'v-foer-om-mig-kortspil';
+// Den eneste godkendte ændring i privatlivsteksten efter tagget: sætningen om IP-adressen, fordi grænsen pr. IP nu gemmer
+// en kode i højst 20 minutter (SPEC-kontakt-ip-graense.md). Resten af teksten skal være som i tagget.
+const IP_SÆTNING = {
+  da: ['Din IP-adresse bruges kun i op til 15 minutter til at stoppe spam og gemmes ikke.',
+    'Din IP-adresse gemmes i højst 20 minutter som en kode, der ikke kan føres tilbage til adressen uden en hemmelig nøgle, kun for at stoppe spam.'],
+  en: ['Your IP address is used for up to 15 minutes only to stop spam and is not stored.',
+    'Your IP address is stored for up to 20 minutes as a code that cannot be traced back to the address without a secret key, only to stop spam.'],
+};
 const LOBBY = 'https://kortspil-api-20261101-v2.azurewebsites.net/lobby/';
 const ACCENT = 'rgb(255, 159, 74)';
 const BILLEDER = process.argv.find((a) => a.startsWith('--billeder='))?.slice('--billeder='.length);
@@ -264,7 +272,9 @@ try {
       tjek(l.linje === T.se, `${navn}: linjen siger "${T.se}"`, l.linje);
       tjek(l.svg === 2 && l.svgSkjult && !l.svgUdefra, `${navn}: skjoldet og pilen er inline SVG, skjult for skærmlæsere`, JSON.stringify(l));
       tjek(l.skjoldFarve === ACCENT && l.skjoldTegnet, `${navn}: skjoldet står i accentfarven ${ACCENT}`, `${l.skjoldFarve}, tegnet: ${l.skjoldTegnet}`);
-      tjek(l.html === tekstFør, `${navn}: teksten er den samme som før`, `${l.html?.slice(0, 80)} …`);
+      const [gammel, ny] = IP_SÆTNING[lang];
+      tjek(tekstFør.includes(gammel), `${navn}: tagget har den gamle sætning om IP-adressen`);
+      tjek(l.html === tekstFør.replace(gammel, ny), `${navn}: teksten er den samme som før, bortset fra sætningen om IP-adressen`, `${l.html?.slice(0, 80)} …`);
       tjek(JSON.stringify(await s.kør(UDEFRA)) === JSON.stringify(udefraFør), `${navn}: siden henter intet nyt udefra`, JSON.stringify(await s.kør(UDEFRA)));
       tjek(l.ud <= 0, `${navn}: ingen vandret scroll, lukket`, `${l.ud} px`);
       const axLukket = await s.ax('details.om-privatliv > summary');

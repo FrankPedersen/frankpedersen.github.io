@@ -3430,15 +3430,6 @@ _Version 1.3. Ordbogen indeholder 438 kanoniske opslag._
 
 **Forklaring:** Pivot bruges, når fire spillere ikke har faste par eller vil prøve forskellige makkere. Det kræver, at alle fire spiller samme system.
 
-### Pivotbord
-**ID:** `pivotbord`
-**Engelsk:** Pivot table
-**Niveau:** øvet
-**Kategori:** Turnering og organisering
-**Kort definition:** Bordet hvor par skifter retning i en Howell‑bevægelse.
-
-**Forklaring:** Bordet hvor par skifter retning i en Howell‑bevægelse.
-
 ### Privat regnskabskort
 **ID:** `privat-regnskabskort`
 **Engelsk:** Personal score sheet
@@ -3964,7 +3955,20 @@ _Version 1.3. Ordbogen indeholder 438 kanoniske opslag._
 **Kategori:** Onlinebridge og digitale turneringer
 **Kort definition:** En digital platform til bridge, undervisning og turneringer, ofte forkortet BBO.
 
-**Forklaring:** En digital platform til bridge, undervisning og turneringer, ofte forkortet BBO.
+**Forklaring:** BBO blev lanceret i 2001 af Fred Gitelman og spilles i browseren eller i en app uden video: meldinger og kort vælges på skærmen, og spillerne skriver sammen i chat. Platformen har frit spil med venner eller fremmede, robotter, der kan lejes, turneringer mod robotter eller mennesker, store turneringer live på Vugraph og undervisningsborde til at øve meldinger. Robotten hedder GIB og spiller 2 over 1; siden 16. december 2025 kører den på motoren GIBBO med samme system. Danske klubber og Danmarks Bridgeforbund holder også turneringer på BBO, og her alerterer og forklarer hver spiller sine egne meldinger (selvalert), fordi BBO ikke har andre muligheder (DBf's regler for online-turneringer, 2021). Fordelingstræneren kan læse et spil fra BBO som LIN-tekst eller adressen fra handvieweren.
+
+**Relaterede begreber:** robotbridge, selvalert
+
+### RealBridge
+**ID:** `realbridge`
+**Engelsk:** RealBridge
+**Niveau:** begynder
+**Kategori:** Onlinebridge og digitale turneringer
+**Kort definition:** En platform til onlinebridge, hvor spillerne ser og hører hinanden med kamera og mikrofon.
+
+**Forklaring:** RealBridge kører i browseren på computer eller tablet, og klubber og forbund arrangerer turneringerne med en turneringsleder, der kan komme til bordet. Arrangøren kan kræve kamera og mikrofon tændt og vælge alertreglerne fra bordet, hvor makker alerterer og forklarer, eller selvalert som på BBO (DBf's regler for online-turneringer, 2021); der kan også spilles med skærme.
+
+**Relaterede begreber:** bridge-base-online, selvalert
 
 ### Robotbridge
 **ID:** `robotbridge`
@@ -3982,7 +3986,9 @@ _Version 1.3. Ordbogen indeholder 438 kanoniske opslag._
 **Kategori:** Onlinebridge og digitale turneringer
 **Kort definition:** En procedure i onlinebridge, hvor spilleren selv oplyser modstanderne om sin meldings særlige betydning uden at informere makker.
 
-**Forklaring:** En procedure i onlinebridge, hvor spilleren selv oplyser modstanderne om sin meldings særlige betydning uden at informere makker.
+**Forklaring:** Ved bordet alerterer melderens makker, men på BBO alerterer spilleren sin egen melding og skriver forklaringen, som kun modstanderne ser; makker ser hverken alerten eller forklaringen. Danmarks Bridgeforbunds regler for online-turneringer (10. april 2021) siger, at alert og forklaring bør skrives, før meldingen afgives, så modstanderne ser dem sammen med meldingen, og at uddybende spørgsmål stilles til den, der meldte, i privat chat, fordi chat til hele bordet giver makker ubeføjede oplysninger. På RealBridge, hvor spillerne ser og hører hinanden med kamera og mikrofon, kan arrangøren i stedet vælge alertreglerne fra bordet, hvor makker alerterer og forklarer.
+
+**Relaterede begreber:** alertering, bridge-base-online
 
 ## Avancerede teknikker
 
@@ -4132,7 +4138,9 @@ _Version 1.3. Ordbogen indeholder 438 kanoniske opslag._
 **Kategori:** Talemåder og bridgeslang
 **Kort definition:** At gå lidt ned i sin egen kontrakt i stedet for at lade modparten vinde deres.
 
-**Forklaring:** At gå lidt ned i sin egen kontrakt i stedet for at lade modparten vinde deres.
+**Forklaring:** Byttehandlen betaler sig, når minusscoren er mindre end modpartens plusscore. Kan modparten vinde 2♥ (110), koster 3♠ en ned uden for zonen 50, eller 100 doblet, og begge dele er en god handel; i zonen koster en ned doblet 200, og uden for zonen koster to ned doblet 300, og så er handlen dårlig (§ 77). I parturnering tæller hvert point, så 100 mod 110 er et godt resultat, mens forskellen i holdturnering ikke giver nogen imp. Mod en udgang eller slem hedder det et offer. Ordet er hentet fra almindeligt dansk, hvor en byttehandel er en handel ved udveksling og overført en aftale om at gengælde en ydelse med en anden (Den Danske Ordbog). Hvornår ordet kom ind i bridgesproget, står ikke i ordbøgerne.
+
+**Relaterede begreber:** offer, matchpoint
 
 ### Fanget på det gale ben
 **ID:** `fanget-paa-det-gale-ben`
@@ -4141,7 +4149,9 @@ _Version 1.3. Ordbogen indeholder 438 kanoniske opslag._
 **Kategori:** Talemåder og bridgeslang
 **Kort definition:** Man har spillet i en forkert rækkefølge og kan ikke komme det rigtige sted hen.
 
-**Forklaring:** Man har spillet i en forkert rækkefølge og kan ikke komme det rigtige sted hen.
+**Forklaring:** Udtrykket bruges om spilføreren, der står på den forkerte hånd: er spilføreren inde på bordet, men skal den næste kipning tages fra hånden, og er der ingen indgang tilbage, er spilføreren fanget på det gale ben. Det sker typisk, når en indgang er brugt for tidligt, eller når stikkene er taget i en rækkefølge, der blokerer en farve. Det modsatte er at have forbindelserne i orden. Udtrykket kommer fra sporten, hvor en spiller, der står med vægten på det forkerte ben, ikke kan nå bolden; overført betyder det at blive overrumplet (Den Danske Ordbog under "fange nogen på det forkerte ben"; samme ordbog har "gale" som variant i "få det gale ben ud af sengen").
+
+**Relaterede begreber:** forbindelser, indgang
 
 ### Kort tredje / honnør anden
 **ID:** `kort-tredje-honnoer-anden`
@@ -4150,7 +4160,9 @@ _Version 1.3. Ordbogen indeholder 438 kanoniske opslag._
 **Kategori:** Talemåder og bridgeslang
 **Kort definition:** Måde at beskrive en farve på: honnøren plus i alt to eller tre kort, fx "kongen tredje".
 
-**Forklaring:** Måde at beskrive en farve på: honnøren plus i alt to eller tre kort, fx "kongen tredje".
+**Forklaring:** Tallet er farvens længde med honnøren medregnet: kongen anden er K x, damen tredje D x x og esset fjerde E x x x. Udtrykket siger, hvor godt honnøren er beskyttet: damen anden falder, når esset og kongen spilles, mens damen tredje overlever og bliver højeste kort i tredje runde. Det bruges ved bordet og i gennemgange, fx "Jeg havde kongen anden i hjerter". Udtrykket er ældre end bridge: Ordbog over det danske Sprog (bind 1, 1919) forklarer "kongen (damen, spadille osv.) anden" som kongen og et lavere kort i samme farve, med et eksempel fra en spillebog fra 1900.
+
+**Relaterede begreber:** doubleton, fald
 
 ### Melde i den blå luft
 **ID:** `melde-i-den-blaa-luft`
@@ -4159,7 +4171,9 @@ _Version 1.3. Ordbogen indeholder 438 kanoniske opslag._
 **Kategori:** Talemåder og bridgeslang
 **Kort definition:** At melde uden reel dækning i hånden.
 
-**Forklaring:** At melde uden reel dækning i hånden.
+**Forklaring:** Udtrykket bruges, ofte bagefter, om en melding, som hånden ikke kunne bære: en åbning uden hp nok, en farve, man ikke har, eller et hop, der lover mere, end der er. Gøres det med vilje, er det en psykisk melding; oftere er det en overmelding, der bygger på håb. Makker melder videre i tillid til meldingen, så den ender tit i en kontrakt, der går ned. Udtrykket kommer af "grebet ud af den blå luft", der i almindeligt dansk betyder uden grundlag i virkeligheden (Den Danske Ordbog).
+
+**Relaterede begreber:** overmelding, psykisk-melding
 
 ### Pointrytter
 **ID:** `pointrytter`
@@ -4168,7 +4182,9 @@ _Version 1.3. Ordbogen indeholder 438 kanoniske opslag._
 **Kategori:** Talemåder og bridgeslang
 **Kort definition:** En spiller, der kun tæller point og overser fordeling og stikmuligheder.
 
-**Forklaring:** En spiller, der kun tæller point og overser fordeling og stikmuligheder.
+**Forklaring:** Pointrytteren åbner ♠D x x ♥K x x ♦E x x ♣D B x x (12 hp), men passer med ♠E K 10 9 x ♥K B 10 x x ♦x x ♣x (11 hp), som Bridgesystem åbner efter 20-reglen: 11 hp og to femfarver giver 21. Hp måler honnørstyrken, men fordelingen, mellemkortene, og om honnørerne sidder i de lange farver, tæller også. Udtrykket bruges om en makker eller modstander, der melder efter tallet alene. Ordet står ikke i Den Danske Ordbog, og dets oprindelse er ikke fundet. Endelsen -rytter bruges på samme måde i paragrafrytter, om en person, der strengt og usmidigt holder sig til reglerne (Den Danske Ordbog).
+
+**Relaterede begreber:** fordelingspoint
 
 ### Pokeransigt
 **ID:** `pokeransigt`
@@ -4177,34 +4193,42 @@ _Version 1.3. Ordbogen indeholder 438 kanoniske opslag._
 **Kategori:** Talemåder og bridgeslang
 **Kort definition:** At holde et neutralt ansigt, så man ikke afslører noget for modparten.
 
-**Forklaring:** At holde et neutralt ansigt, så man ikke afslører noget for modparten.
+**Forklaring:** Ved bordet er det idealet: hverken glæde over bordets kort eller ærgrelse over makkers melding må vises, for at tilkendegive billigelse eller misbilligelse af en melding eller et ud- eller tilspil er brud på den korrekte fremgangsmåde (§ 74C2), og det er ønskeligt at melde og spille i et ensartet tempo og med ensartede manerer (§ 73D1). Pokeransigtet må ikke blive til skuespil: at vildlede en modstander med tøven, hast eller gestus er forbudt (§ 73D2), mens det er tilladt at vildlede med selve meldingen eller kortet (§ 73E1). Ordet er sammensat af kortspillet poker og ansigt; Den Danske Ordbog har det med betydningen "ansigtsudtryk der ikke røber sindsbevægelse" og synonymet pokerfjæs.
+
+**Relaterede begreber:** tempo, bridgeetik
 
 ### Sælge ud
 **ID:** `saelge-ud`
 **Engelsk:** Sell out
 **Niveau:** øvet
 **Kategori:** Talemåder og bridgeslang
-**Kort definition:** At give op over for modpartens meldinger og passe, selvom man burde have meldt.
+**Kort definition:** At passe og lade modparten spille kontrakten på et lavt trin i stedet for at melde videre.
 
-**Forklaring:** At give op over for modpartens meldinger og passe, selvom man burde have meldt.
+**Forklaring:** Udtrykket bruges om konkurrencemeldinger på lavt trin: når modparten har fundet et fit og stopper på 2-trinnet, har ens egen side tit omkring halvdelen af honnørstyrken, og et pas lader dem spille for billigt. Fjerde hånd kan så genåbne, og det er ofte rigtigt i parturnering. Det er ikke altid forkert at sælge ud: med jævne hænder og få trumfer er det tit bedst at forsvare. Udtrykket svarer til det engelske sell out; i almindeligt dansk betyder sælge ud at sælge en beholdning, evt. billigt, og overført at give køb på sine principper (Den Danske Ordbog). Hvornår ordet kom ind i bridgesproget, står ikke i ordbøgerne.
+
+**Relaterede begreber:** genaabning, konkurrencemelding
 
 ### Unoder ved bordet
 **ID:** `unoder-ved-bordet`
 **Engelsk:**
 **Niveau:** øvet
 **Kategori:** Talemåder og bridgeslang
-**Kort definition:** Opførsel, der giver makker ulovlig information eller ødelægger stemningen, fx tøven eller kommentarer.
+**Kort definition:** Opførsel, der kan give makker ubeføjede oplysninger eller ødelægge stemningen, fx kommentarer eller mimik.
 
-**Forklaring:** Opførsel, der giver makker ulovlig information eller ødelægger stemningen, fx tøven eller kommentarer.
+**Forklaring:** Lovbogen kalder mange af dem brud på den korrekte fremgangsmåde og giver eksempler: at tilkendegive billigelse eller misbilligelse af en melding eller et ud- eller tilspil, at stirre på en anden spillers hånd og at vise tydelig mangel på interesse, fx ved at folde kortene sammen (§ 74C2, C5 og C6). Uvedkommende bemærkninger og at tage et kort frem, før det er ens tur, er brud på etiketten (§ 74B2 og B3), og en spiller bør undlade enhver bemærkning, der kunne være pinlig for en anden spiller eller forringe glæden ved spillet (§ 74A2). Giver unoden makker oplysninger, er de ubeføjede, og makker må ikke bruge dem (§ 16B1). Ordet unode betyder en handling eller tilbøjelighed, som nogen finder upassende eller i strid med en norm, og er dannet som modsætning til det forældede noder, manerer (Den Danske Ordbog).
+
+**Relaterede begreber:** bridgeetik, ubefoejede-oplysninger
 
 ### Urent trav
 **ID:** `urent-trav`
 **Engelsk:**
 **Niveau:** øvet
 **Kategori:** Talemåder og bridgeslang
-**Kort definition:** Turneringslederens betegnelse for, at man har udnyttet ulovlig information, fx makkers tøven.
+**Kort definition:** Bridgeslang for at udnytte ubeføjede oplysninger fra makker, fx makkers tøven.
 
-**Forklaring:** Turneringslederens betegnelse for, at man har udnyttet ulovlig information, fx makkers tøven.
+**Forklaring:** Udtrykket bruges om at melde eller spille efter makkers tøven, tonefald eller manerer, fx at melde videre efter en lang tænkepause, når pas var et logisk alternativ. Lovbogen kalder oplysningerne ubeføjede: en spiller må ikke vælge den mulighed, de antyder, hvis en anden mulighed er et logisk alternativ (§ 16B1a), og når modstanderne er skadet, justerer turneringslederen scoren (§ 73C2 og § 16B3). Udtrykket kommer fra travsporten, hvor en hest skal trave rent: Ordbog over det danske Sprog har "traver urent" om en hest og et citat fra 1884 om, at en hest, der slår over i galop, må ride en volte. I almindeligt dansk betyder urent trav en handlemåde, der strider mod reglerne (Den Danske Ordbog).
+
+**Relaterede begreber:** ubefoejede-oplysninger, toeven, korrigeret-score
 
 ## Engelsk-dansk indeks
 
@@ -4483,7 +4507,6 @@ _Version 1.3. Ordbogen indeholder 438 kanoniske opslag._
 - **Percentage score** → [Procentscore](#procentscore)
 - **Personal score sheet** → [Privat regnskabskort](#privat-regnskabskort)
 - **Pivot** → [Pivot](#pivot)
-- **Pivot table** → [Pivotbord](#pivotbord)
 - **Plan of play** → [Spilleplan](#spilleplan)
 - **Play for the drop** → [Fald](#fald)
 - **Play period** → [Spilleperiode](#spilleperiode)
@@ -4502,6 +4525,7 @@ _Version 1.3. Ordbogen indeholder 438 kanoniske opslag._
 - **Queen** → [Dame](#dame)
 - **Raise** → [Støttemelding](#stoettemelding)
 - **Rank** → [Rang](#rang)
+- **RealBridge** → [RealBridge](#realbridge)
 - **Rebid** → [Genmelding](#genmelding)
 - **Rectification; correction** → [Berigtigelse](#berigtigelse)
 - **Red suits** → [Røde farver](#roede-farver)
@@ -4896,7 +4920,6 @@ _Version 1.3. Ordbogen indeholder 438 kanoniske opslag._
 - **Pas eller ret** → Pass or correct
 - **Passet hånd** → Passed hand
 - **Pivot** → Pivot
-- **Pivotbord** → Pivot table
 - **Plads** → Seat
 - **Pointvurdering** → Point count
 - **Pokeransigt** → Poker face
@@ -4907,6 +4930,7 @@ _Version 1.3. Ordbogen indeholder 438 kanoniske opslag._
 - **Psykisk melding** → Psychic call
 - **Puppet Stayman** → Puppet Stayman
 - **Rang** → Rank
+- **RealBridge** → RealBridge
 - **Redningsmelding** → Escape
 - **Redoblet kontrakt** → Redoubled contract
 - **Redobling** → Redouble

@@ -2517,7 +2517,7 @@ _Version 1.3. Ordbogen indeholder 438 kanoniske opslag._
 
 **Forklaring:** Slutspil er overbegrebet. De mest almindelige former er indspil, hvor spilføreren sætter en modspiller ind, så han må spille ud til spilførerens fordel, og skvis, hvor en modspiller må kaste et kort, han ikke kan undvære. Slutspillet forberedes ofte med eliminering.
 
-**Relaterede begreber:** indspil, skvis, eliminering, morton-s-fork
+**Relaterede begreber:** indspil, skvis, eliminering
 
 ### Spil af kortene
 **ID:** `spil-af-kortene`
@@ -3992,20 +3992,22 @@ _Version 1.3. Ordbogen indeholder 438 kanoniske opslag._
 **Alternative termer:** Princippet om begrænset valg
 **Niveau:** avanceret
 **Kategori:** Avancerede teknikker
-**Kort definition:** En sandsynlighedsregel der siger, at modspillerens valg af kort begrænser sandsynlige fordelinger.
+**Kort definition:** En sandsynlighedsregel: lægger en modspiller ét af to lige store kort, er det mere sandsynligt, at han havde kortet alene, end at han valgte det blandt to.
 
-**Forklaring:** En sandsynlighedsregel der siger, at modspillerens valg af kort begrænser sandsynlige fordelinger.
+**Forklaring:** Har en modspiller to lige store kort, fx D B, er det tilfældigt, hvilket af dem han lægger. Falder damen, er det derfor mere sandsynligt, at den sad alene, end at den kom fra D B. Med E K 10 3 2 på bordet og 7 6 5 4 på hånden indkasseres esset, og Øst lægger damen. I næste runde spilles der fra hånden mod bordet, og når Vest lægger lavt, vinder kipningen mod knægten i ca. 65 % mod ca. 35 % for at toppe farven. Reglen forudsætter, at modspilleren vælger tilfældigt mellem de lige store kort; Fordelingstræneren regner den med i sine linjer.
+
+**Relaterede begreber:** kipning, fald
 
 ### Eliminering
 **ID:** `eliminering`
 **Engelsk:** Elimination
 **Niveau:** avanceret
 **Kategori:** Avancerede teknikker
-**Kort definition:** At fjerne modspillernes sikre udspilsfarver før et slutspil.
+**Kort definition:** At fjerne modspillernes sikre udspilsfarver før et indspil.
 
-**Forklaring:** At fjerne modspillernes sikre udspilsfarver før et slutspil.
+**Forklaring:** Elimineringen fjerner de farver, som modspilleren kan spille ud i uden at skade sig selv, fra både hånden og bordet. Bagefter må modspilleren, der sættes ind, enten spille op i en gaffel eller spille en farve, som spilføreren kan trumfe på den ene hånd og kaste en taber af på den anden. Eksempel med spar som trumf: Syd har ♥E og ♦E D, Nord har en hjerter, og Vest har ♥D B, ♦K B og ♣E K. Syd indkasserer først ♥E, så både hånden og bordet er renonce i hjerter, og sætter derefter Vest ind med klør. Vest må spille ruder op i gaflen eller klør, som trumfes på bordet, mens hånden kaster en ruder. Spilles klør først, går Vest ud med en hjerter, og spilføreren mister et stik.
 
-**Relaterede begreber:** slutspil
+**Relaterede begreber:** slutspil, indspil
 
 ### Indspil
 **ID:** `indspil`
@@ -4014,7 +4016,7 @@ _Version 1.3. Ordbogen indeholder 438 kanoniske opslag._
 **Kategori:** Avancerede teknikker
 **Kort definition:** En form for slutspil, hvor spilføreren sætter en modspiller ind, så han må spille ud til spilførerens fordel, fx ind i en gaffel.
 
-**Forklaring:** En form for slutspil, hvor spilføreren sætter en modspiller ind, så han må spille ud til spilførerens fordel, fx ind i en gaffel.
+**Forklaring:** Indspillet virker, når modspilleren kun har udspil tilbage, der giver spilføreren et stik: op i en gaffel eller i en farve, som spilføreren kan trumfe på den ene hånd og kaste en taber af på den anden. Spilføreren fjerner først hans sikre udspil (eliminering) og giver ham så stikket. Eksempel uden trumf: Syd har ♠E D og ♥3, Nord ♠4 3 og ♥2, og Vest har ♠K B og ♥E. Syd spiller hjerter, Vest må vinde med esset og spille spar op i gaflen, og Syd får to sparstik i stedet for ét. Indspil og skvis er de almindelige former for slutspil, og i en kast-ind-skvis kommer de efter hinanden.
 
 **Relaterede begreber:** slutspil, eliminering, gaffel
 
@@ -4025,36 +4027,44 @@ _Version 1.3. Ordbogen indeholder 438 kanoniske opslag._
 **Kategori:** Avancerede teknikker
 **Kort definition:** Systematisk udledning af skjulte hænder ud fra meldinger, udspil, signaler og de spillede kort.
 
-**Forklaring:** Systematisk udledning af skjulte hænder ud fra meldinger, udspil, signaler og de spillede kort.
+**Forklaring:** Kortlæsningen bygger på tælling: hver modspiller har 13 kort, og der er 40 hp i spillet. Meldingerne giver grænser for hp og farvelængder, udspillet og signalerne viser mere, og når en modspiller viser renonce, kendes fordelingen i farven. Har den ene modspiller flere ukendte kort tilbage end den anden, sidder en manglende honnør oftest hos ham: har Vest tre ukendte kort og Øst seks, sidder en manglende dame hos Øst i to af tre tilfælde. Hp tælles på samme måde: har en modspiller passet som giver og allerede vist 11 hp, har han næppe også den manglende konge, for med 14 hp havde han åbnet.
+
+**Relaterede begreber:** taelling, fordelingssandsynlighed
 
 ### Morton's Fork
 **ID:** `morton-s-fork`
 **Engelsk:** Morton's Fork
 **Niveau:** avanceret
 **Kategori:** Avancerede teknikker
-**Kort definition:** Et slutspil hvor modspiller uanset valg giver spilfører fordel.
+**Kort definition:** Et kup, hvor spilføreren spiller mod en konge, så modspilleren med esset giver et stik væk, uanset om han tager esset eller dykker.
 
-**Forklaring:** Et slutspil hvor modspiller uanset valg giver spilfører fordel.
+**Forklaring:** Spilføreren spiller et lille kort mod en konge, når modspilleren foran kongen har esset. Tager han esset, bliver kongen et stik, som spilføreren kan kaste en taber af på; dykker han, vinder kongen, og spilføreren slipper for at tabe et stik til esset. Morton's Fork er et kup og ikke et slutspil: modspilleren tvinges hverken til at spille ud eller til at kaste af, og kuppet kan komme tidligt i spillet. Navnet kommer fra kardinal John Morton, kansler for den engelske konge Henrik 7., hvis skatteopkrævere sagde, at den, der levede rigt, kunne betale, og den, der levede sparsomt, havde sparet op.
 
-**Relaterede begreber:** slutspil
+**Relaterede begreber:** kipning, dyk
 
 ### Optimal kontrakt
 **ID:** `optimal-kontrakt`
 **Engelsk:** Optimum contract
+**Alternative termer:** Par-kontrakt
 **Niveau:** øvet
 **Kategori:** Avancerede teknikker
 **Kort definition:** Den bedste kontrakt baseret på hænderne.
 
-**Forklaring:** Den bedste kontrakt baseret på hænderne.
+**Forklaring:** Med åbne kort kan den optimale kontrakt regnes ud for begge par som par-kontrakten (par betyder her normen, ikke makkerpar): den kontrakt, hvor ingen af parrene kan få en bedre score ved at melde videre eller doble. Den kan være et offer. Kan Nord-Syd vinde 4♥ i zonen (620), og går Øst-Vest kun to ned i 4♠ doblet uden for zonen (300), er par-kontrakten 4♠ doblet, for 5♥ en ned (−100) er ringere for Nord-Syd end 300 (§ 77). Post Mortem viser par-kontrakten for hvert spil. Ved bordet ser ingen alle kort, så den kontrakt, der er bedst i det lange løb, kan være en anden, fx når en slem kun vinder på en kipning.
 
-### Procentchance
-**ID:** `procentchance`
+**Relaterede begreber:** aabne-kort, offer
+
+### Procentspil
+**ID:** `procentspil`
 **Engelsk:** Percentage play
+**Alternative termer:** Procentchance
 **Niveau:** øvet
 **Kategori:** Avancerede teknikker
 **Kort definition:** Den spilleplan, der giver størst matematisk sandsynlighed for det ønskede antal stik uden yderligere oplysninger.
 
-**Forklaring:** Den spilleplan, der giver størst matematisk sandsynlighed for det ønskede antal stik uden yderligere oplysninger.
+**Forklaring:** Planen findes ved at tælle de mulige sidninger af modpartens kort og lægge chancerne sammen for dem, hver linje vinder på. Skal farven give alle stikkene, og mangler damen med ni kort i alt (E K B 3 2 på bordet og 7 6 5 4 på hånden), vinder det at toppe farven i 53,1 %, fordi damen falder, når den sidder alene eller D x; esset og derefter kipningen vinder i 51,4 %. Med otte kort (6 5 4 på hånden) vender det: esset og kipningen vinder i 39,6 % og at toppe farven i 32,8 %. Det er huskereglen "Eight ever, nine never". Tallene gælder, før meldingerne eller spillet har vist noget om hænderne; derefter er det kortlæsningen, der afgør.
+
+**Relaterede begreber:** fordelingssandsynlighed, eight-ever-nine-never, sikkerhedsspil
 
 ### Skvis
 **ID:** `skvis`
@@ -4062,20 +4072,23 @@ _Version 1.3. Ordbogen indeholder 438 kanoniske opslag._
 **Alternative termer:** Squeeze / Skvis
 **Niveau:** avanceret
 **Kategori:** Avancerede teknikker
-**Kort definition:** At presse en modspiller til at kaste et kort, der gør dine farver gode.
+**Kort definition:** En form for slutspil, hvor en modspiller må kaste et kort, han ikke kan undvære, så et af spilførerens kort bliver et stik.
 
-**Forklaring:** At presse en modspiller til at kaste et kort, der gør dine farver gode.
+**Forklaring:** Skvisen virker, når én modspiller alene vogter to farver, og spilføreren kan tage alle de resterende stik undtagen ét. Vinderne i de andre farver indkasseres, til modspilleren ikke har flere frie kort og må opgive den ene farve. Eksempel uden trumf: Nord har ♠E B og ♥K, Syd ♠4, ♥2 og ♣E, og Vest har ♠K D og ♥E. Når Syd indkasserer ♣E, må Vest kaste før bordet: kaster han ♥E, er ♥K et stik, og kaster han en spar, falder ♠K under esset, og ♠B bliver god. Syd får tre stik i stedet for to. Rammer skvisen begge modspillere, hedder den dobbeltskvis. Skvis og indspil er de almindelige former for slutspil.
 
-**Relaterede begreber:** slutspil
+**Relaterede begreber:** slutspil, strip-squeeze, vienna-coup
 
 ### Strip-squeeze
 **ID:** `strip-squeeze`
 **Engelsk:** Strip-squeeze
+**Alternative termer:** Kast-ind-skvis
 **Niveau:** avanceret
 **Kategori:** Avancerede teknikker
-**Kort definition:** Kombination af eliminering og skvis.
+**Kort definition:** En form for slutspil, hvor en skvis tvinger modspilleren til at kaste et kort, han skulle vogte en farve eller komme ud med, så han bagefter kan sættes ind: skvis og indspil efter hinanden.
 
-**Forklaring:** Kombination af eliminering og skvis.
+**Forklaring:** Strip-squeezen kaldes også kast-ind-skvis. Skvisen giver ikke selv et stik, men tvinger modspilleren til at kaste et kort, han skulle bruge enten til at vogte en farve eller til at komme ud med, og bagefter sættes han ind og må spille ud til spilførerens fordel. Den er altså skvis og indspil efter hinanden, de to almindelige former for slutspil. Eksempel uden trumf: Nord har ♠4 3 og ♥5 4, Syd ♠E D, ♥3 og ♣E, og Vest har ♠K B og ♥E K. Syd indkasserer ♣E: kaster Vest en spar, falder ♠K under esset, og kaster han en hjerter, sættes han ind med ♥3 og må spille spar op i gaflen. Syd får tre stik og uden skvisen eller indspillet kun to. På engelsk bruges strip også om eliminering (strip and endplay), men i en strip-squeeze er det skvisen, der fjerner modspillerens udgange.
+
+**Relaterede begreber:** skvis, indspil
 
 ### Taber på taber
 **ID:** `taber-paa-taber`
@@ -4084,16 +4097,20 @@ _Version 1.3. Ordbogen indeholder 438 kanoniske opslag._
 **Kategori:** Avancerede teknikker
 **Kort definition:** At smide en taber på en taber for at undgå større tab.
 
-**Forklaring:** At smide en taber på en taber for at undgå større tab.
+**Forklaring:** I stedet for at trumfe et stik, der alligevel er tabt, kaster spilføreren en taber af i en anden farve, så to tabere bliver til ét stik. Det bruges, når en trumfning ville blive overtrumfet, når trumferne skal bruges til noget andet, eller når den rigtige modspiller skal sættes ind. Eksempel med spar som trumf: Vest spiller ♥K ud, bordet har ♠8, ♦E K 2 og ♣3 og ingen hjerter, og Øst har ♠9 og ♣K D. Trumfer bordet med ♠8, overtrumfer Øst og får også et klørstik. Kastes ♣3 i stedet, er bordet renonce i klør; når Vest fortsætter med klør, trumfer bordet, og Øst må bekende, så spilføreren kun taber stikket til ♥K.
+
+**Relaterede begreber:** taber, overtrumf
 
 ### Vienna Coup
 **ID:** `vienna-coup`
 **Engelsk:** Vienna Coup
 **Niveau:** avanceret
 **Kategori:** Avancerede teknikker
-**Kort definition:** En skvismanøvre der kræver korrekt rækkefølge af stik.
+**Kort definition:** Et forberedende spil til en skvis: spilføreren indkasserer et højt kort i en farve, så modspillerens lavere honnør bliver højeste kort, og farven ikke blokerer skvisen.
 
-**Forklaring:** En skvismanøvre der kræver korrekt rækkefølge af stik.
+**Forklaring:** Kuppet frigør en trussel før skvisen: spilføreren indkasserer et es, selv om det gør modspillerens konge til højeste kort, fordi esset ellers ville blokere farven. Eksempel uden trumf: Nord har ♠E B, ♥E 3 og ♣2, Syd ♠4, ♥D 2 og ♣E K, og Øst har ♠K D, ♥K 5 og ♦9. Syd spiller først ♥2 til ♥E, så ♥D bliver en trussel mod Østs ♥K, og indkasserer derefter kløren. Øst må opgive enten sparen eller ♥K, og Syd får fem stik; indkasseres kløren først, får Syd fire. Navnet kommer fra englænderen James Clay, der i 1800-tallet beskrev spillet efter en whistspiller fra Wien.
+
+**Relaterede begreber:** skvis
 
 ### Åbne kort
 **ID:** `aabne-kort`
@@ -4102,7 +4119,9 @@ _Version 1.3. Ordbogen indeholder 438 kanoniske opslag._
 **Kategori:** Avancerede teknikker
 **Kort definition:** Analyse hvor alle fire hænder er kendt; bruges til at beregne optimale linjer.
 
-**Forklaring:** Analyse hvor alle fire hænder er kendt; bruges til at beregne optimale linjer.
+**Forklaring:** Med åbne kort spiller både spilføreren og modspillerne, som om de kunne se alle 52 kort: spilføreren tager kun en kipning, når den går, og ingen gætter forkert. Det engelske double-dummy (DD) betyder det samme; dummy er det engelske ord for bordet. Spilfordelingerne fra turneringer har ofte en tabel over, hvor mange stik hver side kan vinde i hver farve og sans med åbne kort, regnet med et program som DDS, og Post Mortem sammenligner klubaftenens spil med de tal. Ved bordet ser ingen alle kort, så den linje, der er bedst med åbne kort, er ikke altid den, der giver størst chance.
+
+**Relaterede begreber:** optimal-kontrakt
 
 ## Talemåder og bridgeslang
 
@@ -4460,7 +4479,7 @@ _Version 1.3. Ordbogen indeholder 438 kanoniske opslag._
 - **Penalty card** → [Strafkort](#strafkort)
 - **Penalty double** → [Strafdobling](#strafdobling)
 - **Penalty pass** → [Strafpas](#straffepas)
-- **Percentage play** → [Procentchance](#procentchance)
+- **Percentage play** → [Procentspil](#procentspil)
 - **Percentage score** → [Procentscore](#procentscore)
 - **Personal score sheet** → [Privat regnskabskort](#privat-regnskabskort)
 - **Pivot** → [Pivot](#pivot)
@@ -4882,8 +4901,8 @@ _Version 1.3. Ordbogen indeholder 438 kanoniske opslag._
 - **Pointvurdering** → Point count
 - **Pokeransigt** → Poker face
 - **Privat regnskabskort** → Personal score sheet
-- **Procentchance** → Percentage play
 - **Procentscore** → Percentage score
+- **Procentspil** → Percentage play
 - **Præference** → Preference / Correct
 - **Psykisk melding** → Psychic call
 - **Puppet Stayman** → Puppet Stayman

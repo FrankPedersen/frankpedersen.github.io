@@ -349,9 +349,7 @@ class Portion9(unittest.TestCase):
         self.assertEqual(len(i_kategorien), 28)
         for navn in i_kategorien:
             self.assertNotEqual(self.opslag[navn]['Forklaring'], self.opslag[navn]['Kort definition'], navn)
-        # 46 før portion 9, 22 færre nu.
-        gentager = [n for n, o in self.opslag.items() if o['Forklaring'] == o['Kort definition']]
-        self.assertEqual(len(gentager), 24)
+        # 46 før portion 9 og 24 efter; tallet for hele ordbogen tælles nu i Portion10 (SPEC-ordbog-forklaringer-10.md).
 
     def test_gennemspil_i_stedet_for_gennembrud(self):
         self.assertNotIn('Gennembrud', self.opslag)
@@ -451,6 +449,145 @@ class Portion9(unittest.TestCase):
         for navn, henvisning in (('Modspilssignal', '(§ 40A1b)'), ('Modspilssignal', '(§ 20F2)'), ('Tilspil', '(§ 44C)'),
                                  ('Lavt i anden hånd', '(§ 73D2)'), ('Åbningsudspil', '(§ 41C)')):
             self.assertIn(henvisning, self.opslag[navn]['Forklaring'], navn)
+
+
+class Portion10(unittest.TestCase):
+    """SPEC-ordbog-forklaringer-10.md (Franks valg 15. november 2026): Avancerede teknikker. De tolv forklaringer, seks
+    rettede definitioner, Procentspil i stedet for Procentchance, Kast-ind-skvis og Par-kontrakt som alternative termer,
+    de relaterede begreber (uden linket mellem Slutspil og Morton's Fork) og indekserne."""
+
+    AVANCERET = 'Avancerede teknikker'
+    DE_12 = ['Begrænset valg', 'Eliminering', 'Indspil', 'Kortlæsning', "Morton's Fork", 'Optimal kontrakt', 'Procentspil',
+             'Skvis', 'Strip-squeeze', 'Taber på taber', 'Vienna Coup', 'Åbne kort']
+    DEFINITIONER = {
+        'Begrænset valg': 'En sandsynlighedsregel: lægger en modspiller ét af to lige store kort, er det mere sandsynligt, at '
+                          'han havde kortet alene, end at han valgte det blandt to.',
+        'Eliminering': 'At fjerne modspillernes sikre udspilsfarver før et indspil.',
+        "Morton's Fork": 'Et kup, hvor spilføreren spiller mod en konge, så modspilleren med esset giver et stik væk, uanset '
+                         'om han tager esset eller dykker.',
+        'Skvis': 'En form for slutspil, hvor en modspiller må kaste et kort, han ikke kan undvære, så et af spilførerens kort '
+                 'bliver et stik.',
+        'Strip-squeeze': 'En form for slutspil, hvor en skvis tvinger modspilleren til at kaste et kort, han skulle vogte en '
+                         'farve eller komme ud med, så han bagefter kan sættes ind: skvis og indspil efter hinanden.',
+        'Vienna Coup': 'Et forberedende spil til en skvis: spilføreren indkasserer et højt kort i en farve, så modspillerens '
+                       'lavere honnør bliver højeste kort, og farven ikke blokerer skvisen.',
+    }
+    # De seks andre definitioner er ikke forkerte og står uændret.
+    UAENDREDE = {
+        'Indspil': 'En form for slutspil, hvor spilføreren sætter en modspiller ind, så han må spille ud til spilførerens '
+                   'fordel, fx ind i en gaffel.',
+        'Kortlæsning': 'Systematisk udledning af skjulte hænder ud fra meldinger, udspil, signaler og de spillede kort.',
+        'Optimal kontrakt': 'Den bedste kontrakt baseret på hænderne.',
+        'Procentspil': 'Den spilleplan, der giver størst matematisk sandsynlighed for det ønskede antal stik uden yderligere '
+                       'oplysninger.',
+        'Taber på taber': 'At smide en taber på en taber for at undgå større tab.',
+        'Åbne kort': 'Analyse hvor alle fire hænder er kendt; bruges til at beregne optimale linjer.',
+    }
+    RELATEREDE = {'Begrænset valg': 'kipning, fald', 'Eliminering': 'slutspil, indspil', 'Indspil': 'slutspil, eliminering, gaffel',
+                  'Kortlæsning': 'taelling, fordelingssandsynlighed', "Morton's Fork": 'kipning, dyk',
+                  'Optimal kontrakt': 'aabne-kort, offer',
+                  'Procentspil': 'fordelingssandsynlighed, eight-ever-nine-never, sikkerhedsspil',
+                  'Skvis': 'slutspil, strip-squeeze, vienna-coup', 'Strip-squeeze': 'skvis, indspil',
+                  'Taber på taber': 'taber, overtrumf', 'Vienna Coup': 'skvis', 'Åbne kort': 'optimal-kontrakt'}
+
+    @classmethod
+    def setUpClass(cls):
+        cls.bygger = hent_bygger()
+        cls.kilde = KILDE.read_text(encoding='utf-8')
+        cls.opslag = opslag_i_kilden()
+        cls.side = læs_side()
+        cls.paa_siden = {o['id']: o for o in cls.side.opslag}
+        cls.bygget = cls.bygger.parse(cls.kilde)
+
+    def test_de_12_har_deres_egen_forklaring(self):
+        i_kategorien = sorted(n for n, o in self.opslag.items() if o['Kategori'] == self.AVANCERET)
+        self.assertEqual(i_kategorien, sorted(self.DE_12))
+        for navn in self.DE_12:
+            self.assertEqual(self.opslag[navn]['afsnit'], self.AVANCERET, navn)
+            self.assertNotEqual(self.opslag[navn]['Forklaring'], self.opslag[navn]['Kort definition'], navn)
+        # 46 før portion 9, 24 efter og 12 efter portion 10: Talemåder og bridgeslang, Onlinebridge og Pivotbord.
+        gentager = {}
+        for o in self.opslag.values():
+            if o['Forklaring'] == o['Kort definition']:
+                gentager[o['Kategori']] = gentager.get(o['Kategori'], 0) + 1
+        self.assertEqual(gentager, {'Talemåder og bridgeslang': 9, 'Onlinebridge og digitale turneringer': 2,
+                                    'Turnering og organisering': 1})
+        # Ingen af de tolv er blandt de 51 nye opslag, så de 42 nye med egen forklaring er de samme som efter portion 9.
+        self.assertFalse(set(self.DE_12) & set(KategorierOgNiveauer.NYE))
+        self.assertEqual(len(KategorierOgNiveauer.MED_FORKLARING), 42)
+
+    def test_seks_rettede_definitioner_og_seks_uaendrede(self):
+        for navn, tekst in {**self.DEFINITIONER, **self.UAENDREDE}.items():
+            self.assertEqual(self.opslag[navn]['Kort definition'], tekst, navn)
+
+    def test_procentspil_i_stedet_for_procentchance(self):
+        self.assertNotIn('Procentchance', self.opslag)
+        o = self.opslag['Procentspil']
+        self.assertEqual((o['ID'], o['Engelsk'], o['Alternative termer'], o['Kategori'], o['Niveau']),
+                         ('`procentspil`', 'Percentage play', 'Procentchance', self.AVANCERET, 'øvet'))
+        self.assertNotIn('procentchance', self.side.ids)
+        self.assertEqual(søg(self.side, 'procentchance'), ['procentspil'])
+        self.assertEqual(søg(self.side, 'procentspil'), ['procentspil'])
+        self.assertIn('procentspil', søg(self.side, 'percentage play'))
+
+    def test_kast_ind_skvis_og_par_kontrakt_som_alternative_termer(self):
+        self.assertEqual(self.opslag['Strip-squeeze']['Alternative termer'], 'Kast-ind-skvis')
+        self.assertEqual(self.opslag['Optimal kontrakt']['Alternative termer'], 'Par-kontrakt')
+        self.assertEqual(søg(self.side, 'kast-ind-skvis'), ['strip-squeeze'])
+        self.assertEqual(søg(self.side, 'par-kontrakt'), ['optimal-kontrakt'])
+
+    def test_relaterede_begreber_og_intet_link_mellem_slutspil_og_mortons_fork(self):
+        for navn, rel in self.RELATEREDE.items():
+            self.assertEqual(self.opslag[navn].get('Relaterede begreber'), rel, navn)
+        self.assertEqual(self.opslag['Slutspil']['Relaterede begreber'], 'indspil, skvis, eliminering')
+        self.assertNotIn('morton-s-fork', self.paa_siden['slutspil']['rel'])
+        self.assertNotIn('slutspil', self.paa_siden['morton-s-fork']['rel'])
+        self.assertIn('slutspil', self.paa_siden['skvis']['rel'])
+
+    def test_indekserne_foelger_med(self):
+        engelsk = {(r['engelsk'], r['id']) for r in self.bygget['indeks']}
+        self.assertIn(('Percentage play', 'procentspil'), engelsk)
+        self.assertNotIn('procentchance', {i for _, i in engelsk})
+        dansk = [l for l in self.kilde[self.kilde.index('## Dansk-engelsk indeks'):].splitlines() if l.startswith('- **')]
+        self.assertIn('- **Procentspil** → Percentage play', dansk)
+        self.assertFalse([l for l in dansk if l.startswith('- **Procentchance** ')])
+        # Procentspil står på sin alfabetiske plads mellem naboerne.
+        i = dansk.index('- **Procentspil** → Percentage play')
+        nøgle = lambda l: self.bygger.sorteringsnøgle(l[4:l.index('** →')])
+        self.assertLessEqual(nøgle(dansk[i - 1]), nøgle(dansk[i]))
+        self.assertLessEqual(nøgle(dansk[i]), nøgle(dansk[i + 1]))
+
+    def test_slutspil_indspil_skvis_og_kast_ind_skvis_haenger_sammen(self):
+        for navn in ('Indspil', 'Skvis', 'Strip-squeeze'):
+            self.assertTrue(self.opslag[navn]['Kort definition'].startswith('En form for slutspil, hvor '), navn)
+        self.assertTrue(self.opslag['Strip-squeeze']['Forklaring'].startswith('Strip-squeezen kaldes også kast-ind-skvis.'))
+        self.assertIn('skvis og indspil efter hinanden', self.opslag['Strip-squeeze']['Forklaring'])
+        self.assertIn('Indspil og skvis er de almindelige former for slutspil', self.opslag['Indspil']['Forklaring'])
+        self.assertIn('Skvis og indspil er de almindelige former for slutspil', self.opslag['Skvis']['Forklaring'])
+        self.assertIn('Morton\'s Fork er et kup og ikke et slutspil', self.opslag["Morton's Fork"]['Forklaring'])
+
+    def test_eksemplerne_og_tallene(self):
+        for navn, uddrag in (
+                ('Begrænset valg', 'Med E K 10 3 2 på bordet og 7 6 5 4 på hånden indkasseres esset, og Øst lægger damen.'),
+                ('Begrænset valg', 'vinder kipningen mod knægten i ca. 65 % mod ca. 35 % for at toppe farven'),
+                ('Procentspil', 'vinder det at toppe farven i 53,1 %'),
+                ('Procentspil', 'esset og derefter kipningen vinder i 51,4 %'),
+                ('Procentspil', 'esset og kipningen vinder i 39,6 % og at toppe farven i 32,8 %'),
+                ('Procentspil', 'huskereglen "Eight ever, nine never"'),
+                ('Kortlæsning', 'sidder en manglende dame hos Øst i to af tre tilfælde'),
+                ('Optimal kontrakt', 'Kan Nord-Syd vinde 4♥ i zonen (620), og går Øst-Vest kun to ned i 4♠ doblet uden for '
+                                     'zonen (300)'),
+                ('Optimal kontrakt', '5♥ en ned (−100) er ringere for Nord-Syd end 300 (§ 77)'),
+                ('Skvis', 'Nord har ♠E B og ♥K, Syd ♠4, ♥2 og ♣E, og Vest har ♠K D og ♥E.'),
+                ('Indspil', 'Syd har ♠E D og ♥3, Nord ♠4 3 og ♥2, og Vest har ♠K B og ♥E.'),
+                ('Eliminering', 'Syd indkasserer først ♥E, så både hånden og bordet er renonce i hjerter'),
+                ('Strip-squeeze', 'Nord har ♠4 3 og ♥5 4, Syd ♠E D, ♥3 og ♣E, og Vest har ♠K B og ♥E K.'),
+                ('Vienna Coup', 'Syd spiller først ♥2 til ♥E, så ♥D bliver en trussel mod Østs ♥K'),
+                ('Vienna Coup', 'James Clay'),
+                ('Taber på taber', 'Vest spiller ♥K ud, bordet har ♠8, ♦E K 2 og ♣3 og ingen hjerter'),
+                ("Morton's Fork", 'kardinal John Morton'),
+                ('Åbne kort', 'Det engelske double-dummy (DD) betyder det samme')):
+            self.assertIn(uddrag, self.opslag[navn]['Forklaring'], navn)
 
 
 class LinksTilScoring(unittest.TestCase):

@@ -2813,7 +2813,7 @@ _Version 1.3. Ordbogen indeholder 438 kanoniske opslag._
 **Systemafhængig:** Ja
 **Kort definition:** Et fordelingssignal, hvor et lavt kort viser et lige antal og et højt kort et ulige.
 
-**Forklaring:** Signalet er det omvendte af det internationale, hvor højt-lavt viser et lige antal. Bridgesystem bruger Malmømarkeringer, når spilfører spiller en ny farve, og efter makkers konge-udspil: fra to eller fire kort lægges det laveste, fra tre eller fem det højeste, man har råd til.
+**Forklaring:** Signalet er det omvendte af det internationale, hvor højt-lavt viser et lige antal. Bridgesystem bruger Malmømarkeringer, når spilfører spiller en ny farve, og efter makkers konge-udspil: fra to eller fire kort lægges det laveste, fra tre eller fem det højeste, man har råd til. 2 over 1 – Moderne majorstøtte viser også lige antal med lavt kort, når attitude er kendt, eller spilfører angriber farven.
 
 ### Modspil
 **ID:** `modspil`

@@ -740,14 +740,16 @@ class Markeringer(unittest.TestCase):
                         'eller spilfører angriber farven.'),
         'Modspilssignal': ('og parret aftaler, hvilken der gælder hvornår. Begge husets systemer spiller lavt kort = kald og '
                            'lavt kort = lige antal. I 2 over 1 – Moderne majorstøtte kommer kald og afvisning først'),
+        # Franks tilføjelse før fletningen (15. november 2026).
+        'Malmømarkering': ('fra to eller fire kort lægges det laveste, fra tre eller fem det højeste, man har råd til. 2 over 1 – '
+                           'Moderne majorstøtte viser også lige antal med lavt kort, når attitude er kendt, eller spilfører '
+                           'angriber farven.'),
     }
     UAENDREDE = {
         'Afkast': 'I 2 over 1 – Moderne majorstøtte er afkastet i en uinteressant farve Lavinthal: et højt kort beder om '
                   'den højeste af de to øvrige farver, et lavt om den laveste.',
         'Lavinthal-signal': 'I 2 over 1 – Moderne majorstøtte er Lavinthal en afkastmarkering, der først gælder, når kald og '
                             'afvisning ikke har mere at sige.',
-        'Malmømarkering': 'Bridgesystem bruger Malmømarkeringer, når spilfører spiller en ny farve, og efter makkers '
-                          'konge-udspil',
         'Farvepræferencesignal': 'Signalet kaldes også Lavinthal, og både Konventionstrænerens kort Lavinthal og 2 over 1 – '
                                  'Moderne majorstøtte bruger det.',
     }
@@ -756,7 +758,7 @@ class Markeringer(unittest.TestCase):
     def setUpClass(cls):
         cls.opslag = opslag_i_kilden()
 
-    def test_de_fem_opslag_siger_lavt_kald_og_lavt_lige_for_begge_systemer(self):
+    def test_de_seks_opslag_siger_lavt_kald_og_lavt_lige_for_begge_systemer(self):
         for navn, tekst in self.NY.items():
             self.assertIn(tekst, self.opslag[navn]['Forklaring'], navn)
 
@@ -765,6 +767,12 @@ class Markeringer(unittest.TestCase):
             for gammel in ('Moderne majorstøtte spiller højt kort = kald', 'sådan spiller 2 over 1 – Moderne majorstøtte',
                            'højt-lavt, og sådan spiller', 'lavt-højt, og sådan spiller'):
                 self.assertNotIn(gammel, o['Forklaring'], navn)
+
+    def test_malmoemarkering_naevner_stadig_bridgesystem(self):
+        self.assertIn('Bridgesystem bruger Malmømarkeringer, når spilfører spiller en ny farve, og efter makkers konge-udspil',
+                      self.opslag['Malmømarkering']['Forklaring'])
+        self.assertEqual(self.opslag['Malmømarkering']['Kort definition'],
+                         'Et fordelingssignal, hvor et lavt kort viser et lige antal og et højt kort et ulige.')
 
     def test_afkast_og_lavinthal_er_uaendrede(self):
         for navn, tekst in self.UAENDREDE.items():

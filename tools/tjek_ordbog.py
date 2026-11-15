@@ -85,7 +85,7 @@ class Ordbogssiden(unittest.TestCase):
 
     def test_438_opslag_og_tallet_i_underteksten(self):
         # Version 1.3 (SPEC-ordbog-kategorier): 387 − 1 sammenlagt + 51 nye; portion 9 (SPEC-ordbog-forklaringer-9.md):
-        # Norsk fordeling ud, MUD og Aktivt udspil ind
+        # Norsk fordeling ud, MUD og Aktivt udspil ind; portion 11 (SPEC-ordbog-forklaringer-11.md): Pivotbord ud, RealBridge ind
         self.assertEqual(len(self.side.opslag), 438)
         self.assertIn('438 bridgeord på dansk med engelsk oversættelse.', self.html)
 
@@ -125,8 +125,17 @@ class Ordbogssiden(unittest.TestCase):
                 forskellige += 1
                 self.assertIn('expl', p, navn)
         self.assertEqual(ens + forskellige, 438)
-        self.assertTrue(ens and forskellige)
+        # Efter portion 11 (SPEC-ordbog-forklaringer-11.md) har alle opslag deres egen forklaring, så reglen om, at en
+        # forklaring, der gentager definitionen, ikke vises, tjekkes på en kilde, hvor Afkast gentager sin definition.
+        self.assertEqual(ens, 0)
         self.assertIn('expl', self.opslag['bordet']['p'])
+        afkast = opslag_i_kilden()['Afkast']
+        kilde = KILDE.read_text(encoding='utf-8')
+        ændret = kilde.replace(f"**Forklaring:** {afkast['Forklaring']}", f"**Forklaring:** {afkast['Kort definition']}", 1)
+        self.assertNotEqual(ændret, kilde)
+        artikel = re.search(r'<article class="entry" id="afkast".*?</article>', hent_bygger().byg(ændret), re.S).group(0)
+        self.assertIn('class="def"', artikel)
+        self.assertNotIn('class="expl"', artikel)
 
     def test_engelsk_dansk_indeks_er_en_foldbar_liste_og_dansk_engelsk_vises_ikke(self):
         self.assertRegex(self.html, r'<details[^>]*>\s*<summary[^>]*>Engelsk–dansk indeks</summary>')
@@ -194,12 +203,14 @@ class KategorierOgNiveauer(unittest.TestCase):
                   'Talemåder og bridgeslang']
     # Forslagets tal for de 387 opslag, uden Princippet om begrænset valg og med de 51 nye. Portion 9
     # (SPEC-ordbog-forklaringer-9.md): Marmic er flyttet til Meldesystemer og konventioner (42 → 43), Norsk fordeling er
-    # fjernet, og MUD og Aktivt udspil er nye under Modspil, udspil og signaler (28 → 29 − 1 = 28).
+    # fjernet, og MUD og Aktivt udspil er nye under Modspil, udspil og signaler (28 → 29 − 1 = 28). Portion 11
+    # (SPEC-ordbog-forklaringer-11.md): Pivotbord (øvet) er fjernet fra Turnering og organisering (43 → 42), og RealBridge
+    # (begynder) er nyt under Onlinebridge og digitale turneringer (3 → 4).
     PR_KATEGORI = {'Grundlæggende begreber': 98, 'Meldinger og meldeforløb': 60, 'Meldesystemer og konventioner': 43,
                    'Konkurrencemeldinger': 33, 'Spilføring': 44, 'Modspil, udspil og signaler': 28, 'Score og beregning': 29,
-                   'Turnering og organisering': 43, 'Love, etik og procedure': 36, 'Onlinebridge og digitale turneringer': 3,
+                   'Turnering og organisering': 42, 'Love, etik og procedure': 36, 'Onlinebridge og digitale turneringer': 4,
                    'Avancerede teknikker': 12, 'Talemåder og bridgeslang': 9}
-    PR_NIVEAU = {'begynder': 190, 'let øvet': 136, 'øvet': 94, 'avanceret': 18}
+    PR_NIVEAU = {'begynder': 191, 'let øvet': 136, 'øvet': 93, 'avanceret': 18}
     NYE = ['Baghånd', 'Forhånd', 'Honnørsekvens', 'Lavhonnør', 'Mellemhånd', 'Mellemkort', 'Nabohonnører',
            'Selvspillende farve', 'Spillestærk hånd', 'Toptaber', '3-trinsraketten', 'Åbningsfarve', 'Bogmelding',
            'Dobbeltspring', 'Enkeltstøtte', 'Melderunde', 'Misfit', 'Nødmelding / nødsans', 'Overmelding', 'Rundekrav',
@@ -210,17 +221,10 @@ class KategorierOgNiveauer(unittest.TestCase):
            'Kort tredje / honnør anden', 'Melde i den blå luft', 'Pointrytter', 'Pokeransigt', 'Sælge ud',
            'Unoder ved bordet', 'Urent trav']
     # Portion 1, 2, 4, 6, 7, 8 og 9 af forklaringerne (SPEC-ordbog-forklaringer-1.md, -2.md, -4.md, -6.md, -7.md, -8.md
-    # og -9.md, Franks valg 6., 10., 11. og 14. november 2026) har givet 42 af de nye opslag deres egen forklaring; de
-    # andre har samme forklaring som definition, til deres portion kommer (portion 3 og 5 havde ingen af dem).
-    MED_FORKLARING = {'Baghånd', 'Forhånd', 'Honnørsekvens', 'Lavhonnør', 'Mellemhånd', 'Mellemkort', 'Nabohonnører',
-                      'Selvspillende farve', 'Spillestærk hånd', 'Toptaber',
-                      '26-33-37', '3-trinsraketten', 'Bogmelding', 'Dobbeltspring', 'Enkeltstøtte', 'Melderunde', 'Misfit',
-                      'Nødmelding / nødsans', 'Overmelding', 'Rundekrav', 'Springgenmelding', 'Umeldt farve', 'Åbningsfarve',
-                      '"Eight ever, nine never"', 'Badekup (Bath Coup)', 'Farvebehandling', 'Forbindelser',
-                      'Fordelingssandsynlighed', 'Spilleplan',
-                      '1NT-åbning', '2NT-åbning', 'Regnskab',
-                      'Defensiven', 'Forhåndsoffermelding', 'Meldenød', 'Offensiven', 'Viderespærring',
-                      'Honnør på honnør', 'Højt i tredje hånd', 'Lavt i anden hånd', 'Stik ikke automatisk', 'Tilspil'}
+    # og -9.md, Franks valg 6., 10., 11. og 14. november 2026) gav 42 af de nye opslag deres egen forklaring (portion 3,
+    # 5 og 10 havde ingen af dem). Portion 11 (SPEC-ordbog-forklaringer-11.md, Franks valg 15. november 2026) giver de ni
+    # talemåder deres, så nu har alle 51 nye opslag deres egen forklaring.
+    MED_FORKLARING = set(NYE)
 
     @classmethod
     def setUpClass(cls):
@@ -505,16 +509,9 @@ class Portion10(unittest.TestCase):
         for navn in self.DE_12:
             self.assertEqual(self.opslag[navn]['afsnit'], self.AVANCERET, navn)
             self.assertNotEqual(self.opslag[navn]['Forklaring'], self.opslag[navn]['Kort definition'], navn)
-        # 46 før portion 9, 24 efter og 12 efter portion 10: Talemåder og bridgeslang, Onlinebridge og Pivotbord.
-        gentager = {}
-        for o in self.opslag.values():
-            if o['Forklaring'] == o['Kort definition']:
-                gentager[o['Kategori']] = gentager.get(o['Kategori'], 0) + 1
-        self.assertEqual(gentager, {'Talemåder og bridgeslang': 9, 'Onlinebridge og digitale turneringer': 2,
-                                    'Turnering og organisering': 1})
-        # Ingen af de tolv er blandt de 51 nye opslag, så de 42 nye med egen forklaring er de samme som efter portion 9.
+        # 46 før portion 9, 24 efter og 12 efter portion 10; tallet for hele ordbogen tælles nu i Portion11
+        # (SPEC-ordbog-forklaringer-11.md). Ingen af de tolv er blandt de 51 nye opslag.
         self.assertFalse(set(self.DE_12) & set(KategorierOgNiveauer.NYE))
-        self.assertEqual(len(KategorierOgNiveauer.MED_FORKLARING), 42)
 
     def test_seks_rettede_definitioner_og_seks_uaendrede(self):
         for navn, tekst in {**self.DEFINITIONER, **self.UAENDREDE}.items():
@@ -587,6 +584,128 @@ class Portion10(unittest.TestCase):
                 ('Taber på taber', 'Vest spiller ♥K ud, bordet har ♠8, ♦E K 2 og ♣3 og ingen hjerter'),
                 ("Morton's Fork", 'kardinal John Morton'),
                 ('Åbne kort', 'Det engelske double-dummy (DD) betyder det samme')):
+            self.assertIn(uddrag, self.opslag[navn]['Forklaring'], navn)
+
+
+class Portion11(unittest.TestCase):
+    """SPEC-ordbog-forklaringer-11.md (Franks valg 15. november 2026): Talemåder og bridgeslang og Onlinebridge og
+    digitale turneringer. De elleve forklaringer, tre rettede definitioner, de relaterede begreber, det nye opslag
+    RealBridge og Pivotbord fjernet. Bagefter gentager intet opslag sin definition."""
+
+    TALEMAADER = 'Talemåder og bridgeslang'
+    ONLINE = 'Onlinebridge og digitale turneringer'
+    DE_11 = ['Byttehandel', 'Fanget på det gale ben', 'Kort tredje / honnør anden', 'Melde i den blå luft', 'Pointrytter',
+             'Pokeransigt', 'Sælge ud', 'Unoder ved bordet', 'Urent trav', 'Bridge Base Online', 'Selvalert']
+    DEFINITIONER = {
+        'Sælge ud': 'At passe og lade modparten spille kontrakten på et lavt trin i stedet for at melde videre.',
+        'Unoder ved bordet': 'Opførsel, der kan give makker ubeføjede oplysninger eller ødelægge stemningen, fx kommentarer '
+                             'eller mimik.',
+        'Urent trav': 'Bridgeslang for at udnytte ubeføjede oplysninger fra makker, fx makkers tøven.',
+    }
+    UAENDREDE = {
+        'Bridge Base Online': 'En digital platform til bridge, undervisning og turneringer, ofte forkortet BBO.',
+        'Selvalert': 'En procedure i onlinebridge, hvor spilleren selv oplyser modstanderne om sin meldings særlige betydning '
+                     'uden at informere makker.',
+        'Byttehandel': 'At gå lidt ned i sin egen kontrakt i stedet for at lade modparten vinde deres.',
+        'Fanget på det gale ben': 'Man har spillet i en forkert rækkefølge og kan ikke komme det rigtige sted hen.',
+        'Kort tredje / honnør anden': 'Måde at beskrive en farve på: honnøren plus i alt to eller tre kort, fx "kongen tredje".',
+        'Melde i den blå luft': 'At melde uden reel dækning i hånden.',
+        'Pointrytter': 'En spiller, der kun tæller point og overser fordeling og stikmuligheder.',
+        'Pokeransigt': 'At holde et neutralt ansigt, så man ikke afslører noget for modparten.',
+    }
+    RELATEREDE = {'Bridge Base Online': 'robotbridge, selvalert', 'Selvalert': 'alertering, bridge-base-online',
+                  'Byttehandel': 'offer, matchpoint', 'Fanget på det gale ben': 'forbindelser, indgang',
+                  'Kort tredje / honnør anden': 'doubleton, fald', 'Melde i den blå luft': 'overmelding, psykisk-melding',
+                  'Pointrytter': 'fordelingspoint', 'Pokeransigt': 'tempo, bridgeetik',
+                  'Sælge ud': 'genaabning, konkurrencemelding', 'Unoder ved bordet': 'bridgeetik, ubefoejede-oplysninger',
+                  'Urent trav': 'ubefoejede-oplysninger, toeven, korrigeret-score',
+                  'RealBridge': 'bridge-base-online, selvalert'}
+
+    @classmethod
+    def setUpClass(cls):
+        cls.kilde = KILDE.read_text(encoding='utf-8')
+        cls.opslag = opslag_i_kilden()
+        cls.side = læs_side()
+        cls.paa_siden = {o['id']: o for o in cls.side.opslag}
+        cls.bygget = hent_bygger().parse(cls.kilde)
+
+    def test_de_11_har_deres_egen_forklaring_og_intet_opslag_gentager_definitionen(self):
+        i_kategorierne = sorted(n for n, o in self.opslag.items() if o['Kategori'] in (self.TALEMAADER, self.ONLINE))
+        self.assertEqual(i_kategorierne, sorted(self.DE_11 + ['Robotbridge', 'RealBridge']))
+        for navn in i_kategorierne:
+            self.assertNotEqual(self.opslag[navn]['Forklaring'], self.opslag[navn]['Kort definition'], navn)
+        # 46 før portion 9, 24 efter, 12 efter portion 10 og 0 efter portion 11 (Pivotbord er fjernet).
+        gentager = [n for n, o in self.opslag.items() if o['Forklaring'] == o['Kort definition']]
+        self.assertEqual(gentager, [])
+
+    def test_de_51_nye_opslag_har_alle_deres_egen_forklaring(self):
+        nye = KategorierOgNiveauer.NYE
+        self.assertEqual(len(nye), 51)
+        self.assertEqual(KategorierOgNiveauer.MED_FORKLARING, set(nye))
+        for navn in self.DE_11[:9]:
+            self.assertIn(navn, nye, navn)
+        for navn in nye:
+            self.assertNotEqual(self.opslag[navn]['Forklaring'], self.opslag[navn]['Kort definition'], navn)
+
+    def test_tre_rettede_definitioner_og_otte_uaendrede(self):
+        for navn, tekst in {**self.DEFINITIONER, **self.UAENDREDE}.items():
+            self.assertEqual(self.opslag[navn]['Kort definition'], tekst, navn)
+
+    def test_relaterede_begreber(self):
+        for navn, rel in self.RELATEREDE.items():
+            self.assertEqual(self.opslag[navn].get('Relaterede begreber'), rel, navn)
+        # Justeret score har id'et korrigeret-score; justeret-score findes ikke.
+        self.assertEqual(self.opslag['Justeret score']['ID'], '`korrigeret-score`')
+        self.assertIn('korrigeret-score', self.paa_siden['urent-trav']['rel'])
+
+    def test_realbridge_er_et_nyt_opslag(self):
+        o = self.opslag['RealBridge']
+        self.assertEqual((o['ID'], o['Engelsk'], o['Niveau'], o['Kategori'], o['afsnit']),
+                         ('`realbridge`', 'RealBridge', 'begynder', self.ONLINE, self.ONLINE))
+        self.assertEqual(o['Kort definition'], 'En platform til onlinebridge, hvor spillerne ser og hører hinanden med kamera '
+                                               'og mikrofon.')
+        self.assertTrue(o['Forklaring'].startswith('RealBridge kører i browseren på computer eller tablet'))
+        self.assertIn('(DBf\'s regler for online-turneringer, 2021)', o['Forklaring'])
+        self.assertIn('realbridge', søg(self.side, 'realbridge'))
+        engelsk = {(r['engelsk'], r['id']) for r in self.bygget['indeks']}
+        self.assertIn(('RealBridge', 'realbridge'), engelsk)
+        dansk = [l for l in self.kilde[self.kilde.index('## Dansk-engelsk indeks'):].splitlines() if l.startswith('- **')]
+        self.assertIn('- **RealBridge** → RealBridge', dansk)
+
+    def test_pivotbord_er_fjernet(self):
+        self.assertNotIn('Pivotbord', self.opslag)
+        self.assertNotIn('pivotbord', self.side.ids)
+        self.assertNotIn('pivotbord', self.kilde.lower())
+        self.assertNotIn('Pivot table', {r['engelsk'] for r in self.bygget['indeks']})
+        for o in self.side.opslag:
+            self.assertNotIn('pivotbord', o['rel'], o['id'])
+        # Pivot (holdformen) står uændret.
+        self.assertEqual(self.opslag['Pivot']['ID'], '`pivot`')
+        self.assertIn('pivot', self.side.ids)
+
+    def test_indekserne_staar_i_orden(self):
+        ord_ = [r['engelsk'] for r in self.bygget['indeks']]
+        self.assertEqual(ord_, sorted(ord_, key=str.casefold))
+
+    def test_eksemplerne_kilderne_og_oprindelsen(self):
+        for navn, uddrag in (
+                ('Bridge Base Online', 'siden 16. december 2025 kører den på motoren GIBBO med samme system'),
+                ('Bridge Base Online', '(DBf\'s regler for online-turneringer, 2021)'),
+                ('Selvalert', 'Ved bordet alerterer melderens makker, men på BBO alerterer spilleren sin egen melding'),
+                ('Selvalert', 'kan arrangøren i stedet vælge alertreglerne fra bordet'),
+                ('Byttehandel', 'koster 3♠ en ned uden for zonen 50, eller 100 doblet'),
+                ('Byttehandel', '(§ 77)'),
+                ('Fanget på det gale ben', 'Udtrykket kommer fra sporten'),
+                ('Kort tredje / honnør anden', 'Ordbog over det danske Sprog (bind 1, 1919)'),
+                ('Melde i den blå luft', '"grebet ud af den blå luft"'),
+                ('Pointrytter', 'som Bridgesystem åbner efter 20-reglen: 11 hp og to femfarver giver 21'),
+                ('Pokeransigt', '(§ 74C2)'),
+                ('Pokeransigt', '(§ 73D2)'),
+                ('Sælge ud', 'Det er ikke altid forkert at sælge ud'),
+                ('Unoder ved bordet', '(§ 74C2, C5 og C6)'),
+                ('Unoder ved bordet', 'modsætning til det forældede noder'),
+                ('Urent trav', '(§ 16B1a)'),
+                ('Urent trav', 'Udtrykket kommer fra travsporten')):
             self.assertIn(uddrag, self.opslag[navn]['Forklaring'], navn)
 
 
